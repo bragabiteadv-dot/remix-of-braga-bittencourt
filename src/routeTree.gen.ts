@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
+import { Route as BetimRouteImport } from './routes/betim'
 import { Route as ArtigosRouteImport } from './routes/artigos'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as IndexRouteImport } from './routes/index'
@@ -29,6 +30,11 @@ const FaleConoscoRoute = FaleConoscoRouteImport.update({
 const DuvidasRoute = DuvidasRouteImport.update({
   id: '/duvidas',
   path: '/duvidas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BetimRoute = BetimRouteImport.update({
+  id: '/betim',
+  path: '/betim',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArtigosRoute = ArtigosRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
+  '/betim': typeof BetimRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
+  '/betim': typeof BetimRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
+  '/betim': typeof BetimRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
@@ -78,6 +87,7 @@ export interface FileRouteTypes {
     | '/'
     | '/areas-de-atuacao'
     | '/artigos'
+    | '/betim'
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
@@ -86,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/areas-de-atuacao'
     | '/artigos'
+    | '/betim'
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
@@ -94,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/areas-de-atuacao'
     | '/artigos'
+    | '/betim'
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
@@ -103,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   ArtigosRoute: typeof ArtigosRoute
+  BetimRoute: typeof BetimRoute
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
   PerfilRoute: typeof PerfilRoute
@@ -129,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/duvidas'
       fullPath: '/duvidas'
       preLoaderRoute: typeof DuvidasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/betim': {
+      id: '/betim'
+      path: '/betim'
+      fullPath: '/betim'
+      preLoaderRoute: typeof BetimRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/artigos': {
@@ -159,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   ArtigosRoute: ArtigosRoute,
+  BetimRoute: BetimRoute,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
   PerfilRoute: PerfilRoute,
