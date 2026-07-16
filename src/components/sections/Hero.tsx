@@ -29,11 +29,12 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-6">
             <a 
               href="https://wa.me/5531980260880?text=Olá! Acessei a página perfil do escritório e gostaria de falar com um especialista."
-              className="bg-gold-gradient text-navy font-bold text-base px-10 py-5 rounded-sm shadow-[0_0_20px_rgba(205,149,117,0.4)] hover:scale-105 transition-all uppercase tracking-widest text-center flex items-center justify-center gap-2"
+              className="btn-primary w-full sm:w-auto"
             >
               Falar com especialista
               <WhatsAppIcon />
             </a>
+
           </div>
         </div>
       </div>
