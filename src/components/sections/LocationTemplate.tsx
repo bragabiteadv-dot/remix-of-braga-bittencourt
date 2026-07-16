@@ -1,4 +1,3 @@
-import { Shield, Users, Globe, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 interface ServiceCardProps {
@@ -10,21 +9,18 @@ interface ServiceCardProps {
 
 export function ServiceCard({ title, description, icon, href }: ServiceCardProps) {
   return (
-    <div className="bg-white p-10 rounded-sm shadow-xl border-t-4 border-gold-dark hover:translate-y-[-5px] transition-all duration-300 group">
-      <div className="w-16 h-16 bg-navy/5 rounded-lg flex items-center justify-center text-navy mb-8 group-hover:bg-gold-gradient transition-colors">
+    <Link
+      to={href as any}
+      className="block bg-[#0c1a32] p-10 rounded-2xl border border-white/5 hover:border-gold-dark/40 hover:-translate-y-1 transition-all duration-300"
+    >
+      <div className="text-gold-light mb-8">
         {icon}
       </div>
-      <h3 className="text-2xl font-cinzel text-navy mb-6 leading-tight">{title}</h3>
-      <p className="text-navy/60 text-sm leading-relaxed mb-8 font-montserrat">
+      <h3 className="text-white text-2xl font-montserrat font-bold mb-6 leading-tight">{title}</h3>
+      <p className="text-white/70 text-base leading-relaxed font-montserrat">
         {description}
       </p>
-      <Link 
-        to={href as any}
-        className="inline-flex items-center gap-2 text-gold-dark font-bold uppercase tracking-widest text-xs hover:gap-4 transition-all"
-      >
-        Saiba Mais <ArrowRight size={14} />
-      </Link>
-    </div>
+    </Link>
   );
 }
 
@@ -62,14 +58,15 @@ export function LocationTemplate({
         </div>
       </section>
 
-      <section className="py-24 bg-[#fcfbf8]">
+      <section className="py-24 bg-navy">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-navy text-3xl font-cinzel mb-4">Nossos Serviços em {city}</h2>
-            <div className="w-24 h-1 bg-gold-dark mx-auto"></div>
+            <span className="text-gold-dark text-xs font-bold tracking-[0.3em] uppercase mb-6 block">Áreas de Atuação</span>
+            <h2 className="text-white text-4xl md:text-5xl font-cinzel mb-8">O que fazemos por você em {city}</h2>
+            <div className="w-32 h-px bg-white/30 mx-auto"></div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {services.map((service, idx) => (
               <ServiceCard key={idx} {...service} />
             ))}
