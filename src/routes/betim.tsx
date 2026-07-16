@@ -1,9 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { LocationTemplate } from "../components/sections/LocationTemplate";
 import { Shield, Users, Globe } from "lucide-react";
 
 export const Route = createFileRoute("/betim")({
-  component: Betim,
+  component: BetimLayout,
   head: () => ({
     meta: [
       { title: "Advocacia em Betim | Braga Bitencourt Advogados" },
@@ -15,7 +15,11 @@ export const Route = createFileRoute("/betim")({
   }),
 });
 
-function Betim() {
+function BetimLayout() {
+  return <Outlet />;
+}
+
+export function BetimIndex() {
   const services = [
     {
       title: "Direito de Família",
@@ -46,3 +50,4 @@ function Betim() {
     />
   );
 }
+
