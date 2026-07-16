@@ -77,22 +77,56 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Braga Bitencourt Advogados | Família e Sucessões" },
+      { name: "description", content: "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais. Atuação estratégica em inventários, divórcios e planejamento sucessório." },
+      { name: "author", content: "Braga Bitencourt Advogados" },
+      { property: "og:title", content: "Braga Bitencourt Advogados | Família e Sucessões" },
+      { property: "og:description", content: "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Braga Bitencourt Advogados" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:wght@300;400;500;600;700&display=swap" },
       {
         rel: "stylesheet",
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LegalService",
+          "name": "Braga Bitencourt Advogados",
+          "description": "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais.",
+          "url": "/",
+          "telephone": "+5531980260880",
+          "address": [
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "Av. Raja Gabaglia, 2000, sala 614, Bloco 1",
+              "addressLocality": "Belo Horizonte",
+              "addressRegion": "MG",
+              "postalCode": "30350-540",
+              "addressCountry": "BR"
+            },
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "Av. Amazonas, 1446, salas 706/707",
+              "addressLocality": "Betim",
+              "addressRegion": "MG",
+              "postalCode": "32600-325",
+              "addressCountry": "BR"
+            }
+          ]
+        })
+      }
+    ]
   }),
   shellComponent: RootShell,
   component: RootComponent,
