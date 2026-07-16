@@ -18,6 +18,7 @@ import { Route as ArtigosRouteImport } from './routes/artigos'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BetimAdvocaciaSucessoesRouteImport } from './routes/betim.advocacia-sucessoes'
+import { Route as BetimAdvocaciaInternacionalRouteImport } from './routes/betim.advocacia-internacional'
 import { Route as BetimAdvocaciaFamiliaRouteImport } from './routes/betim.advocacia-familia'
 
 const PerfilRoute = PerfilRouteImport.update({
@@ -65,6 +66,12 @@ const BetimAdvocaciaSucessoesRoute = BetimAdvocaciaSucessoesRouteImport.update({
   path: '/advocacia-sucessoes',
   getParentRoute: () => BetimRoute,
 } as any)
+const BetimAdvocaciaInternacionalRoute =
+  BetimAdvocaciaInternacionalRouteImport.update({
+    id: '/advocacia-internacional',
+    path: '/advocacia-internacional',
+    getParentRoute: () => BetimRoute,
+  } as any)
 const BetimAdvocaciaFamiliaRoute = BetimAdvocaciaFamiliaRouteImport.update({
   id: '/advocacia-familia',
   path: '/advocacia-familia',
@@ -81,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
+  '/betim/advocacia-internacional': typeof BetimAdvocaciaInternacionalRoute
   '/betim/advocacia-sucessoes': typeof BetimAdvocaciaSucessoesRoute
 }
 export interface FileRoutesByTo {
@@ -93,6 +101,7 @@ export interface FileRoutesByTo {
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
+  '/betim/advocacia-internacional': typeof BetimAdvocaciaInternacionalRoute
   '/betim/advocacia-sucessoes': typeof BetimAdvocaciaSucessoesRoute
 }
 export interface FileRoutesById {
@@ -106,6 +115,7 @@ export interface FileRoutesById {
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
+  '/betim/advocacia-internacional': typeof BetimAdvocaciaInternacionalRoute
   '/betim/advocacia-sucessoes': typeof BetimAdvocaciaSucessoesRoute
 }
 export interface FileRouteTypes {
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/fale-conosco'
     | '/perfil'
     | '/betim/advocacia-familia'
+    | '/betim/advocacia-internacional'
     | '/betim/advocacia-sucessoes'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/fale-conosco'
     | '/perfil'
     | '/betim/advocacia-familia'
+    | '/betim/advocacia-internacional'
     | '/betim/advocacia-sucessoes'
   id:
     | '__root__'
@@ -144,6 +156,7 @@ export interface FileRouteTypes {
     | '/fale-conosco'
     | '/perfil'
     | '/betim/advocacia-familia'
+    | '/betim/advocacia-internacional'
     | '/betim/advocacia-sucessoes'
   fileRoutesById: FileRoutesById
 }
@@ -223,6 +236,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BetimAdvocaciaSucessoesRouteImport
       parentRoute: typeof BetimRoute
     }
+    '/betim/advocacia-internacional': {
+      id: '/betim/advocacia-internacional'
+      path: '/advocacia-internacional'
+      fullPath: '/betim/advocacia-internacional'
+      preLoaderRoute: typeof BetimAdvocaciaInternacionalRouteImport
+      parentRoute: typeof BetimRoute
+    }
     '/betim/advocacia-familia': {
       id: '/betim/advocacia-familia'
       path: '/advocacia-familia'
@@ -235,11 +255,13 @@ declare module '@tanstack/react-router' {
 
 interface BetimRouteChildren {
   BetimAdvocaciaFamiliaRoute: typeof BetimAdvocaciaFamiliaRoute
+  BetimAdvocaciaInternacionalRoute: typeof BetimAdvocaciaInternacionalRoute
   BetimAdvocaciaSucessoesRoute: typeof BetimAdvocaciaSucessoesRoute
 }
 
 const BetimRouteChildren: BetimRouteChildren = {
   BetimAdvocaciaFamiliaRoute: BetimAdvocaciaFamiliaRoute,
+  BetimAdvocaciaInternacionalRoute: BetimAdvocaciaInternacionalRoute,
   BetimAdvocaciaSucessoesRoute: BetimAdvocaciaSucessoesRoute,
 }
 
