@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
@@ -24,6 +25,11 @@ import { Route as BeloHorizonteAdvocaciaSucessoesRouteImport } from './routes/be
 import { Route as BeloHorizonteAdvocaciaInternacionalRouteImport } from './routes/belo-horizonte.advocacia-internacional'
 import { Route as BeloHorizonteAdvocaciaFamiliaRouteImport } from './routes/belo-horizonte.advocacia-familia'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PerfilRoute = PerfilRouteImport.update({
   id: '/perfil',
   path: '/perfil',
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/belo-horizonte/advocacia-familia': typeof BeloHorizonteAdvocaciaFamiliaRoute
   '/belo-horizonte/advocacia-internacional': typeof BeloHorizonteAdvocaciaInternacionalRoute
   '/belo-horizonte/advocacia-sucessoes': typeof BeloHorizonteAdvocaciaSucessoesRoute
@@ -124,6 +131,7 @@ export interface FileRoutesByTo {
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/belo-horizonte/advocacia-familia': typeof BeloHorizonteAdvocaciaFamiliaRoute
   '/belo-horizonte/advocacia-internacional': typeof BeloHorizonteAdvocaciaInternacionalRoute
   '/belo-horizonte/advocacia-sucessoes': typeof BeloHorizonteAdvocaciaSucessoesRoute
@@ -141,6 +149,7 @@ export interface FileRoutesById {
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/belo-horizonte/advocacia-familia': typeof BeloHorizonteAdvocaciaFamiliaRoute
   '/belo-horizonte/advocacia-internacional': typeof BeloHorizonteAdvocaciaInternacionalRoute
   '/belo-horizonte/advocacia-sucessoes': typeof BeloHorizonteAdvocaciaSucessoesRoute
@@ -159,6 +168,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/sitemap.xml'
     | '/belo-horizonte/advocacia-familia'
     | '/belo-horizonte/advocacia-internacional'
     | '/belo-horizonte/advocacia-sucessoes'
@@ -175,6 +185,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/sitemap.xml'
     | '/belo-horizonte/advocacia-familia'
     | '/belo-horizonte/advocacia-internacional'
     | '/belo-horizonte/advocacia-sucessoes'
@@ -191,6 +202,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/sitemap.xml'
     | '/belo-horizonte/advocacia-familia'
     | '/belo-horizonte/advocacia-internacional'
     | '/belo-horizonte/advocacia-sucessoes'
@@ -208,10 +220,18 @@ export interface RootRouteChildren {
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
   PerfilRoute: typeof PerfilRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/perfil': {
       id: '/perfil'
       path: '/perfil'
@@ -353,6 +373,7 @@ const rootRouteChildren: RootRouteChildren = {
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
   PerfilRoute: PerfilRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
