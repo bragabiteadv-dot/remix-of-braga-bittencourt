@@ -1,9 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { LocationTemplate } from "../components/sections/LocationTemplate";
 import { Shield, Users, Globe } from "lucide-react";
 
 export const Route = createFileRoute("/belo-horizonte")({
-  component: BeloHorizonte,
+  component: BeloHorizonteLayout,
   head: () => ({
     meta: [
       { title: "Advocacia em Belo Horizonte | Braga Bitencourt Advogados" },
@@ -15,7 +15,11 @@ export const Route = createFileRoute("/belo-horizonte")({
   }),
 });
 
-function BeloHorizonte() {
+function BeloHorizonteLayout() {
+  return <Outlet />;
+}
+
+export function BeloHorizonteIndex() {
   const services = [
     {
       title: "Direito de Família",
@@ -46,3 +50,4 @@ function BeloHorizonte() {
     />
   );
 }
+
