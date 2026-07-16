@@ -17,6 +17,7 @@ import { Route as BeloHorizonteRouteImport } from './routes/belo-horizonte'
 import { Route as ArtigosRouteImport } from './routes/artigos'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BetimAdvocaciaFamiliaRouteImport } from './routes/betim.advocacia-familia'
 
 const PerfilRoute = PerfilRouteImport.update({
   id: '/perfil',
@@ -58,26 +59,33 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BetimAdvocaciaFamiliaRoute = BetimAdvocaciaFamiliaRouteImport.update({
+  id: '/advocacia-familia',
+  path: '/advocacia-familia',
+  getParentRoute: () => BetimRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
   '/belo-horizonte': typeof BeloHorizonteRoute
-  '/betim': typeof BetimRoute
+  '/betim': typeof BetimRouteWithChildren
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
   '/belo-horizonte': typeof BeloHorizonteRoute
-  '/betim': typeof BetimRoute
+  '/betim': typeof BetimRouteWithChildren
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -85,10 +93,11 @@ export interface FileRoutesById {
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
   '/belo-horizonte': typeof BeloHorizonteRoute
-  '/betim': typeof BetimRoute
+  '/betim': typeof BetimRouteWithChildren
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/betim/advocacia-familia'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/betim/advocacia-familia'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/betim/advocacia-familia'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -128,7 +140,7 @@ export interface RootRouteChildren {
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   ArtigosRoute: typeof ArtigosRoute
   BeloHorizonteRoute: typeof BeloHorizonteRoute
-  BetimRoute: typeof BetimRoute
+  BetimRoute: typeof BetimRouteWithChildren
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
   PerfilRoute: typeof PerfilRoute
@@ -192,15 +204,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/betim/advocacia-familia': {
+      id: '/betim/advocacia-familia'
+      path: '/advocacia-familia'
+      fullPath: '/betim/advocacia-familia'
+      preLoaderRoute: typeof BetimAdvocaciaFamiliaRouteImport
+      parentRoute: typeof BetimRoute
+    }
   }
 }
+
+interface BetimRouteChildren {
+  BetimAdvocaciaFamiliaRoute: typeof BetimAdvocaciaFamiliaRoute
+}
+
+const BetimRouteChildren: BetimRouteChildren = {
+  BetimAdvocaciaFamiliaRoute: BetimAdvocaciaFamiliaRoute,
+}
+
+const BetimRouteWithChildren = BetimRoute._addFileChildren(BetimRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   ArtigosRoute: ArtigosRoute,
   BeloHorizonteRoute: BeloHorizonteRoute,
-  BetimRoute: BetimRoute,
+  BetimRoute: BetimRouteWithChildren,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
   PerfilRoute: PerfilRoute,
