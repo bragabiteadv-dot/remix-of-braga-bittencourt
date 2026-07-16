@@ -1,24 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "../components/sections/Hero";
+import { FeatureGrid } from "../components/sections/FeatureGrid";
+import { TeamGrid } from "../components/sections/TeamGrid";
+import { ServicesTicker } from "../components/sections/ServicesTicker";
+import { LocationsSection } from "../components/sections/LocationsSection";
+import { FounderCard } from "../components/sections/FounderCard";
+import { ContactForm } from "../components/sections/ContactForm";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Braga Bitencourt Advogados | Família e Sucessões" },
+      { name: "description", content: "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais. Inventários, divórcios e planejamento sucessório." },
+      { property: "og:title", content: "Braga Bitencourt Advogados | Família e Sucessões" },
+      { property: "og:description", content: "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais." },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <FeatureGrid />
+      <TeamGrid />
+      <ServicesTicker />
+      <LocationsSection />
+      <FounderCard />
+      <ContactForm />
+    </>
   );
 }
