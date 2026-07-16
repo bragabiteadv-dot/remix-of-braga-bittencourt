@@ -20,6 +20,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BetimAdvocaciaSucessoesRouteImport } from './routes/betim.advocacia-sucessoes'
 import { Route as BetimAdvocaciaInternacionalRouteImport } from './routes/betim.advocacia-internacional'
 import { Route as BetimAdvocaciaFamiliaRouteImport } from './routes/betim.advocacia-familia'
+import { Route as BeloHorizonteAdvocaciaFamiliaRouteImport } from './routes/belo-horizonte.advocacia-familia'
 
 const PerfilRoute = PerfilRouteImport.update({
   id: '/perfil',
@@ -77,16 +78,23 @@ const BetimAdvocaciaFamiliaRoute = BetimAdvocaciaFamiliaRouteImport.update({
   path: '/advocacia-familia',
   getParentRoute: () => BetimRoute,
 } as any)
+const BeloHorizonteAdvocaciaFamiliaRoute =
+  BeloHorizonteAdvocaciaFamiliaRouteImport.update({
+    id: '/advocacia-familia',
+    path: '/advocacia-familia',
+    getParentRoute: () => BeloHorizonteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
-  '/belo-horizonte': typeof BeloHorizonteRoute
+  '/belo-horizonte': typeof BeloHorizonteRouteWithChildren
   '/betim': typeof BetimRouteWithChildren
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/belo-horizonte/advocacia-familia': typeof BeloHorizonteAdvocaciaFamiliaRoute
   '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
   '/betim/advocacia-internacional': typeof BetimAdvocaciaInternacionalRoute
   '/betim/advocacia-sucessoes': typeof BetimAdvocaciaSucessoesRoute
@@ -95,11 +103,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
-  '/belo-horizonte': typeof BeloHorizonteRoute
+  '/belo-horizonte': typeof BeloHorizonteRouteWithChildren
   '/betim': typeof BetimRouteWithChildren
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/belo-horizonte/advocacia-familia': typeof BeloHorizonteAdvocaciaFamiliaRoute
   '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
   '/betim/advocacia-internacional': typeof BetimAdvocaciaInternacionalRoute
   '/betim/advocacia-sucessoes': typeof BetimAdvocaciaSucessoesRoute
@@ -109,11 +118,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
-  '/belo-horizonte': typeof BeloHorizonteRoute
+  '/belo-horizonte': typeof BeloHorizonteRouteWithChildren
   '/betim': typeof BetimRouteWithChildren
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/belo-horizonte/advocacia-familia': typeof BeloHorizonteAdvocaciaFamiliaRoute
   '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
   '/betim/advocacia-internacional': typeof BetimAdvocaciaInternacionalRoute
   '/betim/advocacia-sucessoes': typeof BetimAdvocaciaSucessoesRoute
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/belo-horizonte/advocacia-familia'
     | '/betim/advocacia-familia'
     | '/betim/advocacia-internacional'
     | '/betim/advocacia-sucessoes'
@@ -142,6 +153,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/belo-horizonte/advocacia-familia'
     | '/betim/advocacia-familia'
     | '/betim/advocacia-internacional'
     | '/betim/advocacia-sucessoes'
@@ -155,6 +167,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/belo-horizonte/advocacia-familia'
     | '/betim/advocacia-familia'
     | '/betim/advocacia-internacional'
     | '/betim/advocacia-sucessoes'
@@ -164,7 +177,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   ArtigosRoute: typeof ArtigosRoute
-  BeloHorizonteRoute: typeof BeloHorizonteRoute
+  BeloHorizonteRoute: typeof BeloHorizonteRouteWithChildren
   BetimRoute: typeof BetimRouteWithChildren
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
@@ -250,8 +263,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BetimAdvocaciaFamiliaRouteImport
       parentRoute: typeof BetimRoute
     }
+    '/belo-horizonte/advocacia-familia': {
+      id: '/belo-horizonte/advocacia-familia'
+      path: '/advocacia-familia'
+      fullPath: '/belo-horizonte/advocacia-familia'
+      preLoaderRoute: typeof BeloHorizonteAdvocaciaFamiliaRouteImport
+      parentRoute: typeof BeloHorizonteRoute
+    }
   }
 }
+
+interface BeloHorizonteRouteChildren {
+  BeloHorizonteAdvocaciaFamiliaRoute: typeof BeloHorizonteAdvocaciaFamiliaRoute
+}
+
+const BeloHorizonteRouteChildren: BeloHorizonteRouteChildren = {
+  BeloHorizonteAdvocaciaFamiliaRoute: BeloHorizonteAdvocaciaFamiliaRoute,
+}
+
+const BeloHorizonteRouteWithChildren = BeloHorizonteRoute._addFileChildren(
+  BeloHorizonteRouteChildren,
+)
 
 interface BetimRouteChildren {
   BetimAdvocaciaFamiliaRoute: typeof BetimAdvocaciaFamiliaRoute
@@ -271,7 +303,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   ArtigosRoute: ArtigosRoute,
-  BeloHorizonteRoute: BeloHorizonteRoute,
+  BeloHorizonteRoute: BeloHorizonteRouteWithChildren,
   BetimRoute: BetimRouteWithChildren,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
