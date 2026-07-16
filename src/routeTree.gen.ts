@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
+import { Route as ArtigosRouteImport } from './routes/artigos'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -30,6 +31,11 @@ const DuvidasRoute = DuvidasRouteImport.update({
   path: '/duvidas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArtigosRoute = ArtigosRouteImport.update({
+  id: '/artigos',
+  path: '/artigos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
   id: '/areas-de-atuacao',
   path: '/areas-de-atuacao',
@@ -44,6 +50,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
+  '/artigos': typeof ArtigosRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
+  '/artigos': typeof ArtigosRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
@@ -59,6 +67,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
+  '/artigos': typeof ArtigosRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
@@ -68,15 +77,23 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/areas-de-atuacao'
+    | '/artigos'
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/areas-de-atuacao' | '/duvidas' | '/fale-conosco' | '/perfil'
+  to:
+    | '/'
+    | '/areas-de-atuacao'
+    | '/artigos'
+    | '/duvidas'
+    | '/fale-conosco'
+    | '/perfil'
   id:
     | '__root__'
     | '/'
     | '/areas-de-atuacao'
+    | '/artigos'
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
@@ -85,6 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
+  ArtigosRoute: typeof ArtigosRoute
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
   PerfilRoute: typeof PerfilRoute
@@ -113,6 +131,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DuvidasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/artigos': {
+      id: '/artigos'
+      path: '/artigos'
+      fullPath: '/artigos'
+      preLoaderRoute: typeof ArtigosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/areas-de-atuacao': {
       id: '/areas-de-atuacao'
       path: '/areas-de-atuacao'
@@ -133,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
+  ArtigosRoute: ArtigosRoute,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
   PerfilRoute: PerfilRoute,
