@@ -1,4 +1,4 @@
-import { ContactForm } from "../components/sections/ContactForm";
+import { ContactForm } from "./ContactForm";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
