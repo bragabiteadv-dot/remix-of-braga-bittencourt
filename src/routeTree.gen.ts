@@ -13,6 +13,7 @@ import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as BetimRouteImport } from './routes/betim'
+import { Route as BeloHorizonteRouteImport } from './routes/belo-horizonte'
 import { Route as ArtigosRouteImport } from './routes/artigos'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const BetimRoute = BetimRouteImport.update({
   path: '/betim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BeloHorizonteRoute = BeloHorizonteRouteImport.update({
+  id: '/belo-horizonte',
+  path: '/belo-horizonte',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ArtigosRoute = ArtigosRouteImport.update({
   id: '/artigos',
   path: '/artigos',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
+  '/belo-horizonte': typeof BeloHorizonteRoute
   '/betim': typeof BetimRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
+  '/belo-horizonte': typeof BeloHorizonteRoute
   '/betim': typeof BetimRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/artigos': typeof ArtigosRoute
+  '/belo-horizonte': typeof BeloHorizonteRoute
   '/betim': typeof BetimRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/areas-de-atuacao'
     | '/artigos'
+    | '/belo-horizonte'
     | '/betim'
     | '/duvidas'
     | '/fale-conosco'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/areas-de-atuacao'
     | '/artigos'
+    | '/belo-horizonte'
     | '/betim'
     | '/duvidas'
     | '/fale-conosco'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/areas-de-atuacao'
     | '/artigos'
+    | '/belo-horizonte'
     | '/betim'
     | '/duvidas'
     | '/fale-conosco'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   ArtigosRoute: typeof ArtigosRoute
+  BeloHorizonteRoute: typeof BeloHorizonteRoute
   BetimRoute: typeof BetimRoute
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BetimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/belo-horizonte': {
+      id: '/belo-horizonte'
+      path: '/belo-horizonte'
+      fullPath: '/belo-horizonte'
+      preLoaderRoute: typeof BeloHorizonteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/artigos': {
       id: '/artigos'
       path: '/artigos'
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   ArtigosRoute: ArtigosRoute,
+  BeloHorizonteRoute: BeloHorizonteRoute,
   BetimRoute: BetimRoute,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
