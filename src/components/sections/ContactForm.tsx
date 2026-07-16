@@ -127,11 +127,12 @@ export function ContactForm() {
               <div className="pt-8 flex flex-col sm:flex-row items-center gap-6">
                 <button 
                   type="submit"
-                  className="w-full sm:flex-grow bg-gold-gradient text-navy font-bold py-5 rounded-sm hover:scale-105 transition-transform uppercase tracking-widest flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(205,149,117,0.3)]"
+                  className="btn-primary w-full sm:flex-grow"
                 >
                   Falar com Advogado
                   <MessageSquare size={18} />
                 </button>
+
                 <button 
                   type="button"
                   onClick={handleClear}
