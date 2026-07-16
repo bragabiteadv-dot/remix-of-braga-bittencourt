@@ -1,6 +1,6 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { LocationTemplate } from "../components/sections/LocationTemplate";
-import { Shield, Users, Globe } from "lucide-react";
+import { User, FileText, Globe } from "lucide-react";
 
 export const Route = createFileRoute("/betim")({
   component: BetimLayout,
@@ -23,20 +23,20 @@ export function BetimIndex() {
   const services = [
     {
       title: "Direito de Família",
-      description: "Divórcios, guarda de filhos, pensão alimentícia e reconhecimento de união estável em Betim.",
-      icon: <Users size={32} />,
+      description: "Divórcio consensual ou litigioso · Partilha de bens · Guarda e regulamentação de visitas · Pensão alimentícia · Pacto antenupcial · Tutela e Curatela · Medidas Protetivas",
+      icon: <User size={32} strokeWidth={2.5} />,
       href: "/betim/advocacia-familia"
     },
     {
       title: "Direito das Sucessões",
-      description: "Inventários judiciais e extrajudiciais, testamentos e planejamento sucessório estratégico.",
-      icon: <Shield size={32} />,
+      description: "Inventário judicial e extrajudicial · Testamentos · Planejamento sucessório · Holdings familiares · Doação e transferência de bens em vida",
+      icon: <FileText size={32} strokeWidth={2.5} />,
       href: "/betim/advocacia-sucessoes"
     },
     {
-      title: "Direito Internacional",
-      description: "Homologação de sentenças estrangeiras e demandas internacionais envolvendo brasileiros e estrangeiros.",
-      icon: <Globe size={32} />,
+      title: "Privado Internacional",
+      description: "Homologação de sentenças estrangeiras · Autorização de viagem para menores · Divórcios e guardas com partes no exterior · Transcrições e averbações",
+      icon: <Globe size={32} strokeWidth={2.5} />,
       href: "/betim/advocacia-internacional"
     }
   ];
