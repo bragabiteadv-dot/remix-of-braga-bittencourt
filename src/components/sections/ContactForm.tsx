@@ -127,7 +127,7 @@ export function ContactForm() {
               <div className="pt-8 flex flex-col sm:flex-row items-center gap-6">
                 <button 
                   type="submit"
-                  className="btn-primary w-full sm:flex-grow"
+                  className="btn-primary btn-shine w-full sm:flex-grow"
                 >
                   Falar com Advogado
                   <MessageSquare size={18} />

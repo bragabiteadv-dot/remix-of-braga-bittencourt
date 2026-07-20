@@ -92,7 +92,7 @@ export function FounderCard() {
             <div className="mt-16">
               <a 
                 href="https://wa.me/5531980260880?text=Olá! Acessei a página perfil do escritório e gostaria de falar com um especialista."
-                className="btn-primary w-full md:w-auto"
+                className="btn-primary btn-shine w-full md:w-auto"
               >
                 Falar com especialista
                 <WhatsAppIcon />
