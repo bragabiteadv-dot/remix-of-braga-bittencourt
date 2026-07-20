@@ -25,7 +25,7 @@ function Index() {
   return (
     <>
       <Hero />
-      <FeatureGrid />
+
       <TeamGrid />
       <ServicesTicker />
       <LocationsSection />
