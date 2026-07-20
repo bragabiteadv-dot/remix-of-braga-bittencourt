@@ -29,7 +29,8 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-6">
             <a 
               href="https://wa.me/5531980260880?text=Olá! Acessei a página perfil do escritório e gostaria de falar com um especialista."
-              className="btn-primary w-full sm:w-auto"
+              className="btn-primary btn-shine w-full sm:w-auto"
+
             >
               Falar com especialista
               <WhatsAppIcon />
