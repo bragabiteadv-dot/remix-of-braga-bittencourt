@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search, Calendar } from "lucide-react";
+import { ARTICLES, type Category } from "@/lib/articles";
 
 export const Route = createFileRoute("/artigos")({
   component: Artigos,
@@ -18,91 +19,6 @@ export const Route = createFileRoute("/artigos")({
   }),
 });
 
-type Category = "Família" | "Sucessões" | "Internacional" | "Patrimônio" | "Empresarial";
-
-interface Article {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  category: Category;
-  image: string;
-}
-
-const ARTICLES: Article[] = [
-  {
-    id: "1",
-    title: "Divórcio consensual: como agilizar o processo e proteger o patrimônio da família",
-    excerpt: "O divórcio consensual é uma alternativa mais rápida e menos desgastante para casais que desejam encerrar o vínculo conjugal. Entenda o passo a passo...",
-    date: "19 de Março de 2026",
-    category: "Família",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop",
-  },
-  {
-    id: "2",
-    title: "Inventário extrajudicial: quando é possível e quais documentos você vai precisar",
-    excerpt: "O inventário extrajudicial permite dividir o patrimônio deixado pelo falecido em cartório, de forma mais ágil. Veja os requisitos e vantagens...",
-    date: "19 de Março de 2026",
-    category: "Sucessões",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop",
-  },
-  {
-    id: "3",
-    title: "Guarda compartilhada: direitos, deveres e como o juiz decide o melhor interesse da criança",
-    excerpt: "Questões familiares costumam envolver emoções intensas, decisões urgentes e dúvidas que afetam diretamente a rotina e o patrimônio da família...",
-    date: "19 de Março de 2026",
-    category: "Família",
-    image: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&h=600&fit=crop",
-  },
-  {
-    id: "4",
-    title: "Planejamento sucessório: como blindar o patrimônio e evitar conflitos entre herdeiros",
-    excerpt: "O planejamento sucessório é uma ferramenta estratégica que permite organizar a transmissão de bens em vida, reduzindo custos e conflitos futuros...",
-    date: "06 de Março de 2026",
-    category: "Patrimônio",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
-  },
-  {
-    id: "5",
-    title: "Casamento no exterior: como reconhecer e registrar sua união no Brasil",
-    excerpt: "Casais que se casam fora do país precisam seguir procedimentos específicos para que o casamento tenha validade em território brasileiro...",
-    date: "06 de Março de 2026",
-    category: "Internacional",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop",
-  },
-  {
-    id: "6",
-    title: "Herança no exterior: como brasileiros podem receber bens deixados fora do país",
-    excerpt: "Receber uma herança no exterior envolve regras específicas de direito internacional privado. Entenda como proceder para garantir seus direitos...",
-    date: "06 de Março de 2026",
-    category: "Internacional",
-    image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=600&fit=crop",
-  },
-  {
-    id: "7",
-    title: "Pensão alimentícia: como funciona o cálculo, revisão e cobrança judicial em 2026",
-    excerpt: "A pensão alimentícia é um dos temas que mais geram dúvidas no Direito de Família. Isso acontece porque muitas pessoas ainda desconhecem...",
-    date: "06 de Março de 2026",
-    category: "Família",
-    image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&h=600&fit=crop",
-  },
-  {
-    id: "8",
-    title: "Holding familiar: vale a pena para proteger o patrimônio e reduzir tributos?",
-    excerpt: "A holding familiar tem se tornado uma solução recorrente para famílias que desejam organizar bens, reduzir carga tributária e planejar a sucessão...",
-    date: "06 de Março de 2026",
-    category: "Empresarial",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop",
-  },
-  {
-    id: "9",
-    title: "União estável: como comprovar, registrar e converter em casamento com segurança jurídica",
-    excerpt: "A união estável é reconhecida pela lei brasileira e gera direitos e deveres semelhantes ao casamento. Veja como formalizar corretamente...",
-    date: "06 de Março de 2026",
-    category: "Família",
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=600&fit=crop",
-  },
-];
 
 const CATEGORIES: Category[] = ["Família", "Sucessões", "Internacional", "Patrimônio", "Empresarial"];
 
