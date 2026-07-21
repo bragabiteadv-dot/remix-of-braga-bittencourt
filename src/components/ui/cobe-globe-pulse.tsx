@@ -72,7 +72,7 @@ export function GlobePulse({
     if (!canvasRef.current) return;
     const canvas = canvasRef.current;
     let globe: ReturnType<typeof createGlobe> | null = null;
-    let animationId: number;
+    let animationId: number | null = null;
     let phi = 0;
 
     function init() {
@@ -93,14 +93,12 @@ export function GlobePulse({
         markerColor: [0.96, 0.78, 0.58],
         glowColor: [0.05, 0.05, 0.08],
         markers: markers.map((m) => ({ location: m.location, size: 0.05 })),
-        onRender: (state) => {
+        onRender: (state: Record<string, number>) => {
           if (!isPausedRef.current) phi += speed;
           state.phi = phi + phiOffsetRef.current + dragOffset.current.phi;
           state.theta = 0.2 + thetaOffsetRef.current + dragOffset.current.theta;
-          state.width = width * 2;
-          state.height = width * 2;
         },
-      });
+      } as Parameters<typeof createGlobe>[1]);
 
       setTimeout(() => canvas && (canvas.style.opacity = "1"));
     }
@@ -118,7 +116,7 @@ export function GlobePulse({
     }
 
     return () => {
-      if (animationId) cancelAnimationFrame(animationId);
+      if (animationId !== null) cancelAnimationFrame(animationId);
       if (globe) globe.destroy();
     };
   }, [markers, speed]);
