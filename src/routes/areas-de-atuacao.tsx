@@ -1,14 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "../components/sections/Hero";
+import { TeamGrid } from "../components/sections/TeamGrid";
+import { ServiceListing } from "../components/sections/ServiceListing";
 import { ServicesTicker } from "../components/sections/ServicesTicker";
-import { FeatureGrid } from "../components/sections/FeatureGrid";
+import { CallToActionBanner } from "../components/sections/CallToActionBanner";
+import { ContactForm } from "../components/sections/ContactForm";
+import { Testimonials } from "../components/sections/Testimonials";
 
 export const Route = createFileRoute("/areas-de-atuacao")({
   component: AreasAtuacao,
   head: () => ({
     meta: [
       { title: "Áreas de Atuação | Braga Bitencourt Advogados" },
-      { name: "description", content: "Especialidades em Direito de Família, Sucessões e Direito Internacional." },
+      { name: "description", content: "Especialidades em Direito de Família, Sucessões e Direito Internacional Privado." },
       { property: "og:title", content: "Áreas de Atuação | Braga Bitencourt Advogados" },
+      { property: "og:description", content: "Especialidades em Direito de Família, Sucessões e Direito Internacional Privado." },
       { property: "og:url", content: "/areas-de-atuacao" },
     ],
     links: [{ rel: "canonical", href: "/areas-de-atuacao" }],
@@ -17,15 +23,14 @@ export const Route = createFileRoute("/areas-de-atuacao")({
 
 function AreasAtuacao() {
   return (
-    <div className="pt-24 pb-12">
-      <div className="container mx-auto text-center mb-12">
-        <h1 className="text-navy text-5xl font-cinzel mb-8">Nossas Especialidades</h1>
-        <p className="text-navy/60 max-w-2xl mx-auto italic font-montserrat">
-          Atuação multidisciplinar com foco em demandas patrimoniais e familiares complexas.
-        </p>
-      </div>
+    <>
+      <Hero />
+      <TeamGrid />
+      <ServiceListing />
       <ServicesTicker />
-      <FeatureGrid />
-    </div>
+      <CallToActionBanner />
+      <ContactForm />
+      <Testimonials />
+    </>
   );
 }
