@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MessageSquare, Phone, Mail, MapPin } from "lucide-react";
+import { MessageSquare, Phone, User, MapPin, Folder, ChevronDown } from "lucide-react";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -22,55 +22,48 @@ export function ContactForm() {
   return (
     <section id="contato" className="py-24 bg-navy relative overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto bg-[#0c1a32] rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/5">
+        <div className="max-w-6xl mx-auto bg-navy rounded-sm overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/5">
           
           {/* Left Column: Info & Photo */}
-          <div className="lg:w-2/5 relative">
+          <div className="lg:w-[45%] relative min-h-[500px]">
             <div className="absolute inset-0 z-0">
               <img 
-                src="https://bragabitencourt.com/wp-content/uploads/2026/06/escritorio-photo.jpg" 
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" 
                 alt="Office Environment" 
-                className="w-full h-full object-cover opacity-30"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent"></div>
+              <div className="absolute inset-0 bg-black/60"></div>
             </div>
 
-            <div className="relative z-10 p-12 h-full flex flex-col justify-between">
-              <div>
-                <span className="text-gold-light text-xs font-bold tracking-widest uppercase mb-4 block">Contato Imediato</span>
-                <h2 className="text-white text-4xl md:text-5xl font-cinzel leading-tight mb-8">
+            <div className="relative z-10 p-12 lg:p-16 h-full flex flex-col justify-end">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-[1px] bg-gold-dark"></span>
+                  <span className="text-gold-light text-xs font-bold tracking-widest uppercase">Contato Imediato</span>
+                </div>
+                
+                <h2 className="text-white text-4xl lg:text-5xl font-cinzel leading-tight">
                   Fale com a equipe de forma simples e direta.
                 </h2>
                 
-                <div className="flex flex-wrap gap-4 mb-12">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white/70 text-sm italic">
-                    <span className="w-2 h-2 rounded-full bg-gold-light"></span>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <div className="flex items-center gap-2 px-5 py-2 bg-black/40 border border-white/10 rounded-full text-white text-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold-light"></span>
                     Resposta rápida
                   </div>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white/70 text-sm italic">
-                    <span className="w-2 h-2 rounded-full bg-gold-light"></span>
+                  <div className="flex items-center gap-2 px-5 py-2 bg-black/40 border border-white/10 rounded-full text-white text-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold-light"></span>
                     Atendimento objetivo
                   </div>
-                </div>
-              </div>
-
-              <div className="space-y-6 pt-12 border-t border-white/10">
-                <div className="flex items-center gap-4 text-white/80">
-                  <Phone size={20} className="text-gold-light" />
-                  <span className="font-bold">(31) 98026-0880</span>
-                </div>
-                <div className="flex items-center gap-4 text-white/80">
-                  <Mail size={20} className="text-gold-light" />
-                  <span className="text-sm">bragabitencourtadv@gmail.com</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Column: Form */}
-          <div className="lg:w-3/5 p-12 lg:p-20 bg-navy/40">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="w-10 h-[1px] bg-gold-dark"></span>
+          <div className="lg:w-[55%] p-12 lg:p-20 bg-[#0a1427]">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-[1px] bg-gold-dark"></span>
               <span className="text-gold-light text-xs font-bold tracking-widest uppercase">WhatsApp</span>
               <MessageSquare size={16} className="text-gold-light" />
             </div>
@@ -78,73 +71,89 @@ export function ContactForm() {
             <h3 className="text-white text-3xl font-cinzel mb-4">
               Converse para uma orientação inicial
             </h3>
-            <p className="text-white/50 text-sm mb-12">Fale conosco agora.</p>
+            <p className="text-white/60 font-montserrat text-sm mb-12">Fale conosco agora.</p>
 
             <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label className="text-white/60 text-xs font-bold uppercase tracking-wider">Seu Nome</label>
-                  <input 
-                    type="text" 
-                    required
-                    placeholder="Ex: Seu nome"
-                    className="w-full bg-navy/50 border border-white/10 rounded-sm px-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20"
-                    value={formData.nome}
-                    onChange={(e) => setFormData({...formData, nome: e.target.value})}
-                  />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Nome Field */}
+                <div className="space-y-3">
+                  <label className="text-white text-xs font-bold uppercase tracking-wider block">Seu Nome</label>
+                  <div className="relative">
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
+                    <input 
+                      type="text" 
+                      required
+                      placeholder="Ex: Seu nome"
+                      className="w-full bg-[#0d1b32] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
+                      value={formData.nome}
+                      onChange={(e) => setFormData({...formData, nome: e.target.value})}
+                    />
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-white/60 text-xs font-bold uppercase tracking-wider">Cidade / UF</label>
-                  <input 
-                    type="text" 
-                    required
-                    placeholder="Ex: sua cidade ou estado"
-                    className="w-full bg-navy/50 border border-white/10 rounded-sm px-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20"
-                    value={formData.cidade}
-                    onChange={(e) => setFormData({...formData, cidade: e.target.value})}
-                  />
+
+                {/* Cidade Field */}
+                <div className="space-y-3">
+                  <label className="text-white text-xs font-bold uppercase tracking-wider block">Cidade / UF</label>
+                  <div className="relative">
+                    <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
+                    <input 
+                      type="text" 
+                      required
+                      placeholder="Ex: sua cidade ou estado"
+                      className="w-full bg-[#0d1b32] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
+                      value={formData.cidade}
+                      onChange={(e) => setFormData({...formData, cidade: e.target.value})}
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-white/60 text-xs font-bold uppercase tracking-wider">Tipo do Caso</label>
-                <select 
-                  required
-                  className="w-full bg-navy/50 border border-white/10 rounded-sm px-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors appearance-none"
-                  value={formData.caso}
-                  onChange={(e) => setFormData({...formData, caso: e.target.value})}
-                >
-                  <option value="" disabled className="bg-navy">Selecione o assunto</option>
-                  <option value="Divórcio" className="bg-navy">Divórcio</option>
-                  <option value="Inventário" className="bg-navy">Inventário</option>
-                  <option value="Guarda / Pensão" className="bg-navy">Guarda / Pensão</option>
-                  <option value="Sucessão / Testamento" className="bg-navy">Sucessão / Testamento</option>
-                  <option value="Direito Internacional" className="bg-navy">Direito Internacional</option>
-                  <option value="Outros" className="bg-navy">Outros assuntos</option>
-                </select>
+              {/* Caso Field */}
+              <div className="space-y-3">
+                <label className="text-white text-xs font-bold uppercase tracking-wider block">Tipo do Caso</label>
+                <div className="relative">
+                  <Folder className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
+                  <select 
+                    required
+                    className="w-full bg-[#0d1b32] border border-white/10 rounded-sm pl-12 pr-12 py-4 text-white focus:outline-none focus:border-gold-light transition-colors appearance-none text-sm font-montserrat"
+                    value={formData.caso}
+                    onChange={(e) => setFormData({...formData, caso: e.target.value})}
+                  >
+                    <option value="" disabled>Ex: Divórcio, inventário, homologação de sentença estrangeira...</option>
+                    <option value="Divórcio" className="bg-[#0a1427]">Divórcio</option>
+                    <option value="Inventário" className="bg-[#0a1427]">Inventário</option>
+                    <option value="Guarda / Pensão" className="bg-[#0a1427]">Guarda / Pensão</option>
+                    <option value="Sucessão / Testamento" className="bg-[#0a1427]">Sucessão / Testamento</option>
+                    <option value="Direito Internacional" className="bg-[#0a1427]">Direito Internacional</option>
+                    <option value="Outros" className="bg-[#0a1427]">Outros assuntos</option>
+                  </select>
+                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4 pointer-events-none" />
+                </div>
               </div>
 
-              <div className="pt-8 flex flex-col sm:flex-row items-center gap-6">
-                <button 
-                  type="submit"
-                  className="btn-primary w-full sm:flex-grow"
-                >
-                  Falar com Advogado
-                  <MessageSquare size={18} />
-                </button>
+              <div className="space-y-6">
+                <p className="text-white/40 text-xs font-montserrat italic">
+                  Conversa rápida, clara e sem complicação.
+                </p>
 
-                <button 
-                  type="button"
-                  onClick={handleClear}
-                  className="text-white/40 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors py-2 px-4"
-                >
-                  Limpar
-                </button>
+                <div className="flex items-stretch gap-4">
+                  <button 
+                    type="button"
+                    onClick={handleClear}
+                    className="px-6 py-4 bg-[#0d1b32] border border-white/10 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all rounded-sm min-w-[100px]"
+                  >
+                    Limpar
+                  </button>
+                  
+                  <button 
+                    type="submit"
+                    className="btn-primary flex-grow py-4 text-sm"
+                  >
+                    FALAR COM ADVOGADO
+                    <Phone size={18} />
+                  </button>
+                </div>
               </div>
-
-              <p className="text-center text-[10px] text-white/30 uppercase tracking-[0.2em] pt-4 italic">
-                Conversa rápida, clara e sem complicação.
-              </p>
             </form>
           </div>
 
