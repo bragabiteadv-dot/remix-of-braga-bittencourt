@@ -1,6 +1,6 @@
 import { Phone } from "lucide-react";
 import officeBHAsset from "@/assets/office-bh-new.jpg.asset.json";
-import officeBetimAsset from "@/assets/office-betim.png.asset.json";
+import officeBetimAsset from "@/assets/office-betim-new.jpg.asset.json";
 
 export function PhysicalPresence() {
   const offices = [
