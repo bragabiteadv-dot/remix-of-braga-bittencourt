@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Search, Calendar } from "lucide-react";
+import { Search, Calendar, ImageIcon } from "lucide-react";
 import { ARTICLES, type Category } from "@/lib/articles";
 
 export const Route = createFileRoute("/artigos")({
