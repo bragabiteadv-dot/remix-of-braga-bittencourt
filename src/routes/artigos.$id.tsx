@@ -35,7 +35,7 @@ export const Route = createFileRoute("/artigos/$id")({
 });
 
 function ArticlePage() {
-  const { article } = Route.useLoaderData();
+  const { article } = Route.useLoaderData() as { article: Article };
   const [query, setQuery] = useState("");
   const [showAll, setShowAll] = useState(false);
   const [activeId, setActiveId] = useState<string>(article.sections[0]?.id ?? "");
