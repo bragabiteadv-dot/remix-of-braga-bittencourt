@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { Search, Calendar, ImageIcon } from "lucide-react";
 import { ARTICLES, type Category } from "@/lib/articles";
 
-export const Route = createFileRoute("/artigos")({
+export const Route = createFileRoute("/artigos/")({
   component: Artigos,
   head: () => ({
     meta: [
