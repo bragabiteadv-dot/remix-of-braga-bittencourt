@@ -53,7 +53,7 @@ function Duvidas() {
             href="/fale-conosco"
             className="inline-block bg-gold-gradient text-navy font-bold px-10 py-4 rounded-sm uppercase tracking-widest hover:scale-105 transition-transform"
           >
-            Fale com Advogado
+            Falar com Advogado
           </a>
         </div>
       </div>

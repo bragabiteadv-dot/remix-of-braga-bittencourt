@@ -23,7 +23,7 @@ export const CallToActionBanner = () => {
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            FALE COM ADVOGADO
+            FALAR COM ADVOGADO
             <svg
               stroke="currentColor"
               fill="currentColor"
