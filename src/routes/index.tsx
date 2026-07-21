@@ -7,6 +7,7 @@ import { ServicesTicker } from "../components/sections/ServicesTicker";
 import { HistorySection } from "../components/sections/HistorySection";
 import { ServiceListing } from "../components/sections/ServiceListing";
 import { CallToActionBanner } from "../components/sections/CallToActionBanner";
+import { PracticeAreas } from "../components/sections/PracticeAreas";
 import { LocationsSection } from "../components/sections/LocationsSection";
 import { FounderCard } from "../components/sections/FounderCard";
 import { ContactForm } from "../components/sections/ContactForm";
@@ -36,6 +37,7 @@ function Index() {
       <HistorySection />
       <ServiceListing />
       <CallToActionBanner />
+      <PracticeAreas />
       <LocationsSection />
       <FounderCard />
       <ContactForm />
