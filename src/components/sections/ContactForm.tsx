@@ -149,7 +149,7 @@ export function ContactForm() {
                     type="submit"
                     className="btn-primary flex-grow py-4 text-sm"
                   >
-                    FALAR COM ADVOGADO
+                    FALE COM ADVOGADO
                     <Phone size={18} />
                   </button>
                 </div>
