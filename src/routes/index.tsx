@@ -6,6 +6,7 @@ import { Differentials } from "../components/sections/Differentials";
 import { ServicesTicker } from "../components/sections/ServicesTicker";
 import { HistorySection } from "../components/sections/HistorySection";
 import { ServiceListing } from "../components/sections/ServiceListing";
+import { CallToActionBanner } from "../components/sections/CallToActionBanner";
 import { LocationsSection } from "../components/sections/LocationsSection";
 import { FounderCard } from "../components/sections/FounderCard";
 import { ContactForm } from "../components/sections/ContactForm";
@@ -34,6 +35,7 @@ function Index() {
       <ServicesTicker />
       <HistorySection />
       <ServiceListing />
+      <CallToActionBanner />
       <LocationsSection />
       <FounderCard />
       <ContactForm />
