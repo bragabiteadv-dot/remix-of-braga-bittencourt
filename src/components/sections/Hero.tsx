@@ -87,7 +87,7 @@ export function Hero() {
               href="https://wa.me/5531980260880?text=Olá! Acessei o site e gostaria de falar com um advogado."
               className="btn-primary w-full sm:w-auto"
             >
-              FALE COM ADVOGADO
+              FALAR COM ADVOGADO
               <WhatsAppIcon />
             </a>
           </div>

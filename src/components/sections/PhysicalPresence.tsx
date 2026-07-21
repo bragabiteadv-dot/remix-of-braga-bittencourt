@@ -72,7 +72,7 @@ export function PhysicalPresence() {
                     rel="noopener noreferrer"
                     className="btn-primary w-full py-4 text-sm tracking-[0.2em] flex items-center justify-center gap-2"
                   >
-                    FALE COM ADVOGADO <Phone className="w-4 h-4" />
+                    FALAR COM ADVOGADO <Phone className="w-4 h-4" />
                   </a>
 
                   <p className="text-navy/60 font-montserrat text-sm leading-relaxed">

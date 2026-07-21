@@ -99,7 +99,7 @@ export const ServiceListing = () => {
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            FALE COM ADVOGADO
+            FALAR COM ADVOGADO
             <svg
               stroke="currentColor"
               fill="currentColor"
