@@ -24,7 +24,7 @@ export function TeamGrid() {
         style={{ backgroundImage: "url('https://bragabitencourt.com/wp-content/uploads/2026/06/cityscape-bg.jpg')" }}
       ></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <h2 className="text-white text-5xl font-cinzel text-center mb-20 tracking-widest uppercase">
           Nossa Equipe
         </h2>

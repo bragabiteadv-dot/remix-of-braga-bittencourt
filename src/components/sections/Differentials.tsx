@@ -36,7 +36,7 @@ export function Differentials() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <span className="text-gold font-montserrat text-xs tracking-[0.3em] uppercase mb-4 block">
             Diferenciais

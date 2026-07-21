@@ -6,7 +6,7 @@ export const ActionMoment = () => {
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-radial-gradient from-blue-900/10 to-transparent pointer-events-none" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24">
           
           {/* Left Column - Content */}

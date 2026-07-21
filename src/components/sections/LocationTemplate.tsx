@@ -39,7 +39,7 @@ export function LocationTemplate({
     <div className="pt-24 pb-24">
       <section className="bg-navy py-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style={{ backgroundImage: "url('https://bragabitencourt.com/wp-content/uploads/2026/06/cityscape-bg.jpg')" }}></div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
+        <div className="container mx-auto relative z-10 text-center">
           <h1 className="text-white text-5xl md:text-7xl font-cinzel mb-8 uppercase tracking-widest">{city}</h1>
           <p className="text-gold-light text-xl font-montserrat max-w-2xl mx-auto mb-12 italic">
             Atendimento jurídico especializado com foco em resultados e segurança para sua família e patrimônio.
@@ -59,7 +59,7 @@ export function LocationTemplate({
       </section>
 
       <section className="py-24 bg-navy">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
             <span className="text-gold-dark text-xs font-bold tracking-[0.3em] uppercase mb-6 block">Áreas de Atuação</span>
             <h2 className="text-white text-4xl md:text-5xl font-cinzel mb-8">O que fazemos por você em {city}</h2>

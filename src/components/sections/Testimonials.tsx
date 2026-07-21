@@ -63,7 +63,7 @@ export const Testimonials = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <span className="text-gold-400 font-montserrat tracking-[0.3em] text-sm uppercase block mb-4">
             DEPOIMENTOS

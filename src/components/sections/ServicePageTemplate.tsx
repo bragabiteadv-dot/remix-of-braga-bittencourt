@@ -18,7 +18,7 @@ export function ServicePageTemplate({
   return (
     <div className="pt-24 pb-24">
       <section className="bg-navy py-16 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto relative z-10">
           <Link 
             to={parentHref as any}
             className="inline-flex items-center gap-2 text-gold-light text-xs font-bold uppercase tracking-widest mb-8 hover:gap-4 transition-all"
@@ -35,7 +35,7 @@ export function ServicePageTemplate({
       </section>
 
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="prose prose-navy max-w-none">
               <div className="text-navy/80 font-montserrat leading-relaxed space-y-6" dangerouslySetInnerHTML={{ __html: content }}>

@@ -6,7 +6,7 @@ export function Header() {
     <header className="w-full flex flex-col">
       {/* Top Bar */}
       <div className="bg-navy text-white/80 py-2 border-b border-white/10 hidden md:block">
-        <div className="container mx-auto px-4 flex justify-between items-center text-xs">
+        <div className="container mx-auto flex justify-between items-center text-xs">
           <div className="flex items-center gap-6">
             <a href="https://maps.google.com/?q=place_id:ChIJN6Hrhwq-pgARC_1Evk1cels" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold-light transition-colors">
               <MapPin size={14} className="text-gold-light" />
@@ -39,7 +39,7 @@ export function Header() {
 
       {/* Main Nav */}
       <nav className="bg-navy sticky top-0 z-50 py-4 border-b border-white/5 shadow-xl">
-        <div className="container mx-auto px-4 flex justify-between items-center">
+        <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
             <img 
               src="https://bragabitencourt.com/wp-content/uploads/2026/06/Camada-2-1024x300.png" 

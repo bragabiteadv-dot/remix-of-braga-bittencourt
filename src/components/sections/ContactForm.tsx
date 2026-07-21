@@ -21,7 +21,7 @@ export function ContactForm() {
 
   return (
     <section id="contato" className="py-24 bg-navy relative overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="max-w-6xl mx-auto bg-navy rounded-sm overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/5">
           
           {/* Left Column: Info & Photo */}

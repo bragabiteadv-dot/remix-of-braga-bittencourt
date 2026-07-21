@@ -30,7 +30,7 @@ export function FeatureGrid() {
 
   return (
     <section className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-navy text-4xl font-cinzel mb-6">Sobre Nosso Trabalho</h2>
           <p className="text-navy/70 text-lg max-w-3xl mx-auto font-montserrat italic">

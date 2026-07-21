@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer className="bg-navy text-white pt-16 pb-8 border-t border-white/5">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="flex flex-col items-center mb-16">
           <Link to="/">
             <img 

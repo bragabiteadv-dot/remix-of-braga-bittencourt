@@ -26,7 +26,7 @@ export const PracticeAreas = () => {
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(12,26,50,0.8)_0%,transparent_70%)] pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <span className="text-[#F8D59B] text-sm tracking-[0.3em] font-montserrat uppercase block mb-4">
             Áreas de Atuação

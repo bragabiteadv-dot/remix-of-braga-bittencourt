@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 export function LocationsSection() {
   return (
     <section className="py-24 bg-white border-t border-navy/5">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-navy text-4xl font-cinzel mb-8">Nossas Localidades</h2>
           <p className="text-navy/60 mb-16 max-w-2xl mx-auto font-montserrat">
