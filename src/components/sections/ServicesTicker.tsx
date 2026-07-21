@@ -9,8 +9,8 @@ export function ServicesTicker() {
   const items = [...services, ...services, ...services, ...services, ...services, ...services];
 
   return (
-    <section className="py-12 bg-white border-y border-navy/5 overflow-hidden">
-      <div className="flex animate-marquee whitespace-nowrap">
+    <section className="h-20 bg-white border-y border-navy/5 overflow-hidden flex items-center">
+      <div className="flex animate-marquee whitespace-nowrap items-center">
         {items.map((service, idx) => (
           <div key={idx} className="flex items-center mx-8">
             <span className="text-navy/20 mr-8 text-xl">⚖</span>
