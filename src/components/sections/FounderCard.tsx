@@ -101,7 +101,7 @@ export function FounderCard() {
                 href="https://wa.me/5531980260880?text=Olá! Acessei a página perfil do escritório e gostaria de falar com um especialista."
                 className="btn-primary"
               >
-                FALAR COM ADVOGADO
+                FALE COM ADVOGADO
                 <WhatsAppIcon className="ml-2 w-5 h-5" />
               </a>
             </div>

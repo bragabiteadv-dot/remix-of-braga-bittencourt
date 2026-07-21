@@ -54,7 +54,7 @@ export function TeamGrid() {
             href="https://wa.me/5531980260880?text=Olá! Gostaria de falar com um advogado da equipe."
             className="btn-primary w-full sm:w-auto"
           >
-            FALAR COM ADVOGADO
+            FALE COM ADVOGADO
             <WhatsAppIcon />
           </a>
         </div>
