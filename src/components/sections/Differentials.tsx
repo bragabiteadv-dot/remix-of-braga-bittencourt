@@ -1,6 +1,8 @@
 import { TreeDeciduous, ChessKnight, Globe } from "lucide-react";
+import { useRevealOnScroll } from "../../hooks/use-reveal-on-scroll";
 
 export function Differentials() {
+  const { ref, isVisible } = useRevealOnScroll();
   const items = [
     {
       label: "Arquitetura sucessória e legado.",
@@ -44,7 +46,10 @@ export function Differentials() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div 
+          ref={ref}
+          className={`grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger ${isVisible ? 'visible' : ''}`}
+        >
           {items.map((item, idx) => (
             <div 
               key={idx}
