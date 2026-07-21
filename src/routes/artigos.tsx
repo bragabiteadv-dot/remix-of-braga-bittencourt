@@ -132,10 +132,15 @@ function Artigos() {
                     {article.excerpt}
                   </p>
                   <div className="mt-auto">
-                    <button className="w-full py-3 rounded-full bg-gold-gradient text-navy font-montserrat text-xs uppercase tracking-[0.2em] font-semibold shadow-md hover:shadow-lg hover:brightness-105 transition-all">
+                    <Link
+                      to="/artigos/$id"
+                      params={{ id: article.id }}
+                      className="block w-full text-center py-3 rounded-full bg-gold-gradient text-navy font-montserrat text-xs uppercase tracking-[0.2em] font-semibold shadow-md hover:shadow-lg hover:brightness-105 transition-all"
+                    >
                       Leia mais
-                    </button>
+                    </Link>
                   </div>
+
                 </div>
               </article>
             ))}
