@@ -108,14 +108,25 @@ function Artigos() {
                 key={article.id}
                 className="group bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(40,54,80,0.15)] border border-navy/5 hover:shadow-[0_20px_50px_-20px_rgba(40,54,80,0.35)] hover:-translate-y-1 transition-all duration-500 flex flex-col"
               >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
+                <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#f5eee0] via-[#faf6ed] to-[#e8dcc4]">
+                  {article.image ? (
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+                      <div className="w-14 h-14 rounded-full bg-white/60 backdrop-blur flex items-center justify-center">
+                        <ImageIcon size={22} className="text-gold-light" />
+                      </div>
+                      <p className="text-navy/40 text-[10px] uppercase tracking-[0.25em] font-montserrat">
+                        Imagem em breve
+                      </p>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 flex items-center gap-2 bg-navy/70 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full font-montserrat">
                     <Calendar size={12} />
                     {article.date}
