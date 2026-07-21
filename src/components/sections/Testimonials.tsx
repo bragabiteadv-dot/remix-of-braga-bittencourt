@@ -34,6 +34,12 @@ const testimonials = [
     date: "3 meses atrás",
     text: "Excelente advogado, com postura firme e estratégica em casos de Família e Sucessões. Atendimento claro, objetivo e muito profissional. Recomendo o Dr. Javet sem ressalvas!!",
   },
+  {
+    name: "Ana Paula Ribeiro",
+    rating: 5,
+    date: "1 mês atrás",
+    text: "Profissional excepcional! O Dr. Braga conduziu meu processo com extrema competência, transparência e humanidade. Sempre disponível para esclarecer dúvidas e explicar cada etapa com clareza. Recomendo de olhos fechados a todos que precisam de um advogado sério e comprometido.",
+  },
 ];
 
 export const Testimonials = () => {
