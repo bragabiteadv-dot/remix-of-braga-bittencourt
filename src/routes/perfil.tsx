@@ -1,5 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "../components/sections/Hero";
+import { TeamGrid } from "../components/sections/TeamGrid";
+import { ServicesTicker } from "../components/sections/ServicesTicker";
+import { HistorySection } from "../components/sections/HistorySection";
 import { FounderCard } from "../components/sections/FounderCard";
+import { ContactForm } from "../components/sections/ContactForm";
 
 export const Route = createFileRoute("/perfil")({
   component: Perfil,
@@ -16,8 +21,13 @@ export const Route = createFileRoute("/perfil")({
 
 function Perfil() {
   return (
-    <div className="pt-20">
+    <>
+      <Hero />
+      <TeamGrid />
+      <ServicesTicker />
+      <HistorySection />
       <FounderCard />
-    </div>
+      <ContactForm />
+    </>
   );
 }
