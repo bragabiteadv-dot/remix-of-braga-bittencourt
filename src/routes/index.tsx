@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "../components/sections/Hero";
 import { FeatureGrid } from "../components/sections/FeatureGrid";
 import { TeamGrid } from "../components/sections/TeamGrid";
+import { Differentials } from "../components/sections/Differentials";
 import { ServicesTicker } from "../components/sections/ServicesTicker";
 import { LocationsSection } from "../components/sections/LocationsSection";
 import { FounderCard } from "../components/sections/FounderCard";
@@ -27,6 +28,7 @@ function Index() {
       <Hero />
 
       <TeamGrid />
+      <Differentials />
       <ServicesTicker />
       <LocationsSection />
       <FounderCard />
