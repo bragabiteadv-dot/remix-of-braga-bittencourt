@@ -1,5 +1,17 @@
-import type { Article, Category } from './articles-types';
-export type { Article, Category };
+export type Category = "Família" | "Sucessões" | "Internacional" | "Patrimônio" | "Empresarial";
+
+export interface Article {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readingTime: string;
+  category: Category;
+  image: string;
+  body: string[];
+}
+
 export const ARTICLES: Article[] = [
   {
     id: "1",
