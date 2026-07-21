@@ -14,6 +14,7 @@ import { ActionMoment } from "../components/sections/ActionMoment";
 import { FAQ } from "../components/sections/FAQ";
 import { GlobalReach } from "../components/sections/GlobalReach";
 import { Testimonials } from "../components/sections/Testimonials";
+import { PhysicalPresence } from "../components/sections/PhysicalPresence";
 import { ContactForm } from "../components/sections/ContactForm";
 
 export const Route = createFileRoute("/")({
@@ -48,6 +49,7 @@ function Index() {
       <FAQ />
       <GlobalReach />
       <Testimonials />
+      <PhysicalPresence />
       <ContactForm />
     </>
   );

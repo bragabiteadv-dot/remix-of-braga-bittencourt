@@ -170,8 +170,9 @@
   }
 
   & svg {
-    @apply text-[23px] transition-transform duration-500 fill-white stroke-white;
-    color: #283650 !important;
+    @apply transition-transform duration-500;
+    color: inherit !important;
+    fill: currentColor !important;
   }
 
   &:hover svg {
