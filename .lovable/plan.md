@@ -1,33 +1,19 @@
-# Migration Plan: Braga Bitencourt Law Firm
+## Diagnóstico
 
-Rebuilding the existing law firm website from WordPress/Elementor to TanStack Start + Tailwind v4 while maintaining absolute fidelity to the original design, copy, and layout.
+O arquivo `src/routes/artigos.tsx` funciona como **rota-pai** de `src/routes/artigos.$id.tsx` no roteamento por arquivos do TanStack Router. Quando um arquivo pai tem filhos, ele vira layout e precisa renderizar `<Outlet />` para o conteúdo do filho aparecer. Como `artigos.tsx` renderiza a listagem completa (e não um `<Outlet />`), ao navegar para `/artigos/1` a URL muda, mas o React continua exibindo a listagem — e o scroll vai ao topo por causa da nova navegação. É exatamente o sintoma descrito.
 
-## 1. Design System & Assets (`src/styles.css`, `src/routes/__root.tsx`)
-- **Typography**: Load `Cinzel` (headings) and `Montserrat` (body) via `<link>` in `__root.tsx`.
-- **Colors**: Define variables in `src/styles.css` for navy background (`#0a1427`), gold gradient buttons (`#cd9575` to `#f3c694`), and white/dark text.
-- **Assets**: Upload all images from `bragabitencourt.com` using `lovable-assets` to serve them from CDN.
+## Correção
 
-## 2. Core Architecture (`src/routes/`)
-- **Global Layout (`__root.tsx`)**: Sticky header (Logo, Menu, CTA), Top info bar, Footer (Socials, Addresses, Maps), and floating WhatsApp button.
-- **Home (`index.tsx`)**: Replicate every section (Hero, Features, Team, Services Ticker, Founder bio, Form).
-- **New Section**: Add a "Localidades" section on Home with buttons for "BETIM" and "BELO HORIZONTE".
+Converter `/artigos` em uma rota-folha irmã da rota de detalhe, seguindo o padrão canônico do TanStack (`*.index.tsx` para a folha):
 
-## 3. Route Inventory
-- **Static Pages**: `/perfil`, `/areas-de-atuacao`, `/duvidas`, `/fale-conosco`, `/artigos`.
-- **Location Hubs**: `/betim`, `/belo-horizonte`.
-- **Service Pages**: 
-  - `/betim/advocacia-[familia|sucessoes|internacional]`
-  - `/belo-horizonte/advocacia-[familia|sucessoes|internacional]`
-- **Template**: Use a shared `CityServicePage` component to keep the 6 service pages consistent while varying metadata and copy.
+1. Renomear `src/routes/artigos.tsx` → `src/routes/artigos.index.tsx`.
+2. Atualizar o `createFileRoute("/artigos")` para `createFileRoute("/artigos/")` dentro do arquivo (o gerador exige o path terminando em `/` para rotas `index`).
+3. Deixar `src/routes/artigos.$id.tsx` como está — ele passa a ser irmão e roda sozinho.
+4. O `routeTree.gen.ts` é regenerado automaticamente; nenhuma outra edição é necessária.
 
-## 4. SEO & Compliance
-- **Metadata**: Unique `head()` for every route (title, description, canonical, OG/Twitter tags).
-- **Schema.org**: `LegalService` at root, `FAQPage` for dudas, `LocalBusiness` for location hubs, `BreadcrumbList` for service pages.
-- **Technical SEO**: Dynamic `/sitemap.xml` server route and `public/robots.txt`.
+Nenhum outro arquivo precisa mudar: os `<Link to="/artigos/$id" params={{ id }}>` já estão corretos, e os links de navegação para `/artigos` continuam válidos.
 
-## 5. Performance & UX
-- **Performance**: Preload LCP images, lazy load below-the-fold assets, and minimize bundle size.
-- **Form**: Maintain the 3-field contact form with WhatsApp deep link handoff.
-- **Accessibility**: Semantic HTML (`<main>`, `<h1>-<h6>`), `aria-label` for icons, and 44x44px tap targets.
+## Verificação após implementar
 
-Implementation starts now with the design tokens and root shell.
+- Clicar em "Leia mais" em `/artigos` deve navegar para `/artigos/1` e renderizar a página de detalhe (título, imagem placeholder, corpo, sidebar).
+- Voltar via "Voltar para artigos" deve retornar à listagem com os filtros funcionando.
