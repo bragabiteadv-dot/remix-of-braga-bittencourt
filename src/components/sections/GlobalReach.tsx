@@ -3,7 +3,7 @@ import mapAsset from '@/assets/global-map.png.asset.json';
 
 export const GlobalReach = () => {
   return (
-    <section className="bg-[#050b16] py-20 overflow-hidden">
+    <section className="bg-[#050b16] py-20 overflow-hidden px-10 md:px-20 lg:px-32">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left Content */}
         <div className="flex-1 text-left">
