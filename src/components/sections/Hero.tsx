@@ -54,7 +54,7 @@ export function Hero() {
       <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out fill-mode-forwards">
           
           {/* Left Column: Text Content */}
           <div className="lg:w-[55%] flex flex-col items-start pt-10">
@@ -94,7 +94,7 @@ export function Hero() {
 
           {/* Right Column: Floating Panel Card */}
           <div className="lg:w-[45%] w-full flex justify-center lg:justify-end">
-            <div className="w-full max-w-[500px] bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 lg:p-10 shadow-2xl relative">
+            <div className="w-full max-w-[500px] glass-card rounded-[2rem] p-8 lg:p-10 shadow-2xl relative">
               {/* Shine effect on card */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
               
@@ -103,14 +103,14 @@ export function Hero() {
                   <span className="text-white text-sm font-bold opacity-70">Sobre Nosso Trabalho</span>
                 </div>
                 <p className="text-white/70 text-center text-sm md:text-base font-montserrat leading-relaxed px-4">
-                  Advocacia de excelência focada em segurança jurídica, visão prática e soluções objetivas com totla clareza desde o primeiro contato.
+                  Advocacia de excelência focada em segurança jurídica, visão prática e soluções objetivas com total clareza desde o primeiro contato.
                 </p>
               </div>
 
               {/* Bento Grid Features */}
               <div className="grid grid-cols-2 gap-4">
                 {features.map((feature, idx) => (
-                  <div key={idx} className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px]">
+                  <div key={idx} className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]">
                     <h3 className="text-white text-[28px] md:text-[32px] font-bold font-montserrat mb-3 leading-tight">{feature.title}</h3>
                     
                     <div className="mb-4">

@@ -1,4 +1,5 @@
 import { User, FileText, Globe } from "lucide-react";
+import { useRevealOnScroll } from "../../hooks/use-reveal-on-scroll";
 
 const practiceAreas = [
   {
@@ -19,6 +20,7 @@ const practiceAreas = [
 ];
 
 export const PracticeAreas = () => {
+  const { ref, isVisible } = useRevealOnScroll();
   return (
     <section className="py-24 bg-[#050b16] relative overflow-hidden">
       {/* Background radial glow */}
@@ -35,7 +37,10 @@ export const PracticeAreas = () => {
           <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div 
+          ref={ref}
+          className={`grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto reveal-stagger ${isVisible ? 'visible' : ''}`}
+        >
           {practiceAreas.map((area, idx) => (
             <div
               key={idx}
