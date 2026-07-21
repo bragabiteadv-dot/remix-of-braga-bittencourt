@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Calendar, Clock, Search, Link2, Share2, ChevronDown, ArrowLeft } from "lucide-react";
-import { ARTICLES, getArticleById } from "@/lib/articles";
+import { ARTICLES, getArticleById, type Article } from "@/lib/articles";
 import { HistorySection } from "@/components/sections/HistorySection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { GlobalReach } from "@/components/sections/GlobalReach";
