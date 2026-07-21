@@ -1,4 +1,4 @@
-import logoTreeAsset from "@/assets/logo-tree.png.asset.json";
+import logoTreeAsset from "@/assets/logo-tree-new.png.asset.json";
 
 export function HistorySection() {
   return (
