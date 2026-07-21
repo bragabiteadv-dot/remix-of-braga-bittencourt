@@ -131,7 +131,7 @@ export function ContactForm() {
                 </div>
               </div>
 
-              <div className="space-y-6 pt-4">
+              <div className="space-y-6">
                 <p className="text-white/40 text-xs font-montserrat italic">
                   Conversa rápida, clara e sem complicação.
                 </p>
@@ -140,7 +140,7 @@ export function ContactForm() {
                   <button 
                     type="button"
                     onClick={handleClear}
-                    className="px-8 py-4 bg-[#0d1b32] border border-white/10 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors rounded-sm"
+                    className="px-6 py-4 bg-[#0d1b32] border border-white/10 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all rounded-sm min-w-[100px]"
                   >
                     Limpar
                   </button>
@@ -150,7 +150,7 @@ export function ContactForm() {
                     className="btn-primary flex-grow py-4 text-sm"
                   >
                     FALAR COM ADVOGADO
-                    <Phone size={18} className="fill-[#283650]" />
+                    <Phone size={18} />
                   </button>
                 </div>
               </div>
