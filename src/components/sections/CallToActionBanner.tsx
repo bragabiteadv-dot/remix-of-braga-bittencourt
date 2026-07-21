@@ -1,4 +1,4 @@
-import bannerAsset from "@/assets/banner-advogados.png.asset.json";
+import bannerAsset from "@/assets/cta-banner-bg.jpg.asset.json";
 
 export const CallToActionBanner = () => {
   return (
