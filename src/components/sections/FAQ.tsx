@@ -122,7 +122,7 @@ export const FAQ = () => {
 
   return (
     <section className="bg-[#f8fafc] py-16">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+      <div className="container mx-auto flex flex-col lg:flex-row gap-12">
         
         {/* Main Content */}
         <div className="flex-1">
