@@ -90,7 +90,7 @@
 
 @layer base {
   .container {
-    @apply px-6 md:px-12 lg:px-16;
+    @apply px-10 md:px-20 lg:px-32;
   }
 
   * {
