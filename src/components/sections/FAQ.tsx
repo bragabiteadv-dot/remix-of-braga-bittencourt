@@ -209,7 +209,7 @@ export const FAQ = () => {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              FALAR COM ADVOGADO
+              FALE COM ADVOGADO
               <Phone className="ml-2 w-5 h-5 fill-current" />
             </a>
           </div>
@@ -238,7 +238,7 @@ export const FAQ = () => {
                 rel="noopener noreferrer"
                 className="btn-primary w-full text-center flex justify-center"
               >
-                FALAR COM ADVOGADO
+                FALE COM ADVOGADO
                 <Phone className="ml-2 w-5 h-5 fill-current" />
               </a>
             </div>
