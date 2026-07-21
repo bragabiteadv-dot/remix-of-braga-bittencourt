@@ -12,6 +12,7 @@ import { LocationsSection } from "../components/sections/LocationsSection";
 import { FounderCard } from "../components/sections/FounderCard";
 import { ActionMoment } from "../components/sections/ActionMoment";
 import { FAQ } from "../components/sections/FAQ";
+import { GlobalReach } from "../components/sections/GlobalReach";
 import { ContactForm } from "../components/sections/ContactForm";
 
 export const Route = createFileRoute("/")({
@@ -44,6 +45,7 @@ function Index() {
       <FounderCard />
       <ActionMoment />
       <FAQ />
+      <GlobalReach />
       <ContactForm />
     </>
   );
