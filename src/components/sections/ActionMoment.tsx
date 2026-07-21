@@ -1,4 +1,4 @@
-import actionMomentAsset from "@/assets/action-moment.png.asset.json";
+import actionMomentAsset from "@/assets/action-moment-new.jpg.asset.json";
 
 export const ActionMoment = () => {
   return (
