@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
       { title: "Braga Bitencourt Advogados | Família e Sucessões" },
       { name: "description", content: "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais. Inventários, divórcios e planejamento sucessório." },
       { property: "og:title", content: "Braga Bitencourt Advogados | Família e Sucessões" },
-      { property: "og:description", content: "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais." },
+      { property: "og:description", content: "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais. Inventários, divórcios e planejamento sucessório." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
