@@ -5,6 +5,7 @@ import { TeamGrid } from "../components/sections/TeamGrid";
 import { Differentials } from "../components/sections/Differentials";
 import { ServicesTicker } from "../components/sections/ServicesTicker";
 import { LocationsSection } from "../components/sections/LocationsSection";
+import { HistorySection } from "../components/sections/HistorySection";
 import { FounderCard } from "../components/sections/FounderCard";
 import { ContactForm } from "../components/sections/ContactForm";
 
@@ -30,6 +31,7 @@ function Index() {
       <TeamGrid />
       <Differentials />
       <ServicesTicker />
+      <HistorySection />
       <LocationsSection />
       <FounderCard />
       <ContactForm />
