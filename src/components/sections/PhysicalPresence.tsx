@@ -27,7 +27,7 @@ export function PhysicalPresence() {
       {/* Background radial gradient similar to image */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-navy-light)_0%,_var(--color-navy)_100%)] opacity-40"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel leading-tight uppercase tracking-wider">
             Presença física e atendimento jurídico<br />especializado de alto padrão

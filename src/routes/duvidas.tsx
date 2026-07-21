@@ -37,7 +37,7 @@ function Duvidas() {
 
   return (
     <div className="pt-32 pb-24 bg-[#fcfbf8]">
-      <div className="container mx-auto px-4 max-w-3xl">
+      <div className="container mx-auto max-w-3xl">
         <h1 className="text-navy text-5xl font-cinzel text-center mb-16">Dúvidas Frequentes</h1>
         
         <div className="space-y-4">

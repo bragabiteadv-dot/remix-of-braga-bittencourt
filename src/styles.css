@@ -89,6 +89,10 @@
 }
 
 @layer base {
+  .container {
+    @apply px-6 md:px-12 lg:px-16;
+  }
+
   * {
     border-color: var(--color-border);
   }

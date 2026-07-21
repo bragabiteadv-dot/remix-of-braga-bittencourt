@@ -11,7 +11,7 @@ export const CallToActionBanner = () => {
         <div className="absolute inset-0 bg-navy/60 backdrop-blur-[2px]"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="container mx-auto relative z-10 text-center">
         <h2 className="text-2xl md:text-3xl lg:text-4xl text-white font-cinzel mb-10 max-w-4xl mx-auto leading-relaxed uppercase tracking-wider">
           ESTÁ ENFRENTANDO ALGUMA DESSAS SITUAÇÕES? CONVERSE AGORA MESMO COM UM DE NOSSOS ADVOGADOS ESPECIALISTAS!
         </h2>

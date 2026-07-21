@@ -16,7 +16,7 @@ export const Route = createFileRoute("/artigos")({
 function Artigos() {
   return (
     <div className="pt-32 pb-24 min-h-[70vh] flex items-center justify-center">
-      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto text-center">
         <h1 className="text-navy text-5xl font-cinzel mb-8">Artigos e Conteúdo</h1>
         <div className="max-w-2xl mx-auto p-12 bg-navy rounded-sm shadow-2xl">
           <h2 className="text-gold-light text-2xl font-cinzel mb-4 tracking-widest uppercase">Em Breve</h2>

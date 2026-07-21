@@ -121,7 +121,7 @@ export const FAQ = () => {
   })).filter(category => category.items.length > 0);
 
   return (
-    <section className="bg-[#f8fafc] py-16 px-4">
+    <section className="bg-[#f8fafc] py-16">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
         
         {/* Main Content */}

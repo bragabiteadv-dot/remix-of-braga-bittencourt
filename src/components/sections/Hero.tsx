@@ -53,7 +53,7 @@ export function Hero() {
       {/* Background radial highlight */}
       <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
       
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out fill-mode-forwards">
           
           {/* Left Column: Text Content */}

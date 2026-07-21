@@ -18,7 +18,7 @@ export function FounderCard() {
 
   return (
     <section id="perfil" className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 lg:gap-12">
           
           {/* Office Info Card */}

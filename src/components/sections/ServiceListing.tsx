@@ -56,7 +56,7 @@ export const ServiceListing = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl text-white text-center mb-16 font-cinzel">
           Veja nossos serviços
         </h2>
