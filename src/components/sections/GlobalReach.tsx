@@ -1,5 +1,4 @@
-import React from 'react';
-import { GlobePulse } from '@/components/ui/cobe-globe-pulse';
+import RotatingEarth from '@/components/ui/wireframe-dotted-globe';
 
 export const GlobalReach = () => {
   return (
@@ -25,16 +24,7 @@ export const GlobalReach = () => {
 
         {/* Right Content - Map */}
         <div className="flex-1 flex justify-center items-center relative">
-          <GlobePulse
-            className="w-full"
-            markers={[
-              { id: 'pulse-1', location: [-19.92, -43.94], delay: 0 },
-              { id: 'pulse-2', location: [38.72, -9.14], delay: 0.4 },
-              { id: 'pulse-3', location: [40.71, -74.01], delay: 0.8 },
-              { id: 'pulse-4', location: [51.51, -0.13], delay: 1.2 },
-              { id: 'pulse-5', location: [35.68, 139.65], delay: 1.6 },
-            ]}
-          />
+          <RotatingEarth width={600} height={600} />
         </div>
       </div>
     </section>
