@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "8f90f010-38a9-4aff-977d-e9977ca9d6cf",
-  "project_id": "999ff455-85cf-4735-ae9d-e32ad0862dc2",
-  "url": "/__l5e/assets-v1/8f90f010-38a9-4aff-977d-e9977ca9d6cf/office-bh-new.jpg",
-  "r2_key": "a/v1/999ff455-85cf-4735-ae9d-e32ad0862dc2/8f90f010-38a9-4aff-977d-e9977ca9d6cf/office-bh-new.jpg",
-  "original_filename": "office-bh-new.jpg",
-  "size": 2403464,
   "content_type": "image/png",
-  "created_at": "2026-07-21T17:41:23Z"
+  "created_at": "2026-07-21T17:41:23Z",
+  "original_filename": "office-bh-new.jpg",
+  "project_id": "97ad5e82-0f2d-43a8-9f25-ff084ef6a1cc",
+  "r2_key": "a/v1/97ad5e82-0f2d-43a8-9f25-ff084ef6a1cc/8f90f010-38a9-4aff-977d-e9977ca9d6cf/office-bh-new.jpg",
+  "size": 2403464,
+  "url": "/__l5e/assets-v1/8f90f010-38a9-4aff-977d-e9977ca9d6cf/office-bh-new.jpg",
+  "version": 1
 }
