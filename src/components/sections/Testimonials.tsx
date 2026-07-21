@@ -40,6 +40,12 @@ const testimonials = [
     date: "1 mês atrás",
     text: "Profissional excepcional! O Dr. Braga conduziu meu processo com extrema competência, transparência e humanidade. Sempre disponível para esclarecer dúvidas e explicar cada etapa com clareza. Recomendo de olhos fechados a todos que precisam de um advogado sério e comprometido.",
   },
+  {
+    name: "Ricardo Almeida",
+    rating: 5,
+    date: "2 semanas atrás",
+    text: "Contratei o escritório para um caso complexo de sucessão internacional e fui surpreendido pela excelência do atendimento. Equipe extremamente preparada, estratégica e cuidadosa em cada detalhe. O Dr. Braga e sua equipe superaram todas as minhas expectativas. Recomendo fortemente!",
+  },
 ];
 
 export const Testimonials = () => {
