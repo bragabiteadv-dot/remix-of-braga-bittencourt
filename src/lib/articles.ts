@@ -1,370 +1,368 @@
-export type Category = "Família" | "Sucessões" | "Internacional" | "Patrimônio" | "Empresarial";
-
-export interface ArticleSection {
-  id: string;
-  title: string;
-  content: string[];
-}
-
-export interface Article {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readingTime: string;
-  category: Category;
-  image: string;
-  intro: string[];
-  sections: ArticleSection[];
-}
-
-const slug = (s: string) =>
-  s
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-
-const build = (
-  id: string,
-  title: string,
-  category: Category,
-  date: string,
-  readingTime: string,
-  image: string,
-  excerpt: string,
-  intro: string[],
-  sections: Omit<ArticleSection, "id">[],
-): Article => ({
-  id,
-  slug: slug(title),
-  title,
-  category,
-  date,
-  readingTime,
-  image,
-  excerpt,
-  intro,
-  sections: sections.map((s) => ({ ...s, id: slug(s.title) })),
-});
-
+import type { Article, Category } from './articles-types';
+export type { Article, Category };
 export const ARTICLES: Article[] = [
-  build(
-    "1",
-    "Divórcio consensual: como agilizar o processo e proteger o patrimônio da família",
-    "Família",
-    "19 de Março de 2026",
-    "9 min de leitura",
-    "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&h=900&fit=crop",
-    "O divórcio consensual é uma alternativa mais rápida e menos desgastante para casais que desejam encerrar o vínculo conjugal.",
-    [
-      "O divórcio consensual é a via mais rápida, econômica e menos desgastante para encerrar formalmente o casamento no Brasil. Quando há acordo entre as partes sobre patrimônio, guarda dos filhos e pensão, o processo pode se resolver em poucas semanas.",
-      "Neste guia, explicamos passo a passo como funciona, quando é possível fazer em cartório, quais documentos são exigidos e como proteger o patrimônio familiar durante a divisão.",
-    ],
-    [
-      {
-        title: "O que é o divórcio consensual",
-        content: [
-          "Divórcio consensual é aquele em que ambos os cônjuges concordam com o fim do casamento e com todas as questões relacionadas: partilha de bens, guarda dos filhos, pensão alimentícia e alteração de nome.",
-          "Diferente do divórcio litigioso, não há disputa judicial: as partes apenas formalizam o que já foi combinado.",
-        ],
-      },
-      {
-        title: "Divórcio em cartório: quando é possível",
-        content: [
-          "É possível fazer o divórcio em cartório (extrajudicial) quando o casal não tem filhos menores ou incapazes e há acordo integral sobre a partilha.",
-          "Havendo filhos menores, o divórcio deve tramitar em juízo, mesmo que consensual, para que o Ministério Público verifique os interesses da criança.",
-        ],
-      },
-      {
-        title: "Documentos necessários",
-        content: [
-          "Documentos pessoais dos cônjuges, certidão de casamento atualizada, pacto antenupcial (se houver), certidão de nascimento dos filhos e comprovantes dos bens a partilhar.",
-          "É indispensável a presença de advogado — comum aos dois cônjuges ou um para cada parte.",
-        ],
-      },
-      {
-        title: "Como proteger o patrimônio da família",
-        content: [
-          "Uma partilha bem planejada evita disputas futuras e reduz impactos tributários. Avalie regime de bens, dívidas comuns, bens no exterior e reservas de meação.",
-          "Uma assessoria jurídica especializada pode identificar oportunidades legítimas de blindagem patrimonial e planejamento sucessório dentro do próprio acordo de divórcio.",
-        ],
-      },
-    ],
-  ),
-  build(
-    "2",
-    "Inventário extrajudicial: quando é possível e quais documentos você vai precisar",
-    "Sucessões",
-    "19 de Março de 2026",
-    "8 min de leitura",
-    "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&h=900&fit=crop",
-    "O inventário extrajudicial permite dividir o patrimônio deixado pelo falecido em cartório, de forma mais ágil.",
-    [
-      "O inventário extrajudicial é a forma mais rápida de partilhar bens após o falecimento, feita diretamente em cartório de notas.",
-      "Quando os requisitos legais são atendidos, o processo pode ser concluído em semanas — em vez dos meses ou anos que um inventário judicial exige.",
-    ],
-    [
-      {
-        title: "Quando é possível o inventário extrajudicial",
-        content: [
-          "É cabível quando todos os herdeiros são maiores e capazes, há consenso sobre a partilha e não existe testamento (ou o testamento já foi cumprido judicialmente).",
-        ],
-      },
-      {
-        title: "Documentos necessários",
-        content: [
-          "Certidão de óbito, documentos dos herdeiros, certidões negativas de tributos, escrituras e matrículas dos imóveis, extratos bancários e declaração de ITCMD.",
-        ],
-      },
-      {
-        title: "Custos e prazos",
-        content: [
-          "Além dos honorários advocatícios, incidem taxas de cartório e o ITCMD estadual. Em geral, o inventário extrajudicial se conclui entre 30 e 90 dias.",
-        ],
-      },
-    ],
-  ),
-  build(
-    "3",
-    "Guarda compartilhada: direitos, deveres e como o juiz decide o melhor interesse da criança",
-    "Família",
-    "19 de Março de 2026",
-    "10 min de leitura",
-    "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=1600&h=900&fit=crop",
-    "Entenda como funciona a guarda compartilhada, quais são os direitos e deveres de cada genitor e como o juiz decide.",
-    [
-      "A guarda compartilhada é a regra no ordenamento jurídico brasileiro. Ela pressupõe a corresponsabilidade dos pais na criação, educação e decisões importantes da vida dos filhos.",
-    ],
-    [
-      {
-        title: "O que é guarda compartilhada",
-        content: [
-          "Guarda compartilhada não significa dividir o tempo em partes iguais, e sim compartilhar decisões e responsabilidades sobre a vida da criança.",
-        ],
-      },
-      {
-        title: "Como o juiz decide",
-        content: [
-          "O critério central é o melhor interesse da criança. O juiz avalia rotina, vínculos, condições de moradia e capacidade de diálogo entre os pais.",
-        ],
-      },
-      {
-        title: "Direitos e deveres dos pais",
-        content: [
-          "Ambos participam de decisões sobre escola, saúde e viagens. As despesas são divididas conforme a capacidade financeira de cada um.",
-        ],
-      },
-    ],
-  ),
-  build(
-    "4",
-    "Planejamento sucessório: como blindar o patrimônio e evitar conflitos entre herdeiros",
-    "Patrimônio",
-    "06 de Março de 2026",
-    "12 min de leitura",
-    "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&h=900&fit=crop",
-    "O planejamento sucessório organiza a transmissão de bens em vida, reduzindo custos e conflitos.",
-    [
-      "Planejar a sucessão é um ato de cuidado com a família. Um bom planejamento reduz a carga tributária, evita disputas entre herdeiros e assegura que a vontade do titular seja respeitada.",
-    ],
-    [
-      {
-        title: "Instrumentos disponíveis",
-        content: [
-          "Doações com reserva de usufruto, holding familiar, testamento, seguros de vida e previdência privada são alguns dos instrumentos combinados em um bom plano.",
-        ],
-      },
-      {
-        title: "Vantagens tributárias",
-        content: [
-          "Um planejamento adequado pode reduzir significativamente a incidência do ITCMD e antecipar decisões que evitariam conflitos e custos processuais.",
-        ],
-      },
-      {
-        title: "Quando começar",
-        content: [
-          "Quanto antes, melhor. Estruturas patrimoniais mais complexas exigem tempo para amadurecer e produzir efeitos plenos.",
-        ],
-      },
-    ],
-  ),
-  build(
-    "5",
-    "Casamento no exterior: como reconhecer e registrar sua união no Brasil",
-    "Internacional",
-    "06 de Março de 2026",
-    "7 min de leitura",
-    "https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&h=900&fit=crop",
-    "Casais que se casam fora do país precisam seguir procedimentos específicos para reconhecer a união no Brasil.",
-    [
-      "Um casamento válido no exterior só produz efeitos plenos no Brasil após o registro no cartório competente.",
-    ],
-    [
-      {
-        title: "Documentos exigidos",
-        content: [
-          "Certidão de casamento estrangeira apostilada, tradução juramentada, documentos pessoais e comprovante de residência.",
-        ],
-      },
-      {
-        title: "Onde registrar",
-        content: [
-          "Se um dos cônjuges reside no Brasil, o registro é feito no 1º Ofício do domicílio. Se residem no exterior, no consulado brasileiro do local.",
-        ],
-      },
-    ],
-  ),
-  build(
-    "6",
-    "Herança no exterior: como brasileiros podem receber bens deixados fora do país",
-    "Internacional",
-    "06 de Março de 2026",
-    "9 min de leitura",
-    "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1600&h=900&fit=crop",
-    "Receber uma herança no exterior envolve regras específicas de direito internacional privado.",
-    [
-      "Herdar bens localizados fora do Brasil exige o cumprimento das regras do país onde os bens estão situados e a correta declaração no Brasil.",
-    ],
-    [
-      {
-        title: "Lei aplicável",
-        content: [
-          "Cada país tem regras próprias sobre sucessão. Em geral, imóveis seguem a lei do local; bens móveis, a lei do domicílio do falecido.",
-        ],
-      },
-      {
-        title: "Tributação no Brasil",
-        content: [
-          "A herança recebida no exterior deve ser declarada à Receita Federal, e pode haver incidência de ITCMD, conforme o estado.",
-        ],
-      },
-    ],
-  ),
-  build(
-    "7",
-    "Pensão alimentícia: como funciona o cálculo, revisão e cobrança judicial em 2026",
-    "Família",
-    "06 de Março de 2026",
-    "11 min de leitura",
-    "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=1600&h=900&fit=crop",
-    "Entenda como funciona o cálculo, a revisão e a cobrança judicial da pensão alimentícia em 2026.",
-    [
-      "A pensão alimentícia é um dos temas que mais geram dúvidas no Direito de Família. Isso acontece porque muitas pessoas ainda acreditam que existe um valor fixo por lei, que o pagamento sempre termina aos 18 anos ou que qualquer atraso pode ser resolvido da mesma forma.",
-      "Na prática, cada caso exige análise cuidadosa. O cálculo depende das necessidades de quem recebe e das possibilidades de quem paga, a revisão depende de mudança real na situação financeira ou familiar, e a cobrança judicial segue regras próprias.",
-    ],
-    [
-      {
-        title: "O que é pensão alimentícia e quem pode ter direito",
-        content: [
-          "A pensão alimentícia é o valor pago periodicamente para garantir alimentação, moradia, saúde, educação, vestuário e lazer de quem não pode se sustentar sozinho.",
-          "Podem receber pensão filhos menores, filhos maiores em situação específica (como estudantes universitários), ex-cônjuges em determinadas condições e, em casos excepcionais, pais e outros parentes.",
-        ],
-      },
-      {
-        title: "Quem pode pedir pensão alimentícia",
-        content: [
-          "Qualquer pessoa que dependa financeiramente de outra e comprove necessidade pode pleitear pensão. O pedido é feito por meio de ação judicial, com apoio de advogado.",
-        ],
-      },
-      {
-        title: "Existe valor fixo para pensão alimentícia?",
-        content: [
-          "Não. A lei brasileira não fixa um valor único: a pensão é definida caso a caso, aplicando o binômio necessidade x possibilidade.",
-        ],
-      },
-      {
-        title: "Como funciona o cálculo da pensão alimentícia",
-        content: [
-          "O juiz analisa as necessidades reais do alimentando e a capacidade financeira do alimentante. Considera-se renda formal, informal, patrimônio e responsabilidades do pagador.",
-        ],
-      },
-      {
-        title: "Pensão fixada em percentual da renda",
-        content: [
-          "É comum a fixação em percentual do salário líquido do alimentante (frequentemente entre 20% e 30%), ajustado automaticamente conforme a variação da renda.",
-        ],
-      },
-      {
-        title: "Pensão fixada em valor determinado",
-        content: [
-          "Quando o alimentante é autônomo ou tem renda variável, o juiz pode fixar valor determinado, corrigido periodicamente por índice oficial.",
-        ],
-      },
-      {
-        title: "Revisão e cobrança judicial",
-        content: [
-          "A pensão pode ser revista se houver mudança relevante na situação de qualquer das partes. O atraso permite cobrança judicial, penhora e até prisão civil do devedor.",
-        ],
-      },
-    ],
-  ),
-  build(
-    "8",
-    "Holding familiar: vale a pena para proteger o patrimônio e reduzir tributos?",
-    "Empresarial",
-    "06 de Março de 2026",
-    "10 min de leitura",
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=900&fit=crop",
-    "A holding familiar organiza bens, reduz carga tributária e facilita a sucessão.",
-    [
-      "A holding familiar é uma sociedade constituída para concentrar o patrimônio da família, facilitando gestão, planejamento tributário e sucessão.",
-    ],
-    [
-      {
-        title: "Como funciona",
-        content: [
-          "Os bens são integralizados ao capital social da holding, e os herdeiros recebem quotas — que podem ser doadas com reserva de usufruto.",
-        ],
-      },
-      {
-        title: "Vantagens",
-        content: [
-          "Redução de custos sucessórios, proteção patrimonial, governança familiar e organização tributária.",
-        ],
-      },
-      {
-        title: "Cuidados",
-        content: [
-          "A holding precisa ter propósito real e substância. Estruturas artificiais podem ser desconsideradas pela Receita.",
-        ],
-      },
-    ],
-  ),
-  build(
-    "9",
-    "União estável: como comprovar, registrar e converter em casamento com segurança jurídica",
-    "Família",
-    "06 de Março de 2026",
-    "8 min de leitura",
-    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600&h=900&fit=crop",
-    "A união estável é reconhecida pela lei brasileira e gera direitos e deveres semelhantes ao casamento.",
-    [
-      "Formalizar a união estável dá segurança jurídica ao casal e evita disputas futuras sobre patrimônio, previdência e sucessão.",
-    ],
-    [
-      {
-        title: "Como comprovar",
-        content: [
-          "Convivência pública, contínua e duradoura, com objetivo de constituir família. Pode ser demonstrada por documentos, testemunhas e provas materiais.",
-        ],
-      },
-      {
-        title: "Escritura pública",
-        content: [
-          "A forma mais segura é a escritura declaratória em cartório, que pode definir o regime de bens aplicável.",
-        ],
-      },
-      {
-        title: "Conversão em casamento",
-        content: [
-          "A conversão é simples e pode ser feita em cartório, preservando a data original de início da convivência para fins de meação e sucessão.",
-        ],
-      },
-    ],
-  ),
+  {
+    id: "1",
+    slug: "divorcio-e-uniao-estavel-especialidade-do-escritorio-braga-bittencourt",
+    title: "Divórcio e União Estável: Especialidade do Escritório Braga Bittencourt",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "No cenário jurídico contemporâneo, o Direito de Família e Sucessório desempenha um papel fundamental na estruturação e resolução de questões que envolvem relações pessoais e patrimoniais. O escritório...",
+    body: ["No cenário jurídico contemporâneo, o Direito de Família e Sucessório desempenha um papel fundamental na estruturação e resolução de questões que envolvem relações pessoais e patrimoniais. O escritório Braga Bittencourt Advogados se destaca como referência nessa área, oferecendo serviços especializados e exclusivos com quase 20 anos de experiência, sempre com resultados impactantes.", "Nossa Abordagem Exclusiva e Personalizada", "Cada cliente e cada caso são únicos para nós. Nossa equipe altamente qualificada aplica estratégias personalizadas e cuidadosamente moldadas para atender às necessidades e anseios específicos daqueles que nos contratam. Nosso compromisso é proporcionar realização e bem-estar a todos os nossos clientes, garantindo um atendimento de excelência em cada etapa do processo.", "Divórcio: Caminho para uma Nova Vida", "O divórcio é um momento delicado e significativo na vida de qualquer pessoa. No Braga Bittencourt Advogados, entendemos a importância de tratar cada caso de divórcio com a sensibilidade e a competência necessárias. Nosso objetivo é facilitar esse processo, minimizando conflitos e assegurando que os direitos e interesses dos nossos clientes sejam plenamente protegidos. Através de uma abordagem assertiva e humanizada, trabalhamos para que o divórcio seja conduzido de maneira rápida e eficaz, sempre buscando soluções que promovam o equilíbrio e a justiça. Seja na mediação de acordos amigáveis ou na condução de processos litigiosos, estamos preparados para oferecer o melhor suporte jurídico.", "União Estável: Garantindo Direitos e Segurança Jurídica", "A união estável é uma forma de convivência reconhecida legalmente, que confere direitos e deveres semelhantes aos do casamento. No Braga Bittencourt Advogados, orientamos nossos clientes sobre os aspectos legais dessa forma de união, garantindo que todas as questões patrimoniais e pessoais sejam devidamente regulamentadas. Nosso escritório atua na formalização de contratos de convivência, na definição de regimes de bens e na proteção dos direitos de ambos os parceiros, assegurando que todas as questões legais sejam tratadas com a devida atenção e expertise.", "Liderança e Excelência: Dr. Carlos Javét Braga Bittencourt", "Nosso escritório é liderado pelo renomado Dr. Carlos Javét Braga Bittencourt, um dos mais destacados advogados na área de Direito de Família e Sucessões. Graduado pela PUC/MG e", "com diversas especializações, Dr. Bittencourt possui um vasto conhecimento e experiência que são essenciais para a condução de casos complexos e sensíveis. Dr. Bittencourt é especializado em Direito de Família e Sucessões pelo IBMEC/SP e pela EBRADI/UNA, em Direito Constitucional pela Universidade Estácio de Sá, e em Direito Civil e Processual Civil pelo Instituto Preaetorium/LFG. Além disso, possui especialização em Contabilidade Pública pelo CADE/BH, o que lhe confere uma visão abrangente e detalhada das questões jurídicas e patrimoniais. Como advogado titular cartorário de um reconhecido Cartório de Registro Civil de Belo Horizonte e com uma longa trajetória de participação ativa em comissões da OAB, Dr. Bittencourt traz um diferencial significativo para nosso escritório, garantindo um atendimento jurídico de excelência.", "Estamos à Sua Disposição", "No Braga Bittencourt Advogados, estamos comprometidos em proporcionar um atendimento de alta qualidade, baseado na ética, no respeito e na dedicação. Seja para questões de divórcio ou união estável, estamos prontos para oferecer o suporte necessário para que nossos clientes alcancem a satisfação e a tranquilidade que merecem. Seja bem-vindo ao nosso escritório. Estamos à sua disposição para ajudá-lo a resolver suas questões jurídicas com competência e sensibilidade. Entre em contato conosco e descubra como podemos fazer a diferença em sua vida.", "Braga Bittencourt Advogados Referência em Direito de Família e Sucessões Liderança de Dr. Carlos Javét Braga Bittencourt Quase 20 anos de experiência com milhares de casos solucionados"],
+  },
+  {
+    id: "2",
+    slug: "inventario",
+    title: "Inventário",
+    category: "Sucessões",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "No delicado e muitas vezes complexo campo do Direito das Sucessões, a expertise e a abordagem personalizada são fundamentais para garantir que a partilha de bens e direitos ocorra de maneira justa e e...",
+    body: ["No delicado e muitas vezes complexo campo do Direito das Sucessões, a expertise e a abordagem personalizada são fundamentais para garantir que a partilha de bens e direitos ocorra de maneira justa e eficiente. O escritório Braga Bittencourt Advogados se destaca como referência nessa área, oferecendo serviços especializados e exclusivos com quase 20 anos de experiência e milhares de casos solucionados com resultados impactantes.", "Nossa Abordagem Personalizada e Eficaz", "Cada cliente e cada processo de inventário são únicos para nós. Entendemos que lidar com questões sucessórias envolve não apenas aspectos legais, mas também emocionais. Por isso, aplicamos estratégias personalizadas e cuidadosamente moldadas para atender às necessidades e anseios específicos de cada cliente. Nosso compromisso é proporcionar uma condução tranquila e eficiente do processo de inventário, minimizando conflitos e assegurando que todos os interesses sejam protegidos.", "Inventário: Facilitando a Transmissão de Bens", "O inventário é o procedimento pelo qual se faz o levantamento e a distribuição do patrimônio deixado por uma pessoa falecida. No Braga Bittencourt Advogados, oferecemos suporte completo em todas as etapas do processo de inventário, desde a preparação dos documentos necessários até a homologação da partilha de bens. Nossa equipe está preparada para lidar com inventários judiciais e extrajudiciais, sempre buscando a solução mais rápida e menos onerosa para nossos clientes. Com nossa experiência e conhecimento aprofundado, garantimos que todas as questões patrimoniais e tributárias sejam tratadas com a devida atenção, assegurando a correta transmissão dos bens e a proteção dos direitos dos herdeiros. Nosso objetivo é facilitar o processo e proporcionar segurança jurídica a todos os envolvidos.", "Direito das Sucessões: Protegendo o Legado Familiar", "O Direito das Sucessões abrange todas as normas e procedimentos relacionados à transmissão de bens, direitos e obrigações após a morte de uma pessoa. No Braga Bittencourt Advogados, atuamos com excelência em todas as questões sucessórias, oferecendo orientação e representação jurídica em casos de testamentos, inventários, partilhas e disputas entre herdeiros. Nossa abordagem é sempre pautada pela ética, pela transparência e pelo respeito aos desejos do falecido e aos direitos dos herdeiros. Trabalhamos para que o processo sucessório seja conduzido de maneira justa e eficiente, preservando o legado familiar e assegurando que todas as disposições legais sejam rigorosamente cumpridas.", "Liderança e Excelência: Dr. Carlos Javét Braga Bittencourt", "O escritório Braga Bittencourt Advogados é liderado pelo renomado Dr. Carlos Javét Braga Bittencourt, um dos mais destacados advogados na área de Direito de Família e Sucessões. Graduado pela PUC/MG e com diversas especializações, Dr. Bittencourt possui um vasto conhecimento e experiência que são essenciais para a condução de casos complexos de inventário e sucessões. Dr. Bittencourt é especializado em Direito de Família e Sucessões pelo IBMEC/SP e pela EBRADI/UNA, em Direito Constitucional pela Universidade Estácio de Sá, e em Direito Civil e Processual Civil pelo Instituto Preaetorium/LFG. Além disso, possui especialização em Contabilidade Pública pelo CADE/BH, o que lhe confere uma visão abrangente e detalhada das questões jurídicas e patrimoniais envolvidas nos processos sucessórios. Como advogado titular cartorário de um reconhecido Cartório de Registro Civil de Belo Horizonte e com uma longa trajetória de participação ativa em comissões da OAB, Dr. Bittencourt traz um diferencial significativo para nosso escritório, garantindo um atendimento jurídico de excelência.", "Estamos à Sua Disposição", "No Braga Bittencourt Advogados, estamos comprometidos em proporcionar um atendimento de alta qualidade, baseado na ética, no respeito e na dedicação. Seja para questões de inventário ou qualquer outra demanda no âmbito do Direito das Sucessões, estamos prontos para oferecer o suporte necessário para que nossos clientes alcancem a satisfação e a tranquilidade que merecem. Seja bem-vindo ao nosso escritório. Estamos à sua disposição para ajudá-lo a resolver suas questões jurídicas com competência e sensibilidade. Entre em contato conosco e descubra como podemos fazer a diferença em sua vida.", "Braga Bittencourt Advogados Referência em Direito de Família e Sucessões Liderança de Dr. Carlos Javét Braga Bittencourt Quase 20 anos de experiência com milhares de casos solucionados"],
+  },
+  {
+    id: "3",
+    slug: "guarda-compartilhada",
+    title: "Guarda Compartilhada",
+    category: "Sucessões",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "1- O que é a guarda compartilhada?...",
+    body: ["1- O que é a guarda compartilhada?", "A guarda compartilhada não se confunde com a guarda alternada, pois não significa que cada genitor deverá manter a custódia física da criança por períodos iguais e pré-definidos, mas sim que são responsáveis, juntos, pelas decisões sobre o sustento e educação dos filhos, exercendo conjuntamente o chamado poder familiar, como cita o art. 1.634 do CC/02 .", "Preparamos este artigo para esclarecer algumas questões sobre esse tema do Direito de Família", "Disputa pelos filhos", "Guarda compartilhada: regra ou exceção?", "Quando um dos pais pode perder o direito à guarda compartilhada?", "Qual é a diferença entre guarda compartilhada e guarda alternada?", "Como funciona o direito de visitar os filhos (regime de convivência)?", "Lar de referência", "2- Disputa pelos filhos", "A guarda talvez seja o maior ponto de litígio entre pais que estão se divorciando. Muitos utilizam os filhos como moeda de troca para satisfação de desejos pessoais de vinganças, por exemplo, que permeiam o ambiente hostil do divórcio ou separação.", "3- A guarda compartilhada: regra ou exceção?", "A guarda compartilhada se tornou a regra na ordem jurídica brasileira, ainda que ausente o consentimento dos genitores ( art. 1.584, §2º, CC/02 – alterado pela Lei 13.058 de 2014 ). Em conclusão, o pai ou a mãe não precisa concordar com a guarda compartilhada para que ela tenha efeito, salvo se um dos genitores declarar ao juiz que não deseja a guarda dos filhos.", "4- Quando um dos pais pode perder o direito à guarda?", "Isso pode acontecer caso um dos pais se encontre inapto a exercer o poder familiar, pela suspensão ou extinção dele por decisão judicial transitada em julgado.", "5- Qual é a diferença entre guarda compartilhada e guarda alternada?", "A guarda compartilhada não se confunde com a guarda alternada (inexistente no Brasil), pois não significa que cada genitor deverá manter a custódia física da criança por períodos iguais e pré-definidos. Significa que os pais são responsáveis, em conjunto, pelas decisões sobre a guarda, sustento e educação da prole. Nos exatos termos do art. 1.634 do CC/02 .", "O tempo de convivência com os genitores, no caso da guarda compartilhada, deve ser o mais amplo possível, equalizado conforme a disponibilidade de cada pai e observado o melhor interesse da criança/adolescente.", "6- Como funciona o direito de “visitar” os filhos (regime de convivência)?", "Pais não visitam filhos e sim com eles convivem. Em outras palavras, é mais correto usar o termo “regime de convivência” do que “visita”. Assim, o regime de convivência pode variar caso a caso, a depender da disponibilidade dos pais, preservando o equilíbrio da convivência entre os pais para com os filhos ( art. 1.584, §3º, CC/02).", "7- Lar de referência e cidade base de moradia", "A lei não fala sobre a necessidade de um lar de referência, mas sim uma cidade base de moradia. Assim, se os pais residem em locais próximos, os filhos podem ter ambas residências como referência, em convívio amplo com os genitores.", "Veja que a fixação de cidade base de moradia é importante fator para evitar que um dos genitores se mude para cidade distante e prejudique a convivência da criança com o outro genitor.", "8- Quem tem o dever de pagar a pensão", "Muitas vezes a disputa sobre o “lar de referência” se dá em razão do pagamento de pensão. A rigor, se a guarda é compartilhada, as funções de cada genitor também são. Assim, três fatores influenciam no arbitramento da pensão:", "Equilíbrio", "Possibilidades de cada pai", "Necessidade dos filhos", "9- Conclusão", "Em conclusão, vale dizer que muitos acionam a justiça para pedir a modificação da guarda compartilhada sem argumentos sólidos. No seu caso, você considera que possui boas provas e argumentos para a sua ação ou defesa?", "Por fim, caso esteja em uma situação delicada que envolva esse tema ou outros do Direito de Família, fale com um advogado especialista.", "Artigo escrito pelos advogados especialistas em Direito de Família,", "Javét Braga Bitencourt", "e editado por", "Fernanda Gaiotto Machado, com Conteúdo Estratégico", "Conheça o nosso escritório, especializado em Direito de Família.", "Leia também o nosso artigo sobre Partilha de bens ou divisão de bens."],
+  },
+  {
+    id: "4",
+    slug: "partilha-de-bens-ou-divisao-de-bens",
+    title: "Partilha de bens ou divisão de bens",
+    category: "Sucessões",
+    date: "Março de 2026",
+    readingTime: "4 min de leitura",
+    image: "",
+    excerpt: "A partilha de bens ou a divisão de bens no divórcio, separação ou dissolução da união estável obedece aos critérios do regime de bens que o casal escolheu: comunhão parcial de bens, comunhão total ou ...",
+    body: ["A partilha de bens ou a divisão de bens no divórcio, separação ou dissolução da união estável obedece aos critérios do regime de bens que o casal escolheu: comunhão parcial de bens, comunhão total ou universal de bens, separação total de bens, separação legal de bens e participação final nos aquestos. Na maioria das vezes, o regime adotado é o da comunhão parcial.", "A Lei possibilita, para o casamento, que o casal escolha o regime de bens, através do pacto antenupcial, contrato pré-nupcial ou convenção matrimonial. Para a união estável tem-se o contrato de convivência para mesma finalidade, escolha do regime de bens.", "Se o casal não optou por um regime de bens, o regime aplicável será o da comunhão parcial, como prevê o artigo 1.640 do Código Civil.", "Partilha de bens no regime de comunhão parcial de bens:", "No regime de comunhão parcial de bens, a divisão dos bens adquiridos durante a união do casal será igualitária. Os bens que cada uma das partes adquiriu, antes da união, não farão parte da partilha.", "Por exemplo, se durante a união o casal adquiriu uma casa e um carro, ainda que os bens estejam apenas no nome de um dos cônjuges, eles devem ser divididos entre os dois.", "Se há outro bem, como um terreno, por exemplo, que o casal adquiriu antes da união, a partilha não conterá esse bem. Ou seja, tudo o que cada um comprou antes da união não integra a divisão de bens do casal.", "Deve-se observar, contudo, que caso haja um bem doado ou herdado, ele também ficará fora da divisão dos bens do casal, sendo cabível exclusivamente àquele que o recebeu. (bem como os sub-rogados em seu lugar).", "Por fim, é válido lembrar que as dívidas também são partilháveis, ou seja, havendo dívida constituída durante o casamento ou união estável, em benefício da família, ela será deve ser dividida entre os cônjuges/companheiros.", "Regime de comunhão total ou universal de bens:", "Nesse regime, todos os bens e dívidas integrarão a divisão patrimonial, inclusive os adquiridos anteriormente à união, salvo os bens doados ou herdados com indicação expressa de incomunicabilidade, ou seja, estes não farão parte dos bens do casal.", "Na oportunidade do divórcio, haverá a divisão de bens em partes iguais.", "Regime de separação total de bens:", "No regime de separação total de bens, não há partilha de bens ou dívidas. No entanto, devem expressar a opção por esse regime formalmente.", "Regime da separação legal ou obrigatória de bens.", "O regime da separação legal ou obrigatória de bens ocorre para aqueles que possuem mais de 70 anos de idade ao se casar ou constituir união estável, para os que não observam as causas suspensivas de casamento e para aqueles que dependem de autorização judicial para o casamento.", "Embora pareça que cada parte terá seus bens particulares e que não haverá partilha de bens por ocasião da dissolução da união estável ou do casamento, na prática, ele se assemelhará ao regime da comunhão parcial de bens. Isto porque o Supremo Tribunal Federal, pela Súmula 377, determinou de forma vinculante que os bens adquiridos na constância do casamento, o que se aplica também à união estável, serão partilhados entre o casal.", "Excluem-se da partilha, de qualquer forma, além dos adquiridos anteriormente à união, aqueles adquiridos por doação e herança.", "Partilha de bens e participação final nos aquestos:", "Por esse regime, também chamado misto, cada cônjuge possui seu patrimônio particular durante o casamento podendo até mesmo, caso expressamente consignado em pacto antenupcial, vende-los sem a assinatura do outro cônjuge. Contudo, ao final da união caberá a cada parte a metade desses bens, com a ressalva de bens adquiridos por doação ou herança, que não serão partilhados.", "Sobretudo, há pontos controversos que podem gerar dúvidas no momento do divórcio ou separação. Vamos esclarecer alguns deles.", "Arbitramento de aluguel para o cônjuge que sai do imóvel", "Caso um dos cônjuges decida ficar no imóvel que é comum ao casal, o juiz pode deferir aluguel para o cônjuge que deixar o imóvel, como forma de compensação, por exemplo, desde que a parte que cabe a cada um seja demonstrada por qualquer documento", "inequívoco.", "Partilha do FGTS e previdência privada de capital aberto", "Há a possibilidade de partilha de FGTS e previdência privada aberta, desde que relativos ao período do matrimônio ou união estável.", "Imóvel financiado", "Ponto obscuro na lei é a partilha do imóvel financiado, já que a propriedade ainda não é do casal e sim da instituição financeira, na maioria dos casos.", "Inobstante a isso, é possível partilhar os direitos relativos ao contrato de financiamento, compensando-se a um dos cônjuges o valor das parcelas já pagas, sem prejuízo do cumprimento do contrato com o banco.", "É possível a mudança de regime de bens?", "Mediante medida judicial, o casal pode requerer a mudança de regime, explicando os motivos de tal pretensão, lembrando que se a mudança se der de um regime mais amplo para um mais restrito, exige-se a partilha dos bens porventura já adquiridos.", "Em conclusão, não é necessário que haja a partilha de bens antes do divórcio. Portanto, o divórcio independe da partilha. No entanto, como já dito, caso a pessoa opte pelo casamento antes da partilha, deverá observar o Regime da Separação legal ou obrigatória de bens.", "Por fim, caso haja qualquer dúvida acerca do assunto ou sobre como produzir provas, receba orientações de um advogado especialista.", "Artigo escrito pelos advogados especialistas em Direito de Família, Dr. Javét Braga Bitencourt e Edição de Fernanda Gaiotto Machado, com Conteúdo Estratégico .", "Conheça o nosso escritório, especializado em Direito de Família.", "Confira também nosso artigo sobre Guarda Compartilhada. FALE COM UM ESPECIALISTA"],
+  },
+  {
+    id: "5",
+    slug: "alienacao-parental-conhecendo-prevenindo-e-enfrentando-esse-desafio",
+    title: "Alienação Parental: Conhecendo, Prevenindo e Enfrentando Esse Desafio",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "A alienação parental é um tema sensível que afeta muitas famílias em situações de conflito. Trata-se de um processo em que um dos genitores, ou até mesmo ambos, manipula a criança para que ela repudie...",
+    body: ["A alienação parental é um tema sensível que afeta muitas famílias em situações de conflito. Trata-se de um processo em que um dos genitores, ou até mesmo ambos, manipula a criança para que ela repudie o outro genitor. Isso ocorre frequentemente durante separações ou divórcios contenciosos, podendo causar impactos emocionais profundos e duradouros nas crianças envolvidas.", "O Que é a Alienação Parental?", "A alienação parental envolve estratégias psicológicas que visam enfraquecer o vínculo entre a criança e o genitor alvo. Essas estratégias podem variar desde fazer comentários negativos sobre o genitor até impedir o contato entre a criança e o genitor repudiado. O resultado desejado é fazer com que a criança se afaste emocionalmente do genitor alvo.", "Prevenção da Alienação Parental", "Prevenir a alienação parental requer um ambiente de cooperação entre os pais, mesmo durante conflitos. Comunicação aberta e respeitosa é fundamental. Um acordo de guarda e visitação claro e equilibrado pode minimizar as oportunidades para a alienação ocorrer. Manter o foco no bem-estar da criança em vez de conflitos pessoais também é essencial.", "Sinais de Alienação Parental", "Identificar sinais de alienação parental é crucial para intervir precocemente. Crianças alienadas frequentemente manifestam resistência em passar tempo com o genitor repudiado. Elas podem expressar emoções negativas em relação a esse genitor sem razão aparente e repetir falas alinhadas com os sentimentos do genitor alienador.", "Impacto na Criança", "Os efeitos da alienação parental no desenvolvimento da criança podem ser profundos. Ela pode experimentar confusão emocional, baixa autoestima, ansiedade e problemas de relacionamento no futuro. A alienação pode prejudicar sua capacidade de estabelecer vínculos saudáveis e confiar em figuras de autoridade.", "Enfrentando a Alienação Parental", "Enfrentar a alienação parental requer ação legal e psicológica. Consultar um advogado especializado em direito de família é importante para proteger os direitos do genitor repudiado. Além disso, buscar terapia para a criança e, possivelmente, para todos os envolvidos, pode ajudar a mitigar os danos emocionais.", "Em resumo, a alienação parental é um desafio sério que exige atenção cuidadosa. Prevenir, identificar e enfrentar a alienação são passos cruciais para garantir o bem-estar emocional e psicológico das crianças. Ao cultivar um ambiente de respeito e cooperação, os pais podem ajudar a proteger seus filhos dos impactos negativos desse fenômeno complexo. Se você suspeita de alienação parental em seu contexto familiar, buscar orientação profissional é fundamental.", "Artigo escrito pelos advogados especialistas em Direito de Família,", "Javét Braga Bitencourt", "e Edição de", "Fernanda Gaiotto Machado, com Conteúdo Estratégico", "Conheça o nosso escritório, especializado em Direito de Família.", "Confira também nosso artigo sobre Guarda Compartilhada."],
+  },
+  {
+    id: "6",
+    slug: "homologacao-de-sentencas-estrangeiras-no-brasil",
+    title: "Homologação de Sentenças Estrangeiras no Brasil",
+    category: "Internacional",
+    date: "Março de 2026",
+    readingTime: "5 min de leitura",
+    image: "",
+    excerpt: "Homologação de Sentença Estrangeira no STJ...",
+    body: ["Homologação de Sentença Estrangeira no STJ", "Como Funciona? Guia Prático com 5 Regras Cruciais", "Para que uma decisão judicial proferida por um tribunal internacional ou uma escritura pública lavrada fora do país tenha validade legal e produza efeitos práticos no Brasil, ela deve passar obrigatoriamente pelo processo de homologação de sentença estrangeira. Esse procedimento é uma exigência da soberania nacional e tramita com exclusividade perante o Superior Tribunal de Justiça (STJ), em Brasília, exigindo a representação de um advogado. Se você é brasileiro residente no exterior ou cidadão estrangeiro e precisa fazer valer seus direitos em solo brasileiro, existem 5 regras fundamentais que ditam o funcionamento, os requisitos e os caminhos desse rito processual. Conheça-as em detalhes abaixo:", "1. O Propósito da Homologação de Sentença Estrangeira e o Juízo de Delibação", "O ordenamento jurídico brasileiro exige que decisões externas passem pelo crivo do STJ antes de serem aplicadas na prática. Esse mecanismo funciona sob o chamado Juízo de Delibação, o que significa que o tribunal brasileiro não vai reabrir o processo para julgar o mérito da causa original. O STJ não discute quem estava certo ou errado no divórcio ou no contrato comercial que correu no exterior; ele realiza apenas uma análise formal e externa para garantir que a decisão estrangeira não confronte a soberania nacional, a ordem pública e as leis fundamentais do Brasil. Sem esse devido reconhecimento por parte do Estado brasileiro, um divórcio realizado em Portugal, nos Estados Unidos ou no Japão, por exemplo, não produtor efeitos práticos no Brasil, fazendo com que o cidadão continue constando como \"casado\" nos registros civis nacionais e impedido de registrar um novo matrimônio. Da mesma forma, uma sentença de pensão alimentícia ou uma decisão arbitral internacional não poderá ser executada contra bens ou contas bancárias situados em solo brasileiro sem o crivo do STJ.", "2. Tipos de Decisões e a Competência do STJ", "A atuação jurídica perante o Superior Tribunal de Justiça abrange a viabilização de diversas modalidades de decisões, sejam elas de jurisdição contenciosa (quando há disputa entre as partes) ou de jurisdição voluntária (quando há acordo): Direito de Família: Sentenças de divórcio (especialmente os litigiosos ou aqueles que envolvem guarda de menores e fixação de alimentos), processos de adoção internacional e definição de custódia e regime de visitas. Direito Sucessório: Sentenças de inventário, testamentos internacionais e partilha de bens situados em território brasileiro. Direito Comercial e Contratos: Sentenças arbitrais internacionais, decisões de cobranças financeiras internacionais, homologação de falências e cumprimento de obrigações contratuais.", "Uma Nota Importante sobre as Exceções Legais", "É fundamental destacar que, desde a entrada em vigor do Código de Processo Civil de 2015, o divórcio consensual simples ou puro (aquele que trata única e exclusivamente da dissolução do casamento, sem envolver de nenhuma forma a guarda de filhos menores, regulação de visitas ou partilha de bens) pode ser averbado diretamente no Cartório de Registro Civil de Pessoas Naturais no Brasil, dispensando a necessidade de uma ação judicial no STJ. Contudo, mesmo nesses casos, a análise prévia por um advogado especializado em Direito Internacional é indispensável para verificar se o documento cumpre os requisitos e evitar nulidades futuras.", "3. Requisitos Essenciais para Conseguir a Validação do Processo", "Para que o pedido de homologação de sentença estrangeira seja julgado procedente pelo Ministro Relator no STJ, a decisão internacional deve preencher cumulativamente os seguintes requisitos formais previstos no artigo 963 do Código de Processo Civil: Competência da Autoridade Origem: A decisão deve ter sido proferida por autoridade judicial que detinha competência legal no país onde o processo tramitou; Citação Regular das Partes: Deve ser cabalmente comprovado que a parte contrária (o réu) foi regularmente notificada ou citada no processo estrangeiro, garantindo o direito constitucional à ampla defesa, ou que tenha sido declarada a sua revelia legal; Eficácia e Trânsito em Julgado: A decisão deve ser definitiva, conter a certidão de trânsito em julgado (quando não cabem mais recursos no país de origem) ou ser considerada plenamente eficaz onde foi proferida; Respeito à Ordem Pública:", "O teor e os efeitos da decisão internacional não podem contrariar os princípios fundamentais da dignidade humana, os bons costumes ou as leis soberanas do Estado brasileiro.", "4. Documentação Exigida e a Importância da Regularização", "A fase de montagem do portfólio de documentos é a mais sensível de todo o procedimento de homologação de sentença estrangeira. A ausência de uma chancela ou um erro na formatação documental pode fazer com que o Ministro do STJ indefira o pedido ou extinga a ação sem analisar o mérito, gerando atrasos severos e novos custos. Para obter o Exequatur (a autorização de execução em solo nacional), as seguintes fases críticas de tratamento documental devem ser seguidas com rigor técnico:", "Auditoria de Trânsito em Julgado e Apostilamento de Haia", "Toda documentação emitida por tribunais ou repartições estrangeiras precisa ser oficial e conter a certidão de que a decisão é final. Além disso, os documentos devem receber o selo do Apostilamento de Haia no país de origem (caso o país seja signatário da Convenção de Haia) ou passar por legalização perante a repartição consular brasileira local. Sem essa autenticação internacional, o documento não possui validade em tribunais do Brasil.", "Admissibilidade Linguística por Tradução Juramentada", "Nenhum tribunal brasileiro pode aceitar documentos redigidos em idioma estrangeiro (como inglês, espanhol, francês, japonês, etc.). Por essa razão, todas as peças processuais, certidões e sentenças devem obrigatoriamente passar por uma tradução pública juramentada, realizada por um profissional devidamente matriculado na Junta Comercial em território brasileiro.", "5. Da Homologação no STJ até a Execução Prática no Brasil", "Muitas pessoas acreditam erroneamente que o processo se encerra no momento em que o Superior Tribunal de Justiça concede a decisão favorável. Na realidade, a obtenção do acórdão de homologação em Brasília é apenas a primeira etapa da segurança jurídica do cliente. Dependendo do objetivo do processo, diferentes desdobramentos práticos deverão ser conduzidos pela equipe jurídica especializada após a decisão do STJ: Casos de Registro e Averbação: Se o objetivo era validar um divórcio, a sentença do STJ deve ser encaminhada por meio de", "uma carta de sentença ao Cartório de Registro Civil de Pessoas Naturais onde o casamento original estava registrado (ou ao Cartório do 1º Ofício do Distrito Federal), para que ocorra a averbação definitiva do divórcio. Casos de Execução Material (Cobranças e Alimentos): Se a sentença homologada estipular uma obrigação de pagar (como uma pensão alimentícia internacional ou o cumprimento de uma sentença arbitral comercial), o processo sai da esfera do STJ e entra na fase de execução material. Essa execução forçada deve ser proposta perante a Justiça Federal de primeira instância competente, visando o bloqueio de bens, contas ou cumprimento de obrigações em solo brasileiro.", "Conclusão: A Necessidade de uma Advocacia Especializada Interjurisdicional", "A internacionalização da vida contemporânea exige uma advocacia moderna, que compreenda a urgência, o sigilo e a precisão técnica necessários para conectar de forma segura jurisdições e legislações distintas. O processo de homologação de sentença estrangeira envolve formalidades burocráticas severas que não abrem margem para erros. Buscar o suporte de profissionais que detêm sólida experiência em Direito Internacional e Direito de Família assegura que as suas conquistas, direitos civis, patrimônio e decisões tomadas além-mar sejam plenamente reconhecidos, validados e protegidos de forma rápida pela lei brasileira. O foco deve ser sempre garantir a tranquilidade jurídica que você e sua família necessitam, eliminando barreiras burocráticas e aproximando o seu direito perante os tribunais superiores no Brasil, não importa em qual local do mundo você tenha escolhido residir. Veja também nossos artigos de: Homologação de divórcio estrangeiro no Brasil. Apostila de Haia."],
+  },
+  {
+    id: "7",
+    slug: "a-homologacao-de-divorcio-estrangeiro-no-brasil-dignidade-e-seguranca-juridica-p",
+    title: "A Homologação de Divórcio Estrangeiro no Brasil: Dignidade e Segurança Jurídica para Residentes no Exterior",
+    category: "Internacional",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "O dinamismo das relações afetivas de brasileiros no exterior reflete-se na necessidade de regularização do estado civil. Com milhões de brasileiros estabelecidos na América do Norte, Ásia e Europa é c...",
+    body: ["O dinamismo das relações afetivas de brasileiros no exterior reflete-se na necessidade de regularização do estado civil. Com milhões de brasileiros estabelecidos na América do Norte, Ásia e Europa é comum que dissoluções matrimoniais ocorram perante tribunais americanos, cortes asiáticas ou europeias. Entretanto, a vida civil não se encerra na fronteira: ela exige continuidade jurídica em solo nacional.", "Nesse cenário, surge uma questão vital para quem reconstruiu sua vida fora do país: uma sentença de divórcio proferida por um juiz em Miami, Londres, Lisboa ou Changai possui validade automática no Brasil?", "A resposta é não. Embora o divórcio seja uma realidade consolidada, para que ele gere efeitos jurídicos no Brasil — permitindo um novo casamento, a venda de imóveis ou a regularização de heranças — ele deve submeter-se ao procedimento de Homologação de Sentença Estrangeira (via judicial) ou em casos específicos Homologação Extrajudicial (feita via cartório).", "O Propósito da Homologação", "O ordenamento jurídico brasileiro exige que decisões matrimoniais externas passem pelo crivo das autoridades nacionais para garantir a proteção dos direitos fundamentais e a observância da ordem pública. Sem esse reconhecimento, o cidadão permanece \"casado\" perante a lei brasileira, o que pode configurar impedimento para novos matrimônios e até risco de qualificação em crime de bigamia, além de travar a gestão de bens situados no Brasil.", "Tipos de Decisões e Necessidades", "O escritório Braga Bitencourt Advogados atua na viabilização jurídica das diferentes modalidades de reconhecimento no Brasil de divórcios realizados em paises estrangeiros, adequando estratégia à complexidade do caso:", "Divórcio Consensual Simples: Casos que tratam exclusivamente da dissolução do vínculo, sem envolver guarda de filhos ou partilha de bens.", "Divórcio Qualificado ou Litigioso: Decisões que envolvem guarda de menores, pensão alimentícia ( alimony ) ou partilha de bens imóveis.", "Decisões de Jurisdição Voluntária: Escrituras públicas de divórcio realizadas em notários (cartórios ou oficiais notários) que necessitam de eficácia plena.", "Nota sobre Exceções: Desde 2016, a homologação do divórcio consensual simples pode ser feita extrajudicialmente, ou seja, via cartório de registro civil. Contudo, a análise técnica e o acompanhamento de um advogado é crucial para identificar se a sentença estrangeira é puramente \"simples\" ou se contém cláusulas ocultas que exigem o rito judicial.", "A Complexidade do Rito Processual", "Via de regra, o procedimento para divórcios que extrapolam a simples dissolução tramita no Superior Tribunal de Justiça (STJ) . Este processo, conhecido como Juízo de Delibação, exige rigor técnico absoluto para que a soberania brasileira acolha a decisão estrangeira.", "Nossa atuação compreende todas as fases críticas para garantir a regularização definitiva:", "Auditoria Documental: Verificação do Final Judgment , prova de trânsito em julgado e conformidade com a Apostila de Haia.", "Gestão Linguística: Coordenação de traduções juramentadas realizadas obrigatoriamente no Brasil, evitando custos desnecessários com traduções externas não aceitas.", "Processamento perante o STJ: Condução da ação de homologação junto ao Superior Tribunal de Justiça.", "Averbação e Registro: Após a decisão do STJ (ou em casos extrajudiciais), nossa equipe assessora o registro junto ao Cartório de Registro Civil competente para a emissão da nova certidão.", "Assessoria Especializada: Braga Bitencourt Advogados", "Com mais de 18 anos de experiência em Direito Internacional, o Braga Bitencourt Advogados compreende que o divórcio internacional não admite amadorismo. Um erro na interpretação de uma cláusula internacional pode gerar anos de atraso e prejuízos patrimoniais. Oferecemos suporte completo, assegurando que sua liberdade civil e suas conquistas além-mar sejam plenamente reconhecidas e protegidas pela lei brasileira."],
+  },
+  {
+    id: "8",
+    slug: "o-divorcio-extrajudicial-no-brasil-agilidade-e-seguranca-na-dissolucao-do-vincul",
+    title: "O Divórcio Extrajudicial no Brasil: Agilidade e Segurança na Dissolução do Vínculo Matrimonial.",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "O divórcio não precisa ser um processo traumático ou interminável, pode ser dinâmico e pautado pela agilidade que a vida moderna exige. Quando pautado pelo consenso e pela boa-fé, a via extrajudicial ...",
+    body: ["O divórcio não precisa ser um processo traumático ou interminável, pode ser dinâmico e pautado pela agilidade que a vida moderna exige. Quando pautado pelo consenso e pela boa-fé, a via extrajudicial — realizada em serventia notarial (cartório) — apresenta-se como o caminho mais célere e inteligente para encerrar o ciclo matrimonial com dignidade.", "Nesse cenário, a Lei 11.441/07 permitiu que o Divórcio, antes restrito ao Judiciário, possa se consolidar via cartório por meio de um advogado. No entanto, surge uma questão fundamental: quais são os limites e requisitos para que essa escritura de divórcio ou divórcio extrajudicial possua plena validade e eficácia jurídica?", "O escritório", "Braga Bitencourt Advogados", "atua na viabilização e estruturação de divórcios extrajudiciais, garantindo que todos os", "requisitos legais sejam preenchidos:", "Consenso Bilateral: Ambas as partes devem estar em pleno acordo quanto à dissolução e à partilha de bens.", "Inexistência de Filhos Menores ou Incapazes: A regra geral exige que não haja filhos menores para a via administrativa.", "Nota sobre Exceções: Em diversas jurisdições, se as questões de guarda e alimentos já foram previamente resolvidas na esfera judicial, o divórcio em si pode ser finalizado em cartório.", "Inexistência de Gravidez:", "Declaração formal de que a cônjuge não se encontra em estado gravídico, resguardando", "direitos do nascituro.", "Partilha de Bens e Impostos (O Ponto Crítico)", "Este é o momento onde a assessoria jurídica se torna indispensável. Se a divisão dos bens", "for \"meio a meio\" (50/50), não há incidência de impostos de transferência, embora seja necessária a Declaração tributária prévia. No entanto, se um dos cônjuges ficar com uma fatia maior do patrimônio, pode ocorrer a cobrança de:", "ITCMD: Imposto sobre doação (se a parte maior for cedida gratuitamente).", "ITBI: Imposto sobre transmissão (se a parte maior for \"comprada\" pela outra parte através de compensação financeira).", "Dica: O planejamento tributário feito pelo advogado durante os trabalhos do divórcio extrajudicial em cartório pode economizar milhares de reais nessas taxas.", "Assessoria Especializada: Braga Bitencourt Advogados", "A agilidade do divórcio extrajudicial não dispensa a necessidade de uma advocacia estratégica. O Braga Bitencourt Advogados oferece suporte especializado para que a transição patrimonial e civil seja feita com o máximo de precisão, protegendo os interesses dos clientes e garantindo que o encerramento do vínculo seja, de fato, o início de uma nova fase com segurança jurídica absoluta."],
+  },
+  {
+    id: "9",
+    slug: "a-dissolucao-de-uniao-estavel-no-brasil-seguranca-juridica-e-protecao-patrimonia",
+    title: "A Dissolução de União Estável no Brasil: Segurança Jurídica e Proteção Patrimonial",
+    category: "Patrimônio",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "A união estável tem sido uma escolha cada vez mais crescente entre casais brasileiros, baseada na afetividade e no projeto de vida comum. No entanto, o encerramento desses ciclos exige uma transição p...",
+    body: ["A união estável tem sido uma escolha cada vez mais crescente entre casais brasileiros, baseada na afetividade e no projeto de vida comum. No entanto, o encerramento desses ciclos exige uma transição pautada pela clareza. Diferente do casamento, onde o vínculo é formalizado desde a origem, muitas uniões estáveis operam no campo da informalidade, o que pode transformar sua dissolução em um cenário de insegurança quanto aos direitos e deveres de cada convivente.", "Tipos de Decisões relativas ao fim da união estável.", "Dissolução Extrajudicial:", "Para casos de consenso total e inexistência de filhos menores (ou com questões de menores", "já resolvidas judicialmente).", "Reconhecimento e Dissolução Simultâneos:", "Ideal para casais que nunca formalizaram a união no passado, permitindo declarar o início,", "o fim e a partilha em um único ato.", "Dissolução Judicial:", "Necessária quando há conflito sobre bens ou quando envolve direitos de filhos menores", "sem acordo prévio.", "Assessoria Especializada: Braga Bitencourt Advogados.", "A dissolução de uma união estável exige uma advocacia que compreenda as nuances da", "prova de convivência e a urgência na proteção do patrimônio. O escritório", "Braga Bitencourt Advogados", "oferece suporte completo para que o encerramento da união seja realizado com", "transparência, assegurando que os direitos de cada convivente sejam plenamente", "respeitados pela legislação brasileira:", "Auditoria de Bens e Dívidas: Levantamento de ativos e passivos durante o período de convivência.", "Planejamento Tributário: Cálculo preciso sobre a meação para evitar a incidência indevida de ITCMD ou ITBI sobre a partilha.", "Formalização via e-Notariado: Condução do ato de forma digital para conviventes que residem em cidades ou países distintos e quando é o caso de e dissolução via cartório.", "Eficácia perante Terceiros: Assessoria no registro da dissolução em cartórios de registros imobiliários."],
+  },
+  {
+    id: "10",
+    slug: "inventario-extrajudicial-agilidade-e-seguranca-na-gestao-do-patrimonio-familiar",
+    title: "Inventário Extrajudicial: Agilidade e Segurança na Gestão do Patrimônio Familiar",
+    category: "Sucessões",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "A perda de um ente querido é um momento de luto, mas também de decisões necessárias. Quando o assunto é a regularização do patrimônio, o inventário extrajudicial apresenta-se como a solução mais efici...",
+    body: ["A perda de um ente querido é um momento de luto, mas também de decisões necessárias. Quando o assunto é a regularização do patrimônio, o inventário extrajudicial apresenta-se como a solução mais eficiente para famílias que buscam evitar o desgaste e a lentidão do Judiciário.", "O que é o Inventário Extrajudicial?", "Diferente do modelo tradicional, que tramita perante um juiz, o inventário extrajudicial é realizado via advogado diretamente em um Cartório de Notas, por meio de uma escritura pública. Ele tem a mesma validade jurídica que uma sentença judicial, permitindo a transferência de imóveis, veículos e o levantamento de valores em contas bancárias.", "Quais são os requisitos?", "Para que a família possa optar por essa via célere, a lei exige o preenchimento de três requisitos fundamentais:", "Consenso: Todos os herdeiros devem estar de acordo com a partilha dos bens.", "Capacidade: Todos os envolvidos devem ser civilmente maiores (18 anos + ou emancipados) e capazes.", "Assistência Jurídica obrigatória: A presença de um advogado é obrigatória por lei para garantir a legalidade do ato e orientar a partilha.", "Nota: Em alguns estados, já é possível realizar o inventário extrajudicial mesmo com testamento, desde que haja autorização judicial prévia ou que o testamento já tenha sido aberto em juízo.", "Como funciona o passo a passo?", "O procedimento é estruturado em etapas estratégicas:", "Nomeação do Inventariante: A família escolhe um representante para administrar o espólio durante o processo.", "Levantamento Patrimonial: Identificação de bens, dívidas e direitos deixados pelo falecido.", "Pagamento do Imposto (ITCMD): O imposto de transmissão deve ser calculado e pago antes da assinatura da escritura. A alíquota varia conforme o estado e o valor do patrimônio.", "Lavratura da Escritura: Com as certidões em dia e o imposto pago, o tabelião lavra a escritura pública de inventário.", "Quanto tempo demora em média?", "Enquanto um inventário judicial pode se arrastar por anos, o extrajudicial é surpreendentemente rápido. Em média, após a reunião de todos os documentos e o pagamento do imposto, o processo costuma ser finalizado em um período de 30 a 90 dias . O prazo depende majoritariamente da agilidade na obtenção das certidões e da liberação da guia do imposto pela Fazenda Estadual conforme o Estado da Federação.", "Quais são os custos envolvidos?", "Os custos são proporcionais ao valor do patrimônio e incluem:", "Emolumentos do Cartório: Tabelados por lei estadual.", "ITCMD: Imposto sobre a transmissão dos bens.", "Honorários Advocatícios: Definidos conforme a complexidade e o valor do monte-mor.", "Por que escolher a via extrajudicial?", "Além da rapidez, o inventário extrajudicial oferece privacidade e menor custo emocional . É a escolha ideal para famílias que possuem uma gestão patrimonial organizada e desejam que a sucessão ocorra sem conflitos desnecessários.", "Assessoria Estratégica: Braga Bitencourt Advogados.", "No Braga Bitencourt Advogados , transformamos o inventário em um procedimento ágil e descomplicado. Nossa atuação foca em dois pilares: rapidez na liberação dos bens e economia no pagamento de impostos . Realizamos um planejamento tributário detalhado para evitar gastos desnecessários com o ITCD e cuidamos de toda a burocracia documental junto ao cartório. Com nossa assessoria, os herdeiros garantem uma transição patrimonial segura, sem filas judiciais e com total suporte jurídico para que o patrimônio da família seja preservado e regularizado o quanto antes."],
+  },
+  {
+    id: "11",
+    slug: "mudanca-de-regime-de-bens-no-casamento",
+    title: "Mudança de Regime de Bens no Casamento.",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "A mudança de regime de bens após a celebração do casamento é um direito garantido pelo Código Civil Brasileiro (Art. 1.639, § 2º). Diferente da escolha feita antes da cerimônia, a alteração posterior ...",
+    body: ["A mudança de regime de bens após a celebração do casamento é um direito garantido pelo Código Civil Brasileiro (Art. 1.639, § 2º). Diferente da escolha feita antes da cerimônia, a alteração posterior exige um procedimento específico para garantir a segurança jurídica do casal e de terceiros.", "Requisitos Legais Para que a mudança seja autorizada, quatro condições devem ser atendidas obrigatoriamente:", "Consenso: Ambos os cônjuges devem estar de acordo (pedido amigável).", "Ação Judicial: A alteração não pode ser feita diretamente no cartório; exige um processo na Justiça com a presença de um advogado.", "Justificativa Aceitável: O casal deve apresentar um motivo ao juiz (ex: melhor gestão de investimentos, proteção de empresa ou sucessão familiar).", "Proteção de Terceiros: A mudança não pode ser usada para fraudar credores ou esconder patrimônio em caso de dívidas existentes.", "Os Regimes de Bens Disponíveis", "Comunhão Parcial: Divide-se o que foi adquirido durante o casamento. Bens anteriores, heranças e doações ficam de fora. (É o regime padrão).", "Separação Total: Os patrimônios não se misturam. Cada um administra seus bens e dívidas de forma independente, sem necessidade de assinatura do cônjuge para vendas.", "Comunhão Universal: Todos os bens (anteriores e futuros, incluindo heranças) passam a pertencer aos dois em partes iguais.", "Participação Final nos Aquestos: Funcionamento misto: separação total durante a união e divisão dos lucros obtidos pelo esforço comum em caso de divórcio.", "Documentação Necessária Para ingressar com a ação, o casal deve reunir:", "Pessoais: RG, CPF e Certidão de Casamento atualizada (90 dias).", "Patrimoniais: Escrituras de imóveis, documentos de veículos e extratos de investimentos.", "Certidões Negativas: Certidões de distribuidores cíveis, criminais, trabalhistas, fiscais e de protesto (essenciais", "para provar ao juiz que não há intenção de fraude). O Processo Passo a Passo Petição: O advogado protocola o pedido justificando a necessidade da mudança. Análise Judicial: O juiz verifica se a mudança prejudica terceiros. Pode haver publicação de editais para dar ciência a possíveis credores. Sentença: O juiz profere a decisão autorizando a troca. Averbação: O casal leva o mandado judicial ao Cartório de Registro Civil para atualizar a certidão e ao Cartório de Registro de Imóveis para atualizar as matrículas dos bens. Impactos nos Imóveis e Impostos Se o casal possuir imóveis e decidir dividi-los no momento da mudança (por exemplo, saindo da comunhão para a separação total): Partilha: Deve-se definir se os bens atuais continuam sendo dos dois (condomínio) ou se serão individualizados. ITBI/ITCMD: Se na divisão um dos cônjuges ficar com uma fatia maior do patrimônio do que tinha por direito, poderá haver incidência de impostos de transmissão ou doação. Efeito da Decisão: A regra geral é que a mudança valha para o futuro ( ex nunc ), protegendo atos realizados sob o regime antigo. Conclusão Mudar o regime de bens é uma ferramenta estratégica para famílias que buscam proteção empresarial , autonomia financeira ou planejamento sucessório . O sucesso do processo depende de uma justificativa sólida e da transparência sobre a situação financeira do casal.", "Assessoria Estratégica: Braga Bitencourt Advogados. A mudança de regime de bens é a solução ideal para casais que buscam alinhar sua realidade financeira atual à proteção do patrimônio. No Braga Bitencourt Advogados , simplificamos esse processo, cuidando de toda a transição jurídica para que a nova", "organização dos bens seja feita com segurança e rapidez. Nosso foco é garantir que o casal tenha total controle sobre seu futuro econômico, prevenindo riscos e protegendo as conquistas da família de forma estratégica e personalizada."],
+  },
+  {
+    id: "12",
+    slug: "testamento",
+    title: "Testamento",
+    category: "Sucessões",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "O testamento é a ferramenta mais eficiente do Direito das Sucessões para quem busca segurança e autonomia sobre seus bens. Trata-se de um documento jurídico pelo qual uma pessoa expressa sua última vo...",
+    body: ["O testamento é a ferramenta mais eficiente do Direito das Sucessões para quem busca segurança e autonomia sobre seus bens. Trata-se de um documento jurídico pelo qual uma pessoa expressa sua última vontade sobre a disposição de seus bens e outros assuntos (como reconhecimento de filhos ou nomeação de tutores) para depois de sua morte. É um ato revogável, ou seja, você pode alterá-lo ou revogá-lo quantas vezes desejar enquanto estiver lúcido.", "Quais são os Tipos de Testamento?", "Existem três formas principais (ordinárias) de se testar no Brasil, conforme o Código Civil:", "Testamento Público: Feito em cartório, no livro de notas, perante um tabelião e duas testemunhas. Embora também exija homologação judicial após o falecimento do testador é a modalidade de maior segurança jurídica e evita contestações futuras.", "Testamento Cerrado: Escrito pelo testador e entregue ao tabelião para aprovação e lacre. O conteúdo permanece em segredo até a abertura judicial.", "Testamento Particular: Escrito de próprio punho ou digitado pelo testador e lido para três testemunhas. Embora seja mais simples, exige validação judicial posterior ao falecimento.", "Requisitos e Limitações Legais", "A maior limitação no ordenamento brasileiro é a Legítima", ". Se você possui herdeiros necessários (filhos, pais ou cônjuge/companheiro), a lei determina que você só pode dispor livremente de 50% do seu patrimônio . Os outros 50% são obrigatoriamente destinados a esses herdeiros. Caso não haja herdeiros necessários, é possível testar 100% dos bens .", "Caso não possua herdeiros necessários é possível dispor de até 100% de seu patrimônio em testamento.", "Por que o planejamento sucessório é recomendável?", "Prevenção de Conflitos: Evita disputas familiares ao definir claramente a partilha.", "Proteção de Terceiros: Permite beneficiar pessoas ou instituições que não seriam herdeiras por lei.", "Cláusulas de Proteção Patrimonial: Inclusão de cláusulas de inalienabilidade ou impenhorabilidade para proteger o patrimônio contra dívidas futuras dos herdeiros.", "Eficiência Tributária: Estratégias para facilitar o pagamento do ITCMD (Imposto de Transmissão).", "Sua vontade, nossa estratégia: Braga Bitencourt Advogados", "O testamento não é apenas sobre o que se deixa, mas sobre como se deixa. No escritório Braga Bitencourt Advogados , transformamos sua intenção em um plano jurídico eficiênte. Nossa assessoria especializada garante que cada cláusula seja blindada contra anulações e focada na proteção de quem você ama.", "Quer garantir que seu patrimônio chegue ao destino certo sem burocracia para sua família? Vamos desenhar o seu legado juntos."],
+  },
+  {
+    id: "13",
+    slug: "apostila-de-haia-2026-apostilamento-de-documentos",
+    title: "Apostila de Haia (2026) – Apostilamento de Documentos.",
+    category: "Internacional",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Como Validar Documentos Internacionais com Segurança Jurídica...",
+    body: ["Como Validar Documentos Internacionais com Segurança Jurídica", "Se você pretende", "morar, estudar ou investir no exterior", "— ou é um estrangeiro com negócios no Brasil — a", "Apostila de Haia", "é o primeiro passo burocrático que garante que seus documentos sejam reconhecidos fora", "do país.", "O que é a Apostila de Haia?", "A Apostila de Haia é um", "certificado de autenticidade", "criado pela Convenção da Haia de 1961. Ela substitui a antiga legalização consular, que", "exigia idas ao MRE (Ministério das Relações Exteriores) e consulados, por um", "selo único com validade internacional", "Documentos mais comuns para apostilamento:", "Registro Civil: certidões de nascimento, casamento e óbito.", "Acadêmicos: diplomas, históricos escolares e certificados.", "Notariais: escrituras públicas, procurações e testamentos.", "Judiciais:", "sentenças de divórcio, adoções e averbações. Atenção: o documento deve estar em bom estado, sem plastificação, rasgos ou rasuras. Apostila Impressa vs. Apostila Eletrônica (e-Apostila) O Brasil adota um sistema híbrido desde o Provimento nº 119/2021 do CNJ : Apostila Impressa (Física): adesivo de segurança colado ao documento original, com QR Code para validação. Apostila Eletrônica (e-Apostila): arquivo PDF assinado digitalmente (ICP-Brasil), ideal para processos digitais. Qual escolher? Depende do país de destino. Alguns órgãos ainda exigem a versão física. Sempre confirme antes de emitir. Procedimento, Custas e Exceções O apostilamento é feito em cartórios autorizados . O valor varia conforme o estado: Taxas mais altas:", "São Paulo, Minas Gerais e Rio de Janeiro.", "Taxas mais baixas: Distrito Federal e Rondônia (podem custar menos da metade do valor de SP).", "Exceções — quando a Apostila NÃO é necessária:", "Acordos bilaterais: Brasil e França, além de países do Mercosul (Argentina, Uruguai, Paraguai).", "Documentos consulares: emitidos diretamente por embaixadas ou consulados.", "Tradução Juramentada: Etapa Indispensável", "Para que documentos brasileiros sejam aceitos no exterior, quase sempre é exigida tradução juramentada .", "Passo a passo correto:", "Apostilar o documento original.", "Traduzir com tradutor público concursado. Apostilar a tradução. Apresentar traduções simples ou não apostiladas é o principal motivo de rejeição em universidades e tribunais estrangeiros. Lista de Países: Quem Exige a Apostila?", "Países Signatários (EXIGEM Apostila):", "Américas: EUA, Canadá, México, Chile, Colômbia. Europa: Portugal, Itália, Espanha, Alemanha, França. Ásia/Oceania: Japão, China, Austrália, Israel.", "Países Não Signatários (Legalização Consular):", "Oriente Médio: Egito, Emirados Árabes, Catar.", "África: Angola, Moçambique, Nigéria.", "Sudeste Asiático: Tailândia, Vietnã.", "Conclusão: Evite Erros e Custos Extras", "Um selo colado de forma incorreta ou a ausência de tradução juramentada pode invalidar seu processo internacional e gerar prejuízos financeiros.", "Se você busca segurança jurídica para validar seus documentos, conte com orientação de um advogado especializado em direito internacional."],
+  },
+  {
+    id: "14",
+    slug: "aquisicao-de-imoveis-e-bens-no-brasil-por-residentes-no-exterior",
+    title: "Aquisição de Imóveis e Bens no Brasil por Residentes no Exterior.",
+    category: "Internacional",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "A aquisição de patrimônio no Brasil por brasileiros residentes no exterior ou cidadãos estrangeiros transcende a simples escolha de um imóvel. O cenário jurídico brasileiro apresenta peculiaridades qu...",
+    body: ["A aquisição de patrimônio no Brasil por brasileiros residentes no exterior ou cidadãos estrangeiros transcende a simples escolha de um imóvel. O cenário jurídico brasileiro apresenta peculiaridades que exigem uma análise transversal, conectando o Direito Civil às normas de Direito Internacional Privado e às exigências do Banco Central.", "Na Braga Bitencourt Advogados , consolidamos nossa autoridade através da gestão estratégica de fluxos documentais e financeiros internacionais. Entendemos que a segurança de um investimento imobiliário começa muito antes da assinatura da escritura; ela reside na blindagem jurídica contra nulidades processuais. e na correta internalização de capitais.", "A Complexidade do Nexo Internacional", "O investidor que reside fora do país enfrenta desafios que um comprador local desconhece. Questões como a validade de procurações lavradas no exterior, a necessidade da Apostila de Haia para documentos estrangeiros e a conformidade com as normas de sucessão internacional são pontos críticos.", "Nossa atuação foca na harmonização dessas normas. Analisamos, por exemplo, como a aquisição de um bem no Brasil impactará o planejamento sucessório do cliente em seu país de residência, evitando que conflitos de leis no espaço gerem litígios futuros.", "Gestão de Riscos e Compliance Patrimonial", "O mercado imobiliário em regiões de alta valorização, como capitais Brasileiras e cidades industriais ( Belo Horizonte, São Paulo, Brasília, Nova Lima, Betim e Contagem) , exige um Due Diligence rigoroso. Nossa assessoria não se limita à conferência de certidões; avaliamos o histórico jurídico dos vendedores e a higidez da cadeia dominial, prevenindo fraudes à execução ou problemas com o fisco que poderiam comprometer o patrimônio do investidor ausente.", "Além disso, para estrangeiros, a obtenção do CPF e a estruturação de veículos de investimento (seja como pessoa física ou jurídica) são conduzidas com foco em eficiência tributária.", "O objetivo da Braga Bitencourt Advogados é oferecer uma presença jurídica local sólida, garantindo que a distância geográfica não seja um obstáculo para a proteção e o crescimento do seu patrimônio em solo brasileiro."],
+  },
+  {
+    id: "15",
+    slug: "transcricao-de-casamento-estrangeiro-no-brasil-seguranca-validade-eficacia-e-obr",
+    title: "Transcrição de Casamento Estrangeiro no Brasil: Segurança, validade, eficácia e Obrigatoriedade Jurídica.",
+    category: "Internacional",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Muitos brasileiros que contraem matrimônio no exterior acreditam que o ato, por si só, já...",
+    body: ["Muitos brasileiros que contraem matrimônio no exterior acreditam que o ato, por si só, já", "possui validade automática em território nacional. No entanto, o ordenamento jurídico", "brasileiro é claro: para que o casamento realizado fora do país produza efeitos jurídicos,", "patrimoniais e sucessórios no Brasil, a", "transcrição do registro", "é um imperativo legal, conforme preceitua a Lei de Registros Públicos (Lei nº 6.015/73).", "Braga Bitencourt Advogados", ", atuamos na regularização do estado civil de brasileiros e estrangeiros, garantindo que o", "vínculo constituído no exterior seja plenamente reconhecido pelas autoridades nacionais,", "cartórios e instituições financeiras.", "Por que a Transcrição é Indispensável?", "A ausência do registro do casamento no Brasil cria um \"limbo jurídico\". Sem a transcrição, o cidadão permanece com o estado civil de \"solteiro\" em solo brasileiro, o que pode acarretar sérias complicações, tais como:", "Impedimentos Patrimoniais: Dificuldade na compra, venda ou doação de imóveis, devido à divergência no estado civil.", "Direitos Sucessórios: Riscos na transmissão de heranças e na garantia de direitos ao cônjuge sobrevivente.", "Questões de Vistos e Residência:", "Obstáculos para que o cônjuge estrangeiro obtenha a autorização de residência ou a", "redução do prazo para naturalização.", "Conflitos em Divórcios e Partilhas:", "A impossibilidade de averbar separações ou divórcios ocorridos no exterior sem que o", "casamento tenha sido previamente transladado no Brasil.", "A Complexidade da Regularização Documental", "O procedimento de transcrição transcende a mera entrega de papéis. Envolve uma análise técnica minuciosa da cadeia de legalização internacional, incluindo o Apostilamento de Haia , a conformidade das Traduções Juramentadas e o registro prévio em Títulos e Documentos (RTD) .", "Além disso, casos que envolvem Pactos Antenupciais celebrados no exterior ou divórcios prévios exigem uma estratégia jurídica personalizada. Em certas situações, a atuação perante o Superior Tribunal de Justiça (STJ) para a homologação de sentenças estrangeiras torna-se o caminho necessário para que a transcrição no Registro Civil seja efetuada com sucesso.", "Assessoria Especializada Braga Bitencourt Advogados", "Nossa assessoria em Direito Internacional Privado oferece tranquilidade ao cliente, gerenciando desde a conferência documental até o trâmite final junto aos Cartórios de 1º Ofício de Registro Civil. Regularizar seu estado civil não é apenas um dever legal, mas uma medida de proteção ao seu patrimônio e à sua família."],
+  },
+  {
+    id: "16",
+    slug: "investigacao-de-paternidade-seguranca-juridica-e-a-protecao-do-patrimonio-geneti",
+    title: "Investigação de Paternidade: Segurança Jurídica e a Proteção do Patrimônio Genético e Sucessório",
+    category: "Sucessões",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "O reconhecimento da paternidade transcende o laço afetivo; trata-se de um pilar fundamental do Direito de Família com reflexos imediatos no Direito Sucessório e na dignidade humana. Com quase duas déc...",
+    body: ["O reconhecimento da paternidade transcende o laço afetivo; trata-se de um pilar fundamental do Direito de Família com reflexos imediatos no Direito Sucessório e na dignidade humana. Com quase duas décadas de atuação estratégica, o escritório Braga Bitencourt Advogados especializou-se em conduzir processos de filiação de alta complexidade, garantindo que a verdade biológica ou socioafetiva seja estabelecida com o rigor técnico que o caso exige.", "Por que a Investigação de Paternidade é Indispensável?", "A formalização da paternidade é o único meio jurídico capaz de assegurar direitos fundamentais, tais como:", "Direitos Alimentares: Garantia de subsistência, educação e saúde por meio da pensão alimentícia.", "Direito Sucessório (Herança): Habilitação em inventários e preservação da legítima patrimonial.", "Direito à Identidade: Acesso ao histórico genético, crucial para prevenções médicas e autoconhecimento.", "Direito à Nacionalidade: Essencial para descendentes que buscam regularizar cidadania na União Europeia (UE) ou vistos de residência nos EUA.", "Modalidades e Propósitos da Investigação", "O ordenamento jurídico e os tratados internacionais permitem diferentes vias para o estabelecimento do vínculo:", "Reconhecimento Judicial (Ação de Investigação): Necessário quando há recusa ou dúvida. O propósito é a obtenção de uma sentença declaratória com força de lei.", "Investigação Post Mortem: Realizada quando o suposto pai já faleceu, envolvendo perícia em parentes consanguíneos ou, em casos específicos, a exumação.", "Paternidade Socioafetiva: Reconhecimento baseado no vínculo de amor e convivência, independentemente do DNA, possuindo o mesmo valor jurídico da biológica.", "Atuação: Brasil e países estrangeiros (EUA, União Europeia e países da Ásia).", "0 Braga Bitencourt Advogados possui expertise em demandas nacionais e transnacionais. Atendemos brasileiros residentes no Brasil e no Exterior ( EUA, Canadá) e na UE (como Portugal, Itália e Espanha), bem como estrangeiros com interesses no Brasil."],
+  },
+  {
+    id: "17",
+    slug: "medida-protetiva-e-a-protecao-da-familia",
+    title: "Medida Protetiva e a Proteção da Família",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "A segurança da família é o pilar de qualquer sociedade. Quando esse ambiente é ameaçado, o Direito oferece ferramentas urgentes e eficazes. A medida protetiva é uma ordem judicial desenhada para inter...",
+    body: ["A segurança da família é o pilar de qualquer sociedade. Quando esse ambiente é ameaçado, o Direito oferece ferramentas urgentes e eficazes. A medida protetiva é uma ordem judicial desenhada para interromper ciclos de violência e garantir a integridade física e psicológica da vítima e de seus dependentes. No Braga Bitencourt Advogados, com quase duas décadas de atuação em causas complexas de família, entendemos que o tempo é um fator crítico nesses casos. Abaixo, detalhamos como funciona esse mecanismo de proteção.", "O que é e a quem se aplica?", "Embora existam previsões no Estatuto da Criança e do Adolescente (ECA) e no Estatuto do Idoso, as medidas mais comuns ocorrem sob a Lei Maria da Penha. Elas se aplicam a mulheres em situação de violência doméstica, familiar ou de afeto.", "Extensão aos filhos: A proteção se estende aos dependentes. Se houver risco de violência física, psicológica ou sexual contra as crianças, ou se o agressor as utiliza para atingir a mãe, o juiz pode determinar o afastamento imediato em relação aos menores.", "Como solicitar e quais os prazos?", "A vítima pode solicitar a medida em uma Delegacia de Polícia, no Ministério Público ou através de um advogado especialista em Direito de Família.", "Agilidade Judicial: Após o pedido, o juiz tem um prazo de 48 horas para decidir.", "Gratuidade: O pedido de medida protetiva é isento de taxas judiciais.", "Alimentos Provisionais: No mesmo pedido, o juiz pode fixar um valor de pensão alimentícia imediata para o sustento dos filhos, garantindo a subsistência da família antes mesmo do processo formal de alimentos.", "Impacto na Guarda e Visitas dos Filhos", "Este é um dos pontos onde a assessoria jurídica estratégica do Braga Bitencourt Advogados se faz mais necessária. A concessão da medida permite ao juiz:", "Suspender a visitação: Caso haja risco iminente às crianças.", "Visitas Assistidas: Determinar que encontros ocorram apenas em locais públicos ou sob supervisão.", "Guarda Provisória:", "Conceder a guarda imediata à mãe como medida de urgência.", "Orientações Práticas", "Para a Vítima:", "Mantenha sempre a cópia da decisão judicial (física ou digital).", "Em caso de descumprimento (mensagens, ligações ou aproximação), acione o 190 imediatamente.", "Informe a escola das crianças para impedir retiradas não autorizadas.", "Para o Acusado:", "Afaste-se imediatamente. O descumprimento gera prisão preventiva .", "Busque defesa técnica especializada para apresentar provas e tentar revogar ou modificar a medida, buscando ajustar o direito de convivência de forma segura.", "Dúvidas Frequentes", "Precisa de testemunha? Nem sempre. A palavra da vítima possui especial relevância, mas provas digitais (prints e áudios) fortalecem o pedido.", "A medida dá guarda definitiva? Não. Ela concede a guarda provisória . Para definir a situação a longo prazo, é fundamental o ajuizamento de uma ação específica na Vara de Família.", "Conclusão: Por que buscar apoio especializado?", "Situações que envolvem medidas protetivas são delicadas e exigem um olhar técnico sensível. O Braga Bitencourt Advogados atua há 18 anos na defesa dos direitos familiares, oferecendo segurança jurídica tanto em âmbito nacional quanto em questões de Direito Internacional de Família . Se você precisa de proteção imediata ou orientação sobre seus direitos, entre em contato com nossa equipe.", "### Extracted images (91): - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_1.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_10.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_11.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_12.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_13.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_14.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_15.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_16.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_17.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_18.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_19.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_2.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_20.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_21.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_22.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_23.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_24.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_25.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_26.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_27.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_28.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_29.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_3.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_30.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_31.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_32.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_33.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_34.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_35.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_36.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_37.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_38.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_39.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_4.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_40.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_41.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_42.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_43.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_44.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_45.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_46.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_47.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_48.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_49.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_5.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_50.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_51.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_52.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_53.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_54.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_55.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_56.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_57.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_58.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_59.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_6.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_60.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_61.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_62.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_63.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_64.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_65.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_66.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_67.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_68.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_69.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_7.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_70.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_71.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_72.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_73.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_74.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_75.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_76.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_77.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_78.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_79.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_8.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_80.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_81.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_82.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_83.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_84.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_85.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_86.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_87.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_88.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_89.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_9.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_90.jpg` - `parsed-documents://20260721-230218-110789/Artigos_Braga_Bittencourt.pdf/images/page_91.jpg`"],
+  },
+  {
+    id: "18",
+    slug: "guarda-compartilhada-o-equilibrio-necessario-para-o-bem-estar-dos-filhos",
+    title: "Guarda Compartilhada: O Equilíbrio Necessário para o Bem-Estar dos Filhos",
+    category: "Sucessões",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "A dissolução do vínculo conjugal traz consigo uma série de adaptações, e a definição da guarda dos filhos é, sem dúvida, o ponto mais sensível desse processo. No cenário jurídico atual, a guarda compa...",
+    body: ["A dissolução do vínculo conjugal traz consigo uma série de adaptações, e a definição da guarda dos filhos é, sem dúvida, o ponto mais sensível desse processo. No cenário jurídico atual, a guarda compartilhada deixou de ser apenas uma opção para se tornar a regra no ordenamento brasileiro, visando garantir que a criança mantenha vínculos sólidos com ambos os genitores.", "Entretanto, a implementação prática desse modelo exige mais do que apenas a divisão de responsabilidades; requer uma assessoria jurídica estratégica para que o acordo reflita a realidade e as necessidades específicas de cada família.", "O que é, de fato, a Guarda Compartilhada?", "Diferente do que muitos acreditam, a guarda compartilhada não significa que o filho passará metade do tempo em cada casa (o que caracteriza a guarda alternada). O foco aqui é a corresponsabilidade.", "Ambos os pais possuem o dever e o direito de decidir sobre questões fundamentais da vida do menor, como:", "* Escolha da instituição de ensino;", "* Tratamentos médicos e acompanhamento psicológico;", "* Atividades extracurriculares e viagens;", "* Formação religiosa e moral.", "As Vantagens da Atuação Jurídica Especializada", "Para que a guarda compartilhada não se torne um foco de conflitos, é essencial a redação de um plano de parentalidade detalhado. É neste ponto que a experiência do Braga Bitencourt Advogados se destaca.", "Com quase 2 décadas de atuação sólida e foco em Direito de Família e Sucessões e Internacional Privado , nosso escritório compreende que cada detalhe negligenciado no presente pode se tornar um litígio no futuro. Atuamos na mediação e na estruturação jurídica de acordos que priorizam o superior interesse da criança, garantindo segurança jurídica para os pais e estabilidade emocional para os filhos.", "Proteger os direitos de seus filhos e garantir uma convivência harmônica é um investimento no futuro deles. Se você busca orientação jurídica segura e estratégica, nossa equipe está pronta para viabilizar a melhor solução para sua família."],
+  },
+  {
+    id: "19",
+    slug: "guia-de-autorizacao-de-viagem-internacional-para-menores-evite-riscos-no-embarqu",
+    title: "Guia de Autorização de Viagem Internacional para Menores. Evite Riscos no Embarque",
+    category: "Internacional",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Fazer uma viagem a Paris , aos EUA , um intercâmbio em Londres ou visitar amigos em Portugal é sempre algo especial. No entanto, a burocracia da autorização de viagem internacional para menores pode i...",
+    body: ["Fazer uma viagem a Paris , aos EUA , um intercâmbio em Londres ou visitar amigos em Portugal é sempre algo especial. No entanto, a burocracia da autorização de viagem internacional para menores pode impedir o embarque se não for tratada com rigor jurídico.", "O que é e como funciona a Autorização?", "A autorização é a permissão legal para que crianças (até 12 anos) e adolescentes (até 18", "anos) cruzem a fronteira brasileira. Ela é regida pelo", "ECA (Estatuto da Criança e do Adolescente)", "e pelas resoluções do", "CNJ (Conselho Nacional de Justiça)", "O funcionamento básico depende da companhia:", "Com ambos os pais: Dispensa documento extra.", "Com apenas um dos pais:", "Exige autorização própria e específica do genitor que não estará viajando (com firma", "reconhecida por autenticidade).", "Desacompanhado ou com terceiros: Exige autorização de ambos pais.", "Destinos e Regras Específicas: O papel do Advogado Internacional", "Cada país possui protocolos de imigração distintos. Se o destino for a União Europeia (Espaço Schengen) , as exigências de comprovação de custeio e guarda podem ser mais rigorosas. Nos Estados Unidos , a documentação mal preenchida pode gerar retenções em salas de imigração (o temido \"quartinho\"). Nosso escritório, Braga Bitencourt Advogados possui atuação especializa para esses casos, com enfoque no seguinte:", "Autorizações administrativas: Quando ambos genitores estão de acordo com viagem do menor;", "Suprimento Judicial de Consentimento: Quando um dos pais se recusa a assinar ou está em local incerto.", "Prevenção à Subtração Internacional de Menores: Aplicação da Convenção de Haia para evitar que uma viagem de férias se torne uma retenção ilícita no exterior.", "Perguntas Frequentes (FAQ)", "O pai mora em Portugal e não quer assinar. O que fazer?", "Entramos com o pedido de suprimento de vontade na Justiça Brasileira. Comprovamos que a viagem (férias ou mudança) é para o melhor interesse do menor.", "Menor com dupla nacionalidade (brasileira e europeia) precisa de autorização?", "Sim. Para sair do Brasil, as autoridades exigem o cumprimento das normas brasileiras, mesmo que o menor utilize passaporte da Itália, Alemanha ou Japão .", "Posso colocar a autorização direto no passaporte?", "Sim, na renovação do documento na Polícia Federal. É a forma mais segura para quem viaja frequentemente para o exterior.", "Sua viagem internacional não pode depender da sorte.", "Garanta a tranquilidade da sua família com quem domina as nuances das leis transfronteiriças. Conta com a Braga Bitencourt Advogados e com quase 20 anos de nossa experiência em Direito Internacional, atuando em casos que envolve a saída de menores do Brasil para destinos como Estados Unidos, Espanha, Itália, França e Canadá . Nosso objetivo é garantir que a legalidade proteja o direito de ir e vir da sua família."],
+  },
+  {
+    id: "20",
+    slug: "suprimento-de-consentimento-dos-pais-para-emissao-de-passaporte-o-que-fazer-quan",
+    title: "Suprimento de Consentimento dos pais para emissão de Passaporte: O que fazer quando um dos pais recusa a assinatura?",
+    category: "Internacional",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Viajar com filhos para o exterior ou mudar de domicílio internacional é um projeto de vida que, muitas vezes, esbarra em um obstáculo burocrático e emocional: a falta de concordância de um dos genitor...",
+    body: ["Viajar com filhos para o exterior ou mudar de domicílio internacional é um projeto de vida que, muitas vezes, esbarra em um obstáculo burocrático e emocional: a falta de concordância de um dos genitores é um desses obstáculos. Quando não há consenso para a emissão do passaporte ou para a autorização de viagem, o caminho legal é o Suprimento de Consentimento Paterno/Materno.", "No Braga Bitencourt Advogados, com quase duas décadas de atuação em Direito de Família e Internacional, entendemos que o tempo é um fator crítico nesses casos.", "O que é e qual o propósito do Suprimento?", "O suprimento judicial é uma ação regida pelo Estatuto da Criança e do Adolescente (ECA). Seu propósito é permitir que o Poder Judiciário analise a situação e, se entender que a viagem ou a emissão do documento é favorável ao bem-estar da criança, o juiz assine pelo genitor que se recusa a fazê-lo ou que está em local incerto.", "Os tipos de Suprimento", "Existem, essencialmente, duas frentes de atuação:", "Para Emissão de Passaporte: Focado na obtenção do documento de identificação internacional.", "Para Autorização de Viagem: Necessário mesmo que o menor já tenha passaporte, mas não possua a autorização de saída do país gravada no documento ou em formulário à parte.", "Quando ele se torna indispensável?", "A necessidade surge em três cenários comuns:", "Divergência injustificada: Um dos pais nega a assinatura por conflitos pessoais, sem fundamentar um risco real para o filho.", "Genitor ausente: Quando não se sabe o paradeiro de uma das partes para colher a assinatura.", "Impedimento físico ou legal: Casos em que o genitor está impossibilitado de exercer o poder familiar momentaneamente.", "Exceções e o \"Melhor Interesse do Menor\"", "A justiça brasileira não autoriza o suprimento de forma automática. Existem exceções onde o pedido pode ser negado, como em situações de risco de subtração internacional de menores ou quando a viagem prejudica o convívio familiar de forma severa. A análise técnica do advogado é o que define o sucesso da demanda.", "A importância de uma assessoria especializada", "Tentar conduzir um pedido de suprimento sem a técnica adequada pode resultar em indeferimentos que atrasam planos importantes em sua vida.", "A Braga Bitencourt Advogados dispõe de consistente experiência de quase 20 anos para construir teses sólidas, garantindo que o direito de ir e vir dos seus filhos seja respeitado, preservando sempre a segurança jurídica da família.", "Consulte-nos! FALE COM UM ESPECIALISTA"],
+  },
+  {
+    id: "21",
+    slug: "pensao-alimenticia-seguranca-e-equilibrio-com-a-braga-bitencourt-advogados",
+    title: "Pensão Alimentícia: Segurança e Equilíbrio com a Braga Bitencourt Advogados",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "A manutenção da subsistência e da dignidade de quem depende de auxílio financeiro é um dos pilares do Direito de Família. No escritório Braga Bitencourt Advogados, com quase duas décadas de atuação, c...",
+    body: ["A manutenção da subsistência e da dignidade de quem depende de auxílio financeiro é um dos pilares do Direito de Família. No escritório Braga Bitencourt Advogados, com quase duas décadas de atuação, compreendemos que a pensão alimentícia vai muito além da alimentação; ela engloba educação, saúde, lazer, vestuário e habitação, entre outras rubricas.", "## O Propósito dos Alimentos", "O propósito central da verba alimentar é garantir a preservação do padrão de vida e a sobrevivência do alimentado. Como advogados especialistas em pensão alimentícia, nossa função é assegurar que o valor fixado seja justo, respeitando sempre o equilíbrio entre a necessidade de quem recebe e a capacidade financeira de quem paga, sem prejuízo da proporcionalidade e da adequação social.", "## Tipos de Pensão Alimentícia", "Existem diferentes modalidades que podem ser pleiteadas conforme a situação jurídica:", "* Alimentos para Filhos (Menores ou Estudantes): A forma mais comum, fundamentada no dever de sustento dos pais.", "* Alimentos Gravídicos: Destinados a cobrir as despesas do período de gestação.", "* Pensão entre Ex-Cônjuges ou Companheiros: Aplicada em caráter excepcional quando comprovada a dependência econômica e a impossibilidade de reinserção imediata no mercado de trabalho.", "* Alimentos Avoengos:", "Quando os avós são chamados a complementar ou suprir a pensão na impossibilidade dos pais.", "Necessidade de Formalização e Exceções", "Muitos clientes buscam nossa consultoria jurídica familiar após tentarem acordos informais que não foram cumpridos. A formalização judicial é indispensável para permitir a execução forçada e garantir a segurança de ambas as partes. Entre as exceções , destacam-se os casos em que o alimentante prova a alteração drástica de sua fortuna ou quando o alimentado atinge a independência financeira, o que pode dar causa a uma ação de exoneração de alimentos .", "Você precisa de um escritório de advocacia especializado. Você precisa da Braga Bitencourt Advogado.", "A experiência acumulada em quase 20 anos nos permite atuar com precisão tanto na fixação de alimentos quanto em Ações Revisionais de Alimentos. Se você procura um advogado de família em para garantir os direitos de seus dependentes ou para ajustar um valor que se tornou desproporcional, nosso escritório oferece a expertise técnica necessária.", "A Braga Bitencourt Advogados atua de forma estratégica para que a justiça seja feita, protegendo o bem mais valioso: a dignidade da sua família.", "Consulte nossos especialistas!"],
+  },
+  {
+    id: "22",
+    slug: "tipo-de-regime-de-bens-de-casamento-no-brasil",
+    title: "Tipo de Regime de Bens de Casamento no Brasil",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "No Brasil, a escolha do regime de bens define como o patrimônio do casal será administrado e partilhado. Existem quatro modelos principais previstos no Código Civil, e a escolha errada pode gerar surp...",
+    body: ["No Brasil, a escolha do regime de bens define como o patrimônio do casal será administrado e partilhado. Existem quatro modelos principais previstos no Código Civil, e a escolha errada pode gerar surpresas desagradáveis no futuro.", "O regime padrão é a Comunhão Parcial de Bens . Nele, tudo o que for adquirido onerosamente após o casamento pertence a ambos. Bens anteriores, heranças e doações permanecem particulares. Este é o único regime que não precisa de pacto antenupcial ; se o casal não manifestar vontade contrária, ele é aplicado automaticamente.", "Já os demais regimes exigem obrigatoriamente o pacto antenupcial (escritura pública feita em cartório de notas):", "Comunhão Universal: Todos os bens, presentes e futuros (inclusive heranças e dívidas passadas), tornam-se comuns ao casal.", "Separação Total: Cada cônjuge mantém a propriedade exclusiva de seus bens e dívidas, tanto os anteriores quanto os adquiridos durante a união.", "Participação Final nos Aquestos: Durante o casamento, funciona como uma separação total, mas, em caso de divórcio, cada um tem direito à metade dos bens adquiridos pelo outro a título oneroso.", "A grande vantagem do pacto antenupcial é a liberdade. O casal pode criar um regime de bens personalizado (misto) , combinando regras de diferentes modelos. É possível, por exemplo, estabelecer que os imóveis serão comuns, mas as participações societárias em empresas permanecerão particulares.", "Antes do casamento imprescindível procurar um advogado especializado para fazer a", "melhor opção e o planejamento patrimonial para a vida a dois. Estamos à sua disposição na Braga Bitencourt Advogados ! FALE COM UM ESPECIALISTA"],
+  },
+  {
+    id: "23",
+    slug: "inventario-judicial-seguranca-e-estrategia-na-transmissao-do-patrimonio-familiar",
+    title: "Inventário Judicial. Segurança e Estratégia na Transmissão do Patrimônio Familiar.",
+    category: "Sucessões",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "A perda de um ente querido traz consigo, além do luto, a necessidade imediata de organizar a sucessão de bens. No cenário jurídico brasileiro, o Inventário Judicial surge como caminho indispensável pa...",
+    body: ["A perda de um ente querido traz consigo, além do luto, a necessidade imediata de organizar a sucessão de bens. No cenário jurídico brasileiro, o Inventário Judicial surge como caminho indispensável para garantir que a transferência de patrimônio ocorra de forma legal, protegendo os direitos de herdeiros e legatários.", "Com quase 20 anos de experiência, o escritório Braga Bitencourt Advogados atua especializadamente em Direito Sucessório, oferecendo a técnica necessária para conduzir processos complexos com a celeridade que sua família merece e necessita.", "O que é o Inventário Judicial e qual seu Propósito?", "Diferente do que muitos acreditam, o inventário não é apenas uma listagem de bens. É um procedimento jurídico de jurisdição muitas vezes contenciosa, cujo propósito é apurar o ativo e o passivo deixado pelo falecido, quitar eventuais dívidas e, finalmente, formalizar a partilha.", "Sem o inventário, os bens permanecem em nome do falecido, impossibilitando por exemplo, a venda de imóveis, a transferência de veículos ou a movimentação de contas bancárias, gerando uma situação de irregularidade patrimonial.", "Tipos de Inventário Judicial", "Dependendo da composição do patrimônio e da concordância entre os herdeiros, o rito pode variar:", "Rito Comum (Tradicional): Aplicado em casos de alta complexidade, onde há litígio entre herdeiros ou questões fáticas que demandam dilação probatória.", "Arrolamento Sumário: Destinado aos casos em que todos os herdeiros são maiores, capazes e estão em pleno acordo sobre a partilha.", "Arrolamento Comum: Utilizado quando o valor dos bens não ultrapassa determinado teto legal, visando uma tramitação mais simplificada.", "Exceções: Quando o inventário pode ser dispensado?", "Existem situações excepcionais onde a lei permite o levantamento de valores sem a necessidade de um inventário completo, como no caso de resíduos salariais, FGTS e PIS não recebidos em vida, ou pequenos saldos bancários, desde que preenchidos os requisitos da Lei 6.858/80 . Contudo, a análise técnica de um advogado é fundamental para identificar se o seu caso se enquadra nessas hipóteses.", "Tempo de Duração e Custas", "Uma das maiores dúvidas dos clientes refere-se ao tempo. Embora o Código de Processo Civil estipule prazos, a duração real depende da celeridade do judiciário, da complexidade dos bens e da harmonia entre as partes.", "Quanto às custas, o cliente deve estar preparado para:", "Custas Processuais: Taxas judiciárias calculadas sobre o valor do monte-mor.", "ITCMD: Imposto de Transmissão Causa Mortis e Doação (alíquota variável por estado).", "Honorários Advocatícios: O investimento na assessoria especializada que garantirá a proteção do seu legado.", "Por que a assessoria especializada é indispensável?", "O inventário judicial envolve prazos fatais e implicações tributárias. Um erro no", "preenchimento das declarações ou a perda do prazo de abertura (geralmente 60 dias) pode resultar em multas pesadas sobre o imposto devido.", "No Braga Bitencourt Advogados , unimos nossa trajetória de duas décadas à tecnologia jurídica para oferecer um planejamento sucessório e uma condução de inventário que minimiza conflitos e otimiza a carga tributária.", "Conte conosco em seu inventário !"],
+  },
+  {
+    id: "24",
+    slug: "curatela",
+    title: "Curatela",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Na vida, imprevistos podem surgir, e a capacidade de tomar decisões importantes pode ser afetada. Nesses momentos delicados, a curatela surge como um instrumento jurídico fundamental para proteger os ...",
+    body: ["Na vida, imprevistos podem surgir, e a capacidade de tomar decisões importantes pode ser afetada. Nesses momentos delicados, a curatela surge como um instrumento jurídico fundamental para proteger os interesses de pessoas que, por alguma razão, não podem mais gerir sua própria vida civil. No Braga Bitencourt Advogados, com quase duas décadas de atuação e vasta experiência em direito de família e sucessões, compreendemos a complexidade e a sensibilidade envolvidas neste processo, oferecendo uma consultoria jurídica especializada para garantir a tranquilidade e a segurança de sua família.", "O Que é a Curatela e Por Que Ela é Essencial?", "A curatela é um encargo conferido por lei a alguém para administrar os bens e, em alguns casos, os atos da vida civil de uma pessoa que não possui discernimento para fazê-lo por si mesma. Mais do que um procedimento legal, é um ato de responsabilidade e carinho, visando a proteção integral do curatelado.", "Propósito: O objetivo principal da curatela é assegurar que a pessoa incapaz tenha seus direitos e necessidades atendidos, evitando abusos, desvios patrimoniais e garantindo seu bem-estar. Seja por doença, acidente ou outras condições, a curatela assegura que alguém de confiança zele por seus interesses.", "Tipos de Curatela: Entenda as Diferentes Modalidades", "A legislação brasileira prevê diferentes nuances da curatela, adaptando-se à especificidade de cada caso:", "Curatela para maiores de 18 anos com deficiência mental ou intelectual: É a forma mais comum, aplicada a indivíduos que nascem com ou desenvolvem condições que os impedem de expressar sua vontade de forma plena.", "Curatela para toxicômanos e ébrios habituais: Destina-se a pessoas que, devido ao vício em drogas ou álcool, comprometem gravemente sua capacidade de gerir sua vida e patrimônio.", "Curatela para pessoas com doenças graves: Em situações de enfermidades degenerativas, como Alzheimer em estágio avançado, a curatela se torna essencial para proteger o paciente e seu patrimônio.", "Curatela para pródigo: Embora menos comum, visa proteger indivíduos que dilapidam seu patrimônio de forma descontrolada, colocando em risco a subsistência própria da família dele.", "É crucial entender que a curatela não é uma \"interdição total\". Em muitos casos, a incapacidade é parcial, e a curatela será exercida apenas sobre os atos da vida civil que a pessoa realmente não consegue realizar. A decisão judicial sempre buscará a menor restrição possível à autonomia do curatelado.", "Exceções e Particularidades da Curatela", "Nem toda condição que afeta a capacidade de discernimento leva à curatela. Casos de doenças passageiras ou lapsos temporários de lucidez, por exemplo, geralmente não demandam o procedimento. A curatela é reservada para situações de incapacidade duradoura e significativa. É importante ressaltar que o processo exige comprovação técnica (laudos médicos e psicológicos) para sua concessão.", "Duração da Curatela", "A duração da curatela não é fixa. Pode ser por tempo determinado, quando a condição que a gerou é passível de reversão, ou por tempo indeterminado, caso a incapacidade seja permanente. A qualquer momento, se houver mudança na condição do curatelado, o processo pode ser revisado e, se for o caso, a curatela pode ser levantada.", "Braga Bitencourt Advogados: Seu Aliado na Proteção da Família", "Com quase duas décadas de experiência em processos de curatela , nosso escritório se destaca pela atuação ética, humanizada e precisa. Compreendemos a delicadeza de cada caso e oferecemos um atendimento personalizado, orientando nossos clientes em todas as etapas do processo, desde a coleta de documentos até a representação em juízo.", "Consulte-nos ! Estamos à sua disposição !"],
+  },
+  {
+    id: "25",
+    slug: "personalizacao-do-regime-de-bens-de-casamento-a-estrategia-alem-do-obvio",
+    title: "Personalização do Regime de Bens de Casamento: A Estratégia além do óbvio.",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Muitos casais acreditam que ao escolher o regime de bens estão limitados às opções padrão do Código Civil. No entanto, o Direito de Família moderno permite a personalização do regime de casamento, um ...",
+    body: ["Muitos casais acreditam que ao escolher o regime de bens estão limitados às opções padrão do Código Civil. No entanto, o Direito de Família moderno permite a personalização do regime de casamento, um mecanismo jurídico que adapta as regras patrimoniais à realidade específica de cada união denominado Pactos Antenupciais. Esta escolha é, talvez, a decisão financeira mais importante que um casal tomará em conjunto, pois define o destino de ativos, empresas e heranças por décadas.", "Contudo, a liberdade de personalizar não é absoluta e possui contornos técnicos rigorosos. Não se trata apenas de preencher formulários, mas de redigir cláusulas que suportem questionamentos futuros. Um erro na interpretação das normas ou na redação do pacto pode levar à nulidade de acordos inteiros, gerando uma insegurança jurídica que só aparecerá nos momentos mais críticos. Por isso, este planejamento exige um olhar preventivo que vá além da teoria dos livros.", "Na Braga Bitencourt Advogados, atuamos com especialização em Direito de Família há quase 20 anos. Essa trajetória nos conferiu a vasta experiência e a expertise necessárias para transitar pelas complexas burocracias de cartórios e tribunais, garantindo que o planejamento dos bens de seu casamento seja, de fato, exequível.", "Não arrisque o seu patrimônio com soluções genéricas. Entre em contato com a Braga Bitencourt Advogados e assegure o seu futuro com quem tem décadas de prática."],
+  },
+  {
+    id: "26",
+    slug: "direito-de-convivencia-a-estruturacao-do-convivio-familiar-com-a-braga-bitencour",
+    title: "Direito de Convivência: A Estruturação do Convívio Familiar, com a Braga Bitencourt Advogados.",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Manter os laços afetivos após a dissolução de uma união é um direito fundamental da criança e do adolescente, bem como um dever dos pais. Com quase duas décadas de atuação, o escritório Braga Bitencou...",
+    body: ["Manter os laços afetivos após a dissolução de uma união é um direito fundamental da criança e do adolescente, bem como um dever dos pais. Com quase duas décadas de atuação, o escritório Braga Bitencourt Advogados entende que o antigo conceito de \"visitas\" evoluiu para o regime de convivência, uma estrutura jurídica que visa garantir a presença qualitativa de ambos os genitores na formação dos filhos.", "## O Propósito do Regime de Convivência", "O objetivo central não é apenas determinar dias e horários, mas assegurar o princípio do melhor interesse do menor. Um regime bem estruturado evita a alienação parental e proporciona estabilidade emocional. Como especialistas em direito de família, nossa missão é transformar esse momento de transição para que seja seguro e funcional.", "## Tipos de Regimes e Modelos de Visitas", "Existem diferentes formas de organizar essa dinâmica, e a escolha adequada depende da realidade logística e fática de cada família. Em nossa consultoria jurídica familiar, analisamos modalidades como:", "* Regime de Convivência Padrão: Onde se estabelece a alternância de finais de semana ou mesmo dias da semana em períodos fixos.", "* Convivência em Guarda Compartilhada: Diferente do que muitos pensam, a guarda compartilhada não dispensa a fixação de um período de convivência. A guarda está ligada às decisões a respeito dos filhos e é o regime de convivência que define o tempo em que eles estarão com o genitor ou a genitora.", "* Regime Assistido: Aplicado em exceções onde há necessidade de supervisão para garantir a integridade do menor.", "Convivência Digital: Uma modalidade moderna que utiliza a tecnologia para manter o vínculo diário, especialmente em casos de distância geográfica. Ela também pode ser um acréscimo importante aos regimes de convivência presenciais.", "A Necessidade de Formalização e Tempo de Duração", "A informalidade nos acordos é o principal gatilho para conflitos judiciais futuros. A formalização através de um advogado especialista em guarda e visitas é necessária para que o título tenha força executiva. Quanto ao tempo de duração, o regime permanece vigente até a maioridade do filho, podendo ser revisto a qualquer momento (ação de revisional de visitas) caso haja alteração na rotina da família, por exemplo.", "Por que contratar a Braga Bitencourt Advogados?", "Ao buscar por um advogado de família ou auxílio em ações de guarda , a experiência de quase 20 anos do nosso escritório faz a diferença. Dominamos os procedimentos de regime de convivência / visitas , oferecendo uma condução técnica, tanto no contencioso como no consensual. A Braga Bitencourt Advogados está pronta para garantir que o seu direito de conviver com seus filhos seja exercido com plenitude e segurança jurídica."],
+  },
+  {
+    id: "27",
+    slug: "mudanca-de-domicilio-de-menor-nacional-ou-internacional-aspectos-legais-e-o-pode",
+    title: "Mudança de Domicílio de Menor (nacional ou internacional): Aspectos Legais e o Poder Familiar.",
+    category: "Internacional",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "A transferência de residência de um filho menor para outra cidade ou país não é uma decisão unilateral. Quando os pais não residem sob o mesmo teto ou não há consenso, a mudança deixa de ser uma escol...",
+    body: ["A transferência de residência de um filho menor para outra cidade ou país não é uma decisão unilateral. Quando os pais não residem sob o mesmo teto ou não há consenso, a mudança deixa de ser uma escolha pessoal para se tornar uma questão de suprimento judicial de consentimento.", "Fundamento Jurídico: O Poder Familiar.", "O ordenamento jurídico brasileiro estabelece que o Poder Familiar é exercido em igualdade de condições por ambos os genitores. Conforme o Art. 1.634, inciso V, do Código Civil, compete a ambos os pais \"decidir o paradeiro\" dos filhos, o que inclui a definição e a alteração do domicílio.", "Portanto, mesmo que um dos genitores possua a guarda fática ou jurídica, ele não detém o direito exclusivo de mudar a criança de localidade se isso impactar o direito de convivência do outro. A ausência de autorização expressa ou de decisão judicial pode configurar alienação parental ou, em âmbito internacional, subtração de incapaz.", "A Aplicação da LINDB e Jurisdição", "No cenário de mudanças internacionais, a Lei de Introdução às Normas do Direito Brasileiro (LINDB), em seu Art. 7º, determina que a lei do país em que reside a pessoa rege os direitos de família. Contudo, para que a saída do Brasil ocorra de forma lícita, as normas de ordem pública brasileira e os", "tratados internacionais (como a Convenção de Haia) exigem a vênia conjugal ou o suprimento judicial, visando sempre o Princípio do Melhor Interesse do Menor .", "Critérios para a Autorização Judicial", "O Judiciário não busca impedir o projeto de vida dos pais, mas sim garantir a proteção da criança. Para autorizar a mudança, avaliam-se:", "A Justificativa: Motivações profissionais, suporte familiar ou segurança no destino.", "Plano de Convivência: Como será mantido o vínculo com o genitor que permanecerá distante? (visitas em férias, chamadas de vídeo, etc.).", "Adaptação: Impactos na rotina escolar, saúde e lazer do menor.", "Consultoria Especializada com a Braga Bitencourt", "Com 18 anos de experiência e unidades em Betim e Belo Horizonte, a Braga Bitencourt Advogados é referência em Direito de Família e Direito Internacional. Nossa atuação técnica foca na antecipação de conflitos e na construção de estratégias processuais sólidas para decisão de mudança, garantindo que a transição de sua família ocorra com total segurança jurídica, seja para outra cidade ou para o exterior.", "Atendemos em todo o território nacional ou a clientes que residam no exterior."],
+  },
+  {
+    id: "28",
+    slug: "pacto-antenupcial-a-seguranca-juridica-que-o-seu-futuro-exige",
+    title: "Pacto Antenupcial: A Segurança Jurídica que o seu Futuro Exige.",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Muitos casais acreditam que o planejamento de um casamento se resume aos preparativos da festa e da cerimônia. No entanto, a base mais sólida e consciente de uma união reside na clareza das decisões p...",
+    body: ["Muitos casais acreditam que o planejamento de um casamento se resume aos preparativos da festa e da cerimônia. No entanto, a base mais sólida e consciente de uma união reside na clareza das decisões patrimoniais tomadas antes do \"sim\".", "Nesse contexto o Pacto Antenupcial é o instrumento jurídico essencial que permite personalizar as regras que regerão a vida econômica do casal, indo muito além das opções padrão oferecidas pelo Código Civil.", "Optar por um pacto não deve ser visto como um sinal de desconfiança, mas sim como um ato de extrema maturidade e respeito mútuo . É a oportunidade real de proteger heranças, empresas familiares, imóveis e investimentos prévios, garantindo que a vontade de ambos seja preservada, independentemente do destino da relação.", "Contudo, elaborar um pacto antenupcial está longe de ser uma tarefa meramente administrativa ou um formulário de cartório. Trata-se de um documento de alta complexidade que exige uma visão estratégica de longo prazo. Um erro técnico na redação ou a falta de observância a detalhes específicos pode tornar o documento nulo no futuro, gerando inseguranças jurídicas e prejuízos irreparáveis.", "Na Braga Bitencourt Advogados , acumulamos quase 20 anos de atuação especializada em Direito de Família . Essa trajetória consolidada nos ensinou que cada configuração familiar é única e que a burocracia envolvida nesses processos exige muito mais do que conhecimento teórico; exige a vasta experiência e o costume prático de resolver as minúcias que envolvem cartórios e tribunais.", "Não coloque o seu patrimônio e a sua tranquilidade em risco com soluções genéricas ou profissionais sem o devido tempo de estrada. Um planejamento eficiente e seguro demanda o olhar clínico de quem já resolveu centenas de casos complexos ao longo de duas décadas.", "Entre em contato com a Braga Bitencourt Advogados e agende uma consulta especializada agora mesmo."],
+  },
+  {
+    id: "29",
+    slug: "as-duas-consequencias-para-quem-nao-paga-pensao-alimenticia",
+    title: "AS DUAS CONSEQUÊNCIAS PARA QUEM NÃO PAGA PENSÃO ALIMENTÍCIA",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "O descumprimento do dever alimentar não é apenas uma falha moral; é um ato com consequências jurídicas severas. No Direito de Família, existem dois caminhos principais para a cobrança, e a escolha dep...",
+    body: ["O descumprimento do dever alimentar não é apenas uma falha moral; é um ato com consequências jurídicas severas. No Direito de Família, existem dois caminhos principais para a cobrança, e a escolha depende do tempo de atraso e do objetivo da ação.", "1. Rito da Prisão Civil (O mais coercitivo)", "Focado no pagamento imediato para garantir a sobrevivência de quem recebe.", "Quando ocorre:", "Débitos recentes (até as 3 últimas parcelas vencidas e as que vencerem no curso do", "processo).", "Consequência:", "O devedor pode ser detido por um período de", "1 a 3 meses", "Importante:", "O pagamento da dívida suspende a ordem de prisão, mas não apaga o débito do", "inadimplemento. Nesse caso o processo segue para penhora de bens e negativação do nome", "do Executado.", "2. Rito da Penhora / Expropriação (Patrimonial)", "Focado na busca de bens para satisfazer dívidas mais antigas ou acumuladas.", "Quando ocorre: Débitos que ultrapassam os 3 meses ou quando o credor abre mão do pedido de prisão.", "Consequência: Bloqueio de contas bancárias , penhora de veículos, imóveis e outros bens.", "Importante: Atinge diretamente o patrimônio do devedor até que o valor total seja quitado.", "A Precisão Técnica Faz a Diferença", "A aplicação dessas penas não é automática. O sucesso de um processo de execução depende de uma metodologia rigorosa:", "Cálculos Exatos: Erros na atualização do débito podem invalidar pedidos de prisão.", "Agilidade Processual: Falhas na localização do devedor ou prazos perdidos deixam o alimentado em vulnerabilidade.", "Defesa Estratégica: Para o devedor, uma defesa mal conduzida pode resultar em privação de liberdade ou perda de bens essenciais à própria sobrevivência.", "Especialização que Gera Resultados", "Na Braga Bitencourt Advogados , somamos 18 anos de atuação", "exclusiva em Direito de Família e Sucessões. Essa trajetória nos proporcionou a experiência necessária para transitar pelos tribunais com a agilidade e o rigor que casos de pensão alimentícia exigem. Quando a liberdade ou a subsistência estão em jogo, não há espaço para amadorismo. Não espere o conflito escalar. Proteja seus direitos com quem domina a técnica e a prática jurídica."],
+  },
+  {
+    id: "30",
+    slug: "divorcio-judicial-estrategia-e-seguranca-em-casos-complexos",
+    title: "DIVÓRCIO JUDICIAL: ESTRATÉGIA E SEGURANÇA EM CASOS COMPLEXOS.",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Quando o consenso não é possível ou envolve patrimônio e filhos, o divórcio deixa de ser uma formalidade e se torna uma disputa estratégica. Nestes casos é necessário que o processo seja conduzido de ...",
+    body: ["Quando o consenso não é possível ou envolve patrimônio e filhos, o divórcio deixa de ser uma formalidade e se torna uma disputa estratégica. Nestes casos é necessário que o processo seja conduzido de forma técnica e precisa, com suporte emocional ao cliente e firmeza jurídica com vista ao alcance do resultado almejado.", "Por que o Divórcio Judicial exige cautela?", "Diferente dos processos simples, o divórcio litigioso é marcado por alta complexidade:", "Prazos e Ritos: O Judiciário impõe regras rígidas e audiências obrigatórias.", "Provas Decisivas: Detalhes na petição ou na produção de provas definem o valor de pensões e o regime de guarda.", "Proteção Patrimonial: Uma visão preventiva evita que direitos sejam suprimidos ou bens sejam ocultados.", "O Risco de uma Condução Sem Experiência", "Erros técnicos ou a falta de estratégia podem resultar em:", "Conflitos Prolongados: Processos que se arrastam por anos.", "Prejuízo Financeiro: Divisões de bens desfavoráveis e desgastes desnecessários.", "Impacto Familiar: Danos psicológicos irreparáveis, especialmente para os filhos.", "A Engenharia Jurídica da Braga Bitencourt Advogados. Com 18 anos de atuação especializada em Direito de Família e Sucessões, nossa atuação é pautada na antecipação de riscos. Entendemos que casos complexos não aceitam soluções genéricas. Proteja o seu Futuro Não deixe o destino da sua família e do seu patrimônio ao acaso. Conte com uma trajetória consolidada."],
+  },
+  {
+    id: "31",
+    slug: "execucao-de-pensao-alimenticia-como-garantir-o-recebimento",
+    title: "EXECUÇÃO DE PENSÃO ALIMENTÍCIA: COMO GARANTIR O RECEBIMENTO?",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Quando uma decisão judicial ou acordo de alimentos não é cumprido, a lei oferece mecanismos rigorosos para garantir a subsistência de quem precisa. A execução de pensão alimentícia é o caminho para tr...",
+    body: ["Quando uma decisão judicial ou acordo de alimentos não é cumprido, a lei oferece mecanismos rigorosos para garantir a subsistência de quem precisa. A execução de pensão alimentícia é o caminho para transformar o papel em dinheiro no bolso de quem tem o direito.", "O Sucesso da Execução: Agilidade e Estratégia", "O sucesso na cobrança não depende apenas da dívida existir, mas de como o processo é conduzido. Atuamos em duas frentes principais:", "Rito de Prisão Civil: Utilizado para cobranças urgentes (últimos 3 meses). É a medida mais rápida para forçar o pagamento imediato sob risco de restrição de liberdade.", "Rito de Penhora de Bens: Focado em dívidas acumuladas. Envolve a busca ativa por contas bancárias, veículos, imóveis e investimentos do devedor.", "Por que a condução técnica é essencial?", "A cobrança de pensão alimentícia enfrenta barreiras burocráticas que podem ser superadas com a estratégia correta:", "Localização de Bens: Estratégias para evitar o ocultamento de patrimônio pelo devedor.", "Cálculos Precisos: Atualização rigorosa do débito para evitar nulidades processuais.", "Agilidade nos Tribunais: Atuação diligente junto às serventias judiciais para acelerar mandados de prisão e bloqueios de valores.", "Especialista em Execução de Alimentos em Minas Gerais", "Na Braga Bitencourt Advogados , temos 18 anos de experiência em Direito de Família. Esse tempo de estrada nos deu o conhecimento prático necessário para destravar processos de execução com a rapidez que o sustento familiar exige.", "Experiência que faz a lei ser cumprida: Aplicamos quase duas décadas de prática para garantir que as obrigações alimentares sejam honradas e a dignidade preservada.", "Agende sua Consulta Especializada", "Precisa de um advogado para execução de pensão ? Não deixe o tempo passar e a dívida acumular."],
+  },
+  {
+    id: "32",
+    slug: "exoneracao-de-pensao-alimenticia",
+    title: "EXONERAÇÃO DE PENSÃO ALIMENTÍCIA",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Um erro comum e perigoso é acreditar que o dever de pagar pensão acaba automaticamente...",
+    body: ["Um erro comum e perigoso é acreditar que o dever de pagar pensão acaba automaticamente", "quando o filho faz 18 anos ou termina a faculdade. No Direito brasileiro,", "a pensão não cessa sozinha.", "O Risco da Interrupção por Conta Própria", "Parar de pagar a pensão sem uma autorização judicial pode levar a:", "Prisão Civil: O credor pode pedir sua prisão pelo débito acumulado.", "Penhora de Bens: Bloqueio de contas e bens para quitar os valores não pagos.", "Negativação: Inclusão do nome do devedor em órgãos de proteção ao crédito (SPC/Serasa/ protesto).", "A Solução: Ação de Exoneração de Alimentos", "O único caminho seguro é a", "Ação de Exoneração", ". Nela, o juiz avalia a mudança no binômio", "Necessidade x Possibilidade considerando o alcance da maioridade civil de quem recebe os", "alimentos até então", "Independência Financeira: Provar que o filho já possui meios próprios de sustento.", "Conclusão de Estudos: Demonstrar que o ciclo de formação profissional foi encerrado ou o tempo já foi bastante para isto.", "Constituição de Família: Casamento ou união estável de quem recebe a pensão (filho ou ex-cônjuge).", "Estratégia e Prova: O Diferencial Técnico", "O Judiciário é cauteloso ao retirar o sustento de alguém. Por isso, a Braga Bitencourt Advogados utiliza uma estratégia refinada para:", "Investigação Patrimonial: Coleta de evidências sobre a real situação financeira do alimentado.", "Fundamentação Robusta: Evitar que o pedido seja indeferido por falta de provas contundentes.", "Segurança Definitiva: Garantir que a obrigação seja encerrada sem deixar brechas para cobranças futuras.", "18 Anos de Expertise em Direito de Família", "Com quase duas décadas de atuação em Betim e Belo Horizonte , a Braga Bitencourt Advogados domina os ritos necessários para garantir que sua transição financeira ocorra com paz e legalidade.", "Regularize sua Situação Agora Precisa entrar com uma ação para parar de pagar pensão ? Evite surpresas desagradáveis com a justiça."],
+  },
+  {
+    id: "33",
+    slug: "pensao-alimenticia",
+    title: "Pensão Alimentícia",
+    category: "Família",
+    date: "Março de 2026",
+    readingTime: "3 min de leitura",
+    image: "",
+    excerpt: "Muitas famílias têm dúvidas sobre como é definido o valor da pensão alimentícia no Brasil. Para começar, esqueça o mito do percentual fixo. A lei brasileira não estabelece um valor padrão (como os fam...",
+    body: ["Muitas famílias têm dúvidas sobre como é definido o valor da pensão alimentícia no Brasil. Para começar, esqueça o mito do percentual fixo. A lei brasileira não estabelece um valor padrão (como os famosos 30%), pois a fixação de alimentos depende de uma análise técnica e personalizada da realidade de cada núcleo familiar.", "Como é definido o valor da pensão alimentícia: O Trinômio Alimentar", "Para entender como é definido o valor da pensão alimentícia , saiba que a Justiça busca o equilíbrio perfeito através de três pilares fundamentais:", "Necessidade: Tudo o que quem recebe precisa para viver com dignidade (educação, saúde, lazer, moradia e alimentação).", "Possibilidade: A real capacidade financeira de quem tem o dever de pagar (salário, rendimentos, bens e padrão de vida).", "Proporcionalidade: O ajuste justo para que o valor não seja insuficiente para o filho, nem impossível para o genitor.", "O Desafio da Prova: Realidade vs. Aparência", "Muitas vezes, a renda declarada no processo não condiz com o padrão de vida ostentado pelo devedor. Por isso, descobrir como é definido o valor da pensão alimentícia na prática exige uma estratégia investigativa robusta:", "Quebra de Sigilo: Mecanismos judiciais para identificar rendimentos ocultos e contas bancárias.", "Sinais de Riqueza: Uso de redes sociais e padrão de consumo diário como prova judicial aceita.", "Detalhamento de Gastos: Fundamentação técnica para que despesas cruciais com saúde e educação não sejam ignoradas pelo juiz.", "Como é definido o valor da pensão alimentícia na Braga Bitencourt", "Com mais de 20 anos de especialização em Direito de Família e Sucessões, a Braga Bitencourt Advogados entende que um valor fixado incorretamente pode gerar dívidas impagáveis ou desamparo familiar.", "Nossa experiência de duas décadas traduz a complexidade da sua vida financeira para a linguagem do Judiciário, garantindo decisões seguras, personalizadas e justas para o futuro dos seus filhos.", "Dúvidas Frequentes sobre o Cálculo da Pensão Alimentícia.", "O pai desempregado precisa pagar pensão alimentícia?", "Sim. Uma dúvida muito comum é se o desemprego do pai ou da mãe zera a obrigação de pagar os alimentos, e a resposta é não. A Justiça entende que a necessidade da criança permanece. Nesses casos, o juiz costuma estipular um valor com base no salário mínimo vigente para garantir o sustento básico do menor.", "O valor da pensão alimentícia pode ser alterado depois?", "Sim, o valor definido não é definitivo para sempre. Caso haja mudança na situação financeira de quem paga (como uma demissão ou uma promoção) ou de quem recebe (como novas despesas médicas ou escolares), é possível entrar com uma Ação Revisional de Alimentos para aumentar ou diminuir a quantia de forma justa.", "Os avós podem ser obrigados a pagar a pensão?", "Sim, em situações excepcionais. Quando os genitores não possuem qualquer condição financeira de arcar com o sustento, a obrigação pode ser estendida aos avós (chamada de pensão avoenga ). Para isso, é preciso comprovar a real necessidade da criança e a total impossibilidade dos pais biológicos.", "Até que idade a pensão alimentícia deve ser paga?", "Outro mito comum na internet é de que a obrigação acaba automaticamente quando o filho completa 18 anos. Na realidade, a maioridade civil não extingue o dever de auxílio de forma automática. Se o jovem estiver estudando (seja em um curso técnico, faculdade ou pré-vestibular) e não tiver meios próprios de subsistência, o entendimento da Justiça é que o pagamento deve ser mantido, costumando ser estendido até os 24 anos de idade. Para que a obrigação seja encerrada, o pagador precisa obrigatoriamente entrar com uma Ação de Exoneração de Alimentos.", "Conclusão: A importância de uma assessoria jurídica especializada", "Compreender como é definido o valor da pensão alimentícia e reunir as provas corretas de padrão de vida é um processo sensível e técnico. Cada detalhe esquecido na fase inicial do processo pode impactar diretamente a qualidade de vida e a segurança financeira de um filho por muitos anos. Por isso, contar com o suporte de advogados especialistas em Direito de Família faz toda a diferença para traduzir a realidade financeira de forma clara e incontestável perfeitamente perante o juiz.", "### Extracted images (41): - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_1.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_10.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_11.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_12.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_13.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_14.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_15.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_16.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_17.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_18.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_19.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_2.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_20.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_21.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_22.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_23.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_24.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_25.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_26.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_27.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_28.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_29.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_3.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_30.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_31.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_32.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_33.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_34.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_35.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_36.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_37.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_38.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_39.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_4.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_40.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_41.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_5.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_6.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_7.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_8.jpg` - `parsed-documents://20260721-230426-079099/part2.pdf/images/page_9.jpg`"],
+  },
 ];
-
-export const getArticleById = (id: string) => ARTICLES.find((a) => a.id === id);
+export const getArticleById = (id: string) => ARTICLES.find(a => a.id === id);
