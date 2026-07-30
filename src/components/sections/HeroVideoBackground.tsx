@@ -12,7 +12,7 @@ export function HeroVideoBackground() {
         playsInline
         preload="metadata"
       />
-      <div className="absolute inset-0 bg-[#08152C]/80" />
+      <div className="absolute inset-0 bg-black/80" />
     </div>
   );
 }
