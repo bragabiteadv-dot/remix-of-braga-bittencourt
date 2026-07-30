@@ -64,8 +64,7 @@ export function Hero() {
 
             <h1 className="text-white text-[44px] md:text-[60px] lg:text-[68px] font-cinzel leading-[1.1] mb-12 max-w-[700px]">
               ADVOCACIA<br />
-              ESPECIALIZADA EM<br />
-              DIREITO DE FAMÍLIA,<br />
+              ESPECIALIZADA EM DIREITO DE FAMÍLIA,<br />
               SUCESSÕES E<br />
               INTERNACIONAL<br />
               PRIVADO.
