@@ -1,4 +1,5 @@
 import { MessageSquare } from "lucide-react";
+import { HeroVideoBackground } from "./HeroVideoBackground";
 
 export function Hero() {
   const features = [
