@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MessageSquare, Phone, User, MapPin, Folder, ChevronDown } from "lucide-react";
+import formImage from "@/assets/formulario-escritorio.jpg.asset.json";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -28,8 +29,8 @@ export function ContactForm() {
           <div className="lg:w-[45%] relative min-h-[500px]">
             <div className="absolute inset-0 z-0">
               <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" 
-                alt="Office Environment" 
+                src={formImage.url} 
+                alt="Escritório de advocacia" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/60"></div>
