@@ -30,6 +30,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/belo-horizonte/advocacia-familia", changefreq: "monthly", priority: "0.9" },
           { path: "/belo-horizonte/advocacia-sucessoes", changefreq: "monthly", priority: "0.9" },
           { path: "/belo-horizonte/advocacia-internacional", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-divorcio-betim", changefreq: "monthly", priority: "0.9" },
         ];
 
         const urls = entries.map((e) =>

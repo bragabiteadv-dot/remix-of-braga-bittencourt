@@ -16,6 +16,7 @@ import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as BetimRouteImport } from './routes/betim'
 import { Route as BeloHorizonteRouteImport } from './routes/belo-horizonte'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
+import { Route as AdvogadoDivorcioBetimRouteImport } from './routes/advogado-divorcio-betim'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BetimIndexRouteImport } from './routes/betim.index'
 import { Route as BeloHorizonteIndexRouteImport } from './routes/belo-horizonte.index'
@@ -61,6 +62,11 @@ const BeloHorizonteRoute = BeloHorizonteRouteImport.update({
 const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
   id: '/areas-de-atuacao',
   path: '/areas-de-atuacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoDivorcioBetimRoute = AdvogadoDivorcioBetimRouteImport.update({
+  id: '/advogado-divorcio-betim',
+  path: '/advogado-divorcio-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -125,6 +131,7 @@ const ArtigosIdRoute = ArtigosIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/belo-horizonte': typeof BeloHorizonteRouteWithChildren
   '/betim': typeof BetimRouteWithChildren
@@ -145,6 +152,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -164,6 +172,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/belo-horizonte': typeof BeloHorizonteRouteWithChildren
   '/betim': typeof BetimRouteWithChildren
@@ -186,6 +195,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/advogado-divorcio-betim'
     | '/areas-de-atuacao'
     | '/belo-horizonte'
     | '/betim'
@@ -206,6 +216,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/advogado-divorcio-betim'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -224,6 +235,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/advogado-divorcio-betim'
     | '/areas-de-atuacao'
     | '/belo-horizonte'
     | '/betim'
@@ -245,6 +257,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdvogadoDivorcioBetimRoute: typeof AdvogadoDivorcioBetimRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   BeloHorizonteRoute: typeof BeloHorizonteRouteWithChildren
   BetimRoute: typeof BetimRouteWithChildren
@@ -305,6 +318,13 @@ declare module '@tanstack/react-router' {
       path: '/areas-de-atuacao'
       fullPath: '/areas-de-atuacao'
       preLoaderRoute: typeof AreasDeAtuacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-betim': {
+      id: '/advogado-divorcio-betim'
+      path: '/advogado-divorcio-betim'
+      fullPath: '/advogado-divorcio-betim'
+      preLoaderRoute: typeof AdvogadoDivorcioBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -424,6 +444,7 @@ const BetimRouteWithChildren = BetimRoute._addFileChildren(BetimRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdvogadoDivorcioBetimRoute: AdvogadoDivorcioBetimRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   BeloHorizonteRoute: BeloHorizonteRouteWithChildren,
   BetimRoute: BetimRouteWithChildren,
@@ -437,3 +458,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
