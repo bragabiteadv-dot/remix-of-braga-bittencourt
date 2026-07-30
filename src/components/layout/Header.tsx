@@ -1,7 +1,19 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Phone, MapPin, MessageSquare, Facebook, Instagram, Mail, Search } from "lucide-react";
+import { Phone, MapPin, MessageSquare, Facebook, Instagram, Mail, Search, Menu, X } from "lucide-react";
+
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/perfil", label: "Perfil" },
+  { to: "/areas-de-atuacao", label: "Áreas de Atuação" },
+  { to: "/duvidas", label: "Dúvidas" },
+  { to: "/fale-conosco", label: "Fale Conosco" },
+  { to: "/artigos", label: "Artigos" },
+] as const;
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="w-full flex flex-col">
       {/* Top Bar */}
@@ -57,13 +69,50 @@ export function Header() {
             <Link to="/artigos" className="text-white text-sm font-semibold tracking-wider hover:text-gold-light transition-colors uppercase">Artigos</Link>
           </div>
 
-          <a 
-            href="https://wa.me/5531980260880"
-            className="bg-gold-gradient text-navy font-bold text-sm px-8 py-3 rounded-sm shadow-[0_0_15px_rgba(205,149,117,0.3)] hover:scale-105 transition-transform uppercase tracking-widest hidden sm:block"
-          >
-            Atendimento
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://wa.me/5531980260880"
+              className="bg-gold-gradient text-navy font-bold text-sm px-8 py-3 rounded-sm shadow-[0_0_15px_rgba(205,149,117,0.3)] hover:scale-105 transition-transform uppercase tracking-widest hidden sm:block"
+            >
+              Atendimento
+            </a>
+
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={open}
+              className="lg:hidden shrink-0 text-white p-2 -mr-2 hover:text-gold-light transition-colors"
+            >
+              {open ? <X size={26} /> : <Menu size={26} />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {open && (
+          <div className="lg:hidden border-t border-white/10 mt-4">
+            <div className="container mx-auto flex flex-col py-4">
+              {navLinks.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="text-white text-sm font-semibold tracking-wider hover:text-gold-light transition-colors uppercase py-3 border-b border-white/5"
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <a
+                href="https://wa.me/5531980260880"
+                onClick={() => setOpen(false)}
+                className="mt-5 bg-gold-gradient text-navy font-bold text-sm px-8 py-3 rounded-sm text-center uppercase tracking-widest"
+              >
+                Fale com Advogado
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );
