@@ -2,7 +2,7 @@ import logoTreeAsset from "@/assets/logo-tree-new.png.asset.json";
 
 export function HistorySection() {
   return (
-    <section className="py-20 bg-[#050b16] text-white overflow-hidden">
+    <section className="py-20 bg-[#08152C] text-white overflow-hidden">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
           {/* Left Side: Logo */}

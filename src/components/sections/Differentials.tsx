@@ -25,7 +25,7 @@ export function Differentials() {
   ];
 
   return (
-    <section className="py-24 bg-[#0a1427] relative overflow-hidden">
+    <section className="py-24 bg-[#08152C] relative overflow-hidden">
       {/* Subtle diamond pattern background (simulated) */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <svg width="100%" height="100%">

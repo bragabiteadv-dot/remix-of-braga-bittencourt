@@ -46,7 +46,7 @@ const services = [
 
 export const ServiceListing = () => {
   return (
-    <section className="py-20 bg-[#050b16] relative overflow-hidden">
+    <section className="py-20 bg-[#08152C] relative overflow-hidden">
       {/* Background Decorative Lines (similar to the image) */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -65,7 +65,7 @@ export const ServiceListing = () => {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="bg-[#0c1a32]/80 backdrop-blur-sm border border-white/10 rounded-xl p-8 md:p-12 shadow-2xl"
+              className="bg-[#08152C]/80 backdrop-blur-sm border border-white/10 rounded-xl p-8 md:p-12 shadow-2xl"
             >
               <div className="inline-block px-4 py-1 border border-white/30 rounded-full text-xs text-white/80 mb-6 font-montserrat tracking-widest">
                 {service.category}

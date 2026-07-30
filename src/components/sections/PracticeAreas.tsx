@@ -22,7 +22,7 @@ const practiceAreas = [
 export const PracticeAreas = () => {
   const { ref, isVisible } = useRevealOnScroll();
   return (
-    <section className="py-24 bg-[#050b16] relative overflow-hidden">
+    <section className="py-24 bg-[#08152C] relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(12,26,50,0.8)_0%,transparent_70%)] pointer-events-none"></div>
 
@@ -44,7 +44,7 @@ export const PracticeAreas = () => {
           {practiceAreas.map((area, idx) => (
             <div
               key={idx}
-              className="bg-[#0c1a32]/40 backdrop-blur-md border border-white/5 rounded-xl p-10 hover:border-[#F8D59B]/30 transition-all duration-500 group shadow-2xl"
+              className="bg-[#08152C]/40 backdrop-blur-md border border-white/5 rounded-xl p-10 hover:border-[#F8D59B]/30 transition-all duration-500 group shadow-2xl"
             >
               <div className="mb-8 transform group-hover:scale-110 transition-transform duration-500">
                 {area.icon}

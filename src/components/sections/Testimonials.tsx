@@ -30,7 +30,7 @@ export const Testimonials = () => {
           <span className="text-[#c5a880] font-montserrat tracking-[0.3em] text-sm uppercase block mb-4">
             DEPOIMENTOS
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-cinzel text-[#0b1528] mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-cinzel text-[#08152C] mb-6">
             O QUE NOSSOS CLIENTES ESTÃO FALANDO
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#c5a880] to-transparent mx-auto"></div>

@@ -2,7 +2,7 @@ import RotatingEarth from '@/components/ui/wireframe-dotted-globe';
 
 export const GlobalReach = () => {
   return (
-    <section className="bg-[#050b16] py-20 overflow-hidden px-10 md:px-20 lg:px-32">
+    <section className="bg-[#08152C] py-20 overflow-hidden px-10 md:px-20 lg:px-32">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left Content */}
         <div className="flex-1 text-left">
