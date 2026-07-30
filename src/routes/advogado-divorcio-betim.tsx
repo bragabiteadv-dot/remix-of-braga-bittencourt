@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
   Scale,
   Users,
