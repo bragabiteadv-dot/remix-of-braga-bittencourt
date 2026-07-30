@@ -13,20 +13,10 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
-import { Route as BetimRouteImport } from './routes/betim'
-import { Route as BeloHorizonteRouteImport } from './routes/belo-horizonte'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as AdvogadoDivorcioBetimRouteImport } from './routes/advogado-divorcio-betim'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BetimIndexRouteImport } from './routes/betim.index'
-import { Route as BeloHorizonteIndexRouteImport } from './routes/belo-horizonte.index'
 import { Route as ArtigosIndexRouteImport } from './routes/artigos.index'
-import { Route as BetimAdvocaciaSucessoesRouteImport } from './routes/betim.advocacia-sucessoes'
-import { Route as BetimAdvocaciaInternacionalRouteImport } from './routes/betim.advocacia-internacional'
-import { Route as BetimAdvocaciaFamiliaRouteImport } from './routes/betim.advocacia-familia'
-import { Route as BeloHorizonteAdvocaciaSucessoesRouteImport } from './routes/belo-horizonte.advocacia-sucessoes'
-import { Route as BeloHorizonteAdvocaciaInternacionalRouteImport } from './routes/belo-horizonte.advocacia-internacional'
-import { Route as BeloHorizonteAdvocaciaFamiliaRouteImport } from './routes/belo-horizonte.advocacia-familia'
 import { Route as ArtigosIdRouteImport } from './routes/artigos.$id'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -49,16 +39,6 @@ const DuvidasRoute = DuvidasRouteImport.update({
   path: '/duvidas',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BetimRoute = BetimRouteImport.update({
-  id: '/betim',
-  path: '/betim',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BeloHorizonteRoute = BeloHorizonteRouteImport.update({
-  id: '/belo-horizonte',
-  path: '/belo-horizonte',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
   id: '/areas-de-atuacao',
   path: '/areas-de-atuacao',
@@ -74,55 +54,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BetimIndexRoute = BetimIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => BetimRoute,
-} as any)
-const BeloHorizonteIndexRoute = BeloHorizonteIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => BeloHorizonteRoute,
-} as any)
 const ArtigosIndexRoute = ArtigosIndexRouteImport.update({
   id: '/artigos/',
   path: '/artigos/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BetimAdvocaciaSucessoesRoute = BetimAdvocaciaSucessoesRouteImport.update({
-  id: '/advocacia-sucessoes',
-  path: '/advocacia-sucessoes',
-  getParentRoute: () => BetimRoute,
-} as any)
-const BetimAdvocaciaInternacionalRoute =
-  BetimAdvocaciaInternacionalRouteImport.update({
-    id: '/advocacia-internacional',
-    path: '/advocacia-internacional',
-    getParentRoute: () => BetimRoute,
-  } as any)
-const BetimAdvocaciaFamiliaRoute = BetimAdvocaciaFamiliaRouteImport.update({
-  id: '/advocacia-familia',
-  path: '/advocacia-familia',
-  getParentRoute: () => BetimRoute,
-} as any)
-const BeloHorizonteAdvocaciaSucessoesRoute =
-  BeloHorizonteAdvocaciaSucessoesRouteImport.update({
-    id: '/advocacia-sucessoes',
-    path: '/advocacia-sucessoes',
-    getParentRoute: () => BeloHorizonteRoute,
-  } as any)
-const BeloHorizonteAdvocaciaInternacionalRoute =
-  BeloHorizonteAdvocaciaInternacionalRouteImport.update({
-    id: '/advocacia-internacional',
-    path: '/advocacia-internacional',
-    getParentRoute: () => BeloHorizonteRoute,
-  } as any)
-const BeloHorizonteAdvocaciaFamiliaRoute =
-  BeloHorizonteAdvocaciaFamiliaRouteImport.update({
-    id: '/advocacia-familia',
-    path: '/advocacia-familia',
-    getParentRoute: () => BeloHorizonteRoute,
-  } as any)
 const ArtigosIdRoute = ArtigosIdRouteImport.update({
   id: '/artigos/$id',
   path: '/artigos/$id',
@@ -133,22 +69,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
-  '/belo-horizonte': typeof BeloHorizonteRouteWithChildren
-  '/betim': typeof BetimRouteWithChildren
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/artigos/$id': typeof ArtigosIdRoute
-  '/belo-horizonte/advocacia-familia': typeof BeloHorizonteAdvocaciaFamiliaRoute
-  '/belo-horizonte/advocacia-internacional': typeof BeloHorizonteAdvocaciaInternacionalRoute
-  '/belo-horizonte/advocacia-sucessoes': typeof BeloHorizonteAdvocaciaSucessoesRoute
-  '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
-  '/betim/advocacia-internacional': typeof BetimAdvocaciaInternacionalRoute
-  '/betim/advocacia-sucessoes': typeof BetimAdvocaciaSucessoesRoute
   '/artigos/': typeof ArtigosIndexRoute
-  '/belo-horizonte/': typeof BeloHorizonteIndexRoute
-  '/betim/': typeof BetimIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -159,37 +85,19 @@ export interface FileRoutesByTo {
   '/perfil': typeof PerfilRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/artigos/$id': typeof ArtigosIdRoute
-  '/belo-horizonte/advocacia-familia': typeof BeloHorizonteAdvocaciaFamiliaRoute
-  '/belo-horizonte/advocacia-internacional': typeof BeloHorizonteAdvocaciaInternacionalRoute
-  '/belo-horizonte/advocacia-sucessoes': typeof BeloHorizonteAdvocaciaSucessoesRoute
-  '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
-  '/betim/advocacia-internacional': typeof BetimAdvocaciaInternacionalRoute
-  '/betim/advocacia-sucessoes': typeof BetimAdvocaciaSucessoesRoute
   '/artigos': typeof ArtigosIndexRoute
-  '/belo-horizonte': typeof BeloHorizonteIndexRoute
-  '/betim': typeof BetimIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
-  '/belo-horizonte': typeof BeloHorizonteRouteWithChildren
-  '/betim': typeof BetimRouteWithChildren
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/artigos/$id': typeof ArtigosIdRoute
-  '/belo-horizonte/advocacia-familia': typeof BeloHorizonteAdvocaciaFamiliaRoute
-  '/belo-horizonte/advocacia-internacional': typeof BeloHorizonteAdvocaciaInternacionalRoute
-  '/belo-horizonte/advocacia-sucessoes': typeof BeloHorizonteAdvocaciaSucessoesRoute
-  '/betim/advocacia-familia': typeof BetimAdvocaciaFamiliaRoute
-  '/betim/advocacia-internacional': typeof BetimAdvocaciaInternacionalRoute
-  '/betim/advocacia-sucessoes': typeof BetimAdvocaciaSucessoesRoute
   '/artigos/': typeof ArtigosIndexRoute
-  '/belo-horizonte/': typeof BeloHorizonteIndexRoute
-  '/betim/': typeof BetimIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -197,22 +105,12 @@ export interface FileRouteTypes {
     | '/'
     | '/advogado-divorcio-betim'
     | '/areas-de-atuacao'
-    | '/belo-horizonte'
-    | '/betim'
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
     | '/sitemap.xml'
     | '/artigos/$id'
-    | '/belo-horizonte/advocacia-familia'
-    | '/belo-horizonte/advocacia-internacional'
-    | '/belo-horizonte/advocacia-sucessoes'
-    | '/betim/advocacia-familia'
-    | '/betim/advocacia-internacional'
-    | '/betim/advocacia-sucessoes'
     | '/artigos/'
-    | '/belo-horizonte/'
-    | '/betim/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -223,44 +121,24 @@ export interface FileRouteTypes {
     | '/perfil'
     | '/sitemap.xml'
     | '/artigos/$id'
-    | '/belo-horizonte/advocacia-familia'
-    | '/belo-horizonte/advocacia-internacional'
-    | '/belo-horizonte/advocacia-sucessoes'
-    | '/betim/advocacia-familia'
-    | '/betim/advocacia-internacional'
-    | '/betim/advocacia-sucessoes'
     | '/artigos'
-    | '/belo-horizonte'
-    | '/betim'
   id:
     | '__root__'
     | '/'
     | '/advogado-divorcio-betim'
     | '/areas-de-atuacao'
-    | '/belo-horizonte'
-    | '/betim'
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
     | '/sitemap.xml'
     | '/artigos/$id'
-    | '/belo-horizonte/advocacia-familia'
-    | '/belo-horizonte/advocacia-internacional'
-    | '/belo-horizonte/advocacia-sucessoes'
-    | '/betim/advocacia-familia'
-    | '/betim/advocacia-internacional'
-    | '/betim/advocacia-sucessoes'
     | '/artigos/'
-    | '/belo-horizonte/'
-    | '/betim/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdvogadoDivorcioBetimRoute: typeof AdvogadoDivorcioBetimRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
-  BeloHorizonteRoute: typeof BeloHorizonteRouteWithChildren
-  BetimRoute: typeof BetimRouteWithChildren
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
   PerfilRoute: typeof PerfilRoute
@@ -299,20 +177,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DuvidasRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/betim': {
-      id: '/betim'
-      path: '/betim'
-      fullPath: '/betim'
-      preLoaderRoute: typeof BetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/belo-horizonte': {
-      id: '/belo-horizonte'
-      path: '/belo-horizonte'
-      fullPath: '/belo-horizonte'
-      preLoaderRoute: typeof BeloHorizonteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/areas-de-atuacao': {
       id: '/areas-de-atuacao'
       path: '/areas-de-atuacao'
@@ -334,68 +198,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/betim/': {
-      id: '/betim/'
-      path: '/'
-      fullPath: '/betim/'
-      preLoaderRoute: typeof BetimIndexRouteImport
-      parentRoute: typeof BetimRoute
-    }
-    '/belo-horizonte/': {
-      id: '/belo-horizonte/'
-      path: '/'
-      fullPath: '/belo-horizonte/'
-      preLoaderRoute: typeof BeloHorizonteIndexRouteImport
-      parentRoute: typeof BeloHorizonteRoute
-    }
     '/artigos/': {
       id: '/artigos/'
       path: '/artigos'
       fullPath: '/artigos/'
       preLoaderRoute: typeof ArtigosIndexRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/betim/advocacia-sucessoes': {
-      id: '/betim/advocacia-sucessoes'
-      path: '/advocacia-sucessoes'
-      fullPath: '/betim/advocacia-sucessoes'
-      preLoaderRoute: typeof BetimAdvocaciaSucessoesRouteImport
-      parentRoute: typeof BetimRoute
-    }
-    '/betim/advocacia-internacional': {
-      id: '/betim/advocacia-internacional'
-      path: '/advocacia-internacional'
-      fullPath: '/betim/advocacia-internacional'
-      preLoaderRoute: typeof BetimAdvocaciaInternacionalRouteImport
-      parentRoute: typeof BetimRoute
-    }
-    '/betim/advocacia-familia': {
-      id: '/betim/advocacia-familia'
-      path: '/advocacia-familia'
-      fullPath: '/betim/advocacia-familia'
-      preLoaderRoute: typeof BetimAdvocaciaFamiliaRouteImport
-      parentRoute: typeof BetimRoute
-    }
-    '/belo-horizonte/advocacia-sucessoes': {
-      id: '/belo-horizonte/advocacia-sucessoes'
-      path: '/advocacia-sucessoes'
-      fullPath: '/belo-horizonte/advocacia-sucessoes'
-      preLoaderRoute: typeof BeloHorizonteAdvocaciaSucessoesRouteImport
-      parentRoute: typeof BeloHorizonteRoute
-    }
-    '/belo-horizonte/advocacia-internacional': {
-      id: '/belo-horizonte/advocacia-internacional'
-      path: '/advocacia-internacional'
-      fullPath: '/belo-horizonte/advocacia-internacional'
-      preLoaderRoute: typeof BeloHorizonteAdvocaciaInternacionalRouteImport
-      parentRoute: typeof BeloHorizonteRoute
-    }
-    '/belo-horizonte/advocacia-familia': {
-      id: '/belo-horizonte/advocacia-familia'
-      path: '/advocacia-familia'
-      fullPath: '/belo-horizonte/advocacia-familia'
-      preLoaderRoute: typeof BeloHorizonteAdvocaciaFamiliaRouteImport
-      parentRoute: typeof BeloHorizonteRoute
     }
     '/artigos/$id': {
       id: '/artigos/$id'
@@ -407,47 +215,10 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface BeloHorizonteRouteChildren {
-  BeloHorizonteAdvocaciaFamiliaRoute: typeof BeloHorizonteAdvocaciaFamiliaRoute
-  BeloHorizonteAdvocaciaInternacionalRoute: typeof BeloHorizonteAdvocaciaInternacionalRoute
-  BeloHorizonteAdvocaciaSucessoesRoute: typeof BeloHorizonteAdvocaciaSucessoesRoute
-  BeloHorizonteIndexRoute: typeof BeloHorizonteIndexRoute
-}
-
-const BeloHorizonteRouteChildren: BeloHorizonteRouteChildren = {
-  BeloHorizonteAdvocaciaFamiliaRoute: BeloHorizonteAdvocaciaFamiliaRoute,
-  BeloHorizonteAdvocaciaInternacionalRoute:
-    BeloHorizonteAdvocaciaInternacionalRoute,
-  BeloHorizonteAdvocaciaSucessoesRoute: BeloHorizonteAdvocaciaSucessoesRoute,
-  BeloHorizonteIndexRoute: BeloHorizonteIndexRoute,
-}
-
-const BeloHorizonteRouteWithChildren = BeloHorizonteRoute._addFileChildren(
-  BeloHorizonteRouteChildren,
-)
-
-interface BetimRouteChildren {
-  BetimAdvocaciaFamiliaRoute: typeof BetimAdvocaciaFamiliaRoute
-  BetimAdvocaciaInternacionalRoute: typeof BetimAdvocaciaInternacionalRoute
-  BetimAdvocaciaSucessoesRoute: typeof BetimAdvocaciaSucessoesRoute
-  BetimIndexRoute: typeof BetimIndexRoute
-}
-
-const BetimRouteChildren: BetimRouteChildren = {
-  BetimAdvocaciaFamiliaRoute: BetimAdvocaciaFamiliaRoute,
-  BetimAdvocaciaInternacionalRoute: BetimAdvocaciaInternacionalRoute,
-  BetimAdvocaciaSucessoesRoute: BetimAdvocaciaSucessoesRoute,
-  BetimIndexRoute: BetimIndexRoute,
-}
-
-const BetimRouteWithChildren = BetimRoute._addFileChildren(BetimRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdvogadoDivorcioBetimRoute: AdvogadoDivorcioBetimRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
-  BeloHorizonteRoute: BeloHorizonteRouteWithChildren,
-  BetimRoute: BetimRouteWithChildren,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
   PerfilRoute: PerfilRoute,
