@@ -8,7 +8,7 @@ import { HistorySection } from "../components/sections/HistorySection";
 import { ServiceListing } from "../components/sections/ServiceListing";
 import { CallToActionBanner } from "../components/sections/CallToActionBanner";
 import { PracticeAreas } from "../components/sections/PracticeAreas";
-import { LocationsSection } from "../components/sections/LocationsSection";
+
 import { FounderCard } from "../components/sections/FounderCard";
 import { ActionMoment } from "../components/sections/ActionMoment";
 import { FAQ } from "../components/sections/FAQ";
