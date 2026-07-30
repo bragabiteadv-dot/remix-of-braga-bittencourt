@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MessageSquare, Phone, User, MapPin, Folder, ChevronDown } from "lucide-react";
+import formImage from "@/assets/formulario-escritorio.jpg.asset.json";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
