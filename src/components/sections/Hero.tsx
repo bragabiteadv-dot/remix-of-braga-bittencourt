@@ -1,4 +1,5 @@
 import { MessageSquare } from "lucide-react";
+import { HeroVideoBackground } from "./HeroVideoBackground";
 
 export function Hero() {
   const features = [
@@ -50,8 +51,10 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center bg-[#08152C] pt-32 pb-20 overflow-hidden">
+      <HeroVideoBackground />
       {/* Background radial highlight */}
-      <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 z-[1]"></div>
+
       
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out fill-mode-forwards">

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
   Scale,
   Users,
@@ -157,7 +158,9 @@ function LpHero() {
 
   return (
     <section className="relative bg-[#08152C] pt-16 pb-24 overflow-hidden">
-      <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+      <HeroVideoBackground />
+      <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 z-[1]" />
+
 
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start animate-in fade-in slide-in-from-bottom-8 duration-1000">
