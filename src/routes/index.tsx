@@ -43,7 +43,7 @@ function Index() {
       <ServiceListing />
       <CallToActionBanner />
       <PracticeAreas />
-      <LocationsSection />
+      
       <FounderCard />
       <ActionMoment />
       <FAQ />
