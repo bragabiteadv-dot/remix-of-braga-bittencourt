@@ -22,15 +22,12 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/duvidas", changefreq: "weekly", priority: "0.8" },
           { path: "/fale-conosco", changefreq: "monthly", priority: "0.8" },
           { path: "/artigos", changefreq: "weekly", priority: "0.7" },
-          { path: "/betim", changefreq: "monthly", priority: "0.9" },
-          { path: "/betim/advocacia-familia", changefreq: "monthly", priority: "0.9" },
-          { path: "/betim/advocacia-sucessoes", changefreq: "monthly", priority: "0.9" },
-          { path: "/betim/advocacia-internacional", changefreq: "monthly", priority: "0.9" },
-          { path: "/belo-horizonte", changefreq: "monthly", priority: "0.9" },
-          { path: "/belo-horizonte/advocacia-familia", changefreq: "monthly", priority: "0.9" },
-          { path: "/belo-horizonte/advocacia-sucessoes", changefreq: "monthly", priority: "0.9" },
-          { path: "/belo-horizonte/advocacia-internacional", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-divorcio-betim", changefreq: "monthly", priority: "0.9" },
+          ...ARTICLES.map((a) => ({
+            path: `/artigos/${a.id}`,
+            changefreq: "monthly" as const,
+            priority: "0.6",
+          })),
         ];
 
         const urls = entries.map((e) =>
