@@ -1,0 +1,701 @@
+import { createFileRoute } from "@tanstack/react-router";
+import {
+  Scale,
+  Users,
+  Coins,
+  FileSignature,
+  Building2,
+  Landmark,
+  TreeDeciduous,
+  Gem,
+  Globe,
+  MapPin,
+} from "lucide-react";
+
+import { GlobalReach } from "@/components/sections/GlobalReach";
+import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
+
+import officeBetim from "@/assets/office-betim-new.jpg.asset.json";
+import officeBH from "@/assets/office-bh-new.jpg.asset.json";
+import officeBetimOld from "@/assets/office-betim.png.asset.json";
+import officeBHOld from "@/assets/office-bh.png.asset.json";
+import actionMoment from "@/assets/action-moment-new.jpg.asset.json";
+import carlosGabriel from "@/assets/carlos-gabriel.png.asset.json";
+import carlosJavet from "@/assets/carlos-javet.png.asset.json";
+import glaucia from "@/assets/glaucia.png.asset.json";
+import equipeBg from "@/assets/equipe-bg.png.asset.json";
+
+const CANONICAL = "https://warm-oi-whisper.lovable.app/advogado-divorcio-betim";
+const TITLE = "Advogado de Divórcio em Betim | Braga Bitencourt Advogados";
+const DESCRIPTION =
+  "Advogado de divórcio em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
+
+const WHATSAPP =
+  "https://wa.me/5531980260880?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20advogado%20especialista%20em%20div%C3%B3rcio%20em%20Betim.";
+
+export const Route = createFileRoute("/advogado-divorcio-betim")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: officeBetim.url },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: officeBetim.url },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LegalService",
+          name: "Braga Bitencourt Advogados — Advogado de Divórcio em Betim",
+          description: DESCRIPTION,
+          url: CANONICAL,
+          telephone: "+5531980260880",
+          areaServed: "Betim, MG",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Av. Amazonas, 1446, 7º andar, salas 706/707 - Brasiléia",
+            addressLocality: "Betim",
+            addressRegion: "MG",
+            postalCode: "32600-324",
+            addressCountry: "BR",
+          },
+        }),
+      },
+    ],
+  }),
+  component: LandingPage,
+});
+
+function WhatsAppIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.187-2.59-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.852.448-1.271.607-1.442.159-.171.347-.214.463-.214.116 0 .231.006.332.012.109.006.253-.041.397.306.145.348.492 1.201.535 1.288.044.087.073.189.014.305-.058.117-.087.189-.173.29-.088.101-.184.225-.264.303-.098.096-.201.2-.087.396.114.195.508.839 1.092 1.358.753.671 1.389.88 1.585.977.195.097.311.082.426-.051.116-.133.492-.572.622-.767.13-.195.26-.165.44-.099.18.065 1.142.538 1.338.636.195.098.325.145.372.226.047.081.047.468-.097.873z" />
+    </svg>
+  );
+}
+
+function CtaButton({ label = "FALAR COM ADVOGADO", className = "" }: { label?: string; className?: string }) {
+  return (
+    <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className={`btn-primary ${className}`}>
+      {label}
+      <WhatsAppIcon />
+    </a>
+  );
+}
+
+function LandingPage() {
+  return (
+    <div className="bg-[#08152C]">
+      <LpHeader />
+      <LpHero />
+      <LpTeam />
+      <LpSituations />
+      <LpActionMoment />
+      <LpOfficeGallery />
+      <GlobalReach />
+      <LpServices />
+      <LpDifferentials />
+      <LpPresence />
+      <LpFooter />
+    </div>
+  );
+}
+
+/* ---------------- Header ---------------- */
+
+function LpHeader() {
+  return (
+    <header className="sticky top-0 z-50 w-full bg-[#08152C]/95 backdrop-blur-md border-b border-white/10">
+      <div className="container mx-auto flex items-center justify-between gap-4 py-4">
+        <img
+          src="https://bragabitencourt.com/wp-content/uploads/2026/06/LOGO-2-1.png"
+          alt="Braga Bitencourt Advogados"
+          className="h-12 w-auto shrink-0"
+          loading="eager"
+        />
+        <CtaButton label="FALAR COM ADVOGADO" className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
+      </div>
+    </header>
+  );
+}
+
+/* ---------------- Hero ---------------- */
+
+function LpHero() {
+  const stats = [
+    {
+      title: "+ 20 anos",
+      subtitle: ["EXPERIENCIA &", "BAGAGEM TÉCNICA"],
+      text: "Duas décadas de especialização e liderança institucional em família, sucessões e internacional privado.",
+    },
+    {
+      title: "Fale Direto",
+      subtitle: ["ATENDIMENTO IMEDIATO E SIGILOSO"],
+      text: "Contato direto como advogado do caso, assegurando confidencialidade e confiança.",
+    },
+    {
+      title: "Sedes físicas",
+      subtitle: ["-BELO HORIZONTE", "-BETIM"],
+      text: "Estruturas de excelência para consultas presenciais ou suporte digital integrado.",
+    },
+    {
+      title: "Raio Global",
+      subtitle: ["BRASIL E EXTERIOR"],
+      text: "Suporte jurídico especializado com ampla atuação no Brasil e no exterior.",
+    },
+  ];
+
+  return (
+    <section className="relative bg-[#08152C] pt-16 pb-24 overflow-hidden">
+      <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+
+      <div className="container mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          {/* Left */}
+          <div className="lg:w-[55%] w-full min-w-0">
+            <div className="inline-block px-5 py-2 border border-white/20 rounded-full mb-8">
+              <span className="text-white text-xs font-bold uppercase tracking-wider">Advogado de Família</span>
+            </div>
+
+            <h1 className="text-white text-[38px] md:text-[52px] lg:text-[60px] font-cinzel leading-[1.1] mb-6">
+              Advogado de Divórcio em Betim
+            </h1>
+
+            <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
+              Conte com quem tem mais de 20 anos resolvendo casos como o seu.
+            </h2>
+
+            <p className="text-white/80 text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
+              Especialista em Divórcio em Betim — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem estar.
+              Conduzimos seu divórcio em Betim com o sigilo, a segurança e o acolhimento que você precisa.
+            </p>
+
+            <CtaButton label="FALAR COM ADVOGADO" className="w-full sm:w-auto" />
+
+            <p className="text-white/50 text-xs font-montserrat mt-6 tracking-wide">
+              Atendimento presencial e online em Betim.
+            </p>
+
+            <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+              <img
+                src={officeBetim.url}
+                alt="Escritório do advogado de divórcio em Betim"
+                className="w-full h-[320px] object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          {/* Right panel */}
+          <div className="lg:w-[45%] w-full flex justify-center lg:justify-end">
+            <div className="w-full max-w-[500px] glass-card rounded-[2rem] p-8 lg:p-10 relative">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+
+              <div className="flex flex-col items-center mb-10">
+                <div className="inline-block px-6 py-2 border border-white/20 rounded-full mb-8">
+                  <span className="text-white text-sm font-bold opacity-70">Sobre Nosso Trabalho</span>
+                </div>
+                <p className="text-white/70 text-center text-sm md:text-base font-montserrat leading-relaxed px-2">
+                  Advocacia de excelência focada em segurança jurídica, visão prática e soluções objetivas com totla
+                  claresa desde o primeiro contato.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {stats.map((s) => (
+                  <div
+                    key={s.title}
+                    className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
+                  >
+                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                      {s.title}
+                    </h3>
+                    <div className="mb-4">
+                      {s.subtitle.map((line) => (
+                        <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
+                          {line}
+                        </p>
+                      ))}
+                    </div>
+                    <p className="text-white/50 text-[11px] font-medium leading-snug mt-auto">{s.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Equipe ---------------- */
+
+function LpTeam() {
+  const members = [
+    { name: "Carlos Gabriel F. Braga Bitencourt", image: carlosGabriel.url },
+    { name: "Carlos Javét Braga Bitencourt", image: carlosJavet.url },
+    { name: "Gláucia Patrícia F. Braga Bitencourt", image: glaucia.url },
+  ];
+
+  return (
+    <section className="py-24 bg-[#08152C] relative overflow-hidden">
+      <div
+        className="absolute inset-0 z-0 opacity-50 bg-cover bg-center"
+        style={{ backgroundImage: `url('${equipeBg.url}')` }}
+      />
+      <div className="container mx-auto relative z-10">
+        <h2 className="text-white text-4xl md:text-5xl font-cinzel text-center mb-16 tracking-widest uppercase">
+          Nossa equipe
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-14">
+          {members.map((m) => (
+            <div key={m.name} className="flex flex-col group">
+              <div className="relative overflow-hidden aspect-[3/4] rounded-sm shadow-2xl mb-6 bg-white">
+                <img
+                  src={m.image}
+                  alt={m.name}
+                  loading="lazy"
+                  className="w-full h-full object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="bg-white p-6 rounded-sm shadow-xl text-center">
+                <h3 className="text-navy text-lg font-bold font-montserrat">{m.name}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex justify-center">
+          <CtaButton className="w-full sm:w-auto" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Situações ---------------- */
+
+function LpSituations() {
+  const { ref, isVisible } = useRevealOnScroll();
+
+  const items = [
+    {
+      icon: <Scale className="w-7 h-7" />,
+      title: "Quer fazer o divórcio, mas não sabe se será amigável ou com brigas?",
+      text: "Entenda a diferença entre o divórcio consensual e o litigioso para proteger seus direitos de forma rápida.",
+    },
+    {
+      icon: <Users className="w-7 h-7" />,
+      title: "Precisa definir a guarda dos filhos ou a regulamentação de visitas?",
+      text: "Garanta o bem-estar dos seus filhos com uma definição clara e eficiente sobre guarda compartilhada e convivência.",
+    },
+    {
+      icon: <Coins className="w-7 h-7" />,
+      title: "Tem dúvidas sobre o valor da pensão alimentícia ou como calculá-lo?",
+      text: "Saiba como funciona o cálculo da pensão alimentícia, como solicitar ou pedir a revisão dos valores determinados.",
+    },
+    {
+      icon: <FileSignature className="w-7 h-7" />,
+      title: "Quer saber se pode voltar a usar o nome de solteiro(a)?",
+      text: "Entenda as regras para a alteração do sobrenome após o divórcio e a atualização dos documentos oficiais.",
+    },
+    {
+      icon: <Building2 className="w-7 h-7" />,
+      title: "Busca uma forma rápida de divorciar e quer saber se pode ser via cartório?",
+      text: "Descubra se você cumpre os requisitos para o divórcio extrajudicial, que pode ser mais rápido e econômico.",
+    },
+    {
+      icon: <Landmark className="w-7 h-7" />,
+      title: "Não sabe quais bens terá direito na partilha de bens do casal?",
+      text: "Proteja o seu patrimônio de acordo com o regime de bens escolhido no casamento de forma estratégica..",
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-[#F6F3EE]">
+      <div className="container mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
+            Você está passando por uma dessas situações em seu divórcio?
+          </h2>
+          <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
+          <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
+            Se você se identificou com algum desses cenários, o Braga Bitencourt pode te ajudar — com experiência,
+            clareza e discrição.
+          </p>
+        </div>
+
+        <div
+          ref={ref}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14 reveal-stagger ${isVisible ? "visible" : ""}`}
+        >
+          {items.map((item) => (
+            <a
+              key={item.title}
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-lg p-8 border border-navy/10 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col"
+            >
+              <div className="w-14 h-14 rounded-full bg-gold-gradient text-[#283650] flex items-center justify-center mb-6 shrink-0">
+                {item.icon}
+              </div>
+              <h3 className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-navy/60 font-montserrat text-sm leading-relaxed">{item.text}</p>
+            </a>
+          ))}
+        </div>
+
+        <div className="flex justify-center">
+          <CtaButton className="w-full sm:w-auto" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Momento certo ---------------- */
+
+function LpActionMoment() {
+  return (
+    <section className="py-24 bg-[#08152C] relative overflow-hidden">
+      <div className="container mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24">
+          <div className="w-full md:w-1/2 max-w-xl text-center md:text-left">
+            <h2 className="font-cinzel text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight uppercase">
+              O momento certo de agir é agora.
+            </h2>
+            <div className="w-40 h-px bg-white/30 mb-8 mx-auto md:mx-0" />
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed font-montserrat mb-10">
+              Questões de família e herança não resolvidas tendem a se complicar com o tempo. Quanto antes você busca
+              orientação especializada, mais opções e mais controle você tem sobre o desfecho.
+            </p>
+            <div className="flex justify-center md:justify-start">
+              <CtaButton className="w-full sm:w-auto" />
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/2 flex justify-center items-center">
+            <div className="relative">
+              <div className="absolute -top-8 -left-8 -right-8 -bottom-8 border border-white/20 pointer-events-none hidden lg:block" />
+              <div className="absolute -top-4 -left-4 -right-4 -bottom-4 border border-white/10 pointer-events-none" />
+              <div className="relative z-10 overflow-hidden shadow-2xl">
+                <img
+                  src={actionMoment.url}
+                  alt="O momento certo de agir é agora"
+                  loading="lazy"
+                  className="w-full max-w-lg object-cover brightness-90 hover:brightness-100 transition-all duration-500"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Galeria da sede ---------------- */
+
+function LpOfficeGallery() {
+  const photos = [officeBetim.url, officeBetimOld.url, officeBH.url, officeBHOld.url, officeBetim.url];
+  const loop = [...photos, ...photos];
+
+  return (
+    <section className="py-24 bg-[#08152C] overflow-hidden">
+      <div className="container mx-auto mb-12">
+        <h2 className="text-white text-3xl md:text-4xl font-cinzel text-center uppercase tracking-wider">
+          Nossa sede de Betim
+        </h2>
+        <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
+      </div>
+
+      <div className="relative w-full">
+        <div className="flex w-max gap-6 animate-marquee hover:[animation-play-state:paused]">
+          {loop.map((src, idx) => (
+            <div
+              key={idx}
+              className="w-[300px] md:w-[420px] h-[240px] md:h-[300px] shrink-0 overflow-hidden rounded-xl border border-white/10 shadow-2xl"
+            >
+              <img
+                src={src}
+                alt="Sede Braga Bitencourt Advogados em Betim"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Serviços ---------------- */
+
+function LpServices() {
+  const { ref, isVisible } = useRevealOnScroll();
+
+  const services = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Direito de Família",
+      items: [
+        "Divórcio consensual ou litigioso",
+        "Partilha de bens",
+        "Guarda e regulamentação de visitas",
+        "Pensão alimentícia",
+        "Pacto antenupcial",
+        "Tutela e Curatela",
+        "Medidas Protetivas",
+      ],
+    },
+    {
+      icon: <Landmark className="w-8 h-8" />,
+      title: "Direito das Sucessões",
+      items: [
+        "Inventário judicial e extrajudicial",
+        "Testamentos",
+        "Planejamento sucessório",
+        "Holdings familiares",
+        "Doação e transferência de bens em vida",
+      ],
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Privado Internacional",
+      items: [
+        "Homologação de sentenças estrangeiras",
+        "Autorização de viagem para menores",
+        "Divórcios e guardas com partes no exterior",
+        "Transcrições e averbações",
+      ],
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-[#08152C]">
+      <div className="container mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-gold-light text-xs font-bold uppercase tracking-[0.3em] mb-4 block font-montserrat">
+            Áreas de atuação
+          </span>
+          <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
+            O que fazemos por você em Betim
+          </h2>
+          <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
+        </div>
+
+        <div
+          ref={ref}
+          className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-14 reveal-stagger ${isVisible ? "visible" : ""}`}
+        >
+          {services.map((s) => (
+            <article
+              key={s.title}
+              className="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/10 hover:-translate-y-2 transition-all duration-500"
+            >
+              <div className="text-gold-light mb-6">{s.icon}</div>
+              <h3 className="text-white font-cinzel text-xl mb-6">{s.title}</h3>
+              <ul className="space-y-3">
+                {s.items.map((i) => (
+                  <li key={i} className="text-white/60 font-montserrat text-sm leading-relaxed flex gap-3">
+                    <span className="text-gold-light">·</span>
+                    <span>{i}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div className="flex justify-center">
+          <CtaButton className="w-full sm:w-auto" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Diferenciais ---------------- */
+
+function LpDifferentials() {
+  const { ref, isVisible } = useRevealOnScroll();
+
+  const items = [
+    {
+      icon: <TreeDeciduous className="w-12 h-12" />,
+      title: "Arquitetura sucessória e legado.",
+      text: "A proteção do patrimônio exige mais do que conhecimento jurídico: exige visão estratégica e compromisso com a preservação dos legados familiares. Com tradição e excelência técnica, conduzimos cada sucessão com segurança, cuidado e planejamento.",
+      highlight: false,
+    },
+    {
+      icon: <Gem className="w-12 h-12" />,
+      title: "Escuta estratégica e rigor.",
+      text: "Questões familiares demandam sensibilidade e estratégia na mesma medida. Atuamos com escuta qualificada, discrição e segurança jurídica, transformando situações complexas em soluções claras e eficientes.",
+      highlight: true,
+    },
+    {
+      icon: <Globe className="w-12 h-12" />,
+      title: "Vanguarda em Visual Law e Petições Interativas.",
+      text: "Unimos tradição e tecnologia para oferecer uma advocacia mais moderna e eficiente. Por meio de recursos como Visual Law e Petições Interativas, tornamos a comunicação jurídica mais clara, dinâmica e persuasiva, favorecendo decisões mais rápidas e assertivas.",
+      highlight: false,
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-[#08152C] relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <svg width="100%" height="100%" aria-hidden="true">
+          <pattern id="lp-diamond" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M20 0 L40 20 L20 40 L0 20 Z" fill="none" stroke="white" strokeWidth="1" />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#lp-diamond)" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-gold-light text-xs font-bold uppercase tracking-[0.3em] mb-4 block font-montserrat">
+            Diferenciais
+          </span>
+          <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
+            Por que o Braga Bitencourt é diferente
+          </h2>
+          <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
+            Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
+            Tome decisões com mais segurança.
+          </p>
+        </div>
+
+        <div
+          ref={ref}
+          className={`grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger ${isVisible ? "visible" : ""}`}
+        >
+          {items.map((item) => (
+            <div
+              key={item.title}
+              className={`p-10 rounded-sm flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-2 shadow-2xl ${
+                item.highlight
+                  ? "bg-[#F8D59B] text-navy border-t-4 border-[#F1BE87]"
+                  : "bg-white text-navy border-t-4 border-[#cd9575]"
+              }`}
+            >
+              <div className="mb-6 text-navy">{item.icon}</div>
+              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Presença física ---------------- */
+
+const MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=Braga+Bitencourt+Advogados+Av+Amazonas+1446+Betim";
+
+function LpPresence() {
+  return (
+    <section className="py-24 bg-[#08152C] relative overflow-hidden">
+      <div className="container mx-auto relative z-10">
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
+            Presença física e atendimento jurídico especializado de alto padrão
+          </h2>
+          <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
+          <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">
+            Estamos prontos para oferecer orientação jurídica especializada com atendimento humanizado e ágil. Nossa
+            sede está localizada em Betim/MG, com fácil acesso para clientes de toda a região metropolitana. Entre em
+            contato e agende sua consulta.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl h-[420px]">
+            <iframe
+              src="https://www.google.com/maps?q=Av.%20Amazonas%2C%201446%20-%20Brasil%C3%A9ia%2C%20Betim%20-%20MG&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mapa da sede em Betim"
+            />
+          </div>
+
+          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+            <div className="h-56 overflow-hidden">
+              <img
+                src={officeBetim.url}
+                alt="Braga Bitencourt Advogados - Betim"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-8 space-y-6 flex-grow flex flex-col">
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c89269] font-montserrat font-semibold text-sm md:text-base leading-relaxed flex gap-3 hover:underline"
+              >
+                <MapPin className="w-5 h-5 shrink-0 mt-0.5" />
+                <span>
+                  Braga Bitencourt Advogados Betim, Av. Amazonas, 1446 - 7° andar - salas 706/707 - Brasiléia, Betim -
+                  MG, 32600-324
+                </span>
+              </a>
+
+              <CtaButton className="w-full !py-4 !text-sm" />
+
+              <p className="text-navy/60 font-montserrat text-sm leading-relaxed">
+                Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Footer ---------------- */
+
+function LpFooter() {
+  return (
+    <footer className="bg-[#08152C] border-t border-white/10 py-12">
+      <div className="container mx-auto flex flex-col items-center gap-6 text-center">
+        <img
+          src="https://bragabitencourt.com/wp-content/uploads/2026/06/LOGO-2-1.png"
+          alt="Braga Bitencourt Advogados"
+          className="h-16 w-auto"
+          loading="lazy"
+        />
+        <p className="text-white/50 font-montserrat text-xs leading-relaxed max-w-2xl">
+          Braga Bitencourt Advogados — Av. Amazonas, 1446 - 7° andar - salas 706/707 - Brasiléia, Betim - MG.
+          Atendimento presencial e online.
+        </p>
+        <p className="text-white/30 font-montserrat text-[11px]">
+          © {new Date().getFullYear()} Braga Bitencourt Advogados. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+  );
+}
