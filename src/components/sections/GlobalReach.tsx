@@ -11,8 +11,7 @@ export const GlobalReach = () => {
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-cinzel text-white leading-tight mb-6">
             SEU CASO É CONDUZIDO<br />
-            COM ESTRATÉGIA, CLAREZA<br />
-            E ACOMPANHAMENTO.
+            COM ESTRATÉGIA, CLAREZA E ACOMPANHAMENTO.
           </h2>
           <p className="text-gray-400 text-sm md:text-base font-montserrat max-w-md leading-relaxed">
             Onde você estiver, nossa estrutura jurídica atua com padrão elevado.
