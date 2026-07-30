@@ -61,7 +61,7 @@ export function ContactForm() {
           </div>
 
           {/* Right Column: Form */}
-          <div className="lg:w-[55%] p-12 lg:p-20 bg-[#0a1427]">
+          <div className="lg:w-[55%] p-12 lg:p-20 bg-[#08152C]">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-8 h-[1px] bg-gold-dark"></span>
               <span className="text-gold-light text-xs font-bold tracking-widest uppercase">WhatsApp</span>
@@ -84,7 +84,7 @@ export function ContactForm() {
                       type="text" 
                       required
                       placeholder="Ex: Seu nome"
-                      className="w-full bg-[#0d1b32] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
+                      className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
                       value={formData.nome}
                       onChange={(e) => setFormData({...formData, nome: e.target.value})}
                     />
@@ -100,7 +100,7 @@ export function ContactForm() {
                       type="text" 
                       required
                       placeholder="Ex: sua cidade ou estado"
-                      className="w-full bg-[#0d1b32] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
+                      className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
                       value={formData.cidade}
                       onChange={(e) => setFormData({...formData, cidade: e.target.value})}
                     />
@@ -115,17 +115,17 @@ export function ContactForm() {
                   <Folder className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
                   <select 
                     required
-                    className="w-full bg-[#0d1b32] border border-white/10 rounded-sm pl-12 pr-12 py-4 text-white focus:outline-none focus:border-gold-light transition-colors appearance-none text-sm font-montserrat"
+                    className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-12 py-4 text-white focus:outline-none focus:border-gold-light transition-colors appearance-none text-sm font-montserrat"
                     value={formData.caso}
                     onChange={(e) => setFormData({...formData, caso: e.target.value})}
                   >
                     <option value="" disabled>Ex: Divórcio, inventário, homologação de sentença estrangeira...</option>
-                    <option value="Divórcio" className="bg-[#0a1427]">Divórcio</option>
-                    <option value="Inventário" className="bg-[#0a1427]">Inventário</option>
-                    <option value="Guarda / Pensão" className="bg-[#0a1427]">Guarda / Pensão</option>
-                    <option value="Sucessão / Testamento" className="bg-[#0a1427]">Sucessão / Testamento</option>
-                    <option value="Direito Internacional" className="bg-[#0a1427]">Direito Internacional</option>
-                    <option value="Outros" className="bg-[#0a1427]">Outros assuntos</option>
+                    <option value="Divórcio" className="bg-[#08152C]">Divórcio</option>
+                    <option value="Inventário" className="bg-[#08152C]">Inventário</option>
+                    <option value="Guarda / Pensão" className="bg-[#08152C]">Guarda / Pensão</option>
+                    <option value="Sucessão / Testamento" className="bg-[#08152C]">Sucessão / Testamento</option>
+                    <option value="Direito Internacional" className="bg-[#08152C]">Direito Internacional</option>
+                    <option value="Outros" className="bg-[#08152C]">Outros assuntos</option>
                   </select>
                   <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4 pointer-events-none" />
                 </div>
@@ -140,7 +140,7 @@ export function ContactForm() {
                   <button 
                     type="button"
                     onClick={handleClear}
-                    className="px-6 py-4 bg-[#0d1b32] border border-white/10 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all rounded-sm min-w-[100px]"
+                    className="px-6 py-4 bg-[#08152C] border border-white/10 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all rounded-sm min-w-[100px]"
                   >
                     Limpar
                   </button>

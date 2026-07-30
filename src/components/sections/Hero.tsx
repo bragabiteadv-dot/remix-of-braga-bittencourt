@@ -49,7 +49,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center bg-[#050b16] pt-32 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-[#08152C] pt-32 pb-20 overflow-hidden">
       {/* Background radial highlight */}
       <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
       

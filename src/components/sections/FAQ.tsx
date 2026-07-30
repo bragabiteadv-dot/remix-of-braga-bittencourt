@@ -131,7 +131,7 @@ export const FAQ = () => {
             Respostas rápidas e claras, sem enrolação
           </div>
 
-          <h2 className="text-4xl font-bold text-[#0b1528] mb-4 font-cinzel">Dúvidas Frequentes</h2>
+          <h2 className="text-4xl font-bold text-[#08152C] mb-4 font-cinzel">Dúvidas Frequentes</h2>
           <p className="text-[#5a6475] mb-8 leading-relaxed font-montserrat">
             Clique em uma pergunta para ver a resposta. Se quiser, pesquise por palavras-chave (ex: "negado", "documentos", "prazo").
           </p>
@@ -148,7 +148,7 @@ export const FAQ = () => {
             </div>
             <button 
               onClick={() => setSearchTerm('')}
-              className="px-8 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 text-[#0b1528] font-semibold transition-all shadow-sm"
+              className="px-8 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 text-[#08152C] font-semibold transition-all shadow-sm"
             >
               Limpar
             </button>
@@ -177,7 +177,7 @@ export const FAQ = () => {
                           <span className="text-[#c5a880] text-[13px] font-extrabold border border-[#c5a880]/30 px-2 py-1 rounded-lg bg-[#f5eedf] font-montserrat">
                             {item.id}
                           </span>
-                          <span className="font-semibold text-sm lg:text-base text-[#0b1528] font-montserrat leading-tight">
+                          <span className="font-semibold text-sm lg:text-base text-[#08152C] font-montserrat leading-tight">
                             {item.question}
                           </span>
                         </div>
@@ -225,7 +225,7 @@ export const FAQ = () => {
             />
             
             <div className="p-8 text-center">
-              <h4 className="text-xl font-bold text-[#0b1528] mb-4 font-montserrat leading-tight">
+              <h4 className="text-xl font-bold text-[#08152C] mb-4 font-montserrat leading-tight">
                 Quer uma orientação rápida?
               </h4>
               <p className="text-sm text-[#5a6475] mb-8 leading-relaxed font-montserrat">

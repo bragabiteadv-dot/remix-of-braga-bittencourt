@@ -2,7 +2,7 @@ import actionMomentAsset from "@/assets/action-moment-new.jpg.asset.json";
 
 export const ActionMoment = () => {
   return (
-    <section className="py-20 bg-[#050b16] relative overflow-hidden">
+    <section className="py-20 bg-[#08152C] relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-radial-gradient from-blue-900/10 to-transparent pointer-events-none" />
       

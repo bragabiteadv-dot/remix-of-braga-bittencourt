@@ -11,7 +11,7 @@ export function ServiceCard({ title, description, icon, href }: ServiceCardProps
   return (
     <Link
       to={href as any}
-      className="block bg-[#0c1a32] p-10 rounded-2xl border border-white/5 hover:border-gold-dark/40 hover:-translate-y-1 transition-all duration-300"
+      className="block bg-[#08152C] p-10 rounded-2xl border border-white/5 hover:border-gold-dark/40 hover:-translate-y-1 transition-all duration-300"
     >
       <div className="text-gold-light mb-8">
         {icon}
