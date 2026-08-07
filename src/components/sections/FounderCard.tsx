@@ -23,7 +23,7 @@ export function FounderCard() {
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 lg:gap-12">
           
           {/* Office Info Card */}
-          <div className="w-full max-w-[320px] bg-[#FCD7A8] p-8 relative shadow-lg h-full self-stretch">
+          <div className="w-full max-w-[320px] lg:w-[381px] lg:h-[615px] lg:max-w-none bg-[#FCD7A8] p-8 relative shadow-lg h-full self-stretch">
             {/* Background pattern overlay (sutil texture) */}
             <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#283650 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
             
@@ -66,12 +66,12 @@ export function FounderCard() {
           </div>
 
           {/* Founder Image */}
-          <div className="w-full max-w-[320px] self-stretch">
+          <div className="w-full max-w-[320px] lg:w-[381px] lg:h-[615px] lg:max-w-none self-stretch">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-full">
               <img 
                 src="https://bragabitencourt.com/wp-content/uploads/2026/05/Foto-2_3_11zon-scaled.webp" 
                 alt="Dr. Carlos Javét Bitencourt" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
             </div>
           </div>
