@@ -62,10 +62,6 @@ export function Hero() {
           
           {/* Left Column: Text Content */}
           <div className="lg:w-[55%] flex flex-col items-start pt-10">
-            <div className="inline-block px-5 py-2 border border-white/20 rounded-full mb-10">
-              <span className="text-white text-xs font-bold uppercase tracking-wider">Advogado de Família</span>
-            </div>
-
             <h1 className="text-white text-[36px] md:text-[44px] lg:text-[53px] font-cinzel leading-[1.1] mb-12 max-w-[700px]">
               ADVOCACIA<br />
               ESPECIALIZADA EM DIREITO DE FAMÍLIA,<br />
