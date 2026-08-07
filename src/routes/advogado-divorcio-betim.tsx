@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 
 import { GlobalReach } from "@/components/sections/GlobalReach";
+import { TeamGrid } from "@/components/sections/TeamGrid";
+import { ActionMoment } from "@/components/sections/ActionMoment";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
@@ -21,11 +23,6 @@ import officeBetim from "@/assets/office-betim-new.jpg.asset.json";
 import officeBH from "@/assets/office-bh-new.jpg.asset.json";
 import officeBetimOld from "@/assets/office-betim.png.asset.json";
 import officeBHOld from "@/assets/office-bh.png.asset.json";
-import actionMoment from "@/assets/action-moment-new.jpg.asset.json";
-import carlosGabriel from "@/assets/carlos-gabriel.png.asset.json";
-import carlosJavet from "@/assets/carlos-javet.png.asset.json";
-import glaucia from "@/assets/glaucia.png.asset.json";
-import equipeBg from "@/assets/equipe-bg.png.asset.json";
 
 const CANONICAL = "https://warm-oi-whisper.lovable.app/advogado-divorcio-betim";
 const TITLE = "Advogado de Divórcio em Betim | Braga Bitencourt Advogados";
