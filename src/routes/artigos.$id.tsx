@@ -95,7 +95,7 @@ function ArticlePage() {
               </div>
 
               <a
-                href="https://wa.link/nv3dk7A"
+                href="https://wa.link/i03d4k"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 rounded-2xl p-4 bg-[#e8dcc4] border border-[#c5a880]/40 hover:brightness-105 transition"

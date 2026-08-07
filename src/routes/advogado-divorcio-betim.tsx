@@ -32,7 +32,7 @@ const DESCRIPTION =
   "Advogado de divórcio em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
 
 const WHATSAPP =
-  "https://wa.link/nv3dk7A";
+  "https://wa.link/i03d4k";
 
 export const Route = createFileRoute("/advogado-divorcio-betim")({
   head: () => ({
