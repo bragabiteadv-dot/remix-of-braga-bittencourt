@@ -138,7 +138,24 @@ export function ContactForm() {
                 </div>
               </div>
 
+              {/* Mensagem Field */}
+              <div className="space-y-3">
+                <label className="text-white text-xs font-bold uppercase tracking-wider block">Digite aqui o seu caso</label>
+                <div className="relative">
+                  <FileText className="absolute left-4 top-4 text-white/30 w-4 h-4" />
+                  <textarea 
+                    required
+                    rows={5}
+                    placeholder="Descreva brevemente sua situação..."
+                    className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat resize-none"
+                    value={formData.mensagem}
+                    onChange={(e) => setFormData({...formData, mensagem: e.target.value})}
+                  />
+                </div>
+              </div>
+
               <div className="space-y-6">
+
                 <p className="text-white/40 text-xs font-montserrat italic">
                   Conversa rápida, clara e sem complicação.
                 </p>
