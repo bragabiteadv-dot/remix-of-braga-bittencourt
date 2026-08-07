@@ -66,7 +66,7 @@ export function FounderCard() {
           </div>
 
           {/* Founder Image */}
-          <div classname="w-full max-w-[320px] self-stretch">
+          <div className="w-full max-w-[320px] self-stretch">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-full">
               <img 
                 src="https://bragabitencourt.com/wp-content/uploads/2026/05/Foto-2_3_11zon-scaled.webp" 
