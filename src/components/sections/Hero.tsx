@@ -74,7 +74,7 @@ export function Hero() {
               PRIVADO.
             </h1>
 
-            <div className="space-y-6 text-white/80 text-sm md:text-base font-montserrat mb-14 max-w-[600px] leading-relaxed">
+            <div className="space-y-6 text-white text-sm md:text-base font-montserrat mb-14 max-w-[600px] leading-relaxed">
               <p>
                 -Direito de Família: Divórcios, Partilhas, Guardas, Pensão Alimentícia e Proteção de Vulneráveis (Tutela/Curatela).
               </p>
@@ -96,10 +96,10 @@ export function Hero() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
               
               <div className="flex flex-col items-center mb-10">
-                <div className="inline-block px-6 py-2 border border-white/20 rounded-full mb-8">
-                  <span className="text-white text-sm font-bold opacity-70">Sobre Nosso Trabalho</span>
+              <div className="inline-block px-6 py-2 border border-white/20 rounded-full mb-8">
+                  <span className="text-white text-sm font-bold">Sobre Nosso Trabalho</span>
                 </div>
-                <p className="text-white/70 text-center text-sm md:text-base font-montserrat leading-relaxed px-4">
+                <p className="text-white text-center text-sm md:text-base font-montserrat leading-relaxed px-4">
                   Advocacia de excelência focada em segurança jurídica, visão prática e soluções objetivas com total clareza desde o primeiro contato.
                 </p>
               </div>
@@ -119,7 +119,7 @@ export function Hero() {
 
                     <div className="space-y-0.5 mt-auto">
                       {feature.lines.map((line, lIdx) => (
-                        <p key={lIdx} className="text-white/50 text-[11px] font-medium leading-tight">{line}</p>
+                        <p key={lIdx} className="text-white text-[11px] font-medium leading-tight">{line}</p>
                       ))}
                     </div>
                   </div>
