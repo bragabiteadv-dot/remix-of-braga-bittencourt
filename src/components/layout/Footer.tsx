@@ -146,7 +146,7 @@ export function Footer() {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-lg bg-gold-light/20 flex items-center justify-center text-gold-light">
-                <WhatsAppIcon size={20} />
+                <WhatsAppIcon className="w-5 h-5" />
               </div>
               <span className="text-sm font-semibold tracking-wide text-white/90">
                 WHATSAPP
