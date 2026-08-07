@@ -30,10 +30,10 @@ export const ActionMoment = () => {
               <div
                 className="absolute pointer-events-none z-[1] hidden md:block"
                 style={{
-                  top: '-28px',
-                  left: '-28px',
-                  right: '28px',
-                  bottom: '28px',
+                  top: '-44px',
+                  left: '-44px',
+                  right: '44px',
+                  bottom: '44px',
                   border: '2px solid rgba(148, 163, 184, 0.55)',
                 }}
                 aria-hidden="true"
@@ -41,10 +41,10 @@ export const ActionMoment = () => {
               <div
                 className="absolute pointer-events-none z-[1] hidden md:block"
                 style={{
-                  top: '28px',
-                  left: '28px',
-                  right: '-28px',
-                  bottom: '-28px',
+                  top: '44px',
+                  left: '44px',
+                  right: '-44px',
+                  bottom: '-44px',
                   border: '2px solid rgba(148, 163, 184, 0.35)',
                 }}
                 aria-hidden="true"
@@ -55,7 +55,7 @@ export const ActionMoment = () => {
                 <img
                   src={actionMomentAsset.url}
                   alt="Aperto de mãos profissional"
-                  className="w-full max-w-lg object-cover brightness-90 hover:brightness-100 transition-all duration-500"
+                  className="w-full max-w-2xl object-cover brightness-90 hover:brightness-100 transition-all duration-500"
                 />
               </div>
             </div>
