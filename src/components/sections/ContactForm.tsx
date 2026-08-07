@@ -9,20 +9,21 @@ export function ContactForm() {
   const [formData, setFormData] = useState({
     nome: "",
     cidade: "",
-    caso: ""
+    caso: "",
+    mensagem: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Olá! Meu nome é ${formData.nome}. Sou de ${formData.cidade}. Gostaria de falar sobre: ${formData.caso}.`;
-    const url = `https://wa.link/i03d4k`;
-    void text;
+    const text = `Olá! Meu nome é ${formData.nome}. Sou de ${formData.cidade}. Tipo do caso: ${formData.caso}. Meu caso: ${formData.mensagem}.`;
+    const url = `https://wa.link/i03d4k?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
   };
 
   const handleClear = () => {
-    setFormData({ nome: "", cidade: "", caso: "" });
+    setFormData({ nome: "", cidade: "", caso: "", mensagem: "" });
   };
+
 
   return (
     <section id="contato" className="py-24 bg-navy relative overflow-hidden">
