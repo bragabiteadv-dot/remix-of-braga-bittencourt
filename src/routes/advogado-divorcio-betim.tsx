@@ -309,7 +309,7 @@ function LpSituations() {
 /* ---------------- Galeria da sede ---------------- */
 
 function LpOfficeGallery() {
-  const photos = [officeBetim.url, officeBetimOld.url, officeBH.url, officeBHOld.url, officeBetim.url];
+  const photos = [sedeBetim1.url, sedeBetim2.url, sedeBetim3.url, sedeBetim4.url, sedeBetim5.url];
   const loop = [...photos, ...photos];
 
   return (
