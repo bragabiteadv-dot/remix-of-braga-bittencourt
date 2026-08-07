@@ -1,5 +1,6 @@
 import { MessageSquare } from "lucide-react";
 import { HeroVideoBackground } from "./HeroVideoBackground";
+import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function Hero() {
   const features = [
@@ -85,13 +86,7 @@ export function Hero() {
               </p>
             </div>
 
-            <a 
-              href="https://wa.me/5531980260880?text=Olá! Acessei o site e gostaria de falar com um advogado."
-              className="btn-primary w-full sm:w-auto"
-            >
-              FALE COM ADVOGADO
-              <WhatsAppIcon />
-            </a>
+            <WhatsAppCta className="w-full sm:w-auto" />
           </div>
 
           {/* Right Column: Floating Panel Card */}

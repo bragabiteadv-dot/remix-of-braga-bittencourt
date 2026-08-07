@@ -1,6 +1,7 @@
 import { Phone } from "lucide-react";
 import officeBHAsset from "@/assets/office-bh-new.jpg.asset.json";
 import officeBetimAsset from "@/assets/office-betim-new.jpg.asset.json";
+import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function PhysicalPresence() {
   const offices = [
@@ -66,14 +67,7 @@ export function PhysicalPresence() {
                     {office.address}
                   </p>
                   
-                  <a 
-                    href={office.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary w-full py-4 text-sm tracking-[0.2em] flex items-center justify-center gap-2"
-                  >
-                    FALE COM ADVOGADO <Phone className="w-4 h-4" />
-                  </a>
+                  <WhatsAppCta className="w-full" />
 
                   <p className="text-navy/60 font-montserrat text-sm leading-relaxed">
                     {office.description}

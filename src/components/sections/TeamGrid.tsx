@@ -3,6 +3,7 @@ import equipeBg from "@/assets/equipe-bg.png.asset.json";
 import carlosGabriel from "@/assets/carlos-gabriel.png.asset.json";
 import carlosJavet from "@/assets/carlos-javet.png.asset.json";
 import glaucia from "@/assets/glaucia.png.asset.json";
+import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function TeamGrid() {
   const members = [
@@ -54,13 +55,7 @@ export function TeamGrid() {
         </div>
 
         <div className="flex justify-center">
-          <a 
-            href="https://wa.me/5531980260880?text=Olá! Gostaria de falar com um advogado da equipe."
-            className="btn-primary w-full sm:w-auto"
-          >
-            FALE COM ADVOGADO
-            <WhatsAppIcon />
-          </a>
+          <WhatsAppCta className="w-full sm:w-auto" />
         </div>
       </div>
     </section>

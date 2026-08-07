@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, Phone } from 'lucide-react';
+import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 const faqData = [
   {
@@ -203,15 +204,7 @@ export const FAQ = () => {
           </div>
 
           <div className="mt-12 text-center lg:text-left">
-            <a 
-              href="https://wa.me/5531980260880?text=Olá! Acessei a página home do escritório e gostaria de falar com um especialista." 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              FALE COM ADVOGADO
-              <Phone className="ml-2 w-5 h-5 fill-current" />
-            </a>
+            <WhatsAppCta />
           </div>
         </div>
 
@@ -232,15 +225,7 @@ export const FAQ = () => {
                 Se a sua dúvida não estiver aqui, você pode chamar diretamente no WhatsApp e receber um direcionamento inicial com nossa equipe.
               </p>
               
-              <a 
-                href="https://wa.me/5531980260880?text=Olá! Acessei a página home do escritório e gostaria de falar com um especialista." 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-primary w-full text-center flex justify-center"
-              >
-                FALE COM ADVOGADO
-                <Phone className="ml-2 w-5 h-5 fill-current" />
-              </a>
+              <WhatsAppCta />
             </div>
           </div>
         </aside>
