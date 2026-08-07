@@ -20,21 +20,21 @@ export function FounderCard() {
   return (
     <section id="perfil" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto max-w-7xl">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 lg:gap-12">
           
           {/* Office Info Card */}
-          <div className="w-full max-w-[320px] bg-[#FCD7A8] p-8 relative shadow-lg h-full self-stretch">
+          <div className="w-full max-w-[320px] bg-[#FCD7A8] p-6 relative shadow-lg self-start">
             {/* Background pattern overlay (sutil texture) */}
             <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#283650 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
             
             <div className="relative z-10 flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-[#283650] text-white rounded flex items-center justify-center mb-6">
-                <MapPin size={32} />
+              <div className="w-14 h-14 bg-[#283650] text-white rounded flex items-center justify-center mb-4">
+                <MapPin size={28} />
               </div>
               
-              <h3 className="text-2xl font-cinzel text-[#283650] mb-4">Escritórios</h3>
+              <h3 className="text-2xl font-cinzel text-[#283650] mb-3">Escritórios</h3>
               
-              <div className="space-y-4 text-[#283650] text-sm mb-8">
+              <div className="space-y-3 text-[#283650] text-sm mb-6">
                 <p className="leading-relaxed font-medium">
                   Avenida Amazonas, 1446, salas 706/707, Brasileia, Betim - MG
                 </p>
@@ -43,9 +43,9 @@ export function FounderCard() {
                 </p>
               </div>
 
-              <div className="w-full h-[1px] bg-[#283650]/20 mb-8 border-t border-dashed border-[#283650]/40"></div>
+              <div className="w-full h-[1px] bg-[#283650]/20 mb-6 border-t border-dashed border-[#283650]/40"></div>
 
-              <div className="space-y-6 w-full text-left">
+              <div className="space-y-4 w-full text-left">
                 <a href="mailto:bragabitencourtadv@gmail.com" className="flex items-center gap-3 text-[#283650] hover:opacity-80 transition-opacity">
                   <Mail size={20} className="shrink-0" />
                   <div>
@@ -66,8 +66,8 @@ export function FounderCard() {
           </div>
 
           {/* Founder Image */}
-          <div className="w-full max-w-[320px] self-stretch">
-            <div className="rounded-2xl overflow-hidden shadow-2xl h-full">
+          <div className="w-full max-w-[320px] self-start">
+            <div className="rounded-2xl overflow-hidden shadow-2xl h-[500px]">
               <img 
                 src="https://bragabitencourt.com/wp-content/uploads/2026/05/Foto-2_3_11zon-scaled.webp" 
                 alt="Dr. Carlos Javét Bitencourt" 
