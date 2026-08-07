@@ -1,23 +1,26 @@
-import { MessageSquare } from "lucide-react";
-import equipeBg from "@/assets/equipe-bg.png.asset.json";
-import carlosGabriel from "@/assets/carlos-gabriel.png.asset.json";
-import carlosJavet from "@/assets/carlos-javet.png.asset.json";
-import glaucia from "@/assets/glaucia.png.asset.json";
+import equipeBg from "@/assets/equipe-bg-2.png.asset.json";
+import carlosGabriel from "@/assets/gabriel-2.jpg.asset.json";
+import carlosJavet from "@/assets/carlos-javet-2.jpg.asset.json";
+import glaucia from "@/assets/glaucia-2.jpg.asset.json";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function TeamGrid() {
   const members = [
     {
-      name: "Carlos Gabriel F. Braga Bitencourt",
-      image: carlosGabriel.url
+      name: "Carlos Javét Braga Bitencourt",
+      image: carlosJavet.url,
+      // primeiro no mobile, centro no desktop
+      order: "order-1 md:order-2"
     },
     {
-      name: "Carlos Javét Braga Bitencourt",
-      image: carlosJavet.url
+      name: "Carlos Gabriel F. Braga Bitencourt",
+      image: carlosGabriel.url,
+      order: "order-2 md:order-1"
     },
     {
       name: "Gláucia Patrícia F. Braga Bitencourt",
-      image: glaucia.url
+      image: glaucia.url,
+      order: "order-3 md:order-3"
     }
   ];
 
@@ -36,12 +39,12 @@ export function TeamGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {members.map((member, idx) => (
-            <div key={idx} className="flex flex-col group">
+            <div key={idx} className={`flex flex-col group ${member.order}`}>
               <div className="relative overflow-hidden aspect-[3/4] rounded-sm shadow-2xl mb-6 bg-white">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
@@ -53,6 +56,7 @@ export function TeamGrid() {
             </div>
           ))}
         </div>
+
 
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
