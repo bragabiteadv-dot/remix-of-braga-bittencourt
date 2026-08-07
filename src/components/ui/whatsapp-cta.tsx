@@ -16,10 +16,17 @@ export function WhatsAppIcon({ className = "" }: { className?: string }) {
   );
 }
 
-export function WhatsAppCta({ className = "" }: { className?: string }) {
+export const WHATSAPP_PHONE = "5531980260880";
+
+export function whatsappArticleLink(articleTitle: string) {
+  const text = `Olá! Li o artigo (${articleTitle}) no blog e gostaria de falar com um advogado.`;
+  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+}
+
+export function WhatsAppCta({ className = "", href }: { className?: string; href?: string }) {
   return (
     <a
-      href={WHATSAPP_LINK}
+      href={href ?? WHATSAPP_LINK}
       target="_blank"
       rel="noopener noreferrer"
       className={`btn-primary ${className}`}
