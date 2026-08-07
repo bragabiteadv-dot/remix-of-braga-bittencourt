@@ -109,7 +109,7 @@ function LpHeader() {
           className="h-12 w-auto shrink-0"
           loading="eager"
         />
-        <CtaButton label="FALE COM ADVOGADO" className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
+        <WhatsAppCta className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
       </div>
     </header>
   );
@@ -168,7 +168,7 @@ function LpHero() {
               Conduzimos seu divórcio em Betim com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
-            <CtaButton label="FALE COM ADVOGADO" className="w-full sm:w-auto" />
+            <WhatsAppCta className="w-full sm:w-auto" />
 
             <p className="text-white text-xs font-montserrat mt-6 tracking-wide">
               Atendimento presencial e online em Betim.
@@ -266,7 +266,7 @@ function LpTeam() {
         </div>
 
         <div className="flex justify-center">
-          <CtaButton className="w-full sm:w-auto" />
+          <WhatsAppCta className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -349,7 +349,7 @@ function LpSituations() {
         </div>
 
         <div className="flex justify-center">
-          <CtaButton className="w-full sm:w-auto" />
+          <WhatsAppCta className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -373,7 +373,7 @@ function LpActionMoment() {
               orientação especializada, mais opções e mais controle você tem sobre o desfecho.
             </p>
             <div className="flex justify-center md:justify-start">
-              <CtaButton className="w-full sm:w-auto" />
+              <WhatsAppCta className="w-full sm:w-auto" />
             </div>
           </div>
 
@@ -512,7 +512,7 @@ function LpServices() {
         </div>
 
         <div className="flex justify-center">
-          <CtaButton className="w-full sm:w-auto" />
+          <WhatsAppCta className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -651,7 +651,7 @@ function LpPresence() {
                 </span>
               </a>
 
-              <CtaButton className="w-full !py-4 !text-sm" />
+              <WhatsAppCta className="w-full !py-4 !text-sm" />
 
               <p className="text-navy/60 font-montserrat text-sm leading-relaxed">
                 Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.
