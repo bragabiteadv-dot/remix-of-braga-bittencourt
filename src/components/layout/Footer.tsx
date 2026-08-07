@@ -39,7 +39,12 @@ export function Footer() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-16">
-          <div className="bg-white/5 p-8 rounded-lg border border-white/10">
+          <a 
+            href={GOOGLE_SEARCH_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 p-8 rounded-lg border border-white/10 block hover:bg-white/[0.07] transition-colors"
+          >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 bg-gold-gradient rounded-lg flex items-center justify-center text-navy">
                 <MapPinIcon />
@@ -56,7 +61,8 @@ export function Footer() {
                 Av. Amazonas, 1446- sala 706/707-Brasiléia, Betim – MG
               </p>
             </div>
-          </div>
+          </a>
+
 
           <a 
             href={WHATSAPP_LINK}
