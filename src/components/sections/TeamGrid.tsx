@@ -1,4 +1,4 @@
-import equipeBg from "@/assets/equipe-bg-2.png.asset.json";
+import equipeBg from "@/assets/equipe-bg.jpg.asset.json";
 import carlosGabriel from "@/assets/gabriel-2.jpg.asset.json";
 import carlosJavet from "@/assets/carlos-javet-2.jpg.asset.json";
 import glaucia from "@/assets/glaucia-2.jpg.asset.json";
