@@ -11,7 +11,7 @@ import { type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
-import { MessageCircle } from "lucide-react";
+import { WHATSAPP_LINK, WhatsAppIcon } from "../components/ui/whatsapp-cta";
 
 function NotFoundComponent() {
   return (
@@ -148,7 +148,7 @@ function RootComponent() {
           className="fixed bottom-6 right-6 z-[999] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center animate-bounce"
           aria-label="Falar no WhatsApp"
         >
-          <MessageCircle size={28} fill="currentColor" />
+          <WhatsAppIcon className="w-7 h-7" />
         </a>
       </div>
     </QueryClientProvider>
