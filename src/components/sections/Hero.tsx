@@ -74,7 +74,7 @@ export function Hero() {
               PRIVADO.
             </h1>
 
-            <div className="space-y-6 text-white/80 text-sm md:text-base font-montserrat mb-14 max-w-[600px] leading-relaxed">
+            <div className="space-y-6 text-white text-sm md:text-base font-montserrat mb-14 max-w-[600px] leading-relaxed">
               <p>
                 -Direito de Família: Divórcios, Partilhas, Guardas, Pensão Alimentícia e Proteção de Vulneráveis (Tutela/Curatela).
               </p>
