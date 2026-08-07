@@ -11,7 +11,7 @@ import { type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
-import { MessageCircle } from "lucide-react";
+import { WHATSAPP_LINK, WhatsAppIcon } from "../components/ui/whatsapp-cta";
 
 function NotFoundComponent() {
   return (
