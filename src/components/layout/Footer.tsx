@@ -87,7 +87,7 @@ export function Footer() {
             className={socialIconClass}
             aria-label="WhatsApp"
           >
-            <WhatsAppIcon size={18} />
+            <WhatsAppIcon className="w-[18px] h-[18px]" />
           </a>
           <a
             href="mailto:bragabitencourtadv@gmail.com"
