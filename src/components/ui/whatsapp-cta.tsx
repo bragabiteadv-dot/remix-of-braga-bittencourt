@@ -1,4 +1,4 @@
-export const WHATSAPP_LINK = "https://wa.link/nv3dk7A";
+export const WHATSAPP_LINK = "https://wa.link/i03d4k";
 export const WHATSAPP_CTA_LABEL = "FALE COM ADVOGADO";
 
 export function WhatsAppIcon({ className = "" }: { className?: string }) {

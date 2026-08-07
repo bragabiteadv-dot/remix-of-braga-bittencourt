@@ -13,7 +13,7 @@ export function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Olá! Meu nome é ${formData.nome}. Sou de ${formData.cidade}. Gostaria de falar sobre: ${formData.caso}.`;
-    const url = `https://wa.link/nv3dk7A`;
+    const url = `https://wa.link/i03d4k`;
     void text;
     window.open(url, "_blank");
   };
