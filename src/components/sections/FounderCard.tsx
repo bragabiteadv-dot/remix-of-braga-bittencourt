@@ -54,7 +54,7 @@ export function FounderCard() {
                   </div>
                 </a>
                 
-                <a href="tel:31980260880" className="flex items-center gap-3 text-[#283650] hover:opacity-80 transition-opacity">
+                <a href="https://wa.link/i03d4k" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#283650] hover:opacity-80 transition-opacity">
                   <WhatsAppIcon className="w-5 h-5 shrink-0" />
                   <div>
                     <span className="block text-[10px] uppercase tracking-widest opacity-60">Whatsapp</span>
@@ -66,7 +66,7 @@ export function FounderCard() {
           </div>
 
           {/* Founder Image */}
-          <div className="w-full max-w-[380px] self-stretch">
+          <div className="w-full max-w-[320px] self-stretch">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-full min-h-[500px]">
               <img 
                 src="https://bragabitencourt.com/wp-content/uploads/2026/05/Foto-2_3_11zon-scaled.webp" 
