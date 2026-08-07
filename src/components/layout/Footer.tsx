@@ -100,7 +100,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 text-center text-[10px] uppercase tracking-widest opacity-30">
-          All rights reserved © {new Date().getFullYear()} Braga Bitencourt Advogados
+          ALL RIGHTS RESERVED ©&nbsp;BRAGA BITENCOURT ADVOGADOS
         </div>
       </div>
     </footer>
