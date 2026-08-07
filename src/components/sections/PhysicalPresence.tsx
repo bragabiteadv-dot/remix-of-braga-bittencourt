@@ -70,9 +70,14 @@ export function PhysicalPresence() {
                   />
                 </div>
                 <div className="p-8 space-y-6 flex-grow">
-                  <p className="text-[#c89269] font-montserrat font-semibold text-base leading-relaxed">
+                  <a
+                    href={office.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-[#c89269] font-montserrat font-semibold text-base leading-relaxed hover:underline"
+                  >
                     {office.address}
-                  </p>
+                  </a>
                   
                   <WhatsAppCta className="w-full" />
 
