@@ -119,7 +119,7 @@ export function Hero() {
 
                     <div className="space-y-0.5 mt-auto">
                       {feature.lines.map((line, lIdx) => (
-                        <p key={lIdx} className="text-white/50 text-[11px] font-medium leading-tight">{line}</p>
+                        <p key={lIdx} className="text-white text-[11px] font-medium leading-tight">{line}</p>
                       ))}
                     </div>
                   </div>
