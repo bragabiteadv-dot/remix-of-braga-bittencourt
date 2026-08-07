@@ -220,52 +220,6 @@ function LpHero() {
   );
 }
 
-/* ---------------- Equipe ---------------- */
-
-function LpTeam() {
-  const members = [
-    { name: "Carlos Gabriel F. Braga Bitencourt", image: carlosGabriel.url },
-    { name: "Carlos Javét Braga Bitencourt", image: carlosJavet.url },
-    { name: "Gláucia Patrícia F. Braga Bitencourt", image: glaucia.url },
-  ];
-
-  return (
-    <section className="py-24 bg-[#08152C] relative overflow-hidden">
-      <div
-        className="absolute inset-0 z-0 opacity-50 bg-cover bg-center"
-        style={{ backgroundImage: `url('${equipeBg.url}')` }}
-      />
-      <div className="container mx-auto relative z-10">
-        <h2 className="text-white text-4xl md:text-5xl font-cinzel text-center mb-16 tracking-widest uppercase">
-          Nossa equipe
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-14">
-          {members.map((m) => (
-            <div key={m.name} className="flex flex-col group">
-              <div className="relative overflow-hidden aspect-[3/4] rounded-sm shadow-2xl mb-6 bg-white">
-                <img
-                  src={m.image}
-                  alt={m.name}
-                  loading="lazy"
-                  className="w-full h-full object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="bg-white p-6 rounded-sm shadow-xl text-center">
-                <h3 className="text-navy text-lg font-bold font-montserrat">{m.name}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="flex justify-center">
-          <WhatsAppCta className="w-full sm:w-auto" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ---------------- Situações ---------------- */
 
 function LpSituations() {
