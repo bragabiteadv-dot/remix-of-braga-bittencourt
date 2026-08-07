@@ -66,7 +66,7 @@ export function Hero() {
               <span className="text-white text-xs font-bold uppercase tracking-wider">Advogado de Família</span>
             </div>
 
-            <h1 className="text-white text-[44px] md:text-[60px] lg:text-[68px] font-cinzel leading-[1.1] mb-12 max-w-[700px]">
+            <h1 className="text-white text-[36px] md:text-[44px] lg:text-[53px] font-cinzel leading-[1.1] mb-12 max-w-[700px]">
               ADVOCACIA<br />
               ESPECIALIZADA EM DIREITO DE FAMÍLIA,<br />
               SUCESSÕES E<br />
