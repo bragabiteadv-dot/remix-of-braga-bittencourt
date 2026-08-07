@@ -26,15 +26,35 @@ export const ActionMoment = () => {
           {/* Right Column - Image with Frame */}
           <div className="w-full md:w-1/2 flex justify-center items-center">
             <div className="relative">
-              {/* Outer Wire Frame */}
-              <div className="absolute -top-8 -left-8 -right-8 -bottom-8 border border-white/20 pointer-events-none z-0 hidden lg:block" />
-              <div className="absolute -top-4 -left-4 -right-4 -bottom-4 border border-white/10 pointer-events-none z-0" />
-              
+              {/* Decorative offset frames behind the photo */}
+              <div
+                className="absolute pointer-events-none z-[1] hidden md:block"
+                style={{
+                  top: '-28px',
+                  left: '-28px',
+                  right: '28px',
+                  bottom: '28px',
+                  border: '2px solid rgba(148, 163, 184, 0.55)',
+                }}
+                aria-hidden="true"
+              />
+              <div
+                className="absolute pointer-events-none z-[1] hidden md:block"
+                style={{
+                  top: '28px',
+                  left: '28px',
+                  right: '-28px',
+                  bottom: '-28px',
+                  border: '2px solid rgba(148, 163, 184, 0.35)',
+                }}
+                aria-hidden="true"
+              />
+
               {/* Image Container */}
-              <div className="relative z-10 overflow-hidden shadow-2xl">
-                <img 
-                  src={actionMomentAsset.url} 
-                  alt="Aperto de mãos profissional" 
+              <div className="relative z-[3] overflow-hidden shadow-2xl">
+                <img
+                  src={actionMomentAsset.url}
+                  alt="Aperto de mãos profissional"
                   className="w-full max-w-lg object-cover brightness-90 hover:brightness-100 transition-all duration-500"
                 />
               </div>
