@@ -59,11 +59,11 @@ export const ServiceListing = () => {
       </div>
 
       {/* Wave PNG Overlay */}
-      <div className="absolute inset-0 pointer-events-none z-[1] overflow-hidden">
+      <div className="absolute top-0 left-0 w-full pointer-events-none z-[1]">
         <img
           src={wavesAsset.url}
           alt=""
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto min-h-full object-cover object-center"
+          className="w-full h-auto"
           aria-hidden="true"
         />
       </div>
