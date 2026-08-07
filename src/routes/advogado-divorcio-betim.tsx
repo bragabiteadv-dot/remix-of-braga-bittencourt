@@ -15,6 +15,7 @@ import {
 
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
+import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 import officeBetim from "@/assets/office-betim-new.jpg.asset.json";
 import officeBH from "@/assets/office-bh-new.jpg.asset.json";
@@ -77,22 +78,6 @@ export const Route = createFileRoute("/advogado-divorcio-betim")({
   component: LandingPage,
 });
 
-function WhatsAppIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.187-2.59-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793 0-.852.448-1.271.607-1.442.159-.171.347-.214.463-.214.116 0 .231.006.332.012.109.006.253-.041.397.306.145.348.492 1.201.535 1.288.044.087.073.189.014.305-.058.117-.087.189-.173.29-.088.101-.184.225-.264.303-.098.096-.201.2-.087.396.114.195.508.839 1.092 1.358.753.671 1.389.88 1.585.977.195.097.311.082.426-.051.116-.133.492-.572.622-.767.13-.195.26-.165.44-.099.18.065 1.142.538 1.338.636.195.098.325.145.372.226.047.081.047.468-.097.873z" />
-    </svg>
-  );
-}
-
-function CtaButton({ label = "FALE COM ADVOGADO", className = "" }: { label?: string; className?: string }) {
-  return (
-    <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className={`btn-primary ${className}`}>
-      {label}
-      <WhatsAppIcon />
-    </a>
-  );
-}
 
 function LandingPage() {
   return (
@@ -124,7 +109,7 @@ function LpHeader() {
           className="h-12 w-auto shrink-0"
           loading="eager"
         />
-        <CtaButton label="FALE COM ADVOGADO" className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
+        <WhatsAppCta className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
       </div>
     </header>
   );
@@ -183,7 +168,7 @@ function LpHero() {
               Conduzimos seu divórcio em Betim com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
-            <CtaButton label="FALE COM ADVOGADO" className="w-full sm:w-auto" />
+            <WhatsAppCta className="w-full sm:w-auto" />
 
             <p className="text-white text-xs font-montserrat mt-6 tracking-wide">
               Atendimento presencial e online em Betim.
@@ -281,7 +266,7 @@ function LpTeam() {
         </div>
 
         <div className="flex justify-center">
-          <CtaButton className="w-full sm:w-auto" />
+          <WhatsAppCta className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -364,7 +349,7 @@ function LpSituations() {
         </div>
 
         <div className="flex justify-center">
-          <CtaButton className="w-full sm:w-auto" />
+          <WhatsAppCta className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -388,7 +373,7 @@ function LpActionMoment() {
               orientação especializada, mais opções e mais controle você tem sobre o desfecho.
             </p>
             <div className="flex justify-center md:justify-start">
-              <CtaButton className="w-full sm:w-auto" />
+              <WhatsAppCta className="w-full sm:w-auto" />
             </div>
           </div>
 
@@ -527,7 +512,7 @@ function LpServices() {
         </div>
 
         <div className="flex justify-center">
-          <CtaButton className="w-full sm:w-auto" />
+          <WhatsAppCta className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -666,7 +651,7 @@ function LpPresence() {
                 </span>
               </a>
 
-              <CtaButton className="w-full !py-4 !text-sm" />
+              <WhatsAppCta className="w-full !py-4 !text-sm" />
 
               <p className="text-navy/60 font-montserrat text-sm leading-relaxed">
                 Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.
