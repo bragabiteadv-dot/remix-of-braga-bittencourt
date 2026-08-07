@@ -96,10 +96,10 @@ export function Hero() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
               
               <div className="flex flex-col items-center mb-10">
-                <div className="inline-block px-6 py-2 border border-white/20 rounded-full mb-8">
-                  <span className="text-white text-sm font-bold opacity-70">Sobre Nosso Trabalho</span>
+              <div className="inline-block px-6 py-2 border border-white/20 rounded-full mb-8">
+                  <span className="text-white text-sm font-bold">Sobre Nosso Trabalho</span>
                 </div>
-                <p className="text-white/70 text-center text-sm md:text-base font-montserrat leading-relaxed px-4">
+                <p className="text-white text-center text-sm md:text-base font-montserrat leading-relaxed px-4">
                   Advocacia de excelência focada em segurança jurídica, visão prática e soluções objetivas com total clareza desde o primeiro contato.
                 </p>
               </div>
