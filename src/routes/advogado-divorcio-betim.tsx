@@ -170,7 +170,7 @@ function LpHero() {
               <span className="text-white text-xs font-bold uppercase tracking-wider">Advogado de Família</span>
             </div>
 
-            <h1 className="text-white text-[38px] md:text-[52px] lg:text-[60px] font-cinzel leading-[1.1] mb-6">
+            <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
               Advogado de Divórcio em Betim
             </h1>
 
