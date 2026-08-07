@@ -303,47 +303,6 @@ function LpSituations() {
   );
 }
 
-/* ---------------- Momento certo ---------------- */
-
-function LpActionMoment() {
-  return (
-    <section className="py-24 bg-[#08152C] relative overflow-hidden">
-      <div className="container mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24">
-          <div className="w-full md:w-1/2 max-w-xl text-center md:text-left">
-            <h2 className="font-cinzel text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight uppercase">
-              O momento certo de agir é agora.
-            </h2>
-            <div className="w-40 h-px bg-white/30 mb-8 mx-auto md:mx-0" />
-            <p className="text-gray-300 text-base md:text-lg leading-relaxed font-montserrat mb-10">
-              Questões de família e herança não resolvidas tendem a se complicar com o tempo. Quanto antes você busca
-              orientação especializada, mais opções e mais controle você tem sobre o desfecho.
-            </p>
-            <div className="flex justify-center md:justify-start">
-              <WhatsAppCta className="w-full sm:w-auto" />
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 flex justify-center items-center">
-            <div className="relative">
-              <div className="absolute -top-8 -left-8 -right-8 -bottom-8 border border-white/20 pointer-events-none hidden lg:block" />
-              <div className="absolute -top-4 -left-4 -right-4 -bottom-4 border border-white/10 pointer-events-none" />
-              <div className="relative z-10 overflow-hidden shadow-2xl">
-                <img
-                  src={actionMoment.url}
-                  alt="O momento certo de agir é agora"
-                  loading="lazy"
-                  className="w-full max-w-lg object-cover brightness-90 hover:brightness-100 transition-all duration-500"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ---------------- Galeria da sede ---------------- */
 
 function LpOfficeGallery() {
