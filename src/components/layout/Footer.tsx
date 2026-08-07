@@ -1,6 +1,9 @@
-import { Facebook, Instagram, Mail, Phone, MessageSquare, ArrowUp } from "lucide-react";
-import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK } from "@/components/ui/whatsapp-cta";
+import { Facebook, Instagram, Mail, ArrowUp } from "lucide-react";
+import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
 import { Link } from "@tanstack/react-router";
+
+const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bittencourt+adovagos&rlz=1C1GCEA_enBR1196BR1197&oq=braga+bittencourt+adovagos&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAHSAQg1MDc2ajBqOagCBrACAfEFWe6JCqrJDgQ&sourceid=chrome&source=chrome.ob&ie=UTF-8";
+
 
 export function Footer() {
   const scrollToTop = () => {
