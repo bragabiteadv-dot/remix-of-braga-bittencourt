@@ -1,4 +1,4 @@
-export type Category = "Família" | "Sucessões" | "Internacional" | "Patrimônio" | "Empresarial";
+export type Category = "Família" | "Sucessões" | "Internacional";
 
 export interface Article {
   id: string;
@@ -105,7 +105,7 @@ export const ARTICLES: Article[] = [
     id: "9",
     slug: "a-dissolucao-de-uniao-estavel-no-brasil-seguranca-juridica-e-protecao-patrimonia",
     title: "A Dissolução de União Estável no Brasil: Segurança Jurídica e Proteção Patrimonial",
-    category: "Patrimônio",
+    category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: "/__l5e/assets-v1/326ade9d-2da9-4b94-a237-ca23c8a7c95d/artigo-9.jpg",

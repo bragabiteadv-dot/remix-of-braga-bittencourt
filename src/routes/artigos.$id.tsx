@@ -5,7 +5,7 @@ import { ARTICLES, getArticleById, type Article } from "@/lib/articles";
 import { HistorySection } from "@/components/sections/HistorySection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { GlobalReach } from "@/components/sections/GlobalReach";
-import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { WhatsAppCta, whatsappArticleLink } from "@/components/ui/whatsapp-cta";
 
 export const Route = createFileRoute("/artigos/$id")({
   component: ArticlePage,
@@ -95,7 +95,7 @@ function ArticlePage() {
               </div>
 
               <a
-                href="https://wa.link/i03d4k"
+                href={whatsappArticleLink(article.title)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 rounded-2xl p-4 bg-[#e8dcc4] border border-[#c5a880]/40 hover:brightness-105 transition"
@@ -118,7 +118,7 @@ function ArticlePage() {
             {/* Main content */}
             <article>
               {/* Hero image / placeholder */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[16/9] mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
+              <div className="relative rounded-2xl overflow-hidden aspect-square mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
                 {article.image ? (
                   <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
                 ) : (
@@ -181,7 +181,7 @@ function ArticlePage() {
                 <p className="text-white/60 font-montserrat text-sm md:text-base mb-6 max-w-xl mx-auto">
                   Nossa equipe está pronta para analisar seu caso com sigilo absoluto e propor a melhor estratégia jurídica.
                 </p>
-                <WhatsAppCta className="inline-flex" />
+                <WhatsAppCta className="inline-flex" href={whatsappArticleLink(article.title)} />
               </div>
 
               {/* Related */}
@@ -198,7 +198,7 @@ function ArticlePage() {
                         params={{ id: r.id }}
                         className="group bg-white rounded-xl overflow-hidden border border-navy/5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500"
                       >
-                        <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#f5eee0] to-[#e8dcc4] flex items-center justify-center">
+                        <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#f5eee0] to-[#e8dcc4] flex items-center justify-center">
                           {r.image ? (
                             <img src={r.image} alt={r.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                           ) : (
