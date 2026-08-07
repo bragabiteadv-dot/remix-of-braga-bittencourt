@@ -15,6 +15,7 @@ import {
 
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
+import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 import officeBetim from "@/assets/office-betim-new.jpg.asset.json";
 import officeBH from "@/assets/office-bh-new.jpg.asset.json";
