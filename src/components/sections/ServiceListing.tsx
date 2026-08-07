@@ -50,20 +50,18 @@ export const ServiceListing = () => {
   return (
     <section className="py-20 bg-[#08152C] relative overflow-hidden">
       {/* Wave PNG Overlay */}
-      <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex flex-col gap-8 pointer-events-none z-[1] opacity-50">
-        <img
-          src={wavesAsset.url}
-          alt=""
-          className="w-full h-auto"
-          aria-hidden="true"
-        />
-        <img
-          src={wavesAsset.url}
-          alt=""
-          className="w-full h-auto"
-          aria-hidden="true"
-        />
-      </div>
+      <img
+        src={wavesAsset.url}
+        alt=""
+        className="absolute top-[10%] left-0 w-full h-auto pointer-events-none z-[1] opacity-50"
+        aria-hidden="true"
+      />
+      <img
+        src={wavesAsset.url}
+        alt=""
+        className="absolute bottom-[10%] left-0 w-full h-auto pointer-events-none z-[1] opacity-50"
+        aria-hidden="true"
+      />
 
       <div className="container mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl text-white text-center mb-16 font-cinzel">
