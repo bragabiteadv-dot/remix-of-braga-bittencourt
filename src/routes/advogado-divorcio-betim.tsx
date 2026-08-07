@@ -151,10 +151,6 @@ function LpHero() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start animate-in fade-in slide-in-from-bottom-8 duration-1000">
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
-            <div className="inline-block px-5 py-2 border border-white/20 rounded-full mb-8">
-              <span className="text-white text-xs font-bold uppercase tracking-wider">Advogado de Família</span>
-            </div>
-
             <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
               Advogado de Divórcio em Betim
             </h1>
