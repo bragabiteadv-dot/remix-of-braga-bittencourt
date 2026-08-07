@@ -72,7 +72,7 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-3">
-            <WhatsAppCta className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
+            <WhatsAppCta className="hidden sm:inline-flex whitespace-nowrap !px-5 !py-3 !text-[11px] !gap-2" />
 
             <button
               type="button"
