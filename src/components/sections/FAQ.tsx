@@ -225,7 +225,7 @@ export const FAQ = () => {
                 Se a sua dúvida não estiver aqui, você pode chamar diretamente no WhatsApp e receber um direcionamento inicial com nossa equipe.
               </p>
               
-              <WhatsAppCta />
+              <WhatsAppCta className="w-full" />
             </div>
           </div>
         </aside>

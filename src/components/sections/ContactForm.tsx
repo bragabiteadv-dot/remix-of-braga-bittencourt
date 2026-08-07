@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MessageSquare, Phone, User, MapPin, Folder, ChevronDown } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-cta";
 
 
 export function ContactForm() {
@@ -12,7 +13,8 @@ export function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Olá! Meu nome é ${formData.nome}. Sou de ${formData.cidade}. Gostaria de falar sobre: ${formData.caso}.`;
-    const url = `https://wa.me/5531980260880?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.link/nv3dk7A`;
+    void text;
     window.open(url, "_blank");
   };
 
@@ -151,7 +153,7 @@ export function ContactForm() {
                     className="btn-primary flex-grow py-4 text-sm"
                   >
                     FALE COM ADVOGADO
-                    <Phone size={18} />
+                    <WhatsAppIcon />
                   </button>
                 </div>
               </div>
