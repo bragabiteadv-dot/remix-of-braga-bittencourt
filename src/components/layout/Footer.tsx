@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Search, Mail, Phone, MessageSquare, ArrowUp } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, MessageSquare, ArrowUp } from "lucide-react";
+import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK } from "@/components/ui/whatsapp-cta";
 import { Link } from "@tanstack/react-router";
 
 export function Footer() {
@@ -18,11 +19,10 @@ export function Footer() {
             />
           </Link>
           <div className="flex gap-4 mb-8">
-            <a href="https://www.facebook.com/public/Braga-Bitencourt-Advogados" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Facebook size={18} /></a>
-            <a href="https://www.google.com/search?q=Braga+Bitencourt+Advogados+BH" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Search size={18} /></a>
-            <a href="https://www.google.com/search?q=Braga+Bitencourt+Advogados+Betim" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Search size={18} /></a>
-            <a href="https://www.instagram.com/explore/tags/bragabitencourtadvogados" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Instagram size={18} /></a>
-            <a href="https://wa.link/nv3dk7A" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><MessageSquare size={18} /></a>
+            <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Facebook size={18} /></a>
+            <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><GoogleIcon size={18} /></a>
+            <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Instagram size={18} /></a>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><MessageSquare size={18} /></a>
             <a href="mailto:bragabitencourtadv@gmail.com" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Mail size={18} /></a>
           </div>
           <button 
