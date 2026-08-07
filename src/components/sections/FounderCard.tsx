@@ -20,7 +20,7 @@ export function FounderCard() {
   return (
     <section id="perfil" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto max-w-7xl">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 lg:gap-12">
           
           {/* Office Info Card */}
           <div className="w-full max-w-[320px] bg-[#FCD7A8] p-8 relative shadow-lg h-full self-stretch">
@@ -67,7 +67,7 @@ export function FounderCard() {
 
           {/* Founder Image */}
           <div className="w-full max-w-[320px] self-stretch">
-            <div className="rounded-2xl overflow-hidden shadow-2xl h-full min-h-[500px]">
+            <div className="rounded-2xl overflow-hidden shadow-2xl h-full">
               <img 
                 src="https://bragabitencourt.com/wp-content/uploads/2026/05/Foto-2_3_11zon-scaled.webp" 
                 alt="Dr. Carlos Javét Bitencourt" 
