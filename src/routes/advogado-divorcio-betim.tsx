@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 
 import { GlobalReach } from "@/components/sections/GlobalReach";
+import { TeamGrid } from "@/components/sections/TeamGrid";
+import { ActionMoment } from "@/components/sections/ActionMoment";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
@@ -21,11 +23,6 @@ import officeBetim from "@/assets/office-betim-new.jpg.asset.json";
 import officeBH from "@/assets/office-bh-new.jpg.asset.json";
 import officeBetimOld from "@/assets/office-betim.png.asset.json";
 import officeBHOld from "@/assets/office-bh.png.asset.json";
-import actionMoment from "@/assets/action-moment-new.jpg.asset.json";
-import carlosGabriel from "@/assets/carlos-gabriel.png.asset.json";
-import carlosJavet from "@/assets/carlos-javet.png.asset.json";
-import glaucia from "@/assets/glaucia.png.asset.json";
-import equipeBg from "@/assets/equipe-bg.png.asset.json";
 
 const CANONICAL = "https://warm-oi-whisper.lovable.app/advogado-divorcio-betim";
 const TITLE = "Advogado de Divórcio em Betim | Braga Bitencourt Advogados";
@@ -84,9 +81,9 @@ function LandingPage() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <LpTeam />
+      <TeamGrid />
       <LpSituations />
-      <LpActionMoment />
+      <ActionMoment />
       <LpOfficeGallery />
       <GlobalReach />
       <LpServices />
@@ -223,52 +220,6 @@ function LpHero() {
   );
 }
 
-/* ---------------- Equipe ---------------- */
-
-function LpTeam() {
-  const members = [
-    { name: "Carlos Gabriel F. Braga Bitencourt", image: carlosGabriel.url },
-    { name: "Carlos Javét Braga Bitencourt", image: carlosJavet.url },
-    { name: "Gláucia Patrícia F. Braga Bitencourt", image: glaucia.url },
-  ];
-
-  return (
-    <section className="py-24 bg-[#08152C] relative overflow-hidden">
-      <div
-        className="absolute inset-0 z-0 opacity-50 bg-cover bg-center"
-        style={{ backgroundImage: `url('${equipeBg.url}')` }}
-      />
-      <div className="container mx-auto relative z-10">
-        <h2 className="text-white text-4xl md:text-5xl font-cinzel text-center mb-16 tracking-widest uppercase">
-          Nossa equipe
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-14">
-          {members.map((m) => (
-            <div key={m.name} className="flex flex-col group">
-              <div className="relative overflow-hidden aspect-[3/4] rounded-sm shadow-2xl mb-6 bg-white">
-                <img
-                  src={m.image}
-                  alt={m.name}
-                  loading="lazy"
-                  className="w-full h-full object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="bg-white p-6 rounded-sm shadow-xl text-center">
-                <h3 className="text-navy text-lg font-bold font-montserrat">{m.name}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="flex justify-center">
-          <WhatsAppCta className="w-full sm:w-auto" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ---------------- Situações ---------------- */
 
 function LpSituations() {
@@ -346,47 +297,6 @@ function LpSituations() {
 
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- Momento certo ---------------- */
-
-function LpActionMoment() {
-  return (
-    <section className="py-24 bg-[#08152C] relative overflow-hidden">
-      <div className="container mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24">
-          <div className="w-full md:w-1/2 max-w-xl text-center md:text-left">
-            <h2 className="font-cinzel text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight uppercase">
-              O momento certo de agir é agora.
-            </h2>
-            <div className="w-40 h-px bg-white/30 mb-8 mx-auto md:mx-0" />
-            <p className="text-gray-300 text-base md:text-lg leading-relaxed font-montserrat mb-10">
-              Questões de família e herança não resolvidas tendem a se complicar com o tempo. Quanto antes você busca
-              orientação especializada, mais opções e mais controle você tem sobre o desfecho.
-            </p>
-            <div className="flex justify-center md:justify-start">
-              <WhatsAppCta className="w-full sm:w-auto" />
-            </div>
-          </div>
-
-          <div className="w-full md:w-1/2 flex justify-center items-center">
-            <div className="relative">
-              <div className="absolute -top-8 -left-8 -right-8 -bottom-8 border border-white/20 pointer-events-none hidden lg:block" />
-              <div className="absolute -top-4 -left-4 -right-4 -bottom-4 border border-white/10 pointer-events-none" />
-              <div className="relative z-10 overflow-hidden shadow-2xl">
-                <img
-                  src={actionMoment.url}
-                  alt="O momento certo de agir é agora"
-                  loading="lazy"
-                  className="w-full max-w-lg object-cover brightness-90 hover:brightness-100 transition-all duration-500"
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
