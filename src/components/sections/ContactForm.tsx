@@ -48,9 +48,10 @@ export function ContactForm() {
                   <span className="text-gold-light text-xs font-bold tracking-widest uppercase">Contato Imediato</span>
                 </div>
                 
-                <h2 className="text-white text-4xl lg:text-5xl font-cinzel leading-tight">
+                <h2 className="text-white text-lg lg:text-2xl font-cinzel leading-tight">
                   Fale com a equipe de forma simples e direta.
                 </h2>
+
                 
                 <div className="flex flex-wrap gap-4 pt-4">
                   <div className="flex items-center gap-2 px-5 py-2 bg-black/40 border border-white/10 rounded-full text-white text-sm">
