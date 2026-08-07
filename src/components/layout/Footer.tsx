@@ -1,6 +1,9 @@
-import { Facebook, Instagram, Mail, Phone, MessageSquare, ArrowUp } from "lucide-react";
-import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK } from "@/components/ui/whatsapp-cta";
+import { Facebook, Instagram, Mail, ArrowUp } from "lucide-react";
+import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
 import { Link } from "@tanstack/react-router";
+
+const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bittencourt+adovagos&rlz=1C1GCEA_enBR1196BR1197&oq=braga+bittencourt+adovagos&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAHSAQg1MDc2ajBqOagCBrACAfEFWe6JCqrJDgQ&sourceid=chrome&source=chrome.ob&ie=UTF-8";
+
 
 export function Footer() {
   const scrollToTop = () => {
@@ -22,7 +25,8 @@ export function Footer() {
             <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Facebook size={18} /></a>
             <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><GoogleIcon size={18} /></a>
             <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Instagram size={18} /></a>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><MessageSquare size={18} /></a>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><WhatsAppIcon className="w-[18px] h-[18px]" /></a>
+
             <a href="mailto:bragabitencourtadv@gmail.com" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Mail size={18} /></a>
           </div>
           <button 
@@ -35,7 +39,12 @@ export function Footer() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-16">
-          <div className="bg-white/5 p-8 rounded-lg border border-white/10">
+          <a 
+            href={GOOGLE_SEARCH_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 p-8 rounded-lg border border-white/10 block hover:bg-white/[0.07] transition-colors"
+          >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 bg-gold-gradient rounded-lg flex items-center justify-center text-navy">
                 <MapPinIcon />
@@ -52,21 +61,31 @@ export function Footer() {
                 Av. Amazonas, 1446- sala 706/707-Brasiléia, Betim – MG
               </p>
             </div>
-          </div>
+          </a>
 
-          <div className="bg-white/5 p-8 rounded-lg border border-white/10">
+
+          <a 
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 p-8 rounded-lg border border-white/10 block hover:bg-white/[0.07] transition-colors"
+          >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 bg-gold-gradient rounded-lg flex items-center justify-center text-navy">
-                <MessageSquare size={24} />
+                <WhatsAppIcon className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-cinzel">Whatsapp</h3>
             </div>
             <div className="text-2xl font-bold text-gold-light">
               (31) 98026-0880
             </div>
-          </div>
+          </a>
 
-          <div className="bg-white/5 p-8 rounded-lg border border-white/10">
+
+          <a 
+            href="mailto:bragabitencourtadv@gmail.com"
+            className="bg-white/5 p-8 rounded-lg border border-white/10 block hover:bg-white/[0.07] transition-colors"
+          >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 bg-gold-gradient rounded-lg flex items-center justify-center text-navy">
                 <Mail size={24} />
@@ -76,7 +95,8 @@ export function Footer() {
             <div className="text-sm text-white/70 break-all">
               bragabitencourtadv@gmail.com
             </div>
-          </div>
+          </a>
+
         </div>
 
         <div className="mt-16 text-center text-[10px] uppercase tracking-widest opacity-30">
