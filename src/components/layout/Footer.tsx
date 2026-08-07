@@ -58,17 +58,23 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="bg-white/5 p-8 rounded-lg border border-white/10">
+          <a 
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 p-8 rounded-lg border border-white/10 block hover:bg-white/[0.07] transition-colors"
+          >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 bg-gold-gradient rounded-lg flex items-center justify-center text-navy">
-                <MessageSquare size={24} />
+                <WhatsAppIcon className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-cinzel">Whatsapp</h3>
             </div>
             <div className="text-2xl font-bold text-gold-light">
               (31) 98026-0880
             </div>
-          </div>
+          </a>
+
 
           <div className="bg-white/5 p-8 rounded-lg border border-white/10">
             <div className="flex items-center gap-4 mb-6">
