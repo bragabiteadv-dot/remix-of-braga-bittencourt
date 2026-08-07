@@ -50,12 +50,22 @@ export const ServiceListing = () => {
   return (
     <section className="py-20 bg-[#08152C] relative overflow-hidden">
       {/* Background Decorative Lines (similar to the image) */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+      <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <path d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="white" strokeWidth="0.1" />
           <path d="M0,60 Q25,40 50,60 T100,60" fill="none" stroke="white" strokeWidth="0.1" />
           <path d="M0,40 Q25,20 50,40 T100,40" fill="none" stroke="white" strokeWidth="0.1" />
         </svg>
+      </div>
+
+      {/* Wave PNG Overlay */}
+      <div className="absolute inset-0 pointer-events-none z-[1] overflow-hidden">
+        <img
+          src={wavesAsset.url}
+          alt=""
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto min-h-full object-cover object-center"
+          aria-hidden="true"
+        />
       </div>
 
       <div className="container mx-auto relative z-10">
