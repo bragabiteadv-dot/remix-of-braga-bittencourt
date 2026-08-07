@@ -93,6 +93,7 @@ function LandingPage() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <ContactForm />
       <LpFooter />
     </div>
   );
