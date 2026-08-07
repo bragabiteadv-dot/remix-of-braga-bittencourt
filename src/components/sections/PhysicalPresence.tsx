@@ -42,18 +42,23 @@ export function PhysicalPresence() {
           {offices.map((office, idx) => (
             <div key={idx} className="space-y-8">
               {/* Map Card */}
-              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl h-80 relative">
+              <a
+                href={office.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-white rounded-2xl overflow-hidden shadow-2xl h-80 relative hover:opacity-95 transition-opacity"
+              >
                 <iframe 
                   src={office.mapUrl} 
                   width="100%" 
                   height="100%" 
-                  style={{ border: 0 }} 
+                  style={{ border: 0, pointerEvents: "none" }} 
                   allowFullScreen 
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title={`Mapa ${office.city}`}
                 ></iframe>
-              </div>
+              </a>
 
               {/* Info Card */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full">
