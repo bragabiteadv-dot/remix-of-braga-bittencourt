@@ -1,26 +1,28 @@
 import { useState } from "react";
-import { MessageSquare, Phone, User, MapPin, Folder, ChevronDown } from "lucide-react";
+import { MessageSquare, User, MapPin, Folder, ChevronDown, FileText } from "lucide-react";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-cta";
-
+import formOfficeAsset from "@/assets/form-office.png.asset.json";
 
 export function ContactForm() {
+
   const [formData, setFormData] = useState({
     nome: "",
     cidade: "",
-    caso: ""
+    caso: "",
+    mensagem: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Olá! Meu nome é ${formData.nome}. Sou de ${formData.cidade}. Gostaria de falar sobre: ${formData.caso}.`;
-    const url = `https://wa.link/i03d4k`;
-    void text;
+    const text = `Olá! Meu nome é ${formData.nome}. Sou de ${formData.cidade}. Tipo do caso: ${formData.caso}. Meu caso: ${formData.mensagem}.`;
+    const url = `https://wa.link/i03d4k?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
   };
 
   const handleClear = () => {
-    setFormData({ nome: "", cidade: "", caso: "" });
+    setFormData({ nome: "", cidade: "", caso: "", mensagem: "" });
   };
+
 
   return (
     <section id="contato" className="py-24 bg-navy relative overflow-hidden">
@@ -31,10 +33,11 @@ export function ContactForm() {
           <div className="lg:w-[45%] relative min-h-[500px]">
             <div className="absolute inset-0 z-0">
               <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" 
-                alt="Office Environment" 
+                src={formOfficeAsset.url}
+                alt="Escritório de Advocacia" 
                 className="w-full h-full object-cover"
               />
+
               <div className="absolute inset-0 bg-black/60"></div>
             </div>
 
@@ -134,7 +137,24 @@ export function ContactForm() {
                 </div>
               </div>
 
+              {/* Mensagem Field */}
+              <div className="space-y-3">
+                <label className="text-white text-xs font-bold uppercase tracking-wider block">Digite aqui o seu caso</label>
+                <div className="relative">
+                  <FileText className="absolute left-4 top-4 text-white/30 w-4 h-4" />
+                  <textarea 
+                    required
+                    rows={5}
+                    placeholder="Descreva brevemente sua situação..."
+                    className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat resize-none"
+                    value={formData.mensagem}
+                    onChange={(e) => setFormData({...formData, mensagem: e.target.value})}
+                  />
+                </div>
+              </div>
+
               <div className="space-y-6">
+
                 <p className="text-white/40 text-xs font-montserrat italic">
                   Conversa rápida, clara e sem complicação.
                 </p>
