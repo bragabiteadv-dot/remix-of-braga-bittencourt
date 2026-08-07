@@ -82,7 +82,10 @@ export function Footer() {
           </a>
 
 
-          <div className="bg-white/5 p-8 rounded-lg border border-white/10">
+          <a 
+            href="mailto:bragabitencourtadv@gmail.com"
+            className="bg-white/5 p-8 rounded-lg border border-white/10 block hover:bg-white/[0.07] transition-colors"
+          >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 bg-gold-gradient rounded-lg flex items-center justify-center text-navy">
                 <Mail size={24} />
@@ -92,7 +95,8 @@ export function Footer() {
             <div className="text-sm text-white/70 break-all">
               bragabitencourtadv@gmail.com
             </div>
-          </div>
+          </a>
+
         </div>
 
         <div className="mt-16 text-center text-[10px] uppercase tracking-widest opacity-30">
