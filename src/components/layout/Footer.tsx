@@ -25,7 +25,8 @@ export function Footer() {
             <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Facebook size={18} /></a>
             <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><GoogleIcon size={18} /></a>
             <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Instagram size={18} /></a>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><MessageSquare size={18} /></a>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><WhatsAppIcon className="w-[18px] h-[18px]" /></a>
+
             <a href="mailto:bragabitencourtadv@gmail.com" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold-light hover:text-navy transition-all"><Mail size={18} /></a>
           </div>
           <button 
