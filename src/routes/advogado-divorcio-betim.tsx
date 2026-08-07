@@ -32,7 +32,7 @@ const DESCRIPTION =
   "Advogado de divórcio em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
 
 const WHATSAPP =
-  "https://wa.me/5531980260880?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20advogado%20especialista%20em%20div%C3%B3rcio%20em%20Betim.";
+  "https://wa.link/nv3dk7A";
 
 export const Route = createFileRoute("/advogado-divorcio-betim")({
   head: () => ({
@@ -85,7 +85,7 @@ function WhatsAppIcon() {
   );
 }
 
-function CtaButton({ label = "FALAR COM ADVOGADO", className = "" }: { label?: string; className?: string }) {
+function CtaButton({ label = "FALE COM ADVOGADO", className = "" }: { label?: string; className?: string }) {
   return (
     <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className={`btn-primary ${className}`}>
       {label}
@@ -124,7 +124,7 @@ function LpHeader() {
           className="h-12 w-auto shrink-0"
           loading="eager"
         />
-        <CtaButton label="FALAR COM ADVOGADO" className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
+        <CtaButton label="FALE COM ADVOGADO" className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
       </div>
     </header>
   );
@@ -183,7 +183,7 @@ function LpHero() {
               Conduzimos seu divórcio em Betim com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
-            <CtaButton label="FALAR COM ADVOGADO" className="w-full sm:w-auto" />
+            <CtaButton label="FALE COM ADVOGADO" className="w-full sm:w-auto" />
 
             <p className="text-white/50 text-xs font-montserrat mt-6 tracking-wide">
               Atendimento presencial e online em Betim.

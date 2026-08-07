@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Check } from "lucide-react";
+import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function FounderCard() {
   const credentials = [
@@ -97,13 +98,7 @@ export function FounderCard() {
             </ul>
 
             <div className="mt-12">
-              <a 
-                href="https://wa.me/5531980260880?text=Olá! Acessei a página perfil do escritório e gostaria de falar com um especialista."
-                className="btn-primary"
-              >
-                FALE COM ADVOGADO
-                <WhatsAppIcon className="ml-2 w-5 h-5" />
-              </a>
+              <WhatsAppCta />
             </div>
           </div>
 

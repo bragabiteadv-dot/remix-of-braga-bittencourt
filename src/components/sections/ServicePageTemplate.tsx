@@ -1,6 +1,7 @@
 import { ContactForm } from "./ContactForm";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function ServicePageTemplate({ 
   city, 
@@ -48,12 +49,7 @@ export function ServicePageTemplate({
                   <p className="text-white/50 text-sm mb-8 font-montserrat">
                     Nossa equipe em {city} está à disposição para analisar seu caso com total sigilo.
                   </p>
-                  <a 
-                    href="https://wa.me/5531980260880"
-                    className="inline-block w-full bg-gold-gradient text-navy font-bold py-4 rounded-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-lg"
-                  >
-                    Falar agora no WhatsApp
-                  </a>
+                  <WhatsAppCta className="w-full" />
                 </div>
               </div>
             </div>
