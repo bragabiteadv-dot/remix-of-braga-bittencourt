@@ -21,8 +21,11 @@ import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 import officeBetim from "@/assets/office-betim-new.jpg.asset.json";
 import officeBH from "@/assets/office-bh-new.jpg.asset.json";
-import officeBetimOld from "@/assets/office-betim.png.asset.json";
-import officeBHOld from "@/assets/office-bh.png.asset.json";
+import sedeBetim1 from "@/assets/sede-betim-1.jpg.asset.json";
+import sedeBetim2 from "@/assets/sede-betim-2.jpg.asset.json";
+import sedeBetim3 from "@/assets/sede-betim-3.jpg.asset.json";
+import sedeBetim4 from "@/assets/sede-betim-4.jpg.asset.json";
+import sedeBetim5 from "@/assets/sede-betim-5.jpg.asset.json";
 
 const CANONICAL = "https://warm-oi-whisper.lovable.app/advogado-divorcio-betim";
 const TITLE = "Advogado de Divórcio em Betim | Braga Bitencourt Advogados";
@@ -306,7 +309,7 @@ function LpSituations() {
 /* ---------------- Galeria da sede ---------------- */
 
 function LpOfficeGallery() {
-  const photos = [officeBetim.url, officeBetimOld.url, officeBH.url, officeBHOld.url, officeBetim.url];
+  const photos = [sedeBetim1.url, sedeBetim2.url, sedeBetim3.url, sedeBetim4.url, sedeBetim5.url];
   const loop = [...photos, ...photos];
 
   return (
