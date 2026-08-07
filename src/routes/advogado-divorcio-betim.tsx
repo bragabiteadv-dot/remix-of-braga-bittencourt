@@ -81,9 +81,9 @@ function LandingPage() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <LpTeam />
+      <TeamGrid />
       <LpSituations />
-      <LpActionMoment />
+      <ActionMoment />
       <LpOfficeGallery />
       <GlobalReach />
       <LpServices />
