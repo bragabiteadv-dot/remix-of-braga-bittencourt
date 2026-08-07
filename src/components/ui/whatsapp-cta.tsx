@@ -24,7 +24,7 @@ export function WhatsAppCta({ className = "" }: { className?: string }) {
       rel="noopener noreferrer"
       className={`btn-primary ${className}`}
     >
-      {WHATSAPP_CTA_LABEL}
+      <span className="whitespace-nowrap">{WHATSAPP_CTA_LABEL}</span>
       <WhatsAppIcon />
     </a>
   );
