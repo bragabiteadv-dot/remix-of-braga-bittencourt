@@ -95,7 +95,7 @@ function ArticlePage() {
               </div>
 
               <a
-                href="https://wa.me/5531980260880?text=Olá! Vim pelo artigo do site e gostaria de falar com um advogado."
+                href="https://wa.link/nv3dk7A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 rounded-2xl p-4 bg-[#e8dcc4] border border-[#c5a880]/40 hover:brightness-105 transition"
