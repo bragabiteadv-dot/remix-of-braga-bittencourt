@@ -71,7 +71,7 @@ export function FounderCard() {
               <img 
                 src="https://bragabitencourt.com/wp-content/uploads/2026/05/Foto-2_3_11zon-scaled.webp" 
                 alt="Dr. Carlos Javét Bitencourt" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
             </div>
           </div>
