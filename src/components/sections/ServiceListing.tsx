@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import wavesAsset from "@/assets/service-waves-bg.png.asset.json";
 
 const services = [
   {
