@@ -178,14 +178,14 @@ function LpHero() {
               Conte com quem tem mais de 20 anos resolvendo casos como o seu.
             </h2>
 
-            <p className="text-white/80 text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
+            <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
               Especialista em Divórcio em Betim — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem estar.
               Conduzimos seu divórcio em Betim com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
             <CtaButton label="FALE COM ADVOGADO" className="w-full sm:w-auto" />
 
-            <p className="text-white/50 text-xs font-montserrat mt-6 tracking-wide">
+            <p className="text-white text-xs font-montserrat mt-6 tracking-wide">
               Atendimento presencial e online em Betim.
             </p>
 
@@ -206,9 +206,9 @@ function LpHero() {
 
               <div className="flex flex-col items-center mb-10">
                 <div className="inline-block px-6 py-2 border border-white/20 rounded-full mb-8">
-                  <span className="text-white text-sm font-bold opacity-70">Sobre Nosso Trabalho</span>
+                  <span className="text-white text-sm font-bold">Sobre Nosso Trabalho</span>
                 </div>
-                <p className="text-white/70 text-center text-sm md:text-base font-montserrat leading-relaxed px-2">
+                <p className="text-white text-center text-sm md:text-base font-montserrat leading-relaxed px-2">
                   Advocacia de excelência focada em segurança jurídica, visão prática e soluções objetivas com totla
                   claresa desde o primeiro contato.
                 </p>
@@ -230,7 +230,7 @@ function LpHero() {
                         </p>
                       ))}
                     </div>
-                    <p className="text-white/50 text-[11px] font-medium leading-snug mt-auto">{s.text}</p>
+                    <p className="text-white text-[11px] font-medium leading-snug mt-auto">{s.text}</p>
                   </div>
                 ))}
               </div>
