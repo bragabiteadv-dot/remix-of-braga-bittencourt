@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MessageSquare, User, MapPin, Folder, ChevronDown, FileText } from "lucide-react";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-cta";
+import { WHATSAPP_PHONE, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
 import formOfficeAsset from "@/assets/form-office.png.asset.json";
 
 export function ContactForm() {
@@ -25,9 +25,9 @@ export function ContactForm() {
       "/advogado-divorcio-betim": "Advogado Divórcio Betim",
     };
     const pageName = pageNames[path] ?? (path.startsWith("/artigos/") ? "Artigos" : path || "Home");
-    const text = `Olá! Acessei a página ${pageName} e gostaria de falar com um especialista. Meu nome é ${formData.nome}, sou de ${formData.cidade}, meu caso é ${formData.mensagem}`;
-    const url = `https://wa.link/i03d4k?text=${encodeURIComponent(text)}`;
-    window.open(url, "_blank");
+    const text = `Olá! Acessei a página ${pageName} e gostaria de falar com um especialista. Meu nome é ${formData.nome.trim()}, sou de ${formData.cidade.trim()}, meu caso é ${formData.mensagem.trim()}`;
+    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const handleClear = () => {
