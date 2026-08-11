@@ -171,20 +171,20 @@ export function ContactForm() {
                   Conversa rápida, clara e sem complicação.
                 </p>
 
-                <div className="flex items-stretch gap-4">
+                <div className="flex flex-col sm:flex-row items-stretch gap-4">
                   <button 
                     type="button"
                     onClick={handleClear}
-                    className="px-6 py-4 bg-[#08152C] border border-white/10 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all rounded-sm min-w-[100px]"
+                    className="px-6 py-4 bg-[#08152C] border border-white/10 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all rounded-sm sm:min-w-[100px]"
                   >
                     Limpar
                   </button>
                   
                   <button 
                     type="submit"
-                    className="btn-primary flex-grow py-4 text-sm"
+                    className="btn-primary flex-grow min-w-0 py-4 text-[13px] sm:text-sm"
                   >
-                    FALE COM ADVOGADO
+                    <span className="min-w-0 sm:whitespace-nowrap">FALE COM ADVOGADO</span>
                     <WhatsAppIcon />
                   </button>
                 </div>
