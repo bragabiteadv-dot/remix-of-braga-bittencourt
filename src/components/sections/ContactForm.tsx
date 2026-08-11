@@ -14,7 +14,18 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Olá! Meu nome é ${formData.nome}. Sou de ${formData.cidade}. Tipo do caso: ${formData.caso}. Meu caso: ${formData.mensagem}.`;
+    const path = typeof window !== "undefined" ? window.location.pathname.replace(/\/$/, "") : "";
+    const pageNames: Record<string, string> = {
+      "": "Home",
+      "/perfil": "Perfil",
+      "/areas-de-atuacao": "Áreas de Atuação",
+      "/duvidas": "Dúvidas",
+      "/fale-conosco": "Fale Conosco",
+      "/artigos": "Artigos",
+      "/advogado-divorcio-betim": "Advogado Divórcio Betim",
+    };
+    const pageName = pageNames[path] ?? (path.startsWith("/artigos/") ? "Artigos" : path || "Home");
+    const text = `Olá! Acessei a página ${pageName} e gostaria de falar com um especialista. Meu nome é ${formData.nome}, sou de ${formData.cidade}, meu caso é ${formData.mensagem}`;
     const url = `https://wa.link/i03d4k?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
   };
