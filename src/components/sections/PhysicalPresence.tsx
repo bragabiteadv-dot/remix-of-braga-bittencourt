@@ -40,7 +40,7 @@ export function PhysicalPresence() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 max-w-6xl mx-auto">
           {offices.map((office, idx) => (
-            <div key={idx} className="space-y-10 md:space-y-8">
+            <div key={idx} className="flex flex-col gap-10 md:gap-8">
               {/* Map Card */}
               <a
                 href={office.link}
@@ -61,7 +61,7 @@ export function PhysicalPresence() {
               </a>
 
               {/* Info Card */}
-              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col">
                 <div className="h-64 overflow-hidden">
                   <img 
                     src={office.image} 
