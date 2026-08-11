@@ -9,7 +9,7 @@ export function PhysicalPresence() {
       city: "Belo Horizonte",
       address: "Braga Bitencourt Advogados BH, Av. Raja Gabáglia, 2000 - Alpes, Belo Horizonte - MG, 30494-170",
       description: "Atendimento presencial em Belo Horizonte e acompanhamento com a mesma organização, discrição e clareza que orientam toda a experiência do escritório.",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.395729780517!2d-43.9575916!3d-19.9575916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDU3JzI3LjMiUyA0M8KwNTcnMjcuMyJX!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr",
+      mapUrl: "https://maps.google.com/maps?q=Av.%20Raja%20Gab%C3%A1glia%2C%202000%20-%20Alpes%2C%20Belo%20Horizonte%20-%20MG%2C%2030494-170&z=17&hl=pt-BR&output=embed",
       link: "https://share.google/UiahnNRC0AVfB7xZP",
       image: officeBHAsset.url,
       whatsapp: "https://wa.link/i03d4k"
@@ -18,7 +18,7 @@ export function PhysicalPresence() {
       city: "Betim",
       address: "Braga Bitencourt Advogados Betim, Av. Amazonas, 1446 - 7º andar - salas 706/707 - Brasiléia, Betim - MG, 32600-324",
       description: "Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.123456789!2d-44.2!3d-19.96!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDU3JzI3LjMiUyA0NMKwMTInMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr",
+      mapUrl: "https://maps.google.com/maps?q=Av.%20Amazonas%2C%201446%20-%20Brasileia%2C%20Betim%20-%20MG%2C%2032600-324&z=17&hl=pt-BR&output=embed",
       link: "https://share.google/tKyzJIwu9jMGT0P7n",
       image: officeBetimAsset.url,
       whatsapp: "https://wa.link/i03d4k"
