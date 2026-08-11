@@ -86,11 +86,11 @@ export const ServiceListing = () => {
                 {service.category}
               </div>
               
-              <div className="flex items-center gap-4 mb-8">
-                <h3 className="text-xl md:text-2xl text-[#F8D59B] font-cinzel whitespace-nowrap">
+              <div className="flex items-center gap-4 mb-8 min-w-0">
+                <h3 className="text-base sm:text-lg md:text-2xl text-[#F8D59B] font-cinzel leading-snug md:whitespace-nowrap">
                   {service.title}
                 </h3>
-                <div className="h-[1px] w-full bg-gradient-to-r from-white/20 to-transparent"></div>
+                <div className="hidden md:block h-[1px] w-full bg-gradient-to-r from-white/20 to-transparent"></div>
               </div>
 
               <ul className="grid grid-cols-1 gap-4">
