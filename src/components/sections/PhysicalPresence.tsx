@@ -61,7 +61,7 @@ export function PhysicalPresence() {
               </a>
 
               {/* Info Card */}
-              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col">
                 <div className="h-64 overflow-hidden">
                   <img 
                     src={office.image} 
