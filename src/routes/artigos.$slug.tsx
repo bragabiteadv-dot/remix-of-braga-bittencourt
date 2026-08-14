@@ -1,24 +1,28 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { useState } from "react";
 import { Calendar, Clock, Link2, Share2, ArrowLeft, ImageIcon } from "lucide-react";
-import { ARTICLES, getArticleById, type Article } from "@/lib/articles";
+import { ARTICLES, getArticleById, getArticleBySlug, type Article } from "@/lib/articles";
 import { HistorySection } from "@/components/sections/HistorySection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { WhatsAppCta, whatsappArticleLink } from "@/components/ui/whatsapp-cta";
 
-export const Route = createFileRoute("/artigos/$id")({
+export const Route = createFileRoute("/artigos/$slug")({
   component: ArticlePage,
   loader: ({ params }) => {
-    const article = getArticleById(params.id);
-    if (!article) throw notFound();
+    const article = getArticleBySlug(params.slug);
+    if (!article) {
+      const byId = getArticleById(params.slug);
+      if (byId) throw redirect({ to: "/artigos/$slug", params: { slug: byId.slug }, statusCode: 301 });
+      throw notFound();
+    }
     return { article };
   },
   head: ({ loaderData, params }) => {
     const a = loaderData?.article as Article | undefined;
     const title = a ? `${a.title} | Braga Bitencourt Advogados` : "Artigo | Braga Bitencourt Advogados";
     const description = a?.excerpt ?? "Artigo jurídico do escritório Braga Bitencourt Advogados.";
-    const url = `/artigos/${params.id}`;
+    const url = `/artigos/${params.slug}`;
     return {
       meta: [
         { title },
@@ -194,8 +198,8 @@ function ArticlePage() {
                     {related.map((r) => (
                       <Link
                         key={r.id}
-                        to="/artigos/$id"
-                        params={{ id: r.id }}
+                        to="/artigos/$slug"
+                        params={{ slug: r.slug }}
                         className="group bg-white rounded-xl overflow-hidden border border-navy/5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500"
                       >
                         <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#f5eee0] to-[#e8dcc4] flex items-center justify-center">

@@ -144,8 +144,8 @@ function Artigos() {
                   </p>
                   <div className="mt-auto">
                     <Link
-                      to="/artigos/$id"
-                      params={{ id: article.id }}
+                      to="/artigos/$slug"
+                      params={{ slug: article.slug }}
                       className="block w-full text-center py-3 rounded-full bg-gold-gradient text-navy font-montserrat text-xs uppercase tracking-[0.2em] font-semibold shadow-md hover:shadow-lg hover:brightness-105 transition-all"
                     >
                       Leia mais

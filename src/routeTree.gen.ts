@@ -17,7 +17,7 @@ import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as AdvogadoDivorcioBetimRouteImport } from './routes/advogado-divorcio-betim'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArtigosIndexRouteImport } from './routes/artigos.index'
-import { Route as ArtigosIdRouteImport } from './routes/artigos.$id'
+import { Route as ArtigosSlugRouteImport } from './routes/artigos.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -59,9 +59,9 @@ const ArtigosIndexRoute = ArtigosIndexRouteImport.update({
   path: '/artigos/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ArtigosIdRoute = ArtigosIdRouteImport.update({
-  id: '/artigos/$id',
-  path: '/artigos/$id',
+const ArtigosSlugRoute = ArtigosSlugRouteImport.update({
+  id: '/artigos/$slug',
+  path: '/artigos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -73,7 +73,7 @@ export interface FileRoutesByFullPath {
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/artigos/$id': typeof ArtigosIdRoute
+  '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos/': typeof ArtigosIndexRoute
 }
 export interface FileRoutesByTo {
@@ -84,7 +84,7 @@ export interface FileRoutesByTo {
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/artigos/$id': typeof ArtigosIdRoute
+  '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos': typeof ArtigosIndexRoute
 }
 export interface FileRoutesById {
@@ -96,7 +96,7 @@ export interface FileRoutesById {
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/artigos/$id': typeof ArtigosIdRoute
+  '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos/': typeof ArtigosIndexRoute
 }
 export interface FileRouteTypes {
@@ -109,7 +109,7 @@ export interface FileRouteTypes {
     | '/fale-conosco'
     | '/perfil'
     | '/sitemap.xml'
-    | '/artigos/$id'
+    | '/artigos/$slug'
     | '/artigos/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -120,7 +120,7 @@ export interface FileRouteTypes {
     | '/fale-conosco'
     | '/perfil'
     | '/sitemap.xml'
-    | '/artigos/$id'
+    | '/artigos/$slug'
     | '/artigos'
   id:
     | '__root__'
@@ -131,7 +131,7 @@ export interface FileRouteTypes {
     | '/fale-conosco'
     | '/perfil'
     | '/sitemap.xml'
-    | '/artigos/$id'
+    | '/artigos/$slug'
     | '/artigos/'
   fileRoutesById: FileRoutesById
 }
@@ -143,7 +143,7 @@ export interface RootRouteChildren {
   FaleConoscoRoute: typeof FaleConoscoRoute
   PerfilRoute: typeof PerfilRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  ArtigosIdRoute: typeof ArtigosIdRoute
+  ArtigosSlugRoute: typeof ArtigosSlugRoute
   ArtigosIndexRoute: typeof ArtigosIndexRoute
 }
 
@@ -205,11 +205,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArtigosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/artigos/$id': {
-      id: '/artigos/$id'
-      path: '/artigos/$id'
-      fullPath: '/artigos/$id'
-      preLoaderRoute: typeof ArtigosIdRouteImport
+    '/artigos/$slug': {
+      id: '/artigos/$slug'
+      path: '/artigos/$slug'
+      fullPath: '/artigos/$slug'
+      preLoaderRoute: typeof ArtigosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -223,9 +223,19 @@ const rootRouteChildren: RootRouteChildren = {
   FaleConoscoRoute: FaleConoscoRoute,
   PerfilRoute: PerfilRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  ArtigosIdRoute: ArtigosIdRoute,
+  ArtigosSlugRoute: ArtigosSlugRoute,
   ArtigosIndexRoute: ArtigosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
