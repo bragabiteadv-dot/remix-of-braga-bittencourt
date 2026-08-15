@@ -51,7 +51,7 @@ export const Route = createFileRoute("/advogado-divorcio-betim")({
       title: TITLE,
       description: DESCRIPTION,
       image: officeBetim.url,
-      schema: {
+      schema: [{
         "@context": "https://schema.org",
         "@type": "LegalService",
         name: "Braga Bitencourt Advogados — Advogado de Divórcio em Betim",
