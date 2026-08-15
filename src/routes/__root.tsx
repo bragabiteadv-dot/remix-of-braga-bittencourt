@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-router";
 import { type ReactNode } from "react";
 import { SITE_LOCALE } from "@/lib/site";
-import { organizationSchema, websiteSchema } from "@/lib/org-schema";
+import { organizationSchema, unitSchemas, websiteSchema } from "@/lib/org-schema";
 
 import appCss from "../styles.css?url";
 import { Header } from "../components/layout/Header";
