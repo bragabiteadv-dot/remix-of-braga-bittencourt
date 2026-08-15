@@ -109,7 +109,7 @@ export default function RotatingEarth({
 
     const render = () => {
       context.clearRect(0, 0, containerWidth, containerHeight);
-      const currentScale = projection.scale();
+      const currentScale = Math.max(0, projection.scale());
       const scaleFactor = currentScale / radius;
 
       context.beginPath();
