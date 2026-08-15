@@ -10,10 +10,11 @@ export const Route = createFileRoute("/artigos/")({
   head: () =>
     buildSeo({
       path: "/artigos",
-      title: "Artigos e Blog | Braga Bitencourt Advogados",
+      title: "Artigos Jurídicos | Direito de Família e Sucessões",
       description:
-        "Conteúdos jurídicos práticos e atualizados sobre Família, Sucessões e Direito Internacional Privado.",
+        "Confira artigos jurídicos sobre divórcio, guarda, pensão, partilha, inventário, sucessões e Direito Internacional, produzidos pela Braga Bitencourt.",
       image: OG_IMAGE,
+      type: "website",
     }),
 });
 
