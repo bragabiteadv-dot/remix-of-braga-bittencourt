@@ -7,6 +7,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { WhatsAppCta, whatsappArticleLink } from "@/components/ui/whatsapp-cta";
 import { buildSeo } from "@/lib/seo";
+import { articleSchemas, articleSeoDescription, articleSeoTitle } from "@/lib/article-seo";
 import { OG_IMAGE } from "@/lib/site-og";
 
 export const Route = createFileRoute("/artigos/$slug")({
