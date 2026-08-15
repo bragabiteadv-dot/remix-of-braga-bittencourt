@@ -12,7 +12,19 @@ import { SITE_NAME, siteAssetUrl, siteUrl } from "./site";
 const BRAND = "Braga Bitencourt"; // grafia oficial da marca (mesmo em slugs antigos)
 
 /** Reduz tecnicamente títulos longos mantendo o assunto principal. */
-function shortenTitle(raw: string, max = 52): string {
+const TRAILING_STOPWORDS = /\s+(a|o|as|os|de|da|do|das|dos|e|em|no|na|nos|nas|para|por|com|que|seu|sua|um|uma|ao|à|às|aos|se|the)$/i;
+
+function trimTrailing(text: string): string {
+  let t = text.replace(/[.\s,;:–—-]+$/, "");
+  let prev = "";
+  while (t !== prev) {
+    prev = t;
+    t = t.replace(TRAILING_STOPWORDS, "").replace(/[.\s,;:–—-]+$/, "");
+  }
+  return t;
+}
+
+function shortenTitle(raw: string, max = 58): string {
   let t = raw.trim().replace(/\s+/g, " ").replace(/[.\s]+$/, "");
 
   // Remove menções à marca no fim do título (evita repetição com o sufixo).
@@ -21,7 +33,7 @@ function shortenTitle(raw: string, max = 52): string {
   if (t.length <= max) return t;
 
   // Mantém a parte principal antes de ":" / "–" / "." quando suficiente.
-  const primary = t.split(/[:–—]|\.\s/)[0]?.trim().replace(/[.\s,–—-]+$/, "") ?? t;
+  const primary = trimTrailing(t.split(/[:–—]|\.\s/)[0]?.trim() ?? t);
   if (primary.length >= 20 && primary.length <= max) return primary;
 
   const base = primary.length >= 20 ? primary : t;
@@ -29,7 +41,7 @@ function shortenTitle(raw: string, max = 52): string {
 
   const cut = base.slice(0, max);
   const lastSpace = cut.lastIndexOf(" ");
-  return (lastSpace > 20 ? cut.slice(0, lastSpace) : cut).replace(/[.\s,–—-]+$/, "");
+  return trimTrailing(lastSpace > 20 ? cut.slice(0, lastSpace) : cut);
 }
 
 /** Title SEO único por artigo. */
@@ -44,7 +56,12 @@ export function articleSeoTitle(article: Article): string {
 
 /** Meta description derivada do excerpt/conteúdo já existente. */
 export function articleSeoDescription(article: Article, max = 158): string {
-  const source = (article.excerpt?.trim().length ?? 0) > 60 ? article.excerpt : (article.body?.[0] ?? article.excerpt);
+  const source =
+    (article.excerpt?.trim().length ?? 0) > 80
+      ? article.excerpt
+      : [article.excerpt, article.body?.[0], article.body?.[1]]
+          .filter((v): v is string => Boolean(v && v.trim().length > 40))
+          .sort((a, b) => b.length - a.length)[0] ?? article.excerpt;
   let text = (source ?? "").replace(/\s+/g, " ").replace(/\s*\.{3,}\s*$/, "").trim();
   if (text.length > max) {
     const cut = text.slice(0, max);
@@ -76,7 +93,7 @@ export function articleSchemas(article: Article) {
   const articleSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: shortenTitle(article.title, 110),
+    headline: article.title,
     description: articleSeoDescription(article),
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
