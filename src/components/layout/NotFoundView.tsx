@@ -5,7 +5,11 @@
  */
 export function NotFoundView() {
   return (
-    <div className="flex min-h-[70vh] items-center justify-center container mx-auto">
+    <>
+      {/* Elemento técnico invisível: garante noindex/nofollow em qualquer 404,
+          inclusive quando o router usa o notFoundComponent do root. */}
+      <meta name="robots" content="noindex, nofollow" />
+      <div className="flex min-h-[70vh] items-center justify-center container mx-auto">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-navy">404</h1>
         <h2 className="mt-4 text-xl font-semibold font-cinzel">Página não encontrada</h2>
@@ -21,6 +25,7 @@ export function NotFoundView() {
           </a>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
