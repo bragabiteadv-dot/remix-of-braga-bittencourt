@@ -34,7 +34,7 @@ import sedeBetim3 from "@/assets/sede-betim-3.jpg.asset.json";
 import sedeBetim4 from "@/assets/sede-betim-4.jpg.asset.json";
 import sedeBetim5 from "@/assets/sede-betim-5.jpg.asset.json";
 
-const CANONICAL = "https://warm-oi-whisper.lovable.app/advogado-divorcio-betim";
+const PATH = "/advogado-divorcio-betim";
 const TITLE = "Advogado de Divórcio em Betim | Braga Bitencourt Advogados";
 const DESCRIPTION =
   "Advogado de divórcio em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
@@ -43,45 +43,31 @@ const WHATSAPP =
   "https://wa.link/i03d4k";
 
 export const Route = createFileRoute("/advogado-divorcio-betim")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { name: "robots", content: "index, follow" },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: CANONICAL },
-      { property: "og:image", content: officeBetim.url },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESCRIPTION },
-      { name: "twitter:image", content: officeBetim.url },
-    ],
-    links: [{ rel: "canonical", href: CANONICAL }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LegalService",
-          name: "Braga Bitencourt Advogados — Advogado de Divórcio em Betim",
-          description: DESCRIPTION,
-          url: CANONICAL,
-          telephone: "+5531980260880",
-          areaServed: "Betim, MG",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "Av. Amazonas, 1446, 7º andar, salas 706/707 - Brasiléia",
-            addressLocality: "Betim",
-            addressRegion: "MG",
-            postalCode: "32600-324",
-            addressCountry: "BR",
-          },
-        }),
+  head: () =>
+    buildSeo({
+      path: PATH,
+      title: TITLE,
+      description: DESCRIPTION,
+      image: officeBetim.url,
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        name: "Braga Bitencourt Advogados — Advogado de Divórcio em Betim",
+        description: DESCRIPTION,
+        url: siteUrl(PATH),
+        telephone: "+5531980260880",
+        areaServed: "Betim, MG",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Av. Amazonas, 1446, 7º andar, salas 706/707 - Brasiléia",
+          addressLocality: "Betim",
+          addressRegion: "MG",
+          postalCode: "32600-324",
+          addressCountry: "BR",
+        },
       },
-    ],
-  }),
+    }),
+
   component: LandingPage,
 });
 
