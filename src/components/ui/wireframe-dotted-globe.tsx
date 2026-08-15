@@ -254,9 +254,11 @@ export default function RotatingEarth({
 
     return () => {
       rotationTimer.stop();
+      viewportObserver?.disconnect();
       canvas.removeEventListener("mousedown", handleMouseDown);
       canvas.removeEventListener("wheel", handleWheel);
     };
+
   }, [width, height]);
 
   if (error) {
