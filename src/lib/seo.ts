@@ -70,9 +70,13 @@ export function buildSeo(input: SeoInput): SeoHead {
     meta.push({ property: "og:image", content: absolute }, { name: "twitter:image", content: absolute });
   }
 
+  // Páginas noindex (404 / artigo inexistente) não recebem canonical:
+  // evita canonical apontando para URL inexistente.
+  const isNoindex = noindex || (robots ?? "").includes("noindex");
+
   const head: SeoHead = {
     meta,
-    links: [{ rel: "canonical", href: url }],
+    links: isNoindex ? [] : [{ rel: "canonical", href: url }],
   };
 
   if (schema) {
