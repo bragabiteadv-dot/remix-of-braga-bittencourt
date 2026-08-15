@@ -24,7 +24,7 @@ function trimTrailing(text: string): string {
   return t;
 }
 
-function shortenTitle(raw: string, max = 58): string {
+function shortenTitle(raw: string, max = 60): string {
   let t = raw.trim().replace(/\s+/g, " ").replace(/[.\s]+$/, "");
 
   // Remove menções à marca no fim do título (evita repetição com o sufixo).
