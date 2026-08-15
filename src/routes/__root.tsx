@@ -7,7 +7,8 @@ import {
   useRouterState,
 } from "@tanstack/react-router";
 import { type ReactNode } from "react";
-import { SITE_LOCALE, siteUrl } from "@/lib/site";
+import { SITE_LOCALE } from "@/lib/site";
+import { organizationSchema, websiteSchema } from "@/lib/org-schema";
 
 import appCss from "../styles.css?url";
 import { Header } from "../components/layout/Header";
@@ -50,32 +51,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LegalService",
-          "name": "Braga Bitencourt Advogados",
-          "description": "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais.",
-          "url": siteUrl("/"),
-          "telephone": "+5531980260880",
-          "address": [
-            {
-              "@type": "PostalAddress",
-              "streetAddress": "Av. Raja Gabaglia, 2000, sala 614, Bloco 1",
-              "addressLocality": "Belo Horizonte",
-              "addressRegion": "MG",
-              "postalCode": "30350-540",
-              "addressCountry": "BR"
-            },
-            {
-              "@type": "PostalAddress",
-              "streetAddress": "Av. Amazonas, 1446, salas 706/707",
-              "addressLocality": "Betim",
-              "addressRegion": "MG",
-              "postalCode": "32600-325",
-              "addressCountry": "BR"
-            }
-          ]
-        })
+        children: JSON.stringify(organizationSchema())
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(websiteSchema())
       }
     ]
   }),
