@@ -55,8 +55,13 @@ export const ActionMoment = () => {
                 <img
                   src={actionMomentAsset.url}
                   alt="Aperto de mãos profissional"
+                  width={300}
+                  height={146}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full max-w-3xl object-cover brightness-90 hover:brightness-100 transition-all duration-500"
                 />
+
               </div>
             </div>
           </div>

@@ -215,8 +215,11 @@ export const FAQ = ({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" } = {}
             <img 
               src="https://bragabitencourt.com/wp-content/uploads/2026/07/2-foto-escritorio-braga-bitencourt-2.webp" 
               alt="Escritório Braga Bitencourt" 
+              loading="lazy"
+              decoding="async"
               className="w-full h-[200px] object-cover"
             />
+
             
             <div className="p-8 text-center">
               <h4 className="text-xl font-bold text-[#08152C] mb-4 font-montserrat leading-tight">

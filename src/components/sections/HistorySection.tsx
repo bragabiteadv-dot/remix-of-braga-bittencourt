@@ -12,8 +12,11 @@ export function HistorySection() {
               <img 
                 src={logoTreeAsset.url} 
                 alt="Braga Bitencourt Logo" 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain brightness-110 contrast-125"
               />
+
             </div>
           </div>
 
