@@ -24,6 +24,8 @@ import { TeamGrid } from "@/components/sections/TeamGrid";
 import { ActionMoment } from "@/components/sections/ActionMoment";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { buildSeo } from "@/lib/seo";
+import { siteUrl } from "@/lib/site";
 import logoTreeAsset from "@/assets/logo-tree-new.png.asset.json";
 
 import officeBetim from "@/assets/office-betim-new.jpg.asset.json";
