@@ -13,10 +13,11 @@ export const Route = createFileRoute("/perfil")({
   head: () =>
     buildSeo({
       path: "/perfil",
-      title: "Perfil - Dr. Carlos Javét Bitencourt | Braga Bitencourt Advogados",
+      title: "Perfil dos Advogados | Braga Bitencourt Advogados",
       description:
-        "Conheça Dr. Carlos Javét Bitencourt, especialista em Direito de Família e Sucessões.",
+        "Conheça a trajetória e atuação dos advogados da Braga Bitencourt Advogados, com experiência em Direito de Família, Sucessões e Direito Internacional.",
       image: OG_IMAGE,
+      type: "website",
     }),
 });
 

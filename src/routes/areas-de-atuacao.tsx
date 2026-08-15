@@ -14,10 +14,11 @@ export const Route = createFileRoute("/areas-de-atuacao")({
   head: () =>
     buildSeo({
       path: "/areas-de-atuacao",
-      title: "Áreas de Atuação | Braga Bitencourt Advogados",
+      title: "Áreas de Atuação Jurídica | Braga Bitencourt",
       description:
-        "Especialidades em Direito de Família, Sucessões e Direito Internacional Privado.",
+        "Conheça nossas áreas de atuação em Direito de Família, Divórcio, Guarda, Pensão, Partilha, Sucessões, Inventário e Direito Internacional.",
       image: OG_IMAGE,
+      type: "website",
     }),
 });
 

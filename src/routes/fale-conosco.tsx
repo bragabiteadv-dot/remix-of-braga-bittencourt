@@ -8,10 +8,11 @@ export const Route = createFileRoute("/fale-conosco")({
   head: () =>
     buildSeo({
       path: "/fale-conosco",
-      title: "Fale Conosco | Braga Bitencourt Advogados",
+      title: "Contato | Braga Bitencourt Advogados em Betim e BH",
       description:
-        "Entre em contato conosco via WhatsApp, Email ou visite nossas sedes em BH e Betim.",
+        "Entre em contato com a Braga Bitencourt Advogados em Betim ou Belo Horizonte. Fale com nossa equipe pelo WhatsApp, telefone ou formulário.",
       image: OG_IMAGE,
+      type: "website",
     }),
 });
 

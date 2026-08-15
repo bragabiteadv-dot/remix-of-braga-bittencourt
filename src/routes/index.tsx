@@ -24,10 +24,11 @@ export const Route = createFileRoute("/")({
   head: () =>
     buildSeo({
       path: "/",
-      title: "Braga Bitencourt Advogados | Família, Sucessões e Direito Internacional",
+      title: "Advogados em Betim e Belo Horizonte | Braga Bitencourt",
       description:
-        "Braga Bitencourt Advogados atua em Direito de Família, Sucessões e Direito Internacional Privado, com atendimento em Belo Horizonte, Betim e para clientes no Brasil e exterior.",
+        "Escritório de advocacia em Betim e Belo Horizonte especializado em Direito de Família, Sucessões e Direito Internacional. Fale com nossa equipe.",
       image: OG_IMAGE,
+      type: "website",
     }),
 });
 

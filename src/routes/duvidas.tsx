@@ -9,10 +9,11 @@ export const Route = createFileRoute("/duvidas")({
   head: () =>
     buildSeo({
       path: "/duvidas",
-      title: "Dúvidas Frequentes | Braga Bitencourt Advogados",
+      title: "Dúvidas sobre Direito de Família e Sucessões | Braga Bitencourt",
       description:
-        "Tire suas dúvidas sobre Direito de Família, Sucessões e Demandas Internacionais. Fale com nossa equipe de advogados especializados.",
+        "Tire dúvidas sobre divórcio, guarda, pensão, partilha, inventário e outros temas jurídicos. Encontre informações e fale com nossa equipe.",
       image: OG_IMAGE,
+      type: "website",
     }),
 });
 
