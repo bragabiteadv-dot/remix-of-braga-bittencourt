@@ -68,6 +68,24 @@ export const Route = createFileRoute("/advogado-divorcio-betim")({
           addressCountry: "BR",
         },
       },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl("/"),
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Advogado de Divórcio em Betim",
+            item: siteUrl(PATH),
+          },
+        ],
+      }],
     }),
 
   component: LandingPage,
