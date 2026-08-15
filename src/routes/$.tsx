@@ -15,6 +15,7 @@ export const Route = createFileRoute("/$")({
   loader: () => {
     // Status HTTP 404 real para URLs inexistentes, mantendo os metadados
     // (noindex) e o mesmo visual da página 404 já existente.
+    console.log("[splat-404] loader hit");
     setResponseStatus(404);
   },
   head: () =>
