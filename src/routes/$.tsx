@@ -1,5 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { setHttpStatus } from "@/lib/http-status";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { buildSeo } from "@/lib/seo";
 import { NotFoundView } from "@/components/layout/NotFoundView";
 
@@ -12,10 +11,10 @@ export const Route = createFileRoute("/$")({
   // Garante status HTTP 404 (em vez de 200) para URLs inexistentes.
   // O visual permanece exatamente o mesmo: notFoundComponent da raiz
   // renderiza a mesma NotFoundView.
-  loader: async () => {
-    // Status HTTP 404 real para URLs inexistentes, mantendo os metadados
-    // (noindex) e o mesmo visual da página 404 já existente.
-    return setHttpStatus(404);
+  loader: () => {
+    // Status HTTP 404 real para URLs inexistentes. O notFoundComponent do
+    // root renderiza exatamente a mesma NotFoundView (nada visual muda).
+    throw notFound();
   },
   head: () =>
     buildSeo({
