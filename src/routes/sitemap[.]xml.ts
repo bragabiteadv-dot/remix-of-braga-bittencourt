@@ -1,9 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { ARTICLES } from "@/lib/articles";
-
-// TODO: replace with your project URL once a project name or custom domain is set.
-const BASE_URL = "";
+import { hasOfficialDomain, siteUrl } from "@/lib/site";
 
 interface SitemapEntry {
   path: string;
@@ -15,7 +13,13 @@ interface SitemapEntry {
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
-      GET: async () => {
+      GET: async ({ request }) => {
+        // O domínio oficial vem de src/lib/site.ts. Enquanto ele não estiver
+        // configurado, usamos o host da requisição apenas para manter o
+        // sitemap válido (URLs absolutas são obrigatórias no protocolo).
+        const origin = hasOfficialDomain() ? "" : new URL(request.url).origin;
+        const loc = (path: string) => (hasOfficialDomain() ? siteUrl(path) : `${origin}${siteUrl(path)}`);
+
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/perfil", changefreq: "monthly", priority: "0.8" },
@@ -34,7 +38,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const urls = entries.map((e) =>
           [
             `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
+            `    <loc>${loc(e.path)}</loc>`,
             e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,

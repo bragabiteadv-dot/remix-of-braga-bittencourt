@@ -6,6 +6,8 @@ import { HistorySection } from "@/components/sections/HistorySection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { WhatsAppCta, whatsappArticleLink } from "@/components/ui/whatsapp-cta";
+import { buildSeo } from "@/lib/seo";
+import { OG_IMAGE } from "@/lib/site-og";
 
 export const Route = createFileRoute("/artigos/$slug")({
   component: ArticlePage,
@@ -21,21 +23,14 @@ export const Route = createFileRoute("/artigos/$slug")({
   head: ({ loaderData, params }) => {
     const a = loaderData?.article as Article | undefined;
     const title = a ? `${a.title} | Braga Bitencourt Advogados` : "Artigo | Braga Bitencourt Advogados";
-    const description = a?.excerpt ?? "Artigo jurídico do escritório Braga Bitencourt Advogados.";
-    const url = `/artigos/${params.slug}`;
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { property: "og:type", content: "article" },
-        { property: "og:url", content: url },
-        ...(a?.image ? [{ property: "og:image", content: a.image }, { name: "twitter:image", content: a.image }] : []),
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-      links: [{ rel: "canonical", href: url }],
-    };
+    return buildSeo({
+      path: `/artigos/${params.slug}`,
+      title,
+      description: a?.excerpt ?? "Artigo jurídico do escritório Braga Bitencourt Advogados.",
+      type: "article",
+      image: a?.image ?? OG_IMAGE,
+      noindex: !a,
+    });
   },
 });
 

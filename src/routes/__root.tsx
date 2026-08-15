@@ -7,6 +7,7 @@ import {
   useRouterState,
 } from "@tanstack/react-router";
 import { type ReactNode } from "react";
+import { SITE_LOCALE, siteUrl } from "@/lib/site";
 
 import appCss from "../styles.css?url";
 import { Header } from "../components/layout/Header";
@@ -50,8 +51,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Braga Bitencourt Advogados | Família e Sucessões" },
       { name: "twitter:description", content: "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais. Inventários, divórcios e planejamento sucessório." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/18e8f412-f74a-46f4-a4be-a01d08ffb737/id-preview-d0ed1adc--97ad5e82-0f2d-43a8-9f25-ff084ef6a1cc.lovable.app-1784667796635.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/18e8f412-f74a-46f4-a4be-a01d08ffb737/id-preview-d0ed1adc--97ad5e82-0f2d-43a8-9f25-ff084ef6a1cc.lovable.app-1784667796635.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -71,7 +70,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "LegalService",
           "name": "Braga Bitencourt Advogados",
           "description": "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais.",
-          "url": "/",
+          "url": siteUrl("/"),
           "telephone": "+5531980260880",
           "address": [
             {
@@ -102,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang={SITE_LOCALE}>
       <head>
         <HeadContent />
       </head>

@@ -3,7 +3,8 @@ import { MessageSquare, User, MapPin, Folder, ChevronDown, FileText } from "luci
 import { WHATSAPP_PHONE, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
 import formOfficeAsset from "@/assets/form-office.png.asset.json";
 
-export function ContactForm() {
+export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" } = {}) {
+  const Heading = headingLevel;
 
   const [formData, setFormData] = useState({
     nome: "",
@@ -59,9 +60,9 @@ export function ContactForm() {
                   <span className="text-gold-light text-xs font-bold tracking-widest uppercase">Contato Imediato</span>
                 </div>
                 
-                <h2 className="text-white text-lg lg:text-2xl font-cinzel leading-tight">
+                <Heading className="text-white text-lg lg:text-2xl font-cinzel leading-tight">
                   Fale com a equipe de forma simples e direta.
-                </h2>
+                </Heading>
 
                 
                 <div className="flex flex-wrap gap-4 pt-4">

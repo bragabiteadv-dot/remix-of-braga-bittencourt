@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildSeo } from "@/lib/seo";
+import { OG_IMAGE } from "@/lib/site-og";
 import { Hero } from "../components/sections/Hero";
 import { FeatureGrid } from "../components/sections/FeatureGrid";
 import { TeamGrid } from "../components/sections/TeamGrid";
@@ -19,16 +21,14 @@ import { ContactForm } from "../components/sections/ContactForm";
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () => ({
-    meta: [
-      { title: "Braga Bitencourt Advogados | Família e Sucessões" },
-      { name: "description", content: "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais. Inventários, divórcios e planejamento sucessório." },
-      { property: "og:title", content: "Braga Bitencourt Advogados | Família e Sucessões" },
-      { property: "og:description", content: "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais. Inventários, divórcios e planejamento sucessório." },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
+  head: () =>
+    buildSeo({
+      path: "/",
+      title: "Braga Bitencourt Advogados | Família, Sucessões e Direito Internacional",
+      description:
+        "Braga Bitencourt Advogados atua em Direito de Família, Sucessões e Direito Internacional Privado, com atendimento em Belo Horizonte, Betim e para clientes no Brasil e exterior.",
+      image: OG_IMAGE,
+    }),
 });
 
 function Index() {
