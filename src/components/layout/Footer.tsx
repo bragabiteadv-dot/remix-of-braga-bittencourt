@@ -24,8 +24,13 @@ export function Footer() {
             <img
               src={logoTreeAsset.url}
               alt="Braga Bitencourt Advogados"
+              width={385}
+              height={385}
+              loading="lazy"
+              decoding="async"
               className="h-20 w-auto object-contain"
             />
+
           </Link>
         </div>
 

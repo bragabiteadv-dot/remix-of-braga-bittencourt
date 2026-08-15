@@ -181,9 +181,12 @@ export default function RotatingEarth({
     const rotation: [number, number] = [0, 0];
     let autoRotate = true;
     const rotationSpeed = 0.5;
+    // Performance only: skip frames while the canvas is off-screen.
+    // Visual appearance and rotation speed while visible are unchanged.
+    let isInViewport = true;
 
     const rotate = () => {
-      if (autoRotate) {
+      if (autoRotate && isInViewport) {
         rotation[0] += rotationSpeed;
         projection.rotate(rotation);
         render();
@@ -191,6 +194,18 @@ export default function RotatingEarth({
     };
 
     const rotationTimer = d3.timer(rotate);
+
+    let viewportObserver: IntersectionObserver | null = null;
+    if (typeof IntersectionObserver !== "undefined") {
+      viewportObserver = new IntersectionObserver(
+        (entries) => {
+          isInViewport = entries.some((entry) => entry.isIntersecting);
+        },
+        { rootMargin: "100px" },
+      );
+      viewportObserver.observe(canvas);
+    }
+
 
     const handleMouseDown = (event: MouseEvent) => {
       autoRotate = false;
@@ -239,9 +254,11 @@ export default function RotatingEarth({
 
     return () => {
       rotationTimer.stop();
+      viewportObserver?.disconnect();
       canvas.removeEventListener("mousedown", handleMouseDown);
       canvas.removeEventListener("wheel", handleWheel);
     };
+
   }, [width, height]);
 
   if (error) {

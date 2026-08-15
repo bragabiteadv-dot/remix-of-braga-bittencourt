@@ -47,8 +47,11 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
               <img 
                 src={formOfficeAsset.url}
                 alt="Escritório de Advocacia" 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
+
 
               <div className="absolute inset-0 bg-black/60"></div>
             </div>

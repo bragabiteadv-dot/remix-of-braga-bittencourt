@@ -54,21 +54,34 @@ export const ServiceListing = () => {
         <img
           src={wavesAsset.url}
           alt=""
+          width={1536}
+          height={385}
+          loading="lazy"
+          decoding="async"
           className="w-full h-auto"
           aria-hidden="true"
         />
         <img
           src={wavesAsset.url}
           alt=""
+          width={1536}
+          height={385}
+          loading="lazy"
+          decoding="async"
           className="w-full h-auto"
           aria-hidden="true"
         />
         <img
           src={wavesAsset.url}
           alt=""
+          width={1536}
+          height={385}
+          loading="lazy"
+          decoding="async"
           className="w-full h-auto"
           aria-hidden="true"
         />
+
       </div>
 
       <div className="container mx-auto relative z-10">
