@@ -7,6 +7,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { WhatsAppCta, whatsappArticleLink } from "@/components/ui/whatsapp-cta";
 import { buildSeo } from "@/lib/seo";
+import { articleSchemas, articleSeoDescription, articleSeoTitle } from "@/lib/article-seo";
 import { OG_IMAGE } from "@/lib/site-og";
 
 export const Route = createFileRoute("/artigos/$slug")({
@@ -22,16 +23,25 @@ export const Route = createFileRoute("/artigos/$slug")({
   },
   head: ({ loaderData, params }) => {
     const a = loaderData?.article as Article | undefined;
-    const title = a ? `${a.title} | Braga Bitencourt Advogados` : "Artigo | Braga Bitencourt Advogados";
+    if (!a) {
+      return buildSeo({
+        path: `/artigos/${params.slug}`,
+        title: "Artigo não encontrado | Braga Bitencourt Advogados",
+        description: "O artigo solicitado não está disponível.",
+        image: OG_IMAGE,
+        noindex: true,
+      });
+    }
     return buildSeo({
-      path: `/artigos/${params.slug}`,
-      title,
-      description: a?.excerpt ?? "Artigo jurídico do escritório Braga Bitencourt Advogados.",
+      path: `/artigos/${a.slug}`,
+      title: articleSeoTitle(a),
+      description: articleSeoDescription(a),
       type: "article",
-      image: a?.image ?? OG_IMAGE,
-      noindex: !a,
+      image: a.image || OG_IMAGE,
+      schema: articleSchemas(a),
     });
   },
+
 });
 
 function ArticlePage() {
