@@ -19,7 +19,7 @@ export const Route = createFileRoute("/duvidas")({
 function Duvidas() {
   return (
     <>
-      <FAQ />
+      <FAQ headingLevel="h1" />
       <ContactForm />
     </>
   );

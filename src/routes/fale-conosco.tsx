@@ -18,7 +18,7 @@ export const Route = createFileRoute("/fale-conosco")({
 function FaleConosco() {
   return (
     <div className="pt-20 bg-navy">
-      <ContactForm />
+      <ContactForm headingLevel="h1" />
     </div>
   );
 }
