@@ -1,19 +1,19 @@
+import { buildSeo } from "@/lib/seo";
+import { OG_IMAGE } from "@/lib/site-og";
 import { createFileRoute } from "@tanstack/react-router";
 import { FAQ } from "../components/sections/FAQ";
 import { ContactForm } from "../components/sections/ContactForm";
 
 export const Route = createFileRoute("/duvidas")({
   component: Duvidas,
-  head: () => ({
-    meta: [
-      { title: "Dúvidas Frequentes | Braga Bitencourt Advogados" },
-      { name: "description", content: "Tire suas dúvidas sobre Direito de Família, Sucessões e Demandas Internacionais. Fale com nossa equipe de advogados especializados." },
-      { property: "og:title", content: "Dúvidas Frequentes | Braga Bitencourt Advogados" },
-      { property: "og:description", content: "Tire suas dúvidas sobre Direito de Família, Sucessões e Demandas Internacionais. Fale com nossa equipe de advogados especializados." },
-      { property: "og:url", content: "/duvidas" },
-    ],
-    links: [{ rel: "canonical", href: "/duvidas" }],
-  }),
+  head: () =>
+    buildSeo({
+      path: "/duvidas",
+      title: "Dúvidas Frequentes | Braga Bitencourt Advogados",
+      description:
+        "Tire suas dúvidas sobre Direito de Família, Sucessões e Demandas Internacionais. Fale com nossa equipe de advogados especializados.",
+      image: OG_IMAGE,
+    }),
 });
 
 function Duvidas() {

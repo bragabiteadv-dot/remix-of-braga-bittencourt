@@ -1,3 +1,5 @@
+import { buildSeo } from "@/lib/seo";
+import { OG_IMAGE } from "@/lib/site-og";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search, Calendar, ImageIcon } from "lucide-react";
@@ -5,18 +7,14 @@ import { ARTICLES, type Category } from "@/lib/articles";
 
 export const Route = createFileRoute("/artigos/")({
   component: Artigos,
-  head: () => ({
-    meta: [
-      { title: "Artigos e Blog | Braga Bitencourt Advogados" },
-      { name: "description", content: "Conteúdos jurídicos práticos e atualizados sobre Família, Sucessões e Direito Internacional Privado." },
-      { property: "og:title", content: "Artigos e Blog | Braga Bitencourt Advogados" },
-      { property: "og:description", content: "Conteúdos jurídicos práticos e atualizados. Use a busca ou filtre por categoria." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/artigos" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/artigos" }],
-  }),
+  head: () =>
+    buildSeo({
+      path: "/artigos",
+      title: "Artigos e Blog | Braga Bitencourt Advogados",
+      description:
+        "Conteúdos jurídicos práticos e atualizados sobre Família, Sucessões e Direito Internacional Privado.",
+      image: OG_IMAGE,
+    }),
 });
 
 
