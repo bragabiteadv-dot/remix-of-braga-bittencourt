@@ -7,6 +7,7 @@ import { createIsomorphicFn } from "@tanstack/react-start";
 export const setHttpStatus = createIsomorphicFn()
   .client((_status: number) => {})
   .server(async (status: number) => {
+    console.log("[http-status] server impl", status);
     const { setResponseStatus } = await import("@tanstack/react-start/server");
     setResponseStatus(status);
   });
