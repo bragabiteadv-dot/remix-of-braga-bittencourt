@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
@@ -22,6 +23,11 @@ import { Route as ArtigosSlugRouteImport } from './routes/artigos.$slug'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PerfilRoute = PerfilRouteImport.update({
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos/': typeof ArtigosIndexRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos': typeof ArtigosIndexRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos/': typeof ArtigosIndexRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/artigos/$slug'
     | '/artigos/'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/artigos/$slug'
     | '/artigos'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/artigos/$slug'
     | '/artigos/'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
   PerfilRoute: typeof PerfilRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ArtigosSlugRoute: typeof ArtigosSlugRoute
   ArtigosIndexRoute: typeof ArtigosIndexRoute
@@ -154,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/perfil': {
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
   PerfilRoute: PerfilRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ArtigosSlugRoute: ArtigosSlugRoute,
   ArtigosIndexRoute: ArtigosIndexRoute,
