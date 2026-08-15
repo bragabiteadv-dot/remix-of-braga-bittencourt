@@ -26,6 +26,7 @@ import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { buildSeo } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
+import { ORG_REF } from "@/lib/org-schema";
 import logoTreeAsset from "@/assets/logo-tree-new.png.asset.json";
 
 import officeBetim from "@/assets/office-betim-new.jpg.asset.json";
@@ -67,6 +68,7 @@ export const Route = createFileRoute("/advogado-divorcio-betim")({
           postalCode: "32600-324",
           addressCountry: "BR",
         },
+        parentOrganization: ORG_REF,
       },
       {
         "@context": "https://schema.org",

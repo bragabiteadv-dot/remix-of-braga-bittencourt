@@ -1,6 +1,7 @@
 import type { Article } from "./articles";
 import { ARTICLES } from "./articles";
-import { SITE_NAME, siteAssetUrl, siteUrl } from "./site";
+import { siteAssetUrl, siteUrl } from "./site";
+import { ORG_REF } from "./org-schema";
 
 /**
  * SEO TÉCNICO DOS ARTIGOS
@@ -99,7 +100,7 @@ export function articleSchemas(article: Article) {
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     articleSection: article.category,
     inLanguage: "pt-BR",
-    publisher: { "@type": "Organization", name: SITE_NAME, url: siteUrl("/") },
+    publisher: ORG_REF,
   };
 
   if (article.image) articleSchema.image = siteAssetUrl(article.image);
