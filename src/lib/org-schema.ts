@@ -28,7 +28,7 @@ const ADDRESS_BH = {
   streetAddress: "Av. Raja Gabaglia, 2000, sala 614, Bloco 1",
   addressLocality: "Belo Horizonte",
   addressRegion: "MG",
-  postalCode: "30350-540",
+  postalCode: "30494-170",
   addressCountry: "BR",
 } as const;
 
@@ -37,7 +37,7 @@ const ADDRESS_BETIM = {
   streetAddress: "Av. Amazonas, 1446, salas 706/707",
   addressLocality: "Betim",
   addressRegion: "MG",
-  postalCode: "32600-325",
+  postalCode: "32600-324",
   addressCountry: "BR",
 } as const;
 
