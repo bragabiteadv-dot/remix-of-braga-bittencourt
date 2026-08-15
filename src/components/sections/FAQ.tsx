@@ -105,7 +105,8 @@ const faqData = [
   }
 ];
 
-export const FAQ = () => {
+export const FAQ = ({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" } = {}) => {
+  const Heading = headingLevel;
   const [searchTerm, setSearchTerm] = useState('');
   const [activeId, setActiveId] = useState<string | null>(null);
 
@@ -132,7 +133,7 @@ export const FAQ = () => {
             Respostas rápidas e claras, sem enrolação
           </div>
 
-          <h2 className="text-4xl font-bold text-[#08152C] mb-4 font-cinzel">Dúvidas Frequentes</h2>
+          <Heading className="text-4xl font-bold text-[#08152C] mb-4 font-cinzel">Dúvidas Frequentes</Heading>
           <p className="text-[#5a6475] mb-8 leading-relaxed font-montserrat">
             Clique em uma pergunta para ver a resposta. Se quiser, pesquise por palavras-chave (ex: "negado", "documentos", "prazo").
           </p>
