@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, MessageSquare, Facebook, Instagram, Mail, Menu, X } from "lucide-react";
 import { WhatsAppCta, WHATSAPP_LINK, GOOGLE_URL, GoogleIcon } from "@/components/ui/whatsapp-cta";
+import headerLogo from "@/assets/header-logo.png";
 
 
 const navLinks = [
@@ -56,7 +57,7 @@ export function Header() {
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src="https://bragabitencourt.com/wp-content/uploads/2026/06/Camada-2-1024x300.png" 
+              src={headerLogo} 
               alt="Braga Bitencourt Logo" 
               className="h-10 md:h-12 w-auto object-contain"
             />
