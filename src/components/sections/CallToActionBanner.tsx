@@ -1,4 +1,4 @@
-import bannerAsset from "@/assets/cta-banner-bg.jpg.asset.json";
+import banner from "@/assets/cta-banner-bg.jpg";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export const CallToActionBanner = () => {
@@ -7,7 +7,7 @@ export const CallToActionBanner = () => {
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bannerAsset.url})` }}
+        style={{ backgroundImage: `url(${banner})` }}
       >
         <div className="absolute inset-0 bg-navy/60 backdrop-blur-[2px]"></div>
       </div>

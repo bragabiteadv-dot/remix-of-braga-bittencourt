@@ -1,5 +1,5 @@
 import { SITE_NAME, siteAssetUrl, siteUrl } from "./site";
-import logoTreeAsset from "@/assets/logo-tree-new.png.asset.json";
+import logoTree from "@/assets/logo-tree-new.png";
 
 /**
  * ENTIDADE INSTITUCIONAL ÚNICA (JSON-LD)
@@ -83,8 +83,8 @@ export function organizationSchema(): Record<string, unknown> {
     description:
       "Advocacia especializada em Direito de Família, Sucessões e Demandas Internacionais.",
     url: siteUrl("/"),
-    logo: siteAssetUrl(logoTreeAsset.url),
-    image: siteAssetUrl(logoTreeAsset.url),
+    logo: siteAssetUrl(logoTree),
+    image: siteAssetUrl(logoTree),
     telephone: "+5531980260880",
     email: "bragabitencourtadv@gmail.com",
     address: [ADDRESS_BH, ADDRESS_BETIM],

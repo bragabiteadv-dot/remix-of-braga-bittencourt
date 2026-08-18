@@ -1,25 +1,25 @@
-import equipeBg from "@/assets/equipe-bg.jpg.asset.json";
-import carlosGabriel from "@/assets/gabriel-2.jpg.asset.json";
-import carlosJavet from "@/assets/carlos-javet-2.jpg.asset.json";
-import glaucia from "@/assets/glaucia-2.jpg.asset.json";
+import equipeBg from "@/assets/equipe-bg.jpg";
+import carlosGabriel from "@/assets/gabriel-2.jpg";
+import carlosJavet from "@/assets/carlos-javet-2.jpg";
+import glaucia from "@/assets/glaucia-2.jpg";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function TeamGrid() {
   const members = [
     {
       name: "Carlos Javét Braga Bitencourt",
-      image: carlosJavet.url,
+      image: carlosJavet,
       // primeiro no mobile, centro no desktop
       order: "order-1 md:order-2"
     },
     {
       name: "Carlos Gabriel F. Braga Bitencourt",
-      image: carlosGabriel.url,
+      image: carlosGabriel,
       order: "order-2 md:order-1"
     },
     {
       name: "Gláucia Patrícia F. Braga Bitencourt",
-      image: glaucia.url,
+      image: glaucia,
       order: "order-3 md:order-3"
     }
   ];
@@ -29,7 +29,7 @@ export function TeamGrid() {
       {/* Cityscape Background Overlay */}
       <div 
         className="absolute inset-0 z-0 opacity-50 bg-cover bg-center"
-        style={{ backgroundImage: `url('${equipeBg.url}')` }}
+        style={{ backgroundImage: `url('${equipeBg}')` }}
       ></div>
 
       <div className="container mx-auto relative z-10">

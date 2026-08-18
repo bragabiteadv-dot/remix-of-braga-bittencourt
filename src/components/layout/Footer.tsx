@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Mail, MapPin, ArrowUp } from "lucide-react";
 import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
 import { Link } from "@tanstack/react-router";
-import logoTreeAsset from "@/assets/logo-tree-new.png.asset.json";
+import logoTree from "@/assets/logo-tree-new.png";
 
 const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bittencourt+adovagos&rlz=1C1GCEA_enBR1196BR1197&oq=braga+bittencourt+adovagos&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAHSAQg1MDc2ajBqOagCBrACAfEFWe6JCqrJDgQ&sourceid=chrome&source=chrome.ob&ie=UTF-8";
 const BH_MAP_URL = "https://share.google/UiahnNRC0AVfB7xZP";
@@ -22,7 +22,7 @@ export function Footer() {
         <div className="flex justify-center mb-8">
           <Link to="/" className="inline-block">
             <img
-              src={logoTreeAsset.url}
+              src={logoTree}
               alt="Braga Bitencourt Advogados"
               width={385}
               height={385}

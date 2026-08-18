@@ -1,4 +1,4 @@
-import logoTreeAsset from "@/assets/logo-tree-new.png.asset.json";
+import logoTree from "@/assets/logo-tree-new.png";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function HistorySection() {
@@ -10,7 +10,7 @@ export function HistorySection() {
           <div className="w-full md:w-1/3 flex justify-center md:justify-end">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               <img 
-                src={logoTreeAsset.url} 
+                src={logoTree} 
                 alt="Braga Bitencourt Logo" 
                 loading="lazy"
                 decoding="async"

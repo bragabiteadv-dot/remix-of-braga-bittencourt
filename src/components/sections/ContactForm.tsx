@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MessageSquare, User, MapPin, Folder, ChevronDown, FileText } from "lucide-react";
 import { WHATSAPP_PHONE, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
-import formOfficeAsset from "@/assets/form-office.png.asset.json";
+import formOffice from "@/assets/form-office.png";
 
 export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" } = {}) {
   const Heading = headingLevel;
@@ -45,7 +45,7 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
           <div className="lg:w-[45%] relative min-h-[500px]">
             <div className="absolute inset-0 z-0">
               <img 
-                src={formOfficeAsset.url}
+                src={formOffice}
                 alt="Escritório de Advocacia" 
                 loading="lazy"
                 decoding="async"
