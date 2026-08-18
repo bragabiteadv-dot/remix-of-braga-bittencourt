@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
-import wavesAsset from "@/assets/service-waves-bg.png.asset.json";
+import waves from "@/assets/service-waves-bg.png";
 
 const services = [
   {
@@ -52,7 +52,7 @@ export const ServiceListing = () => {
       {/* Wave PNG Overlay */}
       <div className="absolute inset-0 flex flex-col justify-between py-20 pointer-events-none z-[1] opacity-50">
         <img
-          src={wavesAsset.url}
+          src={waves}
           alt=""
           width={1536}
           height={385}
@@ -62,7 +62,7 @@ export const ServiceListing = () => {
           aria-hidden="true"
         />
         <img
-          src={wavesAsset.url}
+          src={waves}
           alt=""
           width={1536}
           height={385}
@@ -72,7 +72,7 @@ export const ServiceListing = () => {
           aria-hidden="true"
         />
         <img
-          src={wavesAsset.url}
+          src={waves}
           alt=""
           width={1536}
           height={385}

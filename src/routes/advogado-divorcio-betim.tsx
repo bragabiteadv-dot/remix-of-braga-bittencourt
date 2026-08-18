@@ -27,15 +27,15 @@ import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK, WhatsAppIcon, WhatsAppCta } from
 import { buildSeo } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 import { ORG_REF } from "@/lib/org-schema";
-import logoTreeAsset from "@/assets/logo-tree-new.png.asset.json";
+import logoTree from "@/assets/logo-tree-new.png";
 
-import officeBetim from "@/assets/office-betim-new.jpg.asset.json";
-import officeBH from "@/assets/office-bh-new.jpg.asset.json";
-import sedeBetim1 from "@/assets/sede-betim-1.jpg.asset.json";
-import sedeBetim2 from "@/assets/sede-betim-2.jpg.asset.json";
-import sedeBetim3 from "@/assets/sede-betim-3.jpg.asset.json";
-import sedeBetim4 from "@/assets/sede-betim-4.jpg.asset.json";
-import sedeBetim5 from "@/assets/sede-betim-5.jpg.asset.json";
+import officeBetim from "@/assets/office-betim-new.jpg";
+import officeBH from "@/assets/office-bh-new.jpg";
+import sedeBetim1 from "@/assets/sede-betim-1.jpg";
+import sedeBetim2 from "@/assets/sede-betim-2.jpg";
+import sedeBetim3 from "@/assets/sede-betim-3.jpg";
+import sedeBetim4 from "@/assets/sede-betim-4.jpg";
+import sedeBetim5 from "@/assets/sede-betim-5.jpg";
 
 const PATH = "/advogado-divorcio-betim";
 const TITLE = "Advogado de Divórcio em Betim | Braga Bitencourt Advogados";
@@ -51,7 +51,7 @@ export const Route = createFileRoute("/advogado-divorcio-betim")({
       path: PATH,
       title: TITLE,
       description: DESCRIPTION,
-      image: officeBetim.url,
+      image: officeBetim,
       schema: [{
         "@context": "https://schema.org",
         "@type": "LegalService",
@@ -187,7 +187,7 @@ function LpHero() {
 
             <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <img
-                src={officeBetim.url}
+                src={officeBetim}
                 alt="Escritório do advogado de divórcio em Betim"
                 className="w-full h-[320px] object-cover"
                 loading="lazy"
@@ -324,7 +324,7 @@ function LpSituations() {
 /* ---------------- Galeria da sede ---------------- */
 
 function LpOfficeGallery() {
-  const photos = [sedeBetim1.url, sedeBetim2.url, sedeBetim3.url, sedeBetim4.url, sedeBetim5.url];
+  const photos = [sedeBetim1, sedeBetim2, sedeBetim3, sedeBetim4, sedeBetim5];
   const loop = [...photos, ...photos];
 
   return (
@@ -555,7 +555,7 @@ function LpPresence() {
           <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col">
             <div className="h-56 overflow-hidden">
               <img
-                src={officeBetim.url}
+                src={officeBetim}
                 alt="Braga Bitencourt Advogados - Betim"
                 loading="lazy"
                 className="w-full h-full object-cover"
@@ -691,7 +691,7 @@ function LpFooter() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <Link to="/" className="shrink-0">
             <img
-              src={logoTreeAsset.url}
+              src={logoTree}
               alt="Braga Bitencourt Logo"
               className="h-16 w-auto object-contain"
             />

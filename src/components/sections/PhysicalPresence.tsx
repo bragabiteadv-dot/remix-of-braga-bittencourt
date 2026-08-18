@@ -1,6 +1,6 @@
 import { Phone } from "lucide-react";
-import officeBHAsset from "@/assets/office-bh-new.jpg.asset.json";
-import officeBetimAsset from "@/assets/office-betim-new.jpg.asset.json";
+import officeBH from "@/assets/office-bh-new.jpg";
+import officeBetim from "@/assets/office-betim-new.jpg";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function PhysicalPresence() {
@@ -11,7 +11,7 @@ export function PhysicalPresence() {
       description: "Atendimento presencial em Belo Horizonte e acompanhamento com a mesma organização, discrição e clareza que orientam toda a experiência do escritório.",
       mapUrl: "https://maps.google.com/maps?q=Av.%20Raja%20Gab%C3%A1glia%2C%202000%20-%20Alpes%2C%20Belo%20Horizonte%20-%20MG%2C%2030494-170&z=17&hl=pt-BR&output=embed",
       link: "https://share.google/UiahnNRC0AVfB7xZP",
-      image: officeBHAsset.url,
+      image: officeBH,
       whatsapp: "https://wa.link/i03d4k"
     },
     {
@@ -20,7 +20,7 @@ export function PhysicalPresence() {
       description: "Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.",
       mapUrl: "https://maps.google.com/maps?q=Av.%20Amazonas%2C%201446%20-%20Brasileia%2C%20Betim%20-%20MG%2C%2032600-324&z=17&hl=pt-BR&output=embed",
       link: "https://share.google/tKyzJIwu9jMGT0P7n",
-      image: officeBetimAsset.url,
+      image: officeBetim,
       whatsapp: "https://wa.link/i03d4k"
     }
   ];

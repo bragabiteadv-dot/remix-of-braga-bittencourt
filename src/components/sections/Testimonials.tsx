@@ -2,11 +2,11 @@ import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import t1 from "@/assets/testimonial-1.png.asset.json";
-import t2 from "@/assets/testimonial-2.png.asset.json";
-import t3 from "@/assets/testimonial-3.png.asset.json";
-import t4 from "@/assets/testimonial-4.png.asset.json";
-import t5 from "@/assets/testimonial-5.png.asset.json";
+import t1 from "@/assets/testimonial-1.png";
+import t2 from "@/assets/testimonial-2.png";
+import t3 from "@/assets/testimonial-3.png";
+import t4 from "@/assets/testimonial-4.png";
+import t5 from "@/assets/testimonial-5.png";
 
 const testimonials = [t1, t2, t3, t4, t5];
 
@@ -46,7 +46,7 @@ export const Testimonials = () => {
                 >
                   <div className="h-full bg-white border border-gray-100 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
                     <img
-                      src={t.url}
+                      src={t}
                       alt={`Depoimento ${index + 1}`}
                       className="w-full h-auto object-contain"
                       loading="lazy"

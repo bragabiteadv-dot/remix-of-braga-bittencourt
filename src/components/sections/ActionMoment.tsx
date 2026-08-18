@@ -1,4 +1,4 @@
-import actionMomentAsset from "@/assets/action-moment-new.jpg.asset.json";
+import actionMoment from "@/assets/action-moment-new.jpg";
 
 export const ActionMoment = () => {
   return (
@@ -53,7 +53,7 @@ export const ActionMoment = () => {
               {/* Image Container */}
               <div className="relative z-[3] overflow-hidden shadow-2xl">
                 <img
-                  src={actionMomentAsset.url}
+                  src={actionMoment}
                   alt="Aperto de mãos profissional"
                   width={300}
                   height={146}
