@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Check } from "lucide-react";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import escritorioImg from "@/assets/escritorio-braga-bitencourt.jpg";
 
 export function FounderCard() {
   const credentials = [
@@ -69,7 +70,7 @@ export function FounderCard() {
           <div className="w-full max-w-[320px] lg:w-[381px] lg:h-[615px] lg:max-w-none self-stretch">
             <div className="rounded-2xl overflow-hidden shadow-2xl h-full">
               <img 
-                src="https://bragabitencourt.com/wp-content/uploads/2026/05/Foto-2_3_11zon-scaled.webp" 
+                src={escritorioImg} 
                 alt="Dr. Carlos Javét Bitencourt" 
                 loading="lazy"
                 decoding="async"

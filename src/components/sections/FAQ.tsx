@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Plus, Phone } from 'lucide-react';
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import escritorioImg from "@/assets/escritorio-braga-bitencourt.jpg";
 
 const faqData = [
   {
@@ -213,7 +214,7 @@ export const FAQ = ({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" } = {}
         <aside className="lg:w-[340px]">
           <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden sticky top-24 shadow-xl">
             <img 
-              src="https://bragabitencourt.com/wp-content/uploads/2026/07/2-foto-escritorio-braga-bitencourt-2.webp" 
+              src={escritorioImg} 
               alt="Escritório Braga Bitencourt" 
               loading="lazy"
               decoding="async"
