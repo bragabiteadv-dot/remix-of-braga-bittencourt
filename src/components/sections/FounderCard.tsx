@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Check } from "lucide-react";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
-import escritorioImg from "@/assets/escritorio-braga-bitencourt.jpg";
+import escritorioImg from "@/assets/sede-betim-2.jpg";
 
 export function FounderCard() {
   const credentials = [
