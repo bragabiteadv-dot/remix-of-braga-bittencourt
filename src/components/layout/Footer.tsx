@@ -105,7 +105,7 @@ export function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-8 border-t border-white/10">
           <Link to="/" className="inline-block">
             <img
               src={logoTree}
@@ -118,7 +118,7 @@ export function Footer() {
             />
           </Link>
 
-          <p className="text-xs md:text-sm text-white/50 leading-relaxed max-w-2xl text-right">
+          <p className="w-full md:w-auto text-xs md:text-sm text-white/50 leading-relaxed max-w-2xl text-right">
             Braga Bitencourt Advogados - CNPJ: 10.669.099/0001-72 | Todos os direitos reservados. Design focado em privacidade, acolhimento e alta conversão.
           </p>
         </div>
