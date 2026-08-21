@@ -23,7 +23,7 @@ import { GlobalReach } from "@/components/sections/GlobalReach";
 import { TeamGrid } from "@/components/sections/TeamGrid";
 import { ActionMoment } from "@/components/sections/ActionMoment";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
-import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { GOOGLE_URL, GoogleIcon, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { buildSeo } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 import { ORG_REF } from "@/lib/org-schema";
