@@ -15,6 +15,7 @@ import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
+import { Route as AdvogadoFamiliaBetimRouteImport } from './routes/advogado-familia-betim'
 import { Route as AdvogadoDivorcioBetimRouteImport } from './routes/advogado-divorcio-betim'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
@@ -51,6 +52,11 @@ const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
   path: '/areas-de-atuacao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoFamiliaBetimRoute = AdvogadoFamiliaBetimRouteImport.update({
+  id: '/advogado-familia-betim',
+  path: '/advogado-familia-betim',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdvogadoDivorcioBetimRoute = AdvogadoDivorcioBetimRouteImport.update({
   id: '/advogado-divorcio-betim',
   path: '/advogado-divorcio-betim',
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
+  '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
+  '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -108,6 +116,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
+  '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/advogado-divorcio-betim'
+    | '/advogado-familia-betim'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -136,6 +146,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/advogado-divorcio-betim'
+    | '/advogado-familia-betim'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -149,6 +160,7 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/advogado-divorcio-betim'
+    | '/advogado-familia-betim'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -163,6 +175,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
   AdvogadoDivorcioBetimRoute: typeof AdvogadoDivorcioBetimRoute
+  AdvogadoFamiliaBetimRoute: typeof AdvogadoFamiliaBetimRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
@@ -217,6 +230,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasDeAtuacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-familia-betim': {
+      id: '/advogado-familia-betim'
+      path: '/advogado-familia-betim'
+      fullPath: '/advogado-familia-betim'
+      preLoaderRoute: typeof AdvogadoFamiliaBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-divorcio-betim': {
       id: '/advogado-divorcio-betim'
       path: '/advogado-divorcio-betim'
@@ -259,6 +279,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
   AdvogadoDivorcioBetimRoute: AdvogadoDivorcioBetimRoute,
+  AdvogadoFamiliaBetimRoute: AdvogadoFamiliaBetimRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
