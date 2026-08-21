@@ -179,7 +179,7 @@ function LpHero() {
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
             <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
-              Advogado de Divórcio em Betim
+              Advogado de Família em Betim
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
@@ -187,8 +187,8 @@ function LpHero() {
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
-              Especialista em Divórcio em Betim — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem estar.
-              Conduzimos seu divórcio em Betim com o sigilo, a segurança e o acolhimento que você precisa.
+              Especialista em Direito de Família em Betim — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem-estar.
+              Conduzimos sua demanda familiar em Betim com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
             <WhatsAppCta className="w-full sm:w-auto" />
