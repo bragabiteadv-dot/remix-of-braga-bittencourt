@@ -37,10 +37,13 @@ import sedeBetim3 from "@/assets/sede-betim-3.jpg";
 import sedeBetim4 from "@/assets/sede-betim-4.jpg";
 import sedeBetim5 from "@/assets/sede-betim-5.jpg";
 
-const PATH = "/advogado-divorcio-betim";
-const TITLE = "Advogado de Divórcio em Betim | Braga Bitencourt Advogados";
+const PATH = "/advogado-familia-betim";
+const TITLE = "Advogado de Família em Betim | Braga Bitencourt";
 const DESCRIPTION =
-  "Advogado de divórcio em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
+  "Atuação especializada em Direito de Família em Betim. Atendimento para guarda, pensão alimentícia, inventário e litígios familiares.";
+
+const ABSOLUTE_URL = "https://bragabitencourt.com" + PATH;
+const HOME_URL = "https://bragabitencourt.com/";
 
 const WHATSAPP =
   "https://wa.link/i03d4k";
