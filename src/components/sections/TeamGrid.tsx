@@ -63,8 +63,9 @@ export function TeamGrid({ whatsappHref }: { whatsappHref?: string }) {
 
 
         <div className="flex justify-center">
-          <WhatsAppCta className="w-full sm:w-auto" />
+          <WhatsAppCta href={whatsappHref} className="w-full sm:w-auto" />
         </div>
+
       </div>
     </section>
   );
