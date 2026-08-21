@@ -258,8 +258,8 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Quer fazer o divórcio, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre o divórcio consensual e o litigioso para proteger seus direitos de forma rápida.",
+      title: "Quer resolver uma questão de família, mas não sabe se será amigável ou litigiosa?",
+      text: "Entenda a diferença entre acordos familiares e litígios para proteger seus direitos de forma rápida.",
     },
     {
       icon: <Users className="w-7 h-7" />,
@@ -268,23 +268,23 @@ function LpSituations() {
     },
     {
       icon: <Coins className="w-7 h-7" />,
-      title: "Tem dúvidas sobre o valor da pensão alimentícia ou como calculá-lo?",
+      title: "Tem dúvidas sobre o valor da pensão alimentícia ou como calculá-la?",
       text: "Saiba como funciona o cálculo da pensão alimentícia, como solicitar ou pedir a revisão dos valores determinados.",
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
-      title: "Quer saber se pode voltar a usar o nome de solteiro(a)?",
-      text: "Entenda as regras para a alteração do sobrenome após o divórcio e a atualização dos documentos oficiais.",
+      title: "Quer saber se pode alterar o nome ou o regime de bens após uma mudança familiar?",
+      text: "Entenda as regras para a alteração de nome e documentos em situações familiares.",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "Busca uma forma rápida de divorciar e quer saber se pode ser via cartório?",
-      text: "Descubra se você cumpre os requisitos para o divórcio extrajudicial, que pode ser mais rápido e econômico.",
+      title: "Busca uma forma rápida de regularizar uma situação familiar e quer saber se pode ser via cartório?",
+      text: "Descubra se você cumpre os requisitos para acordos extrajudiciais, que podem ser mais rápidos e econômicos.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
       title: "Não sabe quais bens terá direito na partilha de bens do casal?",
-      text: "Proteja o seu patrimônio de acordo com o regime de bens escolhido no casamento de forma estratégica..",
+      text: "Proteja o seu patrimônio de acordo com o regime de bens escolhido no casamento de forma estratégica.",
     },
   ];
 
@@ -293,7 +293,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            Você está passando por uma dessas situações em seu divórcio?
+            Você está passando por uma dessas situações em sua família?
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
