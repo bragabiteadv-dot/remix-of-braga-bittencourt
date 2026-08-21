@@ -49,8 +49,8 @@ const WHATSAPP =
   "https://wa.link/i03d4k";
 
 export const Route = createFileRoute("/advogado-familia-betim")({
-  head: () =>
-    buildSeo({
+  head: () => {
+    const seo = buildSeo({
       path: PATH,
       title: TITLE,
       description: DESCRIPTION,
@@ -58,9 +58,9 @@ export const Route = createFileRoute("/advogado-familia-betim")({
       schema: [{
         "@context": "https://schema.org",
         "@type": "LegalService",
-        name: "Braga Bitencourt Advogados — Advogado de Divórcio em Betim",
+        name: "Braga Bitencourt Advogados — Advogado de Família em Betim",
         description: DESCRIPTION,
-        url: siteUrl(PATH),
+        url: ABSOLUTE_URL,
         telephone: "+5531980260880",
         areaServed: "Betim, MG",
         address: {
@@ -81,17 +81,26 @@ export const Route = createFileRoute("/advogado-familia-betim")({
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: siteUrl("/"),
+            item: HOME_URL,
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: "Advogado de Divórcio em Betim",
-            item: siteUrl(PATH),
+            name: "Advogado de Família em Betim",
+            item: ABSOLUTE_URL,
           },
         ],
       }],
-    }),
+    });
+
+    const canonicalLink = seo.links.find((l) => l.rel === "canonical");
+    if (canonicalLink) canonicalLink.href = ABSOLUTE_URL;
+
+    const ogUrlMeta = seo.meta.find((m) => m.property === "og:url");
+    if (ogUrlMeta) ogUrlMeta.content = ABSOLUTE_URL;
+
+    return seo;
+  },
 
   component: LandingPage,
 });
