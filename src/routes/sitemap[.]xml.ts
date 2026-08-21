@@ -28,6 +28,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/fale-conosco", changefreq: "monthly", priority: "0.8" },
           { path: "/artigos", changefreq: "weekly", priority: "0.7" },
           { path: "/advogado-divorcio-betim", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-familia-betim", changefreq: "monthly", priority: "0.9" },
           ...ARTICLES.map((a) => ({
             path: `/artigos/${a.slug}`,
             changefreq: "monthly" as const,
