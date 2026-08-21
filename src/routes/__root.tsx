@@ -85,7 +85,8 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const isStandaloneLanding = pathname.startsWith("/advogado-divorcio-betim");
+  const isStandaloneLanding = pathname.startsWith("/advogado-divorcio-betim") || pathname.startsWith("/advogado-familia-betim");
+
 
   if (isStandaloneLanding) {
     return (
