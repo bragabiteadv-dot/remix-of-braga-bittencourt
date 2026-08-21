@@ -46,7 +46,8 @@ const ABSOLUTE_URL = "https://bragabitencourt.com" + PATH;
 const HOME_URL = "https://bragabitencourt.com/";
 
 const WHATSAPP =
-  "https://wa.link/i03d4k";
+  "https://wa.me/5531980260880?text=Ol%C3%A1!%20Acessei%20a%20sua%20p%C3%A1gina%20de%20Advogado%20de%20Fam%C3%ADlia%20em%20Betim%20e%20gostaria%20de%20falar%20com%20um%20especialista!";
+
 
 export const Route = createFileRoute("/advogado-familia-betim")({
   head: () => {
