@@ -118,7 +118,7 @@ export function Footer() {
             />
           </Link>
 
-          <p className="text-xs md:text-sm text-white/50 text-center md:text-right leading-relaxed max-w-2xl">
+          <p className="text-xs md:text-sm text-white/50 leading-relaxed max-w-2xl text-right">
             Braga Bitencourt Advogados - CNPJ: 10.669.099/0001-72 | Todos os direitos reservados. Design focado em privacidade, acolhimento e alta conversão.
           </p>
         </div>
