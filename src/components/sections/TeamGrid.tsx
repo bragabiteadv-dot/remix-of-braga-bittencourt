@@ -4,7 +4,8 @@ import carlosJavet from "@/assets/carlos-javet-2.jpg";
 import glaucia from "@/assets/glaucia-2.jpg";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
-export function TeamGrid() {
+export function TeamGrid({ whatsappHref }: { whatsappHref?: string }) {
+
   const members = [
     {
       name: "Carlos Javét Braga Bitencourt",
