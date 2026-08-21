@@ -23,7 +23,7 @@ import { GlobalReach } from "@/components/sections/GlobalReach";
 import { TeamGrid } from "@/components/sections/TeamGrid";
 import { ActionMoment } from "@/components/sections/ActionMoment";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
-import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { GOOGLE_URL, GoogleIcon, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { buildSeo } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 import { ORG_REF } from "@/lib/org-schema";
@@ -46,7 +46,8 @@ const ABSOLUTE_URL = "https://bragabitencourt.com" + PATH;
 const HOME_URL = "https://bragabitencourt.com/";
 
 const WHATSAPP =
-  "https://wa.link/i03d4k";
+  "https://wa.me/5531980260880?text=Ol%C3%A1!%20Acessei%20a%20sua%20p%C3%A1gina%20de%20Advogado%20de%20Fam%C3%ADlia%20em%20Betim%20e%20gostaria%20de%20falar%20com%20um%20especialista!";
+
 
 export const Route = createFileRoute("/advogado-familia-betim")({
   head: () => {
@@ -111,7 +112,7 @@ function LandingPage() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid whatsappHref={WHATSAPP} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -136,7 +137,7 @@ function LpHeader() {
           className="h-12 w-auto shrink-0"
           loading="eager"
         />
-        <WhatsAppCta className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
+        <WhatsAppCta href={WHATSAPP} className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
       </div>
     </header>
   );
@@ -191,7 +192,7 @@ function LpHero() {
               Conduzimos sua demanda familiar em Betim com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
-            <WhatsAppCta className="w-full sm:w-auto" />
+            <WhatsAppCta href={WHATSAPP} className="w-full sm:w-auto" />
 
             <p className="text-white text-xs font-montserrat mt-6 tracking-wide">
               Atendimento presencial e online em Betim.
@@ -326,7 +327,7 @@ function LpSituations() {
         </div>
 
         <div className="flex justify-center">
-          <WhatsAppCta className="w-full sm:w-auto" />
+          <WhatsAppCta href={WHATSAPP} className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -448,7 +449,7 @@ function LpServices() {
         </div>
 
         <div className="flex justify-center">
-          <WhatsAppCta className="w-full sm:w-auto" />
+          <WhatsAppCta href={WHATSAPP} className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -587,7 +588,7 @@ function LpPresence() {
                 </span>
               </a>
 
-              <WhatsAppCta className="w-full !py-4 !text-sm" />
+              <WhatsAppCta href={WHATSAPP} className="w-full !py-4 !text-sm" />
 
               <p className="text-navy/60 font-montserrat text-sm leading-relaxed">
                 Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.
@@ -631,7 +632,7 @@ function LpFooter() {
                 <span>Av. Amazonas 1446, sala 706/707, Brasiléia - Betim</span>
               </a>
               <a
-                href={WHATSAPP_LINK}
+                href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
@@ -644,7 +645,7 @@ function LpFooter() {
             {/* Right buttons */}
             <div className="flex items-center gap-2">
               <a
-                href={WHATSAPP_LINK}
+                href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
@@ -720,14 +721,27 @@ function LpFooter() {
         </div>
       </div>
 
-      {/* Back to top button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gold-gradient text-navy shadow-lg shadow-gold/20 flex items-center justify-center hover:-translate-y-1 transition-transform duration-300"
-        aria-label="Voltar ao topo"
-      >
-        <ArrowUp size={20} strokeWidth={2.5} />
-      </button>
+      {/* Floating buttons container */}
+      <div className="fixed bottom-4 right-4 z-50 flex flex-col items-center gap-3">
+        <button
+          onClick={scrollToTop}
+          className="w-12 h-12 rounded-full bg-gold-gradient text-navy shadow-lg shadow-gold/20 flex items-center justify-center hover:-translate-y-1 transition-transform duration-300"
+          aria-label="Voltar ao topo"
+        >
+          <ArrowUp size={20} strokeWidth={2.5} />
+        </button>
+
+        <a
+          href={WHATSAPP}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform animate-bounce"
+          aria-label="Falar no WhatsApp"
+        >
+          <WhatsAppIcon className="w-7 h-7" />
+        </a>
+      </div>
+
     </footer>
   );
 }

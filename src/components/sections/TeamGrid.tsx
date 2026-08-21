@@ -4,7 +4,8 @@ import carlosJavet from "@/assets/carlos-javet-2.jpg";
 import glaucia from "@/assets/glaucia-2.jpg";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
-export function TeamGrid() {
+export function TeamGrid({ whatsappHref }: { whatsappHref?: string }) {
+
   const members = [
     {
       name: "Carlos Javét Braga Bitencourt",
@@ -62,8 +63,9 @@ export function TeamGrid() {
 
 
         <div className="flex justify-center">
-          <WhatsAppCta className="w-full sm:w-auto" />
+          <WhatsAppCta href={whatsappHref} className="w-full sm:w-auto" />
         </div>
+
       </div>
     </section>
   );
