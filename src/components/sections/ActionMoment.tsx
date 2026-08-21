@@ -24,28 +24,28 @@ export const ActionMoment = () => {
           </div>
 
           {/* Right Column - Image with Frame */}
-          <div className="w-full md:w-1/2 flex justify-center items-center">
-            <div className="relative">
-              {/* Decorative offset frames behind the photo */}
+          <div className="w-full md:w-3/5 flex justify-center items-center">
+            <div className="relative w-full max-w-2xl">
+              {/* Decorative offset frames behind/around the photo */}
               <div
-                className="absolute pointer-events-none z-[1] hidden md:block"
+                className="absolute pointer-events-none z-[4] hidden md:block"
                 style={{
-                  top: '-56px',
-                  left: '-56px',
-                  right: '56px',
-                  bottom: '56px',
-                  border: '2px solid rgba(148, 163, 184, 0.55)',
+                  top: '-32px',
+                  left: '-32px',
+                  right: '32px',
+                  bottom: '32px',
+                  border: '3px solid #ffffff',
                 }}
                 aria-hidden="true"
               />
               <div
-                className="absolute pointer-events-none z-[1] hidden md:block"
+                className="absolute pointer-events-none z-[4] hidden md:block"
                 style={{
-                  top: '56px',
-                  left: '56px',
-                  right: '-56px',
-                  bottom: '-56px',
-                  border: '2px solid rgba(148, 163, 184, 0.35)',
+                  top: '32px',
+                  left: '32px',
+                  right: '-32px',
+                  bottom: '-32px',
+                  border: '3px solid #ffffff',
                 }}
                 aria-hidden="true"
               />
@@ -55,16 +55,17 @@ export const ActionMoment = () => {
                 <img
                   src={actionMoment}
                   alt="Aperto de mãos profissional"
-                  width={300}
-                  height={146}
+                  width={900}
+                  height={520}
                   loading="lazy"
                   decoding="async"
-                  className="w-full max-w-3xl object-cover brightness-90 hover:brightness-100 transition-all duration-500"
+                  className="w-full h-auto object-cover brightness-90 hover:brightness-100 transition-all duration-500"
                 />
 
               </div>
             </div>
           </div>
+
           
         </div>
       </div>
