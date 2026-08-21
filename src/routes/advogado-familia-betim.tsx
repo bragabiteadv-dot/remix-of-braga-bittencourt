@@ -200,7 +200,7 @@ function LpHero() {
             <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <img
                 src={officeBetim}
-                alt="Escritório do advogado de divórcio em Betim"
+                alt="Escritório do advogado de família em Betim"
                 className="w-full h-[320px] object-cover"
                 loading="lazy"
               />
