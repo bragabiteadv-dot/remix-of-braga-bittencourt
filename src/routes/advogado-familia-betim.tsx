@@ -45,7 +45,7 @@ const DESCRIPTION =
 const WHATSAPP =
   "https://wa.link/i03d4k";
 
-export const Route = createFileRoute("/advogado-divorcio-betim")({
+export const Route = createFileRoute("/advogado-familia-betim")({
   head: () =>
     buildSeo({
       path: PATH,
