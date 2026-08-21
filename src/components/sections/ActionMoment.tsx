@@ -10,7 +10,7 @@ export const ActionMoment = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24">
           
           {/* Left Column - Content */}
-          <div className="w-full md:w-1/2 max-w-xl text-center md:text-left">
+          <div className="w-full md:w-2/5 max-w-xl text-center md:text-left">
             <h2 className="font-cinzel text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight">
               O MOMENTO CERTO DE AGIR É <br /> AGORA.
             </h2>
