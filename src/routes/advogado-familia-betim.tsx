@@ -137,7 +137,7 @@ function LpHeader() {
           className="h-12 w-auto shrink-0"
           loading="eager"
         />
-        <WhatsAppCta className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
+        <WhatsAppCta href={WHATSAPP} className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
       </div>
     </header>
   );
@@ -192,7 +192,7 @@ function LpHero() {
               Conduzimos sua demanda familiar em Betim com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
-            <WhatsAppCta className="w-full sm:w-auto" />
+            <WhatsAppCta href={WHATSAPP} className="w-full sm:w-auto" />
 
             <p className="text-white text-xs font-montserrat mt-6 tracking-wide">
               Atendimento presencial e online em Betim.
@@ -327,7 +327,7 @@ function LpSituations() {
         </div>
 
         <div className="flex justify-center">
-          <WhatsAppCta className="w-full sm:w-auto" />
+          <WhatsAppCta href={WHATSAPP} className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -449,7 +449,7 @@ function LpServices() {
         </div>
 
         <div className="flex justify-center">
-          <WhatsAppCta className="w-full sm:w-auto" />
+          <WhatsAppCta href={WHATSAPP} className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -588,7 +588,7 @@ function LpPresence() {
                 </span>
               </a>
 
-              <WhatsAppCta className="w-full !py-4 !text-sm" />
+              <WhatsAppCta href={WHATSAPP} className="w-full !py-4 !text-sm" />
 
               <p className="text-navy/60 font-montserrat text-sm leading-relaxed">
                 Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.
@@ -632,7 +632,7 @@ function LpFooter() {
                 <span>Av. Amazonas 1446, sala 706/707, Brasiléia - Betim</span>
               </a>
               <a
-                href={WHATSAPP_LINK}
+                href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
@@ -645,7 +645,7 @@ function LpFooter() {
             {/* Right buttons */}
             <div className="flex items-center gap-2">
               <a
-                href={WHATSAPP_LINK}
+                href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
