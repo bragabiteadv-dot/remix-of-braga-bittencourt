@@ -112,7 +112,7 @@ function LandingPage() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid whatsappHref={WHATSAPP} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
