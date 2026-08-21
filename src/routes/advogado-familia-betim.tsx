@@ -721,14 +721,27 @@ function LpFooter() {
         </div>
       </div>
 
-      {/* Back to top button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gold-gradient text-navy shadow-lg shadow-gold/20 flex items-center justify-center hover:-translate-y-1 transition-transform duration-300"
-        aria-label="Voltar ao topo"
-      >
-        <ArrowUp size={20} strokeWidth={2.5} />
-      </button>
+      {/* Floating buttons container */}
+      <div className="fixed bottom-4 right-4 z-50 flex flex-col items-center gap-3">
+        <button
+          onClick={scrollToTop}
+          className="w-12 h-12 rounded-full bg-gold-gradient text-navy shadow-lg shadow-gold/20 flex items-center justify-center hover:-translate-y-1 transition-transform duration-300"
+          aria-label="Voltar ao topo"
+        >
+          <ArrowUp size={20} strokeWidth={2.5} />
+        </button>
+
+        <a
+          href={WHATSAPP}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 rounded-full bg-[#25D366] text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform animate-bounce"
+          aria-label="Falar no WhatsApp"
+        >
+          <WhatsAppIcon className="w-7 h-7" />
+        </a>
+      </div>
+
     </footer>
   );
 }
