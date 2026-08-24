@@ -522,7 +522,9 @@ function LpDifferentials() {
 /* ---------------- Presença física ---------------- */
 
 const MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=Braga+Bitencourt+Advogados+Av+Amazonas+1446+Betim";
+  "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.9699976,-44.2045052,1021m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6c35df7797b19:0xf77bb0f67fe9276a!8m2!3d-19.9699976!4d-44.2045052!16s%2Fg%2F11n0pqcqww";
+const MAPS_EMBED_URL =
+  "https://www.google.com/maps?q=Braga+Bitencourt+Advogados+Betim,+Av.+Amazonas,+1446+-+salas+706%2F707+-+Brasil%C3%A9ia,+Betim+-+MG,+32600-324&output=embed";
 
 function LpPresence() {
   return (
@@ -541,17 +543,23 @@ function LpPresence() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl h-[420px]">
+          <a
+            href={MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-white rounded-2xl overflow-hidden shadow-2xl h-[420px] hover:opacity-95 transition-opacity"
+          >
             <iframe
-              src="https://www.google.com/maps?q=Av.%20Amazonas%2C%201446%20-%20Brasil%C3%A9ia%2C%20Betim%20-%20MG&output=embed"
+              src={MAPS_EMBED_URL}
               width="100%"
               height="100%"
-              style={{ border: 0 }}
+              style={{ border: 0, pointerEvents: "none" }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Mapa da sede em Betim"
             />
-          </div>
+          </a>
+
 
           <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col">
             <div className="h-56 overflow-hidden">
@@ -592,7 +600,7 @@ function LpPresence() {
 /* ---------------- Footer ---------------- */
 
 const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bittencourt+adovagos&rlz=1C1GCEA_enBR1196BR1197&oq=braga+bittencourt+adovagos&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAHSAQg1MDc2ajBqOagCBrACAfEFWe6JCqrJDgQ&sourceid=chrome&source=chrome.ob&ie=UTF-8";
-const BETIM_MAP_URL = "https://share.google/tKyzJIwu9jMGT0P7n";
+const BETIM_MAP_URL = MAPS_URL;
 
 function LpFooter() {
   const scrollToTop = () => {
