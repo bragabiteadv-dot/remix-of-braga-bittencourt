@@ -555,17 +555,23 @@ function LpPresence() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl h-[420px]">
+          <a
+            href={MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-white rounded-2xl overflow-hidden shadow-2xl h-[420px] hover:opacity-95 transition-opacity"
+          >
             <iframe
-              src="https://www.google.com/maps?q=Av.%20Amazonas%2C%201446%20-%20Brasil%C3%A9ia%2C%20Betim%20-%20MG&output=embed"
+              src={MAPS_EMBED_URL}
               width="100%"
               height="100%"
-              style={{ border: 0 }}
+              style={{ border: 0, pointerEvents: "none" }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Mapa da sede em Betim"
             />
-          </div>
+          </a>
+
 
           <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col">
             <div className="h-56 overflow-hidden">
