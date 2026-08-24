@@ -554,12 +554,12 @@ function LpPresence() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
           <a
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="block bg-white rounded-2xl overflow-hidden shadow-2xl h-[420px] hover:opacity-95 transition-opacity"
+            className="block bg-white rounded-2xl overflow-hidden shadow-2xl h-full min-h-[420px] hover:opacity-95 transition-opacity"
           >
             <iframe
               src={MAPS_EMBED_URL}
@@ -572,9 +572,8 @@ function LpPresence() {
             />
           </a>
 
-
-          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col">
-            <div className="h-56 overflow-hidden">
+          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full min-h-[420px]">
+            <div className="h-56 overflow-hidden shrink-0">
               <img
                 src={officeBetim}
                 alt="Braga Bitencourt Advogados - Betim"
@@ -582,7 +581,7 @@ function LpPresence() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="p-8 space-y-6 flex-grow flex flex-col">
+            <div className="p-8 space-y-6 flex-grow flex flex-col justify-between">
               <a
                 href={MAPS_URL}
                 target="_blank"
