@@ -132,7 +132,7 @@ function LpHeader() {
     <header className="sticky top-0 z-50 w-full bg-[#08152C]/95 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
-          src="https://bragabitencourt.com/wp-content/uploads/2026/06/LOGO-2-1.png"
+          src={lpHeaderLogo}
           alt="Braga Bitencourt Advogados"
           className="h-12 w-auto shrink-0"
           loading="eager"
