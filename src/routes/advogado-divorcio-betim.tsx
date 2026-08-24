@@ -600,7 +600,7 @@ function LpPresence() {
 /* ---------------- Footer ---------------- */
 
 const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bittencourt+adovagos&rlz=1C1GCEA_enBR1196BR1197&oq=braga+bittencourt+adovagos&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAHSAQg1MDc2ajBqOagCBrACAfEFWe6JCqrJDgQ&sourceid=chrome&source=chrome.ob&ie=UTF-8";
-const BETIM_MAP_URL = "https://share.google/tKyzJIwu9jMGT0P7n";
+const BETIM_MAP_URL = MAPS_URL;
 
 function LpFooter() {
   const scrollToTop = () => {
