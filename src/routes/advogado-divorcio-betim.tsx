@@ -28,6 +28,7 @@ import { buildSeo } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 import { ORG_REF } from "@/lib/org-schema";
 import logoTree from "@/assets/logo-tree-new.png";
+import lpHeaderLogo from "@/assets/lp-header-logo.png";
 
 import officeBetim from "@/assets/office-betim-new.jpg";
 import officeBH from "@/assets/office-bh-new.jpg";
