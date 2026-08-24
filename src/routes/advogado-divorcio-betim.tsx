@@ -522,7 +522,9 @@ function LpDifferentials() {
 /* ---------------- Presença física ---------------- */
 
 const MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=Braga+Bitencourt+Advogados+Av+Amazonas+1446+Betim";
+  "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.9699976,-44.2045052,1021m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6c35df7797b19:0xf77bb0f67fe9276a!8m2!3d-19.9699976!4d-44.2045052!16s%2Fg%2F11n0pqcqww";
+const MAPS_EMBED_URL =
+  "https://www.google.com/maps?q=Braga+Bitencourt+Advogados+Betim,+Av.+Amazonas,+1446+-+salas+706%2F707+-+Brasil%C3%A9ia,+Betim+-+MG,+32600-324&output=embed";
 
 function LpPresence() {
   return (
