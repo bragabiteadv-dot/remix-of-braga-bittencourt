@@ -187,7 +187,7 @@ function LpHero() {
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
-              Especialista em Direito de Família em Betim — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem-estar.
+              Advogado especialista em Direito de Família em Betim — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem-estar.
               Conduzimos sua demanda familiar em Betim com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
