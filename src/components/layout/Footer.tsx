@@ -3,7 +3,7 @@ import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon } from "@/compone
 import { Link } from "@tanstack/react-router";
 import logoTree from "@/assets/logo-tree-new.png";
 
-const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bittencourt+adovagos&rlz=1C1GCEA_enBR1196BR1197&oq=braga+bittencourt+adovagos&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAHSAQg1MDc2ajBqOagCBrACAfEFWe6JCqrJDgQ&sourceid=chrome&source=chrome.ob&ie=UTF-8";
+const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bitencourt+advogados&sca_esv=2a198a1a37cb003b&sxsrf=APpeQnsR8Tt6QgTAPka-SZLMKbxa20PWYA%3A1787660257813&source=hp&ei=4YeNaon_Luyg5OUP1IfQkQs&iflsig=ABILxe8AAAAAao2V8RXPNXu1Cvrn8IWs6s_aPzPos1iM&oq=braga&gs_lp=Egdnd3Mtd2l6IgVicmFnYSoCCAAyBBAjGCcyBBAjGCcyBBAjGCcyEBAAGIAEGIoFGEMYsQMYgwEyCBAuGLEDGIAEMgoQABiABBiKBRhDMg4QABiABBiKBRixAxiDATINEC4YFBiHAhixAxiABDIKEC4YgAQYigUYQzINEC4YgAQYFBiHAhixA0jDD1AAWI8GcAB4AJABAJgBiQKgAfMIqgEFMC4xLjS4AQHIAQD4AQGYAgWgAqAJwgIIEC4YgAQYsQPCAgsQLhiDARixAxiABMICCxAuGIAEGLEDGIMBwgIKEC4YQxiABBiKBcICBRAAGIAEwgIIEAAYgAQYsQOYAwCSBwUwLjEuNKAHs0-yBwUwLjEuNLgHoAnCBwUyLTQuMcgHIIAIAQ&sclient=gws-wiz";
 const BH_MAP_URL = "https://share.google/UiahnNRC0AVfB7xZP";
 const BETIM_MAP_URL = "https://share.google/tKyzJIwu9jMGT0P7n";
 
