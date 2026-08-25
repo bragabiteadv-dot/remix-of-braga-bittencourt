@@ -4,8 +4,10 @@ import { Link } from "@tanstack/react-router";
 import logoTree from "@/assets/logo-tree-new.png";
 
 const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bitencourt+advogados&sca_esv=2a198a1a37cb003b&sxsrf=APpeQnsR8Tt6QgTAPka-SZLMKbxa20PWYA%3A1787660257813&source=hp&ei=4YeNaon_Luyg5OUP1IfQkQs&iflsig=ABILxe8AAAAAao2V8RXPNXu1Cvrn8IWs6s_aPzPos1iM&oq=braga&gs_lp=Egdnd3Mtd2l6IgVicmFnYSoCCAAyBBAjGCcyBBAjGCcyBBAjGCcyEBAAGIAEGIoFGEMYsQMYgwEyCBAuGLEDGIAEMgoQABiABBiKBRhDMg4QABiABBiKBRixAxiDATINEC4YFBiHAhixAxiABDIKEC4YgAQYigUYQzINEC4YgAQYFBiHAhixA0jDD1AAWI8GcAB4AJABAJgBiQKgAfMIqgEFMC4xLjS4AQHIAQD4AQGYAgWgAqAJwgIIEC4YgAQYsQPCAgsQLhiDARixAxiABMICCxAuGIAEGLEDGIMBwgIKEC4YQxiABBiKBcICBRAAGIAEwgIIEAAYgAQYsQOYAwCSBwUwLjEuNKAHs0-yBwUwLjEuNLgHoAnCBwUyLTQuMcgHIIAIAQ&sclient=gws-wiz";
-const BH_MAP_URL = "https://share.google/UiahnNRC0AVfB7xZP";
-const BETIM_MAP_URL = "https://share.google/tKyzJIwu9jMGT0P7n";
+const BH_MAP_URL = "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.954955,-43.9595168,1022m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6be0a87eba137:0x5b7a5c4dbe44fd0b!8m2!3d-19.954955!4d-43.9595168!16s%2Fg%2F1x6q2_2p?entry=ttu&g_ep=EgoyMDI2MDgyMy4wIKXMDSoASAFQAw%3D%3D";
+const BETIM_MAP_URL = "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.9699976,-44.2045052,1021m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6c35df7797b19:0xf77bb0f67fe9276a!8m2!3d-19.9699976!4d-44.2045052!16s%2Fg%2F11n0pqcqww?entry=ttu&g_ep=EgoyMDI2MDgyMy4wIKXMDSoASAFQAw%3D%3D";
+const GOOGLE_SEARCH_URL_BH = "https://www.google.com/search?q=braga+bitencourt+advogados+bh";
+const GOOGLE_SEARCH_URL_BETIM = "https://www.google.com/search?q=braga+bitencourt+advogados+betim";
 
 export function Footer() {
   const waLink = useWhatsAppLink();
