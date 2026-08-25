@@ -98,6 +98,7 @@ function RootComponent() {
           <main className="flex-grow">
             <Outlet />
           </main>
+          <ScrollHint topOffset={16} />
           <FloatingActions />
         </div>
       </QueryClientProvider>
@@ -112,6 +113,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <ScrollHint topOffset={84} />
         <FloatingActions />
       </div>
     </QueryClientProvider>
