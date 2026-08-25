@@ -21,6 +21,7 @@ import {
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { TeamGrid } from "@/components/sections/TeamGrid";
 import { ActionMoment } from "@/components/sections/ActionMoment";
+import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { buildSeo } from "@/lib/seo";
@@ -105,6 +106,7 @@ function LandingPage() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <ContactForm />
       <LpFooter />
     </div>
   );
