@@ -343,7 +343,10 @@ export default function RotatingEarth({
 
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <canvas ref={canvasRef} className="cursor-grab active:cursor-grabbing" />
+      <canvas
+        ref={canvasRef}
+        className="cursor-grab active:cursor-grabbing touch-none"
+      />
       {isLoading && (
         <p className="text-sm text-gray-400 mt-2">Loading globe…</p>
       )}
