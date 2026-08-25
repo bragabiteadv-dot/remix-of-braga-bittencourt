@@ -17,7 +17,18 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const waLink = useWhatsAppLink();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const topBarHeight = window.innerWidth >= 768 ? 40 : 0;
+      setScrolled(window.scrollY > topBarHeight);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="w-full flex flex-col">
