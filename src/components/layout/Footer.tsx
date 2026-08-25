@@ -4,8 +4,10 @@ import { Link } from "@tanstack/react-router";
 import logoTree from "@/assets/logo-tree-new.png";
 
 const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bitencourt+advogados&sca_esv=2a198a1a37cb003b&sxsrf=APpeQnsR8Tt6QgTAPka-SZLMKbxa20PWYA%3A1787660257813&source=hp&ei=4YeNaon_Luyg5OUP1IfQkQs&iflsig=ABILxe8AAAAAao2V8RXPNXu1Cvrn8IWs6s_aPzPos1iM&oq=braga&gs_lp=Egdnd3Mtd2l6IgVicmFnYSoCCAAyBBAjGCcyBBAjGCcyBBAjGCcyEBAAGIAEGIoFGEMYsQMYgwEyCBAuGLEDGIAEMgoQABiABBiKBRhDMg4QABiABBiKBRixAxiDATINEC4YFBiHAhixAxiABDIKEC4YgAQYigUYQzINEC4YgAQYFBiHAhixA0jDD1AAWI8GcAB4AJABAJgBiQKgAfMIqgEFMC4xLjS4AQHIAQD4AQGYAgWgAqAJwgIIEC4YgAQYsQPCAgsQLhiDARixAxiABMICCxAuGIAEGLEDGIMBwgIKEC4YQxiABBiKBcICBRAAGIAEwgIIEAAYgAQYsQOYAwCSBwUwLjEuNKAHs0-yBwUwLjEuNLgHoAnCBwUyLTQuMcgHIIAIAQ&sclient=gws-wiz";
-const BH_MAP_URL = "https://share.google/UiahnNRC0AVfB7xZP";
-const BETIM_MAP_URL = "https://share.google/tKyzJIwu9jMGT0P7n";
+const BH_MAP_URL = "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.954955,-43.9595168,1022m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6be0a87eba137:0x5b7a5c4dbe44fd0b!8m2!3d-19.954955!4d-43.9595168!16s%2Fg%2F1x6q2_2p?entry=ttu&g_ep=EgoyMDI2MDgyMy4wIKXMDSoASAFQAw%3D%3D";
+const BETIM_MAP_URL = "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.9699976,-44.2045052,1021m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6c35df7797b19:0xf77bb0f67fe9276a!8m2!3d-19.9699976!4d-44.2045052!16s%2Fg%2F11n0pqcqww?entry=ttu&g_ep=EgoyMDI2MDgyMy4wIKXMDSoASAFQAw%3D%3D";
+const GOOGLE_SEARCH_URL_BH = "https://www.google.com/search?q=braga+bitencourt+advogados+bh";
+const GOOGLE_SEARCH_URL_BETIM = "https://www.google.com/search?q=braga+bitencourt+advogados+betim";
 
 export function Footer() {
   const waLink = useWhatsAppLink();
@@ -117,31 +119,67 @@ export function Footer() {
         {/* Contact cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
           {/* Onde estamos */}
-          <a
-            href={GOOGLE_SEARCH_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+          <div
+            onClick={() => window.open(GOOGLE_SEARCH_URL, "_blank", "noopener,noreferrer")}
+            className="group bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
           >
-            <div className="flex items-center gap-3 mb-4">
+            <a
+              href={GOOGLE_SEARCH_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity"
+            >
               <div className="w-10 h-10 rounded-lg bg-gold-light/20 flex items-center justify-center text-gold-light">
                 <MapPin size={20} />
               </div>
               <span className="text-sm font-semibold tracking-wide text-white/90">
                 ONDE ESTAMOS:
               </span>
-            </div>
+            </a>
             <div className="space-y-3 text-sm text-white/70">
               <div>
-                <p className="font-semibold text-white/90 mb-0.5">-Escritório 1:</p>
-                <p>Av. Raja Gabáglia, 2000 - sala 614 - Alpes, BH - MG.</p>
+                <a
+                  href={GOOGLE_SEARCH_URL_BH}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="block font-semibold text-white/90 mb-0.5 hover:text-gold-light transition-colors"
+                >
+                  -Escritório 1:
+                </a>
+                <a
+                  href={BH_MAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="block hover:text-gold-light transition-colors"
+                >
+                  Av. Raja Gabáglia, 2000 - sala 614 - Alpes, BH - MG.
+                </a>
               </div>
               <div>
-                <p className="font-semibold text-white/90 mb-0.5">-Escritório 2:</p>
-                <p>Av. Amazonas, 1446 - sala 706/707 - Brasiléia, Betim - MG.</p>
+                <a
+                  href={GOOGLE_SEARCH_URL_BETIM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="block font-semibold text-white/90 mb-0.5 hover:text-gold-light transition-colors"
+                >
+                  -Escritório 2:
+                </a>
+                <a
+                  href={BETIM_MAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="block hover:text-gold-light transition-colors"
+                >
+                  Av. Amazonas, 1446 - sala 706/707 - Brasiléia, Betim - MG.
+                </a>
               </div>
             </div>
-          </a>
+          </div>
 
           {/* WhatsApp */}
           <a
