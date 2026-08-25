@@ -22,14 +22,16 @@ export function WhatsAppIcon({ className = "" }: { className?: string }) {
 export const WHATSAPP_PHONE = "5531980260880";
 
 export function whatsappArticleLink(articleTitle: string) {
-  const text = `Olá! Li o artigo (${articleTitle}) no blog e gostaria de falar com um advogado.`;
-  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+  return whatsappLinkFromText(
+    `Olá! Acessei seu artigo de ${articleTitle} e gostaria de falar com um especialista!`,
+  );
 }
 
 export function WhatsAppCta({ className = "", href }: { className?: string; href?: string }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
     <a
-      href={href ?? WHATSAPP_LINK}
+      href={href ?? whatsappPageLink(pathname)}
       target="_blank"
       rel="noopener noreferrer"
       className={`btn-primary ${className}`}
