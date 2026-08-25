@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import { FloatingActions } from "../components/layout/FloatingActions";
+import { ScrollHint } from "../components/layout/ScrollHint";
 
 import { NotFoundView } from "../components/layout/NotFoundView";
 
@@ -97,6 +98,7 @@ function RootComponent() {
           <main className="flex-grow">
             <Outlet />
           </main>
+          <ScrollHint topOffset={16} />
           <FloatingActions />
         </div>
       </QueryClientProvider>
@@ -111,6 +113,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <ScrollHint topOffset={84} />
         <FloatingActions />
       </div>
     </QueryClientProvider>
