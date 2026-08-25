@@ -207,8 +207,42 @@ export default function RotatingEarth({
     }
 
 
+    // Only enable drag/scroll interactions while the pointer is over the globe
+    // circle so page scrolling is never blocked outside the globe.
+    const getGlobeCenter = () => {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        cx: rect.left + rect.width / 2,
+        cy: rect.top + rect.height / 2,
+      };
+    };
+
+    const isPointOverGlobe = (clientX: number, clientY: number) => {
+      const { cx, cy } = getGlobeCenter();
+      const dx = clientX - cx;
+      const dy = clientY - cy;
+      return Math.hypot(dx, dy) <= projection.scale();
+    };
+
+    let isHoveringGlobe = false;
+    const updateCursor = () => {
+      canvas.style.cursor = isHoveringGlobe ? "grab" : "default";
+    };
+
+    const handleMouseMoveHover = (event: MouseEvent) => {
+      isHoveringGlobe = isPointOverGlobe(event.clientX, event.clientY);
+      updateCursor();
+    };
+
+    const handleMouseLeave = () => {
+      isHoveringGlobe = false;
+      updateCursor();
+    };
+
     const handleMouseDown = (event: MouseEvent) => {
+      if (!isPointOverGlobe(event.clientX, event.clientY)) return;
       autoRotate = false;
+      canvas.style.cursor = "grabbing";
       const startX = event.clientX;
       const startY = event.clientY;
       const startRotation: [number, number] = [rotation[0], rotation[1]];
@@ -227,6 +261,7 @@ export default function RotatingEarth({
       const handleMouseUp = () => {
         document.removeEventListener("mousemove", handleMouseMove);
         document.removeEventListener("mouseup", handleMouseUp);
+        canvas.style.cursor = isHoveringGlobe ? "grab" : "default";
         setTimeout(() => {
           autoRotate = true;
         }, 10);
@@ -237,6 +272,7 @@ export default function RotatingEarth({
     };
 
     const handleWheel = (event: WheelEvent) => {
+      if (!isPointOverGlobe(event.clientX, event.clientY)) return;
       event.preventDefault();
       const scaleFactor = event.deltaY > 0 ? 0.9 : 1.1;
       const newRadius = Math.max(
@@ -248,6 +284,7 @@ export default function RotatingEarth({
     };
 
     // Touch support: one finger drags to rotate, two fingers pinch to zoom.
+    // Gestures only start when the first touch is inside the globe circle.
     let touchStart: { x: number; y: number } | null = null;
     let touchStartRotation: [number, number] = [0, 0];
     let pinchStartDistance = 0;
@@ -260,11 +297,19 @@ export default function RotatingEarth({
     };
 
     const handleTouchStart = (event: TouchEvent) => {
-      autoRotate = false;
       if (event.touches.length === 1) {
+        if (!isPointOverGlobe(event.touches[0].clientX, event.touches[0].clientY)) {
+          touchStart = null;
+          return;
+        }
+        autoRotate = false;
         touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
         touchStartRotation = [rotation[0], rotation[1]];
       } else if (event.touches.length === 2) {
+        if (!touchStart) {
+          pinchStartDistance = 0;
+          return;
+        }
         touchStart = null;
         pinchStartDistance = touchDistance(event.touches);
         pinchStartScale = projection.scale();
@@ -307,6 +352,8 @@ export default function RotatingEarth({
       }
     };
 
+    canvas.addEventListener("mousemove", handleMouseMoveHover);
+    canvas.addEventListener("mouseleave", handleMouseLeave);
     canvas.addEventListener("mousedown", handleMouseDown);
     canvas.addEventListener("wheel", handleWheel);
     canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
@@ -319,6 +366,8 @@ export default function RotatingEarth({
     return () => {
       rotationTimer.stop();
       viewportObserver?.disconnect();
+      canvas.removeEventListener("mousemove", handleMouseMoveHover);
+      canvas.removeEventListener("mouseleave", handleMouseLeave);
       canvas.removeEventListener("mousedown", handleMouseDown);
       canvas.removeEventListener("wheel", handleWheel);
       canvas.removeEventListener("touchstart", handleTouchStart);
