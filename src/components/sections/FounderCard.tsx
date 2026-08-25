@@ -1,8 +1,9 @@
 import { Mail, Phone, MapPin, Check } from "lucide-react";
-import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { WhatsAppCta, useWhatsAppLink } from "@/components/ui/whatsapp-cta";
 import escritorioImg from "@/assets/foto-fundador.jpg";
 
 export function FounderCard() {
+  const waLink = useWhatsAppLink();
   const credentials = [
     "Fundador da Braga Bitencourt Advogados",
     "Especializado em Direito de Família e Sucessões pelo IBMEC/EBRADI-SP.",
@@ -55,7 +56,7 @@ export function FounderCard() {
                   </div>
                 </a>
                 
-                <a href="https://wa.link/i03d4k" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#283650] hover:opacity-80 transition-opacity">
+                <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#283650] hover:opacity-80 transition-opacity">
                   <WhatsAppIcon className="w-5 h-5 shrink-0" />
                   <div>
                     <span className="block text-[10px] uppercase tracking-widest opacity-60">Whatsapp</span>

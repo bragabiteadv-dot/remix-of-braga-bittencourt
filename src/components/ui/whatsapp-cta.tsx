@@ -1,3 +1,6 @@
+import { useRouterState } from "@tanstack/react-router";
+import { whatsappPageLink, whatsappLinkFromText } from "@/lib/whatsapp";
+
 export const WHATSAPP_LINK = "https://wa.link/i03d4k";
 export const WHATSAPP_CTA_LABEL = "FALE COM ADVOGADO";
 
@@ -19,14 +22,16 @@ export function WhatsAppIcon({ className = "" }: { className?: string }) {
 export const WHATSAPP_PHONE = "5531980260880";
 
 export function whatsappArticleLink(articleTitle: string) {
-  const text = `Olá! Li o artigo (${articleTitle}) no blog e gostaria de falar com um advogado.`;
-  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+  return whatsappLinkFromText(
+    `Olá! Acessei seu artigo de ${articleTitle} e gostaria de falar com um especialista!`,
+  );
 }
 
 export function WhatsAppCta({ className = "", href }: { className?: string; href?: string }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
     <a
-      href={href ?? WHATSAPP_LINK}
+      href={href ?? whatsappPageLink(pathname)}
       target="_blank"
       rel="noopener noreferrer"
       className={`btn-primary ${className}`}
@@ -49,4 +54,9 @@ export function GoogleIcon({ size = 14 }: { size?: number }) {
       <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.25 2.69 1.29 6.6l3.98 3.13C6.22 6.86 8.87 4.75 12 4.75z" />
     </svg>
   );
+}
+
+export function useWhatsAppLink() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  return whatsappPageLink(pathname);
 }

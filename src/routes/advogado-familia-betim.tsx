@@ -14,7 +14,6 @@ import {
   Facebook,
   Instagram,
   Mail,
-  ArrowUp,
   Phone,
   Home,
 } from "lucide-react";
@@ -23,7 +22,7 @@ import { GlobalReach } from "@/components/sections/GlobalReach";
 import { TeamGrid } from "@/components/sections/TeamGrid";
 import { ActionMoment } from "@/components/sections/ActionMoment";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
-import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { buildSeo } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 import { ORG_REF } from "@/lib/org-schema";
@@ -614,10 +613,7 @@ const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bittencourt+ado
 const BETIM_MAP_URL = MAPS_URL;
 
 function LpFooter() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
+  const waLink = useWhatsAppLink();
   const socialIconClass =
     "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-gold-light hover:text-navy hover:border-gold-light transition-all duration-300";
 
@@ -639,7 +635,7 @@ function LpFooter() {
                 <span>Av. Amazonas 1446, sala 706/707, Brasiléia - Betim</span>
               </a>
               <a
-                href={WHATSAPP_LINK}
+                href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
@@ -652,7 +648,7 @@ function LpFooter() {
             {/* Right buttons */}
             <div className="flex items-center gap-2">
               <a
-                href={WHATSAPP_LINK}
+                href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
@@ -728,14 +724,6 @@ function LpFooter() {
         </div>
       </div>
 
-      {/* Back to top button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gold-gradient text-navy shadow-lg shadow-gold/20 flex items-center justify-center hover:-translate-y-1 transition-transform duration-300"
-        aria-label="Voltar ao topo"
-      >
-        <ArrowUp size={20} strokeWidth={2.5} />
-      </button>
     </footer>
   );
 }

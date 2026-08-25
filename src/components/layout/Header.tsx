@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, MessageSquare, Facebook, Instagram, Mail, Menu, X } from "lucide-react";
-import { WhatsAppCta, WHATSAPP_LINK, GOOGLE_URL, GoogleIcon } from "@/components/ui/whatsapp-cta";
+import { WhatsAppCta, useWhatsAppLink, GOOGLE_URL, GoogleIcon } from "@/components/ui/whatsapp-cta";
 import headerLogo from "@/assets/header-logo.png";
 
 
@@ -16,6 +16,7 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const waLink = useWhatsAppLink();
 
   return (
     <header className="w-full flex flex-col">
@@ -31,13 +32,13 @@ export function Header() {
               <MapPin size={14} className="text-gold-light" />
               <span>Av. Amazonas, 1446 - Betim</span>
             </a>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold-light transition-colors">
+            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold-light transition-colors">
               <Phone size={14} className="text-gold-light" />
               <span>(31) 98026-0880</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gold-light transition-colors">
+            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gold-light transition-colors">
               <MessageSquare size={14} /> WhatsApp
             </a>
             <a href="mailto:bragabitencourtadv@gmail.com" className="flex items-center gap-1 hover:text-gold-light transition-colors">
