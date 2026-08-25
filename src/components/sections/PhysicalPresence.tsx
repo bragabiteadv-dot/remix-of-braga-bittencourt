@@ -1,8 +1,9 @@
 import officeBH from "@/assets/office-bh-new.jpg";
 import officeBetim from "@/assets/office-betim-new.jpg";
-import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { WhatsAppCta, useWhatsAppLink } from "@/components/ui/whatsapp-cta";
 
 export function PhysicalPresence() {
+  const waLink = useWhatsAppLink();
   const offices = [
     {
       city: "Belo Horizonte",
@@ -12,7 +13,7 @@ export function PhysicalPresence() {
       mapUrl: "https://maps.google.com/maps?q=-19.954955,-43.9595168&z=17&hl=pt-BR&output=embed",
       link: "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.954955,-43.9595168,1022m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6be0a87eba137:0x5b7a5c4dbe44fd0b!8m2!3d-19.954955!4d-43.9595168!16s%2Fg%2F1x6q2_2p?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D",
       image: officeBH,
-      whatsapp: "https://wa.link/i03d4k"
+      whatsapp: waLink
     },
     {
       city: "Betim",
@@ -22,7 +23,7 @@ export function PhysicalPresence() {
       mapUrl: "https://maps.google.com/maps?q=-19.9699976,-44.2045052&z=17&hl=pt-BR&output=embed",
       link: "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.9699976,-44.2045052,1021m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6c35df7797b19:0xf77bb0f67fe9276a!8m2!3d-19.9699976!4d-44.2045052!16s%2Fg%2F11n0pqcqww?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D",
       image: officeBetim,
-      whatsapp: "https://wa.link/i03d4k"
+      whatsapp: waLink
     }
   ];
 
