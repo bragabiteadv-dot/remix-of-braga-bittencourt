@@ -58,11 +58,11 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                 alt="Escritório de Advocacia" 
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain object-center"
               />
 
 
-              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 via-black/70 to-transparent"></div>
             </div>
 
             <div className="relative z-10 p-12 lg:p-16 h-full flex flex-col justify-end">
@@ -72,9 +72,10 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                   <span className="text-gold-light text-xs font-bold tracking-widest uppercase">Contato Imediato</span>
                 </div>
                 
-                <Heading className="text-white text-lg lg:text-2xl font-cinzel leading-tight">
+                <Heading className="text-white text-lg lg:text-2xl font-cinzel font-bold leading-tight">
                   Fale com a equipe de forma simples e direta.
                 </Heading>
+
 
                 
                 <div className="flex flex-wrap gap-4 pt-4">
