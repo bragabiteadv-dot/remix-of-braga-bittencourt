@@ -26,10 +26,19 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
       "/advogado-divorcio-betim": "Advogado Divórcio Betim",
     };
     const pageName = pageNames[path] ?? (path.startsWith("/artigos/") ? "Artigos" : path || "Home");
-    const text = `Olá! Acessei a página ${pageName} e gostaria de falar com um especialista. Meu nome é ${formData.nome.trim()}, sou de ${formData.cidade.trim()}, meu caso é ${formData.mensagem.trim()}`;
+    let text = `Olá! Acessei a página ${pageName} e gostaria de falar com um especialista.`;
+    const nome = formData.nome.trim();
+    const cidade = formData.cidade.trim();
+    const caso = formData.caso.trim();
+    const resumo = formData.mensagem.trim();
+    if (nome) text += ` Meu nome é ${nome},`;
+    if (cidade) text += ` sou de ${cidade},`;
+    if (caso) text += ` meu caso é ${caso}.`;
+    if (resumo) text += ` ${resumo}`;
     const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   };
+
 
   const handleClear = () => {
     setFormData({ nome: "", cidade: "", caso: "", mensagem: "" });
