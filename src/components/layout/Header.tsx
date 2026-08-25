@@ -44,9 +44,9 @@ export function Header() {
               <Mail size={14} /> Email
             </a>
             <div className="flex items-center gap-3 ml-2 pl-4 border-l border-white/20">
-              <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" title="Facebook" className="hover:text-gold-light transition-colors"><Facebook size={14} /></a>
+              <a href="https://www.facebook.com/bragabitencourtadv/" target="_blank" rel="noopener noreferrer" title="Facebook" className="hover:text-gold-light transition-colors"><Facebook size={14} /></a>
               <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" title="Google" className="hover:text-gold-light transition-colors"><GoogleIcon /></a>
-              <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" title="Instagram" className="hover:text-gold-light transition-colors"><Instagram size={14} /></a>
+              <a href="https://www.instagram.com/bragabitencourtadv/" target="_blank" rel="noopener noreferrer" title="Instagram" className="hover:text-gold-light transition-colors"><Instagram size={14} /></a>
             </div>
           </div>
         </div>
