@@ -26,10 +26,19 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
       "/advogado-divorcio-betim": "Advogado Divórcio Betim",
     };
     const pageName = pageNames[path] ?? (path.startsWith("/artigos/") ? "Artigos" : path || "Home");
-    const text = `Olá! Acessei a página ${pageName} e gostaria de falar com um especialista. Meu nome é ${formData.nome.trim()}, sou de ${formData.cidade.trim()}, meu caso é ${formData.mensagem.trim()}`;
+    let text = `Olá! Acessei a página ${pageName} e gostaria de falar com um especialista.`;
+    const nome = formData.nome.trim();
+    const cidade = formData.cidade.trim();
+    const caso = formData.caso.trim();
+    const resumo = formData.mensagem.trim();
+    if (nome) text += ` Meu nome é ${nome},`;
+    if (cidade) text += ` sou de ${cidade},`;
+    if (caso) text += ` meu caso é ${caso}.`;
+    if (resumo) text += ` ${resumo}`;
     const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   };
+
 
   const handleClear = () => {
     setFormData({ nome: "", cidade: "", caso: "", mensagem: "" });
@@ -49,11 +58,11 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                 alt="Escritório de Advocacia" 
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain object-center"
               />
 
 
-              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 via-black/70 to-transparent"></div>
             </div>
 
             <div className="relative z-10 p-12 lg:p-16 h-full flex flex-col justify-end">
@@ -63,9 +72,10 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                   <span className="text-gold-light text-xs font-bold tracking-widest uppercase">Contato Imediato</span>
                 </div>
                 
-                <Heading className="text-white text-lg lg:text-2xl font-cinzel leading-tight">
+                <Heading className="text-white text-lg lg:text-2xl font-cinzel font-bold leading-tight">
                   Fale com a equipe de forma simples e direta.
                 </Heading>
+
 
                 
                 <div className="flex flex-wrap gap-4 pt-4">
@@ -104,7 +114,6 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
                     <input 
                       type="text" 
-                      required
                       placeholder="Ex: Seu nome"
                       className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
                       value={formData.nome}
@@ -120,7 +129,6 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                     <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
                     <input 
                       type="text" 
-                      required
                       placeholder="Ex: sua cidade ou estado"
                       className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
                       value={formData.cidade}
@@ -136,7 +144,6 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                 <div className="relative">
                   <Folder className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
                   <select 
-                    required
                     className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-12 py-4 text-white focus:outline-none focus:border-gold-light transition-colors appearance-none text-sm font-montserrat"
                     value={formData.caso}
                     onChange={(e) => setFormData({...formData, caso: e.target.value})}
@@ -155,11 +162,10 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
 
               {/* Mensagem Field */}
               <div className="space-y-3">
-                <label className="text-white text-xs font-bold uppercase tracking-wider block">Digite aqui o seu caso</label>
+                <label className="text-white text-xs font-bold uppercase tracking-wider block">Resumo do caso</label>
                 <div className="relative">
                   <FileText className="absolute left-4 top-4 text-white/30 w-4 h-4" />
                   <textarea 
-                    required
                     rows={5}
                     placeholder="Descreva brevemente sua situação..."
                     className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat resize-none"
