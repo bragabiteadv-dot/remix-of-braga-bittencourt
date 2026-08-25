@@ -1,19 +1,19 @@
-## Diagnóstico
+# Plano de correção: tela de erro `FloatingActions is not defined`
 
-O arquivo `src/routes/artigos.tsx` funciona como **rota-pai** de `src/routes/artigos.$id.tsx` no roteamento por arquivos do TanStack Router. Quando um arquivo pai tem filhos, ele vira layout e precisa renderizar `<Outlet />` para o conteúdo do filho aparecer. Como `artigos.tsx` renderiza a listagem completa (e não um `<Outlet />`), ao navegar para `/artigos/1` a URL muda, mas o React continua exibindo a listagem — e o scroll vai ao topo por causa da nova navegação. É exatamente o sintoma descrito.
+## O que aconteceu
+A tela apareceu porque o layout principal passou a renderizar os novos botões flutuantes, mas o runtime está acusando que `FloatingActions` não está definido no momento em que a página tenta montar.
 
-## Correção
+Isso quebra a renderização do site inteiro, por isso aparece a tela branca com a mensagem de erro.
 
-Converter `/artigos` em uma rota-folha irmã da rota de detalhe, seguindo o padrão canônico do TanStack (`*.index.tsx` para a folha):
+## Correção proposta
+1. Ajustar a integração dos botões flutuantes no layout principal para garantir que o componente esteja importado e renderizado de forma segura.
+2. Conferir se não existe conflito de export/import, cache de rota ou referência antiga no root layout.
+3. Manter os botões flutuantes em todas as páginas do escritório, incluindo as landing pages de Betim.
+4. Validar no preview que:
+   - a HOME volta a carregar normalmente;
+   - o botão de WhatsApp aparece;
+   - o botão de voltar ao topo aparece;
+   - o erro `FloatingActions is not defined` desaparece.
 
-1. Renomear `src/routes/artigos.tsx` → `src/routes/artigos.index.tsx`.
-2. Atualizar o `createFileRoute("/artigos")` para `createFileRoute("/artigos/")` dentro do arquivo (o gerador exige o path terminando em `/` para rotas `index`).
-3. Deixar `src/routes/artigos.$id.tsx` como está — ele passa a ser irmão e roda sozinho.
-4. O `routeTree.gen.ts` é regenerado automaticamente; nenhuma outra edição é necessária.
-
-Nenhum outro arquivo precisa mudar: os `<Link to="/artigos/$id" params={{ id }}>` já estão corretos, e os links de navegação para `/artigos` continuam válidos.
-
-## Verificação após implementar
-
-- Clicar em "Leia mais" em `/artigos` deve navegar para `/artigos/1` e renderizar a página de detalhe (título, imagem placeholder, corpo, sidebar).
-- Voltar via "Voltar para artigos" deve retornar à listagem com os filtros funcionando.
+## Escopo
+A correção será limitada ao problema dos botões flutuantes. Não haverá alteração visual em outras seções, conteúdo, SEO ou estrutura das páginas.
