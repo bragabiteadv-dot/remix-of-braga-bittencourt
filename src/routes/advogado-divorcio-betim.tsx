@@ -42,8 +42,6 @@ const TITLE = "Advogado de Divórcio em Betim | Braga Bitencourt Advogados";
 const DESCRIPTION =
   "Advogado de divórcio em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
 
-const WHATSAPP =
-  "https://wa.link/i03d4k";
 
 export const Route = createFileRoute("/advogado-divorcio-betim")({
   head: () =>
@@ -241,6 +239,7 @@ function LpHero() {
 /* ---------------- Situações ---------------- */
 
 function LpSituations() {
+  const waLink = useWhatsAppLink();
   const { ref, isVisible } = useRevealOnScroll();
 
   const items = [
@@ -297,7 +296,7 @@ function LpSituations() {
           {items.map((item) => (
             <a
               key={item.title}
-              href={WHATSAPP}
+              href={waLink}
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-white rounded-lg p-8 border border-navy/10 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col"

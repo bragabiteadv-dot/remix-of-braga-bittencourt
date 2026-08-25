@@ -45,8 +45,6 @@ const DESCRIPTION =
 const ABSOLUTE_URL = "https://bragabitencourt.com" + PATH;
 const HOME_URL = "https://bragabitencourt.com/";
 
-const WHATSAPP =
-  "https://wa.link/i03d4k";
 
 export const Route = createFileRoute("/advogado-familia-betim")({
   head: () => {
@@ -253,6 +251,7 @@ function LpHero() {
 /* ---------------- Situações ---------------- */
 
 function LpSituations() {
+  const waLink = useWhatsAppLink();
   const { ref, isVisible } = useRevealOnScroll();
 
   const items = [
@@ -309,7 +308,7 @@ function LpSituations() {
           {items.map((item) => (
             <a
               key={item.title}
-              href={WHATSAPP}
+              href={waLink}
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-white rounded-lg p-8 border border-navy/10 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col"
