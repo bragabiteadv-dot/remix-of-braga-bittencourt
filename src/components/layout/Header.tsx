@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, MessageSquare, Facebook, Instagram, Mail, Menu, X } from "lucide-react";
-import { WhatsAppCta, WHATSAPP_LINK, GOOGLE_URL, GoogleIcon } from "@/components/ui/whatsapp-cta";
+import { WhatsAppCta, useWhatsAppLink, GOOGLE_URL, GoogleIcon } from "@/components/ui/whatsapp-cta";
 import headerLogo from "@/assets/header-logo.png";
 
 
@@ -16,6 +16,7 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const waLink = useWhatsAppLink();
 
   return (
     <header className="w-full flex flex-col">

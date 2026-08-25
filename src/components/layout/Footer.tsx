@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Mail, MapPin, ArrowUp } from "lucide-react";
-import { GOOGLE_URL, GoogleIcon, WHATSAPP_LINK, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
+import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
 import { Link } from "@tanstack/react-router";
 import logoTree from "@/assets/logo-tree-new.png";
 
@@ -8,6 +8,7 @@ const BH_MAP_URL = "https://share.google/UiahnNRC0AVfB7xZP";
 const BETIM_MAP_URL = "https://share.google/tKyzJIwu9jMGT0P7n";
 
 export function Footer() {
+  const waLink = useWhatsAppLink();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
