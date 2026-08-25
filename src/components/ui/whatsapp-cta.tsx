@@ -1,3 +1,6 @@
+import { useRouterState } from "@tanstack/react-router";
+import { whatsappPageLink, whatsappLinkFromText } from "@/lib/whatsapp";
+
 export const WHATSAPP_LINK = "https://wa.link/i03d4k";
 export const WHATSAPP_CTA_LABEL = "FALE COM ADVOGADO";
 
