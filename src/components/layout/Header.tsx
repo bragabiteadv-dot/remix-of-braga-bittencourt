@@ -65,8 +65,16 @@ export function Header() {
         </div>
       </div>
 
+      {/* Placeholder keeps layout stable when nav is fixed */}
+      {scrolled && <div className="h-[72px]" aria-hidden="true" />}
+
       {/* Main Nav */}
-      <nav className="bg-navy sticky top-0 z-50 py-4 border-b border-white/5 shadow-xl">
+      <nav
+        className={cn(
+          "bg-navy z-50 py-4 border-b border-white/5 shadow-xl transition-all duration-300",
+          scrolled ? "fixed top-0 left-0 right-0" : "sticky top-0"
+        )}
+      >
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
             <img 
