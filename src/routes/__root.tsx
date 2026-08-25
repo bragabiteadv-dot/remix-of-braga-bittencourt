@@ -13,7 +13,7 @@ import { organizationSchema, unitSchemas, websiteSchema } from "@/lib/org-schema
 import appCss from "../styles.css?url";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
-import { WHATSAPP_LINK, WhatsAppIcon } from "../components/ui/whatsapp-cta";
+import { FloatingActions } from "../components/layout/FloatingActions";
 
 import { NotFoundView } from "../components/layout/NotFoundView";
 
