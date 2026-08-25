@@ -247,8 +247,72 @@ export default function RotatingEarth({
       render();
     };
 
+    // Touch support: one finger drags to rotate, two fingers pinch to zoom.
+    let touchStart: { x: number; y: number } | null = null;
+    let touchStartRotation: [number, number] = [0, 0];
+    let pinchStartDistance = 0;
+    let pinchStartScale = radius;
+
+    const touchDistance = (t: TouchList) => {
+      const dx = t[0].clientX - t[1].clientX;
+      const dy = t[0].clientY - t[1].clientY;
+      return Math.hypot(dx, dy);
+    };
+
+    const handleTouchStart = (event: TouchEvent) => {
+      autoRotate = false;
+      if (event.touches.length === 1) {
+        touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+        touchStartRotation = [rotation[0], rotation[1]];
+      } else if (event.touches.length === 2) {
+        touchStart = null;
+        pinchStartDistance = touchDistance(event.touches);
+        pinchStartScale = projection.scale();
+      }
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      if (event.touches.length === 1 && touchStart) {
+        event.preventDefault();
+        const sensitivity = 0.5;
+        const dx = event.touches[0].clientX - touchStart.x;
+        const dy = event.touches[0].clientY - touchStart.y;
+        rotation[0] = touchStartRotation[0] + dx * sensitivity;
+        rotation[1] = Math.max(-90, Math.min(90, touchStartRotation[1] - dy * sensitivity));
+        projection.rotate(rotation);
+        render();
+      } else if (event.touches.length === 2 && pinchStartDistance > 0) {
+        event.preventDefault();
+        const ratio = touchDistance(event.touches) / pinchStartDistance;
+        const newRadius = Math.max(
+          radius * 0.5,
+          Math.min(radius * 3, pinchStartScale * ratio),
+        );
+        projection.scale(newRadius);
+        render();
+      }
+    };
+
+    const handleTouchEnd = (event: TouchEvent) => {
+      if (event.touches.length === 0) {
+        touchStart = null;
+        pinchStartDistance = 0;
+        setTimeout(() => {
+          autoRotate = true;
+        }, 10);
+      } else if (event.touches.length === 1) {
+        pinchStartDistance = 0;
+        touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+        touchStartRotation = [rotation[0], rotation[1]];
+      }
+    };
+
     canvas.addEventListener("mousedown", handleMouseDown);
     canvas.addEventListener("wheel", handleWheel);
+    canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
+    canvas.addEventListener("touchmove", handleTouchMove, { passive: false });
+    canvas.addEventListener("touchend", handleTouchEnd);
+    canvas.addEventListener("touchcancel", handleTouchEnd);
 
     loadWorldData();
 
@@ -257,7 +321,12 @@ export default function RotatingEarth({
       viewportObserver?.disconnect();
       canvas.removeEventListener("mousedown", handleMouseDown);
       canvas.removeEventListener("wheel", handleWheel);
+      canvas.removeEventListener("touchstart", handleTouchStart);
+      canvas.removeEventListener("touchmove", handleTouchMove);
+      canvas.removeEventListener("touchend", handleTouchEnd);
+      canvas.removeEventListener("touchcancel", handleTouchEnd);
     };
+
 
   }, [width, height]);
 
