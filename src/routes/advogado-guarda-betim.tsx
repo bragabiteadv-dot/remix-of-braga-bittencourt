@@ -38,13 +38,13 @@ import sedeBetim3 from "@/assets/sede-betim-3.jpg";
 import sedeBetim4 from "@/assets/sede-betim-4.jpg";
 import sedeBetim5 from "@/assets/sede-betim-5.jpg";
 
-const PATH = "/advogado-divorcio-betim";
-const TITLE = "Advogado de Divórcio em Betim | Braga Bitencourt Advogados";
+const PATH = "/advogado-guarda-betim";
+const TITLE = "Advogado de Guarda em Betim | Braga Bitencourt Advogados";
 const DESCRIPTION =
   "Advogado de divórcio em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
 
 
-export const Route = createFileRoute("/advogado-divorcio-betim")({
+export const Route = createFileRoute("/advogado-guarda-betim")({
   head: () =>
     buildSeo({
       path: PATH,
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/advogado-divorcio-betim")({
       schema: [{
         "@context": "https://schema.org",
         "@type": "LegalService",
-        name: "Braga Bitencourt Advogados — Advogado de Divórcio em Betim",
+        name: "Braga Bitencourt Advogados — Advogado de Guarda em Betim",
         description: DESCRIPTION,
         url: siteUrl(PATH),
         telephone: "+5531980260880",
@@ -82,7 +82,7 @@ export const Route = createFileRoute("/advogado-divorcio-betim")({
           {
             "@type": "ListItem",
             position: 2,
-            name: "Advogado de Divórcio em Betim",
+            name: "Advogado de Guarda em Betim",
             item: siteUrl(PATH),
           },
         ],
@@ -167,7 +167,7 @@ function LpHero() {
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
             <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
-              Advogado de Divórcio em Betim
+              Advogado de Guarda em Betim
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
