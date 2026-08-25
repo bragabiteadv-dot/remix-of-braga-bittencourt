@@ -55,3 +55,8 @@ export function GoogleIcon({ size = 14 }: { size?: number }) {
     </svg>
   );
 }
+
+export function useWhatsAppLink() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  return whatsappPageLink(pathname);
+}

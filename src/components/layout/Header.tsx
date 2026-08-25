@@ -31,13 +31,13 @@ export function Header() {
               <MapPin size={14} className="text-gold-light" />
               <span>Av. Amazonas, 1446 - Betim</span>
             </a>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold-light transition-colors">
+            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold-light transition-colors">
               <Phone size={14} className="text-gold-light" />
               <span>(31) 98026-0880</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gold-light transition-colors">
+            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gold-light transition-colors">
               <MessageSquare size={14} /> WhatsApp
             </a>
             <a href="mailto:bragabitencourtadv@gmail.com" className="flex items-center gap-1 hover:text-gold-light transition-colors">

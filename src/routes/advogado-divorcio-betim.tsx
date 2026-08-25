@@ -622,7 +622,7 @@ function LpFooter() {
                 <span>Av. Amazonas 1446, sala 706/707, Brasiléia - Betim</span>
               </a>
               <a
-                href={WHATSAPP_LINK}
+                href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
@@ -635,7 +635,7 @@ function LpFooter() {
             {/* Right buttons */}
             <div className="flex items-center gap-2">
               <a
-                href={WHATSAPP_LINK}
+                href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
