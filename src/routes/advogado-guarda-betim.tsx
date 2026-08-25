@@ -175,8 +175,8 @@ function LpHero() {
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
-              Especialista em Divórcio em Betim — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem estar.
-              Conduzimos seu divórcio em Betim com o sigilo, a segurança e o acolhimento que você precisa.
+              Advogado especialista em Guarda em Betim — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem estar.
+              Conduzimos seu caso de guarda com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
             <WhatsAppCta className="w-full sm:w-auto" />
@@ -247,8 +247,8 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Quer fazer o divórcio, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre o divórcio consensual e o litigioso para proteger seus direitos de forma rápida.",
+       title: "Quer obter a guarda de seu filho, mas não sabe se será litigiosa ou consensual?",
+       text: "Entenda a diferença entre a ação de guarda litigiosa e uma consensual, os benefícios de cada uma  para proteger seus direitos de forma segura.",
     },
     {
       icon: <Users className="w-7 h-7" />,
@@ -257,23 +257,23 @@ function LpSituations() {
     },
     {
       icon: <Coins className="w-7 h-7" />,
-      title: "Tem dúvidas sobre o valor da pensão alimentícia ou como calculá-lo?",
-      text: "Saiba como funciona o cálculo da pensão alimentícia, como solicitar ou pedir a revisão dos valores determinados.",
+       title: "Como o regime de guarda escolhido pode influenciar a rotina de convivência entre pais e filhos?",
+       text: "Saiba que o regime de guarda adequado é primordial para garantir que a convivência ocorra de forma harmônica entre pais e filhos.",
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
-      title: "Quer saber se pode voltar a usar o nome de solteiro(a)?",
-      text: "Entenda as regras para a alteração do sobrenome após o divórcio e a atualização dos documentos oficiais.",
+       title: "É possível definir o regime de convivência conforme minha disponibilidade e a rotina do filho?",
+       text: "Elaboramos regimes de convivência personalizados e extensivos, moldados à necessidade do cliente.\n\n",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "Busca uma forma rápida de divorciar e quer saber se pode ser via cartório?",
-      text: "Descubra se você cumpre os requisitos para o divórcio extrajudicial, que pode ser mais rápido e econômico.",
+       title: "Um dos genitores se utiliza do filho para se vingar do outro genitor.",
+       text: "Nosso escritório se utiliza das melhores e mais modernas técnicas de convivência, adequadas para evitar que a criança seja instrumento de vingança entre genitores.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
-      title: "Não sabe quais bens terá direito na partilha de bens do casal?",
-      text: "Proteja o seu patrimônio de acordo com o regime de bens escolhido no casamento de forma estratégica..",
+       title: "Meu filho ainda é bebê. Posso exercer convivência com ele? De que forma?",
+       text: "Todo genitor tem direito ao exercício de convivência, independentemente da idade do filho. Há regimes progressivos, mas nunca a supressão da convivência.",
     },
   ];
 
@@ -282,7 +282,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            Você está passando por uma dessas situações em seu divórcio?
+             VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES DE GUARDA?
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
