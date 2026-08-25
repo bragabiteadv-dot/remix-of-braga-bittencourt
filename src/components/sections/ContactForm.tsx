@@ -114,7 +114,6 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
                     <input 
                       type="text" 
-                      required
                       placeholder="Ex: Seu nome"
                       className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
                       value={formData.nome}
@@ -130,7 +129,6 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                     <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
                     <input 
                       type="text" 
-                      required
                       placeholder="Ex: sua cidade ou estado"
                       className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
                       value={formData.cidade}
@@ -146,7 +144,6 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                 <div className="relative">
                   <Folder className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
                   <select 
-                    required
                     className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-12 py-4 text-white focus:outline-none focus:border-gold-light transition-colors appearance-none text-sm font-montserrat"
                     value={formData.caso}
                     onChange={(e) => setFormData({...formData, caso: e.target.value})}
@@ -165,11 +162,10 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
 
               {/* Mensagem Field */}
               <div className="space-y-3">
-                <label className="text-white text-xs font-bold uppercase tracking-wider block">Digite aqui o seu caso</label>
+                <label className="text-white text-xs font-bold uppercase tracking-wider block">Resumo do caso</label>
                 <div className="relative">
                   <FileText className="absolute left-4 top-4 text-white/30 w-4 h-4" />
                   <textarea 
-                    required
                     rows={5}
                     placeholder="Descreva brevemente sua situação..."
                     className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat resize-none"
