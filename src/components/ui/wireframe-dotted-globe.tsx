@@ -284,11 +284,14 @@ export default function RotatingEarth({
     };
 
     // Touch support: one finger drags to rotate, two fingers pinch to zoom.
-    // Gestures only start when the first touch is inside the globe circle.
+    // A gesture is activated only when it starts on the visible globe circle.
+    // Touches that start on the canvas but outside the circle are ignored so
+    // the page can keep scrolling normally on mobile.
     let touchStart: { x: number; y: number } | null = null;
     let touchStartRotation: [number, number] = [0, 0];
     let pinchStartDistance = 0;
     let pinchStartScale = radius;
+    let isTouchGestureActive = false;
 
     const touchDistance = (t: TouchList) => {
       const dx = t[0].clientX - t[1].clientX;
@@ -296,20 +299,45 @@ export default function RotatingEarth({
       return Math.hypot(dx, dy);
     };
 
+    const isTouchMidpointOverGlobe = (touches: TouchList) => {
+      const firstTouch = touches[0];
+      const secondTouch = touches[1];
+      if (!firstTouch || !secondTouch) return false;
+
+      return isPointOverGlobe(
+        (firstTouch.clientX + secondTouch.clientX) / 2,
+        (firstTouch.clientY + secondTouch.clientY) / 2,
+      );
+    };
+
+    const resetTouchGesture = () => {
+      isTouchGestureActive = false;
+      touchStart = null;
+      pinchStartDistance = 0;
+    };
+
     const handleTouchStart = (event: TouchEvent) => {
       if (event.touches.length === 1) {
-        if (!isPointOverGlobe(event.touches[0].clientX, event.touches[0].clientY)) {
-          touchStart = null;
+        const firstTouch = event.touches[0];
+        if (!firstTouch || !isPointOverGlobe(firstTouch.clientX, firstTouch.clientY)) {
+          resetTouchGesture();
           return;
         }
+
+        event.preventDefault();
+        isTouchGestureActive = true;
         autoRotate = false;
-        touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+        touchStart = { x: firstTouch.clientX, y: firstTouch.clientY };
         touchStartRotation = [rotation[0], rotation[1]];
       } else if (event.touches.length === 2) {
-        if (!touchStart) {
-          pinchStartDistance = 0;
+        if (!isTouchGestureActive && !isTouchMidpointOverGlobe(event.touches)) {
+          resetTouchGesture();
           return;
         }
+
+        event.preventDefault();
+        isTouchGestureActive = true;
+        autoRotate = false;
         touchStart = null;
         pinchStartDistance = touchDistance(event.touches);
         pinchStartScale = projection.scale();
@@ -317,17 +345,21 @@ export default function RotatingEarth({
     };
 
     const handleTouchMove = (event: TouchEvent) => {
+      if (!isTouchGestureActive) return;
+
+      event.preventDefault();
+
       if (event.touches.length === 1 && touchStart) {
-        event.preventDefault();
         const sensitivity = 0.5;
-        const dx = event.touches[0].clientX - touchStart.x;
-        const dy = event.touches[0].clientY - touchStart.y;
+        const firstTouch = event.touches[0];
+        if (!firstTouch) return;
+        const dx = firstTouch.clientX - touchStart.x;
+        const dy = firstTouch.clientY - touchStart.y;
         rotation[0] = touchStartRotation[0] + dx * sensitivity;
         rotation[1] = Math.max(-90, Math.min(90, touchStartRotation[1] - dy * sensitivity));
         projection.rotate(rotation);
         render();
       } else if (event.touches.length === 2 && pinchStartDistance > 0) {
-        event.preventDefault();
         const ratio = touchDistance(event.touches) / pinchStartDistance;
         const newRadius = Math.max(
           radius * 0.5,
@@ -339,15 +371,18 @@ export default function RotatingEarth({
     };
 
     const handleTouchEnd = (event: TouchEvent) => {
+      if (!isTouchGestureActive) return;
+
       if (event.touches.length === 0) {
-        touchStart = null;
-        pinchStartDistance = 0;
+        resetTouchGesture();
         setTimeout(() => {
           autoRotate = true;
         }, 10);
       } else if (event.touches.length === 1) {
+        const firstTouch = event.touches[0];
+        if (!firstTouch) return;
         pinchStartDistance = 0;
-        touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+        touchStart = { x: firstTouch.clientX, y: firstTouch.clientY };
         touchStartRotation = [rotation[0], rotation[1]];
       }
     };
