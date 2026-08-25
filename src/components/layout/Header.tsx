@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, MessageSquare, Facebook, Instagram, Mail, Menu, X } from "lucide-react";
 import { WhatsAppCta, useWhatsAppLink, GOOGLE_URL, GoogleIcon } from "@/components/ui/whatsapp-cta";
 import headerLogo from "@/assets/header-logo.png";
+import { cn } from "@/lib/utils";
 
 
 const navLinks = [
@@ -16,7 +17,18 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const waLink = useWhatsAppLink();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const topBarHeight = window.innerWidth >= 768 ? 40 : 0;
+      setScrolled(window.scrollY > topBarHeight);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="w-full flex flex-col">
@@ -53,8 +65,16 @@ export function Header() {
         </div>
       </div>
 
+      {/* Placeholder keeps layout stable when nav is fixed */}
+      {scrolled && <div className="h-[72px]" aria-hidden="true" />}
+
       {/* Main Nav */}
-      <nav className="bg-navy sticky top-0 z-50 py-4 border-b border-white/5 shadow-xl">
+      <nav
+        className={cn(
+          "bg-navy z-50 py-4 border-b border-white/5 shadow-xl transition-all duration-300",
+          scrolled ? "fixed top-0 left-0 right-0" : "sticky top-0"
+        )}
+      >
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
             <img 
