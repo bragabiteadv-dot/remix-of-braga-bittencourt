@@ -119,31 +119,67 @@ export function Footer() {
         {/* Contact cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
           {/* Onde estamos */}
-          <a
-            href={GOOGLE_SEARCH_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+          <div
+            onClick={() => window.open(GOOGLE_SEARCH_URL, "_blank", "noopener,noreferrer")}
+            className="group bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
           >
-            <div className="flex items-center gap-3 mb-4">
+            <a
+              href={GOOGLE_SEARCH_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity"
+            >
               <div className="w-10 h-10 rounded-lg bg-gold-light/20 flex items-center justify-center text-gold-light">
                 <MapPin size={20} />
               </div>
               <span className="text-sm font-semibold tracking-wide text-white/90">
                 ONDE ESTAMOS:
               </span>
-            </div>
+            </a>
             <div className="space-y-3 text-sm text-white/70">
               <div>
-                <p className="font-semibold text-white/90 mb-0.5">-Escritório 1:</p>
-                <p>Av. Raja Gabáglia, 2000 - sala 614 - Alpes, BH - MG.</p>
+                <a
+                  href={GOOGLE_SEARCH_URL_BH}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="block font-semibold text-white/90 mb-0.5 hover:text-gold-light transition-colors"
+                >
+                  -Escritório 1:
+                </a>
+                <a
+                  href={BH_MAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="block hover:text-gold-light transition-colors"
+                >
+                  Av. Raja Gabáglia, 2000 - sala 614 - Alpes, BH - MG.
+                </a>
               </div>
               <div>
-                <p className="font-semibold text-white/90 mb-0.5">-Escritório 2:</p>
-                <p>Av. Amazonas, 1446 - sala 706/707 - Brasiléia, Betim - MG.</p>
+                <a
+                  href={GOOGLE_SEARCH_URL_BETIM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="block font-semibold text-white/90 mb-0.5 hover:text-gold-light transition-colors"
+                >
+                  -Escritório 2:
+                </a>
+                <a
+                  href={BETIM_MAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="block hover:text-gold-light transition-colors"
+                >
+                  Av. Amazonas, 1446 - sala 706/707 - Brasiléia, Betim - MG.
+                </a>
               </div>
             </div>
-          </a>
+          </div>
 
           {/* WhatsApp */}
           <a
