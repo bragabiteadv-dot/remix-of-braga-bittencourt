@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import { FloatingActions } from "../components/layout/FloatingActions";
+import { ScrollHint } from "../components/layout/ScrollHint";
 
 import { NotFoundView } from "../components/layout/NotFoundView";
 
