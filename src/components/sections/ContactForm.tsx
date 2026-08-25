@@ -50,8 +50,8 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto bg-navy rounded-sm overflow-hidden shadow-2xl flex flex-col border border-white/5">
 
-          {/* Top: Full-width image banner */}
-          <div className="relative w-full bg-navy overflow-hidden aspect-[16/9] lg:aspect-[2/1]">
+          {/* Top: Full-width image */}
+          <div className="relative w-full bg-navy">
             <img
               src={formOffice}
               alt="Escritório de Advocacia"
@@ -59,7 +59,7 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
               decoding="async"
               width={697}
               height={587}
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="w-full h-auto object-center"
             />
 
             {/* Bottom gradient for readability and blend into form */}
