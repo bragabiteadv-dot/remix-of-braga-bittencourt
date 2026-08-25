@@ -37,7 +37,7 @@ export function Footer() {
         {/* Social icons */}
         <div className="flex justify-center items-center gap-3 mb-6">
           <a
-            href={GOOGLE_URL}
+            href="https://www.facebook.com/bragabitencourtadv/"
             target="_blank"
             rel="noopener noreferrer"
             className={socialIconClass}
@@ -77,7 +77,7 @@ export function Footer() {
             </svg>
           </a>
           <a
-            href={GOOGLE_URL}
+            href="https://www.instagram.com/bragabitencourtadv/"
             target="_blank"
             rel="noopener noreferrer"
             className={socialIconClass}

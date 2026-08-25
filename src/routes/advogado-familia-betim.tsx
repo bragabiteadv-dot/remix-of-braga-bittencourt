@@ -675,7 +675,7 @@ function LpFooter() {
                 <Home size={18} />
               </Link>
               <a
-                href={GOOGLE_URL}
+                href="https://www.facebook.com/bragabitencourtadv/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={socialIconClass}
@@ -693,7 +693,7 @@ function LpFooter() {
                 <GoogleIcon size={18} />
               </a>
               <a
-                href={GOOGLE_URL}
+                href="https://www.instagram.com/bragabitencourtadv/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={socialIconClass}
