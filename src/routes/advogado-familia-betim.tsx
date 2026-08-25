@@ -14,7 +14,6 @@ import {
   Facebook,
   Instagram,
   Mail,
-  ArrowUp,
   Phone,
   Home,
 } from "lucide-react";
@@ -614,10 +613,6 @@ const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bittencourt+ado
 const BETIM_MAP_URL = MAPS_URL;
 
 function LpFooter() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   const socialIconClass =
     "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-gold-light hover:text-navy hover:border-gold-light transition-all duration-300";
 
@@ -728,14 +723,6 @@ function LpFooter() {
         </div>
       </div>
 
-      {/* Back to top button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gold-gradient text-navy shadow-lg shadow-gold/20 flex items-center justify-center hover:-translate-y-1 transition-transform duration-300"
-        aria-label="Voltar ao topo"
-      >
-        <ArrowUp size={20} strokeWidth={2.5} />
-      </button>
     </footer>
   );
 }
