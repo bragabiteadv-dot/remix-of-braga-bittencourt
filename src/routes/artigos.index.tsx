@@ -36,12 +36,12 @@ function Artigos() {
   return (
     <div className="pt-32 pb-24 bg-gradient-to-b from-white via-white to-[#f5eee0] min-h-screen">
       <div className="container mx-auto">
-        <header className="mb-10">
+        <div className="mb-10">
           <h1 className="text-navy text-4xl md:text-5xl font-cinzel mb-3">Artigos e Blog</h1>
           <p className="text-navy/60 font-montserrat">
             Conteúdos práticos e atualizados com linguagem clara. Use a busca ou filtre por categoria.
           </p>
-        </header>
+        </div>
 
         {/* Toolbar */}
         <div className="bg-white rounded-2xl shadow-[0_10px_40px_-15px_rgba(40,54,80,0.15)] border border-navy/5 p-6 md:p-8 mb-10 grid gap-6 md:grid-cols-[minmax(260px,320px)_1fr] items-center">
@@ -101,13 +101,14 @@ function Artigos() {
             Nenhum artigo encontrado. Tente outra busca ou categoria.
           </div>
         ) : (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2">
             {filtered.map((article) => (
               <article
                 key={article.id}
                 className="group bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(40,54,80,0.15)] border border-navy/5 hover:shadow-[0_20px_50px_-20px_rgba(40,54,80,0.35)] hover:-translate-y-1 transition-all duration-500 flex flex-col"
               >
-                <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-[#f5eee0] via-[#faf6ed] to-[#e8dcc4]">
+                <div className="relative aspect-[3/1] overflow-hidden bg-gradient-to-br from-[#f5eee0] via-[#faf6ed] to-[#e8dcc4]">
+
                   {article.image ? (
                     <img
                       src={article.image}

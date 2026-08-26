@@ -14,12 +14,15 @@ export function ScrollHint({ topOffset = 84 }: ScrollHintProps) {
       const doc = document.documentElement;
 
       // position right below the (possibly sticky/fixed) site header
-      const headers = Array.from(document.querySelectorAll("header"));
+      const headers = Array.from(document.querySelectorAll("header, header nav, body > div nav"));
       let bottom = 0;
       headers.forEach((h) => {
+        const pos = window.getComputedStyle(h).position;
+        if (pos !== "fixed" && pos !== "sticky") return;
         const r = h.getBoundingClientRect();
         if (r.height > 0 && r.bottom > bottom) bottom = r.bottom;
       });
+
       setTop(Math.max(16, Math.round(bottom > 0 ? bottom + 12 : topOffset)));
 
       const footer = document.querySelector("footer");
