@@ -176,7 +176,7 @@ function LpHero() {
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
               Advogado especialista em Divórcio em Betim — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem estar.
-              Conduzimos seu divórcio em Betim com o sigilo, a segurança e o acolhimento que você precisa.
+              Conduzimos seu divórcio judicial ou extrajudicial em Betim com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
             <WhatsAppCta className="w-full sm:w-auto" />
