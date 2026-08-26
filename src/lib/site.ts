@@ -16,7 +16,7 @@
  * Todas as URLs canônicas, sitemap, Open Graph e Twitter passam a usar
  * automaticamente o domínio oficial.
  */
-export const SITE_DOMAIN = "";
+export const SITE_DOMAIN = "https://bragabitencourt.com";
 
 /** Nome do site usado em og:site_name e sufixos de título. */
 export const SITE_NAME = "Braga Bitencourt Advogados";
