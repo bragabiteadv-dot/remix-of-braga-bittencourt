@@ -35,6 +35,12 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/advogado-curatela-betim", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-divorcio-extrajudicial-betim", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-divorcio-nova-lima", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-familia-nova-lima", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-guarda-nova-lima", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-pensao-alimenticia-nova-lima", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-inventario-nova-lima", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-curatela-nova-lima", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-divorcio-extrajudicial-nova-lima", changefreq: "monthly", priority: "0.9" },
           ...ARTICLES.map((a) => ({
             path: `/artigos/${a.slug}`,
             changefreq: "monthly" as const,

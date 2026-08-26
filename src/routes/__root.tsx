@@ -95,7 +95,13 @@ function RootComponent() {
     pathname.startsWith("/advogado-inventario-betim") ||
     pathname.startsWith("/advogado-curatela-betim") ||
     pathname.startsWith("/advogado-divorcio-extrajudicial-betim") ||
-    pathname.startsWith("/advogado-divorcio-nova-lima");
+    pathname.startsWith("/advogado-divorcio-nova-lima") ||
+    pathname.startsWith("/advogado-familia-nova-lima") ||
+    pathname.startsWith("/advogado-guarda-nova-lima") ||
+    pathname.startsWith("/advogado-pensao-alimenticia-nova-lima") ||
+    pathname.startsWith("/advogado-inventario-nova-lima") ||
+    pathname.startsWith("/advogado-curatela-nova-lima") ||
+    pathname.startsWith("/advogado-divorcio-extrajudicial-nova-lima");
 
   if (isStandaloneLanding) {
     return (
