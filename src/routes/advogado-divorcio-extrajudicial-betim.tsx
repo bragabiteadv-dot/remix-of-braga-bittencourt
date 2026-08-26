@@ -257,8 +257,8 @@ function LpSituations() {
     },
     {
       icon: <Coins className="w-7 h-7" />,
-      title: "Precisa definir guarda, visitas e pensão no divórcio consensual?",
-      text: "Formalizamos todos os termos do acordo com segurança jurídica para proteger seus direitos e os dos seus filhos.",
+      title: "Consigo me divorciar em cartórioe fazer partilha quando meus bens estão financiados?",
+      text: "Sim, é possível. Nosso corpo de profissionais preparam seu divórcio em cartório incluindo a partilha de bens quitados e financiados.",
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
