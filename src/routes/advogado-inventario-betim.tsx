@@ -41,7 +41,7 @@ import sedeBetim5 from "@/assets/sede-betim-5.jpg";
 const PATH = "/advogado-inventario-betim";
 const TITLE = "Advogado de Inventário em Betim | Braga Bitencourt Advogados";
 const DESCRIPTION =
-  "Advogado de inventário em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
+  "Advogado de inventário em Betim com mais de 20 anos de experiência. Inventários judiciais e extrajudiciais, partilha de bens, testamentos e planejamento sucessório com sigilo e segurança.";
 
 
 export const Route = createFileRoute("/advogado-inventario-betim")({
