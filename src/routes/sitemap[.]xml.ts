@@ -55,6 +55,13 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/advogado-inventario-contagem", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-curatela-contagem", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-divorcio-extrajudicial-contagem", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-divorcio-igarape", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-familia-igarape", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-guarda-igarape", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-pensao-alimenticia-igarape", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-inventario-igarape", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-curatela-igarape", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-divorcio-extrajudicial-igarape", changefreq: "monthly", priority: "0.9" },
           ...ARTICLES.map((a) => ({
             path: `/artigos/${a.slug}`,
             changefreq: "monthly" as const,
