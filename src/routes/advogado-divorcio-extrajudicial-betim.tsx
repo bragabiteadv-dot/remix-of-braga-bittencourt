@@ -253,7 +253,7 @@ function LpSituations() {
     {
       icon: <Users className="w-7 h-7" />,
       title: "Tem dúvidas se seu caso pode ser resolvido em cartório?",
-      text: "Analisamos se há filhos menores, guarda compartilhada e acordo sobre pensão para indicar o melhor caminho.",
+      text: "Tenha com nossos especialistas uma análise completa se seu caso se enquadra na efetivação extrajudicial, via cartório. ",
     },
     {
       icon: <Coins className="w-7 h-7" />,
