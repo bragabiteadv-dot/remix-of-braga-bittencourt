@@ -267,8 +267,8 @@ function LpSituations() {
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "Precisa alterar o sobrenome após o divórcio em cartório?",
-      text: "Cuidamos da atualização documental e do retorno ao nome de solteiro(a) de forma simples e correta.",
+      title: "Precisa alterar seu nome no divórcio?",
+      text: "Nossos pedidos de divórcio são personalizados e atendem individualmente a necessidade de cada cliente, sendo possível retomar o uso do nome de solteiro.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
