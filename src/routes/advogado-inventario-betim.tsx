@@ -247,33 +247,33 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Quer fazer o divórcio, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre o divórcio consensual e o litigioso para proteger seus direitos de forma rápida.",
-    },
-    {
-      icon: <Users className="w-7 h-7" />,
-      title: "Precisa definir a guarda dos filhos ou a regulamentação de visitas?",
-      text: "Garanta o bem-estar dos seus filhos com uma definição clara e eficiente sobre guarda compartilhada e convivência.",
-    },
-    {
-      icon: <Coins className="w-7 h-7" />,
-      title: "Tem dúvidas sobre o valor da pensão alimentícia ou como calculá-lo?",
-      text: "Saiba como funciona o cálculo da pensão alimentícia, como solicitar ou pedir a revisão dos valores determinados.",
+      title: "Precisa abrir um inventário, mas não sabe se deve ser judicial ou extrajudicial?",
+      text: "Entenda a diferença entre o inventário judicial e o extrajudicial para agilizar a partilha dos bens de forma segura.",
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
-      title: "Quer saber se pode voltar a usar o nome de solteiro(a)?",
-      text: "Entenda as regras para a alteração do sobrenome após o divórcio e a atualização dos documentos oficiais.",
+      title: "Não sabe quais documentos são necessários para o inventário?",
+      text: "Saiba quais documentos reunir para acelerar a abertura, a partilha e a conclusão do inventário com menos burocracia.",
+    },
+    {
+      icon: <Users className="w-7 h-7" />,
+      title: "Tem medo de que o inventário gere brigas entre os herdeiros?",
+      text: "Conduzimos o inventário com mediação estratégica para preservar a harmonia familiar e proteger os direitos de todos.",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "Busca uma forma rápida de divorciar e quer saber se pode ser via cartório?",
-      text: "Descubra se você cumpre os requisitos para o divórcio extrajudicial, que pode ser mais rápido e econômico.",
+      title: "Quer evitar que bens sejam perdidos ou desvalorizados durante o inventário?",
+      text: "Proteja o patrimônio com uma gestão eficiente e segura da herança, desde a avaliação até a transferência dos bens.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
-      title: "Não sabe quais bens terá direito na partilha de bens do casal?",
-      text: "Proteja o seu patrimônio de acordo com o regime de bens escolhido no casamento de forma estratégica..",
+      title: "Precisa vender ou transferir um bem do espólio antes da conclusão do inventário?",
+      text: "Entenda como funciona a autorização judicial para alienação de bens em inventário e evite complicações futuras.",
+    },
+    {
+      icon: <Coins className="w-7 h-7" />,
+      title: "Não sabe como calcular os impostos e custas do inventário?",
+      text: "Planeje o pagamento de ITCMD, custas e honorários de forma transparente, estratégica e dentro da lei.",
     },
   ];
 
