@@ -36,12 +36,12 @@ function Artigos() {
   return (
     <div className="pt-32 pb-24 bg-gradient-to-b from-white via-white to-[#f5eee0] min-h-screen">
       <div className="container mx-auto">
-        <header className="mb-10">
+        <div className="mb-10">
           <h1 className="text-navy text-4xl md:text-5xl font-cinzel mb-3">Artigos e Blog</h1>
           <p className="text-navy/60 font-montserrat">
             Conteúdos práticos e atualizados com linguagem clara. Use a busca ou filtre por categoria.
           </p>
-        </header>
+        </div>
 
         {/* Toolbar */}
         <div className="bg-white rounded-2xl shadow-[0_10px_40px_-15px_rgba(40,54,80,0.15)] border border-navy/5 p-6 md:p-8 mb-10 grid gap-6 md:grid-cols-[minmax(260px,320px)_1fr] items-center">

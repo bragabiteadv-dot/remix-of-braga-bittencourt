@@ -127,7 +127,7 @@ function ArticlePage() {
             {/* Main content */}
             <article>
               {/* Hero image / placeholder */}
-              <div className="relative rounded-2xl overflow-hidden aspect-square mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/1] mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
                 {article.image ? (
                   <img src={article.image} alt={article.title} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
                 ) : (
@@ -199,7 +199,7 @@ function ArticlePage() {
                   <h3 className="text-navy font-cinzel text-2xl md:text-3xl mb-8">
                     Continue lendo
                   </h3>
-                  <div className="grid gap-6 md:grid-cols-3">
+                  <div className="grid gap-6 md:grid-cols-2">
                     {related.map((r) => (
                       <Link
                         key={r.id}
@@ -207,7 +207,7 @@ function ArticlePage() {
                         params={{ slug: r.slug }}
                         className="group bg-white rounded-xl overflow-hidden border border-navy/5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500"
                       >
-                        <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#f5eee0] to-[#e8dcc4] flex items-center justify-center">
+                        <div className="aspect-[3/1] overflow-hidden bg-gradient-to-br from-[#f5eee0] to-[#e8dcc4] flex items-center justify-center">
                           {r.image ? (
                             <img src={r.image} alt={r.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                           ) : (
