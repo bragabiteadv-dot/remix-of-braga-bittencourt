@@ -175,7 +175,7 @@ function LpHero() {
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
               Advogado especialista em Divórcio em Nova Lima — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem estar.
-              Conduzimos seu divórcio judicial ou extrajudicial ( em Cartório) em Nova Lima com o sigilo, a segurança e o acolhimento que você precisa.
+              Conduzimos seu divórcio judicial ou extrajudicial (em Cartório) em Nova Lima com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
             <WhatsAppCta className="w-full sm:w-auto" />
@@ -535,9 +535,9 @@ function LpPresence() {
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">
-            Estamos prontos para oferecer orientação jurídica especializada com atendimento humanizado e ágil. Nossa
-            sede está localizada em Nova Lima/MG, com fácil acesso para clientes de toda a região metropolitana. Entre em
-            contato e agende sua consulta.
+             Estamos prontos para oferecer orientação jurídica especializada com atendimento humanizado e ágil. Fácil acesso
+             para clientes de toda a região metropolitana. Atendimento presencial e à distância. Entre em contato e agende
+             sua consulta.
           </p>
         </div>
 
