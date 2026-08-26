@@ -20,6 +20,7 @@ import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-i
 import { Route as AdvogadoGuardaBetimRouteImport } from './routes/advogado-guarda-betim'
 import { Route as AdvogadoFamiliaBetimRouteImport } from './routes/advogado-familia-betim'
 import { Route as AdvogadoDivorcioBetimRouteImport } from './routes/advogado-divorcio-betim'
+import { Route as AdvogadoCuratelaBetimRouteImport } from './routes/advogado-curatela-betim'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArtigosIndexRouteImport } from './routes/artigos.index'
@@ -81,6 +82,11 @@ const AdvogadoDivorcioBetimRoute = AdvogadoDivorcioBetimRouteImport.update({
   path: '/advogado-divorcio-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoCuratelaBetimRoute = AdvogadoCuratelaBetimRouteImport.update({
+  id: '/advogado-curatela-betim',
+  path: '/advogado-curatela-betim',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SplatRoute = SplatRouteImport.update({
   id: '/$',
   path: '/$',
@@ -105,6 +111,7 @@ const ArtigosSlugRoute = ArtigosSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
@@ -140,6 +148,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
@@ -159,6 +168,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$'
+    | '/advogado-curatela-betim'
     | '/advogado-divorcio-betim'
     | '/advogado-familia-betim'
     | '/advogado-guarda-betim'
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/$'
+    | '/advogado-curatela-betim'
     | '/advogado-divorcio-betim'
     | '/advogado-familia-betim'
     | '/advogado-guarda-betim'
@@ -193,6 +204,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/$'
+    | '/advogado-curatela-betim'
     | '/advogado-divorcio-betim'
     | '/advogado-familia-betim'
     | '/advogado-guarda-betim'
@@ -211,6 +223,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
+  AdvogadoCuratelaBetimRoute: typeof AdvogadoCuratelaBetimRoute
   AdvogadoDivorcioBetimRoute: typeof AdvogadoDivorcioBetimRoute
   AdvogadoFamiliaBetimRoute: typeof AdvogadoFamiliaBetimRoute
   AdvogadoGuardaBetimRoute: typeof AdvogadoGuardaBetimRoute
@@ -305,6 +318,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoDivorcioBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-curatela-betim': {
+      id: '/advogado-curatela-betim'
+      path: '/advogado-curatela-betim'
+      fullPath: '/advogado-curatela-betim'
+      preLoaderRoute: typeof AdvogadoCuratelaBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$': {
       id: '/$'
       path: '/$'
@@ -339,6 +359,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
+  AdvogadoCuratelaBetimRoute: AdvogadoCuratelaBetimRoute,
   AdvogadoDivorcioBetimRoute: AdvogadoDivorcioBetimRoute,
   AdvogadoFamiliaBetimRoute: AdvogadoFamiliaBetimRoute,
   AdvogadoGuardaBetimRoute: AdvogadoGuardaBetimRoute,
