@@ -16,18 +16,25 @@ import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as AdvogadoPensaoAlimenticiaNovaLimaRouteImport } from './routes/advogado-pensao-alimenticia-nova-lima'
+import { Route as AdvogadoPensaoAlimenticiaBhRouteImport } from './routes/advogado-pensao-alimenticia-bh'
 import { Route as AdvogadoPensaoAlimenticiaBetimRouteImport } from './routes/advogado-pensao-alimenticia-betim'
 import { Route as AdvogadoInventarioNovaLimaRouteImport } from './routes/advogado-inventario-nova-lima'
+import { Route as AdvogadoInventarioBhRouteImport } from './routes/advogado-inventario-bh'
 import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-inventario-betim'
 import { Route as AdvogadoGuardaNovaLimaRouteImport } from './routes/advogado-guarda-nova-lima'
+import { Route as AdvogadoGuardaBhRouteImport } from './routes/advogado-guarda-bh'
 import { Route as AdvogadoGuardaBetimRouteImport } from './routes/advogado-guarda-betim'
 import { Route as AdvogadoFamiliaNovaLimaRouteImport } from './routes/advogado-familia-nova-lima'
+import { Route as AdvogadoFamiliaBhRouteImport } from './routes/advogado-familia-bh'
 import { Route as AdvogadoFamiliaBetimRouteImport } from './routes/advogado-familia-betim'
 import { Route as AdvogadoDivorcioNovaLimaRouteImport } from './routes/advogado-divorcio-nova-lima'
 import { Route as AdvogadoDivorcioExtrajudicialNovaLimaRouteImport } from './routes/advogado-divorcio-extrajudicial-nova-lima'
+import { Route as AdvogadoDivorcioExtrajudicialBhRouteImport } from './routes/advogado-divorcio-extrajudicial-bh'
 import { Route as AdvogadoDivorcioExtrajudicialBetimRouteImport } from './routes/advogado-divorcio-extrajudicial-betim'
+import { Route as AdvogadoDivorcioBhRouteImport } from './routes/advogado-divorcio-bh'
 import { Route as AdvogadoDivorcioBetimRouteImport } from './routes/advogado-divorcio-betim'
 import { Route as AdvogadoCuratelaNovaLimaRouteImport } from './routes/advogado-curatela-nova-lima'
+import { Route as AdvogadoCuratelaBhRouteImport } from './routes/advogado-curatela-bh'
 import { Route as AdvogadoCuratelaBetimRouteImport } from './routes/advogado-curatela-betim'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
@@ -70,6 +77,12 @@ const AdvogadoPensaoAlimenticiaNovaLimaRoute =
     path: '/advogado-pensao-alimenticia-nova-lima',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoPensaoAlimenticiaBhRoute =
+  AdvogadoPensaoAlimenticiaBhRouteImport.update({
+    id: '/advogado-pensao-alimenticia-bh',
+    path: '/advogado-pensao-alimenticia-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoPensaoAlimenticiaBetimRoute =
   AdvogadoPensaoAlimenticiaBetimRouteImport.update({
     id: '/advogado-pensao-alimenticia-betim',
@@ -82,6 +95,11 @@ const AdvogadoInventarioNovaLimaRoute =
     path: '/advogado-inventario-nova-lima',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoInventarioBhRoute = AdvogadoInventarioBhRouteImport.update({
+  id: '/advogado-inventario-bh',
+  path: '/advogado-inventario-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdvogadoInventarioBetimRoute = AdvogadoInventarioBetimRouteImport.update({
   id: '/advogado-inventario-betim',
   path: '/advogado-inventario-betim',
@@ -92,6 +110,11 @@ const AdvogadoGuardaNovaLimaRoute = AdvogadoGuardaNovaLimaRouteImport.update({
   path: '/advogado-guarda-nova-lima',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoGuardaBhRoute = AdvogadoGuardaBhRouteImport.update({
+  id: '/advogado-guarda-bh',
+  path: '/advogado-guarda-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdvogadoGuardaBetimRoute = AdvogadoGuardaBetimRouteImport.update({
   id: '/advogado-guarda-betim',
   path: '/advogado-guarda-betim',
@@ -100,6 +123,11 @@ const AdvogadoGuardaBetimRoute = AdvogadoGuardaBetimRouteImport.update({
 const AdvogadoFamiliaNovaLimaRoute = AdvogadoFamiliaNovaLimaRouteImport.update({
   id: '/advogado-familia-nova-lima',
   path: '/advogado-familia-nova-lima',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoFamiliaBhRoute = AdvogadoFamiliaBhRouteImport.update({
+  id: '/advogado-familia-bh',
+  path: '/advogado-familia-bh',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdvogadoFamiliaBetimRoute = AdvogadoFamiliaBetimRouteImport.update({
@@ -119,12 +147,23 @@ const AdvogadoDivorcioExtrajudicialNovaLimaRoute =
     path: '/advogado-divorcio-extrajudicial-nova-lima',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoDivorcioExtrajudicialBhRoute =
+  AdvogadoDivorcioExtrajudicialBhRouteImport.update({
+    id: '/advogado-divorcio-extrajudicial-bh',
+    path: '/advogado-divorcio-extrajudicial-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoDivorcioExtrajudicialBetimRoute =
   AdvogadoDivorcioExtrajudicialBetimRouteImport.update({
     id: '/advogado-divorcio-extrajudicial-betim',
     path: '/advogado-divorcio-extrajudicial-betim',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoDivorcioBhRoute = AdvogadoDivorcioBhRouteImport.update({
+  id: '/advogado-divorcio-bh',
+  path: '/advogado-divorcio-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdvogadoDivorcioBetimRoute = AdvogadoDivorcioBetimRouteImport.update({
   id: '/advogado-divorcio-betim',
   path: '/advogado-divorcio-betim',
@@ -136,6 +175,11 @@ const AdvogadoCuratelaNovaLimaRoute =
     path: '/advogado-curatela-nova-lima',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoCuratelaBhRoute = AdvogadoCuratelaBhRouteImport.update({
+  id: '/advogado-curatela-bh',
+  path: '/advogado-curatela-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdvogadoCuratelaBetimRoute = AdvogadoCuratelaBetimRouteImport.update({
   id: '/advogado-curatela-betim',
   path: '/advogado-curatela-betim',
@@ -166,18 +210,25 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
+  '/advogado-curatela-bh': typeof AdvogadoCuratelaBhRoute
   '/advogado-curatela-nova-lima': typeof AdvogadoCuratelaNovaLimaRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
+  '/advogado-divorcio-bh': typeof AdvogadoDivorcioBhRoute
   '/advogado-divorcio-extrajudicial-betim': typeof AdvogadoDivorcioExtrajudicialBetimRoute
+  '/advogado-divorcio-extrajudicial-bh': typeof AdvogadoDivorcioExtrajudicialBhRoute
   '/advogado-divorcio-extrajudicial-nova-lima': typeof AdvogadoDivorcioExtrajudicialNovaLimaRoute
   '/advogado-divorcio-nova-lima': typeof AdvogadoDivorcioNovaLimaRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
+  '/advogado-familia-bh': typeof AdvogadoFamiliaBhRoute
   '/advogado-familia-nova-lima': typeof AdvogadoFamiliaNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
+  '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
+  '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-nova-lima': typeof AdvogadoInventarioNovaLimaRoute
   '/advogado-pensao-alimenticia-betim': typeof AdvogadoPensaoAlimenticiaBetimRoute
+  '/advogado-pensao-alimenticia-bh': typeof AdvogadoPensaoAlimenticiaBhRoute
   '/advogado-pensao-alimenticia-nova-lima': typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
@@ -192,18 +243,25 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
+  '/advogado-curatela-bh': typeof AdvogadoCuratelaBhRoute
   '/advogado-curatela-nova-lima': typeof AdvogadoCuratelaNovaLimaRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
+  '/advogado-divorcio-bh': typeof AdvogadoDivorcioBhRoute
   '/advogado-divorcio-extrajudicial-betim': typeof AdvogadoDivorcioExtrajudicialBetimRoute
+  '/advogado-divorcio-extrajudicial-bh': typeof AdvogadoDivorcioExtrajudicialBhRoute
   '/advogado-divorcio-extrajudicial-nova-lima': typeof AdvogadoDivorcioExtrajudicialNovaLimaRoute
   '/advogado-divorcio-nova-lima': typeof AdvogadoDivorcioNovaLimaRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
+  '/advogado-familia-bh': typeof AdvogadoFamiliaBhRoute
   '/advogado-familia-nova-lima': typeof AdvogadoFamiliaNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
+  '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
+  '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-nova-lima': typeof AdvogadoInventarioNovaLimaRoute
   '/advogado-pensao-alimenticia-betim': typeof AdvogadoPensaoAlimenticiaBetimRoute
+  '/advogado-pensao-alimenticia-bh': typeof AdvogadoPensaoAlimenticiaBhRoute
   '/advogado-pensao-alimenticia-nova-lima': typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
@@ -219,18 +277,25 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
+  '/advogado-curatela-bh': typeof AdvogadoCuratelaBhRoute
   '/advogado-curatela-nova-lima': typeof AdvogadoCuratelaNovaLimaRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
+  '/advogado-divorcio-bh': typeof AdvogadoDivorcioBhRoute
   '/advogado-divorcio-extrajudicial-betim': typeof AdvogadoDivorcioExtrajudicialBetimRoute
+  '/advogado-divorcio-extrajudicial-bh': typeof AdvogadoDivorcioExtrajudicialBhRoute
   '/advogado-divorcio-extrajudicial-nova-lima': typeof AdvogadoDivorcioExtrajudicialNovaLimaRoute
   '/advogado-divorcio-nova-lima': typeof AdvogadoDivorcioNovaLimaRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
+  '/advogado-familia-bh': typeof AdvogadoFamiliaBhRoute
   '/advogado-familia-nova-lima': typeof AdvogadoFamiliaNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
+  '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
+  '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-nova-lima': typeof AdvogadoInventarioNovaLimaRoute
   '/advogado-pensao-alimenticia-betim': typeof AdvogadoPensaoAlimenticiaBetimRoute
+  '/advogado-pensao-alimenticia-bh': typeof AdvogadoPensaoAlimenticiaBhRoute
   '/advogado-pensao-alimenticia-nova-lima': typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
@@ -247,18 +312,25 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/advogado-curatela-betim'
+    | '/advogado-curatela-bh'
     | '/advogado-curatela-nova-lima'
     | '/advogado-divorcio-betim'
+    | '/advogado-divorcio-bh'
     | '/advogado-divorcio-extrajudicial-betim'
+    | '/advogado-divorcio-extrajudicial-bh'
     | '/advogado-divorcio-extrajudicial-nova-lima'
     | '/advogado-divorcio-nova-lima'
     | '/advogado-familia-betim'
+    | '/advogado-familia-bh'
     | '/advogado-familia-nova-lima'
     | '/advogado-guarda-betim'
+    | '/advogado-guarda-bh'
     | '/advogado-guarda-nova-lima'
     | '/advogado-inventario-betim'
+    | '/advogado-inventario-bh'
     | '/advogado-inventario-nova-lima'
     | '/advogado-pensao-alimenticia-betim'
+    | '/advogado-pensao-alimenticia-bh'
     | '/advogado-pensao-alimenticia-nova-lima'
     | '/areas-de-atuacao'
     | '/duvidas'
@@ -273,18 +345,25 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/advogado-curatela-betim'
+    | '/advogado-curatela-bh'
     | '/advogado-curatela-nova-lima'
     | '/advogado-divorcio-betim'
+    | '/advogado-divorcio-bh'
     | '/advogado-divorcio-extrajudicial-betim'
+    | '/advogado-divorcio-extrajudicial-bh'
     | '/advogado-divorcio-extrajudicial-nova-lima'
     | '/advogado-divorcio-nova-lima'
     | '/advogado-familia-betim'
+    | '/advogado-familia-bh'
     | '/advogado-familia-nova-lima'
     | '/advogado-guarda-betim'
+    | '/advogado-guarda-bh'
     | '/advogado-guarda-nova-lima'
     | '/advogado-inventario-betim'
+    | '/advogado-inventario-bh'
     | '/advogado-inventario-nova-lima'
     | '/advogado-pensao-alimenticia-betim'
+    | '/advogado-pensao-alimenticia-bh'
     | '/advogado-pensao-alimenticia-nova-lima'
     | '/areas-de-atuacao'
     | '/duvidas'
@@ -299,18 +378,25 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/advogado-curatela-betim'
+    | '/advogado-curatela-bh'
     | '/advogado-curatela-nova-lima'
     | '/advogado-divorcio-betim'
+    | '/advogado-divorcio-bh'
     | '/advogado-divorcio-extrajudicial-betim'
+    | '/advogado-divorcio-extrajudicial-bh'
     | '/advogado-divorcio-extrajudicial-nova-lima'
     | '/advogado-divorcio-nova-lima'
     | '/advogado-familia-betim'
+    | '/advogado-familia-bh'
     | '/advogado-familia-nova-lima'
     | '/advogado-guarda-betim'
+    | '/advogado-guarda-bh'
     | '/advogado-guarda-nova-lima'
     | '/advogado-inventario-betim'
+    | '/advogado-inventario-bh'
     | '/advogado-inventario-nova-lima'
     | '/advogado-pensao-alimenticia-betim'
+    | '/advogado-pensao-alimenticia-bh'
     | '/advogado-pensao-alimenticia-nova-lima'
     | '/areas-de-atuacao'
     | '/duvidas'
@@ -326,18 +412,25 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
   AdvogadoCuratelaBetimRoute: typeof AdvogadoCuratelaBetimRoute
+  AdvogadoCuratelaBhRoute: typeof AdvogadoCuratelaBhRoute
   AdvogadoCuratelaNovaLimaRoute: typeof AdvogadoCuratelaNovaLimaRoute
   AdvogadoDivorcioBetimRoute: typeof AdvogadoDivorcioBetimRoute
+  AdvogadoDivorcioBhRoute: typeof AdvogadoDivorcioBhRoute
   AdvogadoDivorcioExtrajudicialBetimRoute: typeof AdvogadoDivorcioExtrajudicialBetimRoute
+  AdvogadoDivorcioExtrajudicialBhRoute: typeof AdvogadoDivorcioExtrajudicialBhRoute
   AdvogadoDivorcioExtrajudicialNovaLimaRoute: typeof AdvogadoDivorcioExtrajudicialNovaLimaRoute
   AdvogadoDivorcioNovaLimaRoute: typeof AdvogadoDivorcioNovaLimaRoute
   AdvogadoFamiliaBetimRoute: typeof AdvogadoFamiliaBetimRoute
+  AdvogadoFamiliaBhRoute: typeof AdvogadoFamiliaBhRoute
   AdvogadoFamiliaNovaLimaRoute: typeof AdvogadoFamiliaNovaLimaRoute
   AdvogadoGuardaBetimRoute: typeof AdvogadoGuardaBetimRoute
+  AdvogadoGuardaBhRoute: typeof AdvogadoGuardaBhRoute
   AdvogadoGuardaNovaLimaRoute: typeof AdvogadoGuardaNovaLimaRoute
   AdvogadoInventarioBetimRoute: typeof AdvogadoInventarioBetimRoute
+  AdvogadoInventarioBhRoute: typeof AdvogadoInventarioBhRoute
   AdvogadoInventarioNovaLimaRoute: typeof AdvogadoInventarioNovaLimaRoute
   AdvogadoPensaoAlimenticiaBetimRoute: typeof AdvogadoPensaoAlimenticiaBetimRoute
+  AdvogadoPensaoAlimenticiaBhRoute: typeof AdvogadoPensaoAlimenticiaBhRoute
   AdvogadoPensaoAlimenticiaNovaLimaRoute: typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   DuvidasRoute: typeof DuvidasRoute
@@ -400,6 +493,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoPensaoAlimenticiaNovaLimaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-pensao-alimenticia-bh': {
+      id: '/advogado-pensao-alimenticia-bh'
+      path: '/advogado-pensao-alimenticia-bh'
+      fullPath: '/advogado-pensao-alimenticia-bh'
+      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-pensao-alimenticia-betim': {
       id: '/advogado-pensao-alimenticia-betim'
       path: '/advogado-pensao-alimenticia-betim'
@@ -412,6 +512,13 @@ declare module '@tanstack/react-router' {
       path: '/advogado-inventario-nova-lima'
       fullPath: '/advogado-inventario-nova-lima'
       preLoaderRoute: typeof AdvogadoInventarioNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-bh': {
+      id: '/advogado-inventario-bh'
+      path: '/advogado-inventario-bh'
+      fullPath: '/advogado-inventario-bh'
+      preLoaderRoute: typeof AdvogadoInventarioBhRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-inventario-betim': {
@@ -428,6 +535,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoGuardaNovaLimaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-guarda-bh': {
+      id: '/advogado-guarda-bh'
+      path: '/advogado-guarda-bh'
+      fullPath: '/advogado-guarda-bh'
+      preLoaderRoute: typeof AdvogadoGuardaBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-guarda-betim': {
       id: '/advogado-guarda-betim'
       path: '/advogado-guarda-betim'
@@ -440,6 +554,13 @@ declare module '@tanstack/react-router' {
       path: '/advogado-familia-nova-lima'
       fullPath: '/advogado-familia-nova-lima'
       preLoaderRoute: typeof AdvogadoFamiliaNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-familia-bh': {
+      id: '/advogado-familia-bh'
+      path: '/advogado-familia-bh'
+      fullPath: '/advogado-familia-bh'
+      preLoaderRoute: typeof AdvogadoFamiliaBhRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-familia-betim': {
@@ -463,11 +584,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialNovaLimaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-divorcio-extrajudicial-bh': {
+      id: '/advogado-divorcio-extrajudicial-bh'
+      path: '/advogado-divorcio-extrajudicial-bh'
+      fullPath: '/advogado-divorcio-extrajudicial-bh'
+      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-divorcio-extrajudicial-betim': {
       id: '/advogado-divorcio-extrajudicial-betim'
       path: '/advogado-divorcio-extrajudicial-betim'
       fullPath: '/advogado-divorcio-extrajudicial-betim'
       preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-bh': {
+      id: '/advogado-divorcio-bh'
+      path: '/advogado-divorcio-bh'
+      fullPath: '/advogado-divorcio-bh'
+      preLoaderRoute: typeof AdvogadoDivorcioBhRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-divorcio-betim': {
@@ -482,6 +617,13 @@ declare module '@tanstack/react-router' {
       path: '/advogado-curatela-nova-lima'
       fullPath: '/advogado-curatela-nova-lima'
       preLoaderRoute: typeof AdvogadoCuratelaNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-curatela-bh': {
+      id: '/advogado-curatela-bh'
+      path: '/advogado-curatela-bh'
+      fullPath: '/advogado-curatela-bh'
+      preLoaderRoute: typeof AdvogadoCuratelaBhRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-curatela-betim': {
@@ -526,20 +668,27 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
   AdvogadoCuratelaBetimRoute: AdvogadoCuratelaBetimRoute,
+  AdvogadoCuratelaBhRoute: AdvogadoCuratelaBhRoute,
   AdvogadoCuratelaNovaLimaRoute: AdvogadoCuratelaNovaLimaRoute,
   AdvogadoDivorcioBetimRoute: AdvogadoDivorcioBetimRoute,
+  AdvogadoDivorcioBhRoute: AdvogadoDivorcioBhRoute,
   AdvogadoDivorcioExtrajudicialBetimRoute:
     AdvogadoDivorcioExtrajudicialBetimRoute,
+  AdvogadoDivorcioExtrajudicialBhRoute: AdvogadoDivorcioExtrajudicialBhRoute,
   AdvogadoDivorcioExtrajudicialNovaLimaRoute:
     AdvogadoDivorcioExtrajudicialNovaLimaRoute,
   AdvogadoDivorcioNovaLimaRoute: AdvogadoDivorcioNovaLimaRoute,
   AdvogadoFamiliaBetimRoute: AdvogadoFamiliaBetimRoute,
+  AdvogadoFamiliaBhRoute: AdvogadoFamiliaBhRoute,
   AdvogadoFamiliaNovaLimaRoute: AdvogadoFamiliaNovaLimaRoute,
   AdvogadoGuardaBetimRoute: AdvogadoGuardaBetimRoute,
+  AdvogadoGuardaBhRoute: AdvogadoGuardaBhRoute,
   AdvogadoGuardaNovaLimaRoute: AdvogadoGuardaNovaLimaRoute,
   AdvogadoInventarioBetimRoute: AdvogadoInventarioBetimRoute,
+  AdvogadoInventarioBhRoute: AdvogadoInventarioBhRoute,
   AdvogadoInventarioNovaLimaRoute: AdvogadoInventarioNovaLimaRoute,
   AdvogadoPensaoAlimenticiaBetimRoute: AdvogadoPensaoAlimenticiaBetimRoute,
+  AdvogadoPensaoAlimenticiaBhRoute: AdvogadoPensaoAlimenticiaBhRoute,
   AdvogadoPensaoAlimenticiaNovaLimaRoute:
     AdvogadoPensaoAlimenticiaNovaLimaRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,

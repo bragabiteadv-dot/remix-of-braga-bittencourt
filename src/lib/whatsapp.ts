@@ -23,6 +23,13 @@ export const PAGE_LABELS: Record<string, string> = {
   "/advogado-inventario-nova-lima": "ADVOGADO DE INVENTÁRIO EM NOVA LIMA",
   "/advogado-curatela-nova-lima": "ADVOGADO DE CURATELA EM NOVA LIMA",
   "/advogado-divorcio-extrajudicial-nova-lima": "ADVOGADO DE DIVÓRCIO EXTRAJUDICIAL EM NOVA LIMA",
+  "/advogado-divorcio-bh": "ADVOGADO DE DIVÓRCIO EM BELO HORIZONTE",
+  "/advogado-familia-bh": "ADVOGADO DE FAMÍLIA EM BELO HORIZONTE",
+  "/advogado-guarda-bh": "ADVOGADO DE GUARDA EM BELO HORIZONTE",
+  "/advogado-pensao-alimenticia-bh": "ADVOGADO DE PENSÃO ALIMENTÍCIA EM BELO HORIZONTE",
+  "/advogado-inventario-bh": "ADVOGADO DE INVENTÁRIO EM BELO HORIZONTE",
+  "/advogado-curatela-bh": "ADVOGADO DE CURATELA EM BELO HORIZONTE",
+  "/advogado-divorcio-extrajudicial-bh": "ADVOGADO DE DIVÓRCIO EXTRAJUDICIAL EM BELO HORIZONTE",
 };
 
 export function normalizePath(pathname: string) {

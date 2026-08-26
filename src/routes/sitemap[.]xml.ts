@@ -41,6 +41,13 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/advogado-inventario-nova-lima", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-curatela-nova-lima", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-divorcio-extrajudicial-nova-lima", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-divorcio-bh", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-familia-bh", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-guarda-bh", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-pensao-alimenticia-bh", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-inventario-bh", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-curatela-bh", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-divorcio-extrajudicial-bh", changefreq: "monthly", priority: "0.9" },
           ...ARTICLES.map((a) => ({
             path: `/artigos/${a.slug}`,
             changefreq: "monthly" as const,

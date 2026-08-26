@@ -101,7 +101,14 @@ function RootComponent() {
     pathname.startsWith("/advogado-pensao-alimenticia-nova-lima") ||
     pathname.startsWith("/advogado-inventario-nova-lima") ||
     pathname.startsWith("/advogado-curatela-nova-lima") ||
-    pathname.startsWith("/advogado-divorcio-extrajudicial-nova-lima");
+    pathname.startsWith("/advogado-divorcio-extrajudicial-nova-lima") ||
+    pathname.startsWith("/advogado-divorcio-bh") ||
+    pathname.startsWith("/advogado-familia-bh") ||
+    pathname.startsWith("/advogado-guarda-bh") ||
+    pathname.startsWith("/advogado-pensao-alimenticia-bh") ||
+    pathname.startsWith("/advogado-inventario-bh") ||
+    pathname.startsWith("/advogado-curatela-bh") ||
+    pathname.startsWith("/advogado-divorcio-extrajudicial-bh");
 
   if (isStandaloneLanding) {
     return (
