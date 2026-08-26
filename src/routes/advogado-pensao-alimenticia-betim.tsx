@@ -252,7 +252,7 @@ function LpSituations() {
     {
       icon: <Users className="w-7 h-7" />,
       title: "Quando posso exigir pensão alimentícia sob pena de prisão e sob pena de penhora?",
-      text: "Garanta o bem-estar dos seus filhos com uma definição clara e eficiente sobre guarda compartilhada e convivência.",
+      text: "Garanta o bem-estar dos seus filhos com uma definição clara e eficiente sobre a melhor técnica para exigir pensão alimentícia atrasada.",
     },
     {
       icon: <Coins className="w-7 h-7" />,
