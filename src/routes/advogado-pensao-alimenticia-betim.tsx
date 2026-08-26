@@ -246,7 +246,7 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Quer fazer o divórcio, mas não sabe se será amigável ou com brigas?",
+      title: "Precisa fixar pensão alimentícia, mas não sabe se será amigável ou com brigas?",
       text: "Entenda a diferença entre o divórcio consensual e o litigioso para proteger seus direitos de forma rápida.",
     },
     {
