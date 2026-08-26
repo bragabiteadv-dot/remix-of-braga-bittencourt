@@ -267,7 +267,7 @@ function LpSituations() {
     {
       icon: <Building2 className="w-7 h-7" />,
       title: "A pensão que recebo não é suficiente, posso pedir um complemento dos avós?",
-      text: "Descubra se você cumpre os requisitos para o divórcio extrajudicial, que pode ser mais rápido e econômico.",
+      text: "A pensão alimentícia avoenga é perfeitamente cabível, porém, tem natureza complementar à pensão principal. Saiba mais com nossos especialistas.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
