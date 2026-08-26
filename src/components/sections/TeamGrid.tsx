@@ -1,3 +1,4 @@
+import { usePageAlt } from "@/lib/page-alt";
 import equipeBg from "@/assets/equipe-bg.jpg";
 import carlosGabriel from "@/assets/gabriel-2.jpg";
 import carlosJavet from "@/assets/carlos-javet-2.jpg";
@@ -5,20 +6,24 @@ import glaucia from "@/assets/glaucia-2.jpg";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function TeamGrid() {
+  const pageAlt = usePageAlt("");
   const members = [
     {
       name: "Carlos Javét Braga Bitencourt",
+      alt: "Carlos Javét Braga Bitencourt",
       image: carlosJavet,
       // primeiro no mobile, centro no desktop
       order: "order-1 md:order-2"
     },
     {
       name: "Carlos Gabriel F. Braga Bitencourt",
+      alt: "Carlos Gabriel Ferreira Braga Bitencourt",
       image: carlosGabriel,
       order: "order-2 md:order-1"
     },
     {
       name: "Gláucia Patrícia F. Braga Bitencourt",
+      alt: "Gláucia Patrícia Ferreira Braga Bitencourt",
       image: glaucia,
       order: "order-3 md:order-3"
     }
@@ -43,7 +48,7 @@ export function TeamGrid() {
               <div className="relative overflow-hidden aspect-[3/4] rounded-sm shadow-2xl mb-6 bg-white">
                 <img 
                   src={member.image} 
-                  alt={member.name} 
+                  alt={pageAlt || member.alt} 
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"

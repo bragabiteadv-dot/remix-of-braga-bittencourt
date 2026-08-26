@@ -47,7 +47,7 @@ export const Testimonials = () => {
                   <div className="h-full bg-white border border-gray-100 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
                     <img
                       src={t}
-                      alt={`Depoimento ${index + 1}`}
+                      alt="Braga Bitencourt Advogados"
                       className="w-full h-auto object-contain"
                       loading="lazy"
                     />

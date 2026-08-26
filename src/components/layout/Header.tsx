@@ -79,7 +79,7 @@ export function Header() {
           <Link to="/" className="flex items-center gap-3">
             <img 
               src={headerLogo} 
-              alt="Braga Bitencourt Logo" 
+              alt="Braga Bitencourt Advogados especializados em Direito de Família, Sucessões e Internacional Privado." 
               className="h-10 md:h-12 w-auto object-contain"
             />
           </Link>

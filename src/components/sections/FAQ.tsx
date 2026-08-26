@@ -1,3 +1,4 @@
+import { usePageAlt } from "@/lib/page-alt";
 import React, { useState } from 'react';
 import { Plus, Phone } from 'lucide-react';
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
@@ -215,7 +216,7 @@ export const FAQ = ({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" } = {}
           <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden sticky top-24 shadow-xl">
             <img 
               src={escritorioImg} 
-              alt="Escritório Braga Bitencourt" 
+              alt={usePageAlt("Escritório Braga Bitencourt")} 
               loading="lazy"
               decoding="async"
               className="w-full h-[200px] object-cover"

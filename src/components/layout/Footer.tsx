@@ -26,7 +26,7 @@ export function Footer() {
           <Link to="/" className="inline-block">
             <img
               src={logoTree}
-              alt="Braga Bitencourt Advogados"
+              alt="Braga Bitencourt Advogados especializados em Direito de Família, Sucessões e Internacional Privado."
               width={385}
               height={385}
               loading="lazy"

@@ -24,6 +24,7 @@ import { ActionMoment } from "@/components/sections/ActionMoment";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { PageAltProvider } from "@/lib/page-alt";
 import { buildSeo } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 import { ORG_REF } from "@/lib/org-schema";
@@ -39,6 +40,7 @@ import sedeBetim5 from "@/assets/sede-betim-5.jpg";
 
 const PATH = "/advogado-familia-bh";
 const TITLE = "Advogado de Família em Belo Horizonte | Braga Bitencourt";
+const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
   "Atuação especializada em Direito de Família em Belo Horizonte. Atendimento para guarda, pensão alimentícia, inventário e litígios familiares.";
 
@@ -106,6 +108,14 @@ export const Route = createFileRoute("/advogado-familia-bh")({
 
 function LandingPage() {
   return (
+    <PageAltProvider alt={PAGE_ALT}>
+      <LandingPageContent />
+    </PageAltProvider>
+  );
+}
+
+function LandingPageContent() {
+  return (
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
@@ -131,7 +141,7 @@ function LpHeader() {
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={lpHeaderLogo}
-          alt="Braga Bitencourt Advogados"
+          alt={PAGE_ALT}
           className="h-12 w-auto shrink-0"
           loading="eager"
         />
@@ -199,7 +209,7 @@ function LpHero() {
             <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <img
                 src={officeBH}
-                alt="Escritório do advogado de família em Belo Horizonte"
+                alt={PAGE_ALT}
                 className="w-full h-[320px] object-cover"
                 loading="lazy"
               />
@@ -357,7 +367,7 @@ function LpOfficeGallery() {
             >
               <img
                 src={src}
-                alt="Sede Braga Bitencourt Advogados em Belo Horizonte"
+                alt={PAGE_ALT}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -575,7 +585,7 @@ function LpPresence() {
             <div className="h-56 overflow-hidden shrink-0">
               <img
                 src={officeBH}
-                alt="Braga Bitencourt Advogados - Belo Horizonte"
+                alt={PAGE_ALT}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -707,7 +717,7 @@ function LpFooter() {
           <Link to="/" className="shrink-0">
             <img
               src={logoTree}
-              alt="Braga Bitencourt Logo"
+              alt={PAGE_ALT}
               className="h-16 w-auto object-contain"
             />
           </Link>
