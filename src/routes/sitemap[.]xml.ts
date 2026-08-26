@@ -48,6 +48,13 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/advogado-inventario-bh", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-curatela-bh", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-divorcio-extrajudicial-bh", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-divorcio-contagem", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-familia-contagem", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-guarda-contagem", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-pensao-alimenticia-contagem", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-inventario-contagem", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-curatela-contagem", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-divorcio-extrajudicial-contagem", changefreq: "monthly", priority: "0.9" },
           ...ARTICLES.map((a) => ({
             path: `/artigos/${a.slug}`,
             changefreq: "monthly" as const,
