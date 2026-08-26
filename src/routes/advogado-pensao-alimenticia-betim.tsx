@@ -175,8 +175,7 @@ function LpHero() {
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
-              Advogado especialista em Pensão Alimentícia em Betim — Proteja seu patrimônio, seus filhos, sua tranquilidade e bem estar.
-              Conduzimos seu caso de pensão alimentícia com o sigilo, a segurança e o acolhimento que você precisa.
+              Advogado especialista em Pensão Alimentícia em Betim —&nbsp; Conduzimos seu caso de pensão alimentícia com o sigilo, a segurança e o acolhimento que você precisa.
             </p>
 
             <WhatsAppCta className="w-full sm:w-auto" />
