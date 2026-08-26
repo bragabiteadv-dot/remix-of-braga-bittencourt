@@ -247,7 +247,7 @@ function LpSituations() {
     {
       icon: <Scale className="w-7 h-7" />,
       title: "Precisa fixar pensão alimentícia, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre o divórcio consensual e o litigioso para proteger seus direitos de forma rápida.",
+      text: "Entenda a diferença entre pensão alimentícia consensual e o litigiosa e proteja seus direitos de forma rápida.",
     },
     {
       icon: <Users className="w-7 h-7" />,
