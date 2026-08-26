@@ -145,7 +145,7 @@ function LpHero() {
     },
     {
       title: "Sedes físicas",
-      subtitle: ["-BELO HORIZONTE", "-NOVA LIMA"],
+      subtitle: ["-BELO HORIZONTE", "-"],
       text: "Estruturas de excelência para consultas presenciais ou suporte digital integrado.",
     },
     {
