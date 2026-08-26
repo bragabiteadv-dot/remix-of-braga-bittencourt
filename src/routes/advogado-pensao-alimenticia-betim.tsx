@@ -271,7 +271,7 @@ function LpSituations() {
     },
     {
       icon: <Landmark className="w-7 h-7" />,
-      title: "Não sabe quais bens terá direito na partilha de bens do casal?",
+      title: "Pensão alimentícia prescreve? Posso cobrar retroativo?",
       text: "Proteja o seu patrimônio de acordo com o regime de bens escolhido no casamento de forma estratégica..",
     },
   ];
