@@ -30,7 +30,6 @@ import { ORG_REF } from "@/lib/org-schema";
 import logoTree from "@/assets/logo-tree-new.png";
 import lpHeaderLogo from "@/assets/lp-header-logo.png";
 
-import officeBetim from "@/assets/office-betim-new.jpg";
 import officeBH from "@/assets/office-bh-new.jpg";
 import sedeBetim1 from "@/assets/sede-betim-1.jpg";
 import sedeBetim2 from "@/assets/sede-betim-2.jpg";

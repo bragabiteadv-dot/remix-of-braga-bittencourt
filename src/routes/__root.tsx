@@ -94,7 +94,8 @@ function RootComponent() {
     pathname.startsWith("/advogado-pensao-alimenticia-betim") ||
     pathname.startsWith("/advogado-inventario-betim") ||
     pathname.startsWith("/advogado-curatela-betim") ||
-    pathname.startsWith("/advogado-divorcio-extrajudicial-betim");
+    pathname.startsWith("/advogado-divorcio-extrajudicial-betim") ||
+    pathname.startsWith("/advogado-divorcio-nova-lima");
 
   if (isStandaloneLanding) {
     return (

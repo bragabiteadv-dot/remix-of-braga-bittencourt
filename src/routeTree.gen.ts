@@ -19,6 +19,7 @@ import { Route as AdvogadoPensaoAlimenticiaBetimRouteImport } from './routes/adv
 import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-inventario-betim'
 import { Route as AdvogadoGuardaBetimRouteImport } from './routes/advogado-guarda-betim'
 import { Route as AdvogadoFamiliaBetimRouteImport } from './routes/advogado-familia-betim'
+import { Route as AdvogadoDivorcioNovaLimaRouteImport } from './routes/advogado-divorcio-nova-lima'
 import { Route as AdvogadoDivorcioExtrajudicialBetimRouteImport } from './routes/advogado-divorcio-extrajudicial-betim'
 import { Route as AdvogadoDivorcioBetimRouteImport } from './routes/advogado-divorcio-betim'
 import { Route as AdvogadoCuratelaBetimRouteImport } from './routes/advogado-curatela-betim'
@@ -78,6 +79,12 @@ const AdvogadoFamiliaBetimRoute = AdvogadoFamiliaBetimRouteImport.update({
   path: '/advogado-familia-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoDivorcioNovaLimaRoute =
+  AdvogadoDivorcioNovaLimaRouteImport.update({
+    id: '/advogado-divorcio-nova-lima',
+    path: '/advogado-divorcio-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoDivorcioExtrajudicialBetimRoute =
   AdvogadoDivorcioExtrajudicialBetimRouteImport.update({
     id: '/advogado-divorcio-extrajudicial-betim',
@@ -121,6 +128,7 @@ export interface FileRoutesByFullPath {
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/advogado-divorcio-extrajudicial-betim': typeof AdvogadoDivorcioExtrajudicialBetimRoute
+  '/advogado-divorcio-nova-lima': typeof AdvogadoDivorcioNovaLimaRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
@@ -140,6 +148,7 @@ export interface FileRoutesByTo {
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/advogado-divorcio-extrajudicial-betim': typeof AdvogadoDivorcioExtrajudicialBetimRoute
+  '/advogado-divorcio-nova-lima': typeof AdvogadoDivorcioNovaLimaRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
@@ -160,6 +169,7 @@ export interface FileRoutesById {
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/advogado-divorcio-extrajudicial-betim': typeof AdvogadoDivorcioExtrajudicialBetimRoute
+  '/advogado-divorcio-nova-lima': typeof AdvogadoDivorcioNovaLimaRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
@@ -181,6 +191,7 @@ export interface FileRouteTypes {
     | '/advogado-curatela-betim'
     | '/advogado-divorcio-betim'
     | '/advogado-divorcio-extrajudicial-betim'
+    | '/advogado-divorcio-nova-lima'
     | '/advogado-familia-betim'
     | '/advogado-guarda-betim'
     | '/advogado-inventario-betim'
@@ -200,6 +211,7 @@ export interface FileRouteTypes {
     | '/advogado-curatela-betim'
     | '/advogado-divorcio-betim'
     | '/advogado-divorcio-extrajudicial-betim'
+    | '/advogado-divorcio-nova-lima'
     | '/advogado-familia-betim'
     | '/advogado-guarda-betim'
     | '/advogado-inventario-betim'
@@ -219,6 +231,7 @@ export interface FileRouteTypes {
     | '/advogado-curatela-betim'
     | '/advogado-divorcio-betim'
     | '/advogado-divorcio-extrajudicial-betim'
+    | '/advogado-divorcio-nova-lima'
     | '/advogado-familia-betim'
     | '/advogado-guarda-betim'
     | '/advogado-inventario-betim'
@@ -239,6 +252,7 @@ export interface RootRouteChildren {
   AdvogadoCuratelaBetimRoute: typeof AdvogadoCuratelaBetimRoute
   AdvogadoDivorcioBetimRoute: typeof AdvogadoDivorcioBetimRoute
   AdvogadoDivorcioExtrajudicialBetimRoute: typeof AdvogadoDivorcioExtrajudicialBetimRoute
+  AdvogadoDivorcioNovaLimaRoute: typeof AdvogadoDivorcioNovaLimaRoute
   AdvogadoFamiliaBetimRoute: typeof AdvogadoFamiliaBetimRoute
   AdvogadoGuardaBetimRoute: typeof AdvogadoGuardaBetimRoute
   AdvogadoInventarioBetimRoute: typeof AdvogadoInventarioBetimRoute
@@ -325,6 +339,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoFamiliaBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-divorcio-nova-lima': {
+      id: '/advogado-divorcio-nova-lima'
+      path: '/advogado-divorcio-nova-lima'
+      fullPath: '/advogado-divorcio-nova-lima'
+      preLoaderRoute: typeof AdvogadoDivorcioNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-divorcio-extrajudicial-betim': {
       id: '/advogado-divorcio-extrajudicial-betim'
       path: '/advogado-divorcio-extrajudicial-betim'
@@ -384,6 +405,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoDivorcioBetimRoute: AdvogadoDivorcioBetimRoute,
   AdvogadoDivorcioExtrajudicialBetimRoute:
     AdvogadoDivorcioExtrajudicialBetimRoute,
+  AdvogadoDivorcioNovaLimaRoute: AdvogadoDivorcioNovaLimaRoute,
   AdvogadoFamiliaBetimRoute: AdvogadoFamiliaBetimRoute,
   AdvogadoGuardaBetimRoute: AdvogadoGuardaBetimRoute,
   AdvogadoInventarioBetimRoute: AdvogadoInventarioBetimRoute,
