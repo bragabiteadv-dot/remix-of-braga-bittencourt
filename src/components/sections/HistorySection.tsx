@@ -11,7 +11,7 @@ export function HistorySection() {
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               <img 
                 src={logoTree} 
-                alt="Braga Bitencourt Logo" 
+                alt="Braga Bitencourt Advogados especializados em Direito de Família, Sucessões e Internacional Privado." 
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-contain brightness-110 contrast-125"

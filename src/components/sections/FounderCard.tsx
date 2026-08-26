@@ -1,3 +1,4 @@
+import { usePageAlt } from "@/lib/page-alt";
 import { Mail, Phone, MapPin, Check } from "lucide-react";
 import { WhatsAppCta, useWhatsAppLink } from "@/components/ui/whatsapp-cta";
 import escritorioImg from "@/assets/foto-fundador.jpg";
@@ -72,7 +73,7 @@ export function FounderCard() {
             <div className="rounded-2xl overflow-hidden shadow-2xl h-full">
               <img 
                 src={escritorioImg} 
-                alt="Dr. Carlos Javét Bitencourt" 
+                alt={usePageAlt("Fundador do escritório Braga Bitencourt Advogados")} 
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover object-center"

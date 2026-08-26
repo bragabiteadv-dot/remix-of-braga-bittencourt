@@ -1,3 +1,4 @@
+import { usePageAlt } from "@/lib/page-alt";
 import actionMoment from "@/assets/action-moment-hands.png";
 
 export const ActionMoment = () => {
@@ -40,7 +41,7 @@ export const ActionMoment = () => {
               <div className="relative z-[3] overflow-hidden shadow-2xl">
                 <img
                   src={actionMoment}
-                  alt="Aperto de mãos profissional entre advogada e cliente"
+                  alt={usePageAlt("Braga Bitencourt Advogados")}
                   width={383}
                   height={186}
                   loading="lazy"
