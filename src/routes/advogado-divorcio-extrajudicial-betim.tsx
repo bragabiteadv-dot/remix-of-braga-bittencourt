@@ -171,7 +171,7 @@ function LpHero() {
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
-              Divórcio em cartório em Betim: rápido, seguro e sem complicação.
+              Divórcio extrajudicial (em cartório) em Betim: rápido, seguro e sem complicação.
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
