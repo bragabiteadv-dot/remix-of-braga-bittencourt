@@ -272,7 +272,7 @@ function LpSituations() {
     {
       icon: <Landmark className="w-7 h-7" />,
       title: "Pensão alimentícia prescreve? Posso cobrar retroativo?",
-      text: "Proteja o seu patrimônio de acordo com o regime de bens escolhido no casamento de forma estratégica..",
+      text: "A pensão alimentícia não prescreve quando o beneficiário é menor de idade, mas o recebimento retroativo só é cabível para pensões que já foram fixadas.",
     },
   ];
 
