@@ -262,7 +262,7 @@ function LpSituations() {
     {
       icon: <FileSignature className="w-7 h-7" />,
       title: "Estou fazendo faculdade e preciso continuar recebendo pensão alimentícia.",
-      text: "Entenda as regras para a alteração do sobrenome após o divórcio e a atualização dos documentos oficiais.",
+      text: "Entenda a extensão e os limites do seu direito, os pré-requisitos para continuar recebendo pensão após a maioridade e cursando ensino superior.",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
