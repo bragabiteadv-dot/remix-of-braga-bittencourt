@@ -523,7 +523,7 @@ function LpDifferentials() {
 const MAPS_URL =
   "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.954955,-43.9595168,1022m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6be0a87eba137:0x5b7a5c4dbe44fd0b!8m2!3d-19.954955!4d-43.9595168!16s%2Fg%2F1x6q2_2p?entry=ttu&g_ep=EgoyMDI2MDgyMy4wIKXMDSoASAFQAw%3D%3D";
 const MAPS_EMBED_URL =
-  "https://www.google.com/maps?q=Braga+Bitencourt+Advogados,+Av.+Raja+Gab%%C3%%A1glia,+2000+-+sala+614+-+Alpes,+Belo+Horizonte+-+MG,+30494-170&output=embed";
+  "https://www.google.com/maps?q=Braga+Bitencourt+Advogados,+Av.+Raja+Gab%C3%A1glia,+2000+-+sala+614+-+Alpes,+Belo+Horizonte+-+MG,+30494-170&output=embed";
 
 function LpPresence() {
   return (
