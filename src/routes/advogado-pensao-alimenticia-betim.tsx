@@ -266,7 +266,7 @@ function LpSituations() {
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "Busca uma forma rápida de divorciar e quer saber se pode ser via cartório?",
+      title: "A pensão que recebo não é suficiente, posso pedir um complemento dos avós?",
       text: "Descubra se você cumpre os requisitos para o divórcio extrajudicial, que pode ser mais rápido e econômico.",
     },
     {
