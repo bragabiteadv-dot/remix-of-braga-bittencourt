@@ -101,13 +101,14 @@ function Artigos() {
             Nenhum artigo encontrado. Tente outra busca ou categoria.
           </div>
         ) : (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2">
             {filtered.map((article) => (
               <article
                 key={article.id}
                 className="group bg-white rounded-2xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(40,54,80,0.15)] border border-navy/5 hover:shadow-[0_20px_50px_-20px_rgba(40,54,80,0.35)] hover:-translate-y-1 transition-all duration-500 flex flex-col"
               >
-                <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-[#f5eee0] via-[#faf6ed] to-[#e8dcc4]">
+                <div className="relative aspect-[3/1] overflow-hidden bg-gradient-to-br from-[#f5eee0] via-[#faf6ed] to-[#e8dcc4]">
+
                   {article.image ? (
                     <img
                       src={article.image}
