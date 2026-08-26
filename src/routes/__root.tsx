@@ -115,7 +115,14 @@ function RootComponent() {
     pathname.startsWith("/advogado-pensao-alimenticia-contagem") ||
     pathname.startsWith("/advogado-inventario-contagem") ||
     pathname.startsWith("/advogado-curatela-contagem") ||
-    pathname.startsWith("/advogado-divorcio-extrajudicial-contagem");
+    pathname.startsWith("/advogado-divorcio-extrajudicial-contagem") ||
+    pathname.startsWith("/advogado-divorcio-igarape") ||
+    pathname.startsWith("/advogado-familia-igarape") ||
+    pathname.startsWith("/advogado-guarda-igarape") ||
+    pathname.startsWith("/advogado-pensao-alimenticia-igarape") ||
+    pathname.startsWith("/advogado-inventario-igarape") ||
+    pathname.startsWith("/advogado-curatela-igarape") ||
+    pathname.startsWith("/advogado-divorcio-extrajudicial-igarape");
 
   if (isStandaloneLanding) {
     return (
