@@ -261,7 +261,7 @@ function LpSituations() {
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
-      title: "Quer saber se pode voltar a usar o nome de solteiro(a)?",
+      title: "Estou fazendo faculdade e preciso continuar recebendo pensão alimentícia.",
       text: "Entenda as regras para a alteração do sobrenome após o divórcio e a atualização dos documentos oficiais.",
     },
     {
