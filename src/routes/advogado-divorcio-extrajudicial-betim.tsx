@@ -248,7 +248,7 @@ function LpSituations() {
     {
       icon: <Scale className="w-7 h-7" />,
       title: "Quer fazer o divórcio extrajudicial em Betim sem demora?",
-      text: "O divórcio em cartório é mais rápido e econômico quando há acordo. Saiba se você atende aos requisitos legais.",
+      text: "O divórcio em cartório é mais rápido e econômico. Saiba se você atende aos requisitos legais.",
     },
     {
       icon: <Users className="w-7 h-7" />,
