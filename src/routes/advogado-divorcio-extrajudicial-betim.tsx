@@ -263,7 +263,7 @@ function LpSituations() {
     {
       icon: <FileSignature className="w-7 h-7" />,
       title: "Quer saber como funciona a partilha de bens no divórcio extrajudicial?",
-      text: "Orientamos a divisão do patrimônio conforme o regime de bens e documentação necessária para o cartório.",
+      text: "Orientamos a divisão do patrimônio conforme o regime de bens e documentação necessária para um divórcio rápido e eficiente.",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
