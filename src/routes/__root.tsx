@@ -108,7 +108,14 @@ function RootComponent() {
     pathname.startsWith("/advogado-pensao-alimenticia-bh") ||
     pathname.startsWith("/advogado-inventario-bh") ||
     pathname.startsWith("/advogado-curatela-bh") ||
-    pathname.startsWith("/advogado-divorcio-extrajudicial-bh");
+    pathname.startsWith("/advogado-divorcio-extrajudicial-bh") ||
+    pathname.startsWith("/advogado-divorcio-contagem") ||
+    pathname.startsWith("/advogado-familia-contagem") ||
+    pathname.startsWith("/advogado-guarda-contagem") ||
+    pathname.startsWith("/advogado-pensao-alimenticia-contagem") ||
+    pathname.startsWith("/advogado-inventario-contagem") ||
+    pathname.startsWith("/advogado-curatela-contagem") ||
+    pathname.startsWith("/advogado-divorcio-extrajudicial-contagem");
 
   if (isStandaloneLanding) {
     return (
