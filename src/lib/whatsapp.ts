@@ -11,6 +11,12 @@ export const PAGE_LABELS: Record<string, string> = {
   "/artigos": "ARTIGOS",
   "/advogado-divorcio-betim": "ADVOGADO DE DIVÓRCIO EM BETIM",
   "/advogado-familia-betim": "ADVOGADO DE FAMÍLIA EM BETIM",
+  "/advogado-guarda-betim": "ADVOGADO DE GUARDA EM BETIM",
+  "/advogado-pensao-alimenticia-betim": "ADVOGADO DE PENSÃO ALIMENTÍCIA EM BETIM",
+  "/advogado-inventario-betim": "ADVOGADO DE INVENTÁRIO EM BETIM",
+  "/advogado-curatela-betim": "ADVOGADO DE CURATELA EM BETIM",
+  "/advogado-divorcio-extrajudicial-betim": "ADVOGADO DE DIVÓRCIO EXTRAJUDICIAL EM BETIM",
+  "/advogado-divorcio-nova-lima": "ADVOGADO DE DIVÓRCIO EM NOVA LIMA",
 };
 
 export function normalizePath(pathname: string) {
