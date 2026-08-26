@@ -31,6 +31,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/advogado-familia-betim", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-guarda-betim", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-pensao-alimenticia-betim", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-inventario-betim", changefreq: "monthly", priority: "0.9" },
           ...ARTICLES.map((a) => ({
             path: `/artigos/${a.slug}`,
             changefreq: "monthly" as const,

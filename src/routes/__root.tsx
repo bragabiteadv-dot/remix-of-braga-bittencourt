@@ -91,7 +91,8 @@ function RootComponent() {
     pathname.startsWith("/advogado-divorcio-betim") ||
     pathname.startsWith("/advogado-familia-betim") ||
     pathname.startsWith("/advogado-guarda-betim") ||
-    pathname.startsWith("/advogado-pensao-alimenticia-betim");
+    pathname.startsWith("/advogado-pensao-alimenticia-betim") ||
+    pathname.startsWith("/advogado-inventario-betim");
 
   if (isStandaloneLanding) {
     return (
