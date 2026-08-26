@@ -16,6 +16,7 @@ import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as AdvogadoPensaoAlimenticiaBetimRouteImport } from './routes/advogado-pensao-alimenticia-betim'
+import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-inventario-betim'
 import { Route as AdvogadoGuardaBetimRouteImport } from './routes/advogado-guarda-betim'
 import { Route as AdvogadoFamiliaBetimRouteImport } from './routes/advogado-familia-betim'
 import { Route as AdvogadoDivorcioBetimRouteImport } from './routes/advogado-divorcio-betim'
@@ -60,6 +61,11 @@ const AdvogadoPensaoAlimenticiaBetimRoute =
     path: '/advogado-pensao-alimenticia-betim',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoInventarioBetimRoute = AdvogadoInventarioBetimRouteImport.update({
+  id: '/advogado-inventario-betim',
+  path: '/advogado-inventario-betim',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdvogadoGuardaBetimRoute = AdvogadoGuardaBetimRouteImport.update({
   id: '/advogado-guarda-betim',
   path: '/advogado-guarda-betim',
@@ -102,6 +108,7 @@ export interface FileRoutesByFullPath {
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
+  '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-pensao-alimenticia-betim': typeof AdvogadoPensaoAlimenticiaBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
@@ -118,6 +125,7 @@ export interface FileRoutesByTo {
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
+  '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-pensao-alimenticia-betim': typeof AdvogadoPensaoAlimenticiaBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
@@ -135,6 +143,7 @@ export interface FileRoutesById {
   '/advogado-divorcio-betim': typeof AdvogadoDivorcioBetimRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
+  '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-pensao-alimenticia-betim': typeof AdvogadoPensaoAlimenticiaBetimRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
@@ -153,6 +162,7 @@ export interface FileRouteTypes {
     | '/advogado-divorcio-betim'
     | '/advogado-familia-betim'
     | '/advogado-guarda-betim'
+    | '/advogado-inventario-betim'
     | '/advogado-pensao-alimenticia-betim'
     | '/areas-de-atuacao'
     | '/duvidas'
@@ -169,6 +179,7 @@ export interface FileRouteTypes {
     | '/advogado-divorcio-betim'
     | '/advogado-familia-betim'
     | '/advogado-guarda-betim'
+    | '/advogado-inventario-betim'
     | '/advogado-pensao-alimenticia-betim'
     | '/areas-de-atuacao'
     | '/duvidas'
@@ -185,6 +196,7 @@ export interface FileRouteTypes {
     | '/advogado-divorcio-betim'
     | '/advogado-familia-betim'
     | '/advogado-guarda-betim'
+    | '/advogado-inventario-betim'
     | '/advogado-pensao-alimenticia-betim'
     | '/areas-de-atuacao'
     | '/duvidas'
@@ -202,6 +214,7 @@ export interface RootRouteChildren {
   AdvogadoDivorcioBetimRoute: typeof AdvogadoDivorcioBetimRoute
   AdvogadoFamiliaBetimRoute: typeof AdvogadoFamiliaBetimRoute
   AdvogadoGuardaBetimRoute: typeof AdvogadoGuardaBetimRoute
+  AdvogadoInventarioBetimRoute: typeof AdvogadoInventarioBetimRoute
   AdvogadoPensaoAlimenticiaBetimRoute: typeof AdvogadoPensaoAlimenticiaBetimRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   DuvidasRoute: typeof DuvidasRoute
@@ -264,6 +277,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoPensaoAlimenticiaBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-inventario-betim': {
+      id: '/advogado-inventario-betim'
+      path: '/advogado-inventario-betim'
+      fullPath: '/advogado-inventario-betim'
+      preLoaderRoute: typeof AdvogadoInventarioBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-guarda-betim': {
       id: '/advogado-guarda-betim'
       path: '/advogado-guarda-betim'
@@ -322,6 +342,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoDivorcioBetimRoute: AdvogadoDivorcioBetimRoute,
   AdvogadoFamiliaBetimRoute: AdvogadoFamiliaBetimRoute,
   AdvogadoGuardaBetimRoute: AdvogadoGuardaBetimRoute,
+  AdvogadoInventarioBetimRoute: AdvogadoInventarioBetimRoute,
   AdvogadoPensaoAlimenticiaBetimRoute: AdvogadoPensaoAlimenticiaBetimRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   DuvidasRoute: DuvidasRoute,
