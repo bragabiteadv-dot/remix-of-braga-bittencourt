@@ -55,6 +55,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
+        type: "text/javascript",
+        children: GTM_HEAD_SCRIPT,
+      },
+      {
         type: "application/ld+json",
         children: JSON.stringify(organizationSchema())
       },
