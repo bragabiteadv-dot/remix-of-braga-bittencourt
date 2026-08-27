@@ -22,6 +22,9 @@ function NotFoundComponent() {
   return <NotFoundView />;
 }
 
+const GTM_ID = "GTM-K2NTBF2P";
+const GTM_HEAD_SCRIPT = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','${GTM_ID}');`;
+const GTM_BODY_NOSCRIPT = `https://www.googletagmanager.com/ns.html?id=${GTM_ID}`;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -52,6 +55,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
+        type: "text/javascript",
+        children: GTM_HEAD_SCRIPT,
+      },
+      {
         type: "application/ld+json",
         children: JSON.stringify(organizationSchema())
       },
@@ -77,6 +84,14 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body className="antialiased">
+        <noscript>
+          <iframe
+            src={GTM_BODY_NOSCRIPT}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
