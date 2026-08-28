@@ -42,6 +42,8 @@ export interface SeoHeadProps {
   service: string;
   /** Imagem para og:image / twitter:image (absoluta ou caminho do site). */
   image?: string;
+  /** Imagem específica para Open Graph. Se omitido, usa `image` ou o fallback global `/default-og.jpg`. */
+  ogImage?: string;
   /** Forçar noindex. Padrão: false. */
   noindex?: boolean;
   /** Endereço físico do escritório que atende a cidade (Local SEO). */
@@ -144,7 +146,7 @@ export function buildSeoHead(props: SeoHeadProps): SeoHead {
     title,
     description,
     type: "website",
-    image: props.image,
+    image: props.ogImage ?? props.image ?? "/default-og.jpg",
     noindex: props.noindex,
     schema,
   });
