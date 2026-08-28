@@ -711,6 +711,8 @@ function LpFooter() {
               src={logoTree}
               alt={PAGE_ALT}
               className="h-16 w-auto object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
 
