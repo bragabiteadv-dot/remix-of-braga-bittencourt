@@ -2,7 +2,8 @@
 
 ## Em andamento
 
-## Tarefas pendentes
-- [ ] Criar componente global de SEO local (`<SeoHead>` / `buildSeoHead`) para buscas locais (TanStack Start).
-- [ ] Definir mecanismo de entrega de `robots.txt` e `sitemap.xml`: manter server routes dinâmicas existentes ou migrar para arquivos estáticos em `public/`.
-- [ ] Caso opte por estáticos: criar `public/robots.txt` e `public/sitemap.xml` com 3 URLs de exemplo de serviços jurídicos.
+## Concluído
+- [x] Criar componente/utilitário global de SEO local (`SeoHead` / `buildSeoHead`) para buscas locais no TanStack Router, descartando `react-helmet-async`.
+
+## Decisões pendentes / não aplicadas
+- [ ] Manter server routes dinâmicas existentes para `/robots.txt` e `/sitemap.xml` (não criar arquivos estáticos em `public/`).
