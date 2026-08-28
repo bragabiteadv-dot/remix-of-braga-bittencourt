@@ -1,16 +1,14 @@
-import heroVideo from "../../assets/hero-bg.mp4";
+import escritorioHero from "../../assets/escritorio-hero.jpg.asset.json";
 
 export function HeroVideoBackground() {
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      <video
+      <img
         className="w-full h-full object-cover"
-        src={heroVideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
+        src={escritorioHero.url}
+        alt="Escritório Braga Bitencourt Advogados"
+        fetchPriority="high"
+        decoding="async"
       />
       <div className="absolute inset-0 bg-black/80" />
     </div>
