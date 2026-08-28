@@ -44,6 +44,14 @@ export interface SeoHeadProps {
   image?: string;
   /** Forçar noindex. Padrão: false. */
   noindex?: boolean;
+  /** Endereço físico do escritório que atende a cidade (Local SEO). */
+  address?: Record<string, unknown>;
+  /** Texto de areaServed (ex.: "Betim, MG"). Padrão: `${city}, MG`. */
+  areaServed?: string;
+  /** Nome usado no BreadcrumbList da página. */
+  breadcrumbName?: string;
+  /** Schemas adicionais (JSON-LD) para mesclar no head. */
+  extraSchema?: Record<string, unknown>[];
 }
 
 /** Gera descrição padrão quando nenhuma é fornecida. */
@@ -63,6 +71,8 @@ function localLegalServiceSchema(props: {
   canonicalUrl: string;
   city: string;
   service: string;
+  address?: Record<string, unknown>;
+  areaServed?: string;
 }): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
@@ -72,7 +82,8 @@ function localLegalServiceSchema(props: {
     url: siteUrl(props.canonicalUrl),
     telephone: "+5531980260880",
     email: "bragabitencourtadv@gmail.com",
-    areaServed: { "@type": "City", name: props.city },
+    areaServed: props.areaServed ?? `${props.city}, MG`,
+    ...(props.address ? { address: props.address } : {}),
     serviceType: props.service,
     inLanguage: "pt-BR",
     parentOrganization: ORG_REF,
@@ -93,13 +104,40 @@ export function buildSeoHead(props: SeoHeadProps): SeoHead {
   const description =
     props.description ?? defaultDescription(props.service, props.city);
 
-  const schema = localLegalServiceSchema({
+  const legalService = localLegalServiceSchema({
     title,
     description,
     canonicalUrl: props.canonicalUrl,
     city: props.city,
     service: props.service,
+    address: props.address,
+    areaServed: props.areaServed,
   });
+
+  const breadcrumb = props.breadcrumbName
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: siteUrl("/"),
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: props.breadcrumbName,
+              item: siteUrl(props.canonicalUrl),
+            },
+          ],
+        },
+      ]
+    : [];
+
+  const schema = [legalService, ...breadcrumb, ...(props.extraSchema ?? [])];
 
   return buildSeo({
     path: props.canonicalUrl,

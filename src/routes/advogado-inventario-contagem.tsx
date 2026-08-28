@@ -25,9 +25,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { PageAltProvider } from "@/lib/page-alt";
-import { buildSeo } from "@/lib/seo";
-import { siteUrl } from "@/lib/site";
-import { ORG_REF } from "@/lib/org-schema";
+import { buildSeoHead } from "@/components/SeoHead";
 import logoTree from "@/assets/logo-tree-new.png";
 import lpHeaderLogo from "@/assets/lp-header-logo.png";
 
@@ -48,20 +46,16 @@ const DESCRIPTION =
 
 export const Route = createFileRoute("/advogado-inventario-contagem")({
   head: () =>
-    buildSeo({
-      path: PATH,
+    buildSeoHead({
       title: TITLE,
       description: DESCRIPTION,
+      canonicalUrl: PATH,
+      city: "Contagem",
+      service: "Inventário",
       image: officeBetim,
-      schema: [{
-        "@context": "https://schema.org",
-        "@type": "LegalService",
-        name: "Braga Bitencourt Advogados — Advogado de Inventário em Contagem",
-        description: DESCRIPTION,
-        url: siteUrl(PATH),
-        telephone: "+5531980260880",
-        areaServed: "Contagem, MG",
-        address: {
+      areaServed: "Contagem, MG",
+      breadcrumbName: "Advogado de Inventário em Contagem",
+      address: {
           "@type": "PostalAddress",
           streetAddress: "Av. Amazonas, 1446, 7º andar, salas 706/707 - Brasiléia",
           addressLocality: "Betim",
@@ -69,26 +63,6 @@ export const Route = createFileRoute("/advogado-inventario-contagem")({
           postalCode: "32600-324",
           addressCountry: "BR",
         },
-        parentOrganization: ORG_REF,
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: siteUrl("/"),
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Advogado de Inventário em Contagem",
-            item: siteUrl(PATH),
-          },
-        ],
-      }],
     }),
 
   component: LandingPage,
