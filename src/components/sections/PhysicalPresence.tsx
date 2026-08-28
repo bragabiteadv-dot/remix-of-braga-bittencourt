@@ -70,6 +70,8 @@ export function PhysicalPresence() {
                   <img
                     src={office.image}
                     alt={office.imageAlt}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>

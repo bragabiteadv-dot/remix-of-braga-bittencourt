@@ -132,6 +132,8 @@ function LpHeader() {
           alt={PAGE_ALT}
           className="h-12 w-auto shrink-0"
           loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <WhatsAppCta className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
       </div>
@@ -707,6 +709,8 @@ function LpFooter() {
               src={logoTree}
               alt={PAGE_ALT}
               className="h-16 w-auto object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
 
