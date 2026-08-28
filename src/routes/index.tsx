@@ -24,9 +24,9 @@ export const Route = createFileRoute("/")({
   head: () =>
     buildSeo({
       path: "/",
-      title: "Advogados em Betim e Belo Horizonte | Braga Bitencourt",
+      title: "Advogado de Família em Betim e BH/ Braga Bitencourt",
       description:
-        "Escritório de advocacia em Betim e Belo Horizonte especializado em Direito de Família, Sucessões e Direito Internacional. Fale com nossa equipe.",
+        "Mais de 20 anos de atuação. Divórcio, guarda, inventário, alimentos e causas internacionais. Fale com advogado.",
       image: OG_IMAGE,
       type: "website",
     }),
