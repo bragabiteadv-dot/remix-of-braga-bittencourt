@@ -25,9 +25,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { PageAltProvider } from "@/lib/page-alt";
-import { buildSeo } from "@/lib/seo";
-import { siteUrl } from "@/lib/site";
-import { ORG_REF } from "@/lib/org-schema";
+import { buildSeoHead } from "@/components/SeoHead";
 import logoTree from "@/assets/logo-tree-new.png";
 import lpHeaderLogo from "@/assets/lp-header-logo.png";
 
@@ -49,21 +47,17 @@ const HOME_URL = "https://bragabitencourt.com/";
 
 
 export const Route = createFileRoute("/advogado-familia-bh")({
-  head: () => {
-    const seo = buildSeo({
-      path: PATH,
+  head: () =>
+    buildSeoHead({
       title: TITLE,
       description: DESCRIPTION,
+      canonicalUrl: PATH,
+      city: "Belo Horizonte",
+      service: "Direito de Família",
       image: officeBH,
-      schema: [{
-        "@context": "https://schema.org",
-        "@type": "LegalService",
-        name: "Braga Bitencourt Advogados — Advogado de Família em Belo Horizonte",
-        description: DESCRIPTION,
-        url: ABSOLUTE_URL,
-        telephone: "+5531980260880",
-        areaServed: "Belo Horizonte, MG",
-        address: {
+      areaServed: "Belo Horizonte, MG",
+      breadcrumbName: "Advogado de Família em Belo Horizonte",
+      address: {
           "@type": "PostalAddress",
           streetAddress: "Av. Raja Gabáglia, 2000 - sala 614 - Alpes",
           addressLocality: "Belo Horizonte",
@@ -71,36 +65,7 @@ export const Route = createFileRoute("/advogado-familia-bh")({
           postalCode: "30494-170",
           addressCountry: "BR",
         },
-        parentOrganization: ORG_REF,
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: HOME_URL,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Advogado de Família em Belo Horizonte",
-            item: ABSOLUTE_URL,
-          },
-        ],
-      }],
-    });
-
-    const canonicalLink = seo.links.find((l) => l.rel === "canonical");
-    if (canonicalLink) canonicalLink.href = ABSOLUTE_URL;
-
-    const ogUrlMeta = seo.meta.find((m) => m.property === "og:url");
-    if (ogUrlMeta) ogUrlMeta.content = ABSOLUTE_URL;
-
-    return seo;
-  },
+    }),
 
   component: LandingPage,
 });

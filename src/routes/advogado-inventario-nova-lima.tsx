@@ -25,9 +25,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { PageAltProvider } from "@/lib/page-alt";
-import { buildSeo } from "@/lib/seo";
-import { siteUrl } from "@/lib/site";
-import { ORG_REF } from "@/lib/org-schema";
+import { buildSeoHead } from "@/components/SeoHead";
 import logoTree from "@/assets/logo-tree-new.png";
 import lpHeaderLogo from "@/assets/lp-header-logo.png";
 
@@ -47,20 +45,16 @@ const DESCRIPTION =
 
 export const Route = createFileRoute("/advogado-inventario-nova-lima")({
   head: () =>
-    buildSeo({
-      path: PATH,
+    buildSeoHead({
       title: TITLE,
       description: DESCRIPTION,
+      canonicalUrl: PATH,
+      city: "Nova Lima",
+      service: "Inventário",
       image: officeBH,
-      schema: [{
-        "@context": "https://schema.org",
-        "@type": "LegalService",
-        name: "Braga Bitencourt Advogados — Advogado de Inventário em Nova Lima",
-        description: DESCRIPTION,
-        url: siteUrl(PATH),
-        telephone: "+5531980260880",
-        areaServed: "Nova Lima, MG",
-        address: {
+      areaServed: "Nova Lima, MG",
+      breadcrumbName: "Advogado de Inventário em Nova Lima",
+      address: {
           "@type": "PostalAddress",
           streetAddress: "Av. Raja Gabáglia, 2000 - sala 614 - Alpes",
           addressLocality: "Belo Horizonte",
@@ -68,26 +62,6 @@ export const Route = createFileRoute("/advogado-inventario-nova-lima")({
           postalCode: "30494-170",
           addressCountry: "BR",
         },
-        parentOrganization: ORG_REF,
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: siteUrl("/"),
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Advogado de Inventário em Nova Lima",
-            item: siteUrl(PATH),
-          },
-        ],
-      }],
     }),
 
   component: LandingPage,
