@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "37287d25-b996-484a-ab97-69a8fb559575",
-  "project_id": "97ad5e82-0f2d-43a8-9f25-ff084ef6a1cc",
-  "url": "/__l5e/assets-v1/37287d25-b996-484a-ab97-69a8fb559575/sede-betim-4.jpg",
-  "r2_key": "a/v1/97ad5e82-0f2d-43a8-9f25-ff084ef6a1cc/37287d25-b996-484a-ab97-69a8fb559575/sede-betim-4.jpg",
-  "original_filename": "sede-betim-4.jpg",
-  "size": 273537,
   "content_type": "image/jpeg",
-  "created_at": "2026-08-07T23:45:31Z"
+  "created_at": "2026-08-07T23:45:31Z",
+  "original_filename": "sede-betim-4.jpg",
+  "project_id": "469e2caa-1cca-45ca-a0c4-96ebbc906302",
+  "r2_key": "a/v1/469e2caa-1cca-45ca-a0c4-96ebbc906302/37287d25-b996-484a-ab97-69a8fb559575/sede-betim-4.jpg",
+  "size": 273537,
+  "url": "/__l5e/assets-v1/37287d25-b996-484a-ab97-69a8fb559575/sede-betim-4.jpg",
+  "version": 1
 }

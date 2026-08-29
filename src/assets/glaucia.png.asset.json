@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "8ed562db-6e66-44ba-bab3-edd6d01fbbde",
-  "project_id": "97ad5e82-0f2d-43a8-9f25-ff084ef6a1cc",
-  "url": "/__l5e/assets-v1/8ed562db-6e66-44ba-bab3-edd6d01fbbde/glaucia.png",
-  "r2_key": "a/v1/97ad5e82-0f2d-43a8-9f25-ff084ef6a1cc/8ed562db-6e66-44ba-bab3-edd6d01fbbde/glaucia.png",
-  "original_filename": "glaucia.png",
-  "size": 1402367,
   "content_type": "image/png",
-  "created_at": "2026-07-30T15:05:46Z"
+  "created_at": "2026-07-30T15:05:46Z",
+  "original_filename": "glaucia.png",
+  "project_id": "469e2caa-1cca-45ca-a0c4-96ebbc906302",
+  "r2_key": "a/v1/469e2caa-1cca-45ca-a0c4-96ebbc906302/8ed562db-6e66-44ba-bab3-edd6d01fbbde/glaucia.png",
+  "size": 1402367,
+  "url": "/__l5e/assets-v1/8ed562db-6e66-44ba-bab3-edd6d01fbbde/glaucia.png",
+  "version": 1
 }
