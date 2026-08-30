@@ -129,6 +129,26 @@ function RootComponent() {
     pathname.startsWith("/advogado-pensao-alimenticia-igarape") ||
     pathname.startsWith("/advogado-inventario-igarape") ||
     pathname.startsWith("/advogado-curatela-igarape") ||
+    pathname.startsWith("/advogado-fixacao-pensao-betim") ||
+    pathname.startsWith("/advogado-exoneracao-pensao-betim") ||
+    pathname.startsWith("/advogado-revisao-pensao-betim") ||
+    pathname.startsWith("/advogado-execucao-pensao-betim") ||
+    pathname.startsWith("/advogado-fixacao-pensao-bh") ||
+    pathname.startsWith("/advogado-exoneracao-pensao-bh") ||
+    pathname.startsWith("/advogado-revisao-pensao-bh") ||
+    pathname.startsWith("/advogado-execucao-pensao-bh") ||
+    pathname.startsWith("/advogado-fixacao-pensao-contagem") ||
+    pathname.startsWith("/advogado-exoneracao-pensao-contagem") ||
+    pathname.startsWith("/advogado-revisao-pensao-contagem") ||
+    pathname.startsWith("/advogado-execucao-pensao-contagem") ||
+    pathname.startsWith("/advogado-fixacao-pensao-nova-lima") ||
+    pathname.startsWith("/advogado-exoneracao-pensao-nova-lima") ||
+    pathname.startsWith("/advogado-revisao-pensao-nova-lima") ||
+    pathname.startsWith("/advogado-execucao-pensao-nova-lima") ||
+    pathname.startsWith("/advogado-fixacao-pensao-igarape") ||
+    pathname.startsWith("/advogado-exoneracao-pensao-igarape") ||
+    pathname.startsWith("/advogado-revisao-pensao-igarape") ||
+    pathname.startsWith("/advogado-execucao-pensao-igarape") ||
     pathname.startsWith("/advogado-divorcio-extrajudicial-igarape");
 
   if (isStandaloneLanding) {
