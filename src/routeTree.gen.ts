@@ -15,6 +15,11 @@ import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
+import { Route as AdvogadoRevisaoPensaoNovaLimaRouteImport } from './routes/advogado-revisao-pensao-nova-lima'
+import { Route as AdvogadoRevisaoPensaoIgarapeRouteImport } from './routes/advogado-revisao-pensao-igarape'
+import { Route as AdvogadoRevisaoPensaoContagemRouteImport } from './routes/advogado-revisao-pensao-contagem'
+import { Route as AdvogadoRevisaoPensaoBhRouteImport } from './routes/advogado-revisao-pensao-bh'
+import { Route as AdvogadoRevisaoPensaoBetimRouteImport } from './routes/advogado-revisao-pensao-betim'
 import { Route as AdvogadoPensaoAlimenticiaNovaLimaRouteImport } from './routes/advogado-pensao-alimenticia-nova-lima'
 import { Route as AdvogadoPensaoAlimenticiaIgarapeRouteImport } from './routes/advogado-pensao-alimenticia-igarape'
 import { Route as AdvogadoPensaoAlimenticiaContagemRouteImport } from './routes/advogado-pensao-alimenticia-contagem'
@@ -30,11 +35,26 @@ import { Route as AdvogadoGuardaIgarapeRouteImport } from './routes/advogado-gua
 import { Route as AdvogadoGuardaContagemRouteImport } from './routes/advogado-guarda-contagem'
 import { Route as AdvogadoGuardaBhRouteImport } from './routes/advogado-guarda-bh'
 import { Route as AdvogadoGuardaBetimRouteImport } from './routes/advogado-guarda-betim'
+import { Route as AdvogadoFixacaoPensaoNovaLimaRouteImport } from './routes/advogado-fixacao-pensao-nova-lima'
+import { Route as AdvogadoFixacaoPensaoIgarapeRouteImport } from './routes/advogado-fixacao-pensao-igarape'
+import { Route as AdvogadoFixacaoPensaoContagemRouteImport } from './routes/advogado-fixacao-pensao-contagem'
+import { Route as AdvogadoFixacaoPensaoBhRouteImport } from './routes/advogado-fixacao-pensao-bh'
+import { Route as AdvogadoFixacaoPensaoBetimRouteImport } from './routes/advogado-fixacao-pensao-betim'
 import { Route as AdvogadoFamiliaNovaLimaRouteImport } from './routes/advogado-familia-nova-lima'
 import { Route as AdvogadoFamiliaIgarapeRouteImport } from './routes/advogado-familia-igarape'
 import { Route as AdvogadoFamiliaContagemRouteImport } from './routes/advogado-familia-contagem'
 import { Route as AdvogadoFamiliaBhRouteImport } from './routes/advogado-familia-bh'
 import { Route as AdvogadoFamiliaBetimRouteImport } from './routes/advogado-familia-betim'
+import { Route as AdvogadoExoneracaoPensaoNovaLimaRouteImport } from './routes/advogado-exoneracao-pensao-nova-lima'
+import { Route as AdvogadoExoneracaoPensaoIgarapeRouteImport } from './routes/advogado-exoneracao-pensao-igarape'
+import { Route as AdvogadoExoneracaoPensaoContagemRouteImport } from './routes/advogado-exoneracao-pensao-contagem'
+import { Route as AdvogadoExoneracaoPensaoBhRouteImport } from './routes/advogado-exoneracao-pensao-bh'
+import { Route as AdvogadoExoneracaoPensaoBetimRouteImport } from './routes/advogado-exoneracao-pensao-betim'
+import { Route as AdvogadoExecucaoPensaoNovaLimaRouteImport } from './routes/advogado-execucao-pensao-nova-lima'
+import { Route as AdvogadoExecucaoPensaoIgarapeRouteImport } from './routes/advogado-execucao-pensao-igarape'
+import { Route as AdvogadoExecucaoPensaoContagemRouteImport } from './routes/advogado-execucao-pensao-contagem'
+import { Route as AdvogadoExecucaoPensaoBhRouteImport } from './routes/advogado-execucao-pensao-bh'
+import { Route as AdvogadoExecucaoPensaoBetimRouteImport } from './routes/advogado-execucao-pensao-betim'
 import { Route as AdvogadoDivorcioNovaLimaRouteImport } from './routes/advogado-divorcio-nova-lima'
 import { Route as AdvogadoDivorcioIgarapeRouteImport } from './routes/advogado-divorcio-igarape'
 import { Route as AdvogadoDivorcioExtrajudicialNovaLimaRouteImport } from './routes/advogado-divorcio-extrajudicial-nova-lima'
@@ -85,6 +105,35 @@ const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
   path: '/areas-de-atuacao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoRevisaoPensaoNovaLimaRoute =
+  AdvogadoRevisaoPensaoNovaLimaRouteImport.update({
+    id: '/advogado-revisao-pensao-nova-lima',
+    path: '/advogado-revisao-pensao-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoRevisaoPensaoIgarapeRoute =
+  AdvogadoRevisaoPensaoIgarapeRouteImport.update({
+    id: '/advogado-revisao-pensao-igarape',
+    path: '/advogado-revisao-pensao-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoRevisaoPensaoContagemRoute =
+  AdvogadoRevisaoPensaoContagemRouteImport.update({
+    id: '/advogado-revisao-pensao-contagem',
+    path: '/advogado-revisao-pensao-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoRevisaoPensaoBhRoute = AdvogadoRevisaoPensaoBhRouteImport.update({
+  id: '/advogado-revisao-pensao-bh',
+  path: '/advogado-revisao-pensao-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoRevisaoPensaoBetimRoute =
+  AdvogadoRevisaoPensaoBetimRouteImport.update({
+    id: '/advogado-revisao-pensao-betim',
+    path: '/advogado-revisao-pensao-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoPensaoAlimenticiaNovaLimaRoute =
   AdvogadoPensaoAlimenticiaNovaLimaRouteImport.update({
     id: '/advogado-pensao-alimenticia-nova-lima',
@@ -168,6 +217,35 @@ const AdvogadoGuardaBetimRoute = AdvogadoGuardaBetimRouteImport.update({
   path: '/advogado-guarda-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoFixacaoPensaoNovaLimaRoute =
+  AdvogadoFixacaoPensaoNovaLimaRouteImport.update({
+    id: '/advogado-fixacao-pensao-nova-lima',
+    path: '/advogado-fixacao-pensao-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoFixacaoPensaoIgarapeRoute =
+  AdvogadoFixacaoPensaoIgarapeRouteImport.update({
+    id: '/advogado-fixacao-pensao-igarape',
+    path: '/advogado-fixacao-pensao-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoFixacaoPensaoContagemRoute =
+  AdvogadoFixacaoPensaoContagemRouteImport.update({
+    id: '/advogado-fixacao-pensao-contagem',
+    path: '/advogado-fixacao-pensao-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoFixacaoPensaoBhRoute = AdvogadoFixacaoPensaoBhRouteImport.update({
+  id: '/advogado-fixacao-pensao-bh',
+  path: '/advogado-fixacao-pensao-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoFixacaoPensaoBetimRoute =
+  AdvogadoFixacaoPensaoBetimRouteImport.update({
+    id: '/advogado-fixacao-pensao-betim',
+    path: '/advogado-fixacao-pensao-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoFamiliaNovaLimaRoute = AdvogadoFamiliaNovaLimaRouteImport.update({
   id: '/advogado-familia-nova-lima',
   path: '/advogado-familia-nova-lima',
@@ -193,6 +271,66 @@ const AdvogadoFamiliaBetimRoute = AdvogadoFamiliaBetimRouteImport.update({
   path: '/advogado-familia-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoExoneracaoPensaoNovaLimaRoute =
+  AdvogadoExoneracaoPensaoNovaLimaRouteImport.update({
+    id: '/advogado-exoneracao-pensao-nova-lima',
+    path: '/advogado-exoneracao-pensao-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExoneracaoPensaoIgarapeRoute =
+  AdvogadoExoneracaoPensaoIgarapeRouteImport.update({
+    id: '/advogado-exoneracao-pensao-igarape',
+    path: '/advogado-exoneracao-pensao-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExoneracaoPensaoContagemRoute =
+  AdvogadoExoneracaoPensaoContagemRouteImport.update({
+    id: '/advogado-exoneracao-pensao-contagem',
+    path: '/advogado-exoneracao-pensao-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExoneracaoPensaoBhRoute =
+  AdvogadoExoneracaoPensaoBhRouteImport.update({
+    id: '/advogado-exoneracao-pensao-bh',
+    path: '/advogado-exoneracao-pensao-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExoneracaoPensaoBetimRoute =
+  AdvogadoExoneracaoPensaoBetimRouteImport.update({
+    id: '/advogado-exoneracao-pensao-betim',
+    path: '/advogado-exoneracao-pensao-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExecucaoPensaoNovaLimaRoute =
+  AdvogadoExecucaoPensaoNovaLimaRouteImport.update({
+    id: '/advogado-execucao-pensao-nova-lima',
+    path: '/advogado-execucao-pensao-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExecucaoPensaoIgarapeRoute =
+  AdvogadoExecucaoPensaoIgarapeRouteImport.update({
+    id: '/advogado-execucao-pensao-igarape',
+    path: '/advogado-execucao-pensao-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExecucaoPensaoContagemRoute =
+  AdvogadoExecucaoPensaoContagemRouteImport.update({
+    id: '/advogado-execucao-pensao-contagem',
+    path: '/advogado-execucao-pensao-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExecucaoPensaoBhRoute =
+  AdvogadoExecucaoPensaoBhRouteImport.update({
+    id: '/advogado-execucao-pensao-bh',
+    path: '/advogado-execucao-pensao-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExecucaoPensaoBetimRoute =
+  AdvogadoExecucaoPensaoBetimRouteImport.update({
+    id: '/advogado-execucao-pensao-betim',
+    path: '/advogado-execucao-pensao-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoDivorcioNovaLimaRoute =
   AdvogadoDivorcioNovaLimaRouteImport.update({
     id: '/advogado-divorcio-nova-lima',
@@ -316,11 +454,26 @@ export interface FileRoutesByFullPath {
   '/advogado-divorcio-extrajudicial-nova-lima': typeof AdvogadoDivorcioExtrajudicialNovaLimaRoute
   '/advogado-divorcio-igarape': typeof AdvogadoDivorcioIgarapeRoute
   '/advogado-divorcio-nova-lima': typeof AdvogadoDivorcioNovaLimaRoute
+  '/advogado-execucao-pensao-betim': typeof AdvogadoExecucaoPensaoBetimRoute
+  '/advogado-execucao-pensao-bh': typeof AdvogadoExecucaoPensaoBhRoute
+  '/advogado-execucao-pensao-contagem': typeof AdvogadoExecucaoPensaoContagemRoute
+  '/advogado-execucao-pensao-igarape': typeof AdvogadoExecucaoPensaoIgarapeRoute
+  '/advogado-execucao-pensao-nova-lima': typeof AdvogadoExecucaoPensaoNovaLimaRoute
+  '/advogado-exoneracao-pensao-betim': typeof AdvogadoExoneracaoPensaoBetimRoute
+  '/advogado-exoneracao-pensao-bh': typeof AdvogadoExoneracaoPensaoBhRoute
+  '/advogado-exoneracao-pensao-contagem': typeof AdvogadoExoneracaoPensaoContagemRoute
+  '/advogado-exoneracao-pensao-igarape': typeof AdvogadoExoneracaoPensaoIgarapeRoute
+  '/advogado-exoneracao-pensao-nova-lima': typeof AdvogadoExoneracaoPensaoNovaLimaRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-familia-bh': typeof AdvogadoFamiliaBhRoute
   '/advogado-familia-contagem': typeof AdvogadoFamiliaContagemRoute
   '/advogado-familia-igarape': typeof AdvogadoFamiliaIgarapeRoute
   '/advogado-familia-nova-lima': typeof AdvogadoFamiliaNovaLimaRoute
+  '/advogado-fixacao-pensao-betim': typeof AdvogadoFixacaoPensaoBetimRoute
+  '/advogado-fixacao-pensao-bh': typeof AdvogadoFixacaoPensaoBhRoute
+  '/advogado-fixacao-pensao-contagem': typeof AdvogadoFixacaoPensaoContagemRoute
+  '/advogado-fixacao-pensao-igarape': typeof AdvogadoFixacaoPensaoIgarapeRoute
+  '/advogado-fixacao-pensao-nova-lima': typeof AdvogadoFixacaoPensaoNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
@@ -336,6 +489,11 @@ export interface FileRoutesByFullPath {
   '/advogado-pensao-alimenticia-contagem': typeof AdvogadoPensaoAlimenticiaContagemRoute
   '/advogado-pensao-alimenticia-igarape': typeof AdvogadoPensaoAlimenticiaIgarapeRoute
   '/advogado-pensao-alimenticia-nova-lima': typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
+  '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
+  '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
+  '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
+  '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
+  '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -363,11 +521,26 @@ export interface FileRoutesByTo {
   '/advogado-divorcio-extrajudicial-nova-lima': typeof AdvogadoDivorcioExtrajudicialNovaLimaRoute
   '/advogado-divorcio-igarape': typeof AdvogadoDivorcioIgarapeRoute
   '/advogado-divorcio-nova-lima': typeof AdvogadoDivorcioNovaLimaRoute
+  '/advogado-execucao-pensao-betim': typeof AdvogadoExecucaoPensaoBetimRoute
+  '/advogado-execucao-pensao-bh': typeof AdvogadoExecucaoPensaoBhRoute
+  '/advogado-execucao-pensao-contagem': typeof AdvogadoExecucaoPensaoContagemRoute
+  '/advogado-execucao-pensao-igarape': typeof AdvogadoExecucaoPensaoIgarapeRoute
+  '/advogado-execucao-pensao-nova-lima': typeof AdvogadoExecucaoPensaoNovaLimaRoute
+  '/advogado-exoneracao-pensao-betim': typeof AdvogadoExoneracaoPensaoBetimRoute
+  '/advogado-exoneracao-pensao-bh': typeof AdvogadoExoneracaoPensaoBhRoute
+  '/advogado-exoneracao-pensao-contagem': typeof AdvogadoExoneracaoPensaoContagemRoute
+  '/advogado-exoneracao-pensao-igarape': typeof AdvogadoExoneracaoPensaoIgarapeRoute
+  '/advogado-exoneracao-pensao-nova-lima': typeof AdvogadoExoneracaoPensaoNovaLimaRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-familia-bh': typeof AdvogadoFamiliaBhRoute
   '/advogado-familia-contagem': typeof AdvogadoFamiliaContagemRoute
   '/advogado-familia-igarape': typeof AdvogadoFamiliaIgarapeRoute
   '/advogado-familia-nova-lima': typeof AdvogadoFamiliaNovaLimaRoute
+  '/advogado-fixacao-pensao-betim': typeof AdvogadoFixacaoPensaoBetimRoute
+  '/advogado-fixacao-pensao-bh': typeof AdvogadoFixacaoPensaoBhRoute
+  '/advogado-fixacao-pensao-contagem': typeof AdvogadoFixacaoPensaoContagemRoute
+  '/advogado-fixacao-pensao-igarape': typeof AdvogadoFixacaoPensaoIgarapeRoute
+  '/advogado-fixacao-pensao-nova-lima': typeof AdvogadoFixacaoPensaoNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
@@ -383,6 +556,11 @@ export interface FileRoutesByTo {
   '/advogado-pensao-alimenticia-contagem': typeof AdvogadoPensaoAlimenticiaContagemRoute
   '/advogado-pensao-alimenticia-igarape': typeof AdvogadoPensaoAlimenticiaIgarapeRoute
   '/advogado-pensao-alimenticia-nova-lima': typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
+  '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
+  '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
+  '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
+  '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
+  '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -411,11 +589,26 @@ export interface FileRoutesById {
   '/advogado-divorcio-extrajudicial-nova-lima': typeof AdvogadoDivorcioExtrajudicialNovaLimaRoute
   '/advogado-divorcio-igarape': typeof AdvogadoDivorcioIgarapeRoute
   '/advogado-divorcio-nova-lima': typeof AdvogadoDivorcioNovaLimaRoute
+  '/advogado-execucao-pensao-betim': typeof AdvogadoExecucaoPensaoBetimRoute
+  '/advogado-execucao-pensao-bh': typeof AdvogadoExecucaoPensaoBhRoute
+  '/advogado-execucao-pensao-contagem': typeof AdvogadoExecucaoPensaoContagemRoute
+  '/advogado-execucao-pensao-igarape': typeof AdvogadoExecucaoPensaoIgarapeRoute
+  '/advogado-execucao-pensao-nova-lima': typeof AdvogadoExecucaoPensaoNovaLimaRoute
+  '/advogado-exoneracao-pensao-betim': typeof AdvogadoExoneracaoPensaoBetimRoute
+  '/advogado-exoneracao-pensao-bh': typeof AdvogadoExoneracaoPensaoBhRoute
+  '/advogado-exoneracao-pensao-contagem': typeof AdvogadoExoneracaoPensaoContagemRoute
+  '/advogado-exoneracao-pensao-igarape': typeof AdvogadoExoneracaoPensaoIgarapeRoute
+  '/advogado-exoneracao-pensao-nova-lima': typeof AdvogadoExoneracaoPensaoNovaLimaRoute
   '/advogado-familia-betim': typeof AdvogadoFamiliaBetimRoute
   '/advogado-familia-bh': typeof AdvogadoFamiliaBhRoute
   '/advogado-familia-contagem': typeof AdvogadoFamiliaContagemRoute
   '/advogado-familia-igarape': typeof AdvogadoFamiliaIgarapeRoute
   '/advogado-familia-nova-lima': typeof AdvogadoFamiliaNovaLimaRoute
+  '/advogado-fixacao-pensao-betim': typeof AdvogadoFixacaoPensaoBetimRoute
+  '/advogado-fixacao-pensao-bh': typeof AdvogadoFixacaoPensaoBhRoute
+  '/advogado-fixacao-pensao-contagem': typeof AdvogadoFixacaoPensaoContagemRoute
+  '/advogado-fixacao-pensao-igarape': typeof AdvogadoFixacaoPensaoIgarapeRoute
+  '/advogado-fixacao-pensao-nova-lima': typeof AdvogadoFixacaoPensaoNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
@@ -431,6 +624,11 @@ export interface FileRoutesById {
   '/advogado-pensao-alimenticia-contagem': typeof AdvogadoPensaoAlimenticiaContagemRoute
   '/advogado-pensao-alimenticia-igarape': typeof AdvogadoPensaoAlimenticiaIgarapeRoute
   '/advogado-pensao-alimenticia-nova-lima': typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
+  '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
+  '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
+  '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
+  '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
+  '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -460,11 +658,26 @@ export interface FileRouteTypes {
     | '/advogado-divorcio-extrajudicial-nova-lima'
     | '/advogado-divorcio-igarape'
     | '/advogado-divorcio-nova-lima'
+    | '/advogado-execucao-pensao-betim'
+    | '/advogado-execucao-pensao-bh'
+    | '/advogado-execucao-pensao-contagem'
+    | '/advogado-execucao-pensao-igarape'
+    | '/advogado-execucao-pensao-nova-lima'
+    | '/advogado-exoneracao-pensao-betim'
+    | '/advogado-exoneracao-pensao-bh'
+    | '/advogado-exoneracao-pensao-contagem'
+    | '/advogado-exoneracao-pensao-igarape'
+    | '/advogado-exoneracao-pensao-nova-lima'
     | '/advogado-familia-betim'
     | '/advogado-familia-bh'
     | '/advogado-familia-contagem'
     | '/advogado-familia-igarape'
     | '/advogado-familia-nova-lima'
+    | '/advogado-fixacao-pensao-betim'
+    | '/advogado-fixacao-pensao-bh'
+    | '/advogado-fixacao-pensao-contagem'
+    | '/advogado-fixacao-pensao-igarape'
+    | '/advogado-fixacao-pensao-nova-lima'
     | '/advogado-guarda-betim'
     | '/advogado-guarda-bh'
     | '/advogado-guarda-contagem'
@@ -480,6 +693,11 @@ export interface FileRouteTypes {
     | '/advogado-pensao-alimenticia-contagem'
     | '/advogado-pensao-alimenticia-igarape'
     | '/advogado-pensao-alimenticia-nova-lima'
+    | '/advogado-revisao-pensao-betim'
+    | '/advogado-revisao-pensao-bh'
+    | '/advogado-revisao-pensao-contagem'
+    | '/advogado-revisao-pensao-igarape'
+    | '/advogado-revisao-pensao-nova-lima'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -507,11 +725,26 @@ export interface FileRouteTypes {
     | '/advogado-divorcio-extrajudicial-nova-lima'
     | '/advogado-divorcio-igarape'
     | '/advogado-divorcio-nova-lima'
+    | '/advogado-execucao-pensao-betim'
+    | '/advogado-execucao-pensao-bh'
+    | '/advogado-execucao-pensao-contagem'
+    | '/advogado-execucao-pensao-igarape'
+    | '/advogado-execucao-pensao-nova-lima'
+    | '/advogado-exoneracao-pensao-betim'
+    | '/advogado-exoneracao-pensao-bh'
+    | '/advogado-exoneracao-pensao-contagem'
+    | '/advogado-exoneracao-pensao-igarape'
+    | '/advogado-exoneracao-pensao-nova-lima'
     | '/advogado-familia-betim'
     | '/advogado-familia-bh'
     | '/advogado-familia-contagem'
     | '/advogado-familia-igarape'
     | '/advogado-familia-nova-lima'
+    | '/advogado-fixacao-pensao-betim'
+    | '/advogado-fixacao-pensao-bh'
+    | '/advogado-fixacao-pensao-contagem'
+    | '/advogado-fixacao-pensao-igarape'
+    | '/advogado-fixacao-pensao-nova-lima'
     | '/advogado-guarda-betim'
     | '/advogado-guarda-bh'
     | '/advogado-guarda-contagem'
@@ -527,6 +760,11 @@ export interface FileRouteTypes {
     | '/advogado-pensao-alimenticia-contagem'
     | '/advogado-pensao-alimenticia-igarape'
     | '/advogado-pensao-alimenticia-nova-lima'
+    | '/advogado-revisao-pensao-betim'
+    | '/advogado-revisao-pensao-bh'
+    | '/advogado-revisao-pensao-contagem'
+    | '/advogado-revisao-pensao-igarape'
+    | '/advogado-revisao-pensao-nova-lima'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -554,11 +792,26 @@ export interface FileRouteTypes {
     | '/advogado-divorcio-extrajudicial-nova-lima'
     | '/advogado-divorcio-igarape'
     | '/advogado-divorcio-nova-lima'
+    | '/advogado-execucao-pensao-betim'
+    | '/advogado-execucao-pensao-bh'
+    | '/advogado-execucao-pensao-contagem'
+    | '/advogado-execucao-pensao-igarape'
+    | '/advogado-execucao-pensao-nova-lima'
+    | '/advogado-exoneracao-pensao-betim'
+    | '/advogado-exoneracao-pensao-bh'
+    | '/advogado-exoneracao-pensao-contagem'
+    | '/advogado-exoneracao-pensao-igarape'
+    | '/advogado-exoneracao-pensao-nova-lima'
     | '/advogado-familia-betim'
     | '/advogado-familia-bh'
     | '/advogado-familia-contagem'
     | '/advogado-familia-igarape'
     | '/advogado-familia-nova-lima'
+    | '/advogado-fixacao-pensao-betim'
+    | '/advogado-fixacao-pensao-bh'
+    | '/advogado-fixacao-pensao-contagem'
+    | '/advogado-fixacao-pensao-igarape'
+    | '/advogado-fixacao-pensao-nova-lima'
     | '/advogado-guarda-betim'
     | '/advogado-guarda-bh'
     | '/advogado-guarda-contagem'
@@ -574,6 +827,11 @@ export interface FileRouteTypes {
     | '/advogado-pensao-alimenticia-contagem'
     | '/advogado-pensao-alimenticia-igarape'
     | '/advogado-pensao-alimenticia-nova-lima'
+    | '/advogado-revisao-pensao-betim'
+    | '/advogado-revisao-pensao-bh'
+    | '/advogado-revisao-pensao-contagem'
+    | '/advogado-revisao-pensao-igarape'
+    | '/advogado-revisao-pensao-nova-lima'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -602,11 +860,26 @@ export interface RootRouteChildren {
   AdvogadoDivorcioExtrajudicialNovaLimaRoute: typeof AdvogadoDivorcioExtrajudicialNovaLimaRoute
   AdvogadoDivorcioIgarapeRoute: typeof AdvogadoDivorcioIgarapeRoute
   AdvogadoDivorcioNovaLimaRoute: typeof AdvogadoDivorcioNovaLimaRoute
+  AdvogadoExecucaoPensaoBetimRoute: typeof AdvogadoExecucaoPensaoBetimRoute
+  AdvogadoExecucaoPensaoBhRoute: typeof AdvogadoExecucaoPensaoBhRoute
+  AdvogadoExecucaoPensaoContagemRoute: typeof AdvogadoExecucaoPensaoContagemRoute
+  AdvogadoExecucaoPensaoIgarapeRoute: typeof AdvogadoExecucaoPensaoIgarapeRoute
+  AdvogadoExecucaoPensaoNovaLimaRoute: typeof AdvogadoExecucaoPensaoNovaLimaRoute
+  AdvogadoExoneracaoPensaoBetimRoute: typeof AdvogadoExoneracaoPensaoBetimRoute
+  AdvogadoExoneracaoPensaoBhRoute: typeof AdvogadoExoneracaoPensaoBhRoute
+  AdvogadoExoneracaoPensaoContagemRoute: typeof AdvogadoExoneracaoPensaoContagemRoute
+  AdvogadoExoneracaoPensaoIgarapeRoute: typeof AdvogadoExoneracaoPensaoIgarapeRoute
+  AdvogadoExoneracaoPensaoNovaLimaRoute: typeof AdvogadoExoneracaoPensaoNovaLimaRoute
   AdvogadoFamiliaBetimRoute: typeof AdvogadoFamiliaBetimRoute
   AdvogadoFamiliaBhRoute: typeof AdvogadoFamiliaBhRoute
   AdvogadoFamiliaContagemRoute: typeof AdvogadoFamiliaContagemRoute
   AdvogadoFamiliaIgarapeRoute: typeof AdvogadoFamiliaIgarapeRoute
   AdvogadoFamiliaNovaLimaRoute: typeof AdvogadoFamiliaNovaLimaRoute
+  AdvogadoFixacaoPensaoBetimRoute: typeof AdvogadoFixacaoPensaoBetimRoute
+  AdvogadoFixacaoPensaoBhRoute: typeof AdvogadoFixacaoPensaoBhRoute
+  AdvogadoFixacaoPensaoContagemRoute: typeof AdvogadoFixacaoPensaoContagemRoute
+  AdvogadoFixacaoPensaoIgarapeRoute: typeof AdvogadoFixacaoPensaoIgarapeRoute
+  AdvogadoFixacaoPensaoNovaLimaRoute: typeof AdvogadoFixacaoPensaoNovaLimaRoute
   AdvogadoGuardaBetimRoute: typeof AdvogadoGuardaBetimRoute
   AdvogadoGuardaBhRoute: typeof AdvogadoGuardaBhRoute
   AdvogadoGuardaContagemRoute: typeof AdvogadoGuardaContagemRoute
@@ -622,6 +895,11 @@ export interface RootRouteChildren {
   AdvogadoPensaoAlimenticiaContagemRoute: typeof AdvogadoPensaoAlimenticiaContagemRoute
   AdvogadoPensaoAlimenticiaIgarapeRoute: typeof AdvogadoPensaoAlimenticiaIgarapeRoute
   AdvogadoPensaoAlimenticiaNovaLimaRoute: typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
+  AdvogadoRevisaoPensaoBetimRoute: typeof AdvogadoRevisaoPensaoBetimRoute
+  AdvogadoRevisaoPensaoBhRoute: typeof AdvogadoRevisaoPensaoBhRoute
+  AdvogadoRevisaoPensaoContagemRoute: typeof AdvogadoRevisaoPensaoContagemRoute
+  AdvogadoRevisaoPensaoIgarapeRoute: typeof AdvogadoRevisaoPensaoIgarapeRoute
+  AdvogadoRevisaoPensaoNovaLimaRoute: typeof AdvogadoRevisaoPensaoNovaLimaRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
@@ -674,6 +952,41 @@ declare module '@tanstack/react-router' {
       path: '/areas-de-atuacao'
       fullPath: '/areas-de-atuacao'
       preLoaderRoute: typeof AreasDeAtuacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-revisao-pensao-nova-lima': {
+      id: '/advogado-revisao-pensao-nova-lima'
+      path: '/advogado-revisao-pensao-nova-lima'
+      fullPath: '/advogado-revisao-pensao-nova-lima'
+      preLoaderRoute: typeof AdvogadoRevisaoPensaoNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-revisao-pensao-igarape': {
+      id: '/advogado-revisao-pensao-igarape'
+      path: '/advogado-revisao-pensao-igarape'
+      fullPath: '/advogado-revisao-pensao-igarape'
+      preLoaderRoute: typeof AdvogadoRevisaoPensaoIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-revisao-pensao-contagem': {
+      id: '/advogado-revisao-pensao-contagem'
+      path: '/advogado-revisao-pensao-contagem'
+      fullPath: '/advogado-revisao-pensao-contagem'
+      preLoaderRoute: typeof AdvogadoRevisaoPensaoContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-revisao-pensao-bh': {
+      id: '/advogado-revisao-pensao-bh'
+      path: '/advogado-revisao-pensao-bh'
+      fullPath: '/advogado-revisao-pensao-bh'
+      preLoaderRoute: typeof AdvogadoRevisaoPensaoBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-revisao-pensao-betim': {
+      id: '/advogado-revisao-pensao-betim'
+      path: '/advogado-revisao-pensao-betim'
+      fullPath: '/advogado-revisao-pensao-betim'
+      preLoaderRoute: typeof AdvogadoRevisaoPensaoBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-pensao-alimenticia-nova-lima': {
@@ -781,6 +1094,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoGuardaBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-fixacao-pensao-nova-lima': {
+      id: '/advogado-fixacao-pensao-nova-lima'
+      path: '/advogado-fixacao-pensao-nova-lima'
+      fullPath: '/advogado-fixacao-pensao-nova-lima'
+      preLoaderRoute: typeof AdvogadoFixacaoPensaoNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-fixacao-pensao-igarape': {
+      id: '/advogado-fixacao-pensao-igarape'
+      path: '/advogado-fixacao-pensao-igarape'
+      fullPath: '/advogado-fixacao-pensao-igarape'
+      preLoaderRoute: typeof AdvogadoFixacaoPensaoIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-fixacao-pensao-contagem': {
+      id: '/advogado-fixacao-pensao-contagem'
+      path: '/advogado-fixacao-pensao-contagem'
+      fullPath: '/advogado-fixacao-pensao-contagem'
+      preLoaderRoute: typeof AdvogadoFixacaoPensaoContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-fixacao-pensao-bh': {
+      id: '/advogado-fixacao-pensao-bh'
+      path: '/advogado-fixacao-pensao-bh'
+      fullPath: '/advogado-fixacao-pensao-bh'
+      preLoaderRoute: typeof AdvogadoFixacaoPensaoBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-fixacao-pensao-betim': {
+      id: '/advogado-fixacao-pensao-betim'
+      path: '/advogado-fixacao-pensao-betim'
+      fullPath: '/advogado-fixacao-pensao-betim'
+      preLoaderRoute: typeof AdvogadoFixacaoPensaoBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-familia-nova-lima': {
       id: '/advogado-familia-nova-lima'
       path: '/advogado-familia-nova-lima'
@@ -814,6 +1162,76 @@ declare module '@tanstack/react-router' {
       path: '/advogado-familia-betim'
       fullPath: '/advogado-familia-betim'
       preLoaderRoute: typeof AdvogadoFamiliaBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-exoneracao-pensao-nova-lima': {
+      id: '/advogado-exoneracao-pensao-nova-lima'
+      path: '/advogado-exoneracao-pensao-nova-lima'
+      fullPath: '/advogado-exoneracao-pensao-nova-lima'
+      preLoaderRoute: typeof AdvogadoExoneracaoPensaoNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-exoneracao-pensao-igarape': {
+      id: '/advogado-exoneracao-pensao-igarape'
+      path: '/advogado-exoneracao-pensao-igarape'
+      fullPath: '/advogado-exoneracao-pensao-igarape'
+      preLoaderRoute: typeof AdvogadoExoneracaoPensaoIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-exoneracao-pensao-contagem': {
+      id: '/advogado-exoneracao-pensao-contagem'
+      path: '/advogado-exoneracao-pensao-contagem'
+      fullPath: '/advogado-exoneracao-pensao-contagem'
+      preLoaderRoute: typeof AdvogadoExoneracaoPensaoContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-exoneracao-pensao-bh': {
+      id: '/advogado-exoneracao-pensao-bh'
+      path: '/advogado-exoneracao-pensao-bh'
+      fullPath: '/advogado-exoneracao-pensao-bh'
+      preLoaderRoute: typeof AdvogadoExoneracaoPensaoBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-exoneracao-pensao-betim': {
+      id: '/advogado-exoneracao-pensao-betim'
+      path: '/advogado-exoneracao-pensao-betim'
+      fullPath: '/advogado-exoneracao-pensao-betim'
+      preLoaderRoute: typeof AdvogadoExoneracaoPensaoBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-execucao-pensao-nova-lima': {
+      id: '/advogado-execucao-pensao-nova-lima'
+      path: '/advogado-execucao-pensao-nova-lima'
+      fullPath: '/advogado-execucao-pensao-nova-lima'
+      preLoaderRoute: typeof AdvogadoExecucaoPensaoNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-execucao-pensao-igarape': {
+      id: '/advogado-execucao-pensao-igarape'
+      path: '/advogado-execucao-pensao-igarape'
+      fullPath: '/advogado-execucao-pensao-igarape'
+      preLoaderRoute: typeof AdvogadoExecucaoPensaoIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-execucao-pensao-contagem': {
+      id: '/advogado-execucao-pensao-contagem'
+      path: '/advogado-execucao-pensao-contagem'
+      fullPath: '/advogado-execucao-pensao-contagem'
+      preLoaderRoute: typeof AdvogadoExecucaoPensaoContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-execucao-pensao-bh': {
+      id: '/advogado-execucao-pensao-bh'
+      path: '/advogado-execucao-pensao-bh'
+      fullPath: '/advogado-execucao-pensao-bh'
+      preLoaderRoute: typeof AdvogadoExecucaoPensaoBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-execucao-pensao-betim': {
+      id: '/advogado-execucao-pensao-betim'
+      path: '/advogado-execucao-pensao-betim'
+      fullPath: '/advogado-execucao-pensao-betim'
+      preLoaderRoute: typeof AdvogadoExecucaoPensaoBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-divorcio-nova-lima': {
@@ -974,11 +1392,26 @@ const rootRouteChildren: RootRouteChildren = {
     AdvogadoDivorcioExtrajudicialNovaLimaRoute,
   AdvogadoDivorcioIgarapeRoute: AdvogadoDivorcioIgarapeRoute,
   AdvogadoDivorcioNovaLimaRoute: AdvogadoDivorcioNovaLimaRoute,
+  AdvogadoExecucaoPensaoBetimRoute: AdvogadoExecucaoPensaoBetimRoute,
+  AdvogadoExecucaoPensaoBhRoute: AdvogadoExecucaoPensaoBhRoute,
+  AdvogadoExecucaoPensaoContagemRoute: AdvogadoExecucaoPensaoContagemRoute,
+  AdvogadoExecucaoPensaoIgarapeRoute: AdvogadoExecucaoPensaoIgarapeRoute,
+  AdvogadoExecucaoPensaoNovaLimaRoute: AdvogadoExecucaoPensaoNovaLimaRoute,
+  AdvogadoExoneracaoPensaoBetimRoute: AdvogadoExoneracaoPensaoBetimRoute,
+  AdvogadoExoneracaoPensaoBhRoute: AdvogadoExoneracaoPensaoBhRoute,
+  AdvogadoExoneracaoPensaoContagemRoute: AdvogadoExoneracaoPensaoContagemRoute,
+  AdvogadoExoneracaoPensaoIgarapeRoute: AdvogadoExoneracaoPensaoIgarapeRoute,
+  AdvogadoExoneracaoPensaoNovaLimaRoute: AdvogadoExoneracaoPensaoNovaLimaRoute,
   AdvogadoFamiliaBetimRoute: AdvogadoFamiliaBetimRoute,
   AdvogadoFamiliaBhRoute: AdvogadoFamiliaBhRoute,
   AdvogadoFamiliaContagemRoute: AdvogadoFamiliaContagemRoute,
   AdvogadoFamiliaIgarapeRoute: AdvogadoFamiliaIgarapeRoute,
   AdvogadoFamiliaNovaLimaRoute: AdvogadoFamiliaNovaLimaRoute,
+  AdvogadoFixacaoPensaoBetimRoute: AdvogadoFixacaoPensaoBetimRoute,
+  AdvogadoFixacaoPensaoBhRoute: AdvogadoFixacaoPensaoBhRoute,
+  AdvogadoFixacaoPensaoContagemRoute: AdvogadoFixacaoPensaoContagemRoute,
+  AdvogadoFixacaoPensaoIgarapeRoute: AdvogadoFixacaoPensaoIgarapeRoute,
+  AdvogadoFixacaoPensaoNovaLimaRoute: AdvogadoFixacaoPensaoNovaLimaRoute,
   AdvogadoGuardaBetimRoute: AdvogadoGuardaBetimRoute,
   AdvogadoGuardaBhRoute: AdvogadoGuardaBhRoute,
   AdvogadoGuardaContagemRoute: AdvogadoGuardaContagemRoute,
@@ -996,6 +1429,11 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoPensaoAlimenticiaIgarapeRoute: AdvogadoPensaoAlimenticiaIgarapeRoute,
   AdvogadoPensaoAlimenticiaNovaLimaRoute:
     AdvogadoPensaoAlimenticiaNovaLimaRoute,
+  AdvogadoRevisaoPensaoBetimRoute: AdvogadoRevisaoPensaoBetimRoute,
+  AdvogadoRevisaoPensaoBhRoute: AdvogadoRevisaoPensaoBhRoute,
+  AdvogadoRevisaoPensaoContagemRoute: AdvogadoRevisaoPensaoContagemRoute,
+  AdvogadoRevisaoPensaoIgarapeRoute: AdvogadoRevisaoPensaoIgarapeRoute,
+  AdvogadoRevisaoPensaoNovaLimaRoute: AdvogadoRevisaoPensaoNovaLimaRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
