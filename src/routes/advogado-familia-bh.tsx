@@ -26,6 +26,7 @@ import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { PageAltProvider } from "@/lib/page-alt";
 import { buildSeoHead } from "@/components/SeoHead";
+import { OG_IMAGE } from "@/lib/site-og";
 import logoTree from "@/assets/logo-tree-new.png";
 import lpHeaderLogo from "@/assets/lp-header-logo.png";
 
@@ -54,7 +55,7 @@ export const Route = createFileRoute("/advogado-familia-bh")({
       canonicalUrl: PATH,
       city: "Belo Horizonte",
       service: "Direito de Família",
-      image: officeBH,
+      image: OG_IMAGE,
       areaServed: "Belo Horizonte, MG",
       breadcrumbName: "Advogado de Família em Belo Horizonte",
       address: {

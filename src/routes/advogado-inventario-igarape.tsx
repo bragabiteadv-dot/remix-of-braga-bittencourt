@@ -26,6 +26,7 @@ import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { PageAltProvider } from "@/lib/page-alt";
 import { buildSeoHead } from "@/components/SeoHead";
+import { OG_IMAGE } from "@/lib/site-og";
 import logoTree from "@/assets/logo-tree-new.png";
 import lpHeaderLogo from "@/assets/lp-header-logo.png";
 
@@ -52,7 +53,7 @@ export const Route = createFileRoute("/advogado-inventario-igarape")({
       canonicalUrl: PATH,
       city: "Igarapé",
       service: "Inventário",
-      image: officeBetim,
+      image: OG_IMAGE,
       areaServed: "Igarapé, MG",
       breadcrumbName: "Advogado de Inventário em Igarapé",
       address: {
