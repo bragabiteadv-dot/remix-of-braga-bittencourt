@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
-  Scale,
   Users,
   Coins,
   FileSignature,
@@ -232,9 +231,9 @@ function LpSituations() {
 
   const items = [
     {
-      icon: <Scale className="w-7 h-7" />,
-      title: "Precisa fixar pensão alimentícia, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre pensão alimentícia consensual e o litigiosa e proteja seus direitos de forma rápida.",
+      icon: <Users className="w-7 h-7" />,
+      title: "Quando posso exigir pensão alimentícia sob pena de prisão e sob pena de penhora?",
+      text: "Garanta o bem-estar dos seus filhos com uma definição clara e eficiente sobre a melhor técnica para exigir pensão alimentícia atrasada.",
     },
     {
       icon: <Users className="w-7 h-7" />,
