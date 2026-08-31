@@ -42,7 +42,7 @@ const PATH = "/advogado-guarda-contagem";
 const TITLE = "Advogado de Guarda em Contagem | Braga Bitencourt Advogados";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de divórcio em Contagem com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
+  "Advogado de Guarda em Contagem com mais de 20 anos de experiência. Regulamentação de guarda, guarda compartilhada, guarda unilateral e medidas protetivas com sigilo e segurança.";
 
 
 export const Route = createFileRoute("/advogado-guarda-contagem")({

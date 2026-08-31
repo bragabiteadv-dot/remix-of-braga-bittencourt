@@ -41,7 +41,7 @@ const PATH = "/advogado-familia-bh";
 const TITLE = "Advogado de Família em Belo Horizonte | Braga Bitencourt";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Atuação especializada em Direito de Família em Belo Horizonte. Atendimento para guarda, pensão alimentícia, inventário e litígios familiares.";
+  "Advogado de Família em Belo Horizonte com mais de 20 anos de experiência. Guarda, pensão alimentícia, inventário e litígios familiares.";
 
 const ABSOLUTE_URL = "https://bragabitencourt.com" + PATH;
 const HOME_URL = "https://bragabitencourt.com/";

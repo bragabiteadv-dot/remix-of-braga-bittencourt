@@ -41,7 +41,7 @@ const PATH = "/advogado-fixacao-pensao-bh";
 const TITLE = "Advogado de Fixação de Pensão em Belo Horizonte | Braga Bitencourt Advogados";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de divórcio em Belo Horizonte com mais de 20 anos de experiência. Partilha de bens, guarda, fixação de pensão e divórcio em cartório com sigilo e segurança.";
+  "Advogado de Fixação de Pensão em Belo Horizonte com mais de 20 anos de experiência. Fixação de pensão alimentícia, pensão provisória, guarda e direitos do filho com sigilo e segurança.";
 
 
 export const Route = createFileRoute("/advogado-fixacao-pensao-bh")({

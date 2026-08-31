@@ -41,7 +41,7 @@ const PATH = "/advogado-revisao-pensao-bh";
 const TITLE = "Advogado de Revisão de Pensão em Belo Horizonte | Braga Bitencourt Advogados";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de divórcio em Belo Horizonte com mais de 20 anos de experiência. Partilha de bens, guarda, revisão de pensão e divórcio em cartório com sigilo e segurança.";
+  "Advogado de Revisão de Pensão em Belo Horizonte com mais de 20 anos de experiência. Revisão de pensão alimentícia, majoração, redução e indexação de valores com sigilo e segurança.";
 
 
 export const Route = createFileRoute("/advogado-revisao-pensao-bh")({

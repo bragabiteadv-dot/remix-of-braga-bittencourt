@@ -42,7 +42,7 @@ const PATH = "/advogado-inventario-igarape";
 const TITLE = "Advogado de Inventário em Igarapé | Braga Bitencourt Advogados";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de inventário em Igarapé com mais de 20 anos de experiência. Inventários judiciais e extrajudiciais, partilha de bens, testamentos e planejamento sucessório com sigilo e segurança.";
+  "Advogado de Inventário em Igarapé com mais de 20 anos de experiência. Inventários judiciais e extrajudiciais, partilha de bens, testamentos e planejamento sucessório com sigilo e segurança.";
 
 
 export const Route = createFileRoute("/advogado-inventario-igarape")({

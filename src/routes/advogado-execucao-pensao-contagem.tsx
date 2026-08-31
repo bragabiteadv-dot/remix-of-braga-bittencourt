@@ -42,7 +42,7 @@ const PATH = "/advogado-execucao-pensao-contagem";
 const TITLE = "Advogado de Execução de Pensão em Contagem | Braga Bitencourt Advogados";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de divórcio em Contagem com mais de 20 anos de experiência. Partilha de bens, guarda, execução de pensão e divórcio em cartório com sigilo e segurança.";
+  "Advogado de Execução de Pensão em Contagem com mais de 20 anos de experiência. Execução de pensão alimentícia, atrasos, prescrição e pensão avoenga com sigilo e segurança.";
 
 
 export const Route = createFileRoute("/advogado-execucao-pensao-contagem")({

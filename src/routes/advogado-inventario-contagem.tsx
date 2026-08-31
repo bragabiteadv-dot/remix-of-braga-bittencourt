@@ -42,7 +42,7 @@ const PATH = "/advogado-inventario-contagem";
 const TITLE = "Advogado de Inventário em Contagem | Braga Bitencourt Advogados";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de inventário em Contagem com mais de 20 anos de experiência. Inventários judiciais e extrajudiciais, partilha de bens, testamentos e planejamento sucessório com sigilo e segurança.";
+  "Advogado de Inventário em Contagem com mais de 20 anos de experiência. Inventários judiciais e extrajudiciais, partilha de bens, testamentos e planejamento sucessório com sigilo e segurança.";
 
 
 export const Route = createFileRoute("/advogado-inventario-contagem")({
