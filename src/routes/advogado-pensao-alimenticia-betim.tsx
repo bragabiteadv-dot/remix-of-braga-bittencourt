@@ -233,8 +233,8 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Precisa fixar pensão alimentícia, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre pensão alimentícia consensual e o litigiosa e proteja seus direitos de forma rápida.",
+      title: "Com quanto tempo de atraso posso pedir a execução da pensão alimentícia?",
+      text: "Basta o atraso de 1 dia, para que a pensão possa ser executada sob pena de prisão.",
     },
     {
       icon: <Users className="w-7 h-7" />,
