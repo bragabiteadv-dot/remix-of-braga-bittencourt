@@ -39,6 +39,9 @@ import sedeBetim5 from "@/assets/sede-betim-5.jpg";
 
 const PATH = "/advogado-pensao-alimenticia-igarape";
 const TITLE = "Advogado de Pensão Alimentícia em Igarapé | Braga Bitencourt Advogados";
+const SERVICE = "Pensão Alimentícia";
+const CITY = "Igarapé";
+const OFFICE_ALT = `Escritório especialista em ${SERVICE} em ${CITY}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
   "Advogado de Pensão Alimentícia em Igarapé com mais de 20 anos de experiência. Fixação, revisão, exoneração e execução de pensão alimentícia com sigilo e segurança.";
@@ -71,7 +74,7 @@ export const Route = createFileRoute("/advogado-pensao-alimenticia-igarape")({
 
 function LandingPage() {
   return (
-    <PageAltProvider alt={PAGE_ALT}>
+    <PageAltProvider alt={PAGE_ALT} service={SERVICE} city={CITY}>
       <LandingPageContent />
     </PageAltProvider>
   );
@@ -173,7 +176,7 @@ function LpHero() {
             <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <img
                 src={officeBetim}
-                alt={PAGE_ALT}
+                alt={OFFICE_ALT}
                 className="w-full h-[320px] object-cover"
                 loading="lazy"
               />
@@ -331,7 +334,7 @@ function LpOfficeGallery() {
             >
               <img
                 src={src}
-                alt={PAGE_ALT}
+                alt={OFFICE_ALT}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -549,7 +552,7 @@ function LpPresence() {
             <div className="h-56 overflow-hidden shrink-0">
               <img
                 src={officeBetim}
-                alt={PAGE_ALT}
+                alt={OFFICE_ALT}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
