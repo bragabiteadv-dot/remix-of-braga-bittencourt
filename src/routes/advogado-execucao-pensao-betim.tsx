@@ -233,8 +233,8 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Precisa fixar execução de pensão, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre execução de pensão consensual e o litigiosa e proteja seus direitos de forma rápida.",
+      title: "Com quanto tempo de atraso posso pedir a execução da pensão alimentícia?",
+      text: "Basta o atraso de 1 dia, para que a pensão possa ser executada sob pena de prisão.",
     },
     {
       icon: <Users className="w-7 h-7" />,
@@ -248,13 +248,13 @@ function LpSituations() {
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
-      title: "Estou fazendo faculdade e preciso continuar recebendo execução de pensão.",
-      text: "Entenda a extensão e os limites do seu direito, os pré-requisitos para continuar recebendo pensão após a maioridade e cursando ensino superior.",
+      title: "Atingi a maioridade e estou fazendo faculdade. Minha pensão está atrasada. Posso executar esta pensão?",
+      text: "Observando o prazo de prescrição de 2 anos a pensão alimentícia só não é executável se previamente for exonerada.",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "A pensão que recebo não é suficiente, posso pedir um complemento dos avós?",
-      text: "A execução de pensão avoenga é perfeitamente cabível, porém, tem natureza complementar à pensão principal. Saiba mais com nossos especialistas.",
+      title: "A pensão que recebo não é suficiente. Posso executar o débito alimentício contra os avós?",
+      text: "A execução de pensão avoenga é perfeitamente executável, mas não do débito fixado contra o genitor. É necessário que se fixe pensão complementar contra os avós e somente esta será devida por eles.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
