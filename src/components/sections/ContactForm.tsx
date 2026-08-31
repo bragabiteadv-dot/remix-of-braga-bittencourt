@@ -1,4 +1,4 @@
-import { usePageAlt } from "@/lib/page-alt";
+import { usePageAltFor } from "@/lib/page-alt";
 import { useState } from "react";
 import { MessageSquare, User, MapPin, Folder, ChevronDown, FileText } from "lucide-react";
 import { WHATSAPP_PHONE, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
@@ -55,7 +55,7 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
           <div className="relative w-full bg-navy">
             <img
               src={formOffice}
-              alt={usePageAlt("Braga Bitencourt Contato")}
+              alt={usePageAltFor("form", "Braga Bitencourt Contato")}
               loading="lazy"
               decoding="async"
               width={697}

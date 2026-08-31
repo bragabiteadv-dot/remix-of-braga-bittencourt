@@ -39,6 +39,9 @@ import sedeBetim5 from "@/assets/sede-betim-5.jpg";
 
 const PATH = "/advogado-guarda-nova-lima";
 const TITLE = "Advogado de Guarda em Nova Lima | Braga Bitencourt Advogados";
+const SERVICE = "Guarda";
+const CITY = "Nova Lima";
+const OFFICE_ALT = `Escritório especialista em ${SERVICE} em ${CITY}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
   "Advogado de Guarda em Nova Lima com mais de 20 anos de experiência. Regulamentação de guarda, guarda compartilhada, guarda unilateral e medidas protetivas com sigilo e segurança.";
@@ -71,7 +74,7 @@ export const Route = createFileRoute("/advogado-guarda-nova-lima")({
 
 function LandingPage() {
   return (
-    <PageAltProvider alt={PAGE_ALT}>
+    <PageAltProvider alt={PAGE_ALT} service={SERVICE} city={CITY}>
       <LandingPageContent />
     </PageAltProvider>
   );
@@ -174,7 +177,7 @@ function LpHero() {
             <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <img
                 src={officeBH}
-                alt={PAGE_ALT}
+                alt={OFFICE_ALT}
                 className="w-full h-[320px] object-cover"
                 loading="lazy"
               />
@@ -332,7 +335,7 @@ function LpOfficeGallery() {
             >
               <img
                 src={src}
-                alt={PAGE_ALT}
+                alt={OFFICE_ALT}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -550,7 +553,7 @@ function LpPresence() {
             <div className="h-56 overflow-hidden shrink-0">
               <img
                 src={officeBH}
-                alt={PAGE_ALT}
+                alt={OFFICE_ALT}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
