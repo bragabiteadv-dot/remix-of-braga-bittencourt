@@ -42,7 +42,7 @@ const PATH = "/advogado-divorcio-extrajudicial-igarape";
 const TITLE = "Advogado de Divórcio Extrajudicial em Igarapé | Braga Bitencourt Advogados";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de divórcio extrajudicial em Igarapé com mais de 20 anos de experiência. Divórcio em cartório, partilha de bens, guarda e pensão com sigilo e agilidade.";
+  "Advogado de Divórcio Extrajudicial em Igarapé com mais de 20 anos de experiência. Divórcio em cartório, partilha de bens, guarda e pensão com sigilo e agilidade.";
 
 
 export const Route = createFileRoute("/advogado-divorcio-extrajudicial-igarape")({

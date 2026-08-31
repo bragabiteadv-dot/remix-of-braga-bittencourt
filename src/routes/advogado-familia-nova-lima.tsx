@@ -41,7 +41,7 @@ const PATH = "/advogado-familia-nova-lima";
 const TITLE = "Advogado de Família em Nova Lima | Braga Bitencourt";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Atuação especializada em Direito de Família em Nova Lima. Atendimento para guarda, pensão alimentícia, inventário e litígios familiares.";
+  "Advogado de Família em Nova Lima com mais de 20 anos de experiência. Guarda, pensão alimentícia, inventário e litígios familiares.";
 
 const ABSOLUTE_URL = "https://bragabitencourt.com" + PATH;
 const HOME_URL = "https://bragabitencourt.com/";

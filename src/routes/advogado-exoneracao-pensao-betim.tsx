@@ -42,7 +42,7 @@ const PATH = "/advogado-exoneracao-pensao-betim";
 const TITLE = "Advogado de Exoneração de Pensão em Betim | Braga Bitencourt Advogados";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de divórcio em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, exoneração de pensão e divórcio em cartório com sigilo e segurança.";
+  "Advogado de Exoneração de Pensão em Betim com mais de 20 anos de experiência. Exoneração de pensão alimentícia, revisão de valores, incapacidade e maioridade com sigilo e segurança.";
 
 
 export const Route = createFileRoute("/advogado-exoneracao-pensao-betim")({

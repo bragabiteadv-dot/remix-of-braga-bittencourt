@@ -42,7 +42,7 @@ const PATH = "/advogado-pensao-alimenticia-betim";
 const TITLE = "Advogado de Pensão Alimentícia em Betim | Braga Bitencourt Advogados";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de divórcio em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
+  "Advogado de Pensão Alimentícia em Betim com mais de 20 anos de experiência. Fixação, revisão, exoneração e execução de pensão alimentícia com sigilo e segurança.";
 
 
 export const Route = createFileRoute("/advogado-pensao-alimenticia-betim")({

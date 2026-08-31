@@ -42,7 +42,7 @@ const PATH = "/advogado-curatela-betim";
 const TITLE = "Advogado de Curatela em Betim | Braga Bitencourt Advogados";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de curatela em Betim com mais de 20 anos de experiência. Interdição, curatela voluntária, gestão de bens e proteção jurídica de pessoas vulneráveis com sigilo e segurança.";
+  "Advogado de Curatela em Betim com mais de 20 anos de experiência. Interdição, curatela voluntária, gestão de bens e proteção jurídica de pessoas vulneráveis com sigilo e segurança.";
 
 
 export const Route = createFileRoute("/advogado-curatela-betim")({
