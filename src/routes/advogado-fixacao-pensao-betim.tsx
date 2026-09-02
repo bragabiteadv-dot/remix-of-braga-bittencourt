@@ -236,18 +236,18 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Precisa fixar fixação de pensão, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre fixação de pensão consensual e o litigiosa e proteja seus direitos de forma rápida.",
+      title: "Fiquei desempregado, qual será o valor da pensão que tenho que pagar?",
+      text: "Mesmo com o desemprego, a pensão segue o valor do último salário, mas é possível pedir revisão judicial.",
     },
     {
       icon: <Users className="w-7 h-7" />,
-      title: "Quando posso exigir fixação de pensão sob pena de prisão e sob pena de penhora?",
-      text: "Garanta o bem-estar dos seus filhos com uma definição clara e eficiente sobre a melhor técnica para exigir fixação de pensão atrasada.",
+      title: "A lei diz que o valor da pensão é 30% de minha renda?",
+      text: "Não, a lei diz apenas que a pensão varia conforme as despesas da criança e os ganhos reais de quem paga.",
     },
     {
       icon: <Coins className="w-7 h-7" />,
-      title: "Tem dúvidas sobre o valor da fixação de pensão ou como calculá-lo?",
-      text: "Saiba como funciona o cálculo da fixação de pensão, como solicitar ou pedir a revisão dos valores determinados.",
+      title: "É possível descontar a pensão diretamente em contracheques?",
+      text: "Sim, via ofício judicial diretamente à fonte pagadora para garantir o depósito automático.",
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
