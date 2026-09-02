@@ -164,7 +164,7 @@ function LpHero() {
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
-              Advogado especialista em Execução de Pensão em Belo Horizonte —&nbsp; Conduzimos seu caso de execução de pensão com o sigilo, a segurança e a melhor técnica que você precisa.
+              Advogado especialista em Execução de Pensão Alimentícia em Belo Horizonte —&nbsp; Conduzimos seu caso de execução de pensão com o sigilo, a segurança e a melhor técnica que você precisa.
             </p>
 
             <WhatsAppCta className="w-full sm:w-auto" />
