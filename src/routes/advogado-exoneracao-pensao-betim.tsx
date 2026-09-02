@@ -165,7 +165,7 @@ function LpHero() {
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
-              Advogado especialista em Exoneração de Pensão em Betim —&nbsp; Conduzimos seu caso de exoneração de pensão com o sigilo, a segurança e a melhor técnica que você precisa.
+              Advogado especialista em Exoneração de Pensão Alimentícia em Betim —&nbsp; Conduzimos seu caso de exoneração de pensão com o sigilo, a segurança e a melhor técnica que você precisa.
             </p>
 
             <WhatsAppCta className="w-full sm:w-auto" />
@@ -271,7 +271,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES EM SEU CASO DE EXONERAÇÃO DE PENSÃO?
+            VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES EM SEU CASO DE EXONERAÇÃO DE PENSÃO ALIMENTÍCIA?
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
