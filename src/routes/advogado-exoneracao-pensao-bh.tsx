@@ -245,23 +245,23 @@ function LpSituations() {
     },
     {
       icon: <Coins className="w-7 h-7" />,
-      title: "Tem dúvidas sobre o valor da exoneração de pensão ou como calculá-lo?",
-      text: "Saiba como funciona o cálculo da exoneração de pensão, como solicitar ou pedir a revisão dos valores determinados.",
+      title: "O filho que se casou ou constituiu união estável ainda tem direito à pensão?",
+      text: "Não, o casamento ou a união estável extingue o dever alimentar dos pais, mas é necessário ajuizar ação exoneratória.",
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
-      title: "Estou fazendo faculdade e preciso continuar recebendo exoneração de pensão.",
-      text: "Entenda a extensão e os limites do seu direito, os pré-requisitos para continuar recebendo pensão após a maioridade e cursando ensino superior.",
+      title: "O filho começou a trabalhar; posso parar de pagar?",
+      text: "Isto é fundamental para a exoneração, mas é preciso verificar se está estudando.",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "A pensão que recebo não é suficiente, posso pedir um complemento dos avós?",
-      text: "A exoneração de pensão avoenga é perfeitamente cabível, porém, tem natureza complementar à pensão principal. Saiba mais com nossos especialistas.",
+      title: "Posso cortar a pensão por conta própria ao notar a independência do filho?",
+      text: "Não, cortar pensão sem decisão judicial gera risco de prisão e penhora.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
-      title: "Exoneração de Pensão prescreve? Posso cobrar retroativo?",
-      text: "A exoneração de pensão não prescreve quando o beneficiário é menor de idade, mas o recebimento retroativo só é cabível para pensões que já foram fixadas.",
+      title: "Doença grave ou incapacidade total para o trabalho encerra a obrigação alimentar?",
+      text: "Sim, comprovada a absoluta impossibilidade financeira de pagar, cabe o pedido judicial de exoneração.",
     },
   ];
 
