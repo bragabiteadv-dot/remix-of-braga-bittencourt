@@ -241,7 +241,7 @@ function LpSituations() {
     {
       icon: <Users className="w-7 h-7" />,
       title: "O filho começou novos tratamentos de saúde ou escola paga; cabe aumento?",
-      text: "Sim, o aumento comprovado das necessidades essenciais justifica o pedido judicial de majoraçaõ.",
+      text: "Sim, o aumento comprovado das necessidades essenciais justifica o pedido judicial de majoração.",
     },
     {
       icon: <Coins className="w-7 h-7" />,
