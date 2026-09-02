@@ -256,7 +256,7 @@ function LpSituations() {
     {
       icon: <Building2 className="w-7 h-7" />,
       title: "Posso reduzir o valor pago combinado diretamente com o outro genitor por mensagem?",
-      text: ".",
+      text: "Não, acordo verbal não tem validade jurídica sobre anterior decisão judicial e pode gerar dívida executável em juízo.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
