@@ -157,7 +157,7 @@ function LpHero() {
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
             <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
-              Advogado de Exoneração de Pensão em Betim
+              Advogado de Exoneração de Pensão Alimentícia em Betim
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
@@ -236,17 +236,17 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Precisa fixar exoneração de pensão, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre exoneração de pensão consensual e o litigiosa e proteja seus direitos de forma rápida.",
+      title: "O cancelamento da pensão é automático quando o filho faz 18 anos?",
+      text: "Não, é obrigatório pedir autorização judicial para cancelar o pagamento.",
     },
     {
       icon: <Users className="w-7 h-7" />,
-      title: "Quando posso exigir exoneração de pensão sob pena de prisão e sob pena de penhora?",
-      text: "Garanta o bem-estar dos seus filhos com uma definição clara e eficiente sobre a melhor técnica para exigir exoneração de pensão atrasada.",
+      title: "O filho formou na faculdade antes dos 24 anos; a pensão cessa?",
+      text: "A conclusão do ensino superior justifica o pedido de encerramento imediato, mas não é automático.",
     },
     {
       icon: <Coins className="w-7 h-7" />,
-      title: "Tem dúvidas sobre o valor da exoneração de pensão ou como calculá-lo?",
+      title: "O filho que se casou ou constituiu união estável ainda tem direito à pens?",
       text: "Saiba como funciona o cálculo da exoneração de pensão, como solicitar ou pedir a revisão dos valores determinados.",
     },
     {
