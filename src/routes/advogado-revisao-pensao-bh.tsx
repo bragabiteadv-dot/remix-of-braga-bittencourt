@@ -260,8 +260,8 @@ function LpSituations() {
     },
     {
       icon: <Landmark className="w-7 h-7" />,
-      title: "Revisão de Pensão prescreve? Posso cobrar retroativo?",
-      text: "A revisão de pensão não prescreve quando o beneficiário é menor de idade, mas o recebimento retroativo só é cabível para pensões que já foram fixadas.",
+      title: "O valor pensão alimentícia estipulado no passado não compra mais o básico; como atualizar?",
+      text: "Pede-se a adequação judicial de reajuste ou a redefinição da base de cálculo da pensão alimentícia.",
     },
   ];
 
