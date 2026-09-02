@@ -156,7 +156,7 @@ function LpHero() {
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
             <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
-              Advogado de Fixação de Pensão em Nova Lima
+              Advogado de Fixação de Pensão Alimentícia em Nova Lima
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
@@ -235,33 +235,33 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Precisa fixar fixação de pensão, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre fixação de pensão consensual e o litigiosa e proteja seus direitos de forma rápida.",
+      title: "Fiquei desempregado, qual será o valor da pensão que tenho que pagar?",
+      text: "Mesmo com o desemprego, a pensão seque o valor do último salário, mas é possível pedir revisão judicial .",
     },
     {
       icon: <Users className="w-7 h-7" />,
-      title: "Quando posso exigir fixação de pensão sob pena de prisão e sob pena de penhora?",
-      text: "Garanta o bem-estar dos seus filhos com uma definição clara e eficiente sobre a melhor técnica para exigir fixação de pensão atrasada.",
+      title: "Os avós podem ser obrigados a pagar pensão?",
+      text: "Sim, de forma complementar, caso comprovada a impossibilidade total dos pais.",
     },
     {
       icon: <Coins className="w-7 h-7" />,
-      title: "Tem dúvidas sobre o valor da fixação de pensão ou como calculá-lo?",
-      text: "Saiba como funciona o cálculo da fixação de pensão, como solicitar ou pedir a revisão dos valores determinados.",
+      title: "É possível descontar a pensão em contracheques?",
+      text: "Sim. via oficio judicial diretamente à fonte pagadora para garantir o depósito automático.",
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
-      title: "Estou fazendo faculdade e preciso continuar recebendo fixação de pensão.",
-      text: "Entenda a extensão e os limites do seu direito, os pré-requisitos para continuar recebendo pensão após a maioridade e cursando ensino superior.",
+      title: "É preciso esperar a sentença final para a criança começar a receber?",
+      text: "Não, é possível pleitear liminarmente os alimentos provisporios.",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "A pensão que recebo não é suficiente, posso pedir um complemento dos avós?",
-      text: "A fixação de pensão avoenga é perfeitamente cabível, porém, tem natureza complementar à pensão principal. Saiba mais com nossos especialistas.",
+      title: "A pensão serve apenas para comprar comida?",
+      text: "Não, cobre moradia, saúde, educação, roupas, lazer entre outras rubricas.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
-      title: "Fixação de Pensão prescreve? Posso cobrar retroativo?",
-      text: "A fixação de pensão não prescreve quando o beneficiário é menor de idade, mas o recebimento retroativo só é cabível para pensões que já foram fixadas.",
+      title: "A lei diz que o valor da pensão é 30% de minha renda?",
+      text: "Não, a lei diz apenas que a pensão varia conforme as despesas da criança e os ganhos reais de quem paga..",
     },
   ];
 
