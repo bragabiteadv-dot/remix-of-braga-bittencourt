@@ -157,7 +157,7 @@ function LpHero() {
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
             <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
-              Advogado de Execução de PensãoAlimentícia em Igarapé
+              Advogado de Execução de Pensão Alimentícia em Igarapé
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
