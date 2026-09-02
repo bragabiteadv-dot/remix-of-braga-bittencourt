@@ -255,8 +255,8 @@ function LpSituations() {
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "A pensão que recebo não é suficiente, posso pedir um complemento dos avós?",
-      text: "A fixação de pensão avoenga é perfeitamente cabível, porém, tem natureza complementar à pensão principal. Saiba mais com nossos especialistas.",
+      title: "A pensão serve apenas para comprar comida?",
+      text: "Não, cobre moradia, saúde, educação, roupas, transporte, lazer entre outras rubricas.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
