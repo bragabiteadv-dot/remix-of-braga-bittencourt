@@ -157,7 +157,7 @@ function LpHero() {
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
             <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
-              Advogado de Revisão de Pensão em Betim
+              Advogado de Revisão de Pensão Alimentícia em Betim
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
@@ -165,7 +165,7 @@ function LpHero() {
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
-              Advogado especialista em Revisão de Pensão em Betim —&nbsp; Conduzimos seu caso de revisão de pensão com o sigilo, a segurança e a melhor técnica que você precisa.
+              Advogado especialista em Revisão de Pensão Alimentícia em Betim —&nbsp; Conduzimos seu caso de revisão de pensão com o sigilo, a segurança e a melhor técnica que você precisa.
             </p>
 
             <WhatsAppCta className="w-full sm:w-auto" />
@@ -236,8 +236,8 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Precisa fixar revisão de pensão, mas não sabe se será amigável ou com brigas?",
-      text: "Entenda a diferença entre revisão de pensão consensual e o litigiosa e proteja seus direitos de forma rápida.",
+      title: "Minha renda caiu ou fiquei desempregado; posso diminuir o valor da pensão?",
+      text: "Sim, o aumento comprovada a redução na capacidade financeira, o juiz pode reajustar o valor para baixo, via ação revisional.",
     },
     {
       icon: <Users className="w-7 h-7" />,
@@ -271,7 +271,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES EM SEU CASO DE REVISÃO DE PENSÃO?
+            VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES EM SEU CASO DE REVISÃO DE PENSÃO ALIMENTÍCIA?
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
