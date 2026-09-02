@@ -156,7 +156,7 @@ function LpHero() {
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
             <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
-              Advogado de Fixação de Pensão em Belo Horizonte
+              Advogado de Fixação de Pensão Alimentícia em Belo Horizonte
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
