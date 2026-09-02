@@ -241,28 +241,28 @@ function LpSituations() {
     },
     {
       icon: <Users className="w-7 h-7" />,
-      title: "Quando posso exigir revisão de pensão sob pena de prisão e sob pena de penhora?",
-      text: "Garanta o bem-estar dos seus filhos com uma definição clara e eficiente sobre a melhor técnica para exigir revisão de pensão atrasada.",
+      title: "P filho caiu ou fiquei desempregado; posso diminuir o valor da pensão? ",
+      text: "Sim, o aumento comprovado das necessidades essenciais justifica o pedido judicial de majoração.",
     },
     {
       icon: <Coins className="w-7 h-7" />,
-      title: "Tem dúvidas sobre o valor da revisão de pensão ou como calculá-lo?",
-      text: "Saiba como funciona o cálculo da revisão de pensão, como solicitar ou pedir a revisão dos valores determinados.",
+      title: "O pagador foi promovido ou abriu uma empresa lucrativa; a pensão sobe?",
+      text: "Sim, havendo melhora substancial na condição econômica do alimentante, o valor pode ser revisto judicialmente.",
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
-      title: "Estou fazendo faculdade e preciso continuar recebendo revisão de pensão.",
-      text: "Entenda a extensão e os limites do seu direito, os pré-requisitos para continuar recebendo pensão após a maioridade e cursando ensino superior.",
+      title: "Tive outro filho recentemente; o valor pago ao primeiro diminui automaticamente?",
+      text: "Não é automático, mas a nova obrigação pode justificar reavaliação judicial da capacidade de pagamento.",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "A pensão que recebo não é suficiente, posso pedir um complemento dos avós?",
-      text: "A revisão de pensão avoenga é perfeitamente cabível, porém, tem natureza complementar à pensão principal. Saiba mais com nossos especialistas.",
+      title: "Posso reduzir o valor pago combinando diretamente com o outro genitor por mensagem?",
+      text: "Não, acordo verbal não tem validade jurídica sobre anterior decisão judicial e pode gerar dívida executável em juízo.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
-      title: "Revisão de Pensão prescreve? Posso cobrar retroativo?",
-      text: "A revisão de pensão não prescreve quando o beneficiário é menor de idade, mas o recebimento retroativo só é cabível para pensões que já foram fixadas.",
+      title: "O valor da pensão alimentícia estipulado no passado não compra mais o básico; como atualizar?",
+      text: "pede-se a adequação judicial do índice de reajuste ou a redefinição da base de cálculo da pensão alimentícia.",
     },
   ];
 
