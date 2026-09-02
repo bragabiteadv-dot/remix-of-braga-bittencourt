@@ -260,7 +260,7 @@ function LpSituations() {
     },
     {
       icon: <Landmark className="w-7 h-7" />,
-      title: "O valor pensão alimentícia estipulado no passado não compra mais o básico; como atualizar?",
+      title: "O valor da pensão alimentícia estipulado no passado não compra mais o básico; como atualizar?",
       text: "Pede-se a adequação judicial de reajuste ou a redefinição da base de cálculo da pensão alimentícia.",
     },
   ];
