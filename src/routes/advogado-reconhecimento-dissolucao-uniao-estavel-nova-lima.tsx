@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
   Scale,
@@ -11,24 +11,19 @@ import {
   Gem,
   Globe,
   MapPin,
-  Facebook,
-  Instagram,
-  Mail,
-  Phone,
-  Home,
 } from "lucide-react";
 
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { TeamGrid } from "@/components/sections/TeamGrid";
 import { ActionMoment } from "@/components/sections/ActionMoment";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
-import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { useWhatsAppLink, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { PageAltProvider } from "@/lib/page-alt";
 import { buildSeoHead } from "@/components/SeoHead";
 import { OG_IMAGE } from "@/lib/site-og";
-import logoTree from "@/assets/logo-tree-new.png";
-import lpHeaderLogo from "@/assets/lp-header-logo.png";
 
 import officeBH from "@/assets/office-bh-new.jpg";
 import sedeBetim1 from "@/assets/sede-betim-1.jpg";
