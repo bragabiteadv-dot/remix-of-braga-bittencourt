@@ -60,6 +60,7 @@ export const PAGE_LABELS: Record<string, string> = {
   "/advogado-exoneracao-pensao-nova-lima": "ADVOGADO DE EXONERAÇÃO DE PENSÃO EM NOVA LIMA",
   "/advogado-revisao-pensao-nova-lima": "ADVOGADO DE REVISÃO DE PENSÃO EM NOVA LIMA",
   "/advogado-execucao-pensao-nova-lima": "ADVOGADO DE EXECUÇÃO DE PENSÃO EM NOVA LIMA",
+  "/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima": "ADVOGADO DE RECONHECIMENTO E DISSOLUÇÃO DE UNIÃO ESTÁVEL EM NOVA LIMA",
   "/advogado-fixacao-pensao-igarape": "ADVOGADO DE FIXAÇÃO DE PENSÃO EM IGARAPÉ",
   "/advogado-exoneracao-pensao-igarape": "ADVOGADO DE EXONERAÇÃO DE PENSÃO EM IGARAPÉ",
   "/advogado-revisao-pensao-igarape": "ADVOGADO DE REVISÃO DE PENSÃO EM IGARAPÉ",
