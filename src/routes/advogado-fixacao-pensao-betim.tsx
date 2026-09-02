@@ -241,8 +241,8 @@ function LpSituations() {
     },
     {
       icon: <Users className="w-7 h-7" />,
-      title: "A lei diz que o valor da pensão é 30% de minha renda?",
-      text: "Não, a lei diz apenas que a pensão varia conforme as despesas da criança e os ganhos reais de quem paga.",
+      title: "Os avós podem ser obrigados a pagar pensão?",
+      text: "Sim, de forma complementar, caso comprovada a impossibilidade dos pais.",
     },
     {
       icon: <Coins className="w-7 h-7" />,
@@ -251,18 +251,18 @@ function LpSituations() {
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
-      title: "Estou fazendo faculdade e preciso continuar recebendo fixação de pensão.",
-      text: "Entenda a extensão e os limites do seu direito, os pré-requisitos para continuar recebendo pensão após a maioridade e cursando ensino superior.",
+      title: "É preciso esperar a sentença final para a criança começar a receber?",
+      text: "Não, é possível pleitear liminarmente os alimentos provisórios.",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "A pensão que recebo não é suficiente, posso pedir um complemento dos avós?",
-      text: "A fixação de pensão avoenga é perfeitamente cabível, porém, tem natureza complementar à pensão principal. Saiba mais com nossos especialistas.",
+      title: "A pensão serve apenas para comprar comida?",
+      text: "Não, cobre moradia, saúde, educação, roupas, transporte, lazer, entre outras rubricas. ",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
-      title: "Fixação de Pensão prescreve? Posso cobrar retroativo?",
-      text: "A fixação de pensão não prescreve quando o beneficiário é menor de idade, mas o recebimento retroativo só é cabível para pensões que já foram fixadas.",
+      title: "A lei diz que o valor da pensão é de 30% de minha renda?",
+      text: "Não, a lei diz apenas que a pensão varia conforme as despesas da criança e os ganhos reais de quem paga.",
     },
   ];
 
