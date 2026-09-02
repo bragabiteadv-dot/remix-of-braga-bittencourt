@@ -78,7 +78,7 @@ function LandingPage() {
 function LandingPageContent() {
   return (
     <div className="bg-[#08152C]">
-      <LpHeader />
+      <Header />
       <LpHero />
       <TeamGrid />
       <LpSituations />
@@ -89,7 +89,7 @@ function LandingPageContent() {
       <LpDifferentials />
       <LpPresence />
       <ContactForm />
-      <LpFooter />
+      <Footer />
     </div>
   );
 }
