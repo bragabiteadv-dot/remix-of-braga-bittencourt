@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { Phone, MapPin, MessageSquare, Facebook, Instagram, Mail, Menu, X } from "lucide-react";
-import { WhatsAppCta, useWhatsAppLink, GOOGLE_URL, GoogleIcon } from "@/components/ui/whatsapp-cta";
+import { Menu, X } from "lucide-react";
+import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import headerLogo from "@/assets/header-logo.png";
 import { cn } from "@/lib/utils";
 
@@ -18,13 +18,9 @@ const navLinks = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const waLink = useWhatsAppLink();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const topBarHeight = window.innerWidth >= 768 ? 40 : 0;
-      setScrolled(window.scrollY > topBarHeight);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 0);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -32,38 +28,7 @@ export function Header() {
 
   return (
     <header className="w-full flex flex-col">
-      {/* Top Bar */}
-      <div className="bg-navy text-white/80 py-2 border-b border-white/10 hidden md:block">
-        <div className="container mx-auto flex justify-between items-center text-xs">
-          <div className="flex items-center gap-6">
-            <a href="https://maps.google.com/?q=place_id:ChIJN6Hrhwq-pgARC_1Evk1cels" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold-light transition-colors">
-              <MapPin size={14} className="text-gold-light" />
-              <span>Av. Raja Gabáglia, 2000 - BH</span>
-            </a>
-            <a href="https://maps.google.com/?q=place_id:ChIJGXt5913DpgARaifpf_awe_c" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold-light transition-colors">
-              <MapPin size={14} className="text-gold-light" />
-              <span>Av. Amazonas, 1446 - Betim</span>
-            </a>
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gold-light transition-colors">
-              <Phone size={14} className="text-gold-light" />
-              <span>(31) 98026-0880</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gold-light transition-colors">
-              <MessageSquare size={14} /> WhatsApp
-            </a>
-            <a href="mailto:bragabitencourtadv@gmail.com" className="flex items-center gap-1 hover:text-gold-light transition-colors">
-              <Mail size={14} /> Email
-            </a>
-            <div className="flex items-center gap-3 ml-2 pl-4 border-l border-white/20">
-              <a href="https://www.facebook.com/bragabitencourtadv/" target="_blank" rel="noopener noreferrer" title="Facebook" className="hover:text-gold-light transition-colors"><Facebook size={14} /></a>
-              <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer" title="Google" className="hover:text-gold-light transition-colors"><GoogleIcon /></a>
-              <a href="https://www.instagram.com/bragabitencourtadv/" target="_blank" rel="noopener noreferrer" title="Instagram" className="hover:text-gold-light transition-colors"><Instagram size={14} /></a>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* Placeholder keeps layout stable when nav is fixed */}
       {scrolled && <div className="h-[72px]" aria-hidden="true" />}
