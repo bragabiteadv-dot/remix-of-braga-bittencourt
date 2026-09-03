@@ -21,7 +21,10 @@ import { Route as AdvogadoRevisaoPensaoContagemRouteImport } from './routes/advo
 import { Route as AdvogadoRevisaoPensaoBhRouteImport } from './routes/advogado-revisao-pensao-bh'
 import { Route as AdvogadoRevisaoPensaoBetimRouteImport } from './routes/advogado-revisao-pensao-betim'
 import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
+import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
+import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
 import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
+import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
 import { Route as AdvogadoPensaoAlimenticiaNovaLimaRouteImport } from './routes/advogado-pensao-alimenticia-nova-lima'
 import { Route as AdvogadoPensaoAlimenticiaIgarapeRouteImport } from './routes/advogado-pensao-alimenticia-igarape'
 import { Route as AdvogadoPensaoAlimenticiaContagemRouteImport } from './routes/advogado-pensao-alimenticia-contagem'
@@ -142,10 +145,28 @@ const AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute =
     path: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute =
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport.update({
+    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape',
+    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute =
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRouteImport.update({
+    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem',
+    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRoute =
   AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRouteImport.update({
     id: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh',
     path: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRoute =
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRouteImport.update({
+    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim',
+    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim',
     getParentRoute: () => rootRouteImport,
   } as any)
 const AdvogadoPensaoAlimenticiaNovaLimaRoute =
@@ -503,7 +524,10 @@ export interface FileRoutesByFullPath {
   '/advogado-pensao-alimenticia-contagem': typeof AdvogadoPensaoAlimenticiaContagemRoute
   '/advogado-pensao-alimenticia-igarape': typeof AdvogadoPensaoAlimenticiaIgarapeRoute
   '/advogado-pensao-alimenticia-nova-lima': typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
+  '/advogado-reconhecimento-dissolucao-uniao-estavel-betim': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-bh': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRoute
+  '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute
+  '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
   '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
   '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
@@ -572,7 +596,10 @@ export interface FileRoutesByTo {
   '/advogado-pensao-alimenticia-contagem': typeof AdvogadoPensaoAlimenticiaContagemRoute
   '/advogado-pensao-alimenticia-igarape': typeof AdvogadoPensaoAlimenticiaIgarapeRoute
   '/advogado-pensao-alimenticia-nova-lima': typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
+  '/advogado-reconhecimento-dissolucao-uniao-estavel-betim': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-bh': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRoute
+  '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute
+  '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
   '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
   '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
@@ -642,7 +669,10 @@ export interface FileRoutesById {
   '/advogado-pensao-alimenticia-contagem': typeof AdvogadoPensaoAlimenticiaContagemRoute
   '/advogado-pensao-alimenticia-igarape': typeof AdvogadoPensaoAlimenticiaIgarapeRoute
   '/advogado-pensao-alimenticia-nova-lima': typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
+  '/advogado-reconhecimento-dissolucao-uniao-estavel-betim': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-bh': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRoute
+  '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute
+  '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
   '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
   '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
@@ -713,7 +743,10 @@ export interface FileRouteTypes {
     | '/advogado-pensao-alimenticia-contagem'
     | '/advogado-pensao-alimenticia-igarape'
     | '/advogado-pensao-alimenticia-nova-lima'
+    | '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
+    | '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
+    | '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
     | '/advogado-revisao-pensao-betim'
     | '/advogado-revisao-pensao-bh'
@@ -782,7 +815,10 @@ export interface FileRouteTypes {
     | '/advogado-pensao-alimenticia-contagem'
     | '/advogado-pensao-alimenticia-igarape'
     | '/advogado-pensao-alimenticia-nova-lima'
+    | '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
+    | '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
+    | '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
     | '/advogado-revisao-pensao-betim'
     | '/advogado-revisao-pensao-bh'
@@ -851,7 +887,10 @@ export interface FileRouteTypes {
     | '/advogado-pensao-alimenticia-contagem'
     | '/advogado-pensao-alimenticia-igarape'
     | '/advogado-pensao-alimenticia-nova-lima'
+    | '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
+    | '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
+    | '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
     | '/advogado-revisao-pensao-betim'
     | '/advogado-revisao-pensao-bh'
@@ -921,7 +960,10 @@ export interface RootRouteChildren {
   AdvogadoPensaoAlimenticiaContagemRoute: typeof AdvogadoPensaoAlimenticiaContagemRoute
   AdvogadoPensaoAlimenticiaIgarapeRoute: typeof AdvogadoPensaoAlimenticiaIgarapeRoute
   AdvogadoPensaoAlimenticiaNovaLimaRoute: typeof AdvogadoPensaoAlimenticiaNovaLimaRoute
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRoute
   AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRoute
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
   AdvogadoRevisaoPensaoBetimRoute: typeof AdvogadoRevisaoPensaoBetimRoute
   AdvogadoRevisaoPensaoBhRoute: typeof AdvogadoRevisaoPensaoBhRoute
@@ -1024,11 +1066,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': {
+      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
+      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
+      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
+      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem': {
+      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
+      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
+      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
+      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-reconhecimento-dissolucao-uniao-estavel-bh': {
       id: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
       path: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
       fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
       preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-dissolucao-uniao-estavel-betim': {
+      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
+      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
+      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
+      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-pensao-alimenticia-nova-lima': {
@@ -1471,8 +1534,14 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoPensaoAlimenticiaIgarapeRoute: AdvogadoPensaoAlimenticiaIgarapeRoute,
   AdvogadoPensaoAlimenticiaNovaLimaRoute:
     AdvogadoPensaoAlimenticiaNovaLimaRoute,
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRoute:
+    AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRoute,
   AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRoute:
     AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRoute,
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute:
+    AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute,
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute:
+    AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute,
   AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute:
     AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute,
   AdvogadoRevisaoPensaoBetimRoute: AdvogadoRevisaoPensaoBetimRoute,
