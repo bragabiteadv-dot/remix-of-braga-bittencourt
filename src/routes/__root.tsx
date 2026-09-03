@@ -147,6 +147,9 @@ function RootComponent() {
     pathname.startsWith("/advogado-execucao-pensao-nova-lima") ||
     pathname.startsWith("/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima") ||
     pathname.startsWith("/advogado-reconhecimento-dissolucao-uniao-estavel-bh") ||
+    pathname.startsWith("/advogado-reconhecimento-dissolucao-uniao-estavel-betim") ||
+    pathname.startsWith("/advogado-reconhecimento-dissolucao-uniao-estavel-contagem") ||
+    pathname.startsWith("/advogado-reconhecimento-dissolucao-uniao-estavel-igarape") ||
     pathname.startsWith("/advogado-fixacao-pensao-igarape") ||
     pathname.startsWith("/advogado-exoneracao-pensao-igarape") ||
     pathname.startsWith("/advogado-revisao-pensao-igarape") ||
