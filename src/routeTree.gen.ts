@@ -43,6 +43,11 @@ import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-i
 import { Route as AdvogadoGuardaNovaLimaRouteImport } from './routes/advogado-guarda-nova-lima'
 import { Route as AdvogadoGuardaIgarapeRouteImport } from './routes/advogado-guarda-igarape'
 import { Route as AdvogadoGuardaContagemRouteImport } from './routes/advogado-guarda-contagem'
+import { Route as AdvogadoGuardaCompartilhadaNovaLimaRouteImport } from './routes/advogado-guarda-compartilhada-nova-lima'
+import { Route as AdvogadoGuardaCompartilhadaIgarapeRouteImport } from './routes/advogado-guarda-compartilhada-igarape'
+import { Route as AdvogadoGuardaCompartilhadaContagemRouteImport } from './routes/advogado-guarda-compartilhada-contagem'
+import { Route as AdvogadoGuardaCompartilhadaBhRouteImport } from './routes/advogado-guarda-compartilhada-bh'
+import { Route as AdvogadoGuardaCompartilhadaBetimRouteImport } from './routes/advogado-guarda-compartilhada-betim'
 import { Route as AdvogadoGuardaBhRouteImport } from './routes/advogado-guarda-bh'
 import { Route as AdvogadoGuardaBetimRouteImport } from './routes/advogado-guarda-betim'
 import { Route as AdvogadoFixacaoPensaoNovaLimaRouteImport } from './routes/advogado-fixacao-pensao-nova-lima'
@@ -290,6 +295,36 @@ const AdvogadoGuardaContagemRoute = AdvogadoGuardaContagemRouteImport.update({
   path: '/advogado-guarda-contagem',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoGuardaCompartilhadaNovaLimaRoute =
+  AdvogadoGuardaCompartilhadaNovaLimaRouteImport.update({
+    id: '/advogado-guarda-compartilhada-nova-lima',
+    path: '/advogado-guarda-compartilhada-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaIgarapeRoute =
+  AdvogadoGuardaCompartilhadaIgarapeRouteImport.update({
+    id: '/advogado-guarda-compartilhada-igarape',
+    path: '/advogado-guarda-compartilhada-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaContagemRoute =
+  AdvogadoGuardaCompartilhadaContagemRouteImport.update({
+    id: '/advogado-guarda-compartilhada-contagem',
+    path: '/advogado-guarda-compartilhada-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaBhRoute =
+  AdvogadoGuardaCompartilhadaBhRouteImport.update({
+    id: '/advogado-guarda-compartilhada-bh',
+    path: '/advogado-guarda-compartilhada-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaBetimRoute =
+  AdvogadoGuardaCompartilhadaBetimRouteImport.update({
+    id: '/advogado-guarda-compartilhada-betim',
+    path: '/advogado-guarda-compartilhada-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoGuardaBhRoute = AdvogadoGuardaBhRouteImport.update({
   id: '/advogado-guarda-bh',
   path: '/advogado-guarda-bh',
@@ -594,6 +629,11 @@ export interface FileRoutesByFullPath {
   '/advogado-fixacao-pensao-nova-lima': typeof AdvogadoFixacaoPensaoNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
+  '/advogado-guarda-compartilhada-betim': typeof AdvogadoGuardaCompartilhadaBetimRoute
+  '/advogado-guarda-compartilhada-bh': typeof AdvogadoGuardaCompartilhadaBhRoute
+  '/advogado-guarda-compartilhada-contagem': typeof AdvogadoGuardaCompartilhadaContagemRoute
+  '/advogado-guarda-compartilhada-igarape': typeof AdvogadoGuardaCompartilhadaIgarapeRoute
+  '/advogado-guarda-compartilhada-nova-lima': typeof AdvogadoGuardaCompartilhadaNovaLimaRoute
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
@@ -676,6 +716,11 @@ export interface FileRoutesByTo {
   '/advogado-fixacao-pensao-nova-lima': typeof AdvogadoFixacaoPensaoNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
+  '/advogado-guarda-compartilhada-betim': typeof AdvogadoGuardaCompartilhadaBetimRoute
+  '/advogado-guarda-compartilhada-bh': typeof AdvogadoGuardaCompartilhadaBhRoute
+  '/advogado-guarda-compartilhada-contagem': typeof AdvogadoGuardaCompartilhadaContagemRoute
+  '/advogado-guarda-compartilhada-igarape': typeof AdvogadoGuardaCompartilhadaIgarapeRoute
+  '/advogado-guarda-compartilhada-nova-lima': typeof AdvogadoGuardaCompartilhadaNovaLimaRoute
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
@@ -759,6 +804,11 @@ export interface FileRoutesById {
   '/advogado-fixacao-pensao-nova-lima': typeof AdvogadoFixacaoPensaoNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
+  '/advogado-guarda-compartilhada-betim': typeof AdvogadoGuardaCompartilhadaBetimRoute
+  '/advogado-guarda-compartilhada-bh': typeof AdvogadoGuardaCompartilhadaBhRoute
+  '/advogado-guarda-compartilhada-contagem': typeof AdvogadoGuardaCompartilhadaContagemRoute
+  '/advogado-guarda-compartilhada-igarape': typeof AdvogadoGuardaCompartilhadaIgarapeRoute
+  '/advogado-guarda-compartilhada-nova-lima': typeof AdvogadoGuardaCompartilhadaNovaLimaRoute
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
@@ -843,6 +893,11 @@ export interface FileRouteTypes {
     | '/advogado-fixacao-pensao-nova-lima'
     | '/advogado-guarda-betim'
     | '/advogado-guarda-bh'
+    | '/advogado-guarda-compartilhada-betim'
+    | '/advogado-guarda-compartilhada-bh'
+    | '/advogado-guarda-compartilhada-contagem'
+    | '/advogado-guarda-compartilhada-igarape'
+    | '/advogado-guarda-compartilhada-nova-lima'
     | '/advogado-guarda-contagem'
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
@@ -925,6 +980,11 @@ export interface FileRouteTypes {
     | '/advogado-fixacao-pensao-nova-lima'
     | '/advogado-guarda-betim'
     | '/advogado-guarda-bh'
+    | '/advogado-guarda-compartilhada-betim'
+    | '/advogado-guarda-compartilhada-bh'
+    | '/advogado-guarda-compartilhada-contagem'
+    | '/advogado-guarda-compartilhada-igarape'
+    | '/advogado-guarda-compartilhada-nova-lima'
     | '/advogado-guarda-contagem'
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
@@ -1007,6 +1067,11 @@ export interface FileRouteTypes {
     | '/advogado-fixacao-pensao-nova-lima'
     | '/advogado-guarda-betim'
     | '/advogado-guarda-bh'
+    | '/advogado-guarda-compartilhada-betim'
+    | '/advogado-guarda-compartilhada-bh'
+    | '/advogado-guarda-compartilhada-contagem'
+    | '/advogado-guarda-compartilhada-igarape'
+    | '/advogado-guarda-compartilhada-nova-lima'
     | '/advogado-guarda-contagem'
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
@@ -1090,6 +1155,11 @@ export interface RootRouteChildren {
   AdvogadoFixacaoPensaoNovaLimaRoute: typeof AdvogadoFixacaoPensaoNovaLimaRoute
   AdvogadoGuardaBetimRoute: typeof AdvogadoGuardaBetimRoute
   AdvogadoGuardaBhRoute: typeof AdvogadoGuardaBhRoute
+  AdvogadoGuardaCompartilhadaBetimRoute: typeof AdvogadoGuardaCompartilhadaBetimRoute
+  AdvogadoGuardaCompartilhadaBhRoute: typeof AdvogadoGuardaCompartilhadaBhRoute
+  AdvogadoGuardaCompartilhadaContagemRoute: typeof AdvogadoGuardaCompartilhadaContagemRoute
+  AdvogadoGuardaCompartilhadaIgarapeRoute: typeof AdvogadoGuardaCompartilhadaIgarapeRoute
+  AdvogadoGuardaCompartilhadaNovaLimaRoute: typeof AdvogadoGuardaCompartilhadaNovaLimaRoute
   AdvogadoGuardaContagemRoute: typeof AdvogadoGuardaContagemRoute
   AdvogadoGuardaIgarapeRoute: typeof AdvogadoGuardaIgarapeRoute
   AdvogadoGuardaNovaLimaRoute: typeof AdvogadoGuardaNovaLimaRoute
@@ -1366,6 +1436,41 @@ declare module '@tanstack/react-router' {
       path: '/advogado-guarda-contagem'
       fullPath: '/advogado-guarda-contagem'
       preLoaderRoute: typeof AdvogadoGuardaContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-nova-lima': {
+      id: '/advogado-guarda-compartilhada-nova-lima'
+      path: '/advogado-guarda-compartilhada-nova-lima'
+      fullPath: '/advogado-guarda-compartilhada-nova-lima'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-igarape': {
+      id: '/advogado-guarda-compartilhada-igarape'
+      path: '/advogado-guarda-compartilhada-igarape'
+      fullPath: '/advogado-guarda-compartilhada-igarape'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-contagem': {
+      id: '/advogado-guarda-compartilhada-contagem'
+      path: '/advogado-guarda-compartilhada-contagem'
+      fullPath: '/advogado-guarda-compartilhada-contagem'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-bh': {
+      id: '/advogado-guarda-compartilhada-bh'
+      path: '/advogado-guarda-compartilhada-bh'
+      fullPath: '/advogado-guarda-compartilhada-bh'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-betim': {
+      id: '/advogado-guarda-compartilhada-betim'
+      path: '/advogado-guarda-compartilhada-betim'
+      fullPath: '/advogado-guarda-compartilhada-betim'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-guarda-bh': {
@@ -1742,6 +1847,14 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoFixacaoPensaoNovaLimaRoute: AdvogadoFixacaoPensaoNovaLimaRoute,
   AdvogadoGuardaBetimRoute: AdvogadoGuardaBetimRoute,
   AdvogadoGuardaBhRoute: AdvogadoGuardaBhRoute,
+  AdvogadoGuardaCompartilhadaBetimRoute: AdvogadoGuardaCompartilhadaBetimRoute,
+  AdvogadoGuardaCompartilhadaBhRoute: AdvogadoGuardaCompartilhadaBhRoute,
+  AdvogadoGuardaCompartilhadaContagemRoute:
+    AdvogadoGuardaCompartilhadaContagemRoute,
+  AdvogadoGuardaCompartilhadaIgarapeRoute:
+    AdvogadoGuardaCompartilhadaIgarapeRoute,
+  AdvogadoGuardaCompartilhadaNovaLimaRoute:
+    AdvogadoGuardaCompartilhadaNovaLimaRoute,
   AdvogadoGuardaContagemRoute: AdvogadoGuardaContagemRoute,
   AdvogadoGuardaIgarapeRoute: AdvogadoGuardaIgarapeRoute,
   AdvogadoGuardaNovaLimaRoute: AdvogadoGuardaNovaLimaRoute,

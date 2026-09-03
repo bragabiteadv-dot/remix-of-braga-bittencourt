@@ -159,6 +159,16 @@ function RootComponent() {
     pathname.startsWith("/advogado-contrato-namoro-contagem") ||
     pathname.startsWith("/advogado-contrato-namoro-igarape") ||
     pathname.startsWith("/advogado-contrato-namoro-nova-lima") ||
+    pathname.startsWith("/advogado-reconhecimento-investigacao-negatoria-paternidade-betim") ||
+    pathname.startsWith("/advogado-reconhecimento-investigacao-negatoria-paternidade-bh") ||
+    pathname.startsWith("/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem") ||
+    pathname.startsWith("/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape") ||
+    pathname.startsWith("/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima") ||
+    pathname.startsWith("/advogado-guarda-compartilhada-betim") ||
+    pathname.startsWith("/advogado-guarda-compartilhada-bh") ||
+    pathname.startsWith("/advogado-guarda-compartilhada-contagem") ||
+    pathname.startsWith("/advogado-guarda-compartilhada-igarape") ||
+    pathname.startsWith("/advogado-guarda-compartilhada-nova-lima") ||
     pathname.startsWith("/advogado-divorcio-extrajudicial-igarape");
 
   if (isStandaloneLanding) {
