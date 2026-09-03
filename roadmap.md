@@ -2,6 +2,10 @@
 
 ## Em andamento
 
+## Concluído recente
+- [x] Duplicar páginas de Divórcio para Reconhecimento, Investigação e Negatória de Paternidade (5 cidades)
+- [x] Duplicar páginas de Divórcio para Guarda Compartilhada (5 cidades)
+
 ## Concluído
 - [x] Criar componente/utilitário global de SEO local (`SeoHead` / `buildSeoHead`) para buscas locais no TanStack Router, descartando `react-helmet-async`.
 

@@ -20,6 +20,11 @@ import { Route as AdvogadoRevisaoPensaoIgarapeRouteImport } from './routes/advog
 import { Route as AdvogadoRevisaoPensaoContagemRouteImport } from './routes/advogado-revisao-pensao-contagem'
 import { Route as AdvogadoRevisaoPensaoBhRouteImport } from './routes/advogado-revisao-pensao-bh'
 import { Route as AdvogadoRevisaoPensaoBetimRouteImport } from './routes/advogado-revisao-pensao-betim'
+import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
+import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
 import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
 import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
 import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
@@ -38,6 +43,11 @@ import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-i
 import { Route as AdvogadoGuardaNovaLimaRouteImport } from './routes/advogado-guarda-nova-lima'
 import { Route as AdvogadoGuardaIgarapeRouteImport } from './routes/advogado-guarda-igarape'
 import { Route as AdvogadoGuardaContagemRouteImport } from './routes/advogado-guarda-contagem'
+import { Route as AdvogadoGuardaCompartilhadaNovaLimaRouteImport } from './routes/advogado-guarda-compartilhada-nova-lima'
+import { Route as AdvogadoGuardaCompartilhadaIgarapeRouteImport } from './routes/advogado-guarda-compartilhada-igarape'
+import { Route as AdvogadoGuardaCompartilhadaContagemRouteImport } from './routes/advogado-guarda-compartilhada-contagem'
+import { Route as AdvogadoGuardaCompartilhadaBhRouteImport } from './routes/advogado-guarda-compartilhada-bh'
+import { Route as AdvogadoGuardaCompartilhadaBetimRouteImport } from './routes/advogado-guarda-compartilhada-betim'
 import { Route as AdvogadoGuardaBhRouteImport } from './routes/advogado-guarda-bh'
 import { Route as AdvogadoGuardaBetimRouteImport } from './routes/advogado-guarda-betim'
 import { Route as AdvogadoFixacaoPensaoNovaLimaRouteImport } from './routes/advogado-fixacao-pensao-nova-lima'
@@ -144,6 +154,44 @@ const AdvogadoRevisaoPensaoBetimRoute =
     path: '/advogado-revisao-pensao-betim',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute =
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRouteImport.update(
+    {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima',
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute =
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRouteImport.update(
+    {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape',
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute =
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRouteImport.update(
+    {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem',
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute =
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRouteImport.update({
+    id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh',
+    path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute =
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport.update(
+    {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim',
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
 const AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute =
   AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport.update({
     id: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima',
@@ -247,6 +295,36 @@ const AdvogadoGuardaContagemRoute = AdvogadoGuardaContagemRouteImport.update({
   path: '/advogado-guarda-contagem',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoGuardaCompartilhadaNovaLimaRoute =
+  AdvogadoGuardaCompartilhadaNovaLimaRouteImport.update({
+    id: '/advogado-guarda-compartilhada-nova-lima',
+    path: '/advogado-guarda-compartilhada-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaIgarapeRoute =
+  AdvogadoGuardaCompartilhadaIgarapeRouteImport.update({
+    id: '/advogado-guarda-compartilhada-igarape',
+    path: '/advogado-guarda-compartilhada-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaContagemRoute =
+  AdvogadoGuardaCompartilhadaContagemRouteImport.update({
+    id: '/advogado-guarda-compartilhada-contagem',
+    path: '/advogado-guarda-compartilhada-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaBhRoute =
+  AdvogadoGuardaCompartilhadaBhRouteImport.update({
+    id: '/advogado-guarda-compartilhada-bh',
+    path: '/advogado-guarda-compartilhada-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaBetimRoute =
+  AdvogadoGuardaCompartilhadaBetimRouteImport.update({
+    id: '/advogado-guarda-compartilhada-betim',
+    path: '/advogado-guarda-compartilhada-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoGuardaBhRoute = AdvogadoGuardaBhRouteImport.update({
   id: '/advogado-guarda-bh',
   path: '/advogado-guarda-bh',
@@ -551,6 +629,11 @@ export interface FileRoutesByFullPath {
   '/advogado-fixacao-pensao-nova-lima': typeof AdvogadoFixacaoPensaoNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
+  '/advogado-guarda-compartilhada-betim': typeof AdvogadoGuardaCompartilhadaBetimRoute
+  '/advogado-guarda-compartilhada-bh': typeof AdvogadoGuardaCompartilhadaBhRoute
+  '/advogado-guarda-compartilhada-contagem': typeof AdvogadoGuardaCompartilhadaContagemRoute
+  '/advogado-guarda-compartilhada-igarape': typeof AdvogadoGuardaCompartilhadaIgarapeRoute
+  '/advogado-guarda-compartilhada-nova-lima': typeof AdvogadoGuardaCompartilhadaNovaLimaRoute
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
@@ -569,6 +652,11 @@ export interface FileRoutesByFullPath {
   '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute
   '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
   '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
@@ -628,6 +716,11 @@ export interface FileRoutesByTo {
   '/advogado-fixacao-pensao-nova-lima': typeof AdvogadoFixacaoPensaoNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
+  '/advogado-guarda-compartilhada-betim': typeof AdvogadoGuardaCompartilhadaBetimRoute
+  '/advogado-guarda-compartilhada-bh': typeof AdvogadoGuardaCompartilhadaBhRoute
+  '/advogado-guarda-compartilhada-contagem': typeof AdvogadoGuardaCompartilhadaContagemRoute
+  '/advogado-guarda-compartilhada-igarape': typeof AdvogadoGuardaCompartilhadaIgarapeRoute
+  '/advogado-guarda-compartilhada-nova-lima': typeof AdvogadoGuardaCompartilhadaNovaLimaRoute
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
@@ -646,6 +739,11 @@ export interface FileRoutesByTo {
   '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute
   '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
   '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
@@ -706,6 +804,11 @@ export interface FileRoutesById {
   '/advogado-fixacao-pensao-nova-lima': typeof AdvogadoFixacaoPensaoNovaLimaRoute
   '/advogado-guarda-betim': typeof AdvogadoGuardaBetimRoute
   '/advogado-guarda-bh': typeof AdvogadoGuardaBhRoute
+  '/advogado-guarda-compartilhada-betim': typeof AdvogadoGuardaCompartilhadaBetimRoute
+  '/advogado-guarda-compartilhada-bh': typeof AdvogadoGuardaCompartilhadaBhRoute
+  '/advogado-guarda-compartilhada-contagem': typeof AdvogadoGuardaCompartilhadaContagemRoute
+  '/advogado-guarda-compartilhada-igarape': typeof AdvogadoGuardaCompartilhadaIgarapeRoute
+  '/advogado-guarda-compartilhada-nova-lima': typeof AdvogadoGuardaCompartilhadaNovaLimaRoute
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
@@ -724,6 +827,11 @@ export interface FileRoutesById {
   '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute
+  '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute
   '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
   '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
@@ -785,6 +893,11 @@ export interface FileRouteTypes {
     | '/advogado-fixacao-pensao-nova-lima'
     | '/advogado-guarda-betim'
     | '/advogado-guarda-bh'
+    | '/advogado-guarda-compartilhada-betim'
+    | '/advogado-guarda-compartilhada-bh'
+    | '/advogado-guarda-compartilhada-contagem'
+    | '/advogado-guarda-compartilhada-igarape'
+    | '/advogado-guarda-compartilhada-nova-lima'
     | '/advogado-guarda-contagem'
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
@@ -803,6 +916,11 @@ export interface FileRouteTypes {
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
     | '/advogado-revisao-pensao-betim'
     | '/advogado-revisao-pensao-bh'
     | '/advogado-revisao-pensao-contagem'
@@ -862,6 +980,11 @@ export interface FileRouteTypes {
     | '/advogado-fixacao-pensao-nova-lima'
     | '/advogado-guarda-betim'
     | '/advogado-guarda-bh'
+    | '/advogado-guarda-compartilhada-betim'
+    | '/advogado-guarda-compartilhada-bh'
+    | '/advogado-guarda-compartilhada-contagem'
+    | '/advogado-guarda-compartilhada-igarape'
+    | '/advogado-guarda-compartilhada-nova-lima'
     | '/advogado-guarda-contagem'
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
@@ -880,6 +1003,11 @@ export interface FileRouteTypes {
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
     | '/advogado-revisao-pensao-betim'
     | '/advogado-revisao-pensao-bh'
     | '/advogado-revisao-pensao-contagem'
@@ -939,6 +1067,11 @@ export interface FileRouteTypes {
     | '/advogado-fixacao-pensao-nova-lima'
     | '/advogado-guarda-betim'
     | '/advogado-guarda-bh'
+    | '/advogado-guarda-compartilhada-betim'
+    | '/advogado-guarda-compartilhada-bh'
+    | '/advogado-guarda-compartilhada-contagem'
+    | '/advogado-guarda-compartilhada-igarape'
+    | '/advogado-guarda-compartilhada-nova-lima'
     | '/advogado-guarda-contagem'
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
@@ -957,6 +1090,11 @@ export interface FileRouteTypes {
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+    | '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
     | '/advogado-revisao-pensao-betim'
     | '/advogado-revisao-pensao-bh'
     | '/advogado-revisao-pensao-contagem'
@@ -1017,6 +1155,11 @@ export interface RootRouteChildren {
   AdvogadoFixacaoPensaoNovaLimaRoute: typeof AdvogadoFixacaoPensaoNovaLimaRoute
   AdvogadoGuardaBetimRoute: typeof AdvogadoGuardaBetimRoute
   AdvogadoGuardaBhRoute: typeof AdvogadoGuardaBhRoute
+  AdvogadoGuardaCompartilhadaBetimRoute: typeof AdvogadoGuardaCompartilhadaBetimRoute
+  AdvogadoGuardaCompartilhadaBhRoute: typeof AdvogadoGuardaCompartilhadaBhRoute
+  AdvogadoGuardaCompartilhadaContagemRoute: typeof AdvogadoGuardaCompartilhadaContagemRoute
+  AdvogadoGuardaCompartilhadaIgarapeRoute: typeof AdvogadoGuardaCompartilhadaIgarapeRoute
+  AdvogadoGuardaCompartilhadaNovaLimaRoute: typeof AdvogadoGuardaCompartilhadaNovaLimaRoute
   AdvogadoGuardaContagemRoute: typeof AdvogadoGuardaContagemRoute
   AdvogadoGuardaIgarapeRoute: typeof AdvogadoGuardaIgarapeRoute
   AdvogadoGuardaNovaLimaRoute: typeof AdvogadoGuardaNovaLimaRoute
@@ -1035,6 +1178,11 @@ export interface RootRouteChildren {
   AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute
   AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute
   AdvogadoRevisaoPensaoBetimRoute: typeof AdvogadoRevisaoPensaoBetimRoute
   AdvogadoRevisaoPensaoBhRoute: typeof AdvogadoRevisaoPensaoBhRoute
   AdvogadoRevisaoPensaoContagemRoute: typeof AdvogadoRevisaoPensaoContagemRoute
@@ -1127,6 +1275,41 @@ declare module '@tanstack/react-router' {
       path: '/advogado-revisao-pensao-betim'
       fullPath: '/advogado-revisao-pensao-betim'
       preLoaderRoute: typeof AdvogadoRevisaoPensaoBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima': {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
+      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
+      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape': {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem': {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh': {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim': {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': {
@@ -1253,6 +1436,41 @@ declare module '@tanstack/react-router' {
       path: '/advogado-guarda-contagem'
       fullPath: '/advogado-guarda-contagem'
       preLoaderRoute: typeof AdvogadoGuardaContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-nova-lima': {
+      id: '/advogado-guarda-compartilhada-nova-lima'
+      path: '/advogado-guarda-compartilhada-nova-lima'
+      fullPath: '/advogado-guarda-compartilhada-nova-lima'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-igarape': {
+      id: '/advogado-guarda-compartilhada-igarape'
+      path: '/advogado-guarda-compartilhada-igarape'
+      fullPath: '/advogado-guarda-compartilhada-igarape'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-contagem': {
+      id: '/advogado-guarda-compartilhada-contagem'
+      path: '/advogado-guarda-compartilhada-contagem'
+      fullPath: '/advogado-guarda-compartilhada-contagem'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-bh': {
+      id: '/advogado-guarda-compartilhada-bh'
+      path: '/advogado-guarda-compartilhada-bh'
+      fullPath: '/advogado-guarda-compartilhada-bh'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-betim': {
+      id: '/advogado-guarda-compartilhada-betim'
+      path: '/advogado-guarda-compartilhada-betim'
+      fullPath: '/advogado-guarda-compartilhada-betim'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-guarda-bh': {
@@ -1629,6 +1847,14 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoFixacaoPensaoNovaLimaRoute: AdvogadoFixacaoPensaoNovaLimaRoute,
   AdvogadoGuardaBetimRoute: AdvogadoGuardaBetimRoute,
   AdvogadoGuardaBhRoute: AdvogadoGuardaBhRoute,
+  AdvogadoGuardaCompartilhadaBetimRoute: AdvogadoGuardaCompartilhadaBetimRoute,
+  AdvogadoGuardaCompartilhadaBhRoute: AdvogadoGuardaCompartilhadaBhRoute,
+  AdvogadoGuardaCompartilhadaContagemRoute:
+    AdvogadoGuardaCompartilhadaContagemRoute,
+  AdvogadoGuardaCompartilhadaIgarapeRoute:
+    AdvogadoGuardaCompartilhadaIgarapeRoute,
+  AdvogadoGuardaCompartilhadaNovaLimaRoute:
+    AdvogadoGuardaCompartilhadaNovaLimaRoute,
   AdvogadoGuardaContagemRoute: AdvogadoGuardaContagemRoute,
   AdvogadoGuardaIgarapeRoute: AdvogadoGuardaIgarapeRoute,
   AdvogadoGuardaNovaLimaRoute: AdvogadoGuardaNovaLimaRoute,
@@ -1654,6 +1880,16 @@ const rootRouteChildren: RootRouteChildren = {
     AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute,
   AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute:
     AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute,
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute:
+    AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute,
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute:
+    AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute,
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute:
+    AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute,
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute:
+    AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute,
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute:
+    AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute,
   AdvogadoRevisaoPensaoBetimRoute: AdvogadoRevisaoPensaoBetimRoute,
   AdvogadoRevisaoPensaoBhRoute: AdvogadoRevisaoPensaoBhRoute,
   AdvogadoRevisaoPensaoContagemRoute: AdvogadoRevisaoPensaoContagemRoute,

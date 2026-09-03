@@ -74,6 +74,16 @@ export const PAGE_LABELS: Record<string, string> = {
   "/advogado-contrato-namoro-contagem": "ADVOGADO DE CONTRATO DE NAMORO EM CONTAGEM",
   "/advogado-contrato-namoro-igarape": "ADVOGADO DE CONTRATO DE NAMORO EM IGARAPÉ",
   "/advogado-contrato-namoro-nova-lima": "ADVOGADO DE CONTRATO DE NAMORO EM NOVA LIMA",
+  "/advogado-reconhecimento-investigacao-negatoria-paternidade-betim": "ADVOGADO DE RECONHECIMENTO, INVESTIGAÇÃO E NEGATÓRIA DE PATERNIDADE EM BETIM",
+  "/advogado-reconhecimento-investigacao-negatoria-paternidade-bh": "ADVOGADO DE RECONHECIMENTO, INVESTIGAÇÃO E NEGATÓRIA DE PATERNIDADE EM BELO HORIZONTE",
+  "/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem": "ADVOGADO DE RECONHECIMENTO, INVESTIGAÇÃO E NEGATÓRIA DE PATERNIDADE EM CONTAGEM",
+  "/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape": "ADVOGADO DE RECONHECIMENTO, INVESTIGAÇÃO E NEGATÓRIA DE PATERNIDADE EM IGARAPÉ",
+  "/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima": "ADVOGADO DE RECONHECIMENTO, INVESTIGAÇÃO E NEGATÓRIA DE PATERNIDADE EM NOVA LIMA",
+  "/advogado-guarda-compartilhada-betim": "ADVOGADO DE GUARDA COMPARTILHADA EM BETIM",
+  "/advogado-guarda-compartilhada-bh": "ADVOGADO DE GUARDA COMPARTILHADA EM BELO HORIZONTE",
+  "/advogado-guarda-compartilhada-contagem": "ADVOGADO DE GUARDA COMPARTILHADA EM CONTAGEM",
+  "/advogado-guarda-compartilhada-igarape": "ADVOGADO DE GUARDA COMPARTILHADA EM IGARAPÉ",
+  "/advogado-guarda-compartilhada-nova-lima": "ADVOGADO DE GUARDA COMPARTILHADA EM NOVA LIMA",
 };
 
 export function normalizePath(pathname: string) {
