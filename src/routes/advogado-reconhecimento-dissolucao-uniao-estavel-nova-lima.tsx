@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
   Scale,
@@ -11,16 +11,21 @@ import {
   Gem,
   Globe,
   MapPin,
+  Facebook,
+  Instagram,
+  Mail,
+  Phone,
+  Home,
 } from "lucide-react";
-
-import { Header } from "@/components/layout/Header";
 
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { TeamGrid } from "@/components/sections/TeamGrid";
 import { ActionMoment } from "@/components/sections/ActionMoment";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
-import { useWhatsAppLink, WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import logoTree from "@/assets/logo-tree-new.png";
+import lpHeaderLogo from "@/assets/lp-header-logo.png";
 import { PageAltProvider } from "@/lib/page-alt";
 import { buildSeoHead } from "@/components/SeoHead";
 import { OG_IMAGE } from "@/lib/site-og";
@@ -78,7 +83,7 @@ function LandingPage() {
 function LandingPageContent() {
   return (
     <div className="bg-[#08152C]">
-      <Header />
+      <LpHeader />
       <LpHero />
       <TeamGrid />
       <LpSituations />
@@ -89,7 +94,7 @@ function LandingPageContent() {
       <LpDifferentials />
       <LpPresence />
       <ContactForm />
-
+      <LpFooter />
     </div>
   );
 }
@@ -558,3 +563,139 @@ function LpPresence() {
   );
 }
 
+function LpHeader() {
+  return (
+    <header className="sticky top-0 z-50 w-full bg-[#08152C]/95 backdrop-blur-md border-b border-white/10">
+      <div className="container mx-auto flex items-center justify-between gap-4 py-4">
+        <img
+          src={lpHeaderLogo}
+          alt={PAGE_ALT}
+          className="h-12 w-auto shrink-0"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+        <WhatsAppCta className="hidden sm:inline-flex !px-6 !py-3 !text-xs" />
+      </div>
+    </header>
+  );
+}
+
+const BH_MAP_URL = MAPS_URL;
+function LpFooter() {
+  const waLink = useWhatsAppLink();
+  const socialIconClass =
+    "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-gold-light hover:text-navy hover:border-gold-light transition-all duration-300";
+
+  return (
+    <footer className="bg-[#08152C] text-white relative">
+      {/* Top bar */}
+      <div className="border-b border-white/10">
+        <div className="container mx-auto py-4">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+            {/* Left pills */}
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <a
+                href={BH_MAP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
+              >
+                <MapPin size={16} className="text-gold-light shrink-0" />
+                <span>Av. Raja Gabáglia, 2000 – sala 614 – Alpes, BH – Mg</span>
+              </a>
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
+              >
+                <Phone size={16} className="text-gold-light shrink-0" />
+                <span>(31) 98026-0880</span>
+              </a>
+            </div>
+
+            {/* Right buttons */}
+            <div className="flex items-center gap-2">
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
+              >
+                <WhatsAppIcon className="w-4 h-4 shrink-0" />
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href="mailto:bragabitencourtadv@gmail.com"
+                className={socialIconClass}
+                aria-label="Email"
+              >
+                <Mail size={18} />
+              </a>
+              <Link
+                to="/"
+                className={socialIconClass}
+                aria-label="Home"
+              >
+                <Home size={18} />
+              </Link>
+              <a
+                href="https://www.facebook.com/bragabitencourtadv/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={socialIconClass}
+                aria-label="Facebook"
+              >
+                <Facebook size={18} />
+              </a>
+              <a
+                href={GOOGLE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={socialIconClass}
+                aria-label="Google"
+              >
+                <GoogleIcon size={18} />
+              </a>
+              <a
+                href="https://www.instagram.com/bragabitencourtadv/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={socialIconClass}
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="container mx-auto py-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <Link to="/" className="shrink-0">
+            <img
+              src={logoTree}
+              alt={PAGE_ALT}
+              className="h-16 w-auto object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+          </Link>
+
+          <div className="text-center md:text-right space-y-2">
+            <p className="text-sm text-white/90 font-medium">
+              Braga Bitencourt Advogados - CNPJ: 10.669.099/0001-72
+            </p>
+            <p className="text-xs text-white/50">
+              Todos os direitos reservados. Design focado em privacidade, acolhimento e alta conversão.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  );
+}
