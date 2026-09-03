@@ -76,6 +76,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/advogado-revisao-pensao-nova-lima", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-execucao-pensao-nova-lima", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-reconhecimento-dissolucao-uniao-estavel-bh", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-fixacao-pensao-igarape", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-exoneracao-pensao-igarape", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-revisao-pensao-igarape", changefreq: "monthly", priority: "0.9" },
