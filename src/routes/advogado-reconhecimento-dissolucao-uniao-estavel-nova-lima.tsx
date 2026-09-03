@@ -89,7 +89,7 @@ function LandingPageContent() {
       <LpDifferentials />
       <LpPresence />
       <ContactForm />
-      <Footer />
+
     </div>
   );
 }
