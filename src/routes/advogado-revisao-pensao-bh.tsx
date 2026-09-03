@@ -135,7 +135,7 @@ function LpHero() {
     },
     {
       title: "Sedes físicas",
-      subtitle: ["-BE", "-BETIM"],
+      subtitle: ["-BELO HORIZONTE", "-BETIM"],
       text: "Estruturas de excelência para consultas presenciais ou suporte digital integrado.",
     },
     {
