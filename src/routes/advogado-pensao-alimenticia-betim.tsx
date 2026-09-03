@@ -171,7 +171,7 @@ function LpHero() {
             <WhatsAppCta className="w-full sm:w-auto" />
 
             <p className="text-white text-xs font-montserrat mt-6 tracking-wide">
-              Atendimento presencial e online em Betim.
+              Atendimento presencial e online.
             </p>
 
             <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
