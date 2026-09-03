@@ -169,6 +169,11 @@ function RootComponent() {
     pathname.startsWith("/advogado-guarda-compartilhada-contagem") ||
     pathname.startsWith("/advogado-guarda-compartilhada-igarape") ||
     pathname.startsWith("/advogado-guarda-compartilhada-nova-lima") ||
+    pathname.startsWith("/advogado-mudanca-regime-bens-casamento-betim") ||
+    pathname.startsWith("/advogado-mudanca-regime-bens-casamento-bh") ||
+    pathname.startsWith("/advogado-mudanca-regime-bens-casamento-contagem") ||
+    pathname.startsWith("/advogado-mudanca-regime-bens-casamento-igarape") ||
+    pathname.startsWith("/advogado-mudanca-regime-bens-casamento-nova-lima") ||
     pathname.startsWith("/advogado-divorcio-extrajudicial-igarape");
 
   if (isStandaloneLanding) {

@@ -102,6 +102,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/advogado-guarda-compartilhada-contagem", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-guarda-compartilhada-igarape", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-guarda-compartilhada-nova-lima", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-mudanca-regime-bens-casamento-betim", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-mudanca-regime-bens-casamento-bh", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-mudanca-regime-bens-casamento-contagem", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-mudanca-regime-bens-casamento-igarape", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-mudanca-regime-bens-casamento-nova-lima", changefreq: "monthly", priority: "0.9" },
           ...ARTICLES.map((a) => ({
             path: `/artigos/${a.slug}`,
             changefreq: "monthly" as const,
