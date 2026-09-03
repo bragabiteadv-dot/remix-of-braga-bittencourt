@@ -35,6 +35,11 @@ import { Route as AdvogadoPensaoAlimenticiaIgarapeRouteImport } from './routes/a
 import { Route as AdvogadoPensaoAlimenticiaContagemRouteImport } from './routes/advogado-pensao-alimenticia-contagem'
 import { Route as AdvogadoPensaoAlimenticiaBhRouteImport } from './routes/advogado-pensao-alimenticia-bh'
 import { Route as AdvogadoPensaoAlimenticiaBetimRouteImport } from './routes/advogado-pensao-alimenticia-betim'
+import { Route as AdvogadoMudancaRegimeBensCasamentoNovaLimaRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-nova-lima'
+import { Route as AdvogadoMudancaRegimeBensCasamentoIgarapeRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-igarape'
+import { Route as AdvogadoMudancaRegimeBensCasamentoContagemRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-contagem'
+import { Route as AdvogadoMudancaRegimeBensCasamentoBhRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-bh'
+import { Route as AdvogadoMudancaRegimeBensCasamentoBetimRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-betim'
 import { Route as AdvogadoInventarioNovaLimaRouteImport } from './routes/advogado-inventario-nova-lima'
 import { Route as AdvogadoInventarioIgarapeRouteImport } from './routes/advogado-inventario-igarape'
 import { Route as AdvogadoInventarioContagemRouteImport } from './routes/advogado-inventario-contagem'
@@ -250,6 +255,36 @@ const AdvogadoPensaoAlimenticiaBetimRoute =
   AdvogadoPensaoAlimenticiaBetimRouteImport.update({
     id: '/advogado-pensao-alimenticia-betim',
     path: '/advogado-pensao-alimenticia-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoMudancaRegimeBensCasamentoNovaLimaRoute =
+  AdvogadoMudancaRegimeBensCasamentoNovaLimaRouteImport.update({
+    id: '/advogado-mudanca-regime-bens-casamento-nova-lima',
+    path: '/advogado-mudanca-regime-bens-casamento-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoMudancaRegimeBensCasamentoIgarapeRoute =
+  AdvogadoMudancaRegimeBensCasamentoIgarapeRouteImport.update({
+    id: '/advogado-mudanca-regime-bens-casamento-igarape',
+    path: '/advogado-mudanca-regime-bens-casamento-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoMudancaRegimeBensCasamentoContagemRoute =
+  AdvogadoMudancaRegimeBensCasamentoContagemRouteImport.update({
+    id: '/advogado-mudanca-regime-bens-casamento-contagem',
+    path: '/advogado-mudanca-regime-bens-casamento-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoMudancaRegimeBensCasamentoBhRoute =
+  AdvogadoMudancaRegimeBensCasamentoBhRouteImport.update({
+    id: '/advogado-mudanca-regime-bens-casamento-bh',
+    path: '/advogado-mudanca-regime-bens-casamento-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoMudancaRegimeBensCasamentoBetimRoute =
+  AdvogadoMudancaRegimeBensCasamentoBetimRouteImport.update({
+    id: '/advogado-mudanca-regime-bens-casamento-betim',
+    path: '/advogado-mudanca-regime-bens-casamento-betim',
     getParentRoute: () => rootRouteImport,
   } as any)
 const AdvogadoInventarioNovaLimaRoute =
@@ -642,6 +677,11 @@ export interface FileRoutesByFullPath {
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
   '/advogado-inventario-igarape': typeof AdvogadoInventarioIgarapeRoute
   '/advogado-inventario-nova-lima': typeof AdvogadoInventarioNovaLimaRoute
+  '/advogado-mudanca-regime-bens-casamento-betim': typeof AdvogadoMudancaRegimeBensCasamentoBetimRoute
+  '/advogado-mudanca-regime-bens-casamento-bh': typeof AdvogadoMudancaRegimeBensCasamentoBhRoute
+  '/advogado-mudanca-regime-bens-casamento-contagem': typeof AdvogadoMudancaRegimeBensCasamentoContagemRoute
+  '/advogado-mudanca-regime-bens-casamento-igarape': typeof AdvogadoMudancaRegimeBensCasamentoIgarapeRoute
+  '/advogado-mudanca-regime-bens-casamento-nova-lima': typeof AdvogadoMudancaRegimeBensCasamentoNovaLimaRoute
   '/advogado-pensao-alimenticia-betim': typeof AdvogadoPensaoAlimenticiaBetimRoute
   '/advogado-pensao-alimenticia-bh': typeof AdvogadoPensaoAlimenticiaBhRoute
   '/advogado-pensao-alimenticia-contagem': typeof AdvogadoPensaoAlimenticiaContagemRoute
@@ -729,6 +769,11 @@ export interface FileRoutesByTo {
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
   '/advogado-inventario-igarape': typeof AdvogadoInventarioIgarapeRoute
   '/advogado-inventario-nova-lima': typeof AdvogadoInventarioNovaLimaRoute
+  '/advogado-mudanca-regime-bens-casamento-betim': typeof AdvogadoMudancaRegimeBensCasamentoBetimRoute
+  '/advogado-mudanca-regime-bens-casamento-bh': typeof AdvogadoMudancaRegimeBensCasamentoBhRoute
+  '/advogado-mudanca-regime-bens-casamento-contagem': typeof AdvogadoMudancaRegimeBensCasamentoContagemRoute
+  '/advogado-mudanca-regime-bens-casamento-igarape': typeof AdvogadoMudancaRegimeBensCasamentoIgarapeRoute
+  '/advogado-mudanca-regime-bens-casamento-nova-lima': typeof AdvogadoMudancaRegimeBensCasamentoNovaLimaRoute
   '/advogado-pensao-alimenticia-betim': typeof AdvogadoPensaoAlimenticiaBetimRoute
   '/advogado-pensao-alimenticia-bh': typeof AdvogadoPensaoAlimenticiaBhRoute
   '/advogado-pensao-alimenticia-contagem': typeof AdvogadoPensaoAlimenticiaContagemRoute
@@ -817,6 +862,11 @@ export interface FileRoutesById {
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
   '/advogado-inventario-igarape': typeof AdvogadoInventarioIgarapeRoute
   '/advogado-inventario-nova-lima': typeof AdvogadoInventarioNovaLimaRoute
+  '/advogado-mudanca-regime-bens-casamento-betim': typeof AdvogadoMudancaRegimeBensCasamentoBetimRoute
+  '/advogado-mudanca-regime-bens-casamento-bh': typeof AdvogadoMudancaRegimeBensCasamentoBhRoute
+  '/advogado-mudanca-regime-bens-casamento-contagem': typeof AdvogadoMudancaRegimeBensCasamentoContagemRoute
+  '/advogado-mudanca-regime-bens-casamento-igarape': typeof AdvogadoMudancaRegimeBensCasamentoIgarapeRoute
+  '/advogado-mudanca-regime-bens-casamento-nova-lima': typeof AdvogadoMudancaRegimeBensCasamentoNovaLimaRoute
   '/advogado-pensao-alimenticia-betim': typeof AdvogadoPensaoAlimenticiaBetimRoute
   '/advogado-pensao-alimenticia-bh': typeof AdvogadoPensaoAlimenticiaBhRoute
   '/advogado-pensao-alimenticia-contagem': typeof AdvogadoPensaoAlimenticiaContagemRoute
@@ -906,6 +956,11 @@ export interface FileRouteTypes {
     | '/advogado-inventario-contagem'
     | '/advogado-inventario-igarape'
     | '/advogado-inventario-nova-lima'
+    | '/advogado-mudanca-regime-bens-casamento-betim'
+    | '/advogado-mudanca-regime-bens-casamento-bh'
+    | '/advogado-mudanca-regime-bens-casamento-contagem'
+    | '/advogado-mudanca-regime-bens-casamento-igarape'
+    | '/advogado-mudanca-regime-bens-casamento-nova-lima'
     | '/advogado-pensao-alimenticia-betim'
     | '/advogado-pensao-alimenticia-bh'
     | '/advogado-pensao-alimenticia-contagem'
@@ -993,6 +1048,11 @@ export interface FileRouteTypes {
     | '/advogado-inventario-contagem'
     | '/advogado-inventario-igarape'
     | '/advogado-inventario-nova-lima'
+    | '/advogado-mudanca-regime-bens-casamento-betim'
+    | '/advogado-mudanca-regime-bens-casamento-bh'
+    | '/advogado-mudanca-regime-bens-casamento-contagem'
+    | '/advogado-mudanca-regime-bens-casamento-igarape'
+    | '/advogado-mudanca-regime-bens-casamento-nova-lima'
     | '/advogado-pensao-alimenticia-betim'
     | '/advogado-pensao-alimenticia-bh'
     | '/advogado-pensao-alimenticia-contagem'
@@ -1080,6 +1140,11 @@ export interface FileRouteTypes {
     | '/advogado-inventario-contagem'
     | '/advogado-inventario-igarape'
     | '/advogado-inventario-nova-lima'
+    | '/advogado-mudanca-regime-bens-casamento-betim'
+    | '/advogado-mudanca-regime-bens-casamento-bh'
+    | '/advogado-mudanca-regime-bens-casamento-contagem'
+    | '/advogado-mudanca-regime-bens-casamento-igarape'
+    | '/advogado-mudanca-regime-bens-casamento-nova-lima'
     | '/advogado-pensao-alimenticia-betim'
     | '/advogado-pensao-alimenticia-bh'
     | '/advogado-pensao-alimenticia-contagem'
@@ -1168,6 +1233,11 @@ export interface RootRouteChildren {
   AdvogadoInventarioContagemRoute: typeof AdvogadoInventarioContagemRoute
   AdvogadoInventarioIgarapeRoute: typeof AdvogadoInventarioIgarapeRoute
   AdvogadoInventarioNovaLimaRoute: typeof AdvogadoInventarioNovaLimaRoute
+  AdvogadoMudancaRegimeBensCasamentoBetimRoute: typeof AdvogadoMudancaRegimeBensCasamentoBetimRoute
+  AdvogadoMudancaRegimeBensCasamentoBhRoute: typeof AdvogadoMudancaRegimeBensCasamentoBhRoute
+  AdvogadoMudancaRegimeBensCasamentoContagemRoute: typeof AdvogadoMudancaRegimeBensCasamentoContagemRoute
+  AdvogadoMudancaRegimeBensCasamentoIgarapeRoute: typeof AdvogadoMudancaRegimeBensCasamentoIgarapeRoute
+  AdvogadoMudancaRegimeBensCasamentoNovaLimaRoute: typeof AdvogadoMudancaRegimeBensCasamentoNovaLimaRoute
   AdvogadoPensaoAlimenticiaBetimRoute: typeof AdvogadoPensaoAlimenticiaBetimRoute
   AdvogadoPensaoAlimenticiaBhRoute: typeof AdvogadoPensaoAlimenticiaBhRoute
   AdvogadoPensaoAlimenticiaContagemRoute: typeof AdvogadoPensaoAlimenticiaContagemRoute
@@ -1380,6 +1450,41 @@ declare module '@tanstack/react-router' {
       path: '/advogado-pensao-alimenticia-betim'
       fullPath: '/advogado-pensao-alimenticia-betim'
       preLoaderRoute: typeof AdvogadoPensaoAlimenticiaBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-mudanca-regime-bens-casamento-nova-lima': {
+      id: '/advogado-mudanca-regime-bens-casamento-nova-lima'
+      path: '/advogado-mudanca-regime-bens-casamento-nova-lima'
+      fullPath: '/advogado-mudanca-regime-bens-casamento-nova-lima'
+      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-mudanca-regime-bens-casamento-igarape': {
+      id: '/advogado-mudanca-regime-bens-casamento-igarape'
+      path: '/advogado-mudanca-regime-bens-casamento-igarape'
+      fullPath: '/advogado-mudanca-regime-bens-casamento-igarape'
+      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-mudanca-regime-bens-casamento-contagem': {
+      id: '/advogado-mudanca-regime-bens-casamento-contagem'
+      path: '/advogado-mudanca-regime-bens-casamento-contagem'
+      fullPath: '/advogado-mudanca-regime-bens-casamento-contagem'
+      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-mudanca-regime-bens-casamento-bh': {
+      id: '/advogado-mudanca-regime-bens-casamento-bh'
+      path: '/advogado-mudanca-regime-bens-casamento-bh'
+      fullPath: '/advogado-mudanca-regime-bens-casamento-bh'
+      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-mudanca-regime-bens-casamento-betim': {
+      id: '/advogado-mudanca-regime-bens-casamento-betim'
+      path: '/advogado-mudanca-regime-bens-casamento-betim'
+      fullPath: '/advogado-mudanca-regime-bens-casamento-betim'
+      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-inventario-nova-lima': {
@@ -1863,6 +1968,16 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoInventarioContagemRoute: AdvogadoInventarioContagemRoute,
   AdvogadoInventarioIgarapeRoute: AdvogadoInventarioIgarapeRoute,
   AdvogadoInventarioNovaLimaRoute: AdvogadoInventarioNovaLimaRoute,
+  AdvogadoMudancaRegimeBensCasamentoBetimRoute:
+    AdvogadoMudancaRegimeBensCasamentoBetimRoute,
+  AdvogadoMudancaRegimeBensCasamentoBhRoute:
+    AdvogadoMudancaRegimeBensCasamentoBhRoute,
+  AdvogadoMudancaRegimeBensCasamentoContagemRoute:
+    AdvogadoMudancaRegimeBensCasamentoContagemRoute,
+  AdvogadoMudancaRegimeBensCasamentoIgarapeRoute:
+    AdvogadoMudancaRegimeBensCasamentoIgarapeRoute,
+  AdvogadoMudancaRegimeBensCasamentoNovaLimaRoute:
+    AdvogadoMudancaRegimeBensCasamentoNovaLimaRoute,
   AdvogadoPensaoAlimenticiaBetimRoute: AdvogadoPensaoAlimenticiaBetimRoute,
   AdvogadoPensaoAlimenticiaBhRoute: AdvogadoPensaoAlimenticiaBhRoute,
   AdvogadoPensaoAlimenticiaContagemRoute:

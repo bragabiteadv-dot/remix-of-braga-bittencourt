@@ -84,6 +84,11 @@ export const PAGE_LABELS: Record<string, string> = {
   "/advogado-guarda-compartilhada-contagem": "ADVOGADO DE GUARDA COMPARTILHADA EM CONTAGEM",
   "/advogado-guarda-compartilhada-igarape": "ADVOGADO DE GUARDA COMPARTILHADA EM IGARAPÉ",
   "/advogado-guarda-compartilhada-nova-lima": "ADVOGADO DE GUARDA COMPARTILHADA EM NOVA LIMA",
+  "/advogado-mudanca-regime-bens-casamento-betim": "ADVOGADO DE MUDANÇA DE REGIME DE BENS DE CASAMENTO EM BETIM",
+  "/advogado-mudanca-regime-bens-casamento-bh": "ADVOGADO DE MUDANÇA DE REGIME DE BENS DE CASAMENTO EM BELO HORIZONTE",
+  "/advogado-mudanca-regime-bens-casamento-contagem": "ADVOGADO DE MUDANÇA DE REGIME DE BENS DE CASAMENTO EM CONTAGEM",
+  "/advogado-mudanca-regime-bens-casamento-igarape": "ADVOGADO DE MUDANÇA DE REGIME DE BENS DE CASAMENTO EM IGARAPÉ",
+  "/advogado-mudanca-regime-bens-casamento-nova-lima": "ADVOGADO DE MUDANÇA DE REGIME DE BENS DE CASAMENTO EM NOVA LIMA",
 };
 
 export function normalizePath(pathname: string) {
