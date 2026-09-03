@@ -87,6 +87,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/advogado-inventario-igarape", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-curatela-igarape", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-divorcio-extrajudicial-igarape", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-contrato-namoro-betim", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-contrato-namoro-bh", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-contrato-namoro-contagem", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-contrato-namoro-igarape", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-contrato-namoro-nova-lima", changefreq: "monthly", priority: "0.9" },
           ...ARTICLES.map((a) => ({
             path: `/artigos/${a.slug}`,
             changefreq: "monthly" as const,

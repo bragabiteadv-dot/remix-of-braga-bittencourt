@@ -75,6 +75,11 @@ import { Route as AdvogadoCuratelaIgarapeRouteImport } from './routes/advogado-c
 import { Route as AdvogadoCuratelaContagemRouteImport } from './routes/advogado-curatela-contagem'
 import { Route as AdvogadoCuratelaBhRouteImport } from './routes/advogado-curatela-bh'
 import { Route as AdvogadoCuratelaBetimRouteImport } from './routes/advogado-curatela-betim'
+import { Route as AdvogadoContratoNamoroNovaLimaRouteImport } from './routes/advogado-contrato-namoro-nova-lima'
+import { Route as AdvogadoContratoNamoroIgarapeRouteImport } from './routes/advogado-contrato-namoro-igarape'
+import { Route as AdvogadoContratoNamoroContagemRouteImport } from './routes/advogado-contrato-namoro-contagem'
+import { Route as AdvogadoContratoNamoroBhRouteImport } from './routes/advogado-contrato-namoro-bh'
+import { Route as AdvogadoContratoNamoroBetimRouteImport } from './routes/advogado-contrato-namoro-betim'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArtigosIndexRouteImport } from './routes/artigos.index'
@@ -450,6 +455,36 @@ const AdvogadoCuratelaBetimRoute = AdvogadoCuratelaBetimRouteImport.update({
   path: '/advogado-curatela-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoContratoNamoroNovaLimaRoute =
+  AdvogadoContratoNamoroNovaLimaRouteImport.update({
+    id: '/advogado-contrato-namoro-nova-lima',
+    path: '/advogado-contrato-namoro-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoContratoNamoroIgarapeRoute =
+  AdvogadoContratoNamoroIgarapeRouteImport.update({
+    id: '/advogado-contrato-namoro-igarape',
+    path: '/advogado-contrato-namoro-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoContratoNamoroContagemRoute =
+  AdvogadoContratoNamoroContagemRouteImport.update({
+    id: '/advogado-contrato-namoro-contagem',
+    path: '/advogado-contrato-namoro-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoContratoNamoroBhRoute =
+  AdvogadoContratoNamoroBhRouteImport.update({
+    id: '/advogado-contrato-namoro-bh',
+    path: '/advogado-contrato-namoro-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoContratoNamoroBetimRoute =
+  AdvogadoContratoNamoroBetimRouteImport.update({
+    id: '/advogado-contrato-namoro-betim',
+    path: '/advogado-contrato-namoro-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SplatRoute = SplatRouteImport.update({
   id: '/$',
   path: '/$',
@@ -474,6 +509,11 @@ const ArtigosSlugRoute = ArtigosSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/advogado-contrato-namoro-betim': typeof AdvogadoContratoNamoroBetimRoute
+  '/advogado-contrato-namoro-bh': typeof AdvogadoContratoNamoroBhRoute
+  '/advogado-contrato-namoro-contagem': typeof AdvogadoContratoNamoroContagemRoute
+  '/advogado-contrato-namoro-igarape': typeof AdvogadoContratoNamoroIgarapeRoute
+  '/advogado-contrato-namoro-nova-lima': typeof AdvogadoContratoNamoroNovaLimaRoute
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-curatela-bh': typeof AdvogadoCuratelaBhRoute
   '/advogado-curatela-contagem': typeof AdvogadoCuratelaContagemRoute
@@ -546,6 +586,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/advogado-contrato-namoro-betim': typeof AdvogadoContratoNamoroBetimRoute
+  '/advogado-contrato-namoro-bh': typeof AdvogadoContratoNamoroBhRoute
+  '/advogado-contrato-namoro-contagem': typeof AdvogadoContratoNamoroContagemRoute
+  '/advogado-contrato-namoro-igarape': typeof AdvogadoContratoNamoroIgarapeRoute
+  '/advogado-contrato-namoro-nova-lima': typeof AdvogadoContratoNamoroNovaLimaRoute
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-curatela-bh': typeof AdvogadoCuratelaBhRoute
   '/advogado-curatela-contagem': typeof AdvogadoCuratelaContagemRoute
@@ -619,6 +664,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/advogado-contrato-namoro-betim': typeof AdvogadoContratoNamoroBetimRoute
+  '/advogado-contrato-namoro-bh': typeof AdvogadoContratoNamoroBhRoute
+  '/advogado-contrato-namoro-contagem': typeof AdvogadoContratoNamoroContagemRoute
+  '/advogado-contrato-namoro-igarape': typeof AdvogadoContratoNamoroIgarapeRoute
+  '/advogado-contrato-namoro-nova-lima': typeof AdvogadoContratoNamoroNovaLimaRoute
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-curatela-bh': typeof AdvogadoCuratelaBhRoute
   '/advogado-curatela-contagem': typeof AdvogadoCuratelaContagemRoute
@@ -693,6 +743,11 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$'
+    | '/advogado-contrato-namoro-betim'
+    | '/advogado-contrato-namoro-bh'
+    | '/advogado-contrato-namoro-contagem'
+    | '/advogado-contrato-namoro-igarape'
+    | '/advogado-contrato-namoro-nova-lima'
     | '/advogado-curatela-betim'
     | '/advogado-curatela-bh'
     | '/advogado-curatela-contagem'
@@ -765,6 +820,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/$'
+    | '/advogado-contrato-namoro-betim'
+    | '/advogado-contrato-namoro-bh'
+    | '/advogado-contrato-namoro-contagem'
+    | '/advogado-contrato-namoro-igarape'
+    | '/advogado-contrato-namoro-nova-lima'
     | '/advogado-curatela-betim'
     | '/advogado-curatela-bh'
     | '/advogado-curatela-contagem'
@@ -837,6 +897,11 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/$'
+    | '/advogado-contrato-namoro-betim'
+    | '/advogado-contrato-namoro-bh'
+    | '/advogado-contrato-namoro-contagem'
+    | '/advogado-contrato-namoro-igarape'
+    | '/advogado-contrato-namoro-nova-lima'
     | '/advogado-curatela-betim'
     | '/advogado-curatela-bh'
     | '/advogado-curatela-contagem'
@@ -910,6 +975,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
+  AdvogadoContratoNamoroBetimRoute: typeof AdvogadoContratoNamoroBetimRoute
+  AdvogadoContratoNamoroBhRoute: typeof AdvogadoContratoNamoroBhRoute
+  AdvogadoContratoNamoroContagemRoute: typeof AdvogadoContratoNamoroContagemRoute
+  AdvogadoContratoNamoroIgarapeRoute: typeof AdvogadoContratoNamoroIgarapeRoute
+  AdvogadoContratoNamoroNovaLimaRoute: typeof AdvogadoContratoNamoroNovaLimaRoute
   AdvogadoCuratelaBetimRoute: typeof AdvogadoCuratelaBetimRoute
   AdvogadoCuratelaBhRoute: typeof AdvogadoCuratelaBhRoute
   AdvogadoCuratelaContagemRoute: typeof AdvogadoCuratelaContagemRoute
@@ -1444,6 +1514,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoCuratelaBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-contrato-namoro-nova-lima': {
+      id: '/advogado-contrato-namoro-nova-lima'
+      path: '/advogado-contrato-namoro-nova-lima'
+      fullPath: '/advogado-contrato-namoro-nova-lima'
+      preLoaderRoute: typeof AdvogadoContratoNamoroNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-contrato-namoro-igarape': {
+      id: '/advogado-contrato-namoro-igarape'
+      path: '/advogado-contrato-namoro-igarape'
+      fullPath: '/advogado-contrato-namoro-igarape'
+      preLoaderRoute: typeof AdvogadoContratoNamoroIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-contrato-namoro-contagem': {
+      id: '/advogado-contrato-namoro-contagem'
+      path: '/advogado-contrato-namoro-contagem'
+      fullPath: '/advogado-contrato-namoro-contagem'
+      preLoaderRoute: typeof AdvogadoContratoNamoroContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-contrato-namoro-bh': {
+      id: '/advogado-contrato-namoro-bh'
+      path: '/advogado-contrato-namoro-bh'
+      fullPath: '/advogado-contrato-namoro-bh'
+      preLoaderRoute: typeof AdvogadoContratoNamoroBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-contrato-namoro-betim': {
+      id: '/advogado-contrato-namoro-betim'
+      path: '/advogado-contrato-namoro-betim'
+      fullPath: '/advogado-contrato-namoro-betim'
+      preLoaderRoute: typeof AdvogadoContratoNamoroBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$': {
       id: '/$'
       path: '/$'
@@ -1478,6 +1583,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
+  AdvogadoContratoNamoroBetimRoute: AdvogadoContratoNamoroBetimRoute,
+  AdvogadoContratoNamoroBhRoute: AdvogadoContratoNamoroBhRoute,
+  AdvogadoContratoNamoroContagemRoute: AdvogadoContratoNamoroContagemRoute,
+  AdvogadoContratoNamoroIgarapeRoute: AdvogadoContratoNamoroIgarapeRoute,
+  AdvogadoContratoNamoroNovaLimaRoute: AdvogadoContratoNamoroNovaLimaRoute,
   AdvogadoCuratelaBetimRoute: AdvogadoCuratelaBetimRoute,
   AdvogadoCuratelaBhRoute: AdvogadoCuratelaBhRoute,
   AdvogadoCuratelaContagemRoute: AdvogadoCuratelaContagemRoute,
