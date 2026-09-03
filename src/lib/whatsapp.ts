@@ -69,6 +69,11 @@ export const PAGE_LABELS: Record<string, string> = {
   "/advogado-exoneracao-pensao-igarape": "ADVOGADO DE EXONERAÇÃO DE PENSÃO EM IGARAPÉ",
   "/advogado-revisao-pensao-igarape": "ADVOGADO DE REVISÃO DE PENSÃO EM IGARAPÉ",
   "/advogado-execucao-pensao-igarape": "ADVOGADO DE EXECUÇÃO DE PENSÃO EM IGARAPÉ",
+  "/advogado-contrato-namoro-betim": "ADVOGADO DE CONTRATO DE NAMORO EM BETIM",
+  "/advogado-contrato-namoro-bh": "ADVOGADO DE CONTRATO DE NAMORO EM BELO HORIZONTE",
+  "/advogado-contrato-namoro-contagem": "ADVOGADO DE CONTRATO DE NAMORO EM CONTAGEM",
+  "/advogado-contrato-namoro-igarape": "ADVOGADO DE CONTRATO DE NAMORO EM IGARAPÉ",
+  "/advogado-contrato-namoro-nova-lima": "ADVOGADO DE CONTRATO DE NAMORO EM NOVA LIMA",
 };
 
 export function normalizePath(pathname: string) {

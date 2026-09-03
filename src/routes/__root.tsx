@@ -154,6 +154,11 @@ function RootComponent() {
     pathname.startsWith("/advogado-exoneracao-pensao-igarape") ||
     pathname.startsWith("/advogado-revisao-pensao-igarape") ||
     pathname.startsWith("/advogado-execucao-pensao-igarape") ||
+    pathname.startsWith("/advogado-contrato-namoro-betim") ||
+    pathname.startsWith("/advogado-contrato-namoro-bh") ||
+    pathname.startsWith("/advogado-contrato-namoro-contagem") ||
+    pathname.startsWith("/advogado-contrato-namoro-igarape") ||
+    pathname.startsWith("/advogado-contrato-namoro-nova-lima") ||
     pathname.startsWith("/advogado-divorcio-extrajudicial-igarape");
 
   if (isStandaloneLanding) {
