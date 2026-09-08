@@ -90,6 +90,7 @@ export const PAGE_LABELS: Record<string, string> = {
   "/advogado-mudanca-regime-bens-casamento-igarape": "ADVOGADO DE MUDANÇA DE REGIME DE BENS DE CASAMENTO EM IGARAPÉ",
   "/advogado-mudanca-regime-bens-casamento-nova-lima": "ADVOGADO DE MUDANÇA DE REGIME DE BENS DE CASAMENTO EM NOVA LIMA",
   "/advogado-validacao-homologacao-sentenca-estrangeira": "ADVOGADO DE VALIDAÇÃO E HOMOLOGAÇÃO DE SENTENÇA ESTRANGEIRA NO BRASIL",
+  "/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil": "ADVOGADO DE HOMOLOGAÇÃO DE DECISÃO JUDICIAL ESTRANGEIRA PERANTE O STJ NO BRASIL",
 };
 
 export function normalizePath(pathname: string) {
