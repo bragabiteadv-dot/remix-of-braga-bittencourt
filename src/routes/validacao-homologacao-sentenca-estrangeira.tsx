@@ -48,7 +48,7 @@ const DESCRIPTION =
   "Advogado de Execução de Pensão em Betim com mais de 20 anos de experiência. Execução de pensão alimentícia, atrasos, prescrição e pensão avoenga com sigilo e segurança.";
 
 
-export const Route = createFileRoute("/advogado-execucao-pensao-betim")({
+export const Route = createFileRoute("/validacao-homologacao-sentenca-estrangeira")({
   head: () =>
     buildSeoHead({
       title: TITLE,
