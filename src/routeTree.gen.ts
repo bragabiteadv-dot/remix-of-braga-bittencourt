@@ -47,6 +47,7 @@ import { Route as AdvogadoInventarioIgarapeRouteImport } from './routes/advogado
 import { Route as AdvogadoInventarioContagemRouteImport } from './routes/advogado-inventario-contagem'
 import { Route as AdvogadoInventarioBhRouteImport } from './routes/advogado-inventario-bh'
 import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-inventario-betim'
+import { Route as AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport } from './routes/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
 import { Route as AdvogadoGuardaNovaLimaRouteImport } from './routes/advogado-guarda-nova-lima'
 import { Route as AdvogadoGuardaIgarapeRouteImport } from './routes/advogado-guarda-igarape'
 import { Route as AdvogadoGuardaContagemRouteImport } from './routes/advogado-guarda-contagem'
@@ -329,6 +330,12 @@ const AdvogadoInventarioBetimRoute = AdvogadoInventarioBetimRouteImport.update({
   path: '/advogado-inventario-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute =
+  AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport.update({
+    id: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil',
+    path: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoGuardaNovaLimaRoute = AdvogadoGuardaNovaLimaRouteImport.update({
   id: '/advogado-guarda-nova-lima',
   path: '/advogado-guarda-nova-lima',
@@ -686,6 +693,7 @@ export interface FileRoutesByFullPath {
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
+  '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
@@ -780,6 +788,7 @@ export interface FileRoutesByTo {
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
+  '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
@@ -875,6 +884,7 @@ export interface FileRoutesById {
   '/advogado-guarda-contagem': typeof AdvogadoGuardaContagemRoute
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
+  '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
@@ -971,6 +981,7 @@ export interface FileRouteTypes {
     | '/advogado-guarda-contagem'
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
+    | '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
     | '/advogado-inventario-betim'
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
@@ -1065,6 +1076,7 @@ export interface FileRouteTypes {
     | '/advogado-guarda-contagem'
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
+    | '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
     | '/advogado-inventario-betim'
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
@@ -1159,6 +1171,7 @@ export interface FileRouteTypes {
     | '/advogado-guarda-contagem'
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
+    | '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
     | '/advogado-inventario-betim'
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
@@ -1254,6 +1267,7 @@ export interface RootRouteChildren {
   AdvogadoGuardaContagemRoute: typeof AdvogadoGuardaContagemRoute
   AdvogadoGuardaIgarapeRoute: typeof AdvogadoGuardaIgarapeRoute
   AdvogadoGuardaNovaLimaRoute: typeof AdvogadoGuardaNovaLimaRoute
+  AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute: typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
   AdvogadoInventarioBetimRoute: typeof AdvogadoInventarioBetimRoute
   AdvogadoInventarioBhRoute: typeof AdvogadoInventarioBhRoute
   AdvogadoInventarioContagemRoute: typeof AdvogadoInventarioContagemRoute
@@ -1562,6 +1576,13 @@ declare module '@tanstack/react-router' {
       path: '/advogado-inventario-betim'
       fullPath: '/advogado-inventario-betim'
       preLoaderRoute: typeof AdvogadoInventarioBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': {
+      id: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+      path: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+      fullPath: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-guarda-nova-lima': {
@@ -2005,6 +2026,8 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoGuardaContagemRoute: AdvogadoGuardaContagemRoute,
   AdvogadoGuardaIgarapeRoute: AdvogadoGuardaIgarapeRoute,
   AdvogadoGuardaNovaLimaRoute: AdvogadoGuardaNovaLimaRoute,
+  AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute:
+    AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute,
   AdvogadoInventarioBetimRoute: AdvogadoInventarioBetimRoute,
   AdvogadoInventarioBhRoute: AdvogadoInventarioBhRoute,
   AdvogadoInventarioContagemRoute: AdvogadoInventarioContagemRoute,

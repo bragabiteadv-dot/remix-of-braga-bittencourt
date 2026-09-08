@@ -64,6 +64,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/advogado-revisao-pensao-betim", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-execucao-pensao-betim", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-validacao-homologacao-sentenca-estrangeira", changefreq: "monthly", priority: "0.9" },
+          { path: "/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-fixacao-pensao-bh", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-exoneracao-pensao-bh", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-revisao-pensao-bh", changefreq: "monthly", priority: "0.9" },
