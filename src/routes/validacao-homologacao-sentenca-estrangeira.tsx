@@ -614,7 +614,7 @@ function LpPresence() {
 /* ---------------- Footer ---------------- */
 
 const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bittencourt+adovagos&rlz=1C1GCEA_enBR1196BR1197&oq=braga+bittencourt+adovagos&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAHSAQg1MDc2ajBqOagCBrACAfEFWe6JCqrJDgQ&sourceid=chrome&source=chrome.ob&ie=UTF-8";
-const BETIM_MAP_URL = MAPS_URL;
+
 
 function LpFooter() {
   const waLink = useWhatsAppLink();
@@ -630,7 +630,16 @@ function LpFooter() {
             {/* Left pills */}
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <a
-                href={BETIM_MAP_URL}
+                href={BH_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
+              >
+                <MapPin size={16} className="text-gold-light shrink-0" />
+                <span>Av. Raja Gabáglia 2000, sala 614, Alpes - Belo Horizonte</span>
+              </a>
+              <a
+                href={BETIM_MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 text-sm text-white/90 hover:bg-white/5 hover:border-white/30 transition-all"
