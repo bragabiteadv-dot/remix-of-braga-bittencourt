@@ -16,6 +16,7 @@ import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
+import { Route as AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/advogado-validacao-homologacao-sentenca-estrangeira'
 import { Route as AdvogadoRevisaoPensaoNovaLimaRouteImport } from './routes/advogado-revisao-pensao-nova-lima'
 import { Route as AdvogadoRevisaoPensaoIgarapeRouteImport } from './routes/advogado-revisao-pensao-igarape'
 import { Route as AdvogadoRevisaoPensaoContagemRouteImport } from './routes/advogado-revisao-pensao-contagem'
@@ -137,6 +138,12 @@ const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
   path: '/areas-de-atuacao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute =
+  AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport.update({
+    id: '/advogado-validacao-homologacao-sentenca-estrangeira',
+    path: '/advogado-validacao-homologacao-sentenca-estrangeira',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoRevisaoPensaoNovaLimaRoute =
   AdvogadoRevisaoPensaoNovaLimaRouteImport.update({
     id: '/advogado-revisao-pensao-nova-lima',
@@ -709,6 +716,7 @@ export interface FileRoutesByFullPath {
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
   '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
   '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
+  '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -802,6 +810,7 @@ export interface FileRoutesByTo {
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
   '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
   '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
+  '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -896,6 +905,7 @@ export interface FileRoutesById {
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
   '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
   '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
+  '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -991,6 +1001,7 @@ export interface FileRouteTypes {
     | '/advogado-revisao-pensao-contagem'
     | '/advogado-revisao-pensao-igarape'
     | '/advogado-revisao-pensao-nova-lima'
+    | '/advogado-validacao-homologacao-sentenca-estrangeira'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -1084,6 +1095,7 @@ export interface FileRouteTypes {
     | '/advogado-revisao-pensao-contagem'
     | '/advogado-revisao-pensao-igarape'
     | '/advogado-revisao-pensao-nova-lima'
+    | '/advogado-validacao-homologacao-sentenca-estrangeira'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -1177,6 +1189,7 @@ export interface FileRouteTypes {
     | '/advogado-revisao-pensao-contagem'
     | '/advogado-revisao-pensao-igarape'
     | '/advogado-revisao-pensao-nova-lima'
+    | '/advogado-validacao-homologacao-sentenca-estrangeira'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -1271,6 +1284,7 @@ export interface RootRouteChildren {
   AdvogadoRevisaoPensaoContagemRoute: typeof AdvogadoRevisaoPensaoContagemRoute
   AdvogadoRevisaoPensaoIgarapeRoute: typeof AdvogadoRevisaoPensaoIgarapeRoute
   AdvogadoRevisaoPensaoNovaLimaRoute: typeof AdvogadoRevisaoPensaoNovaLimaRoute
+  AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute: typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
@@ -1331,6 +1345,13 @@ declare module '@tanstack/react-router' {
       path: '/areas-de-atuacao'
       fullPath: '/areas-de-atuacao'
       preLoaderRoute: typeof AreasDeAtuacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-validacao-homologacao-sentenca-estrangeira': {
+      id: '/advogado-validacao-homologacao-sentenca-estrangeira'
+      path: '/advogado-validacao-homologacao-sentenca-estrangeira'
+      fullPath: '/advogado-validacao-homologacao-sentenca-estrangeira'
+      preLoaderRoute: typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-revisao-pensao-nova-lima': {
@@ -2031,6 +2052,8 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoRevisaoPensaoContagemRoute: AdvogadoRevisaoPensaoContagemRoute,
   AdvogadoRevisaoPensaoIgarapeRoute: AdvogadoRevisaoPensaoIgarapeRoute,
   AdvogadoRevisaoPensaoNovaLimaRoute: AdvogadoRevisaoPensaoNovaLimaRoute,
+  AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute:
+    AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
