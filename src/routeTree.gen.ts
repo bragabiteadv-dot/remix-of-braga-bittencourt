@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/validacao-homologacao-sentenca-estrangeira'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as PerfilRouteImport } from './routes/perfil'
@@ -101,6 +102,12 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArtigosIndexRouteImport } from './routes/artigos.index'
 import { Route as ArtigosSlugRouteImport } from './routes/artigos.$slug'
 
+const ValidacaoHomologacaoSentencaEstrangeiraRoute =
+  ValidacaoHomologacaoSentencaEstrangeiraRouteImport.update({
+    id: '/validacao-homologacao-sentenca-estrangeira',
+    path: '/validacao-homologacao-sentenca-estrangeira',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -716,6 +723,7 @@ export interface FileRoutesByFullPath {
   '/perfil': typeof PerfilRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/validacao-homologacao-sentenca-estrangeira': typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos/': typeof ArtigosIndexRoute
 }
@@ -809,6 +817,7 @@ export interface FileRoutesByTo {
   '/perfil': typeof PerfilRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/validacao-homologacao-sentenca-estrangeira': typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos': typeof ArtigosIndexRoute
 }
@@ -903,6 +912,7 @@ export interface FileRoutesById {
   '/perfil': typeof PerfilRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/validacao-homologacao-sentenca-estrangeira': typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos/': typeof ArtigosIndexRoute
 }
@@ -998,6 +1008,7 @@ export interface FileRouteTypes {
     | '/perfil'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/validacao-homologacao-sentenca-estrangeira'
     | '/artigos/$slug'
     | '/artigos/'
   fileRoutesByTo: FileRoutesByTo
@@ -1091,6 +1102,7 @@ export interface FileRouteTypes {
     | '/perfil'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/validacao-homologacao-sentenca-estrangeira'
     | '/artigos/$slug'
     | '/artigos'
   id:
@@ -1184,6 +1196,7 @@ export interface FileRouteTypes {
     | '/perfil'
     | '/robots.txt'
     | '/sitemap.xml'
+    | '/validacao-homologacao-sentenca-estrangeira'
     | '/artigos/$slug'
     | '/artigos/'
   fileRoutesById: FileRoutesById
@@ -1278,12 +1291,20 @@ export interface RootRouteChildren {
   PerfilRoute: typeof PerfilRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ValidacaoHomologacaoSentencaEstrangeiraRoute: typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   ArtigosSlugRoute: typeof ArtigosSlugRoute
   ArtigosIndexRoute: typeof ArtigosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/validacao-homologacao-sentenca-estrangeira': {
+      id: '/validacao-homologacao-sentenca-estrangeira'
+      path: '/validacao-homologacao-sentenca-estrangeira'
+      fullPath: '/validacao-homologacao-sentenca-estrangeira'
+      preLoaderRoute: typeof ValidacaoHomologacaoSentencaEstrangeiraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -2039,6 +2060,8 @@ const rootRouteChildren: RootRouteChildren = {
   PerfilRoute: PerfilRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ValidacaoHomologacaoSentencaEstrangeiraRoute:
+    ValidacaoHomologacaoSentencaEstrangeiraRoute,
   ArtigosSlugRoute: ArtigosSlugRoute,
   ArtigosIndexRoute: ArtigosIndexRoute,
 }
