@@ -38,14 +38,14 @@ import sedeBetim3 from "@/assets/sede-betim-3.jpg";
 import sedeBetim4 from "@/assets/sede-betim-4.jpg";
 import sedeBetim5 from "@/assets/sede-betim-5.jpg";
 
-const PATH = "/advogado-execucao-pensao-betim";
-const TITLE = "Advogado de Execução de Pensão em Betim | Braga Bitencourt Advogados";
-const SERVICE = "Execução de Pensão";
-const CITY = "Betim";
-const OFFICE_ALT = `Escritório especialista em ${SERVICE} em ${CITY}`;
+const PATH = "/validacao-homologacao-sentenca-estrangeira";
+const TITLE = "Validação e Homologação de Sentença Estrangeira no Brasil | Braga Bitencourt Advogados";
+const SERVICE = "Homologação de Sentença Estrangeira";
+const CITY = "Brasil";
+const OFFICE_ALT = `Escritório especialista em ${SERVICE} no ${CITY}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const DESCRIPTION =
-  "Advogado de Execução de Pensão em Betim com mais de 20 anos de experiência. Execução de pensão alimentícia, atrasos, prescrição e pensão avoenga com sigilo e segurança.";
+  "Advogado de Validação e Homologação de Sentença Estrangeira no Brasil com mais de 20 anos de experiência. Reconhecimento pelo STJ de divórcio, guarda, alimentos, adoção e inventário decididos no exterior.";
 
 
 export const Route = createFileRoute("/validacao-homologacao-sentenca-estrangeira")({
@@ -54,11 +54,11 @@ export const Route = createFileRoute("/validacao-homologacao-sentenca-estrangeir
       title: TITLE,
       description: DESCRIPTION,
       canonicalUrl: PATH,
-      city: "Betim",
-      service: "Execução de Pensão",
+      city: "Belo Horizonte",
+      service: "Homologação de Sentença Estrangeira",
       image: OG_IMAGE,
-      areaServed: "Betim, MG",
-      breadcrumbName: "Advogado de Execução de Pensão em Betim",
+      areaServed: "Brasil",
+      breadcrumbName: "Validação e Homologação de Sentença Estrangeira no Brasil",
       address: {
           "@type": "PostalAddress",
           streetAddress: "Av. Amazonas, 1446, 7º andar, salas 706/707 - Brasiléia",
@@ -157,7 +157,7 @@ function LpHero() {
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
             <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
-              Advogado de Execução de Pensão Alimentícia em Betim
+              Validação e Homologação de Sentença Estrangeira no Brasil
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
@@ -165,7 +165,7 @@ function LpHero() {
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
-              Advogado especialista em Execução de Pensão Alimentícia em Betim —&nbsp; Conduzimos seu caso de execução de pensão com o sigilo, a segurança e a melhor técnica que você precisa.
+              Advogado de Reconhecimento judicial de decisões internacionais pelo STJ para divórcio, guarda e alimentos —&nbsp; Conduzimos o processo de homologação da sua sentença estrangeira no Superior Tribunal de Justiça com sigilo, segurança e a melhor técnica que o seu caso exige.
             </p>
 
             <WhatsAppCta className="w-full sm:w-auto" />
@@ -194,8 +194,8 @@ function LpHero() {
                   <span className="text-white text-sm font-bold">Sobre Nosso Trabalho</span>
                 </div>
                 <p className="text-white text-center text-sm md:text-base font-montserrat leading-relaxed px-2">
-                  Advocacia de excelência focada em segurança jurídica, visão prática e soluções objetivas com totla
-                  claresa desde o primeiro contato.
+                  Advocacia de excelência focada em segurança jurídica, visão prática e soluções objetivas, com total
+                  clareza desde o primeiro contato.
                 </p>
               </div>
 
@@ -236,42 +236,43 @@ function LpSituations() {
   const items = [
     {
       icon: <Scale className="w-7 h-7" />,
-      title: "Com quanto tempo de atraso posso pedir a execução da pensão alimentícia?",
-      text: "Basta o atraso de 1 dia, para que a pensão possa ser executada sob pena de prisão.",
+      title: "Você se divorciou no exterior e precisa que o divórcio tenha efeito no Brasil?",
+      text: "A sentença estrangeira de divórcio só produz efeitos no Brasil após a homologação pelo Superior Tribunal de Justiça (STJ) e a posterior averbação no registro civil brasileiro.",
     },
     {
       icon: <Users className="w-7 h-7" />,
-      title: "Quando posso exigir execução de pensão sob pena de prisão e sob pena de penhora?",
-      text: "Garanta o bem-estar dos seus filhos com uma definição clara e eficiente sobre a melhor técnica para exigir execução de pensão atrasada.",
+      title: "Existe decisão estrangeira sobre guarda ou convivência dos seus filhos?",
+      text: "Conduzimos o reconhecimento judicial da decisão internacional de guarda e regulamentação de convivência, garantindo que ela seja cumprida em território brasileiro.",
     },
     {
       icon: <Coins className="w-7 h-7" />,
-      title: "Tem dúvidas sobre o valor da execução de pensão ou como calculá-lo?",
-      text: "Saiba como funciona o cálculo da execução de pensão, como solicitar ou pedir a revisão dos valores determinados.",
+      title: "Precisa cobrar no Brasil os alimentos fixados por um tribunal estrangeiro?",
+      text: "Após a homologação, a decisão estrangeira de alimentos passa a ser título executivo no Brasil e pode ser cobrada judicialmente, com todas as medidas legais de execução.",
     },
     {
       icon: <FileSignature className="w-7 h-7" />,
-      title: "Atingi a maioridade e estou fazendo faculdade. Minha pensão está atrasada. Posso executar esta pensão?",
-      text: "Observando o prazo de prescrição de 2 anos a pensão alimentícia só não é executável se previamente for exonerada.",
+      title: "Quais documentos são exigidos para homologar uma sentença estrangeira?",
+      text: "É necessária a sentença integral com trânsito em julgado, devidamente apostilada conforme a Convenção da Apostila da Haia ou legalizada pelo consulado, e acompanhada de tradução juramentada para o português.",
     },
     {
       icon: <Building2 className="w-7 h-7" />,
-      title: "A pensão que recebo não é suficiente. Posso executar o débito alimentício contra os avós?",
-      text: "A execução de pensão avoenga é perfeitamente executável, mas não do débito fixado contra o genitor. É necessário que se fixe pensão complementar contra os avós e somente esta será devida por eles.",
+      title: "Toda decisão estrangeira precisa passar pelo STJ?",
+      text: "A regra é a homologação pelo STJ. O divórcio consensual estrangeiro, porém, tem efeito imediato no Brasil e pode ser averbado diretamente no registro civil, sem processo de homologação.",
     },
     {
       icon: <Landmark className="w-7 h-7" />,
-      title: "Execução de Pensão prescreve? Posso cobrar retroativo?",
-      text: "A execução de pensão não prescreve quando o beneficiário é menor de idade, mas o recebimento retroativo só é cabível para pensões que já foram fixadas.",
+      title: "Há decisão estrangeira sobre herança, adoção ou testamento a ser reconhecida?",
+      text: "Analisamos os requisitos legais, os limites da soberania nacional e da ordem pública brasileira e conduzimos o pedido de reconhecimento com segurança jurídica, do início ao cumprimento.",
     },
   ];
+
 
   return (
     <section className="py-24 bg-[#F6F3EE]">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES EM SEU CASO DE EXECUÇÃO DE PENSÃO ALIMENTÍCIA?
+VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES EM SEU CASO DE SENTENÇA ESTRANGEIRA?
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -381,7 +382,8 @@ function LpServices() {
       icon: <Globe className="w-8 h-8" />,
       title: "Privado Internacional",
       items: [
-        "Homologação de sentenças estrangeiras",
+        "Validação e homologação de sentenças estrangeiras no STJ",
+        "Averbação de divórcio estrangeiro no registro civil",
         "Autorização de viagem para menores",
         "Divórcios e guardas com partes no exterior",
         "Transcrições e averbações",
@@ -397,7 +399,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Betim
+            O que fazemos por você
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
