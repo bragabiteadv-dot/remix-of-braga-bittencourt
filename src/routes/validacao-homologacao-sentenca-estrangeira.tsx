@@ -512,10 +512,35 @@ function LpDifferentials() {
 
 /* ---------------- Presença física ---------------- */
 
-const MAPS_URL =
+const BETIM_MAPS_URL =
   "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.9699976,-44.2045052,1021m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6c35df7797b19:0xf77bb0f67fe9276a!8m2!3d-19.9699976!4d-44.2045052!16s%2Fg%2F11n0pqcqww";
-const MAPS_EMBED_URL =
+const BETIM_MAPS_EMBED_URL =
   "https://www.google.com/maps?q=Braga+Bitencourt+Advogados+Betim,+Av.+Amazonas,+1446+-+salas+706%2F707+-+Brasil%C3%A9ia,+Betim+-+MG,+32600-324&output=embed";
+const BH_MAPS_URL =
+  "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.954955,-43.9595168,1022m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6be0a87eba137:0x5b7a5c4dbe44fd0b!8m2!3d-19.954955!4d-43.9595168!16s%2Fg%2F1x6q2_2p";
+const BH_MAPS_EMBED_URL =
+  "https://www.google.com/maps?q=Braga+Bitencourt+Advogados,+Av.+Raja+Gab%C3%A1glia,+2000+-+sala+614+-+Alpes,+Belo+Horizonte+-+MG,+30494-170&output=embed";
+
+const OFFICES = [
+  {
+    city: "Belo Horizonte",
+    address:
+      "Braga Bitencourt Advogados, Av. Raja Gabáglia, 2000 - sala 614 - Alpes, Belo Horizonte - MG, 30494-170",
+    mapUrl: BH_MAPS_URL,
+    mapEmbedUrl: BH_MAPS_EMBED_URL,
+    image: officeBH,
+    note: "Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.",
+  },
+  {
+    city: "Betim",
+    address:
+      "Braga Bitencourt Advogados Betim, Av. Amazonas, 1446 - 7º andar - salas 706/707 - Brasiléia, Betim - MG, 32600-324",
+    mapUrl: BETIM_MAPS_URL,
+    mapEmbedUrl: BETIM_MAPS_EMBED_URL,
+    image: officeBetim,
+    note: "Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.",
+  },
+];
 
 function LpPresence() {
   return (
@@ -533,54 +558,53 @@ function LpPresence() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
-          <a
-            href={MAPS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block bg-white rounded-2xl overflow-hidden shadow-2xl h-full min-h-[420px] hover:opacity-95 transition-opacity"
-          >
-            <iframe
-              src={MAPS_EMBED_URL}
-              width="100%"
-              height="100%"
-              style={{ border: 0, pointerEvents: "none" }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa da sede em Betim"
-            />
-          </a>
-
-          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full min-h-[420px]">
-            <div className="h-56 overflow-hidden shrink-0">
-              <img
-                src={officeBetim}
-                alt={OFFICE_ALT}
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-8 space-y-6 flex-grow flex flex-col justify-between">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 max-w-6xl mx-auto items-stretch">
+          {OFFICES.map((office) => (
+            <div key={office.city} className="flex flex-col gap-10 md:gap-8 h-full">
               <a
-                href={MAPS_URL}
+                href={office.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#c89269] font-montserrat font-semibold text-sm md:text-base leading-relaxed flex gap-3 hover:underline"
+                className="block bg-white rounded-2xl overflow-hidden shadow-2xl h-80 relative hover:opacity-95 transition-opacity"
               >
-                <MapPin className="w-5 h-5 shrink-0 mt-0.5" />
-                <span>
-                  Braga Bitencourt Advogados Betim, Av. Amazonas, 1446 - 7° andar - salas 706/707 - Brasiléia, Betim -
-                  MG, 32600-324
-                </span>
+                <iframe
+                  src={office.mapEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, pointerEvents: "none" }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Mapa da sede em ${office.city}`}
+                />
               </a>
 
-              <WhatsAppCta className="w-full !py-4 !text-sm" />
+              <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col flex-grow">
+                <div className="h-56 overflow-hidden shrink-0">
+                  <img
+                    src={office.image}
+                    alt={OFFICE_ALT}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 space-y-6 flex-grow flex flex-col justify-between">
+                  <a
+                    href={office.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#c89269] font-montserrat font-semibold text-sm md:text-base leading-relaxed flex gap-3 hover:underline"
+                  >
+                    <MapPin className="w-5 h-5 shrink-0 mt-0.5" />
+                    <span>{office.address}</span>
+                  </a>
 
-              <p className="text-navy/60 font-montserrat text-sm leading-relaxed">
-                Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.
-              </p>
+                  <WhatsAppCta className="w-full !py-4 !text-sm" />
+
+                  <p className="text-navy/60 font-montserrat text-sm leading-relaxed">{office.note}</p>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
