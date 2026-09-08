@@ -9,13 +9,13 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/validacao-homologacao-sentenca-estrangeira'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
+import { Route as AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/advogado-validacao-homologacao-sentenca-estrangeira'
 import { Route as AdvogadoRevisaoPensaoNovaLimaRouteImport } from './routes/advogado-revisao-pensao-nova-lima'
 import { Route as AdvogadoRevisaoPensaoIgarapeRouteImport } from './routes/advogado-revisao-pensao-igarape'
 import { Route as AdvogadoRevisaoPensaoContagemRouteImport } from './routes/advogado-revisao-pensao-contagem'
@@ -101,12 +101,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArtigosIndexRouteImport } from './routes/artigos.index'
 import { Route as ArtigosSlugRouteImport } from './routes/artigos.$slug'
 
-const ValidacaoHomologacaoSentencaEstrangeiraRoute =
-  ValidacaoHomologacaoSentencaEstrangeiraRouteImport.update({
-    id: '/validacao-homologacao-sentenca-estrangeira',
-    path: '/validacao-homologacao-sentenca-estrangeira',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -137,6 +131,12 @@ const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
   path: '/areas-de-atuacao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute =
+  AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport.update({
+    id: '/advogado-validacao-homologacao-sentenca-estrangeira',
+    path: '/advogado-validacao-homologacao-sentenca-estrangeira',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoRevisaoPensaoNovaLimaRoute =
   AdvogadoRevisaoPensaoNovaLimaRouteImport.update({
     id: '/advogado-revisao-pensao-nova-lima',
@@ -709,13 +709,13 @@ export interface FileRoutesByFullPath {
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
   '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
   '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
+  '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/validacao-homologacao-sentenca-estrangeira': typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos/': typeof ArtigosIndexRoute
 }
@@ -802,13 +802,13 @@ export interface FileRoutesByTo {
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
   '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
   '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
+  '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/validacao-homologacao-sentenca-estrangeira': typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos': typeof ArtigosIndexRoute
 }
@@ -896,13 +896,13 @@ export interface FileRoutesById {
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
   '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
   '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
+  '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/validacao-homologacao-sentenca-estrangeira': typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/artigos/': typeof ArtigosIndexRoute
 }
@@ -991,13 +991,13 @@ export interface FileRouteTypes {
     | '/advogado-revisao-pensao-contagem'
     | '/advogado-revisao-pensao-igarape'
     | '/advogado-revisao-pensao-nova-lima'
+    | '/advogado-validacao-homologacao-sentenca-estrangeira'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
     | '/robots.txt'
     | '/sitemap.xml'
-    | '/validacao-homologacao-sentenca-estrangeira'
     | '/artigos/$slug'
     | '/artigos/'
   fileRoutesByTo: FileRoutesByTo
@@ -1084,13 +1084,13 @@ export interface FileRouteTypes {
     | '/advogado-revisao-pensao-contagem'
     | '/advogado-revisao-pensao-igarape'
     | '/advogado-revisao-pensao-nova-lima'
+    | '/advogado-validacao-homologacao-sentenca-estrangeira'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
     | '/robots.txt'
     | '/sitemap.xml'
-    | '/validacao-homologacao-sentenca-estrangeira'
     | '/artigos/$slug'
     | '/artigos'
   id:
@@ -1177,13 +1177,13 @@ export interface FileRouteTypes {
     | '/advogado-revisao-pensao-contagem'
     | '/advogado-revisao-pensao-igarape'
     | '/advogado-revisao-pensao-nova-lima'
+    | '/advogado-validacao-homologacao-sentenca-estrangeira'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
     | '/perfil'
     | '/robots.txt'
     | '/sitemap.xml'
-    | '/validacao-homologacao-sentenca-estrangeira'
     | '/artigos/$slug'
     | '/artigos/'
   fileRoutesById: FileRoutesById
@@ -1271,26 +1271,19 @@ export interface RootRouteChildren {
   AdvogadoRevisaoPensaoContagemRoute: typeof AdvogadoRevisaoPensaoContagemRoute
   AdvogadoRevisaoPensaoIgarapeRoute: typeof AdvogadoRevisaoPensaoIgarapeRoute
   AdvogadoRevisaoPensaoNovaLimaRoute: typeof AdvogadoRevisaoPensaoNovaLimaRoute
+  AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute: typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
   PerfilRoute: typeof PerfilRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  ValidacaoHomologacaoSentencaEstrangeiraRoute: typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   ArtigosSlugRoute: typeof ArtigosSlugRoute
   ArtigosIndexRoute: typeof ArtigosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/validacao-homologacao-sentenca-estrangeira': {
-      id: '/validacao-homologacao-sentenca-estrangeira'
-      path: '/validacao-homologacao-sentenca-estrangeira'
-      fullPath: '/validacao-homologacao-sentenca-estrangeira'
-      preLoaderRoute: typeof ValidacaoHomologacaoSentencaEstrangeiraRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -1331,6 +1324,13 @@ declare module '@tanstack/react-router' {
       path: '/areas-de-atuacao'
       fullPath: '/areas-de-atuacao'
       preLoaderRoute: typeof AreasDeAtuacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-validacao-homologacao-sentenca-estrangeira': {
+      id: '/advogado-validacao-homologacao-sentenca-estrangeira'
+      path: '/advogado-validacao-homologacao-sentenca-estrangeira'
+      fullPath: '/advogado-validacao-homologacao-sentenca-estrangeira'
+      preLoaderRoute: typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-revisao-pensao-nova-lima': {
@@ -2031,14 +2031,14 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoRevisaoPensaoContagemRoute: AdvogadoRevisaoPensaoContagemRoute,
   AdvogadoRevisaoPensaoIgarapeRoute: AdvogadoRevisaoPensaoIgarapeRoute,
   AdvogadoRevisaoPensaoNovaLimaRoute: AdvogadoRevisaoPensaoNovaLimaRoute,
+  AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute:
+    AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
   PerfilRoute: PerfilRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  ValidacaoHomologacaoSentencaEstrangeiraRoute:
-    ValidacaoHomologacaoSentencaEstrangeiraRoute,
   ArtigosSlugRoute: ArtigosSlugRoute,
   ArtigosIndexRoute: ArtigosIndexRoute,
 }

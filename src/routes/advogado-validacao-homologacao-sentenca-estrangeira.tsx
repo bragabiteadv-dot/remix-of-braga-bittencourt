@@ -38,7 +38,7 @@ import sedeBetim3 from "@/assets/sede-betim-3.jpg";
 import sedeBetim4 from "@/assets/sede-betim-4.jpg";
 import sedeBetim5 from "@/assets/sede-betim-5.jpg";
 
-const PATH = "/validacao-homologacao-sentenca-estrangeira";
+const PATH = "/advogado-validacao-homologacao-sentenca-estrangeira";
 const TITLE = "Advogado de Validação e Homologação de Sentença Estrangeira no Brasil | Braga Bitencourt Advogados";
 const SERVICE = "Validação e Homologação de Sentença Estrangeira";
 const CITY = "Brasil";
@@ -48,7 +48,7 @@ const DESCRIPTION =
   "Advogado de Validação e Homologação de Sentença Estrangeira no Brasil com mais de 20 anos de experiência. Reconhecimento pelo STJ de divórcio, guarda, alimentos, adoção e inventário decididos no exterior.";
 
 
-export const Route = createFileRoute("/validacao-homologacao-sentenca-estrangeira")({
+export const Route = createFileRoute("/advogado-validacao-homologacao-sentenca-estrangeira")({
   head: () =>
     buildSeoHead({
       title: TITLE,
