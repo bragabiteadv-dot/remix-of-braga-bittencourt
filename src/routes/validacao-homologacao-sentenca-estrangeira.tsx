@@ -529,7 +529,7 @@ const OFFICES = [
     mapUrl: BH_MAPS_URL,
     mapEmbedUrl: BH_MAPS_EMBED_URL,
     image: officeBH,
-    note: "Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.",
+    note: "Atendimento com discrição, clareza e direção estratégica desde o primeiro contato. Escritório da capital mineira.",
   },
   {
     city: "Betim",
@@ -538,7 +538,7 @@ const OFFICES = [
     mapUrl: BETIM_MAPS_URL,
     mapEmbedUrl: BETIM_MAPS_EMBED_URL,
     image: officeBetim,
-    note: "Atendimento com discrição, clareza e direção estratégica desde o primeiro contato.",
+    note: "Atendimento com discrição, clareza e direção estratégica desde o primeiro contato. Escritório próximo ao Inhotim.",
   },
 ];
 
