@@ -39,8 +39,8 @@ import sedeBetim4 from "@/assets/sede-betim-4.jpg";
 import sedeBetim5 from "@/assets/sede-betim-5.jpg";
 
 const PATH = "/validacao-homologacao-sentenca-estrangeira";
-const TITLE = "Validação e Homologação de Sentença Estrangeira no Brasil | Braga Bitencourt Advogados";
-const SERVICE = "Homologação de Sentença Estrangeira";
+const TITLE = "Advogado de Validação e Homologação de Sentença Estrangeira no Brasil | Braga Bitencourt Advogados";
+const SERVICE = "Validação e Homologação de Sentença Estrangeira";
 const CITY = "Brasil";
 const OFFICE_ALT = `Escritório especialista em ${SERVICE} no ${CITY}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
@@ -55,10 +55,10 @@ export const Route = createFileRoute("/validacao-homologacao-sentenca-estrangeir
       description: DESCRIPTION,
       canonicalUrl: PATH,
       city: "Belo Horizonte",
-      service: "Homologação de Sentença Estrangeira",
+      service: "Validação e Homologação de Sentença Estrangeira",
       image: OG_IMAGE,
       areaServed: "Brasil",
-      breadcrumbName: "Validação e Homologação de Sentença Estrangeira no Brasil",
+      breadcrumbName: "Advogado de Validação e Homologação de Sentença Estrangeira no Brasil",
       address: {
           "@type": "PostalAddress",
           streetAddress: "Av. Amazonas, 1446, 7º andar, salas 706/707 - Brasiléia",
@@ -157,7 +157,7 @@ function LpHero() {
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
             <h1 className="text-white text-[32px] md:text-[44px] lg:text-[55px] font-cinzel leading-[1.1] mb-6">
-              Validação e Homologação de Sentença Estrangeira no Brasil
+              Advogado de Validação e Homologação de Sentença Estrangeira no Brasil
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">

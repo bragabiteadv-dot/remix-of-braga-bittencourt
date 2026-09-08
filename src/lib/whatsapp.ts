@@ -89,7 +89,7 @@ export const PAGE_LABELS: Record<string, string> = {
   "/advogado-mudanca-regime-bens-casamento-contagem": "ADVOGADO DE MUDANÇA DE REGIME DE BENS DE CASAMENTO EM CONTAGEM",
   "/advogado-mudanca-regime-bens-casamento-igarape": "ADVOGADO DE MUDANÇA DE REGIME DE BENS DE CASAMENTO EM IGARAPÉ",
   "/advogado-mudanca-regime-bens-casamento-nova-lima": "ADVOGADO DE MUDANÇA DE REGIME DE BENS DE CASAMENTO EM NOVA LIMA",
-  "/validacao-homologacao-sentenca-estrangeira": "VALIDAÇÃO E HOMOLOGAÇÃO DE SENTENÇA ESTRANGEIRA NO BRASIL",
+  "/validacao-homologacao-sentenca-estrangeira": "ADVOGADO DE VALIDAÇÃO E HOMOLOGAÇÃO DE SENTENÇA ESTRANGEIRA NO BRASIL",
 };
 
 export function normalizePath(pathname: string) {
