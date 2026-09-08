@@ -322,7 +322,7 @@ function LpOfficeGallery() {
     <section className="py-24 bg-[#08152C] overflow-hidden">
       <div className="container mx-auto mb-12">
         <h2 className="text-white text-3xl md:text-4xl font-cinzel text-center uppercase tracking-wider">
-          Nossa sede de Betim
+          NOSSA SEDE
         </h2>
         <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
       </div>
