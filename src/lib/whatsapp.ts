@@ -92,6 +92,7 @@ export const PAGE_LABELS: Record<string, string> = {
   "/advogado-validacao-homologacao-sentenca-estrangeira": "ADVOGADO DE VALIDAÇÃO E HOMOLOGAÇÃO DE SENTENÇA ESTRANGEIRA NO BRASIL",
   "/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil": "ADVOGADO DE HOMOLOGAÇÃO DE DECISÃO JUDICIAL ESTRANGEIRA PERANTE O STJ NO BRASIL",
   "/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia": "ADVOGADO PARA RECONHECIMENTO E HOMOLOGAÇÃO DE SENTENÇA ESTRANGEIRA NO STJ EM BRASÍLIA",
+  "/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil": "ADVOGADO PARA HOMOLOGAÇÃO DE SENTENÇA ESTRANGEIRA DE DIVÓRCIO E GUARDA NO BRASIL",
 };
 
 export function normalizePath(pathname: string) {

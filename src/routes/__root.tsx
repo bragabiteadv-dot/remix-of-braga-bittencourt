@@ -177,7 +177,8 @@ function RootComponent() {
     pathname.startsWith("/advogado-mudanca-regime-bens-casamento-nova-lima") ||
     pathname.startsWith("/advogado-divorcio-extrajudicial-igarape") ||
     pathname.startsWith("/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil") ||
-    pathname.startsWith("/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia");
+    pathname.startsWith("/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia") ||
+    pathname.startsWith("/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil");
 
   if (isStandaloneLanding) {
     return (
