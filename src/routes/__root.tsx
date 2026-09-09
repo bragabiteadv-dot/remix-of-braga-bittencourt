@@ -178,7 +178,13 @@ function RootComponent() {
     pathname.startsWith("/advogado-divorcio-extrajudicial-igarape") ||
     pathname.startsWith("/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil") ||
     pathname.startsWith("/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia") ||
-    pathname.startsWith("/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil");
+    pathname.startsWith("/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil") ||
+    pathname.startsWith("/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil") ||
+    pathname.startsWith("/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia") ||
+    pathname.startsWith("/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia") ||
+    pathname.startsWith("/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil") ||
+    pathname.startsWith("/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil") ||
+    pathname.startsWith("/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil");
 
   if (isStandaloneLanding) {
     return (
