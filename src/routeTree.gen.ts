@@ -48,6 +48,7 @@ import { Route as AdvogadoInventarioIgarapeRouteImport } from './routes/advogado
 import { Route as AdvogadoInventarioContagemRouteImport } from './routes/advogado-inventario-contagem'
 import { Route as AdvogadoInventarioBhRouteImport } from './routes/advogado-inventario-bh'
 import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-inventario-betim'
+import { Route as AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport } from './routes/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
 import { Route as AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport } from './routes/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
 import { Route as AdvogadoGuardaNovaLimaRouteImport } from './routes/advogado-guarda-nova-lima'
 import { Route as AdvogadoGuardaIgarapeRouteImport } from './routes/advogado-guarda-igarape'
@@ -339,6 +340,12 @@ const AdvogadoInventarioBetimRoute = AdvogadoInventarioBetimRouteImport.update({
   path: '/advogado-inventario-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute =
+  AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport.update({
+    id: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil',
+    path: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute =
   AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport.update({
     id: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil',
@@ -703,6 +710,7 @@ export interface FileRoutesByFullPath {
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
   '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
+  '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil': typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
@@ -799,6 +807,7 @@ export interface FileRoutesByTo {
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
   '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
+  '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil': typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
@@ -896,6 +905,7 @@ export interface FileRoutesById {
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
   '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
+  '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil': typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
@@ -994,6 +1004,7 @@ export interface FileRouteTypes {
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
     | '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+    | '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
     | '/advogado-inventario-betim'
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
@@ -1090,6 +1101,7 @@ export interface FileRouteTypes {
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
     | '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+    | '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
     | '/advogado-inventario-betim'
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
@@ -1186,6 +1198,7 @@ export interface FileRouteTypes {
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
     | '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+    | '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
     | '/advogado-inventario-betim'
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
@@ -1283,6 +1296,7 @@ export interface RootRouteChildren {
   AdvogadoGuardaIgarapeRoute: typeof AdvogadoGuardaIgarapeRoute
   AdvogadoGuardaNovaLimaRoute: typeof AdvogadoGuardaNovaLimaRoute
   AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute: typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
+  AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute: typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute
   AdvogadoInventarioBetimRoute: typeof AdvogadoInventarioBetimRoute
   AdvogadoInventarioBhRoute: typeof AdvogadoInventarioBhRoute
   AdvogadoInventarioContagemRoute: typeof AdvogadoInventarioContagemRoute
@@ -1599,6 +1613,13 @@ declare module '@tanstack/react-router' {
       path: '/advogado-inventario-betim'
       fullPath: '/advogado-inventario-betim'
       preLoaderRoute: typeof AdvogadoInventarioBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil': {
+      id: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
+      path: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
+      fullPath: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
+      preLoaderRoute: typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': {
@@ -2051,6 +2072,8 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoGuardaNovaLimaRoute: AdvogadoGuardaNovaLimaRoute,
   AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute:
     AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute,
+  AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute:
+    AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute,
   AdvogadoInventarioBetimRoute: AdvogadoInventarioBetimRoute,
   AdvogadoInventarioBhRoute: AdvogadoInventarioBhRoute,
   AdvogadoInventarioContagemRoute: AdvogadoInventarioContagemRoute,
