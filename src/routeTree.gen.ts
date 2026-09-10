@@ -16,19 +16,23 @@ import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
+import { Route as AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport } from './routes/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
 import { Route as AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/advogado-validacao-homologacao-sentenca-estrangeira'
+import { Route as AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRouteImport } from './routes/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
 import { Route as AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRouteImport } from './routes/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
 import { Route as AdvogadoRevisaoPensaoNovaLimaRouteImport } from './routes/advogado-revisao-pensao-nova-lima'
 import { Route as AdvogadoRevisaoPensaoIgarapeRouteImport } from './routes/advogado-revisao-pensao-igarape'
 import { Route as AdvogadoRevisaoPensaoContagemRouteImport } from './routes/advogado-revisao-pensao-contagem'
 import { Route as AdvogadoRevisaoPensaoBhRouteImport } from './routes/advogado-revisao-pensao-bh'
 import { Route as AdvogadoRevisaoPensaoBetimRouteImport } from './routes/advogado-revisao-pensao-betim'
+import { Route as AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRouteImport } from './routes/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
 import { Route as AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRouteImport } from './routes/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
 import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
 import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
 import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
 import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
 import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+import { Route as AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRouteImport } from './routes/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
 import { Route as AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRouteImport } from './routes/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
 import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
 import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
@@ -50,9 +54,12 @@ import { Route as AdvogadoInventarioIgarapeRouteImport } from './routes/advogado
 import { Route as AdvogadoInventarioContagemRouteImport } from './routes/advogado-inventario-contagem'
 import { Route as AdvogadoInventarioBhRouteImport } from './routes/advogado-inventario-bh'
 import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-inventario-betim'
+import { Route as AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRouteImport } from './routes/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
 import { Route as AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRouteImport } from './routes/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
 import { Route as AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport } from './routes/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
+import { Route as AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRouteImport } from './routes/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
 import { Route as AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport } from './routes/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+import { Route as AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRouteImport } from './routes/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
 import { Route as AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRouteImport } from './routes/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
 import { Route as AdvogadoGuardaNovaLimaRouteImport } from './routes/advogado-guarda-nova-lima'
 import { Route as AdvogadoGuardaIgarapeRouteImport } from './routes/advogado-guarda-igarape'
@@ -99,12 +106,14 @@ import { Route as AdvogadoCuratelaIgarapeRouteImport } from './routes/advogado-c
 import { Route as AdvogadoCuratelaContagemRouteImport } from './routes/advogado-curatela-contagem'
 import { Route as AdvogadoCuratelaBhRouteImport } from './routes/advogado-curatela-bh'
 import { Route as AdvogadoCuratelaBetimRouteImport } from './routes/advogado-curatela-betim'
+import { Route as AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRouteImport } from './routes/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
 import { Route as AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRouteImport } from './routes/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
 import { Route as AdvogadoContratoNamoroNovaLimaRouteImport } from './routes/advogado-contrato-namoro-nova-lima'
 import { Route as AdvogadoContratoNamoroIgarapeRouteImport } from './routes/advogado-contrato-namoro-igarape'
 import { Route as AdvogadoContratoNamoroContagemRouteImport } from './routes/advogado-contrato-namoro-contagem'
 import { Route as AdvogadoContratoNamoroBhRouteImport } from './routes/advogado-contrato-namoro-bh'
 import { Route as AdvogadoContratoNamoroBetimRouteImport } from './routes/advogado-contrato-namoro-betim'
+import { Route as AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRouteImport } from './routes/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
 import { Route as AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRouteImport } from './routes/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
@@ -147,12 +156,26 @@ const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
   path: '/areas-de-atuacao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute =
+  AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport.update({
+    id: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil',
+    path: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute =
   AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport.update({
     id: '/advogado-validacao-homologacao-sentenca-estrangeira',
     path: '/advogado-validacao-homologacao-sentenca-estrangeira',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute =
+  AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRouteImport.update(
+    {
+      id: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil',
+      path: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
 const AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRoute =
   AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRouteImport.update(
     {
@@ -190,6 +213,14 @@ const AdvogadoRevisaoPensaoBetimRoute =
     path: '/advogado-revisao-pensao-betim',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRoute =
+  AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRouteImport.update(
+    {
+      id: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil',
+      path: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
 const AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRoute =
   AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRouteImport.update(
     {
@@ -233,6 +264,14 @@ const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute =
     {
       id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim',
       path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRoute =
+  AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRouteImport.update(
+    {
+      id: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia',
+      path: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia',
       getParentRoute: () => rootRouteImport,
     } as any,
   )
@@ -362,6 +401,14 @@ const AdvogadoInventarioBetimRoute = AdvogadoInventarioBetimRouteImport.update({
   path: '/advogado-inventario-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRoute =
+  AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRouteImport.update(
+    {
+      id: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil',
+      path: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
 const AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRoute =
   AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRouteImport.update(
     {
@@ -376,12 +423,26 @@ const AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute =
     path: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRoute =
+  AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRouteImport.update({
+    id: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil',
+    path: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute =
   AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport.update({
     id: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil',
     path: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRoute =
+  AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRouteImport.update(
+    {
+      id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal',
+      path: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
 const AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRoute =
   AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRouteImport.update({
     id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia',
@@ -641,6 +702,14 @@ const AdvogadoCuratelaBetimRoute = AdvogadoCuratelaBetimRouteImport.update({
   path: '/advogado-curatela-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRoute =
+  AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRouteImport.update(
+    {
+      id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal',
+      path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
 const AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRoute =
   AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRouteImport.update({
     id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia',
@@ -677,6 +746,12 @@ const AdvogadoContratoNamoroBetimRoute =
     path: '/advogado-contrato-namoro-betim',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRoute =
+  AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRouteImport.update({
+    id: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil',
+    path: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRoute =
   AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRouteImport.update({
     id: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil',
@@ -708,12 +783,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil': typeof AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRoute
+  '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil': typeof AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRoute
   '/advogado-contrato-namoro-betim': typeof AdvogadoContratoNamoroBetimRoute
   '/advogado-contrato-namoro-bh': typeof AdvogadoContratoNamoroBhRoute
   '/advogado-contrato-namoro-contagem': typeof AdvogadoContratoNamoroContagemRoute
   '/advogado-contrato-namoro-igarape': typeof AdvogadoContratoNamoroIgarapeRoute
   '/advogado-contrato-namoro-nova-lima': typeof AdvogadoContratoNamoroNovaLimaRoute
   '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia': typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRoute
+  '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal': typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRoute
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-curatela-bh': typeof AdvogadoCuratelaBhRoute
   '/advogado-curatela-contagem': typeof AdvogadoCuratelaContagemRoute
@@ -760,9 +837,12 @@ export interface FileRoutesByFullPath {
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
   '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia': typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRoute
+  '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal': typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRoute
   '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
+  '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRoute
   '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil': typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute
   '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil': typeof AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRoute
+  '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil': typeof AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
@@ -784,19 +864,23 @@ export interface FileRoutesByFullPath {
   '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
   '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia': typeof AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRoute
+  '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia': typeof AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute
   '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil': typeof AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRoute
+  '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil': typeof AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRoute
   '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
   '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
   '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
   '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
   '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil': typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRoute
+  '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil': typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute
   '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
+  '/advogado-validacao-homologacao-sentenca-portuguesa-brasil': typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -811,12 +895,14 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil': typeof AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRoute
+  '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil': typeof AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRoute
   '/advogado-contrato-namoro-betim': typeof AdvogadoContratoNamoroBetimRoute
   '/advogado-contrato-namoro-bh': typeof AdvogadoContratoNamoroBhRoute
   '/advogado-contrato-namoro-contagem': typeof AdvogadoContratoNamoroContagemRoute
   '/advogado-contrato-namoro-igarape': typeof AdvogadoContratoNamoroIgarapeRoute
   '/advogado-contrato-namoro-nova-lima': typeof AdvogadoContratoNamoroNovaLimaRoute
   '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia': typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRoute
+  '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal': typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRoute
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-curatela-bh': typeof AdvogadoCuratelaBhRoute
   '/advogado-curatela-contagem': typeof AdvogadoCuratelaContagemRoute
@@ -863,9 +949,12 @@ export interface FileRoutesByTo {
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
   '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia': typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRoute
+  '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal': typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRoute
   '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
+  '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRoute
   '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil': typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute
   '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil': typeof AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRoute
+  '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil': typeof AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
@@ -887,19 +976,23 @@ export interface FileRoutesByTo {
   '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
   '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia': typeof AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRoute
+  '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia': typeof AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute
   '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil': typeof AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRoute
+  '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil': typeof AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRoute
   '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
   '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
   '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
   '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
   '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil': typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRoute
+  '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil': typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute
   '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
+  '/advogado-validacao-homologacao-sentenca-portuguesa-brasil': typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -915,12 +1008,14 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil': typeof AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRoute
+  '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil': typeof AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRoute
   '/advogado-contrato-namoro-betim': typeof AdvogadoContratoNamoroBetimRoute
   '/advogado-contrato-namoro-bh': typeof AdvogadoContratoNamoroBhRoute
   '/advogado-contrato-namoro-contagem': typeof AdvogadoContratoNamoroContagemRoute
   '/advogado-contrato-namoro-igarape': typeof AdvogadoContratoNamoroIgarapeRoute
   '/advogado-contrato-namoro-nova-lima': typeof AdvogadoContratoNamoroNovaLimaRoute
   '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia': typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRoute
+  '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal': typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRoute
   '/advogado-curatela-betim': typeof AdvogadoCuratelaBetimRoute
   '/advogado-curatela-bh': typeof AdvogadoCuratelaBhRoute
   '/advogado-curatela-contagem': typeof AdvogadoCuratelaContagemRoute
@@ -967,9 +1062,12 @@ export interface FileRoutesById {
   '/advogado-guarda-igarape': typeof AdvogadoGuardaIgarapeRoute
   '/advogado-guarda-nova-lima': typeof AdvogadoGuardaNovaLimaRoute
   '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia': typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRoute
+  '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal': typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRoute
   '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
+  '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil': typeof AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRoute
   '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil': typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute
   '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil': typeof AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRoute
+  '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil': typeof AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRoute
   '/advogado-inventario-betim': typeof AdvogadoInventarioBetimRoute
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
@@ -991,19 +1089,23 @@ export interface FileRoutesById {
   '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
   '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia': typeof AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRoute
+  '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia': typeof AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute
   '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima': typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute
   '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil': typeof AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRoute
+  '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil': typeof AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRoute
   '/advogado-revisao-pensao-betim': typeof AdvogadoRevisaoPensaoBetimRoute
   '/advogado-revisao-pensao-bh': typeof AdvogadoRevisaoPensaoBhRoute
   '/advogado-revisao-pensao-contagem': typeof AdvogadoRevisaoPensaoContagemRoute
   '/advogado-revisao-pensao-igarape': typeof AdvogadoRevisaoPensaoIgarapeRoute
   '/advogado-revisao-pensao-nova-lima': typeof AdvogadoRevisaoPensaoNovaLimaRoute
   '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil': typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRoute
+  '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil': typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute
   '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
+  '/advogado-validacao-homologacao-sentenca-portuguesa-brasil': typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -1020,12 +1122,14 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
+    | '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
     | '/advogado-contrato-namoro-betim'
     | '/advogado-contrato-namoro-bh'
     | '/advogado-contrato-namoro-contagem'
     | '/advogado-contrato-namoro-igarape'
     | '/advogado-contrato-namoro-nova-lima'
     | '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
+    | '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
     | '/advogado-curatela-betim'
     | '/advogado-curatela-bh'
     | '/advogado-curatela-contagem'
@@ -1072,9 +1176,12 @@ export interface FileRouteTypes {
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
     | '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
+    | '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
     | '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+    | '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
     | '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
     | '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
+    | '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
     | '/advogado-inventario-betim'
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
@@ -1096,19 +1203,23 @@ export interface FileRouteTypes {
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
     | '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
+    | '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
     | '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
+    | '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
     | '/advogado-revisao-pensao-betim'
     | '/advogado-revisao-pensao-bh'
     | '/advogado-revisao-pensao-contagem'
     | '/advogado-revisao-pensao-igarape'
     | '/advogado-revisao-pensao-nova-lima'
     | '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
+    | '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
     | '/advogado-validacao-homologacao-sentenca-estrangeira'
+    | '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -1123,12 +1234,14 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
+    | '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
     | '/advogado-contrato-namoro-betim'
     | '/advogado-contrato-namoro-bh'
     | '/advogado-contrato-namoro-contagem'
     | '/advogado-contrato-namoro-igarape'
     | '/advogado-contrato-namoro-nova-lima'
     | '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
+    | '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
     | '/advogado-curatela-betim'
     | '/advogado-curatela-bh'
     | '/advogado-curatela-contagem'
@@ -1175,9 +1288,12 @@ export interface FileRouteTypes {
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
     | '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
+    | '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
     | '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+    | '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
     | '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
     | '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
+    | '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
     | '/advogado-inventario-betim'
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
@@ -1199,19 +1315,23 @@ export interface FileRouteTypes {
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
     | '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
+    | '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
     | '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
+    | '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
     | '/advogado-revisao-pensao-betim'
     | '/advogado-revisao-pensao-bh'
     | '/advogado-revisao-pensao-contagem'
     | '/advogado-revisao-pensao-igarape'
     | '/advogado-revisao-pensao-nova-lima'
     | '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
+    | '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
     | '/advogado-validacao-homologacao-sentenca-estrangeira'
+    | '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -1226,12 +1346,14 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
+    | '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
     | '/advogado-contrato-namoro-betim'
     | '/advogado-contrato-namoro-bh'
     | '/advogado-contrato-namoro-contagem'
     | '/advogado-contrato-namoro-igarape'
     | '/advogado-contrato-namoro-nova-lima'
     | '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
+    | '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
     | '/advogado-curatela-betim'
     | '/advogado-curatela-bh'
     | '/advogado-curatela-contagem'
@@ -1278,9 +1400,12 @@ export interface FileRouteTypes {
     | '/advogado-guarda-igarape'
     | '/advogado-guarda-nova-lima'
     | '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
+    | '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
     | '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+    | '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
     | '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
     | '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
+    | '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
     | '/advogado-inventario-betim'
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
@@ -1302,19 +1427,23 @@ export interface FileRouteTypes {
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
     | '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
     | '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
+    | '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
     | '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
     | '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
+    | '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
     | '/advogado-revisao-pensao-betim'
     | '/advogado-revisao-pensao-bh'
     | '/advogado-revisao-pensao-contagem'
     | '/advogado-revisao-pensao-igarape'
     | '/advogado-revisao-pensao-nova-lima'
     | '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
+    | '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
     | '/advogado-validacao-homologacao-sentenca-estrangeira'
+    | '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -1330,12 +1459,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
   AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRoute: typeof AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRoute
+  AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRoute: typeof AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRoute
   AdvogadoContratoNamoroBetimRoute: typeof AdvogadoContratoNamoroBetimRoute
   AdvogadoContratoNamoroBhRoute: typeof AdvogadoContratoNamoroBhRoute
   AdvogadoContratoNamoroContagemRoute: typeof AdvogadoContratoNamoroContagemRoute
   AdvogadoContratoNamoroIgarapeRoute: typeof AdvogadoContratoNamoroIgarapeRoute
   AdvogadoContratoNamoroNovaLimaRoute: typeof AdvogadoContratoNamoroNovaLimaRoute
   AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRoute: typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRoute
+  AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRoute: typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRoute
   AdvogadoCuratelaBetimRoute: typeof AdvogadoCuratelaBetimRoute
   AdvogadoCuratelaBhRoute: typeof AdvogadoCuratelaBhRoute
   AdvogadoCuratelaContagemRoute: typeof AdvogadoCuratelaContagemRoute
@@ -1382,9 +1513,12 @@ export interface RootRouteChildren {
   AdvogadoGuardaIgarapeRoute: typeof AdvogadoGuardaIgarapeRoute
   AdvogadoGuardaNovaLimaRoute: typeof AdvogadoGuardaNovaLimaRoute
   AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRoute: typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRoute
+  AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRoute: typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRoute
   AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute: typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute
+  AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRoute: typeof AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRoute
   AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute: typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute
   AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRoute: typeof AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRoute
+  AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRoute: typeof AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRoute
   AdvogadoInventarioBetimRoute: typeof AdvogadoInventarioBetimRoute
   AdvogadoInventarioBhRoute: typeof AdvogadoInventarioBhRoute
   AdvogadoInventarioContagemRoute: typeof AdvogadoInventarioContagemRoute
@@ -1406,19 +1540,23 @@ export interface RootRouteChildren {
   AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute
   AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute
   AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRoute: typeof AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRoute
+  AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRoute: typeof AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRoute
   AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute
   AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute
   AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute
   AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute
   AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute
   AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRoute: typeof AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRoute
+  AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRoute: typeof AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRoute
   AdvogadoRevisaoPensaoBetimRoute: typeof AdvogadoRevisaoPensaoBetimRoute
   AdvogadoRevisaoPensaoBhRoute: typeof AdvogadoRevisaoPensaoBhRoute
   AdvogadoRevisaoPensaoContagemRoute: typeof AdvogadoRevisaoPensaoContagemRoute
   AdvogadoRevisaoPensaoIgarapeRoute: typeof AdvogadoRevisaoPensaoIgarapeRoute
   AdvogadoRevisaoPensaoNovaLimaRoute: typeof AdvogadoRevisaoPensaoNovaLimaRoute
   AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRoute: typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRoute
+  AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute: typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute
   AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute: typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
+  AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute: typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
@@ -1481,11 +1619,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AreasDeAtuacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-validacao-homologacao-sentenca-portuguesa-brasil': {
+      id: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
+      path: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
+      fullPath: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
+      preLoaderRoute: typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-validacao-homologacao-sentenca-estrangeira': {
       id: '/advogado-validacao-homologacao-sentenca-estrangeira'
       path: '/advogado-validacao-homologacao-sentenca-estrangeira'
       fullPath: '/advogado-validacao-homologacao-sentenca-estrangeira'
       preLoaderRoute: typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil': {
+      id: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
+      path: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
+      fullPath: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
+      preLoaderRoute: typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil': {
@@ -1530,6 +1682,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoRevisaoPensaoBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil': {
+      id: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
+      path: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
+      fullPath: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
+      preLoaderRoute: typeof AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil': {
       id: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
       path: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
@@ -1570,6 +1729,13 @@ declare module '@tanstack/react-router' {
       path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
       fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
       preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia': {
+      id: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
+      path: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
+      fullPath: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
+      preLoaderRoute: typeof AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia': {
@@ -1719,6 +1885,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoInventarioBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil': {
+      id: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
+      path: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
+      fullPath: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
+      preLoaderRoute: typeof AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil': {
       id: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
       path: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
@@ -1733,11 +1906,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil': {
+      id: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
+      path: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
+      fullPath: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
+      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': {
       id: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
       path: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
       fullPath: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
       preLoaderRoute: typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal': {
+      id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
+      path: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
+      fullPath: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
+      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia': {
@@ -2062,6 +2249,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdvogadoCuratelaBetimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal': {
+      id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
+      path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
+      fullPath: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
+      preLoaderRoute: typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia': {
       id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
       path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
@@ -2102,6 +2296,13 @@ declare module '@tanstack/react-router' {
       path: '/advogado-contrato-namoro-betim'
       fullPath: '/advogado-contrato-namoro-betim'
       preLoaderRoute: typeof AdvogadoContratoNamoroBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil': {
+      id: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
+      path: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
+      fullPath: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
+      preLoaderRoute: typeof AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil': {
@@ -2147,6 +2348,8 @@ const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRoute:
     AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRoute,
+  AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRoute:
+    AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRoute,
   AdvogadoContratoNamoroBetimRoute: AdvogadoContratoNamoroBetimRoute,
   AdvogadoContratoNamoroBhRoute: AdvogadoContratoNamoroBhRoute,
   AdvogadoContratoNamoroContagemRoute: AdvogadoContratoNamoroContagemRoute,
@@ -2154,6 +2357,8 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoContratoNamoroNovaLimaRoute: AdvogadoContratoNamoroNovaLimaRoute,
   AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRoute:
     AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRoute,
+  AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRoute:
+    AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRoute,
   AdvogadoCuratelaBetimRoute: AdvogadoCuratelaBetimRoute,
   AdvogadoCuratelaBhRoute: AdvogadoCuratelaBhRoute,
   AdvogadoCuratelaContagemRoute: AdvogadoCuratelaContagemRoute,
@@ -2208,12 +2413,18 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoGuardaNovaLimaRoute: AdvogadoGuardaNovaLimaRoute,
   AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRoute:
     AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRoute,
+  AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRoute:
+    AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRoute,
   AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute:
     AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute,
+  AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRoute:
+    AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRoute,
   AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute:
     AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute,
   AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRoute:
     AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRoute,
+  AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRoute:
+    AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRoute,
   AdvogadoInventarioBetimRoute: AdvogadoInventarioBetimRoute,
   AdvogadoInventarioBhRoute: AdvogadoInventarioBhRoute,
   AdvogadoInventarioContagemRoute: AdvogadoInventarioContagemRoute,
@@ -2248,6 +2459,8 @@ const rootRouteChildren: RootRouteChildren = {
     AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute,
   AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRoute:
     AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRoute,
+  AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRoute:
+    AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRoute,
   AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute:
     AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute,
   AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute:
@@ -2260,6 +2473,8 @@ const rootRouteChildren: RootRouteChildren = {
     AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute,
   AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRoute:
     AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRoute,
+  AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRoute:
+    AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRoute,
   AdvogadoRevisaoPensaoBetimRoute: AdvogadoRevisaoPensaoBetimRoute,
   AdvogadoRevisaoPensaoBhRoute: AdvogadoRevisaoPensaoBhRoute,
   AdvogadoRevisaoPensaoContagemRoute: AdvogadoRevisaoPensaoContagemRoute,
@@ -2267,8 +2482,12 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoRevisaoPensaoNovaLimaRoute: AdvogadoRevisaoPensaoNovaLimaRoute,
   AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRoute:
     AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRoute,
+  AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute:
+    AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute,
   AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute:
     AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute,
+  AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute:
+    AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
