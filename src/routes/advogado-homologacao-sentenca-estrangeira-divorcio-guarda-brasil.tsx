@@ -42,8 +42,9 @@ const PATH = "/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil"
 const TITLE = "Advogado para Homologação de Sentença Estrangeira de Divórcio e Guarda no Brasil (partilha de bens, menores e pensão alimentícia) | Braga Bitencourt Advogados";
 const SERVICE = "Homologação de Sentença Estrangeira de Divórcio e Guarda";
 const CITY = "Brasil";
-const OFFICE_ALT = `Escritório especialista em ${SERVICE}`;
+const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = "Advogado para Homologação de Sentença Estrangeira de Divórcio e Guarda no Brasil";
+const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
   "Advogado para Homologação de Sentença Estrangeira de Divórcio e Guarda no Brasil com mais de 20 anos de experiência. Reconhecimento judicial pelo STJ de divórcio, guarda, partilha de bens, regime de bens, pensão alimentícia e convivência de menores.";
 
@@ -108,7 +109,7 @@ function LpHeader() {
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={lpHeaderLogo}
-          alt={PAGE_ALT}
+          alt={LOGO_ALT}
           className="h-12 w-auto shrink-0"
           loading="eager"
           fetchPriority="high"

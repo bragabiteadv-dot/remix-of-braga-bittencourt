@@ -42,8 +42,9 @@ const PATH = "/advogado-curatela-contagem";
 const TITLE = "Advogado de Curatela em Contagem | Braga Bitencourt Advogados";
 const SERVICE = "Curatela";
 const CITY = "Contagem";
-const OFFICE_ALT = `Escritório especialista em ${SERVICE} em ${CITY}`;
+const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
+const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
   "Advogado de Curatela em Contagem com mais de 20 anos de experiência. Interdição, curatela voluntária, gestão de bens e proteção jurídica de pessoas vulneráveis com sigilo e segurança.";
 
@@ -108,7 +109,7 @@ function LpHeader() {
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={lpHeaderLogo}
-          alt={PAGE_ALT}
+          alt={LOGO_ALT}
           className="h-12 w-auto shrink-0"
           loading="eager"
           fetchPriority="high"

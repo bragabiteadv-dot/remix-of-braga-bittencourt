@@ -42,8 +42,9 @@ const PATH = "/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia";
 const TITLE = "Advogado para Homologação de Decisão de Curatela e Interdição no STJ em Brasília (gestão de patrimônio e contas bancárias de incapazes no Brasil) | Braga Bitencourt Advogados";
 const SERVICE = "Homologação de Decisão de Curatela e Interdição no STJ";
 const CITY = "Brasil";
-const OFFICE_ALT = `Escritório especialista em ${SERVICE}`;
+const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = "Advogado para Homologação de Decisão de Curatela e Interdição no STJ em Brasília";
+const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
   "Advogado para Homologação de Decisão de Curatela e Interdição no STJ em Brasília com mais de 20 anos de experiência. Reconhecimento judicial de curatela estrangeira para gestão de patrimônio, imóveis, contas bancárias e benefícios de pessoas incapazes no Brasil.";
 
@@ -108,7 +109,7 @@ function LpHeader() {
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={lpHeaderLogo}
-          alt={PAGE_ALT}
+          alt={LOGO_ALT}
           className="h-12 w-auto shrink-0"
           loading="eager"
           fetchPriority="high"

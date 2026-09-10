@@ -42,8 +42,9 @@ const PATH = "/advogado-familia-betim";
 const TITLE = "Advogado de Família em Betim | Braga Bitencourt";
 const SERVICE = "Direito de Família";
 const CITY = "Betim";
-const OFFICE_ALT = `Escritório especialista em ${SERVICE} em ${CITY}`;
+const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
+const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
   "Advogado de Família em Betim com mais de 20 anos de experiência. Guarda, pensão alimentícia, inventário e litígios familiares.";
 
@@ -111,7 +112,7 @@ function LpHeader() {
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={lpHeaderLogo}
-          alt={PAGE_ALT}
+          alt={LOGO_ALT}
           className="h-12 w-auto shrink-0"
           loading="eager"
           fetchPriority="high"
