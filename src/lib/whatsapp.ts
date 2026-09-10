@@ -99,6 +99,15 @@ export const PAGE_LABELS: Record<string, string> = {
   "/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil": "ADVOGADO PARA AVERBAÇÃO DIRETA DE DIVÓRCIO ESTRANGEIRO EM CARTÓRIO NO BRASIL",
   "/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil": "ADVOGADO PARA TRASLADO E TRANSCRIÇÃO DE CERTIDÃO DE CASAMENTO ESTRANGEIRO NO BRASIL",
   "/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil": "ADVOGADO PARA REGISTRO E VALIDAÇÃO DE ESCRITURAS NOTARIAIS ESTRANGEIRAS NO BRASIL",
+  "/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil": "ADVOGADO PARA HOMOLOGAÇÃO DE SENTENÇA PORTUGUESA DE PATERNIDADE E FILIAÇÃO NO BRASIL",
+  "/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal": "ADVOGADO PARA HOMOLOGAÇÃO DE DECISÃO DE CURATELA E INTERDIÇÃO NO STJ EM BRASÍLIA PARA RESIDENTES EM PORTUGAL",
+  "/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal": "ADVOGADO PARA CUMPRIMENTO E CONTESTAÇÃO DE CARTAS ROGATÓRIAS NO STJ EM BRASÍLIA PARA RESIDENTES EM PORTUGAL",
+  "/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil": "ADVOGADO PARA AVERBAÇÃO DIRETA DE DIVÓRCIO PORTUGUÊS EM CARTÓRIO NO BRASIL",
+  "/advogado-traslado-transcricao-certidao-casamento-portugues-brasil": "ADVOGADO PARA TRASLADO E TRANSCRIÇÃO DE CERTIDÃO DE CASAMENTO PORTUGUÊS NO BRASIL",
+  "/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil": "ADVOGADO PARA REGISTRO E VALIDAÇÃO DE ESCRITURAS NOTARIAIS PORTUGUESAS NO BRASIL",
+  "/advogado-validacao-homologacao-sentenca-portuguesa-brasil": "ADVOGADO DE VALIDAÇÃO E HOMOLOGAÇÃO DE SENTENÇA PORTUGUESA NO BRASIL",
+  "/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil": "ADVOGADO DE HOMOLOGAÇÃO DE DECISÃO JUDICIAL PORTUGUESA PERANTE O STJ NO BRASIL",
+  "/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia": "ADVOGADO PARA RECONHECIMENTO E HOMOLOGAÇÃO DE SENTENÇA PORTUGUESA NO STJ EM BRASÍLIA",
 };
 
 export function normalizePath(pathname: string) {
