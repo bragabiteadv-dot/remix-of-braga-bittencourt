@@ -7,7 +7,8 @@ import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function TeamGrid() {
   const javetAlt = usePageAltFor("team-javet", "Carlos Javét Braga Bitencourt");
-  const firmAlt = usePageAltFor("team-firm", "");
+  const gabrielAlt = usePageAltFor("team-gabriel", "Carlos Gabriel Ferreira Braga Bitencourt");
+  const glauciaAlt = usePageAltFor("team-glaucia", "Gláucia Patrícia Ferreira Braga Bitencourt");
   const members = [
     {
       name: "Carlos Javét Braga Bitencourt",
@@ -18,13 +19,13 @@ export function TeamGrid() {
     },
     {
       name: "Carlos Gabriel F. Braga Bitencourt",
-      alt: firmAlt || "Carlos Gabriel Ferreira Braga Bitencourt",
+      alt: gabrielAlt,
       image: carlosGabriel,
       order: "order-2 md:order-1"
     },
     {
       name: "Gláucia Patrícia F. Braga Bitencourt",
-      alt: firmAlt || "Gláucia Patrícia Ferreira Braga Bitencourt",
+      alt: glauciaAlt,
       image: glaucia,
       order: "order-3 md:order-3"
     }
