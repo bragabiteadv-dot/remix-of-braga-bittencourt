@@ -41,8 +41,9 @@ const PATH = "/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima";
 const TITLE = "Advogado de Reconhecimento e Dissolução de União Estável em Nova Lima | Braga Bitencourt Advogados";
 const SERVICE = "Reconhecimento e Dissolução de União Estável";
 const CITY = "Nova Lima";
-const OFFICE_ALT = `Escritório especialista em ${SERVICE} em ${CITY}`;
+const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
+const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
   "Advogado de Reconhecimento e Dissolução de União Estável em Nova Lima com mais de 20 anos de experiência. Reconhecimento, dissolução, partilha de bens, pensão e guarda com sigilo e segurança.";
 
@@ -569,7 +570,7 @@ function LpHeader() {
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={lpHeaderLogo}
-          alt={PAGE_ALT}
+          alt={LOGO_ALT}
           className="h-12 w-auto shrink-0"
           loading="eager"
           fetchPriority="high"

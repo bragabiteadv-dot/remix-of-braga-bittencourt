@@ -35,24 +35,35 @@ export function usePageAlt(fallback: string) {
   return ctx?.alt ?? fallback;
 }
 
-export type PageAltKind = "office" | "team-javet" | "team-firm" | "action" | "form";
+export type PageAltKind =
+  | "office"
+  | "logo"
+  | "team-javet"
+  | "team-gabriel"
+  | "team-glaucia"
+  | "action"
+  | "form";
 
-/** Alt específico por tipo de imagem, otimizado para busca local (serviço + cidade). */
+/** Alt específico por tipo de imagem, otimizado para busca por imagens. */
 export function usePageAltFor(kind: PageAltKind, fallback: string) {
   const ctx = useContext(PageAltContext);
   if (!ctx) return fallback;
-  const { service, city } = ctx;
-  if (!service || !city) return ctx.alt ?? fallback;
+  const { alt, service } = ctx;
+  if (!service) return alt ?? fallback;
   switch (kind) {
     case "office":
-      return `Escritório especialista em ${service} em ${city}`;
+      return `Escritório de ${service}`;
+    case "logo":
+      return `Braga Bitencourt ${alt}`;
     case "team-javet":
-      return `Dr. Javét, especialista em ${service} em ${city}`;
-    case "team-firm":
-      return `Braga Bitencourt Advogados especialistas em ${service} em ${city}`;
+      return `Dr. Javét ${alt}`;
+    case "team-gabriel":
+      return `${service} Braga Bitencourt Advogados`;
+    case "team-glaucia":
+      return alt;
     case "action":
-      return `Advogados especialistas em ${service} em ${city}`;
+      return alt;
     case "form":
-      return `Fale com advogado de ${service} em ${city}`;
+      return `Fale com advogado de ${service}`;
   }
 }

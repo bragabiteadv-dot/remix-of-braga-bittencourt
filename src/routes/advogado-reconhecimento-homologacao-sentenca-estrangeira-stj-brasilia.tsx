@@ -42,8 +42,9 @@ const PATH = "/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-bras
 const TITLE = "Advogado para Reconhecimento e Homologação de Sentença Estrangeira no STJ em Brasília (sentenças cíveis/comerciais, obtenção de exequatur) | Braga Bitencourt Advogados";
 const SERVICE = "Reconhecimento e Homologação de Sentença Estrangeira no STJ";
 const CITY = "Brasília";
-const OFFICE_ALT = `Escritório especialista em ${SERVICE}`;
+const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = "Advogado para Reconhecimento e Homologação de Sentença Estrangeira no STJ em Brasília";
+const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
   "Advogado para Reconhecimento e Homologação de Sentença Estrangeira no STJ em Brasília com mais de 20 anos de experiência. Sentenças cíveis e comerciais, obtenção de exequatur, execução de títulos estrangeiros e validação judicial perante o Superior Tribunal de Justiça.";
 
@@ -108,7 +109,7 @@ function LpHeader() {
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={lpHeaderLogo}
-          alt={PAGE_ALT}
+          alt={LOGO_ALT}
           className="h-12 w-auto shrink-0"
           loading="eager"
           fetchPriority="high"

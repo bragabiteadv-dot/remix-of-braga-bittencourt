@@ -42,8 +42,9 @@ const PATH = "/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-p
 const TITLE = "Advogado para Cumprimento e Contestação de Cartas Rogatórias no STJ em Brasília (citações, depoimentos e ordens de tribunais portugueses) para residentes em Portugal | Braga Bitencourt Advogados";
 const SERVICE = "Cumprimento e Contestação de Cartas Rogatórias no STJ";
 const CITY = "Brasil";
-const OFFICE_ALT = `Escritório especialista em ${SERVICE}`;
+const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = "Advogado para Cumprimento e Contestação de Cartas Rogatórias no STJ em Brasília para residentes em Portugal";
+const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
   "Advogado para Cumprimento e Contestação de Cartas Rogatórias no STJ em Brasília com mais de 20 anos de experiência. Defesa e cumprimento de citações, intimações, depoimentos, oitiva de testemunhas e ordens de tribunais portugueses no Brasil.";
 
@@ -108,7 +109,7 @@ function LpHeader() {
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={lpHeaderLogo}
-          alt={PAGE_ALT}
+          alt={LOGO_ALT}
           className="h-12 w-auto shrink-0"
           loading="eager"
           fetchPriority="high"
