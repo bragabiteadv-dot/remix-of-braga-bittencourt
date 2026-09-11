@@ -126,8 +126,12 @@ function ArticlePage() {
 
             {/* Main content */}
             <article>
+              <h1 className="text-navy font-cinzel text-3xl md:text-4xl lg:text-5xl leading-tight mb-6">
+                {article.title}
+              </h1>
+
               {/* Hero image / placeholder */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[3/1] mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
+              <div className="relative rounded-2xl overflow-hidden aspect-square mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
                 {article.image ? (
                   <img src={article.image} alt={article.title} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
                 ) : (
@@ -144,10 +148,6 @@ function ArticlePage() {
                   {article.category}
                 </div>
               </div>
-
-              <h1 className="text-navy font-cinzel text-3xl md:text-4xl lg:text-5xl leading-tight mb-6">
-                {article.title}
-              </h1>
 
               <div className="flex flex-wrap items-center gap-3 mb-10">
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy/10 text-navy/70 text-xs font-montserrat">
@@ -207,7 +207,7 @@ function ArticlePage() {
                         params={{ slug: r.slug }}
                         className="group bg-white rounded-xl overflow-hidden border border-navy/5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500"
                       >
-                        <div className="aspect-[3/1] overflow-hidden bg-gradient-to-br from-[#f5eee0] to-[#e8dcc4] flex items-center justify-center">
+                        <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#f5eee0] to-[#e8dcc4] flex items-center justify-center">
                           {r.image ? (
                             <img src={r.image} alt={r.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                           ) : (
