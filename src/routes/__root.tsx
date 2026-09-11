@@ -198,7 +198,7 @@ function RootComponent() {
   if (isStandaloneLanding) {
     return (
       <QueryClientProvider client={queryClient}>
-        <div className="min-h-screen flex flex-col overflow-x-hidden">
+        <div className="min-h-screen flex flex-col overflow-x-clip">
           <main className="flex-grow">
             <Outlet />
           </main>
@@ -211,7 +211,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col overflow-x-hidden">
+      <div className="min-h-screen flex flex-col overflow-x-clip">
         <Header />
         <main className="flex-grow">
           <Outlet />
