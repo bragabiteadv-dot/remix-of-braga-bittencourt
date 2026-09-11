@@ -115,7 +115,7 @@ export const ARTICLES: Article[] = [
   {
     id: "7",
     slug: "a-homologacao-de-divorcio-estrangeiro-no-brasil-dignidade-e-seguranca-juridica-p",
-    title: "A Homologação de Divórcio Estrangeiro no Brasil: Dignidade e Segurança Jurídica para Residentes no Exterior",
+    title: "A Homologação de Divórcio Estrangeiro no Brasil",
     category: "Internacional",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -126,7 +126,7 @@ export const ARTICLES: Article[] = [
   {
     id: "8",
     slug: "o-divorcio-extrajudicial-no-brasil-agilidade-e-seguranca-na-dissolucao-do-vincul",
-    title: "O Divórcio Extrajudicial no Brasil: Agilidade e Segurança na Dissolução do Vínculo Matrimonial.",
+    title: "O Divórcio Extrajudicial no Brasil",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
