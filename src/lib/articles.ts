@@ -93,7 +93,7 @@ export const ARTICLES: Article[] = [
   {
     id: "5",
     slug: "alienacao-parental-conhecendo-prevenindo-e-enfrentando-esse-desafio",
-    title: "Alienação Parental: Conhecendo, Prevenindo e Enfrentando Esse Desafio",
+    title: "Alienação Parental",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
