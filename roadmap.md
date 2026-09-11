@@ -3,6 +3,7 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Reorganizar artigos com cartão inteiro clicável, data destacada e sumário pesquisável
 - [x] Padronizar em 1:1 as imagens dos artigos e posicionar o título acima da imagem principal
 - [x] Duplicar páginas de Divórcio para Reconhecimento, Investigação e Negatória de Paternidade (5 cidades)
 - [x] Duplicar páginas de Divórcio para Guarda Compartilhada (5 cidades)

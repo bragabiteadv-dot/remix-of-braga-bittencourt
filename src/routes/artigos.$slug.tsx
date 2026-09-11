@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
-import { useState } from "react";
-import { Calendar, Clock, Link2, Share2, ArrowLeft, ImageIcon } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Calendar, Clock, Link2, Share2, ArrowLeft, ImageIcon, Search, ChevronDown, ChevronUp } from "lucide-react";
 import { ARTICLES, getArticleById, getArticleBySlug, type Article } from "@/lib/articles";
 import { HistorySection } from "@/components/sections/HistorySection";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -9,6 +9,7 @@ import { WhatsAppCta, whatsappArticleLink } from "@/components/ui/whatsapp-cta";
 import { buildSeo } from "@/lib/seo";
 import { articleSchemas, articleSeoDescription, articleSeoTitle } from "@/lib/article-seo";
 import { OG_IMAGE } from "@/lib/site-og";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/artigos/$slug")({
   component: ArticlePage,
@@ -44,9 +45,51 @@ export const Route = createFileRoute("/artigos/$slug")({
 
 });
 
+type ArticleSection = {
+  id: string;
+  index: number;
+  title: string;
+};
+
+function isSectionTitle(text: string, index: number) {
+  if (index === 0 || text.length > 110) return false;
+  const value = text.trim();
+  if (/^\d+[.\-–)]?\s/.test(value)) return true;
+  if (value.endsWith("?")) return true;
+  if (value.endsWith(":")) return true;
+  if (/[.!]$/.test(value)) return false;
+  const words = value.split(/\s+/);
+  return words.length <= 12;
+}
+
+function sectionId(title: string, index: number) {
+  const slug = title
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+  return `topico-${index + 1}-${slug || "artigo"}`;
+}
+
 function ArticlePage() {
   const { article } = Route.useLoaderData() as { article: Article };
   const [copied, setCopied] = useState(false);
+  const [topicQuery, setTopicQuery] = useState("");
+  const [topicsExpanded, setTopicsExpanded] = useState(false);
+
+  const sections = useMemo<ArticleSection[]>(
+    () =>
+      article.body.flatMap((text, index) =>
+        isSectionTitle(text, index)
+          ? [{ id: sectionId(text, index), index, title: text }]
+          : [],
+      ),
+    [article],
+  );
+  const filteredSections = sections.filter((section) =>
+    section.title.toLocaleLowerCase("pt-BR").includes(topicQuery.trim().toLocaleLowerCase("pt-BR")),
+  );
 
   const handleCopy = async () => {
     try {
@@ -80,27 +123,91 @@ function ArticlePage() {
             <ArrowLeft size={14} /> Voltar para artigos
           </Link>
 
-          <div className="grid gap-10 lg:grid-cols-[300px_1fr]">
-            {/* Sidebar */}
-            <aside className="lg:sticky lg:top-28 h-fit space-y-5">
-              <div className="bg-white rounded-2xl shadow-[0_10px_40px_-15px_rgba(40,54,80,0.15)] border border-navy/5 p-6">
-                <p className="text-[10px] uppercase tracking-[0.25em] text-gold-light font-montserrat font-semibold mb-2">
+          <div className="grid gap-8 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-10">
+            <header className="lg:col-start-2">
+              <div className="relative rounded-2xl overflow-hidden aspect-square mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
+                {article.image ? (
+                  <img src={article.image} alt={article.title} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-[#f5eee0] via-[#faf6ed] to-[#e8dcc4] flex flex-col items-center justify-center gap-3">
+                    <div className="w-20 h-20 rounded-full bg-white/60 backdrop-blur flex items-center justify-center">
+                      <ImageIcon size={32} className="text-gold-light" />
+                    </div>
+                    <p className="text-navy/50 text-xs uppercase tracking-[0.3em] font-montserrat">Imagem em breve</p>
+                  </div>
+                )}
+                <div className="absolute top-4 right-4 bg-gold-gradient text-navy text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5 rounded-full font-montserrat">
                   {article.category}
-                </p>
-                <p className="text-navy font-cinzel text-lg leading-snug">
-                  {article.title}
-                </p>
-                <div className="h-0.5 w-10 bg-gold-gradient my-4" />
-                <div className="space-y-2 text-navy/70 text-xs font-montserrat">
-                  <p className="flex items-center gap-2">
-                    <Calendar size={14} className="text-gold-light" />
-                    {article.date}
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <Clock size={14} className="text-gold-light" />
-                    {article.readingTime}
-                  </p>
                 </div>
+              </div>
+
+              <h1 className="text-navy font-cinzel text-3xl md:text-4xl lg:text-5xl leading-tight mb-6">
+                {article.title}
+              </h1>
+
+              <div className="flex flex-wrap items-center gap-3 pb-8 border-b border-navy/10">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy/10 text-navy/70 text-xs font-montserrat">
+                  <Calendar size={14} className="text-gold-light" />
+                  Publicado em: {article.date}
+                </span>
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy/10 text-navy/70 text-xs font-montserrat">
+                  <Clock size={14} className="text-gold-light" />
+                  {article.readingTime}
+                </span>
+                <div className="hidden sm:block flex-1" />
+                <Button variant="outline" size="sm" onClick={handleCopy} className="rounded-full border-navy/10 text-navy/80 hover:border-gold-light">
+                  <Link2 size={14} /> {copied ? "Link copiado" : "Copiar link"}
+                </Button>
+                <Button variant="outline" size="sm" onClick={handleShare} className="rounded-full border-navy/10 text-navy/80 hover:border-gold-light">
+                  <Share2 size={14} /> Compartilhar
+                </Button>
+              </div>
+            </header>
+
+            <aside className="h-fit space-y-5 lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:sticky lg:top-28">
+              <div className="bg-white rounded-xl shadow-[0_10px_40px_-15px_rgba(40,54,80,0.15)] border border-navy/10 p-4">
+                <div className="flex items-center justify-between gap-3 border-b border-navy/10 pb-2">
+                  <h2 className="text-xs font-montserrat font-bold uppercase text-navy">Sumário</h2>
+                  <span className="text-[10px] font-montserrat font-semibold text-navy/50">{sections.length} tópicos</span>
+                </div>
+                <label className="relative mt-3 block">
+                  <span className="sr-only">Buscar tópico</span>
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-navy/40" size={15} />
+                  <input
+                    value={topicQuery}
+                    onChange={(event) => setTopicQuery(event.target.value)}
+                    placeholder="Buscar tópico..."
+                    className="h-10 w-full rounded-lg border border-navy/10 bg-white pl-9 pr-3 text-xs text-navy outline-none transition focus:border-gold-light"
+                  />
+                </label>
+                <nav
+                  aria-label="Tópicos do artigo"
+                  className={`mt-2 space-y-1.5 overflow-y-auto pr-1 transition-[max-height] ${topicsExpanded ? "max-h-[430px]" : "max-h-52"}`}
+                >
+                  {filteredSections.length > 0 ? filteredSections.map((section) => (
+                    <a
+                      key={section.id}
+                      href={`#${section.id}`}
+                      className="block rounded-lg border border-navy/10 px-3 py-2.5 text-xs leading-snug text-navy/80 transition hover:border-gold-light hover:bg-[#f7f2e7]"
+                    >
+                      {section.title}
+                    </a>
+                  )) : (
+                    <p className="px-2 py-4 text-center text-xs text-navy/50">Nenhum tópico encontrado.</p>
+                  )}
+                </nav>
+                {sections.length > 4 && (
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setTopicsExpanded((current) => !current)}
+                    className="mt-2 w-full text-xs text-navy"
+                  >
+                    {topicsExpanded ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
+                    {topicsExpanded ? "Mostrar menos" : "Mostrar mais"}
+                  </Button>
+                )}
               </div>
 
               <a
@@ -124,62 +231,19 @@ function ArticlePage() {
               </a>
             </aside>
 
-            {/* Main content */}
-            <article>
-              <h1 className="text-navy font-cinzel text-3xl md:text-4xl lg:text-5xl leading-tight mb-6">
-                {article.title}
-              </h1>
-
-              {/* Hero image / placeholder */}
-              <div className="relative rounded-2xl overflow-hidden aspect-square mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
-                {article.image ? (
-                  <img src={article.image} alt={article.title} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#f5eee0] via-[#faf6ed] to-[#e8dcc4] flex flex-col items-center justify-center gap-3">
-                    <div className="w-20 h-20 rounded-full bg-white/60 backdrop-blur flex items-center justify-center">
-                      <ImageIcon size={32} className="text-gold-light" />
-                    </div>
-                    <p className="text-navy/50 text-xs uppercase tracking-[0.3em] font-montserrat">
-                      Imagem em breve
-                    </p>
-                  </div>
-                )}
-                <div className="absolute top-4 right-4 bg-gold-gradient text-navy text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5 rounded-full font-montserrat">
-                  {article.category}
-                </div>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3 mb-10">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy/10 text-navy/70 text-xs font-montserrat">
-                  <Calendar size={14} className="text-gold-light" />
-                  Publicado em: {article.date}
-                </span>
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy/10 text-navy/70 text-xs font-montserrat">
-                  <Clock size={14} className="text-gold-light" />
-                  {article.readingTime}
-                </span>
-                <div className="flex-1" />
-                <button
-                  onClick={handleCopy}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy/10 text-navy/80 hover:text-navy hover:border-gold-light text-xs font-montserrat transition"
-                >
-                  <Link2 size={14} />
-                  {copied ? "Link copiado" : "Copiar link"}
-                </button>
-                <button
-                  onClick={handleShare}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-navy/10 text-navy/80 hover:text-navy hover:border-gold-light text-xs font-montserrat transition"
-                >
-                  <Share2 size={14} />
-                  Compartilhar
-                </button>
-              </div>
-
-              {/* Body */}
-              <div className="space-y-5 text-navy/85 font-montserrat text-[15px] md:text-base leading-relaxed">
-                {article.body.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
+            <article className="min-w-0 lg:col-start-2">
+              <div className="text-navy/85 font-montserrat text-[15px] md:text-base leading-relaxed">
+                {article.body.map((paragraph, index) => {
+                  const section = sections.find((item) => item.index === index);
+                  if (section) {
+                    return (
+                      <h2 key={section.id} id={section.id} className="scroll-mt-28 border-t border-navy/10 pt-7 mt-8 mb-3 text-xl md:text-2xl font-montserrat font-bold text-navy first:mt-0">
+                        {paragraph}
+                      </h2>
+                    );
+                  }
+                  return <p key={index} className="mb-5">{paragraph}</p>;
+                })}
               </div>
 
               {/* Bottom CTA */}
