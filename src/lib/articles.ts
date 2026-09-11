@@ -137,7 +137,7 @@ export const ARTICLES: Article[] = [
   {
     id: "9",
     slug: "a-dissolucao-de-uniao-estavel-no-brasil-seguranca-juridica-e-protecao-patrimonia",
-    title: "A Dissolução de União Estável no Brasil: Segurança Jurídica e Proteção Patrimonial",
+    title: "A Dissolução de União Estável no Brasil",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -148,7 +148,7 @@ export const ARTICLES: Article[] = [
   {
     id: "10",
     slug: "inventario-extrajudicial-agilidade-e-seguranca-na-gestao-do-patrimonio-familiar",
-    title: "Inventário Extrajudicial: Agilidade e Segurança na Gestão do Patrimônio Familiar",
+    title: "Inventário Extrajudicial",
     category: "Sucessões",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -159,7 +159,7 @@ export const ARTICLES: Article[] = [
   {
     id: "11",
     slug: "mudanca-de-regime-de-bens-no-casamento",
-    title: "Mudança de Regime de Bens no Casamento.",
+    title: "Mudança de Regime de Bens no Casamento",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -181,7 +181,7 @@ export const ARTICLES: Article[] = [
   {
     id: "13",
     slug: "apostila-de-haia-2026-apostilamento-de-documentos",
-    title: "Apostila de Haia (2026) – Apostilamento de Documentos.",
+    title: "Apostila de Haia (2026) – Apostilamento de Documentos",
     category: "Internacional",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -192,7 +192,7 @@ export const ARTICLES: Article[] = [
   {
     id: "14",
     slug: "aquisicao-de-imoveis-e-bens-no-brasil-por-residentes-no-exterior",
-    title: "Aquisição de Imóveis e Bens no Brasil por Residentes no Exterior.",
+    title: "Aquisição de Imóveis e Bens no Brasil por Residentes no Exterior",
     category: "Internacional",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -203,7 +203,7 @@ export const ARTICLES: Article[] = [
   {
     id: "15",
     slug: "transcricao-de-casamento-estrangeiro-no-brasil-seguranca-validade-eficacia-e-obr",
-    title: "Transcrição de Casamento Estrangeiro no Brasil: Segurança, validade, eficácia e Obrigatoriedade Jurídica.",
+    title: "Transcrição de Casamento Estrangeiro no Brasil",
     category: "Internacional",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -214,7 +214,7 @@ export const ARTICLES: Article[] = [
   {
     id: "16",
     slug: "investigacao-de-paternidade-seguranca-juridica-e-a-protecao-do-patrimonio-geneti",
-    title: "Investigação de Paternidade: Segurança Jurídica e a Proteção do Patrimônio Genético e Sucessório",
+    title: "Investigação de Paternidade",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -236,7 +236,7 @@ export const ARTICLES: Article[] = [
   {
     id: "18",
     slug: "guarda-compartilhada-o-equilibrio-necessario-para-o-bem-estar-dos-filhos",
-    title: "Guarda Compartilhada: O Equilíbrio Necessário para o Bem-Estar dos Filhos",
+    title: "Guarda Compartilhada",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -269,7 +269,7 @@ export const ARTICLES: Article[] = [
   {
     id: "21",
     slug: "pensao-alimenticia-seguranca-e-equilibrio-com-a-braga-bitencourt-advogados",
-    title: "Pensão Alimentícia: Segurança e Equilíbrio com a Braga Bitencourt Advogados",
+    title: "Pensão Alimentícia",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -291,7 +291,7 @@ export const ARTICLES: Article[] = [
   {
     id: "23",
     slug: "inventario-judicial-seguranca-e-estrategia-na-transmissao-do-patrimonio-familiar",
-    title: "Inventário Judicial. Segurança e Estratégia na Transmissão do Patrimônio Familiar.",
+    title: "Inventário Judicial",
     category: "Sucessões",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -313,7 +313,7 @@ export const ARTICLES: Article[] = [
   {
     id: "25",
     slug: "personalizacao-do-regime-de-bens-de-casamento-a-estrategia-alem-do-obvio",
-    title: "Personalização do Regime de Bens de Casamento: A Estratégia além do óbvio.",
+    title: "Personalização do Regime de Bens de Casamento",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -324,7 +324,7 @@ export const ARTICLES: Article[] = [
   {
     id: "26",
     slug: "direito-de-convivencia-a-estruturacao-do-convivio-familiar-com-a-braga-bitencour",
-    title: "Direito de Convivência: A Estruturação do Convívio Familiar, com a Braga Bitencourt Advogados.",
+    title: "Direito de Convivência",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -335,7 +335,7 @@ export const ARTICLES: Article[] = [
   {
     id: "27",
     slug: "mudanca-de-domicilio-de-menor-nacional-ou-internacional-aspectos-legais-e-o-pode",
-    title: "Mudança de Domicílio de Menor (nacional ou internacional): Aspectos Legais e o Poder Familiar.",
+    title: "Mudança de Domicílio de Menor (nacional ou internacional)",
     category: "Internacional",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -346,7 +346,7 @@ export const ARTICLES: Article[] = [
   {
     id: "28",
     slug: "pacto-antenupcial-a-seguranca-juridica-que-o-seu-futuro-exige",
-    title: "Pacto Antenupcial: A Segurança Jurídica que o seu Futuro Exige.",
+    title: "Pacto Antenupcial",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
@@ -368,7 +368,7 @@ export const ARTICLES: Article[] = [
   {
     id: "30",
     slug: "divorcio-judicial-estrategia-e-seguranca-em-casos-complexos",
-    title: "DIVÓRCIO JUDICIAL: ESTRATÉGIA E SEGURANÇA EM CASOS COMPLEXOS.",
+    title: "DIVÓRCIO JUDICIAL",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
