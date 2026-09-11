@@ -101,7 +101,7 @@ function Artigos() {
             Nenhum artigo encontrado. Tente outra busca ou categoria.
           </div>
         ) : (
-          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-5">
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {filtered.map((article) => (
               <Link
                 key={article.id}
