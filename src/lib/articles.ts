@@ -49,7 +49,7 @@ export const ARTICLES: Article[] = [
   {
     id: "1",
     slug: "divorcio-e-uniao-estavel-especialidade-do-escritorio-braga-bittencourt",
-    title: "Divórcio e União Estável: Especialidade do Escritório Braga Bittencourt",
+    title: "Divórcio e União Estável: ",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
