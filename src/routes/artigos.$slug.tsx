@@ -53,6 +53,7 @@ type ArticleSection = {
 };
 
 const DIVORCE_ARTICLE_ID = "1";
+const INVENTORY_ARTICLE_ID = "2";
 
 const DIVORCE_SUBHEADINGS = new Set([
   "O Casamento e o Divórcio",
@@ -79,7 +80,34 @@ const DIVORCE_SUBHEADINGS = new Set([
   "Documentação Financeira e Bens Móveis",
 ]);
 
+const INVENTORY_SUBHEADINGS = new Set([
+  "Diferença Fundamental entre Meação e Herança",
+  "3.1. O Inventário Extrajudicial em Cartório de Notas",
+  "3.2. O Inventário Judicial",
+  "A Ordem Legal de Preferência",
+  "Obrigações e Riscos da Inventariança",
+  "Espécies Ordinárias de Testamento",
+  "A Questão da Doação Inoficiosa e da Colação",
+  "6.1. O ITCMD (Imposto sobre Transmissão Causa Mortis e Doação)",
+  "6.2. Ganho de Capital no Imposto de Renda (IRPF)",
+  "O Status de Sócio e a Liquidação da Quota (Artigo 1.028 do Código Civil)",
+  "A Gestão Temporária do Espólio Empresarial",
+  "A Pluralidade de Juízos na Sucessão Internacional",
+  "A Sucessão de Criptoativos e Chaves Privadas",
+  "Documentação da Pessoa Falecida (De Cujus)",
+  "Documentação dos Herdeiros e do Cônjuge/Companheiro Sobrevivente",
+  "Documentação dos Bens Imóveis",
+  "Documentação das Empresas e Participações Societárias",
+  "Documentação dos Bens Móveis e Ativos Financeiros",
+]);
+
 function articleHeadingLevel(article: Article, text: string, index: number): 2 | 3 | null {
+  if (article.id === INVENTORY_ARTICLE_ID) {
+    const numberedTitle = text.replace(/^\d+\.\s+/, "");
+    if (/^\d+\.\s+/.test(text) && numberedTitle === numberedTitle.toLocaleUpperCase("pt-BR")) return 2;
+    if (INVENTORY_SUBHEADINGS.has(text) || /^\d+\.\s+.+\?$/.test(text)) return 3;
+    return null;
+  }
   if (article.id !== DIVORCE_ARTICLE_ID) return isSectionTitle(text, index) ? 2 : null;
   const numberedTitle = text.replace(/^\d+\.\s+/, "");
   if (index === 0 || (/^\d+\.\s+/.test(text) && numberedTitle === numberedTitle.toLocaleUpperCase("pt-BR"))) return 2;
