@@ -49,7 +49,43 @@ type ArticleSection = {
   id: string;
   index: number;
   title: string;
+  level: 2 | 3;
 };
+
+const DIVORCE_ARTICLE_ID = "1";
+
+const DIVORCE_SUBHEADINGS = new Set([
+  "O Casamento e o Divórcio",
+  "A União Estável e sua Dissolução",
+  "Namoro Qualificado não é União Estável",
+  "Comunhão Parcial de Bens (A Regra Geral do Brasil)",
+  "Separação Total de Bens (Convencional)",
+  "Separação Obrigatória de Bens (Imposta por Lei)",
+  "Comunhão Universal de Bens",
+  "O Divórcio e a Dissolução em Cartório (Extrajudicial)",
+  "O Divórcio e a Dissolução na Justiça (Via Judicial)",
+  "DIREITO SOCIETÁRIO NO DIVÓRCIO:",
+  "Como se Calcula esse Valor? (A Apuração de Haveres)",
+  "Blindagem Contra a Ocultação de Bens",
+  "Guarda Compartilhada não é Guarda Alternada",
+  "Pensão Alimentícia de Alto Padrão",
+  "Pensão para o Ex-Cônjuge: Alimentos Compensatórios e Transitórios",
+  "Divisão Perfeita de Meação: Sem Impostos",
+  "A Divisão Desigual e o Excesso de Meação",
+  "Imposto de Renda e o Ganho de Capital",
+  "Documentação Pessoal das Partes e dos Filhos",
+  "Documentação dos Bens Imóveis",
+  "Documentação das Empresas e Negócios",
+  "Documentação Financeira e Bens Móveis",
+]);
+
+function articleHeadingLevel(article: Article, text: string, index: number): 2 | 3 | null {
+  if (article.id !== DIVORCE_ARTICLE_ID) return isSectionTitle(text, index) ? 2 : null;
+  const numberedTitle = text.replace(/^\d+\.\s+/, "");
+  if (index === 0 || (/^\d+\.\s+/.test(text) && numberedTitle === numberedTitle.toLocaleUpperCase("pt-BR"))) return 2;
+  if (DIVORCE_SUBHEADINGS.has(text) || /^\d+\.\s+.+\?$/.test(text)) return 3;
+  return null;
+}
 
 function isSectionTitle(text: string, index: number) {
   if (index === 0 || text.length > 110) return false;
@@ -81,8 +117,8 @@ function ArticlePage() {
   const sections = useMemo<ArticleSection[]>(
     () =>
       article.body.flatMap((text, index) =>
-        isSectionTitle(text, index)
-          ? [{ id: sectionId(text, index), index, title: text }]
+        articleHeadingLevel(article, text, index)
+          ? [{ id: sectionId(text, index), index, title: text, level: articleHeadingLevel(article, text, index) as 2 | 3 }]
           : [],
       ),
     [article],
@@ -189,7 +225,7 @@ function ArticlePage() {
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="block rounded-lg border border-navy/10 px-3 py-2.5 text-xs leading-snug text-navy/80 transition hover:border-gold-light hover:bg-[#f7f2e7]"
+                      className={`block rounded-lg border border-navy/10 py-2.5 text-xs leading-snug text-navy/80 transition hover:border-gold-light hover:bg-[#f7f2e7] ${section.level === 3 ? "ml-3 px-3" : "px-3 font-semibold"}`}
                     >
                       {section.title}
                     </a>
@@ -238,10 +274,14 @@ function ArticlePage() {
                 {article.body.map((paragraph, index) => {
                   const section = sections.find((item) => item.index === index);
                   if (section) {
-                    return (
+                    return section.level === 2 ? (
                       <h2 key={section.id} id={section.id} className="scroll-mt-28 border-t border-navy/10 pt-7 mt-8 mb-3 text-xl md:text-2xl font-montserrat font-bold text-navy first:mt-0">
                         {paragraph}
                       </h2>
+                    ) : (
+                      <h3 key={section.id} id={section.id} className="scroll-mt-28 mt-7 mb-3 text-lg md:text-xl font-montserrat font-bold text-navy">
+                        {paragraph}
+                      </h3>
                     );
                   }
                   return <p key={index} className="mb-5">{paragraph}</p>;
