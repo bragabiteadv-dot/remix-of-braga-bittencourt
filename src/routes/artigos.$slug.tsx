@@ -81,7 +81,8 @@ const DIVORCE_SUBHEADINGS = new Set([
 
 function articleHeadingLevel(article: Article, text: string, index: number): 2 | 3 | null {
   if (article.id !== DIVORCE_ARTICLE_ID) return isSectionTitle(text, index) ? 2 : null;
-  if (index === 0 || /^\d+\.\s+[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ]/.test(text)) return 2;
+  const numberedTitle = text.replace(/^\d+\.\s+/, "");
+  if (index === 0 || (/^\d+\.\s+/.test(text) && numberedTitle === numberedTitle.toLocaleUpperCase("pt-BR"))) return 2;
   if (DIVORCE_SUBHEADINGS.has(text) || /^\d+\.\s+.+\?$/.test(text)) return 3;
   return null;
 }
