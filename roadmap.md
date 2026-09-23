@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Substituir a foto do artigo de Alienação Parental e definir seu texto alternativo
 
 ## Concluído recente
 - [x] Substituir a foto do artigo de Partilha de Bens ou Divisão de Bens e definir seu texto alternativo
