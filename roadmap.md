@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Substituir a foto do artigo de Homologação de Divórcio Estrangeiro no Brasil e definir seu texto alternativo
 
 ## Concluído recente
 - [x] Corrigir a exibição das cinco capas personalizadas dos artigos sem alterar seus textos alternativos
