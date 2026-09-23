@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Substituir a foto do artigo de Divórcio Extrajudicial no Brasil e definir seu texto alternativo
 
 ## Concluído recente
 - [x] Substituir a foto do artigo de Homologação de Divórcio Estrangeiro no Brasil e definir seu texto alternativo
