@@ -1,10 +1,10 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Alterar o texto alternativo da imagem do artigo de Divórcio e União Estável
-- [ ] Substituir a foto do artigo de Guarda Compartilhada e definir seu texto alternativo
 
 ## Concluído recente
+- [x] Substituir as fotos dos artigos de Inventário e Guarda Compartilhada e definir seus textos alternativos
+- [x] Alterar o texto alternativo da imagem do artigo de Divórcio e União Estável
 - [x] Reorganizar artigos com cartão inteiro clicável, data destacada e sumário pesquisável
 - [x] Padronizar em 1:1 as imagens dos artigos e posicionar o título acima da imagem principal
 - [x] Duplicar páginas de Divórcio para Reconhecimento, Investigação e Negatória de Paternidade (5 cidades)
