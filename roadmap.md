@@ -1,9 +1,9 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Substituir a foto do artigo de Partilha de Bens ou Divisão de Bens e definir seu texto alternativo
 
 ## Concluído recente
+- [x] Substituir a foto do artigo de Partilha de Bens ou Divisão de Bens e definir seu texto alternativo
 - [x] Substituir as fotos dos artigos de Inventário e Guarda Compartilhada e definir seus textos alternativos
 - [x] Alterar o texto alternativo da imagem do artigo de Divórcio e União Estável
 - [x] Reorganizar artigos com cartão inteiro clicável, data destacada e sumário pesquisável
