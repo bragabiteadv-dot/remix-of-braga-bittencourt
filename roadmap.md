@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Substituir a foto do artigo de Partilha de Bens ou Divisão de Bens e definir seu texto alternativo
 
 ## Concluído recente
 - [x] Substituir as fotos dos artigos de Inventário e Guarda Compartilhada e definir seus textos alternativos
