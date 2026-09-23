@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Alterar o texto alternativo da imagem do artigo de Divórcio e União Estável
 
 ## Concluído recente
 - [x] Reorganizar artigos com cartão inteiro clicável, data destacada e sumário pesquisável
