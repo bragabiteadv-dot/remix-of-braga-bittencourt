@@ -115,7 +115,7 @@ function Artigos() {
                   {article.image ? (
                     <img
                       src={article.image}
-                      alt={article.title}
+                      alt={article.imageAlt ?? article.title}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />

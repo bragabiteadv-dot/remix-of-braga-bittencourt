@@ -191,7 +191,7 @@ function ArticlePage() {
             <header className="lg:col-start-2">
               <div className="relative rounded-2xl overflow-hidden aspect-square mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
                 {article.image ? (
-                  <img src={article.image} alt={article.title} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
+                  <img src={article.image} alt={article.imageAlt ?? article.title} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-[#f5eee0] via-[#faf6ed] to-[#e8dcc4] flex flex-col items-center justify-center gap-3">
                     <div className="w-20 h-20 rounded-full bg-white/60 backdrop-blur flex items-center justify-center">
