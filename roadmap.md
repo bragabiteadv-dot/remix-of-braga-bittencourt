@@ -3,6 +3,7 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Colocar o artigo de Guarda Compartilhada em primeiro lugar na lista
 - [x] Substituir a foto do artigo de Dissolução de União Estável no Brasil e definir seu texto alternativo
 - [x] Substituir a foto do artigo de Divórcio Extrajudicial no Brasil e definir seu texto alternativo
 - [x] Substituir a foto do artigo de Homologação de Divórcio Estrangeiro no Brasil e definir seu texto alternativo
