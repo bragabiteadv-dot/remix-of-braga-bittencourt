@@ -7,7 +7,7 @@ import artigoImg1 from "@/assets/artigos/divorcio-uniao-estavel-braga-bitencourt
 import artigoImg2 from "@/assets/artigos/inventario-braga-bitencourt.jpg";
 import artigoImg26 from "@/assets/artigos/26.jpg";
 import artigoImg7 from "@/assets/artigos/homologacao-divorcio-estrangeiro-brasil-braga-bitencourt.jpg";
-import artigoImg9 from "@/assets/artigos/9.jpg";
+import artigoImg9 from "@/assets/artigos/dissolucao-uniao-estavel-braga-bitencourt.jpg";
 import artigoImg8 from "@/assets/artigos/divorcio-extrajudicial-braga-bitencourt.jpg";
 import artigoImg25 from "@/assets/artigos/25.jpg";
 import artigoImg33 from "@/assets/artigos/33.jpg";
@@ -151,6 +151,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg9,
+    imageAlt: "Dissolução de União Estável Braga Bitencourt",
     excerpt: "A união estável tem sido uma escolha cada vez mais crescente entre casais brasileiros, baseada na afetividade e no projeto de vida comum. No entanto, o encerramento desses ciclos exige uma transição p...",
     body: ["A união estável tem sido uma escolha cada vez mais crescente entre casais brasileiros, baseada na afetividade e no projeto de vida comum. No entanto, o encerramento desses ciclos exige uma transição pautada pela clareza. Diferente do casamento, onde o vínculo é formalizado desde a origem, muitas uniões estáveis operam no campo da informalidade, o que pode transformar sua dissolução em um cenário de insegurança quanto aos direitos e deveres de cada convivente.", "Tipos de Decisões relativas ao fim da união estável.", "Dissolução Extrajudicial:", "Para casos de consenso total e inexistência de filhos menores (ou com questões de menores", "já resolvidas judicialmente).", "Reconhecimento e Dissolução Simultâneos:", "Ideal para casais que nunca formalizaram a união no passado, permitindo declarar o início,", "o fim e a partilha em um único ato.", "Dissolução Judicial:", "Necessária quando há conflito sobre bens ou quando envolve direitos de filhos menores", "sem acordo prévio.", "Assessoria Especializada: Braga Bitencourt Advogados.", "A dissolução de uma união estável exige uma advocacia que compreenda as nuances da", "prova de convivência e a urgência na proteção do patrimônio. O escritório", "Braga Bitencourt Advogados", "oferece suporte completo para que o encerramento da união seja realizado com", "transparência, assegurando que os direitos de cada convivente sejam plenamente", "respeitados pela legislação brasileira:", "Auditoria de Bens e Dívidas: Levantamento de ativos e passivos durante o período de convivência.", "Planejamento Tributário: Cálculo preciso sobre a meação para evitar a incidência indevida de ITCMD ou ITBI sobre a partilha.", "Formalização via e-Notariado: Condução do ato de forma digital para conviventes que residem em cidades ou países distintos e quando é o caso de e dissolução via cartório.", "Eficácia perante Terceiros: Assessoria no registro da dissolução em cartórios de registros imobiliários."],
   },
