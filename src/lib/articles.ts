@@ -257,7 +257,7 @@ export const ARTICLES: Article[] = [
   {
     id: "18",
     slug: "guarda-compartilhada-o-equilibrio-necessario-para-o-bem-estar-dos-filhos",
-    title: "Guarda Compartilhada",
+    title: "Entenda mais sobre Guarda Compartilhada",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
