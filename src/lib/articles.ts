@@ -79,7 +79,7 @@ export const ARTICLES: Article[] = [
   {
     id: "3",
     slug: "guarda-compartilhada",
-    title: "Entenda mais sobre Guarda Compartilhada",
+    title: "Guarda Compartilhada",
     category: "Família",
     date: "Março de 2026",
     readingTime: "3 min de leitura",
