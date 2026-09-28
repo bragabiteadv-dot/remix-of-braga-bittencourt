@@ -3,6 +3,10 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Substituir a foto do artigo de Apostila de Haia e definir seu texto alternativo
+- [x] Substituir a foto do artigo de Testamento e definir seu texto alternativo
+- [x] Substituir a foto do artigo de Mudança de Regime de Bens no Casamento e definir seu texto alternativo
+- [x] Substituir a foto do artigo de Inventário Extrajudicial e definir seu texto alternativo
 - [x] Colocar o artigo de Guarda Compartilhada em primeiro lugar na lista
 - [x] Substituir a foto do artigo de Dissolução de União Estável no Brasil e definir seu texto alternativo
 - [x] Substituir a foto do artigo de Divórcio Extrajudicial no Brasil e definir seu texto alternativo
