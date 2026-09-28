@@ -3,6 +3,7 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Substituir a foto do artigo de Aquisição de Imóveis e Bens no Brasil por Residentes no Exterior e definir seu texto alternativo
 - [x] Substituir a foto do artigo de Apostila de Haia e definir seu texto alternativo
 - [x] Substituir a foto do artigo de Testamento e definir seu texto alternativo
 - [x] Substituir a foto do artigo de Mudança de Regime de Bens no Casamento e definir seu texto alternativo
