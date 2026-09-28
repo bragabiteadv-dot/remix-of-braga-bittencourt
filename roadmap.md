@@ -2,6 +2,7 @@
 
 ## Em andamento
 - [ ] Substituir a foto do artigo de Mudança de Regime de Bens no Casamento e definir seu texto alternativo
+- [ ] Substituir a foto do artigo de Testamento e definir seu texto alternativo
 
 ## Concluído recente
 - [x] Substituir a foto do artigo de Inventário Extrajudicial e definir seu texto alternativo
