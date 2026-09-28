@@ -14,7 +14,7 @@ import artigoImg33 from "@/assets/artigos/33.jpg";
 import artigoImg28 from "@/assets/artigos/28.jpg";
 import artigoImg16Asset from "@/assets/artigos/investigacao-paternidade-braga-bitencourt.jpg.asset.json";
 const artigoImg16 = artigoImg16Asset.url;
-import artigoImg14Asset from "@/assets/artigos/aquisicao-imoveis-residentes-exterior-braga-bitencourt.webp.asset.json";
+import artigoImg14Asset from "@/assets/artigos/aquisicao-imoveis-residentes-exterior-braga-bitencourt.jpg.asset.json";
 const artigoImg14 = artigoImg14Asset.url;
 import artigoImg12 from "@/assets/artigos/testamento-braga-bitencourt.jpg";
 import artigoImg13 from "@/assets/artigos/apostila-haia-apostilamento-documentos-braga-bitencourt.jpg";
