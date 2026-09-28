@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Substituir a foto do artigo de Investigação de Paternidade e definir seu texto alternativo
 
 ## Concluído recente
 - [x] Substituir a foto do artigo de Aquisição de Imóveis e Bens no Brasil por Residentes no Exterior e definir seu texto alternativo
