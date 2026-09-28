@@ -3,7 +3,8 @@ import medidaProtetivaAsset from "@/assets/artigos/medida-protetiva-braga-bitenc
 const medidaProtetivaImg = medidaProtetivaAsset.url;
 import artigoImg27 from "@/assets/artigos/27.jpg";
 import artigoImg21 from "@/assets/artigos/21.jpg";
-import artigoImg3 from "@/assets/artigos/guarda-compartilhada-braga-bitencourt.jpg";
+import artigoImg3Asset from "@/assets/artigos/guarda-compartilhada-braga-bitencourt.webp.asset.json";
+const artigoImg3 = artigoImg3Asset.url;
 import artigoImg24 from "@/assets/artigos/24.jpg";
 import artigoImg1 from "@/assets/artigos/divorcio-uniao-estavel-braga-bitencourt.jpg";
 import artigoImg2 from "@/assets/artigos/inventario-braga-bitencourt.jpg";
