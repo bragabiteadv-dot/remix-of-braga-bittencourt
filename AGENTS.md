@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Article cover images that must remain available independently of the asset CDN are imported from local bundled media, because the previous CDN URLs returned access errors.
+- Treat every `/advogado-*` route as a standalone landing page in the root layout, because these routes own their distinct header and footer.
