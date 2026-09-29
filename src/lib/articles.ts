@@ -1,10 +1,8 @@
 import artigoImg18 from "@/assets/artigos/18.jpg";
-import medidaProtetivaAsset from "@/assets/artigos/medida-protetiva-braga-bitencourt.jpg.asset.json";
-const medidaProtetivaImg = medidaProtetivaAsset.url;
+import medidaProtetivaImg from "@/assets/artigos/medida-protetiva-braga-bitencourt.jpg";
 import artigoImg27 from "@/assets/artigos/27.jpg";
 import artigoImg21 from "@/assets/artigos/21.jpg";
-import artigoImg3Asset from "@/assets/artigos/guarda-compartilhada-braga-bitencourt.webp.asset.json";
-const artigoImg3 = artigoImg3Asset.url;
+import artigoImg3 from "@/assets/artigos/guarda-compartilhada-braga-bitencourt.webp";
 import artigoImg24 from "@/assets/artigos/24.jpg";
 import artigoImg1 from "@/assets/artigos/divorcio-uniao-estavel-braga-bitencourt.jpg";
 import artigoImg2 from "@/assets/artigos/inventario-braga-bitencourt.jpg";
@@ -15,10 +13,8 @@ import artigoImg8 from "@/assets/artigos/divorcio-extrajudicial-braga-bitencourt
 import artigoImg25 from "@/assets/artigos/25.jpg";
 import artigoImg33 from "@/assets/artigos/33.jpg";
 import artigoImg28 from "@/assets/artigos/28.jpg";
-import artigoImg16Asset from "@/assets/artigos/investigacao-paternidade-braga-bitencourt.jpg.asset.json";
-const artigoImg16 = artigoImg16Asset.url;
-import artigoImg14Asset from "@/assets/artigos/aquisicao-imoveis-residentes-exterior-braga-bitencourt.jpg.asset.json";
-const artigoImg14 = artigoImg14Asset.url;
+import artigoImg16 from "@/assets/artigos/investigacao-paternidade-braga-bitencourt.jpg";
+import artigoImg14 from "@/assets/artigos/aquisicao-imoveis-residentes-exterior-braga-bitencourt.jpg";
 import artigoImg12 from "@/assets/artigos/testamento-braga-bitencourt.jpg";
 import artigoImg13 from "@/assets/artigos/apostila-haia-apostilamento-documentos-braga-bitencourt.jpg";
 import artigoImg10 from "@/assets/artigos/inventario-extrajudicial-braga-bitencourt.jpg";
@@ -29,8 +25,7 @@ import artigoImg30 from "@/assets/artigos/30.jpg";
 import artigoImg4 from "@/assets/artigos/partilha-divisao-bens-braga-bitencourt.jpg";
 import artigoImg23 from "@/assets/artigos/23.jpg";
 import artigoImg19 from "@/assets/artigos/19.jpg";
-import artigoImg15Asset from "@/assets/artigos/transcricao-casamento-estrangeiro-braga-bitencourt.jpg.asset.json";
-const artigoImg15 = artigoImg15Asset.url;
+import artigoImg15 from "@/assets/artigos/transcricao-casamento-estrangeiro-braga-bitencourt.jpg";
 import artigoImg32 from "@/assets/artigos/32.jpg";
 import artigoImg22 from "@/assets/artigos/22.jpg";
 import artigoImg5 from "@/assets/artigos/alienacao-parental-braga-bitencourt.jpg";
@@ -241,7 +236,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg16,
-    imageAlt: "Apostila de Haia (2026) –Investigação de Paternidade Braga Bitencourt.",
+    imageAlt: "Investigação de Paternidade Braga Bitencourt Advogados",
     excerpt: "O reconhecimento da paternidade transcende o laço afetivo; trata-se de um pilar fundamental do Direito de Família com reflexos imediatos no Direito Sucessório e na dignidade humana. Com quase duas déc...",
     body: ["O reconhecimento da paternidade transcende o laço afetivo; trata-se de um pilar fundamental do Direito de Família com reflexos imediatos no Direito Sucessório e na dignidade humana. Com quase duas décadas de atuação estratégica, o escritório Braga Bitencourt Advogados especializou-se em conduzir processos de filiação de alta complexidade, garantindo que a verdade biológica ou socioafetiva seja estabelecida com o rigor técnico que o caso exige.", "Por que a Investigação de Paternidade é Indispensável?", "A formalização da paternidade é o único meio jurídico capaz de assegurar direitos fundamentais, tais como:", "Direitos Alimentares: Garantia de subsistência, educação e saúde por meio da pensão alimentícia.", "Direito Sucessório (Herança): Habilitação em inventários e preservação da legítima patrimonial.", "Direito à Identidade: Acesso ao histórico genético, crucial para prevenções médicas e autoconhecimento.", "Direito à Nacionalidade: Essencial para descendentes que buscam regularizar cidadania na União Europeia (UE) ou vistos de residência nos EUA.", "Modalidades e Propósitos da Investigação", "O ordenamento jurídico e os tratados internacionais permitem diferentes vias para o estabelecimento do vínculo:", "Reconhecimento Judicial (Ação de Investigação): Necessário quando há recusa ou dúvida. O propósito é a obtenção de uma sentença declaratória com força de lei.", "Investigação Post Mortem: Realizada quando o suposto pai já faleceu, envolvendo perícia em parentes consanguíneos ou, em casos específicos, a exumação.", "Paternidade Socioafetiva: Reconhecimento baseado no vínculo de amor e convivência, independentemente do DNA, possuindo o mesmo valor jurídico da biológica.", "Atuação: Brasil e países estrangeiros (EUA, União Europeia e países da Ásia).", "0 Braga Bitencourt Advogados possui expertise em demandas nacionais e transnacionais. Atendemos brasileiros residentes no Brasil e no Exterior ( EUA, Canadá) e na UE (como Portugal, Itália e Espanha), bem como estrangeiros com interesses no Brasil."],
   },

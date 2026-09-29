@@ -3,6 +3,7 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Restaurar as capas de Guarda Compartilhada, Aquisição de Imóveis, Transcrição de Casamento Estrangeiro, Investigação de Paternidade e Medida Protetiva, e corrigir o texto alternativo de Investigação de Paternidade
 - [x] Substituir a foto do artigo de Guarda Compartilhada e definir seu texto alternativo
 - [x] Substituir a foto do artigo de Medida Protetiva e definir seu texto alternativo
 - [x] Substituir a foto do artigo de Investigação de Paternidade e definir seu texto alternativo
