@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Planejar a aplicação da logomarca das páginas de destino nos cabeçalhos das páginas institucionais
 
 ## Concluído recente
 - [x] Padronizar a nova logomarca nos cabeçalhos das 99 páginas de destino sem alterar sua estrutura
