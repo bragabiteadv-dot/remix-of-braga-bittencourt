@@ -3,6 +3,7 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Padronizar a nova logomarca nos cabeçalhos das 99 páginas de destino sem alterar sua estrutura
 - [x] Padronizar a seleção de cabeçalho e rodapé nas páginas de destino e validar no telefone
 - [x] Restaurar as capas de Guarda Compartilhada, Aquisição de Imóveis, Transcrição de Casamento Estrangeiro, Investigação de Paternidade e Medida Protetiva, e corrigir o texto alternativo de Investigação de Paternidade
 - [x] Substituir a foto do artigo de Guarda Compartilhada e definir seu texto alternativo

@@ -25,7 +25,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import logoTree from "@/assets/logo-tree-new.png";
-import lpHeaderLogo from "@/assets/lp-header-logo.png";
+import curatelaBhHeaderLogo from "@/assets/logo-curatela-bh.webp";
 import { PageAltProvider } from "@/lib/page-alt";
 import { buildSeoHead } from "@/components/SeoHead";
 import { OG_IMAGE } from "@/lib/site-og";
@@ -570,7 +570,7 @@ function LpHeader() {
     <header className="sticky top-0 z-50 w-full bg-[#08152C]/95 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
-          src={lpHeaderLogo}
+          src={curatelaBhHeaderLogo}
           alt={LOGO_ALT}
           className="h-12 w-auto shrink-0"
           loading="eager"
