@@ -1,17 +1,16 @@
-# Padronizar as logomarcas das páginas de destino
+# Aplicar a nova logomarca aos cabeçalhos institucionais
 
 ## O que encontrei
-- A nova imagem enviada é exatamente igual à logomarca que já aparece no cabeçalho da página **Curatela em BH**.
-- A página **Curatela em BH** já usa essa nova logomarca e não precisa ser alterada.
-- As outras **98 páginas de destino** usam a logomarca anterior no mesmo tipo de cabeçalho.
-- Os cabeçalhos das páginas institucionais — Home, Perfil, Áreas de Atuação, Dúvidas, Fale Conosco e Artigos — usam outro padrão e ficarão intactos.
+- Home, Perfil, Áreas de Atuação, Dúvidas, Fale Conosco e Artigos usam o mesmo cabeçalho institucional compartilhado.
+- Esse cabeçalho ainda usa a logomarca anterior.
+- As 99 páginas de destino já usam a nova logomarca enviada.
 
 ## O que farei
-1. Trocar somente a imagem da logomarca nos cabeçalhos das 98 páginas de destino que ainda usam a versão anterior.
-2. Usar a mesma imagem local já confirmada na página Curatela em BH, evitando falhas de carregamento.
-3. Manter sem qualquer mudança a estrutura dos cabeçalhos, seus tamanhos, posições, cores, botão de contato e comportamento fixo durante a rolagem.
-4. Não alterar rodapés, textos, conteúdo, imagens das páginas ou cabeçalhos institucionais.
-5. Testar em telefone e computador uma amostra representativa das páginas, além de confirmar pelo código que todas as 99 páginas de destino usam a nova logomarca e continuam com apenas um cabeçalho.
+1. Trocar somente a imagem da logomarca no cabeçalho institucional compartilhado pela mesma imagem usada nas páginas de destino.
+2. Manter intactos o formato do cabeçalho, a faixa de contatos, o menu, o botão de contato, as cores, os tamanhos e o comportamento durante a rolagem.
+3. Não alterar os cabeçalhos próprios das páginas de destino, pois eles já usam a imagem correta.
+4. Não alterar rodapés, textos, conteúdo ou outras imagens.
+5. Conferir a nova logomarca nas páginas institucionais em telefone e computador, inclusive o menu no telefone.
 
 ## Resultado esperado
-Todas as 99 páginas de destino terão a mesma logomarca nova no cabeçalho, seguindo o padrão já visível em Curatela em BH, sem mudar nenhuma outra parte dos cabeçalhos.
+As páginas institucionais e as páginas de destino exibirão a mesma nova logomarca, mantendo seus dois modelos de cabeçalho e todas as alterações anteriores.
