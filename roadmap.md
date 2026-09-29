@@ -1,9 +1,9 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Planejar a aplicação da logomarca das páginas de destino nos cabeçalhos das páginas institucionais
 
 ## Concluído recente
+- [x] Aplicar a logomarca das páginas de destino nos cabeçalhos das páginas institucionais
 - [x] Padronizar a nova logomarca nos cabeçalhos das 99 páginas de destino sem alterar sua estrutura
 - [x] Padronizar a seleção de cabeçalho e rodapé nas páginas de destino e validar no telefone
 - [x] Restaurar as capas de Guarda Compartilhada, Aquisição de Imóveis, Transcrição de Casamento Estrangeiro, Investigação de Paternidade e Medida Protetiva, e corrigir o texto alternativo de Investigação de Paternidade
