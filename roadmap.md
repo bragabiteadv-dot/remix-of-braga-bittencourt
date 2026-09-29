@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Padronizar a seleção de cabeçalho e rodapé nas páginas de destino e validar no telefone
 
 ## Concluído recente
 - [x] Restaurar as capas de Guarda Compartilhada, Aquisição de Imóveis, Transcrição de Casamento Estrangeiro, Investigação de Paternidade e Medida Protetiva, e corrigir o texto alternativo de Investigação de Paternidade
