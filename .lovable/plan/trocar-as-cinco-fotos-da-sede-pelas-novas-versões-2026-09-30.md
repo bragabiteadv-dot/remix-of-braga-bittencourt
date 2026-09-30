@@ -71,20 +71,16 @@ Preencha o texto desejado depois de cada campo. Se preferir o mesmo texto nas ci
 
 ### Carrossel das 99 páginas de destino
 
-1. Primeira foto — texto alt: **[PREENCHER AQUI]**
-2. Segunda foto — texto alt: **[PREENCHER AQUI]**
-3. Terceira foto — texto alt: **[PREENCHER AQUI]**
-4. Quarta foto — texto alt: **[PREENCHER AQUI]**
-5. Quinta foto — texto alt: **[PREENCHER AQUI]**
+1. Primeira foto — texto alt: **[Título da Página]**
+2. Segunda foto — texto alt: **[Título da Página]**
+3. Terceira foto — texto alt: **[Título da Página]**
+4. Quarta foto — texto alt: **[Título da Página]**
+5. Quinta foto — texto alt: **[Título da Página]**
 
 ### Segunda foto nas páginas institucionais
 
-6. Home — texto alt: **[PREENCHER AQUI]**
-7. Dúvidas — texto alt: **[PREENCHER AQUI]**
-
-## Para que serve o texto alternativo
-
-O texto alternativo descreve a imagem para pessoas que usam leitores de tela e também aparece como apoio quando a foto não consegue carregar. Ele ainda ajuda mecanismos de busca a compreenderem o assunto da imagem. Deve ser curto, verdadeiro e descrever o que aparece; não é recomendável repetir palavras-chave sem necessidade.
+6. Home — texto alt: **[Braga Bitencourt Advogados Sede de Betim]**
+7. Dúvidas — texto alt: **[Braga Bitencourt Advogados - Tire suas dúvidas sobre família, sucessões e internacional privado]**
 
 ## Alteração prevista após sua aprovação e o preenchimento dos textos
 
