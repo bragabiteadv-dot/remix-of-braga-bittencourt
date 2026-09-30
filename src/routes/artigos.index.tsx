@@ -124,7 +124,7 @@ function Artigos() {
                       <div className="w-14 h-14 rounded-full bg-white/60 backdrop-blur flex items-center justify-center">
                         <ImageIcon size={22} className="text-gold-light" />
                       </div>
-                      <p className="text-navy/40 text-[10px] uppercase tracking-[0.25em] font-montserrat">
+                  <p className="text-navy/40 text-[10px] uppercase tracking-[0.25em] font-montserrat">
                         Imagem em breve
                       </p>
                     </div>
