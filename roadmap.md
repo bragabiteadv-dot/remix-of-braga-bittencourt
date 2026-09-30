@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Trocar as fotos da seção Nossa Equipe em todo o site, sem cortes, preservando ordem e textos alternativos por contexto
 
 ## Concluído recente
 - [x] Trocar a árvore da seção História e dos rodapés pela nova imagem, com textos alternativos adequados

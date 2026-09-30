@@ -1,14 +1,23 @@
 import { usePageAltFor } from "@/lib/page-alt";
 import equipeBg from "@/assets/equipe-bg.jpg";
-import carlosGabriel from "@/assets/gabriel-2.jpg";
-import carlosJavet from "@/assets/carlos-javet-2.jpg";
-import glaucia from "@/assets/glaucia-2.jpg";
+import carlosGabriel from "@/assets/team-carlos-gabriel.webp";
+import carlosJavet from "@/assets/team-carlos-javet.webp";
+import glaucia from "@/assets/team-glaucia.webp";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function TeamGrid() {
-  const javetAlt = usePageAltFor("team-javet", "Carlos Javét Braga Bitencourt");
-  const gabrielAlt = usePageAltFor("team-gabriel", "Carlos Gabriel Ferreira Braga Bitencourt");
-  const glauciaAlt = usePageAltFor("team-glaucia", "Gláucia Patrícia Ferreira Braga Bitencourt");
+  const javetAlt = usePageAltFor(
+    "team-javet",
+    "Carlos Javét Braga Bitencourt Braga Bitencourt Advogados, Família, Sucessões e Internacional Privado",
+  );
+  const gabrielAlt = usePageAltFor(
+    "team-gabriel",
+    "Carlos Gabriel F. Braga Bitencourt Braga Bitencourt Advogados, Família, Sucessões e Internacional Privado",
+  );
+  const glauciaAlt = usePageAltFor(
+    "team-glaucia",
+    "Gláucia Patrícia F. Braga Bitencourt Braga Bitencourt Advogados, Família, Sucessões e Internacional Privado",
+  );
   const members = [
     {
       name: "Carlos Javét Braga Bitencourt",
@@ -47,13 +56,13 @@ export function TeamGrid() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {members.map((member, idx) => (
             <div key={idx} className={`flex flex-col group ${member.order}`}>
-              <div className="relative overflow-hidden aspect-[3/4] rounded-sm shadow-2xl mb-6 bg-white">
+              <div className="relative overflow-hidden aspect-[1179/1920] rounded-sm shadow-2xl mb-6 bg-white">
                 <img 
                   src={member.image} 
                   alt={member.alt} 
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain object-center"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

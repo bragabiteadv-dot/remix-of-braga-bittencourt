@@ -48,7 +48,7 @@ export type PageAltKind =
 export function usePageAltFor(kind: PageAltKind, fallback: string) {
   const ctx = useContext(PageAltContext);
   if (!ctx) return fallback;
-  const { alt, service } = ctx;
+  const { alt, service, city } = ctx;
   if (!service) return alt ?? fallback;
   switch (kind) {
     case "office":
@@ -56,11 +56,11 @@ export function usePageAltFor(kind: PageAltKind, fallback: string) {
     case "logo":
       return `Braga Bitencourt ${alt}`;
     case "team-javet":
-      return `Dr. Javét ${alt}`;
-    case "team-gabriel":
-      return `${service} Braga Bitencourt Advogados`;
-    case "team-glaucia":
       return alt;
+    case "team-gabriel":
+      return `Braga Bitencourt Advocacia de ${service}${city ? ` ${city}` : ""}`;
+    case "team-glaucia":
+      return `Braga Bitencourt Advocacia de ${service}${city ? ` ${city}` : ""}`;
     case "action":
       return alt;
     case "form":
