@@ -1,4 +1,4 @@
-import { SITE_NAME, siteAssetUrl, siteUrl } from "./site";
+import { SITE_NAME, normalizeSitePath, siteAssetUrl, siteUrl } from "./site";
 
 /**
  * ESTRUTURA CENTRALIZADA E REUTILIZÁVEL DE SEO
@@ -43,7 +43,9 @@ export interface SeoHead {
 export function buildSeo(input: SeoInput): SeoHead {
   const { path, title, description, type = "website", image, robots, noindex, schema } = input;
 
-  const url = siteUrl(path);
+  // Canonical e og:url sempre usam apenas o caminho real da página. Assim,
+  // UTMs, outros parâmetros de busca e hashes nunca entram nos sinais de SEO.
+  const url = siteUrl(normalizeSitePath(path));
 
   const meta: Array<Record<string, string>> = [
     { title },

@@ -28,14 +28,24 @@ export const SITE_LOCALE = "pt-BR";
 export const hasOfficialDomain = () => SITE_DOMAIN.trim().length > 0;
 
 /**
+ * Normaliza caminhos públicos para SEO: remove query/hash, garante barra
+ * inicial e elimina barras finais (exceto na Home).
+ */
+export function normalizeSitePath(path = "/"): string {
+  const pathOnly = path.split(/[?#]/, 1)[0] || "/";
+  const withLeadingSlash = pathOnly.startsWith("/") ? pathOnly : `/${pathOnly}`;
+  const withoutTrailingSlashes = withLeadingSlash.replace(/\/+$/, "");
+  return withoutTrailingSlashes || "/";
+}
+
+/**
  * Constrói uma URL do site a partir de um caminho.
  * Sem domínio oficial configurado, retorna o caminho relativo.
  */
 export function siteUrl(path = "/"): string {
-  const normalized = path.startsWith("/") ? path : `/${path}`;
-  const clean = normalized.length > 1 ? normalized.replace(/\/+$/, "") : normalized;
+  const clean = normalizeSitePath(path);
   if (!hasOfficialDomain()) return clean;
-  return `${SITE_DOMAIN.replace(/\/+$/, "")}${clean === "/" ? "/" : clean}`;
+  return `${SITE_DOMAIN.replace(/\/+$/, "")}${clean}`;
 }
 
 /** Garante URL absoluta para imagens sociais quando possível. */
