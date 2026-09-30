@@ -60,6 +60,8 @@ export function TeamGrid() {
                 <img 
                   src={member.image} 
                   alt={member.alt} 
+                  width={800}
+                  height={1303}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-contain object-center"

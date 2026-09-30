@@ -45,8 +45,8 @@ export function ServicePageTemplate({
             <div className="lg:sticky lg:top-32 h-fit">
               <div className="p-1 bg-gold-gradient rounded-sm shadow-2xl">
                 <div className="bg-navy p-8 md:p-12 rounded-sm text-center">
-                  <h3 className="text-white text-2xl font-cinzel mb-4">Inicie sua Consulta</h3>
-                  <p className="text-white/50 text-sm mb-8 font-montserrat">
+                  <h2 className="text-white text-2xl font-cinzel mb-4">Inicie sua Consulta</h2>
+                  <p className="text-white/70 text-sm mb-8 font-montserrat">
                     Nossa equipe em {city} está à disposição para analisar seu caso com total sigilo.
                   </p>
                   <WhatsAppCta className="w-full" />
