@@ -49,6 +49,8 @@ function Artigos() {
             <p className="text-xs uppercase tracking-[0.2em] text-navy/70 font-montserrat mb-2">Pesquise</p>
             <div className="relative">
               <input
+                id="article-search"
+                aria-label="Pesquisar artigos"
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}

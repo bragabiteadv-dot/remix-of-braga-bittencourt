@@ -148,6 +148,8 @@ export const FAQ = ({
           <div className="flex gap-4 mb-10">
             <div className="relative flex-1">
               <input
+                id="faq-search"
+                aria-label="Pesquisar nas perguntas"
                 type="text"
                 placeholder="Pesquisar nas perguntas..."
                 className="w-full pl-5 pr-4 py-4 rounded-xl border border-gray-200 focus:border-[#c5a880] focus:ring-2 focus:ring-[#c5a880]/20 outline-none transition-all shadow-sm font-montserrat text-black"

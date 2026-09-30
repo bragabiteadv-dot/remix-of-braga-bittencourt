@@ -23,6 +23,8 @@ export function TeamGrid() {
       name: "Carlos Javét Braga Bitencourt",
       alt: javetAlt,
       image: carlosJavet,
+      width: 800,
+      height: 1303,
       // primeiro no mobile, centro no desktop
       order: "order-1 md:order-2"
     },
@@ -30,12 +32,16 @@ export function TeamGrid() {
       name: "Carlos Gabriel F. Braga Bitencourt",
       alt: gabrielAlt,
       image: carlosGabriel,
+      width: 800,
+      height: 1302,
       order: "order-2 md:order-1"
     },
     {
       name: "Gláucia Patrícia F. Braga Bitencourt",
       alt: glauciaAlt,
       image: glaucia,
+      width: 800,
+      height: 1305,
       order: "order-3 md:order-3"
     }
   ];
@@ -60,8 +66,8 @@ export function TeamGrid() {
                 <img 
                   src={member.image} 
                   alt={member.alt} 
-                  width={800}
-                  height={1303}
+                  width={member.width}
+                  height={member.height}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-contain object-center"
