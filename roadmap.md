@@ -3,6 +3,7 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Trocar a árvore da seção História e dos rodapés pela nova imagem, com textos alternativos adequados
 - [x] Aplicar a logomarca das páginas de destino nos cabeçalhos das páginas institucionais
 - [x] Padronizar a nova logomarca nos cabeçalhos das 99 páginas de destino sem alterar sua estrutura
 - [x] Padronizar a seleção de cabeçalho e rodapé nas páginas de destino e validar no telefone

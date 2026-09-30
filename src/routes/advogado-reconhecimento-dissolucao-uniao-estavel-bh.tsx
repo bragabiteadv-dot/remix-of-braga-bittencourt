@@ -24,7 +24,7 @@ import { ActionMoment } from "@/components/sections/ActionMoment";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
-import logoTree from "@/assets/logo-tree-new.png";
+import logoTree from "@/assets/history-tree.webp";
 import curatelaBhHeaderLogo from "@/assets/logo-curatela-bh.webp";
 import { PageAltProvider } from "@/lib/page-alt";
 import { buildSeoHead } from "@/components/SeoHead";
