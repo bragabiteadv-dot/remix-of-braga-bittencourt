@@ -197,7 +197,7 @@ function ArticlePage() {
                     <div className="w-20 h-20 rounded-full bg-white/60 backdrop-blur flex items-center justify-center">
                       <ImageIcon size={32} className="text-gold-light" />
                     </div>
-                    <p className="text-navy/50 text-xs uppercase tracking-[0.3em] font-montserrat">Imagem em breve</p>
+                    <p className="text-navy/70 text-xs uppercase tracking-[0.3em] font-montserrat">Imagem em breve</p>
                   </div>
                 )}
                 <div className="absolute top-4 right-4 bg-gold-gradient text-navy text-[10px] uppercase tracking-widest font-semibold px-3 py-1.5 rounded-full font-montserrat">
@@ -233,11 +233,11 @@ function ArticlePage() {
                 <div className="bg-white rounded-xl shadow-[0_10px_40px_-15px_rgba(40,54,80,0.15)] border border-navy/10 p-4">
                 <div className="flex items-center justify-between gap-3 border-b border-navy/10 pb-2">
                   <h2 className="text-xs font-montserrat font-bold uppercase text-navy">Sumário</h2>
-                  <span className="text-[10px] font-montserrat font-semibold text-navy/50">{sections.length} tópicos</span>
+                  <span className="text-[10px] font-montserrat font-semibold text-navy/70">{sections.length} tópicos</span>
                 </div>
                 <label className="relative mt-3 block">
                   <span className="sr-only">Buscar tópico</span>
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-navy/40" size={15} />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-navy/70" size={15} />
                   <input
                     value={topicQuery}
                     onChange={(event) => setTopicQuery(event.target.value)}
@@ -258,7 +258,7 @@ function ArticlePage() {
                       {section.title}
                     </a>
                   )) : (
-                    <p className="px-2 py-4 text-center text-xs text-navy/50">Nenhum tópico encontrado.</p>
+                    <p className="px-2 py-4 text-center text-xs text-navy/70">Nenhum tópico encontrado.</p>
                   )}
                 </nav>
                 {sections.length > 4 && (
@@ -321,7 +321,7 @@ function ArticlePage() {
                 <h2 className="text-white font-cinzel text-2xl md:text-3xl mb-3">
                   Precisa de orientação sobre este tema?
                 </h2>
-                <p className="text-white/60 font-montserrat text-sm md:text-base mb-6 max-w-xl mx-auto">
+                <p className="text-white/80 font-montserrat text-sm md:text-base mb-6 max-w-xl mx-auto">
                   Nossa equipe está pronta para analisar seu caso com sigilo absoluto e propor a melhor estratégia jurídica.
                 </p>
                 <WhatsAppCta className="inline-flex" href={whatsappArticleLink(article.title)} />

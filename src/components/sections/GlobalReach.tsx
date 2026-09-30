@@ -13,7 +13,7 @@ export const GlobalReach = () => {
             SEU CASO É CONDUZIDO<br />
             COM ESTRATÉGIA, CLAREZA E ACOMPANHAMENTO.
           </h2>
-          <p className="text-gray-400 text-sm md:text-base font-montserrat max-w-md leading-relaxed">
+          <p className="text-gray-300 text-sm md:text-base font-montserrat max-w-md leading-relaxed">
             Onde você estiver, nossa estrutura jurídica atua com padrão elevado.
           </p>
         </div>

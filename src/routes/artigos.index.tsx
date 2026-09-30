@@ -46,14 +46,16 @@ function Artigos() {
         {/* Toolbar */}
         <div className="bg-white rounded-2xl shadow-[0_10px_40px_-15px_rgba(40,54,80,0.15)] border border-navy/5 p-6 md:p-8 mb-10 grid gap-6 md:grid-cols-[minmax(260px,320px)_1fr] items-center">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-navy/50 font-montserrat mb-2">Pesquise</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-navy/70 font-montserrat mb-2">Pesquise</p>
             <div className="relative">
               <input
+                id="article-search"
+                aria-label="Pesquisar artigos"
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Pesquisar..."
-                className="w-full pl-4 pr-12 py-3 rounded-full bg-[#f7f2e7] border border-transparent focus:border-gold-light focus:outline-none font-montserrat text-navy placeholder:text-navy/40 transition"
+                className="w-full pl-4 pr-12 py-3 rounded-full bg-[#f7f2e7] border border-transparent focus:border-gold-light focus:outline-none font-montserrat text-navy placeholder:text-navy/70 transition"
               />
               <button
                 aria-label="Buscar"
@@ -65,7 +67,7 @@ function Artigos() {
           </div>
 
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-navy/50 font-montserrat mb-2 text-center">Categorias</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-navy/70 font-montserrat mb-2 text-center">Categorias</p>
             <div className="flex flex-wrap justify-center gap-2">
               <button
                 onClick={() => setActive(null)}
@@ -97,7 +99,7 @@ function Artigos() {
 
         {/* Grid */}
         {filtered.length === 0 ? (
-          <div className="text-center py-24 text-navy/50 font-montserrat">
+          <div className="text-center py-24 text-navy/70 font-montserrat">
             Nenhum artigo encontrado. Tente outra busca ou categoria.
           </div>
         ) : (
@@ -116,7 +118,10 @@ function Artigos() {
                     <img
                       src={article.image}
                       alt={article.imageAlt ?? article.title}
+                      width={600}
+                      height={600}
                       loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   ) : (
@@ -124,7 +129,7 @@ function Artigos() {
                       <div className="w-14 h-14 rounded-full bg-white/60 backdrop-blur flex items-center justify-center">
                         <ImageIcon size={22} className="text-gold-light" />
                       </div>
-                  <p className="text-navy/40 text-[10px] uppercase tracking-[0.25em] font-montserrat">
+                  <p className="text-navy/70 text-[10px] uppercase tracking-[0.25em] font-montserrat">
                         Imagem em breve
                       </p>
                     </div>

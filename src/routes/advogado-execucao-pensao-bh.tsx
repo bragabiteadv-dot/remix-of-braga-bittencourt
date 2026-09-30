@@ -28,7 +28,7 @@ import { PageAltProvider } from "@/lib/page-alt";
 import { buildSeoHead } from "@/components/SeoHead";
 import { OG_IMAGE } from "@/lib/site-og";
 import logoTree from "@/assets/history-tree.webp";
-import curatelaBhHeaderLogo from "@/assets/logo-curatela-bh.webp";
+import curatelaBhHeaderLogo from "@/assets/logo-header-optimized.webp";
 
 import officeBH from "@/assets/office-bh-new.jpg";
 import sedeBetim1 from "@/assets/sede-betim-1.webp";
@@ -109,6 +109,8 @@ function LpHeader() {
         <img
           src={curatelaBhHeaderLogo}
           alt={LOGO_ALT}
+          width={720}
+          height={240}
           className="h-12 w-auto shrink-0"
           loading="eager"
           fetchPriority="high"
