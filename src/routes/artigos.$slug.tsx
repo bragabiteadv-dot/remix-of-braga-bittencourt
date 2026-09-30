@@ -318,9 +318,9 @@ function ArticlePage() {
 
               {/* Bottom CTA */}
               <div className="mt-16 p-8 md:p-10 rounded-2xl bg-navy text-center">
-                <h3 className="text-white font-cinzel text-2xl md:text-3xl mb-3">
+                <h2 className="text-white font-cinzel text-2xl md:text-3xl mb-3">
                   Precisa de orientação sobre este tema?
-                </h3>
+                </h2>
                 <p className="text-white/60 font-montserrat text-sm md:text-base mb-6 max-w-xl mx-auto">
                   Nossa equipe está pronta para analisar seu caso com sigilo absoluto e propor a melhor estratégia jurídica.
                 </p>
@@ -330,9 +330,9 @@ function ArticlePage() {
               {/* Related */}
               {related.length > 0 && (
                 <div className="mt-16">
-                  <h3 className="text-navy font-cinzel text-2xl md:text-3xl mb-8">
+                  <h2 className="text-navy font-cinzel text-2xl md:text-3xl mb-8">
                     Continue lendo
-                  </h3>
+                  </h2>
                   <div className="grid gap-6 md:grid-cols-2">
                     {related.map((r) => (
                       <Link
@@ -352,9 +352,9 @@ function ArticlePage() {
                           <p className="text-[10px] uppercase tracking-widest text-gold-light font-montserrat font-semibold mb-2">
                             {r.category}
                           </p>
-                          <h4 className="text-navy font-cinzel text-base leading-snug line-clamp-3">
+                          <h3 className="text-navy font-cinzel text-base leading-snug line-clamp-3">
                             {r.title}
-                          </h4>
+                          </h3>
                         </div>
                       </Link>
                     ))}

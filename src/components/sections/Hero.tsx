@@ -104,7 +104,7 @@ export function Hero() {
               <div className="grid grid-cols-2 gap-4">
                 {features.map((feature, idx) => (
                   <div key={idx} className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]">
-                    <h3 className="text-white text-[28px] md:text-[32px] font-bold font-montserrat mb-3 leading-tight">{feature.title}</h3>
+                    <h2 className="text-white text-[28px] md:text-[32px] font-bold font-montserrat mb-3 leading-tight">{feature.title}</h2>
                     
                     <div className="mb-4">
                       <p className="text-gold-light text-[10px] font-bold tracking-widest uppercase mb-0.5">{feature.subtitle}</p>

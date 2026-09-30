@@ -1,8 +1,8 @@
 import { usePageAltFor } from "@/lib/page-alt";
 import equipeBg from "@/assets/equipe-bg.jpg";
-import carlosGabriel from "@/assets/team-carlos-gabriel.webp";
-import carlosJavet from "@/assets/team-carlos-javet.webp";
-import glaucia from "@/assets/team-glaucia.webp";
+import carlosGabriel from "@/assets/team-carlos-gabriel-800.webp";
+import carlosJavet from "@/assets/team-carlos-javet-800.webp";
+import glaucia from "@/assets/team-glaucia-800.webp";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function TeamGrid() {
@@ -62,6 +62,8 @@ export function TeamGrid() {
                   alt={member.alt} 
                   loading="lazy"
                   decoding="async"
+                  width={800}
+                  height={1303}
                   className="w-full h-full object-contain object-center"
                 />
 

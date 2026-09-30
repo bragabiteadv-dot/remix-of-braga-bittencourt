@@ -27,7 +27,7 @@ export const Testimonials = () => {
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
-          <span className="text-[#c5a880] font-montserrat tracking-[0.3em] text-sm uppercase block mb-4">
+          <span className="text-gold-readable font-montserrat tracking-[0.3em] text-sm uppercase block mb-4">
             DEPOIMENTOS
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-cinzel text-[#08152C] mb-6">
@@ -59,14 +59,14 @@ export const Testimonials = () => {
 
           <button
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 p-3 rounded-full bg-[#c5a880]/10 border border-[#c5a880]/30 text-[#c5a880] hover:bg-[#c5a880] hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 z-20 backdrop-blur-sm"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 p-3 rounded-full bg-[#c5a880]/10 border border-[#c5a880]/30 text-gold-readable hover:bg-[#c5a880] hover:text-navy transition-all duration-300 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy z-20 backdrop-blur-sm"
             aria-label="Anterior"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 p-3 rounded-full bg-[#c5a880]/10 border border-[#c5a880]/30 text-[#c5a880] hover:bg-[#c5a880] hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 z-20 backdrop-blur-sm"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 p-3 rounded-full bg-[#c5a880]/10 border border-[#c5a880]/30 text-gold-readable hover:bg-[#c5a880] hover:text-navy transition-all duration-300 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy z-20 backdrop-blur-sm"
             aria-label="Próximo"
           >
             <ChevronRight className="w-6 h-6" />
