@@ -27,7 +27,7 @@ import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } fr
 import { PageAltProvider } from "@/lib/page-alt";
 import { buildSeoHead } from "@/components/SeoHead";
 import { OG_IMAGE } from "@/lib/site-og";
-import logoTree from "@/assets/logo-tree-new.png";
+import logoTree from "@/assets/history-tree.webp";
 import curatelaBhHeaderLogo from "@/assets/logo-curatela-bh.webp";
 
 import officeBetim from "@/assets/office-betim-new.jpg";
