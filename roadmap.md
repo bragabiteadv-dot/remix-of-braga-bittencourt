@@ -3,6 +3,7 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Padronizar as URLs canônicas de todas as páginas no domínio sem www, removendo query, UTM e hash
 - [x] Corrigir os alertas confirmados de acessibilidade e desempenho, reduzir mídia sem alterar o visual e validar 138 páginas
 - [x] Trocar as cinco fotos da sede em todas as páginas onde aparecem e aplicar os textos alternativos aprovados
 - [x] Remover a faixa branca lateral da foto da Gláucia sem cortar ou redimensionar as fotos da equipe
