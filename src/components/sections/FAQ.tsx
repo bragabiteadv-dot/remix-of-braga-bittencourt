@@ -1,8 +1,7 @@
-import { usePageAlt } from "@/lib/page-alt";
 import React, { useState } from 'react';
 import { Plus, Phone } from 'lucide-react';
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
-import escritorioImg from "@/assets/sede-betim-2.jpg";
+import escritorioImg from "@/assets/sede-betim-2.webp";
 
 const faqData = [
   {
@@ -107,7 +106,13 @@ const faqData = [
   }
 ];
 
-export const FAQ = ({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" } = {}) => {
+export const FAQ = ({
+  headingLevel = "h2",
+  imageAlt = "Braga Bitencourt Advogados Sede de Betim",
+}: {
+  headingLevel?: "h1" | "h2";
+  imageAlt?: string;
+} = {}) => {
   const Heading = headingLevel;
   const [searchTerm, setSearchTerm] = useState('');
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -216,7 +221,7 @@ export const FAQ = ({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" } = {}
           <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden sticky top-24 shadow-xl">
             <img 
               src={escritorioImg} 
-              alt={usePageAlt("Escritório Braga Bitencourt")} 
+              alt={imageAlt} 
               loading="lazy"
               decoding="async"
               className="w-full h-[200px] object-cover"

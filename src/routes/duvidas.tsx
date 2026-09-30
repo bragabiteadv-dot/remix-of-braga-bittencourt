@@ -20,7 +20,10 @@ export const Route = createFileRoute("/duvidas")({
 function Duvidas() {
   return (
     <>
-      <FAQ headingLevel="h1" />
+      <FAQ
+        headingLevel="h1"
+        imageAlt="Braga Bitencourt Advogados - Tire suas dúvidas sobre família, sucessões e internacional privado"
+      />
       <ContactForm />
     </>
   );
