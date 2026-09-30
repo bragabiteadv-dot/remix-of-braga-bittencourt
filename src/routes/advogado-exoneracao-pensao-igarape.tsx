@@ -32,11 +32,11 @@ import curatelaBhHeaderLogo from "@/assets/logo-curatela-bh.webp";
 
 import officeBetim from "@/assets/office-betim-new.jpg";
 import officeBH from "@/assets/office-bh-new.jpg";
-import sedeBetim1 from "@/assets/sede-betim-1.jpg";
-import sedeBetim2 from "@/assets/sede-betim-2.jpg";
-import sedeBetim3 from "@/assets/sede-betim-3.jpg";
-import sedeBetim4 from "@/assets/sede-betim-4.jpg";
-import sedeBetim5 from "@/assets/sede-betim-5.jpg";
+import sedeBetim1 from "@/assets/sede-betim-1.webp";
+import sedeBetim2 from "@/assets/sede-betim-2.webp";
+import sedeBetim3 from "@/assets/sede-betim-3.webp";
+import sedeBetim4 from "@/assets/sede-betim-4.webp";
+import sedeBetim5 from "@/assets/sede-betim-5.webp";
 
 const PATH = "/advogado-exoneracao-pensao-igarape";
 const TITLE = "Advogado de Exoneração de Pensão em Igarapé | Braga Bitencourt Advogados";
@@ -336,7 +336,7 @@ function LpOfficeGallery() {
             >
               <img
                 src={src}
-                alt={OFFICE_ALT}
+                alt={PAGE_ALT}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
