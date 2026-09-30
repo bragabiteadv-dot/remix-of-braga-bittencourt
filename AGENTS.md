@@ -11,3 +11,4 @@
 
 - Article cover images that must remain available independently of the asset CDN are imported from local bundled media, because the previous CDN URLs returned access errors.
 - Treat every `/advogado-*` route as a standalone landing page in the root layout, because these routes own their distinct header and footer.
+- Load the D3 globe only near its viewport and serve its Natural Earth data locally, because it is below the fold and must not burden the initial page load.

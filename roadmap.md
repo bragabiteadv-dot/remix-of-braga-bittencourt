@@ -3,6 +3,7 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Corrigir os alertas confirmados de acessibilidade e desempenho, reduzir mídia sem alterar o visual e validar 138 páginas
 - [x] Trocar as cinco fotos da sede em todas as páginas onde aparecem e aplicar os textos alternativos aprovados
 - [x] Remover a faixa branca lateral da foto da Gláucia sem cortar ou redimensionar as fotos da equipe
 - [x] Trocar as fotos da seção Nossa Equipe em todo o site, sem cortes, preservando ordem e textos alternativos por contexto
