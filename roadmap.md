@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Analisar os novos prints do PageSpeed e complementar o plano seguro de ação sem alterar o site
 
 ## Concluído recente
 - [x] Trocar as cinco fotos da sede em todas as páginas onde aparecem e aplicar os textos alternativos aprovados
