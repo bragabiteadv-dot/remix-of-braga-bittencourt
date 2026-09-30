@@ -160,7 +160,7 @@ export default function RotatingEarth({
       try {
         setIsLoading(true);
         const response = await fetch("/data/world-land.json");
-        if (!response.ok) throw new Error("Failed to load land data");
+        if (!response.ok) throw new Error("Não foi possível carregar o mapa");
         landFeatures = await response.json();
         landFeatures.features.forEach((feature: any) => {
           const dots = generateDotsInPolygon(feature, 16);
@@ -171,7 +171,7 @@ export default function RotatingEarth({
         render();
         setIsLoading(false);
       } catch (err) {
-        setError("Failed to load land map data");
+        setError("Não foi possível carregar o mapa");
         setIsLoading(false);
       }
     };
@@ -416,7 +416,7 @@ export default function RotatingEarth({
     return (
       <div className={`flex items-center justify-center ${className}`}>
         <div className="text-center">
-          <p className="text-red-500 font-semibold">Error loading Earth visualization</p>
+          <p className="text-red-500 font-semibold">Não foi possível carregar o globo</p>
           <p className="text-sm text-gray-400">{error}</p>
         </div>
       </div>
@@ -430,9 +430,9 @@ export default function RotatingEarth({
         className="touch-auto"
       />
       {isLoading && (
-        <p className="text-sm text-gray-400 mt-2">Loading globe…</p>
+        <p className="text-sm text-gray-400 mt-2">Carregando globo…</p>
       )}
-      <p className="text-xs text-gray-500 mt-2">Drag to rotate • Scroll to zoom</p>
+      <p className="text-xs text-gray-500 mt-2">Arraste para girar • Role para ampliar</p>
     </div>
   );
 }
