@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, MessageSquare, Facebook, Instagram, Mail, Menu, X } from "lucide-react";
 import { WhatsAppCta, useWhatsAppLink, GOOGLE_URL, GoogleIcon } from "@/components/ui/whatsapp-cta";
-import headerLogo from "@/assets/logo-curatela-bh.webp";
+import headerLogo from "@/assets/logo-header-optimized.webp";
 import { cn } from "@/lib/utils";
 
 

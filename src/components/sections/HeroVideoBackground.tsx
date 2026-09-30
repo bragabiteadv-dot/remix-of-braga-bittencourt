@@ -1,4 +1,4 @@
-import heroVideo from "../../assets/hero-bg.mp4";
+import heroVideo from "../../assets/hero-bg-optimized.mp4";
 import heroPoster from "../../assets/hero-poster.webp";
 
 export function HeroVideoBackground() {
