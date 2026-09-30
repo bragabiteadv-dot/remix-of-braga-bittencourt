@@ -56,7 +56,7 @@ export function TeamGrid() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {members.map((member, idx) => (
             <div key={idx} className={`flex flex-col group ${member.order}`}>
-              <div className="relative overflow-hidden aspect-[1179/1920] rounded-sm shadow-2xl mb-6 bg-white">
+              <div className="relative overflow-hidden aspect-[1179/1920] rounded-sm shadow-2xl mb-6 bg-navy">
                 <img 
                   src={member.image} 
                   alt={member.alt} 

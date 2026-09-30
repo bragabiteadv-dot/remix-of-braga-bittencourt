@@ -3,6 +3,7 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Remover a faixa branca lateral da foto da Gláucia sem cortar ou redimensionar as fotos da equipe
 - [x] Trocar as fotos da seção Nossa Equipe em todo o site, sem cortes, preservando ordem e textos alternativos por contexto
 - [x] Trocar a árvore da seção História e dos rodapés pela nova imagem, com textos alternativos adequados
 - [x] Aplicar a logomarca das páginas de destino nos cabeçalhos das páginas institucionais
