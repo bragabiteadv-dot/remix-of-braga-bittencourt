@@ -1,44 +1,77 @@
 # Revisão segura dos alertas do PageSpeed Insights
 
-## O que os prints realmente dizem
+## O que os novos prints significam
 
-Os primeiros oito prints mostram uma análise **no celular**, com nota **89 em Acessibilidade**; não mostram a nota global de velocidade. Os dez novos prints trazem diagnósticos de **desempenho da página analisada**. Avisos marcados “Fora da pontuação” são indícios para investigar, não descontos automáticos da nota. O print de “Navegação agêntica” (1/2) é uma categoria experimental relacionada a agentes de IA, não uma nota de velocidade nem um erro de segurança.
+Os novos alertas são principalmente de **desempenho no telefone**. Eles não indicam que o site esteja quebrado e não significam que todos os itens devam ser removidos.
 
-- **Campo sem nome associado:** o menu “Tipo do Caso” tem um título visível, mas esse título não está vinculado ao campo para leitores de tela. A mesma mensagem reaparece na seção experimental; é **um problema**, não dois.
-- **Contraste insuficiente:** alguns textos dourados sobre fundo claro e textos muito apagados sobre fundo escuro são difíceis de ler. Os prints citam, entre outros, o número da OAB, a área de Dúvidas, depoimentos, endereços e a frase discreta do formulário e rodapé. É preciso conferir cada combinação no contexto; não mudar a cor de todos os textos de uma vez.
-- **Ordem de títulos:** na página inicial o título principal é seguido por “+ 20 anos” marcado como subtítulo de nível 3, sem o nível intermediário. Também há casos semelhantes em páginas institucionais.
-- **“Mapas de origem ausentes”:** esses arquivos ajudam programadores a investigar códigos compactados; o próprio relatório marca o aviso como **fora da pontuação**. Não melhora diretamente velocidade, acessibilidade ou posição no Google. Não expor código-fonte de produção só para retirar esse aviso.
-- **Muito trabalho no celular (15,7 s na linha principal; 11,6 s de execução de JavaScript):** o telefone gastou tempo executando tarefas antes de responder bem. O relatório atribui a maior parcela ao arquivo principal do próprio site (~11,5 s de CPU) e também mostra ~1,1 s somados para scripts do Google. Esses tempos são desta simulação, não o tempo universal de abertura de cada página.
-- **Código transferido antes de ser usado (~207 KiB potencialmente evitáveis):** o relatório separa ~146 KiB dos scripts do Google e ~61 KiB do site. O arquivo principal pode conter funções necessárias mais tarde; não apagar código nem remover medição de anúncios por estimativa.
-- **Imagens sem dimensões declaradas e imagens pesadas:** a logomarca do cabeçalho não declara largura/altura intrínsecas, o que pode provocar deslocamento enquanto carrega. O arquivo de 1920×641 ocupa ~340 KiB embora seja mostrado bem menor; o relatório estima ~337 KiB de economia. A foto de Carlos Javét tem ~136 KiB e aparece com uma dimensão menor na medição, mas a equipe é vista também em telas maiores e não pode perder nitidez ou ser cortada.
-- **Download total ~5,9 MB na página analisada:** o vídeo da abertura sozinho representa ~4,4 MB; depois vêm a logo (~340 KiB), o código do site, as três fotos da equipe, scripts do Google, uma fonte e dados externos do globo. A prioridade é reduzir o vídeo e entregar imagem/tamanho adequado por dispositivo sem mudar o conteúdo ou o visual.
-- **Fontes e estilo atrasam o primeiro desenho:** a cadeia identificada vai da página às fontes externas do Google (até ~1,2 s nessa medição) e a uma folha de estilos local (~300 ms). A pré-conexão já existe e o relatório não recomenda outra origem; duplicá-la não resolveria o problema. Considerar fonte local só após verificar licença e igualdade visual.
-- **Reorganização repetida da página (“reflow forçado”):** o relatório aponta cerca de 0,5 s sem atribuição e ocorrências pequenas em código próprio e de terceiros. É uma pista para examinar animações e leituras de medidas em movimento, não autorização para desativá-las indiscriminadamente.
+- **15,7 s de trabalho da página e 11,6 s executando JavaScript:** o telefone analisado gastou muito tempo processando o arquivo principal do site e, em menor parte, Google Tag Manager. Isso pode atrasar a resposta ao toque.
+- **Cerca de 207 KiB de JavaScript não usado:** é uma estimativa do teste. Aproximadamente 146 KiB são do Google Tag Manager e 61 KiB do próprio site. Não retirarei o Google Tag Manager sem antes confirmar quais medições e conversões dependem dele.
+- **Imagens sem largura e altura declaradas:** o navegador reserva o espaço tarde, podendo causar pequenos movimentos durante a abertura.
+- **Página de cerca de 5,9 MB:** o maior arquivo é o vídeo inicial, com cerca de 4,4 MB. A logomarca de 1.920 × 641 px pesa cerca de 340 KiB apesar de aparecer pequena; fotos, fontes e scripts completam o total.
+- **Arquivos que atrasam a primeira exibição:** a folha visual do site e as fontes externas entram no caminho inicial. A fonte pode acrescentar aproximadamente 1,2 s no cenário medido.
+- **Reorganização forçada da página por cerca de 0,5 s:** alguns cálculos de posição são repetidos pelo navegador. Parte não foi atribuída pelo relatório; será corrigida somente onde a medição mostrar causa concreta.
+- **Otimização estimada de imagens em cerca de 585 KiB:** concentra-se sobretudo na logomarca e nas fotos da equipe. As fotos deverão continuar inteiras, nítidas, alinhadas e sem cortes.
 
-## Alcance confirmado no site atual
+## Alertas anteriores já confirmados
 
-Conferi os oito prints, os elementos do site e os **106 endereços de página diretamente definidos**: 99 páginas de destino e 7 páginas institucionais (Home, Perfil, Áreas de Atuação, Dúvidas, Fale Conosco, lista de Artigos e o registro de artigo). Todos responderam à consulta local. A página individual de artigo é dinâmica e tem cerca de 35 artigos; ela foi conferida por amostra, não como 35 auditorias completas. Os resultados locais não equivalem a 106 relatórios oficiais do PageSpeed do domínio publicado.
+- O campo **Tipo do Caso** não possui uma identificação técnica associada em todas as 105 páginas-base que exibem o formulário.
+- Há textos específicos com contraste insuficiente.
+- Há saltos na ordem dos títulos em páginas específicas.
+- O aviso sobre “mapas de origem” do JavaScript é informativo para programadores; ativá-los publicamente não melhora a velocidade e pode expor detalhes do código, portanto não será tratado como correção.
+- A auditoria complementar cobrirá também os 33 artigos individuais, além das páginas institucionais e das 99 páginas de destino.
 
-- O campo “Tipo do Caso” sem associação com seu título aparece em **105 dos 106 endereços-base**; a lista `/artigos` não tem esse campo. Também aparece na página individual de artigo examinada, por reutilizar o formulário. Uma correção no formulário compartilhado alcança todos esses locais.
-- O rodapé institucional contém texto muito apagado e está presente nos endereços institucionais; as 99 páginas de destino têm rodapé próprio. O contraste varia por seção e precisa ser medido em ambas as famílias de página e nos artigos.
-- A ordem de títulos apresentou saltos em **5 dos 106 endereços-base** pela inspeção automática: páginas institucionais, não nas 99 páginas de destino examinadas. A página individual de artigo merece verificação separada, inclusive o sumário.
-- Os novos prints também citam `/assets/index-Di85jee7.js` no domínio `bragabitencourt.com`: agora há tempos e tamanhos **da página medida**, mas não resultados de todas as páginas. O código atual e o domínio publicado podem estar em versões diferentes; comparar antes de mexer. No código atual, a mesma logo local aparece no cabeçalho institucional e nas 99 páginas de destino; a equipe aparece nas duas famílias; a abertura da Home usa vídeo local; fontes e gerenciador de tags são carregados pelo site; o globo requisita dados externos. Portanto os arquivos compartilhados podem afetar várias páginas, enquanto vídeo e globo não devem ser presumidos em todas.
+## Plano de ação em etapas seguras
 
-## Plano de ação, somente após autorização
+### 1. Registrar uma base antes de alterar
 
-1. **Registrar o ponto de partida:** guardar as medições completas do domínio publicado em celular e computador para Home, uma página de cada família de destino, Dúvidas, Contato, Artigos e um artigo; conferir também as demais páginas com checagem automática. Separar avisos de acessibilidade dos de desempenho, sem prometer ganho de velocidade com correções que não afetam o carregamento.
-2. **Corrigir o formulário compartilhado primeiro:** vincular cada título ao respectivo campo (incluindo o menu “Tipo do Caso”), sem alterar aparência, opções, texto digitado ou envio ao WhatsApp. Testar seleção, preenchimento, limpeza e envio em celular/computador, nas páginas institucionais e de destino.
-3. **Corrigir contraste com precisão:** medir cada trecho apontado contra o fundo em que aparece e ajustar só a cor/tonalidade necessária para tornar o texto legível. Preservar identidade dourado/azul, textos, tamanho, posições, fotos e estrutura. Verificar o contraste em fundos e estados interativos reais, sem clarear ou escurecer o site inteiro.
-4. **Ajustar a hierarquia dos títulos sem mudar o visual:** corrigir apenas a marcação interna dos títulos que pulam níveis, incluindo os cartões “+ 20 anos”, e conferir FAQ, Perfil, artigos e sumário. Manter exatamente a aparência e as palavras visíveis.
-5. **Investigar o que realmente ocupa o telefone:** medir por página o tamanho transferido, o momento de carregamento do vídeo, o tempo de resposta e quais scripts fazem trabalho no início. Comparar a Home (vídeo/globo), institucionais com e sem seções compartilhadas, páginas de destino e artigo. Antes de qualquer ajuste no gerenciador de tags, inventariar eventos de contato, anúncios e conversões: preservá-los e pedir autorização específica se alguma mudança de disparo for necessária.
-6. **Otimizar mídia sem trocar imagens ou apresentação:** preparar uma versão menor do **mesmo vídeo** e uma imagem de espera extraída dele, testar se começo, nitidez, movimento, reprodução automática, som e visual permanecem equivalentes; manter o original para voltar atrás. Preparar variantes menores da **mesma logomarca** para os tamanhos reais do cabeçalho e verificar que letras/detalhes seguem legíveis; fornecer dimensões intrínsecas sem alterar o tamanho visual. Para as três fotos da equipe, avaliar versões adequadas a celular/computador preservando enquadramento integral, ordem, nomes e alt, sem cortes. Implementar apenas se as comparações visuais e de tamanho confirmarem ganho real.
-7. **Reduzir espera de código e fontes com cautela:** examinar o arquivo principal para carregar partes secundárias só quando necessárias, sem esconder conteúdo de buscadores nem quebrar menus, formulários e interações. Testar fonte local com as mesmas famílias, pesos e medidas antes de substituir a fonte externa. Examinar o carregamento externo do globo e guardar os dados localmente **somente se** fonte/licença/atualização permitirem. Investigar as ocorrências de reflow; alterar apenas o que for medido como custo relevante e não remover animações à cegas.
-8. **Validar antes de publicar:** repetir a checagem em todos os 106 endereços-base e nos artigos individuais, e testar amostras visualmente no celular e computador. Confirmar um cabeçalho/rodapé em cada página, logos, vídeo e imagens carregando, funcionamento de formulário/menu/carrossel e eventos de medição, acessibilidade e diferenças visuais; comparar novamente o PageSpeed no domínio publicado **depois da publicação autorizada**, sabendo que a nota pode variar entre medições.
+- Medir Home, uma página institucional, uma página de destino local, uma internacional, a lista de artigos e artigos individuais, sempre no telefone e no computador.
+- Registrar peso transferido, tempo de abertura, mudanças de posição, erros visuais, carregamentos externos e eventos de anúncios.
+- Fazer cada grupo de correções separadamente para permitir comparação e reversão.
 
-## Proteções e limites
+### 2. Corrigir acessibilidade sem mudar o visual
 
-- **Nenhuma correção foi feita nesta etapa.** Não alterar fotos, textos alternativos, textos jurídicos, botões, cabeçalhos, rodapés, endereços, SEO, rotas ou envio de contatos além da ligação invisível entre títulos e campos e de ajustes estritamente necessários à legibilidade/ordem semântica.
-- Aplicar mudanças pequenas e reversíveis, começando pelos trechos compartilhados; parar e investigar se algum teste visual ou de funcionamento mostrar regressão.
-- Não criar mapas de origem públicos apenas para satisfazer um aviso informativo. Não mudar hospedagem nem remover scripts externos. As otimizações propostas de vídeo, fontes e imagens ficam condicionadas à medição e comparação visual; apresentar qualquer impacto antes de publicar. Mudanças em anúncios/conversões ou em dados externos exigem decisão específica antes de executar.
-- O objetivo é melhorar acessibilidade e compreensão; **não há garantia de nota 100, abertura mais rápida ou primeiro lugar no Google** a partir desses prints.
-- Não mudar nenhum visual, nenhuma imagem pode ser trocada de lugar ou alterada visualmente, o site tem que se manter funcionando perfeitamente, com todos links, mensagens, text alt, url, botões, etc. Só é permitido fazer mudanças que vão otimizar e não mudar em nada o visual e vão melhorar a otimização. Caso contrário me pergunte.
+- Associar corretamente os nomes visíveis aos campos do formulário, incluindo **Tipo do Caso**.
+- Corrigir somente os textos cujo contraste reprovar, mantendo a identidade dourada e azul-marinho.
+- Organizar os níveis de títulos sem alterar palavras, tamanho, posição ou aparência.
+- Conferir nomes de botões, pesquisa, navegação por teclado, foco visível e ordem de leitura.
+
+### 3. Reduzir imagens sem corte ou troca visual
+
+- Criar uma versão da logomarca adequada ao tamanho em que aparece e declarar suas dimensões para o navegador.
+- Criar versões mais leves das fotos da equipe, preservando enquadramento integral, proporção, ordem e qualidade facial.
+- Declarar dimensões nas imagens compartilhadas e nas capas de artigos para estabilizar a página.
+- Não substituir nenhuma fotografia por outra e não alterar textos alternativos já aprovados.
+
+### 4. Reduzir o vídeo inicial com proteção visual
+
+- Manter o mesmo vídeo, produzindo uma versão menor e visualmente comparável.
+- Adicionar uma imagem de espera retirada do próprio vídeo, para evitar área vazia durante o carregamento.
+- Comparar lado a lado em telefone e computador antes de aceitar a versão; rejeitar se houver perda perceptível.
+
+### 5. Diminuir bloqueios e processamento
+
+- Testar cópias locais das mesmas fontes, respeitando licença e comparando letras, pesos e quebras de linha antes da troca.
+- Carregar o globo e seus dados somente quando a seção estiver próxima da tela, mantendo aparência e movimento quando visível; usar dados locais apenas se a licença da fonte permitir.
+- Separar código pesado que não é necessário na primeira tela e confirmar que menus, formulários, carrosséis e artigos continuam funcionando.
+- Medir os pontos de reorganização forçada antes de modificar animações; nenhuma animação será removida indiscriminadamente.
+
+### 6. Preservar anúncios e medições
+
+- Inventariar os eventos do Google Tag Manager e verificar quais são usados para WhatsApp, formulário e conversões.
+- Não remover, atrasar ou trocar o Google Tag Manager enquanto isso não estiver comprovado.
+- Se ele continuar pesado, apresentar uma proposta separada com efeito esperado e risco antes de qualquer alteração.
+
+### 7. Verificação ampla antes de concluir
+
+- Validar as 99 páginas de destino, as páginas institucionais, a lista de artigos e os 33 artigos individuais.
+- Conferir no telefone e no computador: cabeçalho, rodapé, logomarca, vídeo, equipe, formulários, WhatsApp, carrosséis, globo, imagens, textos alternativos e títulos.
+- Confirmar ausência de imagens quebradas, mudanças de layout, erros na tela e falhas no carregamento.
+- Repetir as medições nas mesmas páginas da base e comparar os números.
+- Não publicar sem uma autorização separada.
+
+## Limites e segurança
+
+- Corrigir estes alertas tende a melhorar abertura, estabilidade, acessibilidade e experiência, mas não garante nota 100 nem primeiro lugar no Google.
+- Resultados do PageSpeed variam conforme aparelho, rede e serviços externos.
+- A execução será por etapas; se uma mudança alterar o visual, as fontes, o enquadramento ou as medições, ela será revertida antes de seguir.
+- Nenhum conteúdo, cabeçalho, rodapé, ordem, fotografia ou texto alternativo será alterado por este plano.
