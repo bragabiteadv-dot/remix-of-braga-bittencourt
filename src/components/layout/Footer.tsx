@@ -222,7 +222,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="text-center">
-          <p className="text-xs text-white/40 tracking-wider">
+          <p className="text-xs text-white/70 tracking-wider">
             ALL RIGHTS RESERVED © 2026 BRAGA BITENCOURT ADVOGADOS
           </p>
         </div>

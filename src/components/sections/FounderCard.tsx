@@ -88,7 +88,7 @@ export function FounderCard() {
             <h2 className="text-navy text-4xl font-cinzel mb-4 leading-tight uppercase">
               Dr. Carlos Javét Bitencourt
             </h2>
-            <span className="text-navy/40 font-bold text-xs uppercase tracking-widest mb-8 block">OAB 107 192 MG</span>
+            <span className="text-navy/70 font-bold text-xs uppercase tracking-widest mb-8 block">OAB 107 192 MG</span>
 
             <ul className="space-y-2.5">
               {credentials.map((item, idx) => (
