@@ -80,6 +80,8 @@ export function Header() {
             <img 
               src={headerLogo} 
               alt="Braga Bitencourt Advogados especializados em Direito de Família, Sucessões e Internacional Privado." 
+              width={720}
+              height={240}
               className="h-10 md:h-12 w-auto object-contain"
               loading="eager"
               fetchPriority="high"

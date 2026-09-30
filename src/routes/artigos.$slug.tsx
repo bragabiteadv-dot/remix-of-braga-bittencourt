@@ -191,7 +191,7 @@ function ArticlePage() {
             <header className="lg:col-start-2">
               <div className="relative rounded-2xl overflow-hidden aspect-square mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
                 {article.image ? (
-                  <img src={article.image} alt={article.imageAlt ?? article.title} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
+                  <img src={article.image} alt={article.imageAlt ?? article.title} width={900} height={900} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-[#f5eee0] via-[#faf6ed] to-[#e8dcc4] flex flex-col items-center justify-center gap-3">
                     <div className="w-20 h-20 rounded-full bg-white/60 backdrop-blur flex items-center justify-center">
@@ -318,9 +318,9 @@ function ArticlePage() {
 
               {/* Bottom CTA */}
               <div className="mt-16 p-8 md:p-10 rounded-2xl bg-navy text-center">
-                <h3 className="text-white font-cinzel text-2xl md:text-3xl mb-3">
+                <h2 className="text-white font-cinzel text-2xl md:text-3xl mb-3">
                   Precisa de orientação sobre este tema?
-                </h3>
+                </h2>
                 <p className="text-white/60 font-montserrat text-sm md:text-base mb-6 max-w-xl mx-auto">
                   Nossa equipe está pronta para analisar seu caso com sigilo absoluto e propor a melhor estratégia jurídica.
                 </p>
@@ -330,9 +330,9 @@ function ArticlePage() {
               {/* Related */}
               {related.length > 0 && (
                 <div className="mt-16">
-                  <h3 className="text-navy font-cinzel text-2xl md:text-3xl mb-8">
+                  <h2 className="text-navy font-cinzel text-2xl md:text-3xl mb-8">
                     Continue lendo
-                  </h3>
+                  </h2>
                   <div className="grid gap-6 md:grid-cols-2">
                     {related.map((r) => (
                       <Link
@@ -343,7 +343,7 @@ function ArticlePage() {
                       >
                         <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#f5eee0] to-[#e8dcc4] flex items-center justify-center">
                           {r.image ? (
-                            <img src={r.image} alt={r.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <img src={r.image} alt={r.title} width={600} height={600} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                           ) : (
                             <ImageIcon size={28} className="text-gold-light/70" />
                           )}
@@ -352,9 +352,9 @@ function ArticlePage() {
                           <p className="text-[10px] uppercase tracking-widest text-gold-light font-montserrat font-semibold mb-2">
                             {r.category}
                           </p>
-                          <h4 className="text-navy font-cinzel text-base leading-snug line-clamp-3">
+                          <h3 className="text-navy font-cinzel text-base leading-snug line-clamp-3">
                             {r.title}
-                          </h4>
+                          </h3>
                         </div>
                       </Link>
                     ))}

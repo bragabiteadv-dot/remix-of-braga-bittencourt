@@ -1,4 +1,4 @@
-import RotatingEarth from '@/components/ui/wireframe-dotted-globe';
+import { DeferredGlobe } from './DeferredGlobe';
 
 export const GlobalReach = () => {
   return (
@@ -23,7 +23,7 @@ export const GlobalReach = () => {
 
         {/* Right Content - Map */}
         <div className="flex-1 flex justify-center items-center relative">
-          <RotatingEarth width={600} height={600} />
+          <DeferredGlobe />
         </div>
       </div>
     </section>

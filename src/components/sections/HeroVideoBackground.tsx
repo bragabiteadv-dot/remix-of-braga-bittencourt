@@ -1,4 +1,5 @@
 import heroVideo from "../../assets/hero-bg.mp4";
+import heroPoster from "../../assets/hero-poster.webp";
 
 export function HeroVideoBackground() {
   return (
@@ -6,6 +7,7 @@ export function HeroVideoBackground() {
       <video
         className="w-full h-full object-cover"
         src={heroVideo}
+        poster={heroPoster}
         autoPlay
         muted
         loop
