@@ -148,7 +148,6 @@ export const FAQ = ({
           <div className="flex gap-4 mb-10">
             <div className="relative flex-1">
               <input
-                aria-label="Pesquisar nas perguntas"
                 type="text"
                 placeholder="Pesquisar nas perguntas..."
                 className="w-full pl-5 pr-4 py-4 rounded-xl border border-gray-200 focus:border-[#c5a880] focus:ring-2 focus:ring-[#c5a880]/20 outline-none transition-all shadow-sm font-montserrat text-black"
@@ -167,7 +166,7 @@ export const FAQ = ({
           <div className="space-y-12">
             {filteredData.map((category) => (
               <div key={category.category}>
-                <h3 className="text-gold-readable text-lg font-bold uppercase tracking-wider mb-6 border-l-4 border-[#c5a880] pl-4 font-montserrat">
+                <h3 className="text-[#c5a880] text-lg font-bold uppercase tracking-wider mb-6 border-l-4 border-[#c5a880] pl-4 font-montserrat">
                   {category.category}
                 </h3>
                 
@@ -184,7 +183,7 @@ export const FAQ = ({
                         onClick={() => toggleAccordion(item.id)}
                       >
                         <div className="flex items-center gap-4">
-                          <span className="text-gold-readable text-[13px] font-extrabold border border-[#c5a880]/30 px-2 py-1 rounded-lg bg-[#f5eedf] font-montserrat">
+                          <span className="text-[#c5a880] text-[13px] font-extrabold border border-[#c5a880]/30 px-2 py-1 rounded-lg bg-[#f5eedf] font-montserrat">
                             {item.id}
                           </span>
                           <span className="font-semibold text-sm lg:text-base text-[#08152C] font-montserrat leading-tight">
@@ -192,7 +191,7 @@ export const FAQ = ({
                           </span>
                         </div>
                         <Plus 
-                          className={`w-6 h-6 text-gold-readable transition-transform duration-300 ${activeId === item.id ? 'rotate-45' : ''}`}
+                          className={`w-6 h-6 text-[#c5a880] transition-transform duration-300 ${activeId === item.id ? 'rotate-45' : ''}`}
                         />
                       </button>
                       

@@ -110,8 +110,6 @@ function LpHeader() {
         <img
           src={curatelaBhHeaderLogo}
           alt={LOGO_ALT}
-          width={600}
-          height={200}
           className="h-12 w-auto shrink-0"
           loading="eager"
           fetchPriority="high"

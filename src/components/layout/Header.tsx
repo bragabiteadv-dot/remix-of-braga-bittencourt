@@ -70,7 +70,6 @@ export function Header() {
 
       {/* Main Nav */}
       <nav
-        aria-label="Navegação principal"
         className={cn(
           "bg-navy z-50 py-4 border-b border-white/5 shadow-xl transition-all duration-300",
           scrolled ? "fixed top-0 left-0 right-0" : "sticky top-0"
@@ -81,8 +80,6 @@ export function Header() {
             <img 
               src={headerLogo} 
               alt="Braga Bitencourt Advogados especializados em Direito de Família, Sucessões e Internacional Privado." 
-              width={600}
-              height={200}
               className="h-10 md:h-12 w-auto object-contain"
               loading="eager"
               fetchPriority="high"

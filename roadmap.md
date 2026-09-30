@@ -1,7 +1,6 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Corrigir com segurança os alertas confirmados do PageSpeed em acessibilidade e desempenho, preservando visual e métricas de anúncios
 
 ## Concluído recente
 - [x] Trocar as cinco fotos da sede em todas as páginas onde aparecem e aplicar os textos alternativos aprovados

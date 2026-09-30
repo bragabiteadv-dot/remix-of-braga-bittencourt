@@ -105,19 +105,18 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                   <MessageSquare size={16} className="text-gold-light" />
                 </div>
 
-                <h2 className="text-white text-3xl font-cinzel">
+                <h3 className="text-white text-3xl font-cinzel">
                   Converse para uma orientação inicial
-                </h2>
+                </h3>
                 <p className="text-white/60 font-montserrat text-sm">Fale conosco agora.</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Nome Field */}
                   <div className="space-y-3">
-                    <label htmlFor="contact-name" className="text-white text-xs font-bold uppercase tracking-wider block">Seu Nome</label>
+                    <label className="text-white text-xs font-bold uppercase tracking-wider block">Seu Nome</label>
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
                       <input
-                        id="contact-name"
                         type="text"
                         placeholder="Ex: Seu nome"
                         className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
@@ -129,11 +128,10 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
 
                   {/* Cidade Field */}
                   <div className="space-y-3">
-                    <label htmlFor="contact-city" className="text-white text-xs font-bold uppercase tracking-wider block">Cidade / UF</label>
+                    <label className="text-white text-xs font-bold uppercase tracking-wider block">Cidade / UF</label>
                     <div className="relative">
                       <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
                       <input
-                        id="contact-city"
                         type="text"
                         placeholder="Ex: sua cidade ou estado"
                         className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat"
@@ -149,11 +147,10 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
               <div className="space-y-8">
                 {/* Caso Field */}
                 <div className="space-y-3">
-                  <label htmlFor="contact-case" className="text-white text-xs font-bold uppercase tracking-wider block">Tipo do Caso</label>
+                  <label className="text-white text-xs font-bold uppercase tracking-wider block">Tipo do Caso</label>
                   <div className="relative">
                     <Folder className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 w-4 h-4" />
                     <select
-                      id="contact-case"
                       className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-12 py-4 text-white focus:outline-none focus:border-gold-light transition-colors appearance-none text-sm font-montserrat"
                       value={formData.caso}
                       onChange={(e) => setFormData({...formData, caso: e.target.value})}
@@ -172,11 +169,10 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
 
                 {/* Mensagem Field */}
                 <div className="space-y-3">
-                  <label htmlFor="contact-message" className="text-white text-xs font-bold uppercase tracking-wider block">Resumo do caso</label>
+                  <label className="text-white text-xs font-bold uppercase tracking-wider block">Resumo do caso</label>
                   <div className="relative">
                     <FileText className="absolute left-4 top-4 text-white/30 w-4 h-4" />
                     <textarea
-                      id="contact-message"
                       rows={5}
                       placeholder="Descreva brevemente sua situação..."
                       className="w-full bg-[#08152C] border border-white/10 rounded-sm pl-12 pr-4 py-4 text-white focus:outline-none focus:border-gold-light transition-colors placeholder:text-white/20 text-sm font-montserrat resize-none"
@@ -187,7 +183,7 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
                 </div>
 
                 <div className="space-y-6">
-                  <p className="text-white/70 text-xs font-montserrat italic">
+                  <p className="text-white/40 text-xs font-montserrat italic">
                     Conversa rápida, clara e sem complicação.
                   </p>
 
