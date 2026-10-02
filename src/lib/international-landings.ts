@@ -1509,13 +1509,20 @@ export const INTERNATIONAL_LANDING_PAGES: readonly InternationalLandingPage[] = 
   INTERNATIONAL_SERVICES.map((service, serviceIndex) => {
     const existingPath = EXISTING_PATHS.get(`${location.id}:${serviceIndex}`);
     const slug = `${service.slug}-${location.slug}`;
-    const title = location.titles[serviceIndex];
+    const isOriginalAverbacaoPage = location.id === 5 && service.id === "divorcio-direto";
+    const title = isOriginalAverbacaoPage
+      ? "Advogado para Averbação Direta de Divórcio Estrangeiro em Cartório no Brasil"
+      : location.titles[serviceIndex];
     return {
       slug,
       path: existingPath ?? `/advogado-${slug}`,
       title,
-      seoTitle: buildLandingSeoTitle(service, location),
-      description: `${service.summary} Assessoria para documentos relacionados a ${location.name}, com atendimento no Brasil e online.`,
+      seoTitle: isOriginalAverbacaoPage
+        ? "Averbação de Divórcio Estrangeiro em Cartório | Braga Bitencourt"
+        : buildLandingSeoTitle(service, location),
+      description: isOriginalAverbacaoPage
+        ? "Advogado para Averbação Direta de Divórcio Estrangeiro em Cartório no Brasil. Divórcio consensual simples pelo Provimento 53 do CNJ, sem processo no STJ."
+        : `${service.summary} Assessoria para documentos relacionados a ${location.name}, com atendimento no Brasil e online.`,
       service,
       location,
       existingPath,
