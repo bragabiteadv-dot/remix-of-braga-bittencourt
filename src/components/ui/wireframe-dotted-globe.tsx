@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import * as d3 from "d3";
+import { geoGraticule, geoOrthographic, geoPath, timer } from "d3";
+import { loadLandPoints, loadWorldData } from "@/lib/globe-resources";
 
 interface RotatingEarthProps {
   width?: number;
@@ -19,6 +20,7 @@ export default function RotatingEarth({
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    let isMounted = true;
     if (!canvasRef.current) return;
 
     const canvas = canvasRef.current;
@@ -36,78 +38,21 @@ export default function RotatingEarth({
     canvas.style.height = `${containerHeight}px`;
     context.scale(dpr, dpr);
 
-    const projection = d3
-      .geoOrthographic()
+    const projection = geoOrthographic()
       .scale(radius)
       .translate([containerWidth / 2, containerHeight / 2])
       .clipAngle(90);
 
-    const path = d3.geoPath().projection(projection).context(context);
+    const path = geoPath().projection(projection).context(context);
+    const graticule = geoGraticule();
 
-    const pointInPolygon = (point: [number, number], polygon: number[][]): boolean => {
-      const [x, y] = point;
-      let inside = false;
-      for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
-        const [xi, yi] = polygon[i];
-        const [xj, yj] = polygon[j];
-        if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) {
-          inside = !inside;
-        }
-      }
-      return inside;
-    };
-
-    const pointInFeature = (point: [number, number], feature: any): boolean => {
-      const geometry = feature.geometry;
-      if (geometry.type === "Polygon") {
-        const coordinates = geometry.coordinates;
-        if (!pointInPolygon(point, coordinates[0])) return false;
-        for (let i = 1; i < coordinates.length; i++) {
-          if (pointInPolygon(point, coordinates[i])) return false;
-        }
-        return true;
-      } else if (geometry.type === "MultiPolygon") {
-        for (const polygon of geometry.coordinates) {
-          if (pointInPolygon(point, polygon[0])) {
-            let inHole = false;
-            for (let i = 1; i < polygon.length; i++) {
-              if (pointInPolygon(point, polygon[i])) {
-                inHole = true;
-                break;
-              }
-            }
-            if (!inHole) return true;
-          }
-        }
-        return false;
-      }
-      return false;
-    };
-
-    const generateDotsInPolygon = (feature: any, dotSpacing = 16) => {
-      const dots: [number, number][] = [];
-      const bounds = d3.geoBounds(feature);
-      const [[minLng, minLat], [maxLng, maxLat]] = bounds;
-      const stepSize = dotSpacing * 0.08;
-      for (let lng = minLng; lng <= maxLng; lng += stepSize) {
-        for (let lat = minLat; lat <= maxLat; lat += stepSize) {
-          const point: [number, number] = [lng, lat];
-          if (pointInFeature(point, feature)) dots.push(point);
-        }
-      }
-      return dots;
-    };
-
-    interface DotData {
-      lng: number;
-      lat: number;
-      visible: boolean;
-    }
+    type DotData = [number, number];
 
     const allDots: DotData[] = [];
     let landFeatures: any;
 
     const render = () => {
+    let allDots: DotData[] = [];
       context.clearRect(0, 0, containerWidth, containerHeight);
       const currentScale = Math.max(0, projection.scale());
       const scaleFactor = currentScale / radius;
@@ -121,7 +66,6 @@ export default function RotatingEarth({
       context.stroke();
 
       if (landFeatures) {
-        const graticule = d3.geoGraticule();
         context.beginPath();
         path(graticule());
         context.strokeStyle = "#ffffff";
@@ -143,7 +87,7 @@ export default function RotatingEarth({
           if (
             projected &&
             projected[0] >= 0 &&
-            projected[0] <= containerWidth &&
+          const projected = projection(dot);
             projected[1] >= 0 &&
             projected[1] <= containerHeight
           ) {
@@ -156,42 +100,37 @@ export default function RotatingEarth({
       }
     };
 
-    const loadWorldData = async () => {
+    const loadData = async () => {
       try {
-        setIsLoading(true);
-        const response = await fetch("/data/world-land.json");
-        if (!response.ok) throw new Error("Não foi possível carregar o mapa");
-        landFeatures = await response.json();
-        landFeatures.features.forEach((feature: any) => {
-          const dots = generateDotsInPolygon(feature, 16);
-          dots.forEach(([lng, lat]) => {
-            allDots.push({ lng, lat, visible: true });
-          });
-        });
+        if (isMounted) if (!isLoading) setIsLoading(true);
+        const [worldData, landPoints] = await Promise.all([loadWorldData(), loadLandPoints()]);
+        if (!isMounted) return;
+        landFeatures = worldData;
+        landPoints.forEach(([lng, lat]) => allDots.push({ lng, lat, visible: true }));
         render();
         setIsLoading(false);
       } catch (err) {
-        setError("Não foi possível carregar o mapa");
-        setIsLoading(false);
+        allDots = landPoints;
+          setError("Erro ao carregar os dados geográficos. Por favor, verifique sua conexão.");
+          setIsLoading(false);
+        }
       }
     };
 
     const rotation: [number, number] = [0, 0];
     let autoRotate = true;
     const rotationSpeed = 0.5;
-    // Performance only: skip frames while the canvas is off-screen.
-    // Visual appearance and rotation speed while visible are unchanged.
     let isInViewport = true;
 
     const rotate = () => {
-      if (autoRotate && isInViewport) {
+      if (autoRotate && isInViewport && isMounted) {
         rotation[0] += rotationSpeed;
         projection.rotate(rotation);
         render();
       }
     };
 
-    const rotationTimer = d3.timer(rotate);
+    const rotationTimer = timer(rotate);
 
     let viewportObserver: IntersectionObserver | null = null;
     if (typeof IntersectionObserver !== "undefined") {
@@ -204,9 +143,6 @@ export default function RotatingEarth({
       viewportObserver.observe(canvas);
     }
 
-
-    // Only enable drag/scroll interactions while the pointer is over the globe
-    // circle so page scrolling is never blocked outside the globe.
     const getGlobeCenter = () => {
       const rect = canvas.getBoundingClientRect();
       return {
@@ -224,7 +160,7 @@ export default function RotatingEarth({
 
     let isHoveringGlobe = false;
     const updateCursor = () => {
-      canvas.style.cursor = isHoveringGlobe ? "grab" : "default";
+      if (canvas) canvas.style.cursor = isHoveringGlobe ? "grab" : "default";
     };
 
     const handleMouseMoveHover = (event: MouseEvent) => {
@@ -237,6 +173,9 @@ export default function RotatingEarth({
       updateCursor();
     };
 
+    let currentHandleMouseMove: ((e: MouseEvent) => void) | null = null;
+    let currentHandleMouseUp: (() => void) | null = null;
+
     const handleMouseDown = (event: MouseEvent) => {
       if (!isPointOverGlobe(event.clientX, event.clientY)) return;
       autoRotate = false;
@@ -246,12 +185,12 @@ export default function RotatingEarth({
       const startRotation: [number, number] = [rotation[0], rotation[1]];
 
       const handleMouseMove = (moveEvent: MouseEvent) => {
+        if (!isMounted) return;
         const sensitivity = 0.5;
         const dx = moveEvent.clientX - startX;
         const dy = moveEvent.clientY - startY;
         rotation[0] = startRotation[0] + dx * sensitivity;
-        rotation[1] = startRotation[1] - dy * sensitivity;
-        rotation[1] = Math.max(-90, Math.min(90, rotation[1]));
+        rotation[1] = Math.max(-90, Math.min(90, startRotation[1] - dy * sensitivity));
         projection.rotate(rotation);
         render();
       };
@@ -259,12 +198,16 @@ export default function RotatingEarth({
       const handleMouseUp = () => {
         document.removeEventListener("mousemove", handleMouseMove);
         document.removeEventListener("mouseup", handleMouseUp);
-        canvas.style.cursor = isHoveringGlobe ? "grab" : "default";
+        currentHandleMouseMove = null;
+        currentHandleMouseUp = null;
+        if (canvas) canvas.style.cursor = isHoveringGlobe ? "grab" : "default";
         setTimeout(() => {
-          autoRotate = true;
+          if (isMounted) autoRotate = true;
         }, 10);
       };
 
+      currentHandleMouseMove = handleMouseMove;
+      currentHandleMouseUp = handleMouseUp;
       document.addEventListener("mousemove", handleMouseMove);
       document.addEventListener("mouseup", handleMouseUp);
     };
@@ -281,10 +224,6 @@ export default function RotatingEarth({
       render();
     };
 
-    // Touch support: one finger drags to rotate, two fingers pinch to zoom.
-    // A gesture is activated only when it starts on the visible globe circle.
-    // Touches that start on the canvas but outside the circle are ignored so
-    // the page can keep scrolling normally on mobile.
     let touchStart: { x: number; y: number } | null = null;
     let touchStartRotation: [number, number] = [0, 0];
     let pinchStartDistance = 0;
@@ -343,7 +282,7 @@ export default function RotatingEarth({
     };
 
     const handleTouchMove = (event: TouchEvent) => {
-      if (!isTouchGestureActive) return;
+      if (!isTouchGestureActive || !isMounted) return;
 
       event.preventDefault();
 
@@ -374,7 +313,7 @@ export default function RotatingEarth({
       if (event.touches.length === 0) {
         resetTouchGesture();
         setTimeout(() => {
-          autoRotate = true;
+          if (isMounted) autoRotate = true;
         }, 10);
       } else if (event.touches.length === 1) {
         const firstTouch = event.touches[0];
@@ -394,9 +333,10 @@ export default function RotatingEarth({
     canvas.addEventListener("touchend", handleTouchEnd);
     canvas.addEventListener("touchcancel", handleTouchEnd);
 
-    loadWorldData();
+    loadData();
 
     return () => {
+      isMounted = false;
       rotationTimer.stop();
       viewportObserver?.disconnect();
       canvas.removeEventListener("mousemove", handleMouseMoveHover);
@@ -407,17 +347,22 @@ export default function RotatingEarth({
       canvas.removeEventListener("touchmove", handleTouchMove);
       canvas.removeEventListener("touchend", handleTouchEnd);
       canvas.removeEventListener("touchcancel", handleTouchEnd);
+
+      if (currentHandleMouseMove) {
+        document.removeEventListener("mousemove", currentHandleMouseMove);
+      }
+      if (currentHandleMouseUp) {
+        document.removeEventListener("mouseup", currentHandleMouseUp);
+      }
     };
-
-
   }, [width, height]);
 
   if (error) {
     return (
       <div className={`flex items-center justify-center ${className}`}>
         <div className="text-center">
-          <p className="text-red-500 font-semibold">Não foi possível carregar o globo</p>
-          <p className="text-sm text-gray-400">{error}</p>
+          <p className="text-red-500 font-semibold">Ops! Ocorreu um problema</p>
+          <p className="text-sm text-gray-400 mb-4">{error}</p><button onClick={() => window.location.reload()} className="text-xs text-white/60 hover:text-white underline transition-colors">Tentar novamente</button>
         </div>
       </div>
     );
@@ -430,7 +375,7 @@ export default function RotatingEarth({
         className="touch-auto"
       />
       {isLoading && (
-        <p className="text-sm text-gray-400 mt-2">Carregando globo…</p>
+        <p className="text-sm text-gray-400 mt-2">Carregando Dados do Globo…</p>
       )}
       <p className="text-xs text-gray-500 mt-2">Arraste para girar • Role para ampliar</p>
     </div>

@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Acelerar o carregamento do globo sem alterar aparência, movimento, zoom ou gestos
 
 ## Concluído recente
 - [x] Trocar quatro imagens compartilhadas, melhorar a nitidez do aperto de mãos e suavizar diagonalmente a máscara da seção Nossa Equipe
