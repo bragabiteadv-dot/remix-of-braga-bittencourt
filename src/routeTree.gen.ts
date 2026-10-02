@@ -9,261 +9,607 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/validacao-homologacao-sentenca-estrangeira'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as PerfilRouteImport } from './routes/perfil'
-import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
-import { Route as DuvidasRouteImport } from './routes/duvidas'
-import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
-import { Route as AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport } from './routes/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
-import { Route as AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/advogado-validacao-homologacao-sentenca-estrangeira'
-import { Route as AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRouteImport } from './routes/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
-import { Route as AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRouteImport } from './routes/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
-import { Route as AdvogadoRevisaoPensaoNovaLimaRouteImport } from './routes/advogado-revisao-pensao-nova-lima'
-import { Route as AdvogadoRevisaoPensaoIgarapeRouteImport } from './routes/advogado-revisao-pensao-igarape'
-import { Route as AdvogadoRevisaoPensaoContagemRouteImport } from './routes/advogado-revisao-pensao-contagem'
-import { Route as AdvogadoRevisaoPensaoBhRouteImport } from './routes/advogado-revisao-pensao-bh'
-import { Route as AdvogadoRevisaoPensaoBetimRouteImport } from './routes/advogado-revisao-pensao-betim'
-import { Route as AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRouteImport } from './routes/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
-import { Route as AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRouteImport } from './routes/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
-import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
-import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
-import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
-import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
-import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
-import { Route as AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRouteImport } from './routes/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
-import { Route as AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRouteImport } from './routes/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
-import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
-import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
-import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
-import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
-import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
-import { Route as AdvogadoPensaoAlimenticiaNovaLimaRouteImport } from './routes/advogado-pensao-alimenticia-nova-lima'
-import { Route as AdvogadoPensaoAlimenticiaIgarapeRouteImport } from './routes/advogado-pensao-alimenticia-igarape'
-import { Route as AdvogadoPensaoAlimenticiaContagemRouteImport } from './routes/advogado-pensao-alimenticia-contagem'
-import { Route as AdvogadoPensaoAlimenticiaBhRouteImport } from './routes/advogado-pensao-alimenticia-bh'
-import { Route as AdvogadoPensaoAlimenticiaBetimRouteImport } from './routes/advogado-pensao-alimenticia-betim'
-import { Route as AdvogadoMudancaRegimeBensCasamentoNovaLimaRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-nova-lima'
-import { Route as AdvogadoMudancaRegimeBensCasamentoIgarapeRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-igarape'
-import { Route as AdvogadoMudancaRegimeBensCasamentoContagemRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-contagem'
-import { Route as AdvogadoMudancaRegimeBensCasamentoBhRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-bh'
-import { Route as AdvogadoMudancaRegimeBensCasamentoBetimRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-betim'
-import { Route as AdvogadoInventarioNovaLimaRouteImport } from './routes/advogado-inventario-nova-lima'
-import { Route as AdvogadoInventarioIgarapeRouteImport } from './routes/advogado-inventario-igarape'
-import { Route as AdvogadoInventarioContagemRouteImport } from './routes/advogado-inventario-contagem'
-import { Route as AdvogadoInventarioBhRouteImport } from './routes/advogado-inventario-bh'
-import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-inventario-betim'
-import { Route as AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRouteImport } from './routes/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
-import { Route as AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRouteImport } from './routes/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
-import { Route as AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport } from './routes/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
-import { Route as AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRouteImport } from './routes/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
-import { Route as AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport } from './routes/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
-import { Route as AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRouteImport } from './routes/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
-import { Route as AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRouteImport } from './routes/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
-import { Route as AdvogadoGuardaNovaLimaRouteImport } from './routes/advogado-guarda-nova-lima'
-import { Route as AdvogadoGuardaIgarapeRouteImport } from './routes/advogado-guarda-igarape'
-import { Route as AdvogadoGuardaContagemRouteImport } from './routes/advogado-guarda-contagem'
-import { Route as AdvogadoGuardaCompartilhadaNovaLimaRouteImport } from './routes/advogado-guarda-compartilhada-nova-lima'
-import { Route as AdvogadoGuardaCompartilhadaIgarapeRouteImport } from './routes/advogado-guarda-compartilhada-igarape'
-import { Route as AdvogadoGuardaCompartilhadaContagemRouteImport } from './routes/advogado-guarda-compartilhada-contagem'
-import { Route as AdvogadoGuardaCompartilhadaBhRouteImport } from './routes/advogado-guarda-compartilhada-bh'
-import { Route as AdvogadoGuardaCompartilhadaBetimRouteImport } from './routes/advogado-guarda-compartilhada-betim'
-import { Route as AdvogadoGuardaBhRouteImport } from './routes/advogado-guarda-bh'
-import { Route as AdvogadoGuardaBetimRouteImport } from './routes/advogado-guarda-betim'
-import { Route as AdvogadoFixacaoPensaoNovaLimaRouteImport } from './routes/advogado-fixacao-pensao-nova-lima'
-import { Route as AdvogadoFixacaoPensaoIgarapeRouteImport } from './routes/advogado-fixacao-pensao-igarape'
-import { Route as AdvogadoFixacaoPensaoContagemRouteImport } from './routes/advogado-fixacao-pensao-contagem'
-import { Route as AdvogadoFixacaoPensaoBhRouteImport } from './routes/advogado-fixacao-pensao-bh'
-import { Route as AdvogadoFixacaoPensaoBetimRouteImport } from './routes/advogado-fixacao-pensao-betim'
-import { Route as AdvogadoFamiliaNovaLimaRouteImport } from './routes/advogado-familia-nova-lima'
-import { Route as AdvogadoFamiliaIgarapeRouteImport } from './routes/advogado-familia-igarape'
-import { Route as AdvogadoFamiliaContagemRouteImport } from './routes/advogado-familia-contagem'
-import { Route as AdvogadoFamiliaBhRouteImport } from './routes/advogado-familia-bh'
-import { Route as AdvogadoFamiliaBetimRouteImport } from './routes/advogado-familia-betim'
-import { Route as AdvogadoExoneracaoPensaoNovaLimaRouteImport } from './routes/advogado-exoneracao-pensao-nova-lima'
-import { Route as AdvogadoExoneracaoPensaoIgarapeRouteImport } from './routes/advogado-exoneracao-pensao-igarape'
-import { Route as AdvogadoExoneracaoPensaoContagemRouteImport } from './routes/advogado-exoneracao-pensao-contagem'
-import { Route as AdvogadoExoneracaoPensaoBhRouteImport } from './routes/advogado-exoneracao-pensao-bh'
-import { Route as AdvogadoExoneracaoPensaoBetimRouteImport } from './routes/advogado-exoneracao-pensao-betim'
-import { Route as AdvogadoExecucaoPensaoNovaLimaRouteImport } from './routes/advogado-execucao-pensao-nova-lima'
-import { Route as AdvogadoExecucaoPensaoIgarapeRouteImport } from './routes/advogado-execucao-pensao-igarape'
-import { Route as AdvogadoExecucaoPensaoContagemRouteImport } from './routes/advogado-execucao-pensao-contagem'
-import { Route as AdvogadoExecucaoPensaoBhRouteImport } from './routes/advogado-execucao-pensao-bh'
-import { Route as AdvogadoExecucaoPensaoBetimRouteImport } from './routes/advogado-execucao-pensao-betim'
-import { Route as AdvogadoDivorcioNovaLimaRouteImport } from './routes/advogado-divorcio-nova-lima'
-import { Route as AdvogadoDivorcioIgarapeRouteImport } from './routes/advogado-divorcio-igarape'
-import { Route as AdvogadoDivorcioExtrajudicialNovaLimaRouteImport } from './routes/advogado-divorcio-extrajudicial-nova-lima'
-import { Route as AdvogadoDivorcioExtrajudicialIgarapeRouteImport } from './routes/advogado-divorcio-extrajudicial-igarape'
-import { Route as AdvogadoDivorcioExtrajudicialContagemRouteImport } from './routes/advogado-divorcio-extrajudicial-contagem'
-import { Route as AdvogadoDivorcioExtrajudicialBhRouteImport } from './routes/advogado-divorcio-extrajudicial-bh'
-import { Route as AdvogadoDivorcioExtrajudicialBetimRouteImport } from './routes/advogado-divorcio-extrajudicial-betim'
-import { Route as AdvogadoDivorcioContagemRouteImport } from './routes/advogado-divorcio-contagem'
-import { Route as AdvogadoDivorcioBhRouteImport } from './routes/advogado-divorcio-bh'
-import { Route as AdvogadoDivorcioBetimRouteImport } from './routes/advogado-divorcio-betim'
-import { Route as AdvogadoCuratelaNovaLimaRouteImport } from './routes/advogado-curatela-nova-lima'
-import { Route as AdvogadoCuratelaIgarapeRouteImport } from './routes/advogado-curatela-igarape'
-import { Route as AdvogadoCuratelaContagemRouteImport } from './routes/advogado-curatela-contagem'
-import { Route as AdvogadoCuratelaBhRouteImport } from './routes/advogado-curatela-bh'
-import { Route as AdvogadoCuratelaBetimRouteImport } from './routes/advogado-curatela-betim'
-import { Route as AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRouteImport } from './routes/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
-import { Route as AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRouteImport } from './routes/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
-import { Route as AdvogadoContratoNamoroNovaLimaRouteImport } from './routes/advogado-contrato-namoro-nova-lima'
-import { Route as AdvogadoContratoNamoroIgarapeRouteImport } from './routes/advogado-contrato-namoro-igarape'
-import { Route as AdvogadoContratoNamoroContagemRouteImport } from './routes/advogado-contrato-namoro-contagem'
-import { Route as AdvogadoContratoNamoroBhRouteImport } from './routes/advogado-contrato-namoro-bh'
-import { Route as AdvogadoContratoNamoroBetimRouteImport } from './routes/advogado-contrato-namoro-betim'
-import { Route as AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRouteImport } from './routes/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
-import { Route as AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRouteImport } from './routes/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
-import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SplatRouteImport } from './routes/$'
+import { Route as AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRouteImport } from './routes/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
+import { Route as AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRouteImport } from './routes/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
+import { Route as AdvogadoContratoNamoroBetimRouteImport } from './routes/advogado-contrato-namoro-betim'
+import { Route as AdvogadoContratoNamoroBhRouteImport } from './routes/advogado-contrato-namoro-bh'
+import { Route as AdvogadoContratoNamoroContagemRouteImport } from './routes/advogado-contrato-namoro-contagem'
+import { Route as AdvogadoContratoNamoroIgarapeRouteImport } from './routes/advogado-contrato-namoro-igarape'
+import { Route as AdvogadoContratoNamoroNovaLimaRouteImport } from './routes/advogado-contrato-namoro-nova-lima'
+import { Route as AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRouteImport } from './routes/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
+import { Route as AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRouteImport } from './routes/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
+import { Route as AdvogadoCuratelaBetimRouteImport } from './routes/advogado-curatela-betim'
+import { Route as AdvogadoCuratelaBhRouteImport } from './routes/advogado-curatela-bh'
+import { Route as AdvogadoCuratelaContagemRouteImport } from './routes/advogado-curatela-contagem'
+import { Route as AdvogadoCuratelaIgarapeRouteImport } from './routes/advogado-curatela-igarape'
+import { Route as AdvogadoCuratelaNovaLimaRouteImport } from './routes/advogado-curatela-nova-lima'
+import { Route as AdvogadoDivorcioBetimRouteImport } from './routes/advogado-divorcio-betim'
+import { Route as AdvogadoDivorcioBhRouteImport } from './routes/advogado-divorcio-bh'
+import { Route as AdvogadoDivorcioContagemRouteImport } from './routes/advogado-divorcio-contagem'
+import { Route as AdvogadoDivorcioExtrajudicialBetimRouteImport } from './routes/advogado-divorcio-extrajudicial-betim'
+import { Route as AdvogadoDivorcioExtrajudicialBhRouteImport } from './routes/advogado-divorcio-extrajudicial-bh'
+import { Route as AdvogadoDivorcioExtrajudicialContagemRouteImport } from './routes/advogado-divorcio-extrajudicial-contagem'
+import { Route as AdvogadoDivorcioExtrajudicialIgarapeRouteImport } from './routes/advogado-divorcio-extrajudicial-igarape'
+import { Route as AdvogadoDivorcioExtrajudicialNovaLimaRouteImport } from './routes/advogado-divorcio-extrajudicial-nova-lima'
+import { Route as AdvogadoDivorcioIgarapeRouteImport } from './routes/advogado-divorcio-igarape'
+import { Route as AdvogadoDivorcioNovaLimaRouteImport } from './routes/advogado-divorcio-nova-lima'
+import { Route as AdvogadoExecucaoPensaoBetimRouteImport } from './routes/advogado-execucao-pensao-betim'
+import { Route as AdvogadoExecucaoPensaoBhRouteImport } from './routes/advogado-execucao-pensao-bh'
+import { Route as AdvogadoExecucaoPensaoContagemRouteImport } from './routes/advogado-execucao-pensao-contagem'
+import { Route as AdvogadoExecucaoPensaoIgarapeRouteImport } from './routes/advogado-execucao-pensao-igarape'
+import { Route as AdvogadoExecucaoPensaoNovaLimaRouteImport } from './routes/advogado-execucao-pensao-nova-lima'
+import { Route as AdvogadoExoneracaoPensaoBetimRouteImport } from './routes/advogado-exoneracao-pensao-betim'
+import { Route as AdvogadoExoneracaoPensaoBhRouteImport } from './routes/advogado-exoneracao-pensao-bh'
+import { Route as AdvogadoExoneracaoPensaoContagemRouteImport } from './routes/advogado-exoneracao-pensao-contagem'
+import { Route as AdvogadoExoneracaoPensaoIgarapeRouteImport } from './routes/advogado-exoneracao-pensao-igarape'
+import { Route as AdvogadoExoneracaoPensaoNovaLimaRouteImport } from './routes/advogado-exoneracao-pensao-nova-lima'
+import { Route as AdvogadoFamiliaBetimRouteImport } from './routes/advogado-familia-betim'
+import { Route as AdvogadoFamiliaBhRouteImport } from './routes/advogado-familia-bh'
+import { Route as AdvogadoFamiliaContagemRouteImport } from './routes/advogado-familia-contagem'
+import { Route as AdvogadoFamiliaIgarapeRouteImport } from './routes/advogado-familia-igarape'
+import { Route as AdvogadoFamiliaNovaLimaRouteImport } from './routes/advogado-familia-nova-lima'
+import { Route as AdvogadoFixacaoPensaoBetimRouteImport } from './routes/advogado-fixacao-pensao-betim'
+import { Route as AdvogadoFixacaoPensaoBhRouteImport } from './routes/advogado-fixacao-pensao-bh'
+import { Route as AdvogadoFixacaoPensaoContagemRouteImport } from './routes/advogado-fixacao-pensao-contagem'
+import { Route as AdvogadoFixacaoPensaoIgarapeRouteImport } from './routes/advogado-fixacao-pensao-igarape'
+import { Route as AdvogadoFixacaoPensaoNovaLimaRouteImport } from './routes/advogado-fixacao-pensao-nova-lima'
+import { Route as AdvogadoGuardaBetimRouteImport } from './routes/advogado-guarda-betim'
+import { Route as AdvogadoGuardaBhRouteImport } from './routes/advogado-guarda-bh'
+import { Route as AdvogadoGuardaCompartilhadaBetimRouteImport } from './routes/advogado-guarda-compartilhada-betim'
+import { Route as AdvogadoGuardaCompartilhadaBhRouteImport } from './routes/advogado-guarda-compartilhada-bh'
+import { Route as AdvogadoGuardaCompartilhadaContagemRouteImport } from './routes/advogado-guarda-compartilhada-contagem'
+import { Route as AdvogadoGuardaCompartilhadaIgarapeRouteImport } from './routes/advogado-guarda-compartilhada-igarape'
+import { Route as AdvogadoGuardaCompartilhadaNovaLimaRouteImport } from './routes/advogado-guarda-compartilhada-nova-lima'
+import { Route as AdvogadoGuardaContagemRouteImport } from './routes/advogado-guarda-contagem'
+import { Route as AdvogadoGuardaIgarapeRouteImport } from './routes/advogado-guarda-igarape'
+import { Route as AdvogadoGuardaNovaLimaRouteImport } from './routes/advogado-guarda-nova-lima'
+import { Route as AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRouteImport } from './routes/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
+import { Route as AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRouteImport } from './routes/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
+import { Route as AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport } from './routes/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+import { Route as AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRouteImport } from './routes/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
+import { Route as AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport } from './routes/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
+import { Route as AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRouteImport } from './routes/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
+import { Route as AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRouteImport } from './routes/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
+import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-inventario-betim'
+import { Route as AdvogadoInventarioBhRouteImport } from './routes/advogado-inventario-bh'
+import { Route as AdvogadoInventarioContagemRouteImport } from './routes/advogado-inventario-contagem'
+import { Route as AdvogadoInventarioIgarapeRouteImport } from './routes/advogado-inventario-igarape'
+import { Route as AdvogadoInventarioNovaLimaRouteImport } from './routes/advogado-inventario-nova-lima'
+import { Route as AdvogadoMudancaRegimeBensCasamentoBetimRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-betim'
+import { Route as AdvogadoMudancaRegimeBensCasamentoBhRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-bh'
+import { Route as AdvogadoMudancaRegimeBensCasamentoContagemRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-contagem'
+import { Route as AdvogadoMudancaRegimeBensCasamentoIgarapeRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-igarape'
+import { Route as AdvogadoMudancaRegimeBensCasamentoNovaLimaRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-nova-lima'
+import { Route as AdvogadoPensaoAlimenticiaBetimRouteImport } from './routes/advogado-pensao-alimenticia-betim'
+import { Route as AdvogadoPensaoAlimenticiaBhRouteImport } from './routes/advogado-pensao-alimenticia-bh'
+import { Route as AdvogadoPensaoAlimenticiaContagemRouteImport } from './routes/advogado-pensao-alimenticia-contagem'
+import { Route as AdvogadoPensaoAlimenticiaIgarapeRouteImport } from './routes/advogado-pensao-alimenticia-igarape'
+import { Route as AdvogadoPensaoAlimenticiaNovaLimaRouteImport } from './routes/advogado-pensao-alimenticia-nova-lima'
+import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
+import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
+import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
+import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
+import { Route as AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport } from './routes/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
+import { Route as AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRouteImport } from './routes/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
+import { Route as AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRouteImport } from './routes/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
+import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+import { Route as AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRouteImport } from './routes/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
+import { Route as AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRouteImport } from './routes/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
+import { Route as AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRouteImport } from './routes/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
+import { Route as AdvogadoRevisaoPensaoBetimRouteImport } from './routes/advogado-revisao-pensao-betim'
+import { Route as AdvogadoRevisaoPensaoBhRouteImport } from './routes/advogado-revisao-pensao-bh'
+import { Route as AdvogadoRevisaoPensaoContagemRouteImport } from './routes/advogado-revisao-pensao-contagem'
+import { Route as AdvogadoRevisaoPensaoIgarapeRouteImport } from './routes/advogado-revisao-pensao-igarape'
+import { Route as AdvogadoRevisaoPensaoNovaLimaRouteImport } from './routes/advogado-revisao-pensao-nova-lima'
+import { Route as AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRouteImport } from './routes/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
+import { Route as AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRouteImport } from './routes/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
+import { Route as AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/advogado-validacao-homologacao-sentenca-estrangeira'
+import { Route as AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport } from './routes/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
+import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
+import { Route as DuvidasRouteImport } from './routes/duvidas'
+import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
+import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/validacao-homologacao-sentenca-estrangeira'
 import { Route as ArtigosIndexRouteImport } from './routes/artigos.index'
 import { Route as ArtigosSlugRouteImport } from './routes/artigos.$slug'
 
-const ValidacaoHomologacaoSentencaEstrangeiraRoute =
-  ValidacaoHomologacaoSentencaEstrangeiraRouteImport.update({
-    id: '/validacao-homologacao-sentenca-estrangeira',
-    path: '/validacao-homologacao-sentenca-estrangeira',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRoute =
+  AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRouteImport.update({
+    id: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil',
+    path: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil',
     getParentRoute: () => rootRouteImport,
   } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: '/robots.txt',
-  path: '/robots.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PerfilRoute = PerfilRouteImport.update({
-  id: '/perfil',
-  path: '/perfil',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaleConoscoRoute = FaleConoscoRouteImport.update({
-  id: '/fale-conosco',
-  path: '/fale-conosco',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DuvidasRoute = DuvidasRouteImport.update({
-  id: '/duvidas',
-  path: '/duvidas',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
-  id: '/areas-de-atuacao',
-  path: '/areas-de-atuacao',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute =
-  AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport.update({
-    id: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil',
-    path: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil',
+const AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRoute =
+  AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRouteImport.update({
+    id: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil',
+    path: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute =
-  AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport.update({
-    id: '/advogado-validacao-homologacao-sentenca-estrangeira',
-    path: '/advogado-validacao-homologacao-sentenca-estrangeira',
+const AdvogadoContratoNamoroBetimRoute =
+  AdvogadoContratoNamoroBetimRouteImport.update({
+    id: '/advogado-contrato-namoro-betim',
+    path: '/advogado-contrato-namoro-betim',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute =
-  AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRouteImport.update(
+const AdvogadoContratoNamoroBhRoute =
+  AdvogadoContratoNamoroBhRouteImport.update({
+    id: '/advogado-contrato-namoro-bh',
+    path: '/advogado-contrato-namoro-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoContratoNamoroContagemRoute =
+  AdvogadoContratoNamoroContagemRouteImport.update({
+    id: '/advogado-contrato-namoro-contagem',
+    path: '/advogado-contrato-namoro-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoContratoNamoroIgarapeRoute =
+  AdvogadoContratoNamoroIgarapeRouteImport.update({
+    id: '/advogado-contrato-namoro-igarape',
+    path: '/advogado-contrato-namoro-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoContratoNamoroNovaLimaRoute =
+  AdvogadoContratoNamoroNovaLimaRouteImport.update({
+    id: '/advogado-contrato-namoro-nova-lima',
+    path: '/advogado-contrato-namoro-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRoute =
+  AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRouteImport.update({
+    id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia',
+    path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRoute =
+  AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRouteImport.update(
     {
-      id: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil',
-      path: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil',
+      id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal',
+      path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal',
       getParentRoute: () => rootRouteImport,
     } as any,
   )
-const AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRoute =
-  AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRouteImport.update(
-    {
-      id: '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil',
-      path: '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil',
-      getParentRoute: () => rootRouteImport,
-    } as any,
-  )
-const AdvogadoRevisaoPensaoNovaLimaRoute =
-  AdvogadoRevisaoPensaoNovaLimaRouteImport.update({
-    id: '/advogado-revisao-pensao-nova-lima',
-    path: '/advogado-revisao-pensao-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoRevisaoPensaoIgarapeRoute =
-  AdvogadoRevisaoPensaoIgarapeRouteImport.update({
-    id: '/advogado-revisao-pensao-igarape',
-    path: '/advogado-revisao-pensao-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoRevisaoPensaoContagemRoute =
-  AdvogadoRevisaoPensaoContagemRouteImport.update({
-    id: '/advogado-revisao-pensao-contagem',
-    path: '/advogado-revisao-pensao-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoRevisaoPensaoBhRoute = AdvogadoRevisaoPensaoBhRouteImport.update({
-  id: '/advogado-revisao-pensao-bh',
-  path: '/advogado-revisao-pensao-bh',
+const AdvogadoCuratelaBetimRoute = AdvogadoCuratelaBetimRouteImport.update({
+  id: '/advogado-curatela-betim',
+  path: '/advogado-curatela-betim',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdvogadoRevisaoPensaoBetimRoute =
-  AdvogadoRevisaoPensaoBetimRouteImport.update({
-    id: '/advogado-revisao-pensao-betim',
-    path: '/advogado-revisao-pensao-betim',
+const AdvogadoCuratelaBhRoute = AdvogadoCuratelaBhRouteImport.update({
+  id: '/advogado-curatela-bh',
+  path: '/advogado-curatela-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoCuratelaContagemRoute =
+  AdvogadoCuratelaContagemRouteImport.update({
+    id: '/advogado-curatela-contagem',
+    path: '/advogado-curatela-contagem',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRoute =
-  AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRouteImport.update(
-    {
-      id: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil',
-      path: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil',
-      getParentRoute: () => rootRouteImport,
-    } as any,
-  )
-const AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRoute =
-  AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRouteImport.update(
-    {
-      id: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil',
-      path: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil',
-      getParentRoute: () => rootRouteImport,
-    } as any,
-  )
-const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute =
-  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRouteImport.update(
-    {
-      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima',
-      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima',
-      getParentRoute: () => rootRouteImport,
-    } as any,
-  )
-const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute =
-  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRouteImport.update(
-    {
-      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape',
-      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape',
-      getParentRoute: () => rootRouteImport,
-    } as any,
-  )
-const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute =
-  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRouteImport.update(
-    {
-      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem',
-      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem',
-      getParentRoute: () => rootRouteImport,
-    } as any,
-  )
-const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute =
-  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRouteImport.update({
-    id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh',
-    path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh',
+const AdvogadoCuratelaIgarapeRoute = AdvogadoCuratelaIgarapeRouteImport.update({
+  id: '/advogado-curatela-igarape',
+  path: '/advogado-curatela-igarape',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoCuratelaNovaLimaRoute =
+  AdvogadoCuratelaNovaLimaRouteImport.update({
+    id: '/advogado-curatela-nova-lima',
+    path: '/advogado-curatela-nova-lima',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute =
-  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport.update(
+const AdvogadoDivorcioBetimRoute = AdvogadoDivorcioBetimRouteImport.update({
+  id: '/advogado-divorcio-betim',
+  path: '/advogado-divorcio-betim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoDivorcioBhRoute = AdvogadoDivorcioBhRouteImport.update({
+  id: '/advogado-divorcio-bh',
+  path: '/advogado-divorcio-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoDivorcioContagemRoute =
+  AdvogadoDivorcioContagemRouteImport.update({
+    id: '/advogado-divorcio-contagem',
+    path: '/advogado-divorcio-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoDivorcioExtrajudicialBetimRoute =
+  AdvogadoDivorcioExtrajudicialBetimRouteImport.update({
+    id: '/advogado-divorcio-extrajudicial-betim',
+    path: '/advogado-divorcio-extrajudicial-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoDivorcioExtrajudicialBhRoute =
+  AdvogadoDivorcioExtrajudicialBhRouteImport.update({
+    id: '/advogado-divorcio-extrajudicial-bh',
+    path: '/advogado-divorcio-extrajudicial-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoDivorcioExtrajudicialContagemRoute =
+  AdvogadoDivorcioExtrajudicialContagemRouteImport.update({
+    id: '/advogado-divorcio-extrajudicial-contagem',
+    path: '/advogado-divorcio-extrajudicial-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoDivorcioExtrajudicialIgarapeRoute =
+  AdvogadoDivorcioExtrajudicialIgarapeRouteImport.update({
+    id: '/advogado-divorcio-extrajudicial-igarape',
+    path: '/advogado-divorcio-extrajudicial-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoDivorcioExtrajudicialNovaLimaRoute =
+  AdvogadoDivorcioExtrajudicialNovaLimaRouteImport.update({
+    id: '/advogado-divorcio-extrajudicial-nova-lima',
+    path: '/advogado-divorcio-extrajudicial-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoDivorcioIgarapeRoute = AdvogadoDivorcioIgarapeRouteImport.update({
+  id: '/advogado-divorcio-igarape',
+  path: '/advogado-divorcio-igarape',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoDivorcioNovaLimaRoute =
+  AdvogadoDivorcioNovaLimaRouteImport.update({
+    id: '/advogado-divorcio-nova-lima',
+    path: '/advogado-divorcio-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExecucaoPensaoBetimRoute =
+  AdvogadoExecucaoPensaoBetimRouteImport.update({
+    id: '/advogado-execucao-pensao-betim',
+    path: '/advogado-execucao-pensao-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExecucaoPensaoBhRoute =
+  AdvogadoExecucaoPensaoBhRouteImport.update({
+    id: '/advogado-execucao-pensao-bh',
+    path: '/advogado-execucao-pensao-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExecucaoPensaoContagemRoute =
+  AdvogadoExecucaoPensaoContagemRouteImport.update({
+    id: '/advogado-execucao-pensao-contagem',
+    path: '/advogado-execucao-pensao-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExecucaoPensaoIgarapeRoute =
+  AdvogadoExecucaoPensaoIgarapeRouteImport.update({
+    id: '/advogado-execucao-pensao-igarape',
+    path: '/advogado-execucao-pensao-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExecucaoPensaoNovaLimaRoute =
+  AdvogadoExecucaoPensaoNovaLimaRouteImport.update({
+    id: '/advogado-execucao-pensao-nova-lima',
+    path: '/advogado-execucao-pensao-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExoneracaoPensaoBetimRoute =
+  AdvogadoExoneracaoPensaoBetimRouteImport.update({
+    id: '/advogado-exoneracao-pensao-betim',
+    path: '/advogado-exoneracao-pensao-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExoneracaoPensaoBhRoute =
+  AdvogadoExoneracaoPensaoBhRouteImport.update({
+    id: '/advogado-exoneracao-pensao-bh',
+    path: '/advogado-exoneracao-pensao-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExoneracaoPensaoContagemRoute =
+  AdvogadoExoneracaoPensaoContagemRouteImport.update({
+    id: '/advogado-exoneracao-pensao-contagem',
+    path: '/advogado-exoneracao-pensao-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExoneracaoPensaoIgarapeRoute =
+  AdvogadoExoneracaoPensaoIgarapeRouteImport.update({
+    id: '/advogado-exoneracao-pensao-igarape',
+    path: '/advogado-exoneracao-pensao-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoExoneracaoPensaoNovaLimaRoute =
+  AdvogadoExoneracaoPensaoNovaLimaRouteImport.update({
+    id: '/advogado-exoneracao-pensao-nova-lima',
+    path: '/advogado-exoneracao-pensao-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoFamiliaBetimRoute = AdvogadoFamiliaBetimRouteImport.update({
+  id: '/advogado-familia-betim',
+  path: '/advogado-familia-betim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoFamiliaBhRoute = AdvogadoFamiliaBhRouteImport.update({
+  id: '/advogado-familia-bh',
+  path: '/advogado-familia-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoFamiliaContagemRoute = AdvogadoFamiliaContagemRouteImport.update({
+  id: '/advogado-familia-contagem',
+  path: '/advogado-familia-contagem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoFamiliaIgarapeRoute = AdvogadoFamiliaIgarapeRouteImport.update({
+  id: '/advogado-familia-igarape',
+  path: '/advogado-familia-igarape',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoFamiliaNovaLimaRoute = AdvogadoFamiliaNovaLimaRouteImport.update({
+  id: '/advogado-familia-nova-lima',
+  path: '/advogado-familia-nova-lima',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoFixacaoPensaoBetimRoute =
+  AdvogadoFixacaoPensaoBetimRouteImport.update({
+    id: '/advogado-fixacao-pensao-betim',
+    path: '/advogado-fixacao-pensao-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoFixacaoPensaoBhRoute = AdvogadoFixacaoPensaoBhRouteImport.update({
+  id: '/advogado-fixacao-pensao-bh',
+  path: '/advogado-fixacao-pensao-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoFixacaoPensaoContagemRoute =
+  AdvogadoFixacaoPensaoContagemRouteImport.update({
+    id: '/advogado-fixacao-pensao-contagem',
+    path: '/advogado-fixacao-pensao-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoFixacaoPensaoIgarapeRoute =
+  AdvogadoFixacaoPensaoIgarapeRouteImport.update({
+    id: '/advogado-fixacao-pensao-igarape',
+    path: '/advogado-fixacao-pensao-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoFixacaoPensaoNovaLimaRoute =
+  AdvogadoFixacaoPensaoNovaLimaRouteImport.update({
+    id: '/advogado-fixacao-pensao-nova-lima',
+    path: '/advogado-fixacao-pensao-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaBetimRoute = AdvogadoGuardaBetimRouteImport.update({
+  id: '/advogado-guarda-betim',
+  path: '/advogado-guarda-betim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoGuardaBhRoute = AdvogadoGuardaBhRouteImport.update({
+  id: '/advogado-guarda-bh',
+  path: '/advogado-guarda-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoGuardaCompartilhadaBetimRoute =
+  AdvogadoGuardaCompartilhadaBetimRouteImport.update({
+    id: '/advogado-guarda-compartilhada-betim',
+    path: '/advogado-guarda-compartilhada-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaBhRoute =
+  AdvogadoGuardaCompartilhadaBhRouteImport.update({
+    id: '/advogado-guarda-compartilhada-bh',
+    path: '/advogado-guarda-compartilhada-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaContagemRoute =
+  AdvogadoGuardaCompartilhadaContagemRouteImport.update({
+    id: '/advogado-guarda-compartilhada-contagem',
+    path: '/advogado-guarda-compartilhada-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaIgarapeRoute =
+  AdvogadoGuardaCompartilhadaIgarapeRouteImport.update({
+    id: '/advogado-guarda-compartilhada-igarape',
+    path: '/advogado-guarda-compartilhada-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaCompartilhadaNovaLimaRoute =
+  AdvogadoGuardaCompartilhadaNovaLimaRouteImport.update({
+    id: '/advogado-guarda-compartilhada-nova-lima',
+    path: '/advogado-guarda-compartilhada-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoGuardaContagemRoute = AdvogadoGuardaContagemRouteImport.update({
+  id: '/advogado-guarda-contagem',
+  path: '/advogado-guarda-contagem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoGuardaIgarapeRoute = AdvogadoGuardaIgarapeRouteImport.update({
+  id: '/advogado-guarda-igarape',
+  path: '/advogado-guarda-igarape',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoGuardaNovaLimaRoute = AdvogadoGuardaNovaLimaRouteImport.update({
+  id: '/advogado-guarda-nova-lima',
+  path: '/advogado-guarda-nova-lima',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRoute =
+  AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRouteImport.update({
+    id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia',
+    path: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRoute =
+  AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRouteImport.update(
     {
-      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim',
-      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim',
+      id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal',
+      path: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute =
+  AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport.update({
+    id: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil',
+    path: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRoute =
+  AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRouteImport.update({
+    id: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil',
+    path: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute =
+  AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport.update({
+    id: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil',
+    path: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRoute =
+  AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRouteImport.update(
+    {
+      id: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil',
+      path: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRoute =
+  AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRouteImport.update(
+    {
+      id: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil',
+      path: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoInventarioBetimRoute = AdvogadoInventarioBetimRouteImport.update({
+  id: '/advogado-inventario-betim',
+  path: '/advogado-inventario-betim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoInventarioBhRoute = AdvogadoInventarioBhRouteImport.update({
+  id: '/advogado-inventario-bh',
+  path: '/advogado-inventario-bh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvogadoInventarioContagemRoute =
+  AdvogadoInventarioContagemRouteImport.update({
+    id: '/advogado-inventario-contagem',
+    path: '/advogado-inventario-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoInventarioIgarapeRoute =
+  AdvogadoInventarioIgarapeRouteImport.update({
+    id: '/advogado-inventario-igarape',
+    path: '/advogado-inventario-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoInventarioNovaLimaRoute =
+  AdvogadoInventarioNovaLimaRouteImport.update({
+    id: '/advogado-inventario-nova-lima',
+    path: '/advogado-inventario-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoMudancaRegimeBensCasamentoBetimRoute =
+  AdvogadoMudancaRegimeBensCasamentoBetimRouteImport.update({
+    id: '/advogado-mudanca-regime-bens-casamento-betim',
+    path: '/advogado-mudanca-regime-bens-casamento-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoMudancaRegimeBensCasamentoBhRoute =
+  AdvogadoMudancaRegimeBensCasamentoBhRouteImport.update({
+    id: '/advogado-mudanca-regime-bens-casamento-bh',
+    path: '/advogado-mudanca-regime-bens-casamento-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoMudancaRegimeBensCasamentoContagemRoute =
+  AdvogadoMudancaRegimeBensCasamentoContagemRouteImport.update({
+    id: '/advogado-mudanca-regime-bens-casamento-contagem',
+    path: '/advogado-mudanca-regime-bens-casamento-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoMudancaRegimeBensCasamentoIgarapeRoute =
+  AdvogadoMudancaRegimeBensCasamentoIgarapeRouteImport.update({
+    id: '/advogado-mudanca-regime-bens-casamento-igarape',
+    path: '/advogado-mudanca-regime-bens-casamento-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoMudancaRegimeBensCasamentoNovaLimaRoute =
+  AdvogadoMudancaRegimeBensCasamentoNovaLimaRouteImport.update({
+    id: '/advogado-mudanca-regime-bens-casamento-nova-lima',
+    path: '/advogado-mudanca-regime-bens-casamento-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoPensaoAlimenticiaBetimRoute =
+  AdvogadoPensaoAlimenticiaBetimRouteImport.update({
+    id: '/advogado-pensao-alimenticia-betim',
+    path: '/advogado-pensao-alimenticia-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoPensaoAlimenticiaBhRoute =
+  AdvogadoPensaoAlimenticiaBhRouteImport.update({
+    id: '/advogado-pensao-alimenticia-bh',
+    path: '/advogado-pensao-alimenticia-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoPensaoAlimenticiaContagemRoute =
+  AdvogadoPensaoAlimenticiaContagemRouteImport.update({
+    id: '/advogado-pensao-alimenticia-contagem',
+    path: '/advogado-pensao-alimenticia-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoPensaoAlimenticiaIgarapeRoute =
+  AdvogadoPensaoAlimenticiaIgarapeRouteImport.update({
+    id: '/advogado-pensao-alimenticia-igarape',
+    path: '/advogado-pensao-alimenticia-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoPensaoAlimenticiaNovaLimaRoute =
+  AdvogadoPensaoAlimenticiaNovaLimaRouteImport.update({
+    id: '/advogado-pensao-alimenticia-nova-lima',
+    path: '/advogado-pensao-alimenticia-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRoute =
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRouteImport.update({
+    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim',
+    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRoute =
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRouteImport.update({
+    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh',
+    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute =
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRouteImport.update({
+    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem',
+    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute =
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport.update({
+    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape',
+    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute =
+  AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport.update({
+    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima',
+    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRoute =
+  AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRouteImport.update(
+    {
+      id: '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia',
+      path: '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia',
       getParentRoute: () => rootRouteImport,
     } as any,
   )
@@ -275,499 +621,153 @@ const AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRoute =
       getParentRoute: () => rootRouteImport,
     } as any,
   )
-const AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRoute =
-  AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRouteImport.update(
+const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRoute =
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport.update(
     {
-      id: '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia',
-      path: '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia',
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim',
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim',
       getParentRoute: () => rootRouteImport,
     } as any,
   )
-const AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRoute =
-  AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport.update({
-    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima',
-    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima',
+const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRoute =
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRouteImport.update({
+    id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh',
+    path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRoute =
-  AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport.update({
-    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape',
-    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRoute =
-  AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRouteImport.update({
-    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem',
-    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRoute =
-  AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRouteImport.update({
-    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh',
-    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRoute =
-  AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRouteImport.update({
-    id: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim',
-    path: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoPensaoAlimenticiaNovaLimaRoute =
-  AdvogadoPensaoAlimenticiaNovaLimaRouteImport.update({
-    id: '/advogado-pensao-alimenticia-nova-lima',
-    path: '/advogado-pensao-alimenticia-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoPensaoAlimenticiaIgarapeRoute =
-  AdvogadoPensaoAlimenticiaIgarapeRouteImport.update({
-    id: '/advogado-pensao-alimenticia-igarape',
-    path: '/advogado-pensao-alimenticia-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoPensaoAlimenticiaContagemRoute =
-  AdvogadoPensaoAlimenticiaContagemRouteImport.update({
-    id: '/advogado-pensao-alimenticia-contagem',
-    path: '/advogado-pensao-alimenticia-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoPensaoAlimenticiaBhRoute =
-  AdvogadoPensaoAlimenticiaBhRouteImport.update({
-    id: '/advogado-pensao-alimenticia-bh',
-    path: '/advogado-pensao-alimenticia-bh',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoPensaoAlimenticiaBetimRoute =
-  AdvogadoPensaoAlimenticiaBetimRouteImport.update({
-    id: '/advogado-pensao-alimenticia-betim',
-    path: '/advogado-pensao-alimenticia-betim',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoMudancaRegimeBensCasamentoNovaLimaRoute =
-  AdvogadoMudancaRegimeBensCasamentoNovaLimaRouteImport.update({
-    id: '/advogado-mudanca-regime-bens-casamento-nova-lima',
-    path: '/advogado-mudanca-regime-bens-casamento-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoMudancaRegimeBensCasamentoIgarapeRoute =
-  AdvogadoMudancaRegimeBensCasamentoIgarapeRouteImport.update({
-    id: '/advogado-mudanca-regime-bens-casamento-igarape',
-    path: '/advogado-mudanca-regime-bens-casamento-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoMudancaRegimeBensCasamentoContagemRoute =
-  AdvogadoMudancaRegimeBensCasamentoContagemRouteImport.update({
-    id: '/advogado-mudanca-regime-bens-casamento-contagem',
-    path: '/advogado-mudanca-regime-bens-casamento-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoMudancaRegimeBensCasamentoBhRoute =
-  AdvogadoMudancaRegimeBensCasamentoBhRouteImport.update({
-    id: '/advogado-mudanca-regime-bens-casamento-bh',
-    path: '/advogado-mudanca-regime-bens-casamento-bh',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoMudancaRegimeBensCasamentoBetimRoute =
-  AdvogadoMudancaRegimeBensCasamentoBetimRouteImport.update({
-    id: '/advogado-mudanca-regime-bens-casamento-betim',
-    path: '/advogado-mudanca-regime-bens-casamento-betim',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoInventarioNovaLimaRoute =
-  AdvogadoInventarioNovaLimaRouteImport.update({
-    id: '/advogado-inventario-nova-lima',
-    path: '/advogado-inventario-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoInventarioIgarapeRoute =
-  AdvogadoInventarioIgarapeRouteImport.update({
-    id: '/advogado-inventario-igarape',
-    path: '/advogado-inventario-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoInventarioContagemRoute =
-  AdvogadoInventarioContagemRouteImport.update({
-    id: '/advogado-inventario-contagem',
-    path: '/advogado-inventario-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoInventarioBhRoute = AdvogadoInventarioBhRouteImport.update({
-  id: '/advogado-inventario-bh',
-  path: '/advogado-inventario-bh',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoInventarioBetimRoute = AdvogadoInventarioBetimRouteImport.update({
-  id: '/advogado-inventario-betim',
-  path: '/advogado-inventario-betim',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRoute =
-  AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRouteImport.update(
+const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRoute =
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRouteImport.update(
     {
-      id: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil',
-      path: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil',
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem',
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem',
       getParentRoute: () => rootRouteImport,
     } as any,
   )
-const AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRoute =
-  AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRouteImport.update(
+const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRoute =
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRouteImport.update(
     {
-      id: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil',
-      path: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil',
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape',
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape',
       getParentRoute: () => rootRouteImport,
     } as any,
   )
-const AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRoute =
-  AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport.update({
-    id: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil',
-    path: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRoute =
-  AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRouteImport.update({
-    id: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil',
-    path: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRoute =
-  AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport.update({
-    id: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil',
-    path: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRoute =
-  AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRouteImport.update(
+const AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRoute =
+  AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRouteImport.update(
     {
-      id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal',
-      path: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal',
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima',
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima',
       getParentRoute: () => rootRouteImport,
     } as any,
   )
-const AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRoute =
-  AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRouteImport.update({
-    id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia',
-    path: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoGuardaNovaLimaRoute = AdvogadoGuardaNovaLimaRouteImport.update({
-  id: '/advogado-guarda-nova-lima',
-  path: '/advogado-guarda-nova-lima',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoGuardaIgarapeRoute = AdvogadoGuardaIgarapeRouteImport.update({
-  id: '/advogado-guarda-igarape',
-  path: '/advogado-guarda-igarape',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoGuardaContagemRoute = AdvogadoGuardaContagemRouteImport.update({
-  id: '/advogado-guarda-contagem',
-  path: '/advogado-guarda-contagem',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoGuardaCompartilhadaNovaLimaRoute =
-  AdvogadoGuardaCompartilhadaNovaLimaRouteImport.update({
-    id: '/advogado-guarda-compartilhada-nova-lima',
-    path: '/advogado-guarda-compartilhada-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoGuardaCompartilhadaIgarapeRoute =
-  AdvogadoGuardaCompartilhadaIgarapeRouteImport.update({
-    id: '/advogado-guarda-compartilhada-igarape',
-    path: '/advogado-guarda-compartilhada-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoGuardaCompartilhadaContagemRoute =
-  AdvogadoGuardaCompartilhadaContagemRouteImport.update({
-    id: '/advogado-guarda-compartilhada-contagem',
-    path: '/advogado-guarda-compartilhada-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoGuardaCompartilhadaBhRoute =
-  AdvogadoGuardaCompartilhadaBhRouteImport.update({
-    id: '/advogado-guarda-compartilhada-bh',
-    path: '/advogado-guarda-compartilhada-bh',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoGuardaCompartilhadaBetimRoute =
-  AdvogadoGuardaCompartilhadaBetimRouteImport.update({
-    id: '/advogado-guarda-compartilhada-betim',
-    path: '/advogado-guarda-compartilhada-betim',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoGuardaBhRoute = AdvogadoGuardaBhRouteImport.update({
-  id: '/advogado-guarda-bh',
-  path: '/advogado-guarda-bh',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoGuardaBetimRoute = AdvogadoGuardaBetimRouteImport.update({
-  id: '/advogado-guarda-betim',
-  path: '/advogado-guarda-betim',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoFixacaoPensaoNovaLimaRoute =
-  AdvogadoFixacaoPensaoNovaLimaRouteImport.update({
-    id: '/advogado-fixacao-pensao-nova-lima',
-    path: '/advogado-fixacao-pensao-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoFixacaoPensaoIgarapeRoute =
-  AdvogadoFixacaoPensaoIgarapeRouteImport.update({
-    id: '/advogado-fixacao-pensao-igarape',
-    path: '/advogado-fixacao-pensao-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoFixacaoPensaoContagemRoute =
-  AdvogadoFixacaoPensaoContagemRouteImport.update({
-    id: '/advogado-fixacao-pensao-contagem',
-    path: '/advogado-fixacao-pensao-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoFixacaoPensaoBhRoute = AdvogadoFixacaoPensaoBhRouteImport.update({
-  id: '/advogado-fixacao-pensao-bh',
-  path: '/advogado-fixacao-pensao-bh',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoFixacaoPensaoBetimRoute =
-  AdvogadoFixacaoPensaoBetimRouteImport.update({
-    id: '/advogado-fixacao-pensao-betim',
-    path: '/advogado-fixacao-pensao-betim',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoFamiliaNovaLimaRoute = AdvogadoFamiliaNovaLimaRouteImport.update({
-  id: '/advogado-familia-nova-lima',
-  path: '/advogado-familia-nova-lima',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoFamiliaIgarapeRoute = AdvogadoFamiliaIgarapeRouteImport.update({
-  id: '/advogado-familia-igarape',
-  path: '/advogado-familia-igarape',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoFamiliaContagemRoute = AdvogadoFamiliaContagemRouteImport.update({
-  id: '/advogado-familia-contagem',
-  path: '/advogado-familia-contagem',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoFamiliaBhRoute = AdvogadoFamiliaBhRouteImport.update({
-  id: '/advogado-familia-bh',
-  path: '/advogado-familia-bh',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoFamiliaBetimRoute = AdvogadoFamiliaBetimRouteImport.update({
-  id: '/advogado-familia-betim',
-  path: '/advogado-familia-betim',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoExoneracaoPensaoNovaLimaRoute =
-  AdvogadoExoneracaoPensaoNovaLimaRouteImport.update({
-    id: '/advogado-exoneracao-pensao-nova-lima',
-    path: '/advogado-exoneracao-pensao-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoExoneracaoPensaoIgarapeRoute =
-  AdvogadoExoneracaoPensaoIgarapeRouteImport.update({
-    id: '/advogado-exoneracao-pensao-igarape',
-    path: '/advogado-exoneracao-pensao-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoExoneracaoPensaoContagemRoute =
-  AdvogadoExoneracaoPensaoContagemRouteImport.update({
-    id: '/advogado-exoneracao-pensao-contagem',
-    path: '/advogado-exoneracao-pensao-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoExoneracaoPensaoBhRoute =
-  AdvogadoExoneracaoPensaoBhRouteImport.update({
-    id: '/advogado-exoneracao-pensao-bh',
-    path: '/advogado-exoneracao-pensao-bh',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoExoneracaoPensaoBetimRoute =
-  AdvogadoExoneracaoPensaoBetimRouteImport.update({
-    id: '/advogado-exoneracao-pensao-betim',
-    path: '/advogado-exoneracao-pensao-betim',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoExecucaoPensaoNovaLimaRoute =
-  AdvogadoExecucaoPensaoNovaLimaRouteImport.update({
-    id: '/advogado-execucao-pensao-nova-lima',
-    path: '/advogado-execucao-pensao-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoExecucaoPensaoIgarapeRoute =
-  AdvogadoExecucaoPensaoIgarapeRouteImport.update({
-    id: '/advogado-execucao-pensao-igarape',
-    path: '/advogado-execucao-pensao-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoExecucaoPensaoContagemRoute =
-  AdvogadoExecucaoPensaoContagemRouteImport.update({
-    id: '/advogado-execucao-pensao-contagem',
-    path: '/advogado-execucao-pensao-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoExecucaoPensaoBhRoute =
-  AdvogadoExecucaoPensaoBhRouteImport.update({
-    id: '/advogado-execucao-pensao-bh',
-    path: '/advogado-execucao-pensao-bh',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoExecucaoPensaoBetimRoute =
-  AdvogadoExecucaoPensaoBetimRouteImport.update({
-    id: '/advogado-execucao-pensao-betim',
-    path: '/advogado-execucao-pensao-betim',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoDivorcioNovaLimaRoute =
-  AdvogadoDivorcioNovaLimaRouteImport.update({
-    id: '/advogado-divorcio-nova-lima',
-    path: '/advogado-divorcio-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoDivorcioIgarapeRoute = AdvogadoDivorcioIgarapeRouteImport.update({
-  id: '/advogado-divorcio-igarape',
-  path: '/advogado-divorcio-igarape',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoDivorcioExtrajudicialNovaLimaRoute =
-  AdvogadoDivorcioExtrajudicialNovaLimaRouteImport.update({
-    id: '/advogado-divorcio-extrajudicial-nova-lima',
-    path: '/advogado-divorcio-extrajudicial-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoDivorcioExtrajudicialIgarapeRoute =
-  AdvogadoDivorcioExtrajudicialIgarapeRouteImport.update({
-    id: '/advogado-divorcio-extrajudicial-igarape',
-    path: '/advogado-divorcio-extrajudicial-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoDivorcioExtrajudicialContagemRoute =
-  AdvogadoDivorcioExtrajudicialContagemRouteImport.update({
-    id: '/advogado-divorcio-extrajudicial-contagem',
-    path: '/advogado-divorcio-extrajudicial-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoDivorcioExtrajudicialBhRoute =
-  AdvogadoDivorcioExtrajudicialBhRouteImport.update({
-    id: '/advogado-divorcio-extrajudicial-bh',
-    path: '/advogado-divorcio-extrajudicial-bh',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoDivorcioExtrajudicialBetimRoute =
-  AdvogadoDivorcioExtrajudicialBetimRouteImport.update({
-    id: '/advogado-divorcio-extrajudicial-betim',
-    path: '/advogado-divorcio-extrajudicial-betim',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoDivorcioContagemRoute =
-  AdvogadoDivorcioContagemRouteImport.update({
-    id: '/advogado-divorcio-contagem',
-    path: '/advogado-divorcio-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoDivorcioBhRoute = AdvogadoDivorcioBhRouteImport.update({
-  id: '/advogado-divorcio-bh',
-  path: '/advogado-divorcio-bh',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoDivorcioBetimRoute = AdvogadoDivorcioBetimRouteImport.update({
-  id: '/advogado-divorcio-betim',
-  path: '/advogado-divorcio-betim',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoCuratelaNovaLimaRoute =
-  AdvogadoCuratelaNovaLimaRouteImport.update({
-    id: '/advogado-curatela-nova-lima',
-    path: '/advogado-curatela-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoCuratelaIgarapeRoute = AdvogadoCuratelaIgarapeRouteImport.update({
-  id: '/advogado-curatela-igarape',
-  path: '/advogado-curatela-igarape',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoCuratelaContagemRoute =
-  AdvogadoCuratelaContagemRouteImport.update({
-    id: '/advogado-curatela-contagem',
-    path: '/advogado-curatela-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoCuratelaBhRoute = AdvogadoCuratelaBhRouteImport.update({
-  id: '/advogado-curatela-bh',
-  path: '/advogado-curatela-bh',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoCuratelaBetimRoute = AdvogadoCuratelaBetimRouteImport.update({
-  id: '/advogado-curatela-betim',
-  path: '/advogado-curatela-betim',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRoute =
-  AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRouteImport.update(
+const AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRoute =
+  AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRouteImport.update(
     {
-      id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal',
-      path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal',
+      id: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil',
+      path: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil',
       getParentRoute: () => rootRouteImport,
     } as any,
   )
-const AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRoute =
-  AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRouteImport.update({
-    id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia',
-    path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia',
+const AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRoute =
+  AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRouteImport.update(
+    {
+      id: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil',
+      path: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoRevisaoPensaoBetimRoute =
+  AdvogadoRevisaoPensaoBetimRouteImport.update({
+    id: '/advogado-revisao-pensao-betim',
+    path: '/advogado-revisao-pensao-betim',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AdvogadoContratoNamoroNovaLimaRoute =
-  AdvogadoContratoNamoroNovaLimaRouteImport.update({
-    id: '/advogado-contrato-namoro-nova-lima',
-    path: '/advogado-contrato-namoro-nova-lima',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoContratoNamoroIgarapeRoute =
-  AdvogadoContratoNamoroIgarapeRouteImport.update({
-    id: '/advogado-contrato-namoro-igarape',
-    path: '/advogado-contrato-namoro-igarape',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoContratoNamoroContagemRoute =
-  AdvogadoContratoNamoroContagemRouteImport.update({
-    id: '/advogado-contrato-namoro-contagem',
-    path: '/advogado-contrato-namoro-contagem',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoContratoNamoroBhRoute =
-  AdvogadoContratoNamoroBhRouteImport.update({
-    id: '/advogado-contrato-namoro-bh',
-    path: '/advogado-contrato-namoro-bh',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoContratoNamoroBetimRoute =
-  AdvogadoContratoNamoroBetimRouteImport.update({
-    id: '/advogado-contrato-namoro-betim',
-    path: '/advogado-contrato-namoro-betim',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRoute =
-  AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRouteImport.update({
-    id: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil',
-    path: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRoute =
-  AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRouteImport.update({
-    id: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil',
-    path: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SplatRoute = SplatRouteImport.update({
-  id: '/$',
-  path: '/$',
+const AdvogadoRevisaoPensaoBhRoute = AdvogadoRevisaoPensaoBhRouteImport.update({
+  id: '/advogado-revisao-pensao-bh',
+  path: '/advogado-revisao-pensao-bh',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AdvogadoRevisaoPensaoContagemRoute =
+  AdvogadoRevisaoPensaoContagemRouteImport.update({
+    id: '/advogado-revisao-pensao-contagem',
+    path: '/advogado-revisao-pensao-contagem',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoRevisaoPensaoIgarapeRoute =
+  AdvogadoRevisaoPensaoIgarapeRouteImport.update({
+    id: '/advogado-revisao-pensao-igarape',
+    path: '/advogado-revisao-pensao-igarape',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoRevisaoPensaoNovaLimaRoute =
+  AdvogadoRevisaoPensaoNovaLimaRouteImport.update({
+    id: '/advogado-revisao-pensao-nova-lima',
+    path: '/advogado-revisao-pensao-nova-lima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRoute =
+  AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRouteImport.update(
+    {
+      id: '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil',
+      path: '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute =
+  AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRouteImport.update(
+    {
+      id: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil',
+      path: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute =
+  AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport.update({
+    id: '/advogado-validacao-homologacao-sentenca-estrangeira',
+    path: '/advogado-validacao-homologacao-sentenca-estrangeira',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute =
+  AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport.update({
+    id: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil',
+    path: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
+  id: '/areas-de-atuacao',
+  path: '/areas-de-atuacao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DuvidasRoute = DuvidasRouteImport.update({
+  id: '/duvidas',
+  path: '/duvidas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaleConoscoRoute = FaleConoscoRouteImport.update({
+  id: '/fale-conosco',
+  path: '/fale-conosco',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ValidacaoHomologacaoSentencaEstrangeiraRoute =
+  ValidacaoHomologacaoSentencaEstrangeiraRouteImport.update({
+    id: '/validacao-homologacao-sentenca-estrangeira',
+    path: '/validacao-homologacao-sentenca-estrangeira',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ArtigosIndexRoute = ArtigosIndexRouteImport.update({
   id: '/artigos/',
   path: '/artigos/',
@@ -1570,746 +1570,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/validacao-homologacao-sentenca-estrangeira': {
-      id: '/validacao-homologacao-sentenca-estrangeira'
-      path: '/validacao-homologacao-sentenca-estrangeira'
-      fullPath: '/validacao-homologacao-sentenca-estrangeira'
-      preLoaderRoute: typeof ValidacaoHomologacaoSentencaEstrangeiraRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/robots.txt': {
-      id: '/robots.txt'
-      path: '/robots.txt'
-      fullPath: '/robots.txt'
-      preLoaderRoute: typeof RobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/perfil': {
-      id: '/perfil'
-      path: '/perfil'
-      fullPath: '/perfil'
-      preLoaderRoute: typeof PerfilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fale-conosco': {
-      id: '/fale-conosco'
-      path: '/fale-conosco'
-      fullPath: '/fale-conosco'
-      preLoaderRoute: typeof FaleConoscoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/duvidas': {
-      id: '/duvidas'
-      path: '/duvidas'
-      fullPath: '/duvidas'
-      preLoaderRoute: typeof DuvidasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/areas-de-atuacao': {
-      id: '/areas-de-atuacao'
-      path: '/areas-de-atuacao'
-      fullPath: '/areas-de-atuacao'
-      preLoaderRoute: typeof AreasDeAtuacaoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-validacao-homologacao-sentenca-portuguesa-brasil': {
-      id: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
-      path: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
-      fullPath: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
-      preLoaderRoute: typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-validacao-homologacao-sentenca-estrangeira': {
-      id: '/advogado-validacao-homologacao-sentenca-estrangeira'
-      path: '/advogado-validacao-homologacao-sentenca-estrangeira'
-      fullPath: '/advogado-validacao-homologacao-sentenca-estrangeira'
-      preLoaderRoute: typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil': {
-      id: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
-      path: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
-      fullPath: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
-      preLoaderRoute: typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil': {
-      id: '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
-      path: '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
-      fullPath: '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
-      preLoaderRoute: typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-revisao-pensao-nova-lima': {
-      id: '/advogado-revisao-pensao-nova-lima'
-      path: '/advogado-revisao-pensao-nova-lima'
-      fullPath: '/advogado-revisao-pensao-nova-lima'
-      preLoaderRoute: typeof AdvogadoRevisaoPensaoNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-revisao-pensao-igarape': {
-      id: '/advogado-revisao-pensao-igarape'
-      path: '/advogado-revisao-pensao-igarape'
-      fullPath: '/advogado-revisao-pensao-igarape'
-      preLoaderRoute: typeof AdvogadoRevisaoPensaoIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-revisao-pensao-contagem': {
-      id: '/advogado-revisao-pensao-contagem'
-      path: '/advogado-revisao-pensao-contagem'
-      fullPath: '/advogado-revisao-pensao-contagem'
-      preLoaderRoute: typeof AdvogadoRevisaoPensaoContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-revisao-pensao-bh': {
-      id: '/advogado-revisao-pensao-bh'
-      path: '/advogado-revisao-pensao-bh'
-      fullPath: '/advogado-revisao-pensao-bh'
-      preLoaderRoute: typeof AdvogadoRevisaoPensaoBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-revisao-pensao-betim': {
-      id: '/advogado-revisao-pensao-betim'
-      path: '/advogado-revisao-pensao-betim'
-      fullPath: '/advogado-revisao-pensao-betim'
-      preLoaderRoute: typeof AdvogadoRevisaoPensaoBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil': {
-      id: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
-      path: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
-      fullPath: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
-      preLoaderRoute: typeof AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil': {
-      id: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
-      path: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
-      fullPath: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
-      preLoaderRoute: typeof AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima': {
-      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
-      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
-      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
-      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape': {
-      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
-      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
-      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
-      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem': {
-      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
-      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
-      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
-      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh': {
-      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
-      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
-      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
-      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim': {
-      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
-      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
-      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
-      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia': {
-      id: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
-      path: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
-      fullPath: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
-      preLoaderRoute: typeof AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia': {
-      id: '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
-      path: '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
-      fullPath: '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
-      preLoaderRoute: typeof AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': {
-      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
-      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
-      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
-      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': {
-      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
-      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
-      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
-      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem': {
-      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
-      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
-      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
-      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-dissolucao-uniao-estavel-bh': {
-      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
-      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
-      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
-      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-reconhecimento-dissolucao-uniao-estavel-betim': {
-      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
-      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
-      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
-      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-pensao-alimenticia-nova-lima': {
-      id: '/advogado-pensao-alimenticia-nova-lima'
-      path: '/advogado-pensao-alimenticia-nova-lima'
-      fullPath: '/advogado-pensao-alimenticia-nova-lima'
-      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-pensao-alimenticia-igarape': {
-      id: '/advogado-pensao-alimenticia-igarape'
-      path: '/advogado-pensao-alimenticia-igarape'
-      fullPath: '/advogado-pensao-alimenticia-igarape'
-      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-pensao-alimenticia-contagem': {
-      id: '/advogado-pensao-alimenticia-contagem'
-      path: '/advogado-pensao-alimenticia-contagem'
-      fullPath: '/advogado-pensao-alimenticia-contagem'
-      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-pensao-alimenticia-bh': {
-      id: '/advogado-pensao-alimenticia-bh'
-      path: '/advogado-pensao-alimenticia-bh'
-      fullPath: '/advogado-pensao-alimenticia-bh'
-      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-pensao-alimenticia-betim': {
-      id: '/advogado-pensao-alimenticia-betim'
-      path: '/advogado-pensao-alimenticia-betim'
-      fullPath: '/advogado-pensao-alimenticia-betim'
-      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-mudanca-regime-bens-casamento-nova-lima': {
-      id: '/advogado-mudanca-regime-bens-casamento-nova-lima'
-      path: '/advogado-mudanca-regime-bens-casamento-nova-lima'
-      fullPath: '/advogado-mudanca-regime-bens-casamento-nova-lima'
-      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-mudanca-regime-bens-casamento-igarape': {
-      id: '/advogado-mudanca-regime-bens-casamento-igarape'
-      path: '/advogado-mudanca-regime-bens-casamento-igarape'
-      fullPath: '/advogado-mudanca-regime-bens-casamento-igarape'
-      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-mudanca-regime-bens-casamento-contagem': {
-      id: '/advogado-mudanca-regime-bens-casamento-contagem'
-      path: '/advogado-mudanca-regime-bens-casamento-contagem'
-      fullPath: '/advogado-mudanca-regime-bens-casamento-contagem'
-      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-mudanca-regime-bens-casamento-bh': {
-      id: '/advogado-mudanca-regime-bens-casamento-bh'
-      path: '/advogado-mudanca-regime-bens-casamento-bh'
-      fullPath: '/advogado-mudanca-regime-bens-casamento-bh'
-      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-mudanca-regime-bens-casamento-betim': {
-      id: '/advogado-mudanca-regime-bens-casamento-betim'
-      path: '/advogado-mudanca-regime-bens-casamento-betim'
-      fullPath: '/advogado-mudanca-regime-bens-casamento-betim'
-      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-inventario-nova-lima': {
-      id: '/advogado-inventario-nova-lima'
-      path: '/advogado-inventario-nova-lima'
-      fullPath: '/advogado-inventario-nova-lima'
-      preLoaderRoute: typeof AdvogadoInventarioNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-inventario-igarape': {
-      id: '/advogado-inventario-igarape'
-      path: '/advogado-inventario-igarape'
-      fullPath: '/advogado-inventario-igarape'
-      preLoaderRoute: typeof AdvogadoInventarioIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-inventario-contagem': {
-      id: '/advogado-inventario-contagem'
-      path: '/advogado-inventario-contagem'
-      fullPath: '/advogado-inventario-contagem'
-      preLoaderRoute: typeof AdvogadoInventarioContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-inventario-bh': {
-      id: '/advogado-inventario-bh'
-      path: '/advogado-inventario-bh'
-      fullPath: '/advogado-inventario-bh'
-      preLoaderRoute: typeof AdvogadoInventarioBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-inventario-betim': {
-      id: '/advogado-inventario-betim'
-      path: '/advogado-inventario-betim'
-      fullPath: '/advogado-inventario-betim'
-      preLoaderRoute: typeof AdvogadoInventarioBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil': {
-      id: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
-      path: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
-      fullPath: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
-      preLoaderRoute: typeof AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil': {
-      id: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
-      path: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
-      fullPath: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
-      preLoaderRoute: typeof AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil': {
-      id: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
-      path: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
-      fullPath: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
-      preLoaderRoute: typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil': {
-      id: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
-      path: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
-      fullPath: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
-      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': {
-      id: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
-      path: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
-      fullPath: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
-      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal': {
-      id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
-      path: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
-      fullPath: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
-      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia': {
-      id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
-      path: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
-      fullPath: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
-      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-guarda-nova-lima': {
-      id: '/advogado-guarda-nova-lima'
-      path: '/advogado-guarda-nova-lima'
-      fullPath: '/advogado-guarda-nova-lima'
-      preLoaderRoute: typeof AdvogadoGuardaNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-guarda-igarape': {
-      id: '/advogado-guarda-igarape'
-      path: '/advogado-guarda-igarape'
-      fullPath: '/advogado-guarda-igarape'
-      preLoaderRoute: typeof AdvogadoGuardaIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-guarda-contagem': {
-      id: '/advogado-guarda-contagem'
-      path: '/advogado-guarda-contagem'
-      fullPath: '/advogado-guarda-contagem'
-      preLoaderRoute: typeof AdvogadoGuardaContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-guarda-compartilhada-nova-lima': {
-      id: '/advogado-guarda-compartilhada-nova-lima'
-      path: '/advogado-guarda-compartilhada-nova-lima'
-      fullPath: '/advogado-guarda-compartilhada-nova-lima'
-      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-guarda-compartilhada-igarape': {
-      id: '/advogado-guarda-compartilhada-igarape'
-      path: '/advogado-guarda-compartilhada-igarape'
-      fullPath: '/advogado-guarda-compartilhada-igarape'
-      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-guarda-compartilhada-contagem': {
-      id: '/advogado-guarda-compartilhada-contagem'
-      path: '/advogado-guarda-compartilhada-contagem'
-      fullPath: '/advogado-guarda-compartilhada-contagem'
-      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-guarda-compartilhada-bh': {
-      id: '/advogado-guarda-compartilhada-bh'
-      path: '/advogado-guarda-compartilhada-bh'
-      fullPath: '/advogado-guarda-compartilhada-bh'
-      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-guarda-compartilhada-betim': {
-      id: '/advogado-guarda-compartilhada-betim'
-      path: '/advogado-guarda-compartilhada-betim'
-      fullPath: '/advogado-guarda-compartilhada-betim'
-      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-guarda-bh': {
-      id: '/advogado-guarda-bh'
-      path: '/advogado-guarda-bh'
-      fullPath: '/advogado-guarda-bh'
-      preLoaderRoute: typeof AdvogadoGuardaBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-guarda-betim': {
-      id: '/advogado-guarda-betim'
-      path: '/advogado-guarda-betim'
-      fullPath: '/advogado-guarda-betim'
-      preLoaderRoute: typeof AdvogadoGuardaBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-fixacao-pensao-nova-lima': {
-      id: '/advogado-fixacao-pensao-nova-lima'
-      path: '/advogado-fixacao-pensao-nova-lima'
-      fullPath: '/advogado-fixacao-pensao-nova-lima'
-      preLoaderRoute: typeof AdvogadoFixacaoPensaoNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-fixacao-pensao-igarape': {
-      id: '/advogado-fixacao-pensao-igarape'
-      path: '/advogado-fixacao-pensao-igarape'
-      fullPath: '/advogado-fixacao-pensao-igarape'
-      preLoaderRoute: typeof AdvogadoFixacaoPensaoIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-fixacao-pensao-contagem': {
-      id: '/advogado-fixacao-pensao-contagem'
-      path: '/advogado-fixacao-pensao-contagem'
-      fullPath: '/advogado-fixacao-pensao-contagem'
-      preLoaderRoute: typeof AdvogadoFixacaoPensaoContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-fixacao-pensao-bh': {
-      id: '/advogado-fixacao-pensao-bh'
-      path: '/advogado-fixacao-pensao-bh'
-      fullPath: '/advogado-fixacao-pensao-bh'
-      preLoaderRoute: typeof AdvogadoFixacaoPensaoBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-fixacao-pensao-betim': {
-      id: '/advogado-fixacao-pensao-betim'
-      path: '/advogado-fixacao-pensao-betim'
-      fullPath: '/advogado-fixacao-pensao-betim'
-      preLoaderRoute: typeof AdvogadoFixacaoPensaoBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-familia-nova-lima': {
-      id: '/advogado-familia-nova-lima'
-      path: '/advogado-familia-nova-lima'
-      fullPath: '/advogado-familia-nova-lima'
-      preLoaderRoute: typeof AdvogadoFamiliaNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-familia-igarape': {
-      id: '/advogado-familia-igarape'
-      path: '/advogado-familia-igarape'
-      fullPath: '/advogado-familia-igarape'
-      preLoaderRoute: typeof AdvogadoFamiliaIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-familia-contagem': {
-      id: '/advogado-familia-contagem'
-      path: '/advogado-familia-contagem'
-      fullPath: '/advogado-familia-contagem'
-      preLoaderRoute: typeof AdvogadoFamiliaContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-familia-bh': {
-      id: '/advogado-familia-bh'
-      path: '/advogado-familia-bh'
-      fullPath: '/advogado-familia-bh'
-      preLoaderRoute: typeof AdvogadoFamiliaBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-familia-betim': {
-      id: '/advogado-familia-betim'
-      path: '/advogado-familia-betim'
-      fullPath: '/advogado-familia-betim'
-      preLoaderRoute: typeof AdvogadoFamiliaBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-exoneracao-pensao-nova-lima': {
-      id: '/advogado-exoneracao-pensao-nova-lima'
-      path: '/advogado-exoneracao-pensao-nova-lima'
-      fullPath: '/advogado-exoneracao-pensao-nova-lima'
-      preLoaderRoute: typeof AdvogadoExoneracaoPensaoNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-exoneracao-pensao-igarape': {
-      id: '/advogado-exoneracao-pensao-igarape'
-      path: '/advogado-exoneracao-pensao-igarape'
-      fullPath: '/advogado-exoneracao-pensao-igarape'
-      preLoaderRoute: typeof AdvogadoExoneracaoPensaoIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-exoneracao-pensao-contagem': {
-      id: '/advogado-exoneracao-pensao-contagem'
-      path: '/advogado-exoneracao-pensao-contagem'
-      fullPath: '/advogado-exoneracao-pensao-contagem'
-      preLoaderRoute: typeof AdvogadoExoneracaoPensaoContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-exoneracao-pensao-bh': {
-      id: '/advogado-exoneracao-pensao-bh'
-      path: '/advogado-exoneracao-pensao-bh'
-      fullPath: '/advogado-exoneracao-pensao-bh'
-      preLoaderRoute: typeof AdvogadoExoneracaoPensaoBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-exoneracao-pensao-betim': {
-      id: '/advogado-exoneracao-pensao-betim'
-      path: '/advogado-exoneracao-pensao-betim'
-      fullPath: '/advogado-exoneracao-pensao-betim'
-      preLoaderRoute: typeof AdvogadoExoneracaoPensaoBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-execucao-pensao-nova-lima': {
-      id: '/advogado-execucao-pensao-nova-lima'
-      path: '/advogado-execucao-pensao-nova-lima'
-      fullPath: '/advogado-execucao-pensao-nova-lima'
-      preLoaderRoute: typeof AdvogadoExecucaoPensaoNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-execucao-pensao-igarape': {
-      id: '/advogado-execucao-pensao-igarape'
-      path: '/advogado-execucao-pensao-igarape'
-      fullPath: '/advogado-execucao-pensao-igarape'
-      preLoaderRoute: typeof AdvogadoExecucaoPensaoIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-execucao-pensao-contagem': {
-      id: '/advogado-execucao-pensao-contagem'
-      path: '/advogado-execucao-pensao-contagem'
-      fullPath: '/advogado-execucao-pensao-contagem'
-      preLoaderRoute: typeof AdvogadoExecucaoPensaoContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-execucao-pensao-bh': {
-      id: '/advogado-execucao-pensao-bh'
-      path: '/advogado-execucao-pensao-bh'
-      fullPath: '/advogado-execucao-pensao-bh'
-      preLoaderRoute: typeof AdvogadoExecucaoPensaoBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-execucao-pensao-betim': {
-      id: '/advogado-execucao-pensao-betim'
-      path: '/advogado-execucao-pensao-betim'
-      fullPath: '/advogado-execucao-pensao-betim'
-      preLoaderRoute: typeof AdvogadoExecucaoPensaoBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-divorcio-nova-lima': {
-      id: '/advogado-divorcio-nova-lima'
-      path: '/advogado-divorcio-nova-lima'
-      fullPath: '/advogado-divorcio-nova-lima'
-      preLoaderRoute: typeof AdvogadoDivorcioNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-divorcio-igarape': {
-      id: '/advogado-divorcio-igarape'
-      path: '/advogado-divorcio-igarape'
-      fullPath: '/advogado-divorcio-igarape'
-      preLoaderRoute: typeof AdvogadoDivorcioIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-divorcio-extrajudicial-nova-lima': {
-      id: '/advogado-divorcio-extrajudicial-nova-lima'
-      path: '/advogado-divorcio-extrajudicial-nova-lima'
-      fullPath: '/advogado-divorcio-extrajudicial-nova-lima'
-      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-divorcio-extrajudicial-igarape': {
-      id: '/advogado-divorcio-extrajudicial-igarape'
-      path: '/advogado-divorcio-extrajudicial-igarape'
-      fullPath: '/advogado-divorcio-extrajudicial-igarape'
-      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-divorcio-extrajudicial-contagem': {
-      id: '/advogado-divorcio-extrajudicial-contagem'
-      path: '/advogado-divorcio-extrajudicial-contagem'
-      fullPath: '/advogado-divorcio-extrajudicial-contagem'
-      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-divorcio-extrajudicial-bh': {
-      id: '/advogado-divorcio-extrajudicial-bh'
-      path: '/advogado-divorcio-extrajudicial-bh'
-      fullPath: '/advogado-divorcio-extrajudicial-bh'
-      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-divorcio-extrajudicial-betim': {
-      id: '/advogado-divorcio-extrajudicial-betim'
-      path: '/advogado-divorcio-extrajudicial-betim'
-      fullPath: '/advogado-divorcio-extrajudicial-betim'
-      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-divorcio-contagem': {
-      id: '/advogado-divorcio-contagem'
-      path: '/advogado-divorcio-contagem'
-      fullPath: '/advogado-divorcio-contagem'
-      preLoaderRoute: typeof AdvogadoDivorcioContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-divorcio-bh': {
-      id: '/advogado-divorcio-bh'
-      path: '/advogado-divorcio-bh'
-      fullPath: '/advogado-divorcio-bh'
-      preLoaderRoute: typeof AdvogadoDivorcioBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-divorcio-betim': {
-      id: '/advogado-divorcio-betim'
-      path: '/advogado-divorcio-betim'
-      fullPath: '/advogado-divorcio-betim'
-      preLoaderRoute: typeof AdvogadoDivorcioBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-curatela-nova-lima': {
-      id: '/advogado-curatela-nova-lima'
-      path: '/advogado-curatela-nova-lima'
-      fullPath: '/advogado-curatela-nova-lima'
-      preLoaderRoute: typeof AdvogadoCuratelaNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-curatela-igarape': {
-      id: '/advogado-curatela-igarape'
-      path: '/advogado-curatela-igarape'
-      fullPath: '/advogado-curatela-igarape'
-      preLoaderRoute: typeof AdvogadoCuratelaIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-curatela-contagem': {
-      id: '/advogado-curatela-contagem'
-      path: '/advogado-curatela-contagem'
-      fullPath: '/advogado-curatela-contagem'
-      preLoaderRoute: typeof AdvogadoCuratelaContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-curatela-bh': {
-      id: '/advogado-curatela-bh'
-      path: '/advogado-curatela-bh'
-      fullPath: '/advogado-curatela-bh'
-      preLoaderRoute: typeof AdvogadoCuratelaBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-curatela-betim': {
-      id: '/advogado-curatela-betim'
-      path: '/advogado-curatela-betim'
-      fullPath: '/advogado-curatela-betim'
-      preLoaderRoute: typeof AdvogadoCuratelaBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal': {
-      id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
-      path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
-      fullPath: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
-      preLoaderRoute: typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia': {
-      id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
-      path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
-      fullPath: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
-      preLoaderRoute: typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-contrato-namoro-nova-lima': {
-      id: '/advogado-contrato-namoro-nova-lima'
-      path: '/advogado-contrato-namoro-nova-lima'
-      fullPath: '/advogado-contrato-namoro-nova-lima'
-      preLoaderRoute: typeof AdvogadoContratoNamoroNovaLimaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-contrato-namoro-igarape': {
-      id: '/advogado-contrato-namoro-igarape'
-      path: '/advogado-contrato-namoro-igarape'
-      fullPath: '/advogado-contrato-namoro-igarape'
-      preLoaderRoute: typeof AdvogadoContratoNamoroIgarapeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-contrato-namoro-contagem': {
-      id: '/advogado-contrato-namoro-contagem'
-      path: '/advogado-contrato-namoro-contagem'
-      fullPath: '/advogado-contrato-namoro-contagem'
-      preLoaderRoute: typeof AdvogadoContratoNamoroContagemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-contrato-namoro-bh': {
-      id: '/advogado-contrato-namoro-bh'
-      path: '/advogado-contrato-namoro-bh'
-      fullPath: '/advogado-contrato-namoro-bh'
-      preLoaderRoute: typeof AdvogadoContratoNamoroBhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-contrato-namoro-betim': {
-      id: '/advogado-contrato-namoro-betim'
-      path: '/advogado-contrato-namoro-betim'
-      fullPath: '/advogado-contrato-namoro-betim'
-      preLoaderRoute: typeof AdvogadoContratoNamoroBetimRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil': {
-      id: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
-      path: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
-      fullPath: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
-      preLoaderRoute: typeof AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil': {
-      id: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
-      path: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
-      fullPath: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
-      preLoaderRoute: typeof AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/$': {
@@ -2319,11 +1584,746 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SplatRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil': {
+      id: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
+      path: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
+      fullPath: '/advogado-averbacao-direta-divorcio-estrangeiro-cartorio-brasil'
+      preLoaderRoute: typeof AdvogadoAverbacaoDiretaDivorcioEstrangeiroCartorioBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil': {
+      id: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
+      path: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
+      fullPath: '/advogado-averbacao-direta-divorcio-portugues-cartorio-brasil'
+      preLoaderRoute: typeof AdvogadoAverbacaoDiretaDivorcioPortuguesCartorioBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-contrato-namoro-betim': {
+      id: '/advogado-contrato-namoro-betim'
+      path: '/advogado-contrato-namoro-betim'
+      fullPath: '/advogado-contrato-namoro-betim'
+      preLoaderRoute: typeof AdvogadoContratoNamoroBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-contrato-namoro-bh': {
+      id: '/advogado-contrato-namoro-bh'
+      path: '/advogado-contrato-namoro-bh'
+      fullPath: '/advogado-contrato-namoro-bh'
+      preLoaderRoute: typeof AdvogadoContratoNamoroBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-contrato-namoro-contagem': {
+      id: '/advogado-contrato-namoro-contagem'
+      path: '/advogado-contrato-namoro-contagem'
+      fullPath: '/advogado-contrato-namoro-contagem'
+      preLoaderRoute: typeof AdvogadoContratoNamoroContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-contrato-namoro-igarape': {
+      id: '/advogado-contrato-namoro-igarape'
+      path: '/advogado-contrato-namoro-igarape'
+      fullPath: '/advogado-contrato-namoro-igarape'
+      preLoaderRoute: typeof AdvogadoContratoNamoroIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-contrato-namoro-nova-lima': {
+      id: '/advogado-contrato-namoro-nova-lima'
+      path: '/advogado-contrato-namoro-nova-lima'
+      fullPath: '/advogado-contrato-namoro-nova-lima'
+      preLoaderRoute: typeof AdvogadoContratoNamoroNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia': {
+      id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
+      path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
+      fullPath: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia'
+      preLoaderRoute: typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal': {
+      id: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
+      path: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
+      fullPath: '/advogado-cumprimento-contestacao-cartas-rogatorias-stj-brasilia-portugal'
+      preLoaderRoute: typeof AdvogadoCumprimentoContestacaoCartasRogatoriasStjBrasiliaPortugalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-curatela-betim': {
+      id: '/advogado-curatela-betim'
+      path: '/advogado-curatela-betim'
+      fullPath: '/advogado-curatela-betim'
+      preLoaderRoute: typeof AdvogadoCuratelaBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-curatela-bh': {
+      id: '/advogado-curatela-bh'
+      path: '/advogado-curatela-bh'
+      fullPath: '/advogado-curatela-bh'
+      preLoaderRoute: typeof AdvogadoCuratelaBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-curatela-contagem': {
+      id: '/advogado-curatela-contagem'
+      path: '/advogado-curatela-contagem'
+      fullPath: '/advogado-curatela-contagem'
+      preLoaderRoute: typeof AdvogadoCuratelaContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-curatela-igarape': {
+      id: '/advogado-curatela-igarape'
+      path: '/advogado-curatela-igarape'
+      fullPath: '/advogado-curatela-igarape'
+      preLoaderRoute: typeof AdvogadoCuratelaIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-curatela-nova-lima': {
+      id: '/advogado-curatela-nova-lima'
+      path: '/advogado-curatela-nova-lima'
+      fullPath: '/advogado-curatela-nova-lima'
+      preLoaderRoute: typeof AdvogadoCuratelaNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-betim': {
+      id: '/advogado-divorcio-betim'
+      path: '/advogado-divorcio-betim'
+      fullPath: '/advogado-divorcio-betim'
+      preLoaderRoute: typeof AdvogadoDivorcioBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-bh': {
+      id: '/advogado-divorcio-bh'
+      path: '/advogado-divorcio-bh'
+      fullPath: '/advogado-divorcio-bh'
+      preLoaderRoute: typeof AdvogadoDivorcioBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-contagem': {
+      id: '/advogado-divorcio-contagem'
+      path: '/advogado-divorcio-contagem'
+      fullPath: '/advogado-divorcio-contagem'
+      preLoaderRoute: typeof AdvogadoDivorcioContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-extrajudicial-betim': {
+      id: '/advogado-divorcio-extrajudicial-betim'
+      path: '/advogado-divorcio-extrajudicial-betim'
+      fullPath: '/advogado-divorcio-extrajudicial-betim'
+      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-extrajudicial-bh': {
+      id: '/advogado-divorcio-extrajudicial-bh'
+      path: '/advogado-divorcio-extrajudicial-bh'
+      fullPath: '/advogado-divorcio-extrajudicial-bh'
+      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-extrajudicial-contagem': {
+      id: '/advogado-divorcio-extrajudicial-contagem'
+      path: '/advogado-divorcio-extrajudicial-contagem'
+      fullPath: '/advogado-divorcio-extrajudicial-contagem'
+      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-extrajudicial-igarape': {
+      id: '/advogado-divorcio-extrajudicial-igarape'
+      path: '/advogado-divorcio-extrajudicial-igarape'
+      fullPath: '/advogado-divorcio-extrajudicial-igarape'
+      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-extrajudicial-nova-lima': {
+      id: '/advogado-divorcio-extrajudicial-nova-lima'
+      path: '/advogado-divorcio-extrajudicial-nova-lima'
+      fullPath: '/advogado-divorcio-extrajudicial-nova-lima'
+      preLoaderRoute: typeof AdvogadoDivorcioExtrajudicialNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-igarape': {
+      id: '/advogado-divorcio-igarape'
+      path: '/advogado-divorcio-igarape'
+      fullPath: '/advogado-divorcio-igarape'
+      preLoaderRoute: typeof AdvogadoDivorcioIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-divorcio-nova-lima': {
+      id: '/advogado-divorcio-nova-lima'
+      path: '/advogado-divorcio-nova-lima'
+      fullPath: '/advogado-divorcio-nova-lima'
+      preLoaderRoute: typeof AdvogadoDivorcioNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-execucao-pensao-betim': {
+      id: '/advogado-execucao-pensao-betim'
+      path: '/advogado-execucao-pensao-betim'
+      fullPath: '/advogado-execucao-pensao-betim'
+      preLoaderRoute: typeof AdvogadoExecucaoPensaoBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-execucao-pensao-bh': {
+      id: '/advogado-execucao-pensao-bh'
+      path: '/advogado-execucao-pensao-bh'
+      fullPath: '/advogado-execucao-pensao-bh'
+      preLoaderRoute: typeof AdvogadoExecucaoPensaoBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-execucao-pensao-contagem': {
+      id: '/advogado-execucao-pensao-contagem'
+      path: '/advogado-execucao-pensao-contagem'
+      fullPath: '/advogado-execucao-pensao-contagem'
+      preLoaderRoute: typeof AdvogadoExecucaoPensaoContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-execucao-pensao-igarape': {
+      id: '/advogado-execucao-pensao-igarape'
+      path: '/advogado-execucao-pensao-igarape'
+      fullPath: '/advogado-execucao-pensao-igarape'
+      preLoaderRoute: typeof AdvogadoExecucaoPensaoIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-execucao-pensao-nova-lima': {
+      id: '/advogado-execucao-pensao-nova-lima'
+      path: '/advogado-execucao-pensao-nova-lima'
+      fullPath: '/advogado-execucao-pensao-nova-lima'
+      preLoaderRoute: typeof AdvogadoExecucaoPensaoNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-exoneracao-pensao-betim': {
+      id: '/advogado-exoneracao-pensao-betim'
+      path: '/advogado-exoneracao-pensao-betim'
+      fullPath: '/advogado-exoneracao-pensao-betim'
+      preLoaderRoute: typeof AdvogadoExoneracaoPensaoBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-exoneracao-pensao-bh': {
+      id: '/advogado-exoneracao-pensao-bh'
+      path: '/advogado-exoneracao-pensao-bh'
+      fullPath: '/advogado-exoneracao-pensao-bh'
+      preLoaderRoute: typeof AdvogadoExoneracaoPensaoBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-exoneracao-pensao-contagem': {
+      id: '/advogado-exoneracao-pensao-contagem'
+      path: '/advogado-exoneracao-pensao-contagem'
+      fullPath: '/advogado-exoneracao-pensao-contagem'
+      preLoaderRoute: typeof AdvogadoExoneracaoPensaoContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-exoneracao-pensao-igarape': {
+      id: '/advogado-exoneracao-pensao-igarape'
+      path: '/advogado-exoneracao-pensao-igarape'
+      fullPath: '/advogado-exoneracao-pensao-igarape'
+      preLoaderRoute: typeof AdvogadoExoneracaoPensaoIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-exoneracao-pensao-nova-lima': {
+      id: '/advogado-exoneracao-pensao-nova-lima'
+      path: '/advogado-exoneracao-pensao-nova-lima'
+      fullPath: '/advogado-exoneracao-pensao-nova-lima'
+      preLoaderRoute: typeof AdvogadoExoneracaoPensaoNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-familia-betim': {
+      id: '/advogado-familia-betim'
+      path: '/advogado-familia-betim'
+      fullPath: '/advogado-familia-betim'
+      preLoaderRoute: typeof AdvogadoFamiliaBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-familia-bh': {
+      id: '/advogado-familia-bh'
+      path: '/advogado-familia-bh'
+      fullPath: '/advogado-familia-bh'
+      preLoaderRoute: typeof AdvogadoFamiliaBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-familia-contagem': {
+      id: '/advogado-familia-contagem'
+      path: '/advogado-familia-contagem'
+      fullPath: '/advogado-familia-contagem'
+      preLoaderRoute: typeof AdvogadoFamiliaContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-familia-igarape': {
+      id: '/advogado-familia-igarape'
+      path: '/advogado-familia-igarape'
+      fullPath: '/advogado-familia-igarape'
+      preLoaderRoute: typeof AdvogadoFamiliaIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-familia-nova-lima': {
+      id: '/advogado-familia-nova-lima'
+      path: '/advogado-familia-nova-lima'
+      fullPath: '/advogado-familia-nova-lima'
+      preLoaderRoute: typeof AdvogadoFamiliaNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-fixacao-pensao-betim': {
+      id: '/advogado-fixacao-pensao-betim'
+      path: '/advogado-fixacao-pensao-betim'
+      fullPath: '/advogado-fixacao-pensao-betim'
+      preLoaderRoute: typeof AdvogadoFixacaoPensaoBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-fixacao-pensao-bh': {
+      id: '/advogado-fixacao-pensao-bh'
+      path: '/advogado-fixacao-pensao-bh'
+      fullPath: '/advogado-fixacao-pensao-bh'
+      preLoaderRoute: typeof AdvogadoFixacaoPensaoBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-fixacao-pensao-contagem': {
+      id: '/advogado-fixacao-pensao-contagem'
+      path: '/advogado-fixacao-pensao-contagem'
+      fullPath: '/advogado-fixacao-pensao-contagem'
+      preLoaderRoute: typeof AdvogadoFixacaoPensaoContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-fixacao-pensao-igarape': {
+      id: '/advogado-fixacao-pensao-igarape'
+      path: '/advogado-fixacao-pensao-igarape'
+      fullPath: '/advogado-fixacao-pensao-igarape'
+      preLoaderRoute: typeof AdvogadoFixacaoPensaoIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-fixacao-pensao-nova-lima': {
+      id: '/advogado-fixacao-pensao-nova-lima'
+      path: '/advogado-fixacao-pensao-nova-lima'
+      fullPath: '/advogado-fixacao-pensao-nova-lima'
+      preLoaderRoute: typeof AdvogadoFixacaoPensaoNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-betim': {
+      id: '/advogado-guarda-betim'
+      path: '/advogado-guarda-betim'
+      fullPath: '/advogado-guarda-betim'
+      preLoaderRoute: typeof AdvogadoGuardaBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-bh': {
+      id: '/advogado-guarda-bh'
+      path: '/advogado-guarda-bh'
+      fullPath: '/advogado-guarda-bh'
+      preLoaderRoute: typeof AdvogadoGuardaBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-betim': {
+      id: '/advogado-guarda-compartilhada-betim'
+      path: '/advogado-guarda-compartilhada-betim'
+      fullPath: '/advogado-guarda-compartilhada-betim'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-bh': {
+      id: '/advogado-guarda-compartilhada-bh'
+      path: '/advogado-guarda-compartilhada-bh'
+      fullPath: '/advogado-guarda-compartilhada-bh'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-contagem': {
+      id: '/advogado-guarda-compartilhada-contagem'
+      path: '/advogado-guarda-compartilhada-contagem'
+      fullPath: '/advogado-guarda-compartilhada-contagem'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-igarape': {
+      id: '/advogado-guarda-compartilhada-igarape'
+      path: '/advogado-guarda-compartilhada-igarape'
+      fullPath: '/advogado-guarda-compartilhada-igarape'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-compartilhada-nova-lima': {
+      id: '/advogado-guarda-compartilhada-nova-lima'
+      path: '/advogado-guarda-compartilhada-nova-lima'
+      fullPath: '/advogado-guarda-compartilhada-nova-lima'
+      preLoaderRoute: typeof AdvogadoGuardaCompartilhadaNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-contagem': {
+      id: '/advogado-guarda-contagem'
+      path: '/advogado-guarda-contagem'
+      fullPath: '/advogado-guarda-contagem'
+      preLoaderRoute: typeof AdvogadoGuardaContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-igarape': {
+      id: '/advogado-guarda-igarape'
+      path: '/advogado-guarda-igarape'
+      fullPath: '/advogado-guarda-igarape'
+      preLoaderRoute: typeof AdvogadoGuardaIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-guarda-nova-lima': {
+      id: '/advogado-guarda-nova-lima'
+      path: '/advogado-guarda-nova-lima'
+      fullPath: '/advogado-guarda-nova-lima'
+      preLoaderRoute: typeof AdvogadoGuardaNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia': {
+      id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
+      path: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
+      fullPath: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia'
+      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal': {
+      id: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
+      path: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
+      fullPath: '/advogado-homologacao-decisao-curatela-interdicao-stj-brasilia-portugal'
+      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoCuratelaInterdicaoStjBrasiliaPortugalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil': {
+      id: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+      path: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+      fullPath: '/advogado-homologacao-decisao-judicial-estrangeira-stj-brasil'
+      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoJudicialEstrangeiraStjBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil': {
+      id: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
+      path: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
+      fullPath: '/advogado-homologacao-decisao-judicial-portuguesa-stj-brasil'
+      preLoaderRoute: typeof AdvogadoHomologacaoDecisaoJudicialPortuguesaStjBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil': {
+      id: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
+      path: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
+      fullPath: '/advogado-homologacao-sentenca-estrangeira-divorcio-guarda-brasil'
+      preLoaderRoute: typeof AdvogadoHomologacaoSentencaEstrangeiraDivorcioGuardaBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil': {
+      id: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
+      path: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
+      fullPath: '/advogado-homologacao-sentenca-estrangeira-paternidade-filiacao-brasil'
+      preLoaderRoute: typeof AdvogadoHomologacaoSentencaEstrangeiraPaternidadeFiliacaoBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil': {
+      id: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
+      path: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
+      fullPath: '/advogado-homologacao-sentenca-portuguesa-paternidade-filiacao-brasil'
+      preLoaderRoute: typeof AdvogadoHomologacaoSentencaPortuguesaPaternidadeFiliacaoBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-betim': {
+      id: '/advogado-inventario-betim'
+      path: '/advogado-inventario-betim'
+      fullPath: '/advogado-inventario-betim'
+      preLoaderRoute: typeof AdvogadoInventarioBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-bh': {
+      id: '/advogado-inventario-bh'
+      path: '/advogado-inventario-bh'
+      fullPath: '/advogado-inventario-bh'
+      preLoaderRoute: typeof AdvogadoInventarioBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-contagem': {
+      id: '/advogado-inventario-contagem'
+      path: '/advogado-inventario-contagem'
+      fullPath: '/advogado-inventario-contagem'
+      preLoaderRoute: typeof AdvogadoInventarioContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-igarape': {
+      id: '/advogado-inventario-igarape'
+      path: '/advogado-inventario-igarape'
+      fullPath: '/advogado-inventario-igarape'
+      preLoaderRoute: typeof AdvogadoInventarioIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-nova-lima': {
+      id: '/advogado-inventario-nova-lima'
+      path: '/advogado-inventario-nova-lima'
+      fullPath: '/advogado-inventario-nova-lima'
+      preLoaderRoute: typeof AdvogadoInventarioNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-mudanca-regime-bens-casamento-betim': {
+      id: '/advogado-mudanca-regime-bens-casamento-betim'
+      path: '/advogado-mudanca-regime-bens-casamento-betim'
+      fullPath: '/advogado-mudanca-regime-bens-casamento-betim'
+      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-mudanca-regime-bens-casamento-bh': {
+      id: '/advogado-mudanca-regime-bens-casamento-bh'
+      path: '/advogado-mudanca-regime-bens-casamento-bh'
+      fullPath: '/advogado-mudanca-regime-bens-casamento-bh'
+      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-mudanca-regime-bens-casamento-contagem': {
+      id: '/advogado-mudanca-regime-bens-casamento-contagem'
+      path: '/advogado-mudanca-regime-bens-casamento-contagem'
+      fullPath: '/advogado-mudanca-regime-bens-casamento-contagem'
+      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-mudanca-regime-bens-casamento-igarape': {
+      id: '/advogado-mudanca-regime-bens-casamento-igarape'
+      path: '/advogado-mudanca-regime-bens-casamento-igarape'
+      fullPath: '/advogado-mudanca-regime-bens-casamento-igarape'
+      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-mudanca-regime-bens-casamento-nova-lima': {
+      id: '/advogado-mudanca-regime-bens-casamento-nova-lima'
+      path: '/advogado-mudanca-regime-bens-casamento-nova-lima'
+      fullPath: '/advogado-mudanca-regime-bens-casamento-nova-lima'
+      preLoaderRoute: typeof AdvogadoMudancaRegimeBensCasamentoNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-pensao-alimenticia-betim': {
+      id: '/advogado-pensao-alimenticia-betim'
+      path: '/advogado-pensao-alimenticia-betim'
+      fullPath: '/advogado-pensao-alimenticia-betim'
+      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-pensao-alimenticia-bh': {
+      id: '/advogado-pensao-alimenticia-bh'
+      path: '/advogado-pensao-alimenticia-bh'
+      fullPath: '/advogado-pensao-alimenticia-bh'
+      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-pensao-alimenticia-contagem': {
+      id: '/advogado-pensao-alimenticia-contagem'
+      path: '/advogado-pensao-alimenticia-contagem'
+      fullPath: '/advogado-pensao-alimenticia-contagem'
+      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-pensao-alimenticia-igarape': {
+      id: '/advogado-pensao-alimenticia-igarape'
+      path: '/advogado-pensao-alimenticia-igarape'
+      fullPath: '/advogado-pensao-alimenticia-igarape'
+      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-pensao-alimenticia-nova-lima': {
+      id: '/advogado-pensao-alimenticia-nova-lima'
+      path: '/advogado-pensao-alimenticia-nova-lima'
+      fullPath: '/advogado-pensao-alimenticia-nova-lima'
+      preLoaderRoute: typeof AdvogadoPensaoAlimenticiaNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-dissolucao-uniao-estavel-betim': {
+      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
+      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
+      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-betim'
+      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-dissolucao-uniao-estavel-bh': {
+      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
+      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
+      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-bh'
+      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem': {
+      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
+      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
+      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-contagem'
+      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape': {
+      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
+      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
+      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-igarape'
+      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima': {
+      id: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
+      path: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
+      fullPath: '/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima'
+      preLoaderRoute: typeof AdvogadoReconhecimentoDissolucaoUniaoEstavelNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia': {
+      id: '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
+      path: '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
+      fullPath: '/advogado-reconhecimento-homologacao-sentenca-estrangeira-stj-brasilia'
+      preLoaderRoute: typeof AdvogadoReconhecimentoHomologacaoSentencaEstrangeiraStjBrasiliaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia': {
+      id: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
+      path: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
+      fullPath: '/advogado-reconhecimento-homologacao-sentenca-portuguesa-stj-brasilia'
+      preLoaderRoute: typeof AdvogadoReconhecimentoHomologacaoSentencaPortuguesaStjBrasiliaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim': {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-betim'
+      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh': {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-bh'
+      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem': {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-contagem'
+      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape': {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-igarape'
+      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima': {
+      id: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
+      path: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
+      fullPath: '/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-lima'
+      preLoaderRoute: typeof AdvogadoReconhecimentoInvestigacaoNegatoriaPaternidadeNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil': {
+      id: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
+      path: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
+      fullPath: '/advogado-registro-validacao-escrituras-notariais-estrangeiras-brasil'
+      preLoaderRoute: typeof AdvogadoRegistroValidacaoEscriturasNotariaisEstrangeirasBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil': {
+      id: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
+      path: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
+      fullPath: '/advogado-registro-validacao-escrituras-notariais-portuguesas-brasil'
+      preLoaderRoute: typeof AdvogadoRegistroValidacaoEscriturasNotariaisPortuguesasBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-revisao-pensao-betim': {
+      id: '/advogado-revisao-pensao-betim'
+      path: '/advogado-revisao-pensao-betim'
+      fullPath: '/advogado-revisao-pensao-betim'
+      preLoaderRoute: typeof AdvogadoRevisaoPensaoBetimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-revisao-pensao-bh': {
+      id: '/advogado-revisao-pensao-bh'
+      path: '/advogado-revisao-pensao-bh'
+      fullPath: '/advogado-revisao-pensao-bh'
+      preLoaderRoute: typeof AdvogadoRevisaoPensaoBhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-revisao-pensao-contagem': {
+      id: '/advogado-revisao-pensao-contagem'
+      path: '/advogado-revisao-pensao-contagem'
+      fullPath: '/advogado-revisao-pensao-contagem'
+      preLoaderRoute: typeof AdvogadoRevisaoPensaoContagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-revisao-pensao-igarape': {
+      id: '/advogado-revisao-pensao-igarape'
+      path: '/advogado-revisao-pensao-igarape'
+      fullPath: '/advogado-revisao-pensao-igarape'
+      preLoaderRoute: typeof AdvogadoRevisaoPensaoIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-revisao-pensao-nova-lima': {
+      id: '/advogado-revisao-pensao-nova-lima'
+      path: '/advogado-revisao-pensao-nova-lima'
+      fullPath: '/advogado-revisao-pensao-nova-lima'
+      preLoaderRoute: typeof AdvogadoRevisaoPensaoNovaLimaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil': {
+      id: '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
+      path: '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
+      fullPath: '/advogado-traslado-transcricao-certidao-casamento-estrangeiro-brasil'
+      preLoaderRoute: typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoEstrangeiroBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil': {
+      id: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
+      path: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
+      fullPath: '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
+      preLoaderRoute: typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-validacao-homologacao-sentenca-estrangeira': {
+      id: '/advogado-validacao-homologacao-sentenca-estrangeira'
+      path: '/advogado-validacao-homologacao-sentenca-estrangeira'
+      fullPath: '/advogado-validacao-homologacao-sentenca-estrangeira'
+      preLoaderRoute: typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-validacao-homologacao-sentenca-portuguesa-brasil': {
+      id: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
+      path: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
+      fullPath: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
+      preLoaderRoute: typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas-de-atuacao': {
+      id: '/areas-de-atuacao'
+      path: '/areas-de-atuacao'
+      fullPath: '/areas-de-atuacao'
+      preLoaderRoute: typeof AreasDeAtuacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/duvidas': {
+      id: '/duvidas'
+      path: '/duvidas'
+      fullPath: '/duvidas'
+      preLoaderRoute: typeof DuvidasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fale-conosco': {
+      id: '/fale-conosco'
+      path: '/fale-conosco'
+      fullPath: '/fale-conosco'
+      preLoaderRoute: typeof FaleConoscoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/validacao-homologacao-sentenca-estrangeira': {
+      id: '/validacao-homologacao-sentenca-estrangeira'
+      path: '/validacao-homologacao-sentenca-estrangeira'
+      fullPath: '/validacao-homologacao-sentenca-estrangeira'
+      preLoaderRoute: typeof ValidacaoHomologacaoSentencaEstrangeiraRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/artigos/': {
