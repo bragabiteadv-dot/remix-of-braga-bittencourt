@@ -20,6 +20,7 @@ export default function RotatingEarth({
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    let isMounted = true;
     if (!canvasRef.current) return;
 
     const canvas = canvasRef.current;
@@ -55,6 +56,7 @@ export default function RotatingEarth({
     let landFeatures: any;
 
     const render = () => {
+      if (!isMounted || !context) return;
       context.clearRect(0, 0, containerWidth, containerHeight);
       const currentScale = Math.max(0, projection.scale());
       const scaleFactor = currentScale / radius;
@@ -102,29 +104,30 @@ export default function RotatingEarth({
       }
     };
 
-    const initializeData = async () => {
+    const loadData = async () => {
       try {
-        setIsLoading(true);
+        if (isMounted) setIsLoading(true);
         const [worldData, landPoints] = await Promise.all([loadWorldData(), loadLandPoints()]);
+        if (!isMounted) return;
         landFeatures = worldData;
         landPoints.forEach(([lng, lat]) => allDots.push({ lng, lat, visible: true }));
         render();
         setIsLoading(false);
       } catch (err) {
-        setError("Não foi possível carregar o mapa");
-        setIsLoading(false);
+        if (isMounted) {
+          setError("Não foi possível carregar o mapa");
+          setIsLoading(false);
+        }
       }
     };
 
     const rotation: [number, number] = [0, 0];
     let autoRotate = true;
     const rotationSpeed = 0.5;
-    // Performance only: skip frames while the canvas is off-screen.
-    // Visual appearance and rotation speed while visible are unchanged.
     let isInViewport = true;
 
     const rotate = () => {
-      if (autoRotate && isInViewport) {
+      if (autoRotate && isInViewport && isMounted) {
         rotation[0] += rotationSpeed;
         projection.rotate(rotation);
         render();
@@ -144,9 +147,6 @@ export default function RotatingEarth({
       viewportObserver.observe(canvas);
     }
 
-
-    // Only enable drag/scroll interactions while the pointer is over the globe
-    // circle so page scrolling is never blocked outside the globe.
     const getGlobeCenter = () => {
       const rect = canvas.getBoundingClientRect();
       return {
@@ -164,7 +164,7 @@ export default function RotatingEarth({
 
     let isHoveringGlobe = false;
     const updateCursor = () => {
-      canvas.style.cursor = isHoveringGlobe ? "grab" : "default";
+      if (canvas) canvas.style.cursor = isHoveringGlobe ? "grab" : "default";
     };
 
     const handleMouseMoveHover = (event: MouseEvent) => {
@@ -177,6 +177,9 @@ export default function RotatingEarth({
       updateCursor();
     };
 
+    let currentHandleMouseMove: ((e: MouseEvent) => void) | null = null;
+    let currentHandleMouseUp: (() => void) | null = null;
+
     const handleMouseDown = (event: MouseEvent) => {
       if (!isPointOverGlobe(event.clientX, event.clientY)) return;
       autoRotate = false;
@@ -186,12 +189,12 @@ export default function RotatingEarth({
       const startRotation: [number, number] = [rotation[0], rotation[1]];
 
       const handleMouseMove = (moveEvent: MouseEvent) => {
+        if (!isMounted) return;
         const sensitivity = 0.5;
         const dx = moveEvent.clientX - startX;
         const dy = moveEvent.clientY - startY;
         rotation[0] = startRotation[0] + dx * sensitivity;
-        rotation[1] = startRotation[1] - dy * sensitivity;
-        rotation[1] = Math.max(-90, Math.min(90, rotation[1]));
+        rotation[1] = Math.max(-90, Math.min(90, startRotation[1] - dy * sensitivity));
         projection.rotate(rotation);
         render();
       };
@@ -199,12 +202,16 @@ export default function RotatingEarth({
       const handleMouseUp = () => {
         document.removeEventListener("mousemove", handleMouseMove);
         document.removeEventListener("mouseup", handleMouseUp);
-        canvas.style.cursor = isHoveringGlobe ? "grab" : "default";
+        currentHandleMouseMove = null;
+        currentHandleMouseUp = null;
+        if (canvas) canvas.style.cursor = isHoveringGlobe ? "grab" : "default";
         setTimeout(() => {
-          autoRotate = true;
+          if (isMounted) autoRotate = true;
         }, 10);
       };
 
+      currentHandleMouseMove = handleMouseMove;
+      currentHandleMouseUp = handleMouseUp;
       document.addEventListener("mousemove", handleMouseMove);
       document.addEventListener("mouseup", handleMouseUp);
     };
@@ -221,10 +228,6 @@ export default function RotatingEarth({
       render();
     };
 
-    // Touch support: one finger drags to rotate, two fingers pinch to zoom.
-    // A gesture is activated only when it starts on the visible globe circle.
-    // Touches that start on the canvas but outside the circle are ignored so
-    // the page can keep scrolling normally on mobile.
     let touchStart: { x: number; y: number } | null = null;
     let touchStartRotation: [number, number] = [0, 0];
     let pinchStartDistance = 0;
@@ -283,7 +286,7 @@ export default function RotatingEarth({
     };
 
     const handleTouchMove = (event: TouchEvent) => {
-      if (!isTouchGestureActive) return;
+      if (!isTouchGestureActive || !isMounted) return;
 
       event.preventDefault();
 
@@ -314,7 +317,7 @@ export default function RotatingEarth({
       if (event.touches.length === 0) {
         resetTouchGesture();
         setTimeout(() => {
-          autoRotate = true;
+          if (isMounted) autoRotate = true;
         }, 10);
       } else if (event.touches.length === 1) {
         const firstTouch = event.touches[0];
@@ -334,9 +337,10 @@ export default function RotatingEarth({
     canvas.addEventListener("touchend", handleTouchEnd);
     canvas.addEventListener("touchcancel", handleTouchEnd);
 
-    initializeData();
+    loadData();
 
     return () => {
+      isMounted = false;
       rotationTimer.stop();
       viewportObserver?.disconnect();
       canvas.removeEventListener("mousemove", handleMouseMoveHover);
@@ -347,9 +351,14 @@ export default function RotatingEarth({
       canvas.removeEventListener("touchmove", handleTouchMove);
       canvas.removeEventListener("touchend", handleTouchEnd);
       canvas.removeEventListener("touchcancel", handleTouchEnd);
+
+      if (currentHandleMouseMove) {
+        document.removeEventListener("mousemove", currentHandleMouseMove);
+      }
+      if (currentHandleMouseUp) {
+        document.removeEventListener("mouseup", currentHandleMouseUp);
+      }
     };
-
-
   }, [width, height]);
 
   if (error) {
