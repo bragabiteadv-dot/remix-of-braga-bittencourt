@@ -2,7 +2,7 @@
 
 ## Em andamento
 - [ ] Acelerar o carregamento do globo sem alterar aparência, movimento, zoom ou gestos
-- [ ] Planejar a adequação da máscara azul da seção à nova imagem de referência, sem alterar nada antes da aprovação
+- [x] Adequar a máscara azul da seção Nossa Equipe à nova imagem de referência sem alterar os demais elementos
 
 ## Concluído recente
 - [x] Trocar quatro imagens compartilhadas, melhorar a nitidez do aperto de mãos e suavizar diagonalmente a máscara da seção Nossa Equipe

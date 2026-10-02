@@ -54,7 +54,7 @@ export function TeamGrid() {
         style={{ backgroundImage: `url('${equipeBg}')` }}
       ></div>
       <div
-        className="absolute inset-0 z-0 bg-gradient-to-br from-navy/95 via-navy/70 to-navy/45 pointer-events-none"
+        className="absolute inset-0 z-0 bg-navy/35 bg-gradient-to-br from-navy via-navy/70 to-transparent pointer-events-none"
         aria-hidden="true"
       />
 
