@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { geoGraticule, geoOrthographic, geoPath, timer } from "d3";
-import { loadLandPoints, loadWorldData } from "@/lib/globe-resources";
+import { loadLandPoints, loadWorldData, type GlobeFeatureCollection, type GlobePoint } from "@/lib/globe-data";
 
 interface RotatingEarthProps {
   width?: number;
@@ -44,15 +44,12 @@ export default function RotatingEarth({
       .clipAngle(90);
 
     const path = geoPath().projection(projection).context(context);
-    const graticule = geoGraticule();
-
-    type DotData = [number, number];
-
-    const allDots: DotData[] = [];
-    let landFeatures: any;
+    const graticule = geoGraticule()();
+    let allDots: GlobePoint[] = [];
+    let landFeatures: GlobeFeatureCollection | null = null;
 
     const render = () => {
-    let allDots: DotData[] = [];
+      if (!isMounted || !context) return;
       context.clearRect(0, 0, containerWidth, containerHeight);
       const currentScale = Math.max(0, projection.scale());
       const scaleFactor = currentScale / radius;
@@ -67,7 +64,7 @@ export default function RotatingEarth({
 
       if (landFeatures) {
         context.beginPath();
-        path(graticule());
+        path(graticule);
         context.strokeStyle = "#ffffff";
         context.lineWidth = 1 * scaleFactor;
         context.globalAlpha = 0.25;
@@ -75,19 +72,19 @@ export default function RotatingEarth({
         context.globalAlpha = 1;
 
         context.beginPath();
-        landFeatures.features.forEach((feature: any) => {
-          path(feature);
+        landFeatures.features.forEach((feature) => {
+          path(feature as Parameters<typeof path>[0]);
         });
         context.strokeStyle = "#ffffff";
         context.lineWidth = 1 * scaleFactor;
         context.stroke();
 
         allDots.forEach((dot) => {
-          const projected = projection([dot.lng, dot.lat]);
+          const projected = projection(dot);
           if (
             projected &&
             projected[0] >= 0 &&
-          const projected = projection(dot);
+            projected[0] <= containerWidth &&
             projected[1] >= 0 &&
             projected[1] <= containerHeight
           ) {
@@ -102,15 +99,15 @@ export default function RotatingEarth({
 
     const loadData = async () => {
       try {
-        if (isMounted) if (!isLoading) setIsLoading(true);
+        if (isMounted) setIsLoading(true);
         const [worldData, landPoints] = await Promise.all([loadWorldData(), loadLandPoints()]);
         if (!isMounted) return;
         landFeatures = worldData;
-        landPoints.forEach(([lng, lat]) => allDots.push({ lng, lat, visible: true }));
+        allDots = landPoints;
         render();
         setIsLoading(false);
       } catch (err) {
-        allDots = landPoints;
+        if (isMounted) {
           setError("Erro ao carregar os dados geográficos. Por favor, verifique sua conexão.");
           setIsLoading(false);
         }
@@ -361,8 +358,8 @@ export default function RotatingEarth({
     return (
       <div className={`flex items-center justify-center ${className}`}>
         <div className="text-center">
-          <p className="text-red-500 font-semibold">Ops! Ocorreu um problema</p>
-          <p className="text-sm text-gray-400 mb-4">{error}</p><button onClick={() => window.location.reload()} className="text-xs text-white/60 hover:text-white underline transition-colors">Tentar novamente</button>
+          <p className="text-red-500 font-semibold">Não foi possível carregar o globo</p>
+          <p className="text-sm text-gray-400">{error}</p>
         </div>
       </div>
     );
@@ -375,7 +372,7 @@ export default function RotatingEarth({
         className="touch-auto"
       />
       {isLoading && (
-        <p className="text-sm text-gray-400 mt-2">Carregando Dados do Globo…</p>
+        <p className="text-sm text-gray-400 mt-2">Carregando globo…</p>
       )}
       <p className="text-xs text-gray-500 mt-2">Arraste para girar • Role para ampliar</p>
     </div>
