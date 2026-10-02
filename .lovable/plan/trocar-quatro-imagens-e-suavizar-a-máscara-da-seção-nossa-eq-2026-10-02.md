@@ -35,12 +35,14 @@ Ela aparece em **100 páginas**:
 - **Home (`/`)**;
 - **todas as 99 páginas de destino**.
 
-A imagem será trocada mantendo rigorosamente o quadro branco duplo, posição, proporção, tamanho e disposição da seção no telefone e no computador.
+A imagem será trocada mantendo rigorosamente o quadro branco duplo, posição, proporção, margem que tem perto dela, tamanho e disposição da seção no telefone e no computador.
+
+Verificar se tem algum erro nela pois ela aparece embassada. Concertar isto.
 
 #### Texto alternativo para você preencher
 
-1. Home — texto alt: **[PREENCHER]**
-2. Páginas de destino — texto alt: **[PREENCHER — pode usar o título de cada página]**
+1. Home — texto alt: **[Compromisso Braga Bitencourt Advogados]**
+2. Páginas de destino — texto alt: **[O compormisso do + título da página]**
 
 ### 3. `i309_11zon.webp` — assinatura de documento
 
