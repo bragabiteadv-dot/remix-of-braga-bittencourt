@@ -100,17 +100,17 @@ export default function RotatingEarth({
       }
     };
 
-    const loadData = async () => {
+        const loadData = async () => {
       try {
-        if (isMounted) if (!isLoading) setIsLoading(true);
         const [worldData, landPoints] = await Promise.all([loadWorldData(), loadLandPoints()]);
         if (!isMounted) return;
         landFeatures = worldData;
+        allDots.length = 0;
         landPoints.forEach(([lng, lat]) => allDots.push({ lng, lat, visible: true }));
         render();
         setIsLoading(false);
       } catch (err) {
-        allDots = landPoints;
+        if (isMounted) {
           setError("Erro ao carregar os dados geográficos. Por favor, verifique sua conexão.");
           setIsLoading(false);
         }
