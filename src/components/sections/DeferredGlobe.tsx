@@ -48,7 +48,7 @@ export function DeferredGlobe() {
   return (
     <div ref={containerRef} className="flex min-h-[360px] w-full items-center justify-center md:min-h-[600px]">
       {shouldLoad ? (
-        <Suspense fallback={<div className="h-[360px] w-full md:h-[600px]" aria-hidden="true" />}>
+        <Suspense fallback={<div className="flex h-[360px] w-full flex-col items-center justify-center md:h-[600px]" aria-hidden="true"><div className="h-32 w-32 animate-pulse rounded-full bg-white/5" /><p className="mt-4 animate-pulse text-sm text-gray-500 font-cinzel">Preparando Experiência Global...</p></div>}>
           <RotatingEarth width={600} height={600} />
         </Suspense>
       ) : null}
