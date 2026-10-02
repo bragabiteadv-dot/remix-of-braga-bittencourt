@@ -34,7 +34,7 @@ export const Route = createFileRoute("/$")({
       canonicalUrl: page.path,
       city: page.location.name,
       service: page.service.name,
-      title: `${page.title} | Braga Bitencourt Advogados`,
+      title: page.seoTitle,
       description: page.description,
       image: OG_IMAGE,
       areaServed: page.location.name,
