@@ -19,6 +19,7 @@ export interface InternationalLandingPage {
   slug: string;
   path: string;
   title: string;
+  seoTitle: string;
   description: string;
   service: InternationalService;
   location: InternationalLocation;
@@ -76,7 +77,7 @@ export const INTERNATIONAL_SERVICES: readonly InternationalService[] = [
     "summary": "Avaliação da via direta em cartório para divórcio consensual simples obtido no exterior.",
     "legalContext": "A averbação direta é reservada ao divórcio estrangeiro consensual simples, sem disposições sobre guarda, alimentos ou partilha de bens. Quando esses temas aparecem na decisão, a homologação pelo STJ pode ser necessária antes da atualização do registro civil brasileiro.",
     "steps": [
-      "Verificação dos requisitos do Provimento 53 do CNJ",
+      "Verificação dos requisitos do Provimento 53 do CNJ e das normas posteriores aplicáveis",
       "Análise de guarda, alimentos e partilha na decisão",
       "Preparação da documentação estrangeira e da tradução",
       "Averbação no registro civil brasileiro competente"
@@ -605,16 +606,16 @@ export const INTERNATIONAL_LOCATIONS: readonly InternationalLocation[] = [
   },
   {
     "id": 36,
-    "name": "Copenhagen",
+    "name": "Copenhague",
     "slug": "copenhagen",
     "kind": "cidade",
     "titles": [
-      "Advogado para Reconhecimento e Homologação de Decisão Judicial de Copenhagen perante o STJ no Brasil",
-      "Advogado para Validação, Eficácia e Registro de Escrituras Notariais de Copenhagen no Brasil",
-      "Advogado para Registro, Traslado e Homologação de Casamento em Copenhagen no Brasil",
-      "Advogado para Registro e Averbação Direta de Divórcio Consensual de Copenhagen em Cartório no Brasil",
-      "Advogado para Validação, Cumprimento e Homologação de Sentença Judicial de Copenhagen no Brasil",
-      "Advogado de Transcrição e Registro de Casamento Realizado em Copenhagen no Brasil"
+      "Advogado para Reconhecimento e Homologação de Decisão Judicial de Copenhague perante o STJ no Brasil",
+      "Advogado para Validação, Eficácia e Registro de Escrituras Notariais de Copenhague no Brasil",
+      "Advogado para Registro, Traslado e Homologação de Casamento em Copenhague no Brasil",
+      "Advogado para Registro e Averbação Direta de Divórcio Consensual de Copenhague em Cartório no Brasil",
+      "Advogado para Validação, Cumprimento e Homologação de Sentença Judicial de Copenhague no Brasil",
+      "Advogado de Transcrição e Registro de Casamento Realizado em Copenhague no Brasil"
     ]
   },
   {
@@ -1484,6 +1485,26 @@ function locationContext(location: InternationalLocation): string {
   }
 }
 
+const SEO_SERVICE_TITLES: Readonly<Record<string, string>> = {
+  "decisao-stj": "Homologação de decisão no STJ",
+  escrituras: "Validação de escritura estrangeira",
+  "casamento-exterior": "Registro de casamento estrangeiro",
+  "divorcio-direto": "Averbação de divórcio estrangeiro",
+  sentenca: "Homologação de sentença estrangeira",
+  "transcricao-casamento": "Transcrição de casamento estrangeiro",
+};
+
+function seoLocationName(location: InternationalLocation): string {
+  if (location.id === 5) return "Brasil";
+  return location.name.replace(/ \([^)]*\)/g, "");
+}
+
+function buildLandingSeoTitle(service: InternationalService, location: InternationalLocation): string {
+  const base = `${SEO_SERVICE_TITLES[service.id]} — ${seoLocationName(location)}`;
+  const branded = `${base} | Braga Bitencourt`;
+  return branded.length <= 70 ? branded : base;
+}
+
 export const INTERNATIONAL_LANDING_PAGES: readonly InternationalLandingPage[] = INTERNATIONAL_LOCATIONS.flatMap((location) =>
   INTERNATIONAL_SERVICES.map((service, serviceIndex) => {
     const existingPath = EXISTING_PATHS.get(`${location.id}:${serviceIndex}`);
@@ -1493,7 +1514,8 @@ export const INTERNATIONAL_LANDING_PAGES: readonly InternationalLandingPage[] = 
       slug,
       path: existingPath ?? `/advogado-${slug}`,
       title,
-      description: `${title}. ${service.summary} Atendimento no Brasil e online, com análise individual da documentação relacionada a ${location.name}.`,
+      seoTitle: buildLandingSeoTitle(service, location),
+      description: `${service.summary} Assessoria para documentos relacionados a ${location.name}, com atendimento no Brasil e online.`,
       service,
       location,
       existingPath,

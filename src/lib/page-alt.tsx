@@ -62,7 +62,7 @@ export function usePageAltFor(kind: PageAltKind, fallback: string) {
     case "team-glaucia":
       return `Braga Bitencourt Advocacia de ${service}${city ? ` ${city}` : ""}`;
     case "action":
-      return `O compormisso do ${alt}`;
+      return `O compromisso do ${alt}`;
     case "form":
       return `Fale com ${alt}.`;
   }

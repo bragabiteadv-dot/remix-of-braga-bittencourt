@@ -1,27 +1,56 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { buildSeo } from "@/lib/seo";
+import { buildSeoHead } from "@/components/SeoHead";
+import { InternationalLegalLanding } from "@/components/landing/InternationalLegalLanding";
 import { NotFoundView } from "@/components/layout/NotFoundView";
+import { getInternationalLandingBySlug } from "@/lib/international-landings";
+import { OG_IMAGE } from "@/lib/site-og";
 
 /**
  * Rota catch-all: apenas garante metadados corretos (noindex) para URLs
  * inexistentes. O conteúdo visual é exatamente o mesmo da página 404 atual.
  */
 export const Route = createFileRoute("/$")({
-  component: NotFoundView,
-  // Garante status HTTP 404 (em vez de 200) para URLs inexistentes.
-  // O visual permanece exatamente o mesmo: notFoundComponent da raiz
-  // renderiza a mesma NotFoundView.
-  loader: () => {
-    // Status HTTP 404 real para URLs inexistentes. O notFoundComponent do
-    // root renderiza exatamente a mesma NotFoundView (nada visual muda).
-    throw notFound();
+  component: GeneratedInternationalLanding,
+  loader: ({ params }) => {
+    const path = params._splat ?? "";
+    const slug = path.startsWith("advogado-") ? path.slice("advogado-".length) : "";
+    const page = slug ? getInternationalLandingBySlug(slug) : undefined;
+    if (!page) throw notFound();
+    return { page };
   },
-  head: () =>
-    buildSeo({
-      path: "/404",
-      title: "Página não encontrada | Braga Bitencourt Advogados",
-      description:
-        "A página que você procura não foi encontrada. Acesse a página inicial da Braga Bitencourt Advogados para continuar navegando.",
-      noindex: true,
-    }),
+  head: ({ loaderData }) => {
+    const page = loaderData?.page;
+    if (!page) {
+      return buildSeoHead({
+        canonicalUrl: "/404",
+        city: "Brasil",
+        service: "Página não encontrada",
+        title: "Página não encontrada | Braga Bitencourt Advogados",
+        description: "A página que você procura não foi encontrada.",
+        noindex: true,
+      });
+    }
+    return buildSeoHead({
+      canonicalUrl: page.path,
+      city: page.location.name,
+      service: page.service.name,
+      title: page.seoTitle,
+      description: page.description,
+      image: OG_IMAGE,
+      areaServed: page.location.name,
+      breadcrumbName: page.title,
+      extraSchema: [{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: page.service.name,
+        areaServed: page.location.name,
+        serviceType: page.service.name,
+      }],
+    });
+  },
 });
+
+function GeneratedInternationalLanding() {
+  const { page } = Route.useLoaderData();
+  return <InternationalLegalLanding page={page} />;
+}

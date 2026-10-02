@@ -1,7 +1,6 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Criar 582 páginas jurídicas em português para 97 localidades e 6 serviços, com URLs, textos, metadados e sitemap próprios
 - [x] Substituir novamente o fundo da seção Nossa Equipe pela versão JPG enviada, após aprovação do plano
 - [x] Trocar a foto da seção Sobre o fundador na Home e no Perfil, mantendo os formatos e textos alternativos aprovados
 - [ ] Acelerar o carregamento do globo sem alterar aparência, movimento, zoom ou gestos
@@ -11,6 +10,7 @@
 - [x] Ajustar a continuidade das ondas e eliminar espaços nas divisas da seção de serviços
 
 ## Concluído recente
+- [x] Criar 582 páginas jurídicas em português para 97 localidades e 6 serviços, com URLs, textos, metadados e sitemap próprios
 - [x] Trocar quatro imagens compartilhadas, melhorar a nitidez do aperto de mãos e suavizar diagonalmente a máscara da seção Nossa Equipe
 - [x] Auditar o sitemap público e confirmar 138 URLs válidas, canônicas e sem www, parâmetros, redirecionamentos ou páginas 404
 - [x] Padronizar as URLs canônicas de todas as páginas no domínio sem www, removendo query, UTM e hash
