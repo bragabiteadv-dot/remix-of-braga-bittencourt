@@ -37,8 +37,8 @@ Assim, o site recebe a versão mais nítida sem aumentar desnecessariamente o pe
 
 O texto alternativo descreve a informação da foto para pessoas que usam leitores de tela, aparece se a imagem não carregar e ajuda os buscadores a entenderem o conteúdo visual.
 
-- **Home — texto alt:** ______________________________________________
-- **Perfil — texto alt:** _____________________________________________
+- **Home — texto alt:** Dr. Javét Braga Bitencourt 
+- **Perfil — texto alt:** Dr. Javét fundador da Braga Bitencourt Advogados.
 
 Se desejar o mesmo texto nas duas páginas, basta escrever uma única frase e indicar: **usar nas duas páginas**.
 

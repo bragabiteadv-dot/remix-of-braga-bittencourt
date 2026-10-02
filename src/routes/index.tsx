@@ -45,7 +45,7 @@ function Index() {
       <CallToActionBanner />
       <PracticeAreas />
       
-      <FounderCard />
+      <FounderCard imageAlt="Dr. Javét Braga Bitencourt" />
       <ActionMoment />
       <FAQ />
       <GlobalReach />

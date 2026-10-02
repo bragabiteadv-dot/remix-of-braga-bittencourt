@@ -28,7 +28,7 @@ function Perfil() {
       <TeamGrid />
       <ServicesTicker />
       <HistorySection />
-      <FounderCard />
+      <FounderCard imageAlt="Dr. Javét fundador da Braga Bitencourt Advogados." />
       <ContactForm imageAlt="Braga Bitencourt Advogados Perfil" />
     </>
   );
