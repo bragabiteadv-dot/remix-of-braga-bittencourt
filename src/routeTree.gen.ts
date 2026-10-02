@@ -16,6 +16,7 @@ import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
+import { Route as AdvogadoChar123slugChar125RouteImport } from './routes/advogado-{$slug}'
 import { Route as AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport } from './routes/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
 import { Route as AdvogadoValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/advogado-validacao-homologacao-sentenca-estrangeira'
 import { Route as AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRouteImport } from './routes/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
@@ -156,6 +157,12 @@ const AreasDeAtuacaoRoute = AreasDeAtuacaoRouteImport.update({
   path: '/areas-de-atuacao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdvogadoChar123slugChar125Route =
+  AdvogadoChar123slugChar125RouteImport.update({
+    id: '/advogado-{$slug}',
+    path: '/advogado-{$slug}',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute =
   AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImport.update({
     id: '/advogado-validacao-homologacao-sentenca-portuguesa-brasil',
@@ -881,6 +888,7 @@ export interface FileRoutesByFullPath {
   '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil': typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute
   '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   '/advogado-validacao-homologacao-sentenca-portuguesa-brasil': typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute
+  '/advogado-{$slug}': typeof AdvogadoChar123slugChar125Route
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -993,6 +1001,7 @@ export interface FileRoutesByTo {
   '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil': typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute
   '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   '/advogado-validacao-homologacao-sentenca-portuguesa-brasil': typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute
+  '/advogado-{$slug}': typeof AdvogadoChar123slugChar125Route
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -1106,6 +1115,7 @@ export interface FileRoutesById {
   '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil': typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute
   '/advogado-validacao-homologacao-sentenca-estrangeira': typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   '/advogado-validacao-homologacao-sentenca-portuguesa-brasil': typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute
+  '/advogado-{$slug}': typeof AdvogadoChar123slugChar125Route
   '/areas-de-atuacao': typeof AreasDeAtuacaoRoute
   '/duvidas': typeof DuvidasRoute
   '/fale-conosco': typeof FaleConoscoRoute
@@ -1220,6 +1230,7 @@ export interface FileRouteTypes {
     | '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
     | '/advogado-validacao-homologacao-sentenca-estrangeira'
     | '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
+    | '/advogado-{$slug}'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -1332,6 +1343,7 @@ export interface FileRouteTypes {
     | '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
     | '/advogado-validacao-homologacao-sentenca-estrangeira'
     | '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
+    | '/advogado-{$slug}'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -1444,6 +1456,7 @@ export interface FileRouteTypes {
     | '/advogado-traslado-transcricao-certidao-casamento-portugues-brasil'
     | '/advogado-validacao-homologacao-sentenca-estrangeira'
     | '/advogado-validacao-homologacao-sentenca-portuguesa-brasil'
+    | '/advogado-{$slug}'
     | '/areas-de-atuacao'
     | '/duvidas'
     | '/fale-conosco'
@@ -1557,6 +1570,7 @@ export interface RootRouteChildren {
   AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute: typeof AdvogadoTrasladoTranscricaoCertidaoCasamentoPortuguesBrasilRoute
   AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute: typeof AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute
   AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute: typeof AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute
+  AdvogadoChar123slugChar125Route: typeof AdvogadoChar123slugChar125Route
   AreasDeAtuacaoRoute: typeof AreasDeAtuacaoRoute
   DuvidasRoute: typeof DuvidasRoute
   FaleConoscoRoute: typeof FaleConoscoRoute
@@ -1617,6 +1631,13 @@ declare module '@tanstack/react-router' {
       path: '/areas-de-atuacao'
       fullPath: '/areas-de-atuacao'
       preLoaderRoute: typeof AreasDeAtuacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-{$slug}': {
+      id: '/advogado-{$slug}'
+      path: '/advogado-{$slug}'
+      fullPath: '/advogado-{$slug}'
+      preLoaderRoute: typeof AdvogadoChar123slugChar125RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-validacao-homologacao-sentenca-portuguesa-brasil': {
@@ -2488,6 +2509,7 @@ const rootRouteChildren: RootRouteChildren = {
     AdvogadoValidacaoHomologacaoSentencaEstrangeiraRoute,
   AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute:
     AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRoute,
+  AdvogadoChar123slugChar125Route: AdvogadoChar123slugChar125Route,
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
