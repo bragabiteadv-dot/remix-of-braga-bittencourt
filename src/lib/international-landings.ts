@@ -1523,7 +1523,7 @@ export const INTERNATIONAL_LANDING_PAGES: readonly InternationalLandingPage[] = 
   }),
 );
 
-const LANDING_BY_SLUG = new Map(INTERNATIONAL_LANDING_PAGES.filter((page) => !page.existingPath).map((page) => [page.slug, page]));
+const LANDING_BY_SLUG = new Map(INTERNATIONAL_LANDING_PAGES.map((page) => [page.slug, page]));
 
 export function getInternationalLandingBySlug(slug: string): InternationalLandingPage | undefined {
   return LANDING_BY_SLUG.get(slug);
