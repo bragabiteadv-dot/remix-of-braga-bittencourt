@@ -24,7 +24,7 @@ function Duvidas() {
         headingLevel="h1"
         imageAlt="Braga Bitencourt Advogados - Tire suas dúvidas sobre família, sucessões e internacional privado"
       />
-      <ContactForm />
+      <ContactForm imageAlt="Fale com Braga Bitencourt para tirar suas dúvidas sobre Família, Sucessões e Internacional Privado" />
     </>
   );
 }

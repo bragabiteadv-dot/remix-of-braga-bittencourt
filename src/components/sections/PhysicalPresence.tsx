@@ -1,6 +1,8 @@
-import officeBH from "@/assets/office-bh-new.jpg";
+import officeBHAsset from "@/assets/foto-escritorio-de-bh-25_11zon.webp.asset.json";
 import officeBetim from "@/assets/office-betim-new.jpg";
 import { WhatsAppCta, useWhatsAppLink } from "@/components/ui/whatsapp-cta";
+
+const officeBH = officeBHAsset.url;
 
 export function PhysicalPresence() {
   const waLink = useWhatsAppLink();
@@ -13,7 +15,7 @@ export function PhysicalPresence() {
       mapUrl: "https://maps.google.com/maps?q=-19.954955,-43.9595168&z=17&hl=pt-BR&output=embed",
       link: "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.954955,-43.9595168,1022m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6be0a87eba137:0x5b7a5c4dbe44fd0b!8m2!3d-19.954955!4d-43.9595168!16s%2Fg%2F1x6q2_2p?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D",
       image: officeBH,
-      imageAlt: "Escritório Braga Bitencourt Advogados BH",
+      imageAlt: "Braga Bitencourt Advogados BH",
       whatsapp: waLink
     },
     {

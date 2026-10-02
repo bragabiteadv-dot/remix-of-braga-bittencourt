@@ -64,6 +64,6 @@ export function usePageAltFor(kind: PageAltKind, fallback: string) {
     case "action":
       return alt;
     case "form":
-      return `Fale com advogado de ${service}`;
+      return `Fale com ${alt}.`;
   }
 }

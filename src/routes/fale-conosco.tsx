@@ -19,7 +19,7 @@ export const Route = createFileRoute("/fale-conosco")({
 function FaleConosco() {
   return (
     <div className="pt-20 bg-navy">
-      <ContactForm headingLevel="h1" />
+      <ContactForm headingLevel="h1" imageAlt="Fale com a Braga BItencourt Advogados" />
     </div>
   );
 }

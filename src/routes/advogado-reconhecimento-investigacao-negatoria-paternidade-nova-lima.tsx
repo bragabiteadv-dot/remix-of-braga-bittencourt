@@ -30,7 +30,8 @@ import { OG_IMAGE } from "@/lib/site-og";
 import logoTree from "@/assets/history-tree.webp";
 import curatelaBhHeaderLogo from "@/assets/logo-header-optimized.webp";
 
-import officeBH from "@/assets/office-bh-new.jpg";
+import officeBHAsset from "@/assets/foto-escritorio-de-bh-25_11zon.webp.asset.json";
+const officeBH = officeBHAsset.url;
 import sedeBetim1 from "@/assets/sede-betim-1.webp";
 import sedeBetim2 from "@/assets/sede-betim-2.webp";
 import sedeBetim3 from "@/assets/sede-betim-3.webp";
@@ -41,7 +42,7 @@ const PATH = "/advogado-reconhecimento-investigacao-negatoria-paternidade-nova-l
 const TITLE = "Advogado de Reconhecimento, Investigação e Negatória de Paternidade em Nova Lima | Braga Bitencourt Advogados";
 const SERVICE = "Reconhecimento, Investigação e Negatória de Paternidade";
 const CITY = "Nova Lima";
-const OFFICE_ALT = `Escritório de ${SERVICE}`;
+const OFFICE_ALT = PAGE_ALT;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
