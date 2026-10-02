@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Criar 582 páginas jurídicas em português para 97 localidades e 6 serviços, com URLs, textos, metadados e sitemap próprios
 - [x] Substituir novamente o fundo da seção Nossa Equipe pela versão JPG enviada, após aprovação do plano
 - [x] Trocar a foto da seção Sobre o fundador na Home e no Perfil, mantendo os formatos e textos alternativos aprovados
 - [ ] Acelerar o carregamento do globo sem alterar aparência, movimento, zoom ou gestos
