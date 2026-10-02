@@ -48,9 +48,6 @@ export function loadLandPoints() {
   return landPointsPromise;
 }
 
-export function hasGlobeResources() {
-  return !!globeModulePromise;
-}
 
 export function prepareGlobeResources() {
   void loadGlobeModule();

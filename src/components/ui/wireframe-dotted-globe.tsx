@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { geoGraticule, geoOrthographic, geoPath, timer } from "d3";
-import { loadLandPoints, loadWorldData, isGlobeDataLoaded } from "@/lib/globe-resources";
+import { type GeoJsonFeature, type GeoJsonFeatureCollection, loadLandPoints, loadWorldData } from "@/lib/globe-resources";
 
 interface RotatingEarthProps {
   width?: number;
@@ -16,7 +16,7 @@ export default function RotatingEarth({
   className = "",
 }: RotatingEarthProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [isLoading, setIsLoading] = useState(!isGlobeDataLoaded());
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -46,8 +46,14 @@ export default function RotatingEarth({
     const path = geoPath().projection(projection).context(context);
     const graticule = geoGraticule();
 
-    let landFeatures: any = null;
-    let allDots: [number, number][] = [];
+    interface DotData {
+      lng: number;
+      lat: number;
+      visible: boolean;
+    }
+
+    const allDots: DotData[] = [];
+    let landFeatures: GeoJsonFeatureCollection | null = null;
 
     const render = () => {
       if (!isMounted || !context) return;
@@ -55,7 +61,6 @@ export default function RotatingEarth({
       const currentScale = Math.max(0, projection.scale());
       const scaleFactor = currentScale / radius;
 
-      // Draw globe base
       context.beginPath();
       context.arc(containerWidth / 2, containerHeight / 2, currentScale, 0, 2 * Math.PI);
       context.fillStyle = "#000000";
@@ -64,30 +69,25 @@ export default function RotatingEarth({
       context.lineWidth = 2 * scaleFactor;
       context.stroke();
 
-      // Draw graticule (lat/long lines)
-      context.beginPath();
-      path(graticule());
-      context.strokeStyle = "#ffffff";
-      context.lineWidth = 1 * scaleFactor;
-      context.globalAlpha = 0.25;
-      context.stroke();
-      context.globalAlpha = 1;
-
-      // Draw land features if available
-      if (landFeatures && landFeatures.features) {
+      if (landFeatures) {
         context.beginPath();
-        landFeatures.features.forEach((feature: any) => {
-          path(feature);
+        path(graticule() as any);
+        context.strokeStyle = "#ffffff";
+        context.lineWidth = 1 * scaleFactor;
+        context.globalAlpha = 0.25;
+        context.stroke();
+        context.globalAlpha = 1;
+
+        context.beginPath();
+        landFeatures.features.forEach((feature: GeoJsonFeature) => {
+          path(feature as any);
         });
         context.strokeStyle = "#ffffff";
         context.lineWidth = 1 * scaleFactor;
         context.stroke();
-      }
 
-      // Draw dots if available
-      if (allDots.length > 0) {
         allDots.forEach((dot) => {
-          const projected = projection(dot);
+          const projected = projection([dot.lng, dot.lat]);
           if (
             projected &&
             projected[0] >= 0 &&
@@ -107,36 +107,15 @@ export default function RotatingEarth({
     const loadData = async () => {
       try {
         if (isMounted) setIsLoading(true);
-        
-        // Use allSettled for fault tolerance
-        const [worldResult, pointsResult] = await Promise.allSettled([
-          loadWorldData(),
-          loadLandPoints()
-        ]);
-        
+        const [worldData, landPoints] = await Promise.all([loadWorldData(), loadLandPoints()]);
         if (!isMounted) return;
-
-        let hasAnyData = false;
-
-        if (worldResult.status === "fulfilled") {
-          landFeatures = worldResult.value;
-          hasAnyData = true;
-        }
-
-        if (pointsResult.status === "fulfilled") {
-          allDots = pointsResult.value as [number, number][];
-          hasAnyData = true;
-        }
-
-        if (!hasAnyData) {
-          throw new Error("Não foi possível carregar os dados do mapa");
-        }
-
+        landFeatures = worldData;
+        landPoints.forEach(([lng, lat]) => allDots.push({ lng, lat, visible: true }));
         render();
         setIsLoading(false);
       } catch (err) {
         if (isMounted) {
-          setError(err instanceof Error ? err.message : "Erro ao carregar o globo");
+          setError("Não foi possível carregar o mapa");
           setIsLoading(false);
         }
       }
@@ -385,8 +364,8 @@ export default function RotatingEarth({
   if (error) {
     return (
       <div className={`flex items-center justify-center ${className}`}>
-        <div className="text-center p-4">
-          <p className="text-red-500 font-semibold mb-2">Não foi possível carregar o globo</p>
+        <div className="text-center">
+          <p className="text-red-500 font-semibold">Não foi possível carregar o globo</p>
           <p className="text-sm text-gray-400">{error}</p>
         </div>
       </div>
@@ -400,11 +379,9 @@ export default function RotatingEarth({
         className="touch-auto"
       />
       {isLoading && (
-        <p className="text-sm text-gray-400 mt-2 animate-pulse">Carregando dados do mapa…</p>
+        <p className="text-sm text-gray-400 mt-2">Carregando globo…</p>
       )}
-      {!isLoading && !error && (
-        <p className="text-xs text-gray-500 mt-2">Arraste para girar • Role para ampliar</p>
-      )}
+      <p className="text-xs text-gray-500 mt-2">Arraste para girar • Role para ampliar</p>
     </div>
   );
 }
