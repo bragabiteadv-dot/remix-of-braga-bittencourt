@@ -1,5 +1,5 @@
 import { usePageAltFor } from "@/lib/page-alt";
-import equipeBg from "@/assets/equipe-bg.jpg";
+import equipeBg from "@/assets/Cidade-5_11zon.webp";
 import carlosGabriel from "@/assets/team-carlos-gabriel-800.webp";
 import carlosJavet from "@/assets/team-carlos-javet-800.webp";
 import glaucia from "@/assets/team-glaucia-800.webp";
@@ -48,11 +48,15 @@ export function TeamGrid() {
 
   return (
     <section className="py-24 bg-navy relative overflow-hidden">
-      {/* Cityscape Background Overlay */}
+      {/* Cityscape background with diagonal navy mask */}
       <div 
-        className="absolute inset-0 z-0 opacity-50 bg-cover bg-center"
+        className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${equipeBg}')` }}
       ></div>
+      <div
+        className="absolute inset-0 z-0 bg-gradient-to-br from-navy/95 via-navy/70 to-navy/45 pointer-events-none"
+        aria-hidden="true"
+      />
 
       <div className="container mx-auto relative z-10">
         <h2 className="text-white text-5xl font-cinzel text-center mb-20 tracking-widest uppercase">

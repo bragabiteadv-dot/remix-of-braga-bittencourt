@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
-import waves from "@/assets/service-waves-bg.png";
+import waves from "@/assets/i488_11zon.webp";
 
 const services = [
   {
@@ -58,7 +58,7 @@ export const ServiceListing = () => {
           height={385}
           loading="lazy"
           decoding="async"
-          className="w-full h-auto"
+          className="aspect-[1536/385] w-full object-cover"
           aria-hidden="true"
         />
         <img
@@ -68,7 +68,7 @@ export const ServiceListing = () => {
           height={385}
           loading="lazy"
           decoding="async"
-          className="w-full h-auto"
+          className="aspect-[1536/385] w-full object-cover"
           aria-hidden="true"
         />
         <img
@@ -78,7 +78,7 @@ export const ServiceListing = () => {
           height={385}
           loading="lazy"
           decoding="async"
-          className="w-full h-auto"
+          className="aspect-[1536/385] w-full object-cover"
           aria-hidden="true"
         />
 
