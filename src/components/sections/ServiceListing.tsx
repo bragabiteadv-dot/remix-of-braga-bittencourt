@@ -49,40 +49,12 @@ const services = [
 export const ServiceListing = () => {
   return (
     <section className="py-20 bg-[#08152C] relative overflow-hidden">
-      {/* Wave PNG Overlay */}
-      <div className="absolute inset-0 flex flex-col justify-between py-20 pointer-events-none z-[1] opacity-50">
-        <img
-          src={waves}
-          alt=""
-          width={1536}
-          height={385}
-          loading="lazy"
-          decoding="async"
-          className="aspect-[1536/385] w-full object-cover"
-          aria-hidden="true"
-        />
-        <img
-          src={waves}
-          alt=""
-          width={1536}
-          height={385}
-          loading="lazy"
-          decoding="async"
-          className="aspect-[1536/385] w-full object-cover"
-          aria-hidden="true"
-        />
-        <img
-          src={waves}
-          alt=""
-          width={1536}
-          height={385}
-          loading="lazy"
-          decoding="async"
-          className="aspect-[1536/385] w-full object-cover"
-          aria-hidden="true"
-        />
-
-      </div>
+      {/* Continuous wave background */}
+      <div
+        className="absolute inset-0 pointer-events-none z-[1] opacity-50 bg-repeat-y bg-top bg-[length:100%_auto]"
+        style={{ backgroundImage: `url('${waves}')` }}
+        aria-hidden="true"
+      />
 
       <div className="container mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl text-white text-center mb-16 font-cinzel">

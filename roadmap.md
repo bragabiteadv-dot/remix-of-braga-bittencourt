@@ -3,7 +3,7 @@
 ## Em andamento
 - [ ] Acelerar o carregamento do globo sem alterar aparência, movimento, zoom ou gestos
 - [x] Adequar a máscara azul da seção Nossa Equipe à nova imagem de referência sem alterar os demais elementos
-- [ ] Ajustar a continuidade das ondas e eliminar espaços nas divisas da seção de serviços, após aprovação
+- [x] Ajustar a continuidade das ondas e eliminar espaços nas divisas da seção de serviços
 
 ## Concluído recente
 - [x] Trocar quatro imagens compartilhadas, melhorar a nitidez do aperto de mãos e suavizar diagonalmente a máscara da seção Nossa Equipe
