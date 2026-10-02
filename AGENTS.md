@@ -11,5 +11,5 @@
 
 - Article cover images that must remain available independently of the asset CDN are imported from local bundled media, because the previous CDN URLs returned access errors.
 - Treat every `/advogado-*` route as a standalone landing page in the root layout, because these routes own their distinct header and footer.
-- Load the D3 globe only near its viewport and serve its Natural Earth data locally, because it is below the fold and must not burden the initial page load.
+- Prepare the D3 globe during browser idle time, render it only near its viewport, and serve local precomputed geography because it must stay responsive without burdening initial load.
 - Generate every indexable route's canonical through `buildSeo`/`buildSeoHead` and `siteUrl`, which normalizes paths and fixes the origin to `https://bragabitencourt.com` so tracking parameters cannot leak into SEO URLs.

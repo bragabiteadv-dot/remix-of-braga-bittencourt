@@ -1,10 +1,27 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { loadGlobeModule, prepareGlobeResources } from "@/lib/globe-resources";
 
-const RotatingEarth = lazy(() => import("@/components/ui/wireframe-dotted-globe"));
+const RotatingEarth = lazy(loadGlobeModule);
 
 export function DeferredGlobe() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    const idleWindow = window as typeof window & {
+      requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+      cancelIdleCallback?: (handle: number) => void;
+    };
+    const idleHandle = idleWindow.requestIdleCallback?.(prepareGlobeResources, { timeout: 4000 });
+    const fallbackHandle = idleHandle === undefined
+      ? window.setTimeout(prepareGlobeResources, 2500)
+      : undefined;
+
+    return () => {
+      if (idleHandle !== undefined) idleWindow.cancelIdleCallback?.(idleHandle);
+      if (fallbackHandle !== undefined) window.clearTimeout(fallbackHandle);
+    };
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;

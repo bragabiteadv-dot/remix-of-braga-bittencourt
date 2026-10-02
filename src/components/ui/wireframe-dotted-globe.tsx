@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import * as d3 from "d3";
+import { geoGraticule, geoOrthographic, geoPath, timer } from "d3";
+import { loadLandPoints, loadWorldData } from "@/lib/globe-resources";
 
 interface RotatingEarthProps {
   width?: number;
@@ -36,67 +37,13 @@ export default function RotatingEarth({
     canvas.style.height = `${containerHeight}px`;
     context.scale(dpr, dpr);
 
-    const projection = d3
-      .geoOrthographic()
+    const projection = geoOrthographic()
       .scale(radius)
       .translate([containerWidth / 2, containerHeight / 2])
       .clipAngle(90);
 
-    const path = d3.geoPath().projection(projection).context(context);
-
-    const pointInPolygon = (point: [number, number], polygon: number[][]): boolean => {
-      const [x, y] = point;
-      let inside = false;
-      for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
-        const [xi, yi] = polygon[i];
-        const [xj, yj] = polygon[j];
-        if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) {
-          inside = !inside;
-        }
-      }
-      return inside;
-    };
-
-    const pointInFeature = (point: [number, number], feature: any): boolean => {
-      const geometry = feature.geometry;
-      if (geometry.type === "Polygon") {
-        const coordinates = geometry.coordinates;
-        if (!pointInPolygon(point, coordinates[0])) return false;
-        for (let i = 1; i < coordinates.length; i++) {
-          if (pointInPolygon(point, coordinates[i])) return false;
-        }
-        return true;
-      } else if (geometry.type === "MultiPolygon") {
-        for (const polygon of geometry.coordinates) {
-          if (pointInPolygon(point, polygon[0])) {
-            let inHole = false;
-            for (let i = 1; i < polygon.length; i++) {
-              if (pointInPolygon(point, polygon[i])) {
-                inHole = true;
-                break;
-              }
-            }
-            if (!inHole) return true;
-          }
-        }
-        return false;
-      }
-      return false;
-    };
-
-    const generateDotsInPolygon = (feature: any, dotSpacing = 16) => {
-      const dots: [number, number][] = [];
-      const bounds = d3.geoBounds(feature);
-      const [[minLng, minLat], [maxLng, maxLat]] = bounds;
-      const stepSize = dotSpacing * 0.08;
-      for (let lng = minLng; lng <= maxLng; lng += stepSize) {
-        for (let lat = minLat; lat <= maxLat; lat += stepSize) {
-          const point: [number, number] = [lng, lat];
-          if (pointInFeature(point, feature)) dots.push(point);
-        }
-      }
-      return dots;
-    };
+    const path = geoPath().projection(projection).context(context);
+    const graticule = geoGraticule();
 
     interface DotData {
       lng: number;
@@ -121,7 +68,6 @@ export default function RotatingEarth({
       context.stroke();
 
       if (landFeatures) {
-        const graticule = d3.geoGraticule();
         context.beginPath();
         path(graticule());
         context.strokeStyle = "#ffffff";
@@ -159,15 +105,9 @@ export default function RotatingEarth({
     const loadWorldData = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch("/data/world-land.json");
-        if (!response.ok) throw new Error("Não foi possível carregar o mapa");
-        landFeatures = await response.json();
-        landFeatures.features.forEach((feature: any) => {
-          const dots = generateDotsInPolygon(feature, 16);
-          dots.forEach(([lng, lat]) => {
-            allDots.push({ lng, lat, visible: true });
-          });
-        });
+        const [worldData, landPoints] = await Promise.all([loadWorldData(), loadLandPoints()]);
+        landFeatures = worldData;
+        landPoints.forEach(([lng, lat]) => allDots.push({ lng, lat, visible: true }));
         render();
         setIsLoading(false);
       } catch (err) {
@@ -191,7 +131,7 @@ export default function RotatingEarth({
       }
     };
 
-    const rotationTimer = d3.timer(rotate);
+    const rotationTimer = timer(rotate);
 
     let viewportObserver: IntersectionObserver | null = null;
     if (typeof IntersectionObserver !== "undefined") {
