@@ -1,7 +1,7 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Garantir que as 582 páginas internacionais usem exatamente o modelo da página original de averbação direta
+- [x] Garantir que as 582 páginas internacionais usem exatamente o modelo da página original de averbação direta
 - [x] Registrar individualmente as 582 páginas internacionais no seletor de endereços e validar o acesso
 - [x] Entregar a lista completa das páginas institucionais e de destino
 - [x] Substituir novamente o fundo da seção Nossa Equipe pela versão JPG enviada, após aprovação do plano
