@@ -3,6 +3,7 @@
 ## Em andamento
 
 ## Concluído recente
+- [x] Trocar quatro imagens compartilhadas, melhorar a nitidez do aperto de mãos e suavizar diagonalmente a máscara da seção Nossa Equipe
 - [x] Auditar o sitemap público e confirmar 138 URLs válidas, canônicas e sem www, parâmetros, redirecionamentos ou páginas 404
 - [x] Padronizar as URLs canônicas de todas as páginas no domínio sem www, removendo query, UTM e hash
 - [x] Corrigir os alertas confirmados de acessibilidade e desempenho, reduzir mídia sem alterar o visual e validar 138 páginas
