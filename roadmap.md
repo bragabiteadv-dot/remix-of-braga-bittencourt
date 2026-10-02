@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Corrigir o plano da troca da foto de Carlos Javét conforme as orientações revisadas do usuário
 - [ ] Acelerar o carregamento do globo sem alterar aparência, movimento, zoom ou gestos
 - [x] Comparar a nova versão WebP da cidade com a PNG aprovada e atualizar o plano antes de trocar o fundo
 - [x] Substituir somente o fundo da seção Nossa Equipe pela nova foto da cidade e ajustar a máscara diagonal aprovada
