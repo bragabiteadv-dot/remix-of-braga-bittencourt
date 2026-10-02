@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { geoGraticule, geoOrthographic, geoPath, timer } from "d3";
-import { type GeoJsonFeature, type GeoJsonFeatureCollection, loadLandPoints, loadWorldData } from "@/lib/globe-resources";
+import { loadLandPoints, loadWorldData, type GlobeFeatureCollection, type GlobePoint } from "@/lib/globe-data";
 
 interface RotatingEarthProps {
   width?: number;
@@ -44,16 +44,9 @@ export default function RotatingEarth({
       .clipAngle(90);
 
     const path = geoPath().projection(projection).context(context);
-    const graticule = geoGraticule();
-
-    interface DotData {
-      lng: number;
-      lat: number;
-      visible: boolean;
-    }
-
-    const allDots: DotData[] = [];
-    let landFeatures: GeoJsonFeatureCollection | null = null;
+    const graticule = geoGraticule()();
+    let allDots: GlobePoint[] = [];
+    let landFeatures: GlobeFeatureCollection | null = null;
 
     const render = () => {
       if (!isMounted || !context) return;
@@ -71,7 +64,7 @@ export default function RotatingEarth({
 
       if (landFeatures) {
         context.beginPath();
-        path(graticule() as any);
+        path(graticule);
         context.strokeStyle = "#ffffff";
         context.lineWidth = 1 * scaleFactor;
         context.globalAlpha = 0.25;
@@ -79,15 +72,15 @@ export default function RotatingEarth({
         context.globalAlpha = 1;
 
         context.beginPath();
-        landFeatures.features.forEach((feature: GeoJsonFeature) => {
-          path(feature as any);
+        landFeatures.features.forEach((feature) => {
+          path(feature);
         });
         context.strokeStyle = "#ffffff";
         context.lineWidth = 1 * scaleFactor;
         context.stroke();
 
         allDots.forEach((dot) => {
-          const projected = projection([dot.lng, dot.lat]);
+          const projected = projection(dot);
           if (
             projected &&
             projected[0] >= 0 &&
@@ -110,12 +103,12 @@ export default function RotatingEarth({
         const [worldData, landPoints] = await Promise.all([loadWorldData(), loadLandPoints()]);
         if (!isMounted) return;
         landFeatures = worldData;
-        landPoints.forEach(([lng, lat]) => allDots.push({ lng, lat, visible: true }));
+        allDots = landPoints;
         render();
         setIsLoading(false);
       } catch (err) {
         if (isMounted) {
-          setError("Não foi possível carregar o mapa");
+          setError("Erro ao carregar os dados geográficos. Por favor, verifique sua conexão.");
           setIsLoading(false);
         }
       }

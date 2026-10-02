@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
-import { loadGlobeModule, prepareGlobeResources } from "@/lib/globe-resources";
+import { loadGlobeModule, prepareGlobeResources } from "@/lib/globe-loader";
 
 const RotatingEarth = lazy(loadGlobeModule);
 
@@ -14,7 +14,7 @@ export function DeferredGlobe() {
     };
     const idleHandle = idleWindow.requestIdleCallback?.(prepareGlobeResources, { timeout: 4000 });
     const fallbackHandle = idleHandle === undefined
-      ? window.setTimeout(prepareGlobeResources, 2500)
+      ? window.setTimeout(prepareGlobeResources, 4000)
       : undefined;
 
     return () => {
