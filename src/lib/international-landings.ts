@@ -1529,6 +1529,12 @@ export function getInternationalLandingBySlug(slug: string): InternationalLandin
   return LANDING_BY_SLUG.get(slug);
 }
 
+export function getRequiredInternationalLandingBySlug(slug: string): InternationalLandingPage {
+  const page = getInternationalLandingBySlug(slug);
+  if (!page) throw new Error(`Página internacional não cadastrada: ${slug}`);
+  return page;
+}
+
 export function getLocationContext(location: InternationalLocation): string {
   return locationContext(location);
 }
