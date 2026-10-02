@@ -1,8 +1,8 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Registrar individualmente as 582 páginas internacionais no seletor de endereços e validar o acesso
-- [ ] Entregar a lista completa das páginas institucionais e de destino
+- [x] Registrar individualmente as 582 páginas internacionais no seletor de endereços e validar o acesso
+- [x] Entregar a lista completa das páginas institucionais e de destino
 - [x] Substituir novamente o fundo da seção Nossa Equipe pela versão JPG enviada, após aprovação do plano
 - [x] Trocar a foto da seção Sobre o fundador na Home e no Perfil, mantendo os formatos e textos alternativos aprovados
 - [ ] Acelerar o carregamento do globo sem alterar aparência, movimento, zoom ou gestos
