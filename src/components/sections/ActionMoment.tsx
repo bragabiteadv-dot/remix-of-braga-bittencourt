@@ -1,5 +1,5 @@
 import { usePageAltFor } from "@/lib/page-alt";
-import actionMoment from "@/assets/action-moment-hands.png";
+import actionMoment from "@/assets/i271_11zon.webp";
 
 export const ActionMoment = () => {
   return (
@@ -41,9 +41,9 @@ export const ActionMoment = () => {
               <div className="relative z-[3] overflow-hidden shadow-2xl">
                 <img
                   src={actionMoment}
-                  alt={usePageAltFor("action", "Braga Bitencourt Advogados")}
-                  width={383}
-                  height={186}
+                   alt={usePageAltFor("action", "Compromisso Braga Bitencourt Advogados")}
+                   width={1024}
+                   height={498}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto object-cover"

@@ -1,4 +1,4 @@
-import banner from "@/assets/cta-banner-bg.jpg";
+import banner from "@/assets/i309_11zon.webp";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export const CallToActionBanner = () => {
