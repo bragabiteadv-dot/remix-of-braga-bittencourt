@@ -1,7 +1,7 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Substituir novamente o fundo da seção Nossa Equipe pela versão JPG enviada, após aprovação do plano
+- [x] Substituir novamente o fundo da seção Nossa Equipe pela versão JPG enviada, após aprovação do plano
 - [x] Trocar a foto da seção Sobre o fundador na Home e no Perfil, mantendo os formatos e textos alternativos aprovados
 - [ ] Acelerar o carregamento do globo sem alterar aparência, movimento, zoom ou gestos
 - [x] Comparar a nova versão WebP da cidade com a PNG aprovada e atualizar o plano antes de trocar o fundo
