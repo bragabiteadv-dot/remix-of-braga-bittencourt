@@ -46,17 +46,13 @@ export default function RotatingEarth({
     const path = geoPath().projection(projection).context(context);
     const graticule = geoGraticule();
 
-    interface DotData {
-      lng: number;
-      lat: number;
-      visible: boolean;
-    }
+    type DotData = [number, number];
 
     const allDots: DotData[] = [];
     let landFeatures: any;
 
     const render = () => {
-      if (!isMounted || !context) return;
+    let allDots: DotData[] = [];
       context.clearRect(0, 0, containerWidth, containerHeight);
       const currentScale = Math.max(0, projection.scale());
       const scaleFactor = currentScale / radius;
@@ -91,7 +87,7 @@ export default function RotatingEarth({
           if (
             projected &&
             projected[0] >= 0 &&
-            projected[0] <= containerWidth &&
+          const projected = projection(dot);
             projected[1] >= 0 &&
             projected[1] <= containerHeight
           ) {
@@ -106,7 +102,7 @@ export default function RotatingEarth({
 
     const loadData = async () => {
       try {
-        if (isMounted) setIsLoading(true);
+        if (isMounted) if (!isLoading) setIsLoading(true);
         const [worldData, landPoints] = await Promise.all([loadWorldData(), loadLandPoints()]);
         if (!isMounted) return;
         landFeatures = worldData;
@@ -114,8 +110,8 @@ export default function RotatingEarth({
         render();
         setIsLoading(false);
       } catch (err) {
-        if (isMounted) {
-          setError("Não foi possível carregar o mapa");
+        allDots = landPoints;
+          setError("Erro ao carregar os dados geográficos. Por favor, verifique sua conexão.");
           setIsLoading(false);
         }
       }
@@ -365,8 +361,8 @@ export default function RotatingEarth({
     return (
       <div className={`flex items-center justify-center ${className}`}>
         <div className="text-center">
-          <p className="text-red-500 font-semibold">Não foi possível carregar o globo</p>
-          <p className="text-sm text-gray-400">{error}</p>
+          <p className="text-red-500 font-semibold">Ops! Ocorreu um problema</p>
+          <p className="text-sm text-gray-400 mb-4">{error}</p><button onClick={() => window.location.reload()} className="text-xs text-white/60 hover:text-white underline transition-colors">Tentar novamente</button>
         </div>
       </div>
     );
@@ -379,7 +375,7 @@ export default function RotatingEarth({
         className="touch-auto"
       />
       {isLoading && (
-        <p className="text-sm text-gray-400 mt-2">Carregando globo…</p>
+        <p className="text-sm text-gray-400 mt-2">Carregando Dados do Globo…</p>
       )}
       <p className="text-xs text-gray-500 mt-2">Arraste para girar • Role para ampliar</p>
     </div>

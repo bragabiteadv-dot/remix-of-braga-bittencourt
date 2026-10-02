@@ -5,7 +5,7 @@ let worldDataPromise: Promise<unknown> | null = null;
 let landPointsPromise: Promise<[number, number][]> | null = null;
 
 function fetchJson<T>(url: string, reset: () => void): Promise<T> {
-  return fetch(url).then((response) => {
+  return fetch(url, { priority: 'low' } as any).then((response) => {
     if (!response.ok) throw new Error("Não foi possível carregar o mapa");
     return response.json() as Promise<T>;
   }).catch((error: unknown) => {
