@@ -1,5 +1,5 @@
 import { usePageAltFor } from "@/lib/page-alt";
-import equipeBg from "@/assets/cidade-equipe-nova.webp";
+import equipeBg from "@/assets/cidade-equipe-7.webp";
 import carlosGabriel from "@/assets/team-carlos-gabriel-800.webp";
 import carlosJavet from "@/assets/team-carlos-javet-800.webp";
 import glaucia from "@/assets/team-glaucia-800.webp";

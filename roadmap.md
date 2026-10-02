@@ -2,7 +2,7 @@
 
 ## Em andamento
 - [ ] Acelerar o carregamento do globo sem alterar aparência, movimento, zoom ou gestos
-- [ ] Comparar a nova versão WebP da cidade com a PNG aprovada e atualizar o plano antes de trocar o fundo
+- [x] Comparar a nova versão WebP da cidade com a PNG aprovada e atualizar o plano antes de trocar o fundo
 - [x] Substituir somente o fundo da seção Nossa Equipe pela nova foto da cidade e ajustar a máscara diagonal aprovada
 - [x] Adequar a máscara azul da seção Nossa Equipe à nova imagem de referência sem alterar os demais elementos
 - [x] Ajustar a continuidade das ondas e eliminar espaços nas divisas da seção de serviços
