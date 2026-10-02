@@ -102,7 +102,7 @@ export default function RotatingEarth({
       }
     };
 
-    const loadWorldData = async () => {
+    const initializeData = async () => {
       try {
         setIsLoading(true);
         const [worldData, landPoints] = await Promise.all([loadWorldData(), loadLandPoints()]);
@@ -334,7 +334,7 @@ export default function RotatingEarth({
     canvas.addEventListener("touchend", handleTouchEnd);
     canvas.addEventListener("touchcancel", handleTouchEnd);
 
-    loadWorldData();
+    initializeData();
 
     return () => {
       rotationTimer.stop();

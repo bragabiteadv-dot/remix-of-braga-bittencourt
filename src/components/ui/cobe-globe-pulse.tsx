@@ -73,6 +73,8 @@ export function GlobePulse({
     const canvas = canvasRef.current;
     let globe: ReturnType<typeof createGlobe> | null = null;
     let phi = 0;
+    let opacityTimeout: number | null = null;
+    let resizeObserver: ResizeObserver | null = null;
 
     function init() {
       const width = canvas.offsetWidth;
@@ -99,25 +101,27 @@ export function GlobePulse({
         },
       } as Parameters<typeof createGlobe>[1]);
 
-      setTimeout(() => canvas && (canvas.style.opacity = "1"));
-      const timeoutId = setTimeout(() => canvas && (canvas.style.opacity = "1"));
-      return timeoutId;
+      opacityTimeout = window.setTimeout(() => {
+        if (canvas) canvas.style.opacity = "1";
+      });
+    }
 
     if (canvas.offsetWidth > 0) {
       init();
     } else {
-      const ro = new ResizeObserver((entries) => {
+      resizeObserver = new ResizeObserver((entries) => {
         if (entries[0]?.contentRect.width > 0) {
-          ro.disconnect();
+          resizeObserver?.disconnect();
           init();
         }
       });
-      ro.observe(canvas);
+      resizeObserver.observe(canvas);
     }
 
     return () => {
-      if (animationId !== null) cancelAnimationFrame(animationId);
       if (globe) globe.destroy();
+      if (opacityTimeout !== null) clearTimeout(opacityTimeout);
+      if (resizeObserver) resizeObserver.disconnect();
     };
   }, [markers, speed]);
 
