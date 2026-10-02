@@ -1,11 +1,23 @@
 type GlobeModule = typeof import("@/components/ui/wireframe-dotted-globe");
 
 let globeModulePromise: Promise<GlobeModule> | null = null;
-let worldDataPromise: Promise<unknown> | null = null;
+
+export interface GeoJsonFeature {
+  type: string;
+  geometry: any;
+  properties?: any;
+}
+
+export interface GeoJsonFeatureCollection {
+  type: "FeatureCollection";
+  features: GeoJsonFeature[];
+}
+
+let worldDataPromise: Promise<GeoJsonFeatureCollection> | null = null;
 let landPointsPromise: Promise<[number, number][]> | null = null;
 
 function fetchJson<T>(url: string, reset: () => void): Promise<T> {
-  return fetch(url, { priority: 'low' } as any).then((response) => {
+  return fetch(url).then((response) => {
     if (!response.ok) throw new Error("Não foi possível carregar o mapa");
     return response.json() as Promise<T>;
   }).catch((error: unknown) => {
@@ -22,8 +34,8 @@ export function loadGlobeModule() {
   return globeModulePromise;
 }
 
-export function loadWorldData() {
-  worldDataPromise ??= fetchJson<unknown>("/data/world-land.json", () => {
+export function loadWorldData(): Promise<GeoJsonFeatureCollection> {
+  worldDataPromise ??= fetchJson<GeoJsonFeatureCollection>("/data/world-land.json", () => {
     worldDataPromise = null;
   });
   return worldDataPromise;

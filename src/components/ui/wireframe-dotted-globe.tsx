@@ -46,17 +46,16 @@ export default function RotatingEarth({
     const path = geoPath().projection(projection).context(context);
     const graticule = geoGraticule();
 
-    type DotData = [number, number];
-
-    const allDots: DotData[] = [];
-    let landFeatures: any;
+    let landFeatures: any = null;
+    let allDots: [number, number][] = [];
 
     const render = () => {
-    let allDots: DotData[] = [];
+      if (!isMounted || !context) return;
       context.clearRect(0, 0, containerWidth, containerHeight);
       const currentScale = Math.max(0, projection.scale());
       const scaleFactor = currentScale / radius;
 
+      // Draw globe base
       context.beginPath();
       context.arc(containerWidth / 2, containerHeight / 2, currentScale, 0, 2 * Math.PI);
       context.fillStyle = "#000000";
@@ -65,15 +64,17 @@ export default function RotatingEarth({
       context.lineWidth = 2 * scaleFactor;
       context.stroke();
 
-      if (landFeatures) {
-        context.beginPath();
-        path(graticule());
-        context.strokeStyle = "#ffffff";
-        context.lineWidth = 1 * scaleFactor;
-        context.globalAlpha = 0.25;
-        context.stroke();
-        context.globalAlpha = 1;
+      // Draw graticule (lat/long lines)
+      context.beginPath();
+      path(graticule());
+      context.strokeStyle = "#ffffff";
+      context.lineWidth = 1 * scaleFactor;
+      context.globalAlpha = 0.25;
+      context.stroke();
+      context.globalAlpha = 1;
 
+      // Draw land features if available
+      if (landFeatures && landFeatures.features) {
         context.beginPath();
         landFeatures.features.forEach((feature: any) => {
           path(feature);
@@ -81,13 +82,16 @@ export default function RotatingEarth({
         context.strokeStyle = "#ffffff";
         context.lineWidth = 1 * scaleFactor;
         context.stroke();
+      }
 
+      // Draw dots if available
+      if (allDots.length > 0) {
         allDots.forEach((dot) => {
-          const projected = projection([dot.lng, dot.lat]);
+          const projected = projection(dot);
           if (
             projected &&
             projected[0] >= 0 &&
-          const projected = projection(dot);
+            projected[0] <= containerWidth &&
             projected[1] >= 0 &&
             projected[1] <= containerHeight
           ) {
@@ -100,18 +104,39 @@ export default function RotatingEarth({
       }
     };
 
-        const loadData = async () => {
+    const loadData = async () => {
       try {
-        const [worldData, landPoints] = await Promise.all([loadWorldData(), loadLandPoints()]);
+        if (isMounted) setIsLoading(true);
+        
+        // Use allSettled for fault tolerance
+        const [worldResult, pointsResult] = await Promise.allSettled([
+          loadWorldData(),
+          loadLandPoints()
+        ]);
+        
         if (!isMounted) return;
-        landFeatures = worldData;
-        allDots.length = 0;
-        landPoints.forEach(([lng, lat]) => allDots.push({ lng, lat, visible: true }));
+
+        let hasAnyData = false;
+
+        if (worldResult.status === "fulfilled") {
+          landFeatures = worldResult.value;
+          hasAnyData = true;
+        }
+
+        if (pointsResult.status === "fulfilled") {
+          allDots = pointsResult.value as [number, number][];
+          hasAnyData = true;
+        }
+
+        if (!hasAnyData) {
+          throw new Error("Não foi possível carregar os dados do mapa");
+        }
+
         render();
         setIsLoading(false);
       } catch (err) {
         if (isMounted) {
-          setError("Erro ao carregar os dados geográficos. Por favor, verifique sua conexão.");
+          setError(err instanceof Error ? err.message : "Erro ao carregar o globo");
           setIsLoading(false);
         }
       }
@@ -360,9 +385,9 @@ export default function RotatingEarth({
   if (error) {
     return (
       <div className={`flex items-center justify-center ${className}`}>
-        <div className="text-center">
-          <p className="text-red-500 font-semibold">Ops! Ocorreu um problema</p>
-          <p className="text-sm text-gray-400 mb-4">{error}</p><button onClick={() => window.location.reload()} className="text-xs text-white/60 hover:text-white underline transition-colors">Tentar novamente</button>
+        <div className="text-center p-4">
+          <p className="text-red-500 font-semibold mb-2">Não foi possível carregar o globo</p>
+          <p className="text-sm text-gray-400">{error}</p>
         </div>
       </div>
     );
@@ -375,9 +400,11 @@ export default function RotatingEarth({
         className="touch-auto"
       />
       {isLoading && (
-        <p className="text-sm text-gray-400 mt-2">Carregando Dados do Globo…</p>
+        <p className="text-sm text-gray-400 mt-2 animate-pulse">Carregando dados do mapa…</p>
       )}
-      <p className="text-xs text-gray-500 mt-2">Arraste para girar • Role para ampliar</p>
+      {!isLoading && !error && (
+        <p className="text-xs text-gray-500 mt-2">Arraste para girar • Role para ampliar</p>
+      )}
     </div>
   );
 }
