@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { geoGraticule, geoOrthographic, geoPath, timer } from "d3";
-import { loadLandPoints, loadWorldData } from "@/lib/globe-resources";
+import { loadLandPoints, loadWorldData, isGlobeDataLoaded } from "@/lib/globe-resources";
 
 interface RotatingEarthProps {
   width?: number;
@@ -16,7 +16,7 @@ export default function RotatingEarth({
   className = "",
 }: RotatingEarthProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!isGlobeDataLoaded());
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
