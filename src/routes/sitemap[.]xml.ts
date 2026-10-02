@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { ARTICLES } from "@/lib/articles";
+import { GENERATED_INTERNATIONAL_PATHS } from "@/lib/international-landings";
 import { hasOfficialDomain, siteUrl } from "@/lib/site";
 
 interface SitemapEntry {
@@ -126,6 +127,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/advogado-mudanca-regime-bens-casamento-contagem", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-mudanca-regime-bens-casamento-igarape", changefreq: "monthly", priority: "0.9" },
           { path: "/advogado-mudanca-regime-bens-casamento-nova-lima", changefreq: "monthly", priority: "0.9" },
+          ...GENERATED_INTERNATIONAL_PATHS.map((path) => ({
+            path,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+          })),
           ...ARTICLES.map((a) => ({
             path: `/artigos/${a.slug}`,
             changefreq: "monthly" as const,
