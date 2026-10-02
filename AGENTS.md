@@ -13,4 +13,4 @@
 - Treat every `/advogado-*` route as a standalone landing page in the root layout, because these routes own their distinct header and footer.
 - Prepare the D3 globe during browser idle time, render it only near its viewport, and serve local precomputed geography because it must stay responsive without burdening initial load.
 - Generate every indexable route's canonical through `buildSeo`/`buildSeoHead` and `siteUrl`, which normalizes paths and fixes the origin to `https://bragabitencourt.com` so tracking parameters cannot leak into SEO URLs.
-- Generate the international locality-service landing pages from the shared typed matrix and one dynamic route, because hundreds of copied route files would make legal copy, SEO metadata, and layout fixes diverge.
+- Register every international locality-service URL with a lightweight individual route file while sourcing all content and layout from the shared typed matrix and template, because preview discovery needs explicit routes without duplicating legal copy.
