@@ -30,7 +30,7 @@ import { OG_IMAGE } from "@/lib/site-og";
 import logoTree from "@/assets/history-tree.webp";
 import curatelaBhHeaderLogo from "@/assets/logo-header-optimized.webp";
 
-import officeBH from "@/assets/office-bh-new.jpg";
+import officeBH from "@/assets/foto-escritorio-de-bh-25_11zon.webp";
 import sedeBetim1 from "@/assets/sede-betim-1.webp";
 import sedeBetim2 from "@/assets/sede-betim-2.webp";
 import sedeBetim3 from "@/assets/sede-betim-3.webp";
@@ -41,8 +41,8 @@ const PATH = "/advogado-contrato-namoro-bh";
 const TITLE = "Advogado de Contrato de Namoro em Belo Horizonte | Braga Bitencourt Advogados";
 const SERVICE = "Contrato de Namoro";
 const CITY = "Belo Horizonte";
-const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
+const OFFICE_ALT = PAGE_ALT;
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
   "Advogado de Contrato de Namoro em Belo Horizonte com mais de 20 anos de experiência. Elaboração de contrato de namoro, proteção do patrimônio e prevenção do reconhecimento de união estável.";

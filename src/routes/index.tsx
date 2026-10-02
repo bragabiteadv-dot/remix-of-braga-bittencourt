@@ -51,7 +51,7 @@ function Index() {
       <GlobalReach />
       <Testimonials />
       <PhysicalPresence />
-      <ContactForm />
+      <ContactForm imageAlt="Contato Braga Bitencourt Advogados" />
     </>
   );
 }

@@ -30,7 +30,7 @@ import { PageAltProvider } from "@/lib/page-alt";
 import { buildSeoHead } from "@/components/SeoHead";
 import { OG_IMAGE } from "@/lib/site-og";
 
-import officeBH from "@/assets/office-bh-new.jpg";
+import officeBH from "@/assets/foto-escritorio-de-bh-25_11zon.webp";
 import sedeBetim1 from "@/assets/sede-betim-1.webp";
 import sedeBetim2 from "@/assets/sede-betim-2.webp";
 import sedeBetim3 from "@/assets/sede-betim-3.webp";
@@ -41,8 +41,8 @@ const PATH = "/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima";
 const TITLE = "Advogado de Reconhecimento e Dissolução de União Estável em Nova Lima | Braga Bitencourt Advogados";
 const SERVICE = "Reconhecimento e Dissolução de União Estável";
 const CITY = "Nova Lima";
-const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
+const OFFICE_ALT = PAGE_ALT;
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
   "Advogado de Reconhecimento e Dissolução de União Estável em Nova Lima com mais de 20 anos de experiência. Reconhecimento, dissolução, partilha de bens, pensão e guarda com sigilo e segurança.";

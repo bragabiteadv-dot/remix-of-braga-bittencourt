@@ -2,10 +2,17 @@ import { usePageAltFor } from "@/lib/page-alt";
 import { useState } from "react";
 import { MessageSquare, User, MapPin, Folder, ChevronDown, FileText } from "lucide-react";
 import { WHATSAPP_PHONE, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
-import formOffice from "@/assets/form-office.png";
+import formOffice from "@/assets/i489_11zon.webp";
 
-export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" } = {}) {
+export function ContactForm({
+  headingLevel = "h2",
+  imageAlt,
+}: {
+  headingLevel?: "h1" | "h2";
+  imageAlt?: string;
+} = {}) {
   const Heading = headingLevel;
+  const resolvedImageAlt = usePageAltFor("form", imageAlt ?? "Braga Bitencourt Contato");
 
   const [formData, setFormData] = useState({
     nome: "",
@@ -55,12 +62,12 @@ export function ContactForm({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2
           <div className="relative w-full bg-navy">
             <img
               src={formOffice}
-              alt={usePageAltFor("form", "Braga Bitencourt Contato")}
+              alt={resolvedImageAlt}
               loading="lazy"
               decoding="async"
               width={697}
               height={587}
-              className="w-full h-auto object-center"
+              className="aspect-[697/587] w-full object-cover object-center"
             />
 
             {/* Bottom gradient for readability and blend into form */}

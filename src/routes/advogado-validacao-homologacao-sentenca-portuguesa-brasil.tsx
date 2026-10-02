@@ -31,7 +31,7 @@ import logoTree from "@/assets/history-tree.webp";
 import curatelaBhHeaderLogo from "@/assets/logo-header-optimized.webp";
 
 import officeBetim from "@/assets/office-betim-new.jpg";
-import officeBH from "@/assets/office-bh-new.jpg";
+import officeBH from "@/assets/foto-escritorio-de-bh-25_11zon.webp";
 import sedeBetim1 from "@/assets/sede-betim-1.webp";
 import sedeBetim2 from "@/assets/sede-betim-2.webp";
 import sedeBetim3 from "@/assets/sede-betim-3.webp";
@@ -585,7 +585,7 @@ function LpPresence() {
                 <div className="h-56 overflow-hidden shrink-0">
                   <img
                     src={office.image}
-                    alt={OFFICE_ALT}
+                    alt={office.image === officeBH ? PAGE_ALT : OFFICE_ALT}
                     loading="lazy"
                     className="w-full h-full object-cover"
                   />

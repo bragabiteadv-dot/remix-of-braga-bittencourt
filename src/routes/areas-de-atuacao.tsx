@@ -30,7 +30,7 @@ function AreasAtuacao() {
       <ServiceListing />
       <ServicesTicker />
       <CallToActionBanner />
-      <ContactForm />
+      <ContactForm imageAlt="Veja as áreas de atuação da Braga Bitencourt" />
       <Testimonials />
     </>
   );

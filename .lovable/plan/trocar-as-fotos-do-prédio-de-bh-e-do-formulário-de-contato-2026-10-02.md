@@ -85,17 +85,17 @@ Ela não aparece na página geral de Artigos nem dentro dos artigos.
 
 ### Foto 1 — prédio de Belo Horizonte
 
-1. Home — texto alt: **[PREENCHER]**
-2. Páginas de destino — texto alt: **[PREENCHER; pode ser um texto fixo ou uma regra baseada no título de cada página]**
+1. Home — texto alt: **[Braga Bitencourt Advogados BH]**
+2. Páginas de destino — texto alt: **[Título de cada página]**
 
 ### Foto 2 — mesa com computador
 
-3. Home — texto alt: **[PREENCHER]**
-4. Perfil — texto alt: **[PREENCHER]**
-5. Áreas de Atuação — texto alt: **[PREENCHER]**
-6. Dúvidas — texto alt: **[PREENCHER]**
-7. Fale Conosco — texto alt: **[PREENCHER]**
-8. Páginas de destino — texto alt: **[PREENCHER; pode ser um texto fixo ou uma regra baseada no serviço/título da página]**
+3. Home — texto alt: **[Contato Braga Bitencourt Advogados]**
+4. Perfil — texto alt: **[Braga Bitencourt Advogados Perfil]**
+5. Áreas de Atuação — texto alt: **[Veja as áreas de atuação da Braga Bitencourt]**
+6. Dúvidas — texto alt: **[Fale com Braga Bitencourt para tirar suas dúvidas sobre Família, Sucessões e Internacional Privado]**
+7. Fale Conosco — texto alt: **[Fale com a Braga BItencourt Advogados]**
+8. Páginas de destino — texto alt: **[Fale com + Título da página.]**
 
 ## Para que serve o texto alternativo
 

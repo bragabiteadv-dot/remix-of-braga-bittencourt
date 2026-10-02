@@ -29,7 +29,7 @@ function Perfil() {
       <ServicesTicker />
       <HistorySection />
       <FounderCard />
-      <ContactForm />
+      <ContactForm imageAlt="Braga Bitencourt Advogados Perfil" />
     </>
   );
 }
