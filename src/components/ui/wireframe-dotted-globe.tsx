@@ -73,7 +73,7 @@ export default function RotatingEarth({
 
         context.beginPath();
         landFeatures.features.forEach((feature) => {
-          path(feature);
+          path(feature as Parameters<typeof path>[0]);
         });
         context.strokeStyle = "#ffffff";
         context.lineWidth = 1 * scaleFactor;
