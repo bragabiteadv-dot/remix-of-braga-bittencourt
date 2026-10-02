@@ -72,7 +72,6 @@ export function GlobePulse({
     if (!canvasRef.current) return;
     const canvas = canvasRef.current;
     let globe: ReturnType<typeof createGlobe> | null = null;
-    let animationId: number | null = null;
     let phi = 0;
 
     function init() {
@@ -101,7 +100,8 @@ export function GlobePulse({
       } as Parameters<typeof createGlobe>[1]);
 
       setTimeout(() => canvas && (canvas.style.opacity = "1"));
-    }
+      const timeoutId = setTimeout(() => canvas && (canvas.style.opacity = "1"));
+      return timeoutId;
 
     if (canvas.offsetWidth > 0) {
       init();
