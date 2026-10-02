@@ -1485,6 +1485,26 @@ function locationContext(location: InternationalLocation): string {
   }
 }
 
+const SEO_SERVICE_TITLES: Readonly<Record<string, string>> = {
+  "decisao-stj": "Homologação de decisão no STJ",
+  escrituras: "Validação de escritura estrangeira",
+  "casamento-exterior": "Registro de casamento estrangeiro",
+  "divorcio-direto": "Averbação de divórcio estrangeiro",
+  sentenca: "Homologação de sentença estrangeira",
+  "transcricao-casamento": "Transcrição de casamento estrangeiro",
+};
+
+function seoLocationName(location: InternationalLocation): string {
+  if (location.id === 5) return "Brasil";
+  return location.name.replace(/ \([^)]*\)/g, "");
+}
+
+function buildLandingSeoTitle(service: InternationalService, location: InternationalLocation): string {
+  const base = `${SEO_SERVICE_TITLES[service.id]} — ${seoLocationName(location)}`;
+  const branded = `${base} | Braga Bitencourt`;
+  return branded.length <= 70 ? branded : base;
+}
+
 export const INTERNATIONAL_LANDING_PAGES: readonly InternationalLandingPage[] = INTERNATIONAL_LOCATIONS.flatMap((location) =>
   INTERNATIONAL_SERVICES.map((service, serviceIndex) => {
     const existingPath = EXISTING_PATHS.get(`${location.id}:${serviceIndex}`);
@@ -1494,7 +1514,7 @@ export const INTERNATIONAL_LANDING_PAGES: readonly InternationalLandingPage[] = 
       slug,
       path: existingPath ?? `/advogado-${slug}`,
       title,
-      seoTitle: `${service.shortTitle} — ${location.name} | Braga Bitencourt`,
+      seoTitle: buildLandingSeoTitle(service, location),
       description: `${service.summary} Assessoria para documentos relacionados a ${location.name}, com atendimento no Brasil e online.`,
       service,
       location,

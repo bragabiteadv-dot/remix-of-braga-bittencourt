@@ -162,6 +162,7 @@ function ServiceDetails({ page }: Props) {
           <h2 className="mb-5 font-cinzel text-3xl text-navy md:text-4xl">{page.service.name}</h2>
           <div className="mx-auto mb-6 h-0.5 w-24 bg-gold-gradient" />
           <p className="font-montserrat leading-relaxed text-navy/70">{page.service.summary} Cada caso é avaliado de acordo com o documento, o país de origem e a finalidade pretendida.</p>
+          <p className="mt-4 font-montserrat text-xs leading-relaxed text-navy/60">Estas informações são gerais e não constituem aconselhamento jurídico nem garantia de resultado. A via aplicável depende da análise do caso concreto.</p>
         </div>
         <div ref={ref} className={`grid gap-6 md:grid-cols-3 reveal-stagger ${isVisible ? "visible" : ""}`}>
           {cards.map(({ icon: Icon, title, text }) => (
