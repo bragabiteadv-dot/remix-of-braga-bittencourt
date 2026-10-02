@@ -1,8 +1,6 @@
-import officeBHAsset from "@/assets/foto-escritorio-de-bh-25_11zon.webp.asset.json";
+import officeBH from "@/assets/foto-escritorio-de-bh-25_11zon.webp";
 import officeBetim from "@/assets/office-betim-new.jpg";
 import { WhatsAppCta, useWhatsAppLink } from "@/components/ui/whatsapp-cta";
-
-const officeBH = officeBHAsset.url;
 
 export function PhysicalPresence() {
   const waLink = useWhatsAppLink();

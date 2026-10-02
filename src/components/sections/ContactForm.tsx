@@ -2,7 +2,7 @@ import { usePageAltFor } from "@/lib/page-alt";
 import { useState } from "react";
 import { MessageSquare, User, MapPin, Folder, ChevronDown, FileText } from "lucide-react";
 import { WHATSAPP_PHONE, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
-import formOfficeAsset from "@/assets/i489_11zon.webp.asset.json";
+import formOffice from "@/assets/i489_11zon.webp";
 
 export function ContactForm({
   headingLevel = "h2",
@@ -61,13 +61,13 @@ export function ContactForm({
           {/* Top: Full-width image */}
           <div className="relative w-full bg-navy">
             <img
-              src={formOfficeAsset.url}
+              src={formOffice}
               alt={resolvedImageAlt}
               loading="lazy"
               decoding="async"
               width={697}
               height={587}
-              className="w-full h-auto object-center"
+              className="aspect-[697/587] w-full object-cover object-center"
             />
 
             {/* Bottom gradient for readability and blend into form */}

@@ -30,8 +30,7 @@ import { OG_IMAGE } from "@/lib/site-og";
 import logoTree from "@/assets/history-tree.webp";
 import curatelaBhHeaderLogo from "@/assets/logo-header-optimized.webp";
 
-import officeBHAsset from "@/assets/foto-escritorio-de-bh-25_11zon.webp.asset.json";
-const officeBH = officeBHAsset.url;
+import officeBH from "@/assets/foto-escritorio-de-bh-25_11zon.webp";
 import sedeBetim1 from "@/assets/sede-betim-1.webp";
 import sedeBetim2 from "@/assets/sede-betim-2.webp";
 import sedeBetim3 from "@/assets/sede-betim-3.webp";
@@ -42,8 +41,8 @@ const PATH = "/advogado-divorcio-bh";
 const TITLE = "Advogado de Divórcio em Belo Horizonte | Braga Bitencourt Advogados";
 const SERVICE = "Divórcio";
 const CITY = "Belo Horizonte";
-const OFFICE_ALT = PAGE_ALT;
 const PAGE_ALT = TITLE.split("|")[0].trim();
+const OFFICE_ALT = PAGE_ALT;
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
   "Advogado de Divórcio em Belo Horizonte com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
