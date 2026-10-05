@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Aplicar a nova foto enviada ao artigo de Guarda Compartilhada, com texto alternativo invisível, e validar sua exibição
 - [x] Corrigir definitivamente a imagem do artigo 3 — Guarda Compartilhada — na listagem e na página aberta
 - [x] Garantir que as 582 páginas internacionais usem exatamente o modelo da página original de averbação direta
 - [x] Registrar individualmente as 582 páginas internacionais no seletor de endereços e validar o acesso
