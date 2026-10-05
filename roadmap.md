@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Trocar a foto de “Entenda mais sobre Guarda Compartilhada”, definir o alt invisível solicitado e validar ambas as exibições
 - [x] Aplicar a nova foto enviada ao artigo de Guarda Compartilhada, com texto alternativo invisível, e validar sua exibição
 - [x] Corrigir definitivamente a imagem do artigo 3 — Guarda Compartilhada — na listagem e na página aberta
 - [x] Garantir que as 582 páginas internacionais usem exatamente o modelo da página original de averbação direta
