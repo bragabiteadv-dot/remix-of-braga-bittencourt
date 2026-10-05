@@ -2,7 +2,7 @@ import artigoImg18 from "@/assets/artigos/18.jpg";
 import medidaProtetivaImg from "@/assets/artigos/medida-protetiva-braga-bitencourt.jpg";
 import artigoImg27 from "@/assets/artigos/27.jpg";
 import artigoImg21 from "@/assets/artigos/21.jpg";
-import artigoImg3Asset from "@/assets/artigos/guarda-compartilhada-braga-bitencourt-2026.png.asset.json";
+import artigoImg3Asset from "@/assets/artigos/guarda-compartilhada-braga-bitencourt-2026.webp.asset.json";
 import artigoImg24 from "@/assets/artigos/24.jpg";
 import artigoImg1 from "@/assets/artigos/divorcio-uniao-estavel-braga-bitencourt.jpg";
 import artigoImg2 from "@/assets/artigos/inventario-braga-bitencourt.jpg";
