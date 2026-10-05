@@ -1,8 +1,6 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Criar páginas de Transcrição de Casamento Estrangeiro por nacionalidade, com redação jurídica e SEO revisados
-- [ ] Entregar a relação completa das páginas institucionais e de destino, agrupada por cidade, país, região e condado
 - [x] Garantir que as 582 páginas internacionais usem exatamente o modelo da página original de averbação direta
 - [x] Registrar individualmente as 582 páginas internacionais no seletor de endereços e validar o acesso
 - [x] Entregar a lista completa das páginas institucionais e de destino
