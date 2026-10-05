@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Corrigir definitivamente a imagem do artigo 3 — Guarda Compartilhada — na listagem e na página aberta
 - [x] Garantir que as 582 páginas internacionais usem exatamente o modelo da página original de averbação direta
 - [x] Registrar individualmente as 582 páginas internacionais no seletor de endereços e validar o acesso
 - [x] Entregar a lista completa das páginas institucionais e de destino
