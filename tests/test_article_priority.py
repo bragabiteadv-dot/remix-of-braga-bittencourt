@@ -7,7 +7,7 @@ class ArticlePriorityTest(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page(viewport={"width": 1280, "height": 1800})
-            page.goto("http://localhost:8080/artigos")
+            page.goto("http://localhost:8080/artigos", wait_until="networkidle")
             links = page.get_by_role("link", name="Ler artigo:", exact=False)
             self.assertEqual(links.nth(20).get_attribute("href"), "/artigos/inventario")
             browser.close()
@@ -16,7 +16,7 @@ class ArticlePriorityTest(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page(viewport={"width": 1280, "height": 1800})
-            page.goto("http://localhost:8080/artigos")
+            page.goto("http://localhost:8080/artigos", wait_until="networkidle")
             links = page.get_by_role("link", name="Ler artigo:", exact=False)
             expected = "/artigos/suprimento-de-consentimento-dos-pais-para-emissao-de-passaporte-o-que-fazer-quan"
             self.assertEqual(links.first.get_attribute("href"), expected)
