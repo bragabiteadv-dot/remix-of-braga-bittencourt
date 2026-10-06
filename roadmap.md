@@ -1,6 +1,8 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Trocar a foto do artigo de Suprimento de Consentimento para Passaporte, aplicar o alt solicitado e verificar sua exibição
+- [ ] Colocar o artigo de Suprimento de Consentimento para Passaporte em primeiro na lista e testar a prioridade
 - [x] Trocar a foto do Guia de Autorização de Viagem Internacional para Menores, definir o alt invisível solicitado e validar ambas as exibições
 - [x] Trocar a foto de “Entenda mais sobre Guarda Compartilhada”, definir o alt invisível solicitado e validar ambas as exibições
 - [x] Aplicar a nova foto enviada ao artigo de Guarda Compartilhada, com texto alternativo invisível, e validar sua exibição
