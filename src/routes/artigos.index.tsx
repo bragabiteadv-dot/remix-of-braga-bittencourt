@@ -30,7 +30,7 @@ function Artigos() {
       const matchQ = query.trim() === "" || (a.title + " " + a.excerpt).toLowerCase().includes(query.toLowerCase());
       const matchC = !active || a.category === active;
       return matchQ && matchC;
-    }).sort((a, b) => (a.id === "2" ? -1 : b.id === "2" ? 1 : 0));
+    }).sort((a, b) => (a.id === "20" ? -1 : b.id === "20" ? 1 : a.id === "2" ? -1 : b.id === "2" ? 1 : 0));
   }, [query, active]);
 
   return (
