@@ -1,9 +1,21 @@
 import { InternationalLegalLanding } from "@/components/landing/InternationalLegalLanding";
 import { buildSeoHead } from "@/components/SeoHead";
 import { getResidentLanding } from "@/lib/resident-landings";
+import type { InternationalLandingPage } from "@/lib/international-landings";
 
-export function residentLandingRouteOptions(path: string) {
-  const page = getResidentLanding(path);
+// A selected route can override copy without changing any other landing page.
+export type ResidentPageOverrides = Partial<Pick<InternationalLandingPage, "title" | "seoTitle" | "description">> & {
+  residentContent?: Partial<NonNullable<InternationalLandingPage["residentContent"]>>;
+  service?: Partial<InternationalLandingPage["service"]>;
+};
+
+export function residentLandingRouteOptions(path: string, overrides: ResidentPageOverrides = {}) {
+  const original = getResidentLanding(path);
+  const page: InternationalLandingPage = {
+    ...original, ...overrides,
+    service: { ...original.service, ...overrides.service },
+    residentContent: original.residentContent ? { ...original.residentContent, ...overrides.residentContent } : undefined,
+  };
   return {
     head: () => {
       const head = buildSeoHead({
