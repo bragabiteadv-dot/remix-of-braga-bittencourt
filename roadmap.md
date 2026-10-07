@@ -1,7 +1,8 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Preparar plano profissional da nova expansão internacional, com títulos e URLs individuais, análise jurídica e prevenção de canibalização; implementação aguarda aprovação
+- [x] Preparar plano profissional da nova expansão internacional, com títulos e URLs individuais, análise jurídica e prevenção de canibalização
+- [ ] Implementar nova expansão internacional — aguarda aprovação do plano e das consolidações propostas
 - [x] Manter Suprimento de Consentimento em primeiro e mover Inventário para a 21ª posição sem mudar os demais artigos
 - [x] Trocar a foto do artigo de Suprimento de Consentimento para Passaporte, aplicar o alt solicitado e verificar sua exibição
 - [x] Colocar o artigo de Suprimento de Consentimento para Passaporte em primeiro na lista e testar a prioridade
