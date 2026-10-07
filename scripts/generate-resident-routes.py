@@ -12,7 +12,8 @@ def generate(pilot=False):
     created = 0
     for entry in catalogue:
         path, target = entry["path"], entry["target"]
-        route = ROOT / "src/routes" / (path[1:] + ".tsx")
+        group = "_resident-" + entry["serviceId"]
+        route = ROOT / "src/routes" / (group + "." + path[1:] + ".tsx")
         if route.exists():
             continue
         if path == target:
@@ -22,7 +23,7 @@ import {{ residentLandingRouteOptions, type ResidentPageOverrides }} from "@/lib
 // Edite aqui somente esta página: title, seoTitle, description, service ou residentContent.
 const pageOverrides: ResidentPageOverrides = {{}};
 
-export const Route = createFileRoute("{path}")(
+export const Route = createFileRoute("/{group}{path}")(
   residentLandingRouteOptions("{path}", pageOverrides),
 );
 '''
@@ -30,7 +31,7 @@ export const Route = createFileRoute("{path}")(
             content = f'''import {{ createFileRoute, redirect }} from "@tanstack/react-router";
 import type {{}} from "@tanstack/react-start";
 
-export const Route = createFileRoute("{path}")({{
+export const Route = createFileRoute("/{group}{path}")({{
   beforeLoad: () => {{ throw redirect({{ href: "{target}", statusCode: 301 }}); }},
   server: {{ handlers: {{ GET: () => new Response(null, {{ status: 301, headers: {{ Location: "{target}" }} }}) }} }},
 }});
