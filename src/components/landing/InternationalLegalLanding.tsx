@@ -409,7 +409,7 @@ function LpServices() {
             <nav aria-label="Serviços relacionados" className="border-t border-primary-foreground/10 pt-8">
               <h3 className="text-gold-light text-xl mb-4">Serviços relacionados</h3>
               <ul className="grid md:grid-cols-2 gap-4">
-                {page.residentContent.related.map((item) => <li key={item.path}><Link to={item.path} className="text-primary-foreground/80 text-sm underline underline-offset-4">{item.title}</Link></li>)}
+                {page.residentContent.related.map((item) => <li key={item.path}><a href={item.path} className="text-primary-foreground/80 text-sm underline underline-offset-4">{item.title}</a></li>)}
               </ul>
               <Link to="/servicos-internacionais" className="inline-block mt-6 text-gold-light text-sm underline underline-offset-4">Consultar serviços por local de residência</Link>
             </nav>
