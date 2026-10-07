@@ -1,6 +1,6 @@
 import { buildSeo } from "@/lib/seo";
 import { OG_IMAGE } from "@/lib/site-og";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Hero } from "../components/sections/Hero";
 import { TeamGrid } from "../components/sections/TeamGrid";
 import { ServiceListing } from "../components/sections/ServiceListing";
@@ -28,6 +28,9 @@ function AreasAtuacao() {
       <Hero />
       <TeamGrid />
       <ServiceListing />
+      <div className="bg-navy py-8 text-center">
+        <Link to="/servicos-internacionais" className="btn-primary">Serviços no Brasil para residentes no exterior</Link>
+      </div>
       <ServicesTicker />
       <CallToActionBanner />
       <ContactForm imageAlt="Veja as áreas de atuação da Braga Bitencourt" />

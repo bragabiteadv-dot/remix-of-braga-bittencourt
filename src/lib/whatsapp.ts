@@ -1,4 +1,5 @@
 import { getArticleBySlug } from "@/lib/articles";
+import { getResidentEntry } from "@/lib/resident-landings";
 
 export const WHATSAPP_PHONE = "5531980260880";
 
@@ -116,6 +117,8 @@ export function normalizePath(pathname: string) {
 
 export function whatsappMessage(pathname: string) {
   const clean = normalizePath(pathname);
+  const resident = getResidentEntry(clean);
+  if (resident) return `Olá! Acessei sua página ${resident.title} e gostaria de falar com um especialista!`;
 
   const articleMatch = clean.match(/^\/artigos\/(.+)$/);
   if (articleMatch) {
