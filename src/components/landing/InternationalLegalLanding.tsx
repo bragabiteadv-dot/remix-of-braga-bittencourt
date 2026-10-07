@@ -28,6 +28,8 @@ import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } fr
 import { PageAltProvider } from "@/lib/page-alt";
 import type { InternationalLandingPage } from "@/lib/international-landings";
 import { getLocationContext } from "@/lib/international-landings";
+import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { getInternationalLandingSupport } from "@/lib/landing-support";
 import logoTree from "@/assets/history-tree.webp";
 import curatelaBhHeaderLogo from "@/assets/logo-header-optimized.webp";
 
@@ -398,23 +400,7 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
-        {page.residentContent && (
-          <div className="mt-14 space-y-8 font-montserrat">
-            <div>
-              <h3 className="text-gold-light text-xl mb-4">Documentos e informações para a análise</h3>
-              <ul className="space-y-3 text-primary-foreground/80 text-sm leading-relaxed">
-                {page.residentContent.documents.map((document) => <li key={document}>{document}</li>)}
-              </ul>
-            </div>
-            <nav aria-label="Serviços relacionados" className="border-t border-primary-foreground/10 pt-8">
-              <h3 className="text-gold-light text-xl mb-4">Serviços relacionados</h3>
-              <ul className="grid md:grid-cols-2 gap-4">
-                {page.residentContent.related.map((item) => <li key={item.path}><a href={item.path} className="text-primary-foreground/80 text-sm underline underline-offset-4">{item.title}</a></li>)}
-              </ul>
-              <Link to="/servicos-internacionais" className="inline-block mt-6 text-gold-light text-sm underline underline-offset-4">Consultar serviços por local de residência</Link>
-            </nav>
-          </div>
-        )}
+        <LandingSupportSections content={getInternationalLandingSupport(page)} />
       </div>
     </section>
   );

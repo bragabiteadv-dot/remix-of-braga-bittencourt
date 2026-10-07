@@ -1,3 +1,4 @@
+import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
@@ -408,6 +409,7 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
+        <LandingSupportSections path={PATH} />
       </div>
     </section>
   );
