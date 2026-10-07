@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Executar verificação final da expansão em lotes, incluindo acessos, seções, metadados, redirecionamentos e sitemap
 - [ ] Entregar inventário atualizado e plano de otimização sem alterações visuais, preservando o vídeo
 - [ ] Conferir Documentos e informações para a análise e Serviços relacionados em todas as páginas de destino e planejar cobertura das ausentes
 - [x] Preparar plano profissional da nova expansão internacional, com títulos e URLs individuais, análise jurídica e prevenção de canibalização

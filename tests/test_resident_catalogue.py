@@ -34,7 +34,7 @@ class ResidentCatalogueTest(unittest.TestCase):
 
     def test_every_address_has_an_individual_route(self):
         for row in ROWS:
-            path = ROOT / "src/routes" / ("_resident-" + row["serviceId"] + "." + row["path"][1:] + ".tsx")
+            path = ROOT / "src/routes" / (row["path"][1:] + ".tsx")
             self.assertTrue(path.is_file(), row["path"])
 
 
