@@ -5,8 +5,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def generate():
+def generate(pilot=False):
     catalogue = json.loads((ROOT / "src/data/resident-catalogue.json").read_text())
+    if pilot:
+        catalogue = [entry for entry in catalogue if entry["serviceId"] == "inventario-internacional-extrajudicial" and entry["locationId"] in [None, 21, 46, 69, 86, 97]]
     created = 0
     for entry in catalogue:
         path, target = entry["path"], entry["target"]
@@ -39,4 +41,5 @@ export const Route = createFileRoute("{path}")({{
 
 
 if __name__ == "__main__":
-    generate()
+    import sys
+    generate(pilot="--pilot" in sys.argv)
