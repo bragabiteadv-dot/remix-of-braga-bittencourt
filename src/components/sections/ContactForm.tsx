@@ -7,9 +7,11 @@ import formOffice from "@/assets/i489_11zon.webp";
 export function ContactForm({
   headingLevel = "h2",
   imageAlt,
+  pageTitle,
 }: {
   headingLevel?: "h1" | "h2";
   imageAlt?: string;
+  pageTitle?: string;
 } = {}) {
   const Heading = headingLevel;
   const resolvedImageAlt = usePageAltFor("form", imageAlt ?? "Braga Bitencourt Contato");
@@ -33,7 +35,7 @@ export function ContactForm({
       "/artigos": "Artigos",
       "/advogado-divorcio-betim": "Advogado Divórcio Betim",
     };
-    const pageName = pageNames[path] ?? (path.startsWith("/artigos/") ? "Artigos" : path || "Home");
+    const pageName = pageTitle ?? pageNames[path] ?? (path.startsWith("/artigos/") ? "Artigos" : path || "Home");
     let text = `Olá! Acessei a página ${pageName} e gostaria de falar com um especialista.`;
     const nome = formData.nome.trim();
     const cidade = formData.cidade.trim();

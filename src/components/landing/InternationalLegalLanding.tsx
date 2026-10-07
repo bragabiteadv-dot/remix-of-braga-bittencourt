@@ -62,6 +62,7 @@ export function InternationalLegalLanding({ page }: Props) {
 }
 
 function LandingPageContent() {
+  const page = useLandingPage();
   return (
     <div className="bg-navy">
       <LpHeader />
@@ -74,7 +75,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
-      <ContactForm />
+      <ContactForm pageTitle={page.residentContent ? page.title : undefined} />
       <LpFooter />
     </div>
   );
@@ -111,12 +112,12 @@ function LpHero() {
     {
       title: "+ 20 anos",
       subtitle: ["EXPERIENCIA &", "BAGAGEM TÉCNICA"],
-      text: "Duas décadas de especialização em direito internacional privado, direito de família e atos de registro civil das pessoas naturais.",
+      text: page.residentContent ? "Atuação em direito internacional privado, família e sucessões, com atenção às particularidades de cada caso." : "Duas décadas de especialização em direito internacional privado, direito de família e atos de registro civil das pessoas naturais.",
     },
     {
       title: "Fale Direto",
       subtitle: ["ATENDIMENTO IMEDIATO E SIGILOSO"],
-      text: "Contato direto com o advogado do caso, com confidencialidade e orientação clara sobre documentos, prazos e exigências do cartório.",
+      text: page.residentContent ? "Contato com o advogado do caso, com confidencialidade e orientação sobre direitos, documentos e providências adequadas." : "Contato direto com o advogado do caso, com confidencialidade e orientação clara sobre documentos, prazos e exigências do cartório.",
     },
     {
       title: "Sedes físicas",
@@ -126,7 +127,7 @@ function LpHero() {
     {
       title: "Raio Global",
       subtitle: ["BRASIL E EXTERIOR"],
-      text: `Suporte jurídico especializado em ${page.service.name.toLowerCase()} para documentos relacionados a ${page.location.name}.`,
+      text: page.residentContent ? `Orientação em ${page.service.name.toLowerCase()} no Brasil, com atendimento a residentes em ${page.location.name}.` : `Suporte jurídico especializado em ${page.service.name.toLowerCase()} para documentos relacionados a ${page.location.name}.`,
     },
   ];
 
@@ -140,16 +141,16 @@ function LpHero() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start animate-in fade-in slide-in-from-bottom-8 duration-1000">
           {/* Left */}
           <div className="lg:w-[55%] w-full min-w-0">
-            <h1 className="text-white text-[28px] md:text-[38px] lg:text-[48px] font-cinzel leading-[1.1] mb-6">
+            <h1 className={`${page.residentContent && page.title.length > 120 ? "text-[26px] md:text-[34px] lg:text-[40px]" : "text-[28px] md:text-[38px] lg:text-[48px]"} text-white font-cinzel leading-[1.1] mb-6 break-words`}>
               {page.title}
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
-              {page.service.shortTitle} com análise documental individual e orientação sobre o procedimento aplicável no Brasil.
+              {page.residentContent?.subtitle ?? `${page.service.shortTitle} com análise documental individual e orientação sobre o procedimento aplicável no Brasil.`}
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
-              {page.service.legalContext} {getLocationContext(page.location)} Conduzimos o procedimento com sigilo, clareza e análise individual.
+              {page.service.legalContext} {page.residentContent?.locationContext ?? getLocationContext(page.location)} Conduzimos o procedimento com sigilo, clareza e análise individual.
             </p>
 
             <WhatsAppCta className="w-full sm:w-auto" />
@@ -219,7 +220,7 @@ function LpSituations() {
 
   const page = useLandingPage();
   const steps = page.service.steps;
-  const items = [
+  const legacyItems = [
     { icon: <Scale className="w-7 h-7" />, title: `Precisa usar no Brasil um documento relacionado a ${page.location.name}?`, text: `${page.service.summary} Identificamos a providência brasileira adequada para o documento apresentado.` },
     { icon: <Users className="w-7 h-7" />, title: "Tem dúvida sobre qual procedimento jurídico deve ser adotado?", text: page.service.legalContext },
     { icon: <Coins className="w-7 h-7" />, title: "Quer evitar custos e exigências causados por uma via inadequada?", text: "A análise prévia define a autoridade competente e os atos realmente necessários antes de qualquer protocolo." },
@@ -227,6 +228,8 @@ function LpSituations() {
     { icon: <Building2 className="w-7 h-7" />, title: "O documento precisa produzir efeitos perante órgão ou cartório brasileiro?", text: steps[3] ?? "Orientamos o registro, cumprimento ou apresentação perante a autoridade brasileira competente." },
     { icon: <Landmark className="w-7 h-7" />, title: `Busca acompanhamento especializado para um caso ligado a ${page.location.name}?`, text: "Conduzimos cada etapa com comunicação clara, atendimento sigiloso e orientação jurídica individualizada." },
   ];
+  const icons = [<Scale className="w-7 h-7" />, <Users className="w-7 h-7" />, <Coins className="w-7 h-7" />, <FileSignature className="w-7 h-7" />, <Building2 className="w-7 h-7" />, <Landmark className="w-7 h-7" />];
+  const items = page.residentContent?.situations.map((item, index) => ({ ...item, icon: icons[index] })) ?? legacyItems;
 
 
   return (
@@ -234,7 +237,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES COM DOCUMENTOS OU DECISÕES DO EXTERIOR?
+            {page.residentContent ? "ORIENTAÇÃO PARA O SEU CASO NO BRASIL" : "VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES COM DOCUMENTOS OU DECISÕES DO EXTERIOR?"}
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -349,7 +352,7 @@ function LpServices() {
       items: [
         page.service.name,
         ...page.service.steps,
-        `Análise de documentos relacionados a ${page.location.name}`,
+        page.residentContent ? `Atendimento a residentes em ${page.location.name}` : `Análise de documentos relacionados a ${page.location.name}`,
         "Orientação sobre apostilamento, legalização e tradução juramentada",
         "Regularização de efeitos jurídicos no Brasil",
       ],
@@ -395,6 +398,22 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
+        {page.residentContent && (
+          <div className="mt-14 space-y-8 font-montserrat">
+            <div>
+              <h3 className="text-gold-light text-xl mb-4">Documentos e informações para a análise</h3>
+              <ul className="space-y-3 text-primary-foreground/80 text-sm leading-relaxed">
+                {page.residentContent.documents.map((document) => <li key={document}>{document}</li>)}
+              </ul>
+            </div>
+            <nav aria-label="Serviços relacionados" className="border-t border-primary-foreground/10 pt-8">
+              <h3 className="text-gold-light text-xl mb-4">Serviços relacionados</h3>
+              <ul className="grid md:grid-cols-2 gap-4">
+                {page.residentContent.related.map((item) => <li key={item.path}><Link to={item.path} className="text-primary-foreground/80 text-sm underline underline-offset-4">{item.title}</Link></li>)}
+              </ul>
+            </nav>
+          </div>
+        )}
       </div>
     </section>
   );

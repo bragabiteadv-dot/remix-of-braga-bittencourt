@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { ARTICLES } from "@/lib/articles";
 import { GENERATED_INTERNATIONAL_PATHS } from "@/lib/international-landings";
+import { RESIDENT_INDEXABLE_PATHS } from "@/lib/resident-landings";
 import { hasOfficialDomain, siteUrl } from "@/lib/site";
 
 interface SitemapEntry {
@@ -137,6 +138,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "monthly" as const,
             priority: "0.6",
           })),
+          ...RESIDENT_INDEXABLE_PATHS.map((path) => ({ path, changefreq: "monthly" as const, priority: "0.7" })),
         ];
 
         const urls = entries.map((e) =>

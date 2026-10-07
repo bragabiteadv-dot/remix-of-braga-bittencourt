@@ -24,6 +24,14 @@ export interface InternationalLandingPage {
   service: InternationalService;
   location: InternationalLocation;
   existingPath?: string;
+  residentContent?: {
+    locationContext: string;
+    situations: readonly { title: string; text: string }[];
+    documents: readonly string[];
+    localGuidance: string;
+    subtitle: string;
+    related: readonly { path: string; title: string }[];
+  };
 }
 
 export const INTERNATIONAL_SERVICES: readonly InternationalService[] = [
