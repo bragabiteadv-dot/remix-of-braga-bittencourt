@@ -2950,6 +2950,7 @@ import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as ServicosInternacionaisRouteImport } from './routes/servicos-internacionais'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ValidacaoHomologacaoSentencaEstrangeiraRouteImport } from './routes/validacao-homologacao-sentenca-estrangeira'
 import { Route as ArtigosIndexRouteImport } from './routes/artigos.index'
@@ -24542,6 +24543,11 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicosInternacionaisRoute = ServicosInternacionaisRouteImport.update({
+  id: '/servicos-internacionais',
+  path: '/servicos-internacionais',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -27506,6 +27512,7 @@ export interface FileRoutesByFullPath {
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/robots.txt': typeof RobotsDottxtRoute
+  '/servicos-internacionais': typeof ServicosInternacionaisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/validacao-homologacao-sentenca-estrangeira': typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
@@ -30453,6 +30460,7 @@ export interface FileRoutesByTo {
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/robots.txt': typeof RobotsDottxtRoute
+  '/servicos-internacionais': typeof ServicosInternacionaisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/validacao-homologacao-sentenca-estrangeira': typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
@@ -33401,6 +33409,7 @@ export interface FileRoutesById {
   '/fale-conosco': typeof FaleConoscoRoute
   '/perfil': typeof PerfilRoute
   '/robots.txt': typeof RobotsDottxtRoute
+  '/servicos-internacionais': typeof ServicosInternacionaisRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/validacao-homologacao-sentenca-estrangeira': typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
@@ -36350,6 +36359,7 @@ export interface FileRouteTypes {
     | '/fale-conosco'
     | '/perfil'
     | '/robots.txt'
+    | '/servicos-internacionais'
     | '/sitemap.xml'
     | '/validacao-homologacao-sentenca-estrangeira'
     | '/artigos/$slug'
@@ -39297,6 +39307,7 @@ export interface FileRouteTypes {
     | '/fale-conosco'
     | '/perfil'
     | '/robots.txt'
+    | '/servicos-internacionais'
     | '/sitemap.xml'
     | '/validacao-homologacao-sentenca-estrangeira'
     | '/artigos/$slug'
@@ -42244,6 +42255,7 @@ export interface FileRouteTypes {
     | '/fale-conosco'
     | '/perfil'
     | '/robots.txt'
+    | '/servicos-internacionais'
     | '/sitemap.xml'
     | '/validacao-homologacao-sentenca-estrangeira'
     | '/artigos/$slug'
@@ -45192,6 +45204,7 @@ export interface RootRouteChildren {
   FaleConoscoRoute: typeof FaleConoscoRoute
   PerfilRoute: typeof PerfilRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
+  ServicosInternacionaisRoute: typeof ServicosInternacionaisRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ValidacaoHomologacaoSentencaEstrangeiraRoute: typeof ValidacaoHomologacaoSentencaEstrangeiraRoute
   ArtigosSlugRoute: typeof ArtigosSlugRoute
@@ -65787,6 +65800,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicos-internacionais': {
+      id: '/servicos-internacionais'
+      path: '/servicos-internacionais'
+      fullPath: '/servicos-internacionais'
+      preLoaderRoute: typeof ServicosInternacionaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -71636,6 +71656,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaleConoscoRoute: FaleConoscoRoute,
   PerfilRoute: PerfilRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
+  ServicosInternacionaisRoute: ServicosInternacionaisRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ValidacaoHomologacaoSentencaEstrangeiraRoute:
     ValidacaoHomologacaoSentencaEstrangeiraRoute,
