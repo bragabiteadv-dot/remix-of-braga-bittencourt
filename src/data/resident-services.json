@@ -1,0 +1,347 @@
+[
+  {
+    "id": "inventario-internacional-extrajudicial",
+    "slug": "inventario-internacional-extrajudicial",
+    "name": "Inventário internacional extrajudicial",
+    "shortTitle": "Inventário internacional extrajudicial",
+    "title": "Advogado de Inventário Internacional Extrajudicial em Cartório no Brasil",
+    "summary": "Análise dos requisitos para inventariar bens no Brasil por escritura pública, com herdeiros ou documentos no exterior.",
+    "legalContext": "A escritura de inventário depende dos requisitos legais e da Resolução CNJ 35/2007, alterada pela 571/2024. Menores, incapazes ou testamento não autorizam nem impedem automaticamente a via extrajudicial: há condições específicas. Bens situados no Brasil e ativos estrangeiros exigem análise de competência e lei aplicável.",
+    "steps": [
+      "Conferir óbito, domicílio, herdeiros e localização dos bens",
+      "Verificar consenso, testamento, capacidade e requisitos da escritura",
+      "Organizar procurações, certidões e obrigações fiscais pertinentes",
+      "Acompanhar escritura e registros brasileiros cabíveis"
+    ]
+  },
+  {
+    "id": "reconhecimento-dissolucao-uniao-estavel-transnacional",
+    "slug": "reconhecimento-dissolucao-uniao-estavel-transnacional",
+    "name": "União estável transnacional",
+    "shortTitle": "União estável transnacional",
+    "title": "Advogado de Reconhecimento e Dissolução de União Estável Transnacional no Brasil",
+    "summary": "Reconhecimento da convivência, definição do regime patrimonial e dissolução de união estável com vínculos em mais de um país.",
+    "legalContext": "Morar fora do Brasil não torna toda convivência uma união estável reconhecida. É necessário examinar fatos, prova, lei aplicável, competência e efeitos patrimoniais. A via consensual ou judicial depende do caso, e o documento estrangeiro não substitui automaticamente o procedimento brasileiro.",
+    "steps": [
+      "Reunir prova da convivência, duração e intenção familiar",
+      "Identificar domicílios, contratos e regime patrimonial aplicável",
+      "Distinguir consenso, litígio e interesses de filhos",
+      "Formalizar reconhecimento ou dissolução pela via adequada"
+    ]
+  },
+  {
+    "id": "partilha-bens-divorcio",
+    "slug": "partilha-bens-divorcio",
+    "name": "Partilha de bens em divórcio",
+    "shortTitle": "Partilha de bens em divórcio",
+    "title": "Advogado para Partilha de Bens em Divórcio no Brasil",
+    "summary": "Definição e divisão dos bens do casal, com atenção ao regime patrimonial e aos efeitos do divórcio no Brasil.",
+    "legalContext": "Meação não se confunde com herança. A partilha exige identificar titularidade, momento de aquisição, dívidas e regime de bens. A autoridade brasileira tem competência exclusiva para partilhar bens situados no Brasil em separação ou divórcio; efeitos de decisões estrangeiras e bens no exterior demandam análise própria.",
+    "steps": [
+      "Identificar casamento, regime e situação do divórcio",
+      "Relacionar bens, dívidas, valores e documentos de aquisição",
+      "Avaliar acordo, litígio e eventual sobrepartilha",
+      "Acompanhar partilha e alterações registrais cabíveis"
+    ]
+  },
+  {
+    "id": "partilha-bens-inventario",
+    "slug": "partilha-bens-inventario",
+    "name": "Partilha de bens em inventário",
+    "shortTitle": "Partilha de bens em inventário",
+    "title": "Advogado para Partilha de Bens em Inventário no Brasil",
+    "summary": "Organização de quinhões hereditários e divisão do acervo apurado em inventário, inclusive em casos transfronteiriços.",
+    "legalContext": "A partilha distribui a herança depois de apurados o patrimônio e as obrigações do espólio. Meação, legítima, direitos dos herdeiros e tributos devem ser distinguidos. A divisão ou sobrepartilha não dispensa inventário quando exigido, nem confere à decisão brasileira alcance automático sobre bens estrangeiros.",
+    "steps": [
+      "Distinguir meação, herança e passivo do espólio",
+      "Conferir herdeiros, testamento e quinhões",
+      "Avaliar divisão consensual, litígio ou sobrepartilha",
+      "Formalizar partilha e títulos para registros pertinentes"
+    ]
+  },
+  {
+    "id": "registro-contratos-internacionais-rtd",
+    "slug": "registro-contratos-internacionais-rtd",
+    "name": "Registro de contratos internacionais no RTD",
+    "shortTitle": "Registro de contratos internacionais no RTD",
+    "title": "Advogado para Análise e Registro de Contratos Internacionais no RTD no Brasil",
+    "summary": "Análise de contratos internacionais e de sua apresentação ou registro no Registro de Títulos e Documentos brasileiro.",
+    "legalContext": "O registro no RTD, quando cabível segundo a Lei de Registros Públicos, não convalida cláusulas inválidas, não substitui registro imobiliário nem homologação judicial quando necessária. A finalidade, o idioma, a forma do documento e os efeitos perante terceiros determinam os requisitos, inclusive tradução ou autenticação e suas dispensas.",
+    "steps": [
+      "Identificar partes, objeto, finalidade e lei aplicável",
+      "Revisar cláusulas, poderes e forma do instrumento",
+      "Conferir enquadramento na LRP e documentos necessários",
+      "Acompanhar apresentação ao RTD quando juridicamente adequada"
+    ]
+  },
+  {
+    "id": "representacao-negocios-aquisicao-bens",
+    "slug": "representacao-negocios-aquisicao-bens",
+    "name": "Negócios e aquisições de bens",
+    "shortTitle": "Negócios e aquisições de bens",
+    "title": "Advogado para Representação em Negócios e Aquisições de Bens no Brasil",
+    "summary": "Representação jurídica em negócios e aquisições de bens no Brasil, inclusive para clientes que residem no exterior.",
+    "legalContext": "A representação depende de poderes suficientes e conferência de documentos. Aquisições exigem análise de titularidade, riscos e regras específicas; imóveis rurais e áreas de fronteira podem ter restrições a estrangeiros. Atuar no Brasil não equivale a habilitação para aconselhar sobre todas as leis estrangeiras.",
+    "steps": [
+      "Delimitar o negócio e os poderes de representação",
+      "Conferir titularidade, certidões, ônus e contraparte",
+      "Examinar restrições, contratos e exigências fiscais",
+      "Acompanhar assinatura e registros exigidos no Brasil"
+    ]
+  },
+  {
+    "id": "planejamento-sucessorio-internacional",
+    "slug": "planejamento-sucessorio-internacional",
+    "name": "Planejamento sucessório internacional",
+    "shortTitle": "Planejamento sucessório internacional",
+    "title": "Advogado de Planejamento Sucessório Internacional no Brasil",
+    "summary": "Planejamento da transmissão patrimonial em vida e por sucessão com vínculos familiares ou bens em mais de um país.",
+    "legalContext": "Testamentos, doações e instrumentos societários exigem análise da lei aplicável, legítima, regime de bens e tributação. Não existe promessa de blindagem patrimonial, economia fiscal universal ou instrumento único válido em todas as jurisdições. Medidas estrangeiras podem exigir coordenação com profissional habilitado no respectivo país.",
+    "steps": [
+      "Mapear família, domicílios e patrimônio por país",
+      "Conferir legítima, regime de bens e instrumentos existentes",
+      "Comparar alternativas e consequências fiscais comprovadas",
+      "Formalizar medidas compatíveis e revisar mudanças relevantes"
+    ]
+  },
+  {
+    "id": "curatela",
+    "slug": "curatela",
+    "name": "Curatela",
+    "shortTitle": "Curatela",
+    "title": "Advogado de Curatela no Brasil",
+    "summary": "Orientação sobre curatela e medidas de apoio no Brasil, com atenção a familiares ou interessados que residem fora.",
+    "legalContext": "A curatela é excepcional, proporcional às necessidades e, nos termos da Lei Brasileira de Inclusão, alcança atos patrimoniais e negociais. Deficiência ou diagnóstico não implica incapacidade automática. Avaliam-se autonomia, tomada de decisão apoiada quando cabível, urgência e eventual reconhecimento de decisão estrangeira.",
+    "steps": [
+      "Identificar necessidades concretas e medidas menos restritivas",
+      "Reunir prova médica e fatos relevantes sem presumir incapacidade",
+      "Examinar competência, urgência e indicação de curador",
+      "Acompanhar decisão, limites e deveres de prestação de contas"
+    ]
+  },
+  {
+    "id": "pensao-alimenticia-internacional",
+    "slug": "pensao-alimenticia-internacional",
+    "name": "Pensão alimentícia internacional",
+    "shortTitle": "Pensão alimentícia internacional",
+    "title": "Advogado de Pensão Alimentícia Internacional no Brasil",
+    "summary": "Fixação de alimentos em situações nas quais alimentante ou alimentando possui vínculos com o exterior.",
+    "legalContext": "A obrigação depende de necessidade, possibilidade e proporcionalidade, além da competência e da lei aplicável. A cooperação internacional e a Convenção da Haia de 2007 dependem dos países, do âmbito e dos requisitos do caso. Esta página trata da fixação; cobrança, revisão e exoneração têm finalidades distintas.",
+    "steps": [
+      "Identificar beneficiário, residência e foro competente",
+      "Organizar necessidades e capacidade econômica",
+      "Examinar citação e mecanismos de cooperação aplicáveis",
+      "Buscar fixação e orientar o cumprimento da obrigação"
+    ]
+  },
+  {
+    "id": "execucao-pensao-alimenticia-internacional",
+    "slug": "execucao-pensao-alimenticia-internacional",
+    "name": "Execução de pensão internacional",
+    "shortTitle": "Execução de pensão internacional",
+    "title": "Advogado de Execução de Pensão Alimentícia Internacional no Brasil",
+    "summary": "Cobrança de pensão vencida com análise do título, das parcelas e das vias de cumprimento no Brasil.",
+    "legalContext": "Decisão estrangeira pode exigir reconhecimento antes de ser cumprida. Penhora e prisão civil são ritos distintos: o art. 528 do CPC limita o rito da prisão às três prestações anteriores ao ajuizamento e às vencidas no processo, quando presentes os demais requisitos. Não há prisão automática nem imposição direta de medida brasileira no exterior.",
+    "steps": [
+      "Conferir título, reconhecimento e competência para cumprimento",
+      "Apurar parcelas pagas, vencidas e documentos da dívida",
+      "Definir rito patrimonial ou coercitivo juridicamente cabível",
+      "Acompanhar cobrança e cooperação internacional pertinente"
+    ]
+  },
+  {
+    "id": "revisao-pensao-alimenticia-internacional",
+    "slug": "revisao-pensao-alimenticia-internacional",
+    "name": "Revisão de pensão internacional",
+    "shortTitle": "Revisão de pensão internacional",
+    "title": "Advogado de Revisão de Pensão Alimentícia Internacional no Brasil",
+    "summary": "Reavaliação de alimentos em razão de alteração demonstrada nas necessidades ou possibilidades das partes.",
+    "legalContext": "Revisar pensão exige prova da mudança e exame da autoridade competente, sobretudo se a decisão foi proferida fora do Brasil. Variação cambial ou mudança de residência não impõe revisão automática. A obrigação vigente deve ser observada enquanto não houver alteração pela via adequada.",
+    "steps": [
+      "Conferir decisão vigente e jurisdição competente",
+      "Comparar situação anterior e mudança comprovada",
+      "Organizar renda, despesas e necessidades atuais",
+      "Requerer revisão e analisar seus efeitos no caso concreto"
+    ]
+  },
+  {
+    "id": "exoneracao-pensao-alimenticia-internacional",
+    "slug": "exoneracao-pensao-alimenticia-internacional",
+    "name": "Exoneração de pensão internacional",
+    "shortTitle": "Exoneração de pensão internacional",
+    "title": "Advogado de Exoneração de Pensão Alimentícia Internacional no Brasil",
+    "summary": "Avaliação do cabimento de extinguir obrigação alimentar, inclusive quando alguma das partes reside no exterior.",
+    "legalContext": "Maioridade não cancela automaticamente a pensão. A exoneração exige exame da necessidade atual, fundamentos da obrigação, contraditório e decisão competente. Deixar de pagar por conta própria pode gerar cobrança; decisões e residências estrangeiras exigem análise de competência e reconhecimento.",
+    "steps": [
+      "Identificar fundamento e título da obrigação",
+      "Reunir prova da alteração ou cessação da necessidade",
+      "Avaliar contraditório e competência para exoneração",
+      "Requerer a medida adequada sem suspensão unilateral"
+    ]
+  },
+  {
+    "id": "guarda-compartilhada-convivencia-moradia-menor",
+    "slug": "guarda-compartilhada-convivencia-moradia-menor",
+    "name": "Guarda e convivência familiar",
+    "shortTitle": "Guarda e convivência familiar",
+    "title": "Advogado de Guarda Compartilhada, Convivência Familiar e Moradia de Referência de Menor no Brasil",
+    "summary": "Definição da guarda, convivência e residência de referência da criança ou adolescente em contexto familiar transfronteiriço.",
+    "legalContext": "Guarda compartilhada diz respeito à responsabilidade parental e não exige moradia alternada nem divisão igual de tempo. O melhor interesse da criança, a distância e riscos de violência são relevantes; a lei prevê exceções. Residência habitual e decisões existentes precisam ser avaliadas antes de viagem ou mudança internacional.",
+    "steps": [
+      "Conhecer rotina, necessidades e decisões parentais existentes",
+      "Avaliar melhor interesse, segurança e vínculos familiares",
+      "Construir convivência viável e residência de referência",
+      "Formalizar acordo ou buscar decisão pela via competente"
+    ]
+  },
+  {
+    "id": "suprimento-judicial-autorizacao-viagem-internacional-menor",
+    "slug": "suprimento-judicial-autorizacao-viagem-internacional-menor",
+    "name": "Autorização judicial de viagem de menor",
+    "shortTitle": "Autorização judicial de viagem de menor",
+    "title": "Advogado de Suprimento Judicial de Autorização de Viagem Internacional de Menor no Brasil",
+    "summary": "Suprimento judicial da autorização necessária para viagem internacional de criança ou adolescente quando não há consentimento exigido.",
+    "legalContext": "Viagem temporária, emissão de passaporte e mudança de residência são providências distintas. A autorização exigida depende da idade, acompanhantes, nacionalidade, residência e regras aplicáveis. Na falta de consentimento necessário, o pedido judicial deve demonstrar finalidade, itinerário e proteção do menor; não há deferimento automático.",
+    "steps": [
+      "Conferir idade, acompanhantes e autorização realmente exigida",
+      "Organizar itinerário, retorno e documentos da viagem",
+      "Demonstrar recusa ou impossibilidade do consentimento",
+      "Requerer suprimento específico e conferir seus limites"
+    ]
+  },
+  {
+    "id": "autorizacao-mudanca-menor-exterior",
+    "slug": "autorizacao-mudanca-menor-exterior",
+    "name": "Mudança de menor para o exterior",
+    "shortTitle": "Mudança de menor para o exterior",
+    "title": "Advogado para Autorização de Mudança de Menor para o Exterior no Brasil",
+    "summary": "Avaliação jurídica da transferência de residência de criança ou adolescente para outro país.",
+    "legalContext": "Mudar definitivamente não equivale a uma viagem de férias. Consentimento parental, decisões vigentes, residência habitual, convivência e melhor interesse precisam ser examinados. Retirada ou retenção sem fundamento pode configurar ilicitude civil internacional; autorização de viagem ou passaporte não é permissão universal de mudança.",
+    "steps": [
+      "Conferir guarda, residência habitual e direitos parentais",
+      "Documentar plano de moradia, educação e convivência",
+      "Avaliar consentimento, riscos e competência judicial",
+      "Buscar autorização própria antes da transferência"
+    ]
+  },
+  {
+    "id": "suprimento-consentimento-passaporte-menor",
+    "slug": "suprimento-consentimento-passaporte-menor",
+    "name": "Consentimento para passaporte de menor",
+    "shortTitle": "Consentimento para passaporte de menor",
+    "title": "Advogado para Suprimento Judicial de Consentimento para Emissão de Passaporte de Menor no Brasil",
+    "summary": "Suprimento judicial do consentimento exigido para a emissão de passaporte de menor quando um responsável recusa ou não pode autorizar.",
+    "legalContext": "A Polícia Federal exige documentação e consentimento conforme as regras aplicáveis ao menor. Na falta da autorização necessária, pode ser preciso suprimento judicial específico. Passaporte, autorização de viagem e autorização para mudar de país não são equivalentes, e o alcance do pedido e da decisão deve ser conferido.",
+    "steps": [
+      "Conferir filiação, responsáveis e exigências da Polícia Federal",
+      "Comprovar recusa, ausência ou impedimento relevante",
+      "Organizar documentos e justificar o pedido específico",
+      "Acompanhar decisão e apresentação para emissão do passaporte"
+    ]
+  },
+  {
+    "id": "inventario-internacional-judicial",
+    "slug": "inventario-internacional-judicial",
+    "name": "Inventário internacional judicial",
+    "shortTitle": "Inventário internacional judicial",
+    "title": "Advogado de Inventário Internacional Judicial no Brasil",
+    "summary": "Inventário pela via judicial no Brasil com herdeiros, documentos ou vínculos patrimoniais no exterior.",
+    "legalContext": "A autoridade brasileira tem competência exclusiva para inventário e partilha de bens situados no Brasil, mesmo com falecido estrangeiro ou domiciliado fora. A LINDB orienta a lei sucessória e há regras especiais. A competência sobre ativos estrangeiros e a necessidade de procedimento no exterior exigem avaliação própria.",
+    "steps": [
+      "Conferir óbito, domicílio, herdeiros e acervo",
+      "Identificar competência, lei aplicável e representação",
+      "Organizar prova, obrigações fiscais e controvérsias",
+      "Acompanhar inventário, partilha e registros no Brasil"
+    ]
+  },
+  {
+    "id": "divorcio-internacional-litigioso",
+    "slug": "divorcio-internacional-litigioso",
+    "name": "Divórcio internacional litigioso",
+    "shortTitle": "Divórcio internacional litigioso",
+    "title": "Advogado de Divórcio Internacional Litigioso no Brasil",
+    "summary": "Processo de divórcio litigioso no Brasil quando há vínculos pessoais, documentais ou patrimoniais com outro país.",
+    "legalContext": "É necessário distinguir iniciar o divórcio no Brasil de reconhecer um divórcio já concluído no exterior. A competência, citação internacional, guarda, alimentos e partilha exigem análises próprias. Bens situados no Brasil têm regras de competência exclusiva e decisões brasileiras não produzem automaticamente todos os efeitos no exterior.",
+    "steps": [
+      "Identificar casamento, domicílios e processos existentes",
+      "Conferir competência e forma válida de citação",
+      "Delimitar pedidos e medidas urgentes pertinentes",
+      "Acompanhar divórcio e efeitos registrais cabíveis"
+    ]
+  },
+  {
+    "id": "restituicao-internacional-criancas",
+    "slug": "restituicao-internacional-criancas",
+    "name": "Restituição internacional de crianças",
+    "shortTitle": "Restituição internacional de crianças",
+    "title": "Advogado de Restituição Internacional de Crianças pela Convenção de Haia no Brasil",
+    "summary": "Análise de retirada ou retenção internacional ilícita e do pedido de retorno nos termos da Convenção da Haia de 1980.",
+    "legalContext": "A Convenção trata do retorno, e não decide o mérito definitivo da guarda. Exige verificar residência habitual, direitos de guarda, idade inferior a 16 anos e relação convencional entre os países. Há exceções legais e o retorno não é automático. Subtração ou sequestro internacional são expressões usuais que devem ser distinguidas de tipificação penal.",
+    "steps": [
+      "Reconstruir residência habitual e cronologia da retirada ou retenção",
+      "Conferir direitos de guarda, idade e aplicação da Convenção",
+      "Examinar prova, exceções e mecanismos de autoridade central",
+      "Acompanhar a via competente e medidas de proteção"
+    ]
+  },
+  {
+    "id": "sequestro-internacional-criancas",
+    "slug": "sequestro-internacional-criancas",
+    "name": "Subtração internacional de crianças",
+    "shortTitle": "Subtração internacional de crianças",
+    "title": "Advogado para Casos de Subtração Internacional de Crianças (Sequestro Internacional) no Brasil",
+    "summary": "Orientação sobre retirada ou retenção ilícita internacional de crianças.",
+    "legalContext": "Esta intenção é tratada na página de restituição internacional; o termo popular sequestro não transforma toda disputa parental em crime.",
+    "steps": [
+      "Identificar fatos",
+      "Examinar aplicação da Convenção",
+      "Avaliar provas e exceções",
+      "Buscar a via de restituição cabível"
+    ]
+  },
+  {
+    "id": "direito-familia",
+    "slug": "direito-familia",
+    "name": "Direito de Família",
+    "shortTitle": "Direito de Família",
+    "title": "Advogado de Direito de Família no Brasil",
+    "summary": "Orientação integrada em questões familiares no Brasil para pessoas com vínculos ou residência no exterior.",
+    "legalContext": "Divórcio, união estável, guarda e alimentos possuem requisitos e vias diferentes. A análise inicial identifica a demanda principal, competência, urgência e documentos. A residência fora do Brasil não determina sozinha a lei aplicável nem autoriza substituir as páginas e procedimentos específicos por uma solução única.",
+    "steps": [
+      "Identificar vínculo familiar e objetivo principal",
+      "Mapear residência, decisões e urgências",
+      "Encaminhar ao procedimento familiar específico",
+      "Coordenar documentação e acompanhamento no Brasil"
+    ]
+  },
+  {
+    "id": "direito-sucessorio",
+    "slug": "direito-sucessorio",
+    "name": "Direito Sucessório",
+    "shortTitle": "Direito Sucessório",
+    "title": "Advogado de Direito Sucessório no Brasil",
+    "summary": "Orientação em herança, inventário, partilha e planejamento com elementos internacionais e efeitos no Brasil.",
+    "legalContext": "A página reúne a área sucessória, sem confundir apuração de acervo, divisão da herança e planejamento em vida. Domicílio, localização dos bens, legítima e regimes patrimoniais influenciam a análise. Quando necessário, procedimentos distintos deverão ser coordenados em mais de uma jurisdição.",
+    "steps": [
+      "Mapear sucessão, família e patrimônio",
+      "Identificar inventário, partilha ou planejamento",
+      "Examinar competência e lei aplicável",
+      "Encaminhar ao serviço sucessório pertinente"
+    ]
+  },
+  {
+    "id": "direito-internacional",
+    "slug": "direito-internacional",
+    "name": "Direito Internacional",
+    "shortTitle": "Direito Internacional",
+    "title": "Advogado de Direito Internacional no Brasil",
+    "summary": "Direito Internacional Privado aplicado a famílias, sucessões, documentos e negócios com efeitos no Brasil.",
+    "legalContext": "A atuação aqui descrita é em Direito Internacional Privado, com análise de competência, lei aplicável, reconhecimento de atos e cooperação. Não é promessa de atuação em Direito Internacional Público nem de habilitação perante autoridades estrangeiras. Quando necessário, o caso exige apoio de profissional habilitado no país respectivo.",
+    "steps": [
+      "Identificar relações privadas e países envolvidos",
+      "Distinguir residência, nacionalidade e origem dos atos",
+      "Analisar competência, lei aplicável e reconhecimento",
+      "Definir providências brasileiras e eventual coordenação externa"
+    ]
+  }
+]
