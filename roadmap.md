@@ -1,6 +1,8 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Entregar inventário atualizado e plano de otimização sem alterações visuais, preservando o vídeo
+- [ ] Conferir Documentos e informações para a análise e Serviços relacionados em todas as páginas de destino e planejar cobertura das ausentes
 - [x] Preparar plano profissional da nova expansão internacional, com títulos e URLs individuais, análise jurídica e prevenção de canibalização
 - [ ] Implementar expansão aprovada: 2.134 páginas e 120 aliases, modelo integral, endereços individuais e validação de acesso
 - [x] Manter Suprimento de Consentimento em primeiro e mover Inventário para a 21ª posição sem mudar os demais artigos
