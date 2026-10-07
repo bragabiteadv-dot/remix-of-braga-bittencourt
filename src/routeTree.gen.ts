@@ -366,6 +366,12 @@ import { Route as AdvogadoInventarioBetimRouteImport } from './routes/advogado-i
 import { Route as AdvogadoInventarioBhRouteImport } from './routes/advogado-inventario-bh'
 import { Route as AdvogadoInventarioContagemRouteImport } from './routes/advogado-inventario-contagem'
 import { Route as AdvogadoInventarioIgarapeRouteImport } from './routes/advogado-inventario-igarape'
+import { Route as AdvogadoInventarioInternacionalExtrajudicialNoBrasilRouteImport } from './routes/advogado-inventario-internacional-extrajudicial-no-brasil'
+import { Route as AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRouteImport } from './routes/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua'
+import { Route as AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRouteImport } from './routes/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua'
+import { Route as AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRouteImport } from './routes/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa'
+import { Route as AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRouteImport } from './routes/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal'
+import { Route as AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRouteImport } from './routes/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua'
 import { Route as AdvogadoInventarioNovaLimaRouteImport } from './routes/advogado-inventario-nova-lima'
 import { Route as AdvogadoMudancaRegimeBensCasamentoBetimRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-betim'
 import { Route as AdvogadoMudancaRegimeBensCasamentoBhRouteImport } from './routes/advogado-mudanca-regime-bens-casamento-bh'
@@ -2892,6 +2898,52 @@ const AdvogadoInventarioIgarapeRoute =
     path: '/advogado-inventario-igarape',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdvogadoInventarioInternacionalExtrajudicialNoBrasilRoute =
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilRouteImport.update({
+    id: '/advogado-inventario-internacional-extrajudicial-no-brasil',
+    path: '/advogado-inventario-internacional-extrajudicial-no-brasil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRoute =
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRouteImport.update(
+    {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua',
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRoute =
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRouteImport.update(
+    {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua',
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRoute =
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRouteImport.update(
+    {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa',
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRoute =
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRouteImport.update(
+    {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal',
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
+const AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRoute =
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRouteImport.update(
+    {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua',
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua',
+      getParentRoute: () => rootRouteImport,
+    } as any,
+  )
 const AdvogadoInventarioNovaLimaRoute =
   AdvogadoInventarioNovaLimaRouteImport.update({
     id: '/advogado-inventario-nova-lima',
@@ -5346,6 +5398,12 @@ export interface FileRoutesByFullPath {
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
   '/advogado-inventario-igarape': typeof AdvogadoInventarioIgarapeRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRoute
   '/advogado-inventario-nova-lima': typeof AdvogadoInventarioNovaLimaRoute
   '/advogado-mudanca-regime-bens-casamento-betim': typeof AdvogadoMudancaRegimeBensCasamentoBetimRoute
   '/advogado-mudanca-regime-bens-casamento-bh': typeof AdvogadoMudancaRegimeBensCasamentoBhRoute
@@ -6039,6 +6097,12 @@ export interface FileRoutesByTo {
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
   '/advogado-inventario-igarape': typeof AdvogadoInventarioIgarapeRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRoute
   '/advogado-inventario-nova-lima': typeof AdvogadoInventarioNovaLimaRoute
   '/advogado-mudanca-regime-bens-casamento-betim': typeof AdvogadoMudancaRegimeBensCasamentoBetimRoute
   '/advogado-mudanca-regime-bens-casamento-bh': typeof AdvogadoMudancaRegimeBensCasamentoBhRoute
@@ -6733,6 +6797,12 @@ export interface FileRoutesById {
   '/advogado-inventario-bh': typeof AdvogadoInventarioBhRoute
   '/advogado-inventario-contagem': typeof AdvogadoInventarioContagemRoute
   '/advogado-inventario-igarape': typeof AdvogadoInventarioIgarapeRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRoute
+  '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua': typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRoute
   '/advogado-inventario-nova-lima': typeof AdvogadoInventarioNovaLimaRoute
   '/advogado-mudanca-regime-bens-casamento-betim': typeof AdvogadoMudancaRegimeBensCasamentoBetimRoute
   '/advogado-mudanca-regime-bens-casamento-bh': typeof AdvogadoMudancaRegimeBensCasamentoBhRoute
@@ -7428,6 +7498,12 @@ export interface FileRouteTypes {
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
     | '/advogado-inventario-igarape'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua'
     | '/advogado-inventario-nova-lima'
     | '/advogado-mudanca-regime-bens-casamento-betim'
     | '/advogado-mudanca-regime-bens-casamento-bh'
@@ -8121,6 +8197,12 @@ export interface FileRouteTypes {
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
     | '/advogado-inventario-igarape'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua'
     | '/advogado-inventario-nova-lima'
     | '/advogado-mudanca-regime-bens-casamento-betim'
     | '/advogado-mudanca-regime-bens-casamento-bh'
@@ -8814,6 +8896,12 @@ export interface FileRouteTypes {
     | '/advogado-inventario-bh'
     | '/advogado-inventario-contagem'
     | '/advogado-inventario-igarape'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal'
+    | '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua'
     | '/advogado-inventario-nova-lima'
     | '/advogado-mudanca-regime-bens-casamento-betim'
     | '/advogado-mudanca-regime-bens-casamento-bh'
@@ -9508,6 +9596,12 @@ export interface RootRouteChildren {
   AdvogadoInventarioBhRoute: typeof AdvogadoInventarioBhRoute
   AdvogadoInventarioContagemRoute: typeof AdvogadoInventarioContagemRoute
   AdvogadoInventarioIgarapeRoute: typeof AdvogadoInventarioIgarapeRoute
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilRoute
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRoute
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRoute
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRoute
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRoute
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRoute
   AdvogadoInventarioNovaLimaRoute: typeof AdvogadoInventarioNovaLimaRoute
   AdvogadoMudancaRegimeBensCasamentoBetimRoute: typeof AdvogadoMudancaRegimeBensCasamentoBetimRoute
   AdvogadoMudancaRegimeBensCasamentoBhRoute: typeof AdvogadoMudancaRegimeBensCasamentoBhRoute
@@ -12343,6 +12437,48 @@ declare module '@tanstack/react-router' {
       path: '/advogado-inventario-igarape'
       fullPath: '/advogado-inventario-igarape'
       preLoaderRoute: typeof AdvogadoInventarioIgarapeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-internacional-extrajudicial-no-brasil': {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil'
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil'
+      fullPath: '/advogado-inventario-internacional-extrajudicial-no-brasil'
+      preLoaderRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua': {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua'
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua'
+      fullPath: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-california-eua'
+      preLoaderRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua': {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua'
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua'
+      fullPath: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-condado-de-clark-nevada-eua'
+      preLoaderRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa': {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa'
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa'
+      fullPath: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-lisboa'
+      preLoaderRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal': {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal'
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal'
+      fullPath: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-portugal'
+      preLoaderRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua': {
+      id: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua'
+      path: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua'
+      fullPath: '/advogado-inventario-internacional-extrajudicial-no-brasil-para-residentes-vale-do-silicio-california-eua'
+      preLoaderRoute: typeof AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/advogado-inventario-nova-lima': {
@@ -15352,6 +15488,18 @@ const rootRouteChildren: RootRouteChildren = {
   AdvogadoInventarioBhRoute: AdvogadoInventarioBhRoute,
   AdvogadoInventarioContagemRoute: AdvogadoInventarioContagemRoute,
   AdvogadoInventarioIgarapeRoute: AdvogadoInventarioIgarapeRoute,
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilRoute:
+    AdvogadoInventarioInternacionalExtrajudicialNoBrasilRoute,
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRoute:
+    AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCaliforniaEuaRoute,
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRoute:
+    AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesCondadoDeClarkNevadaEuaRoute,
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRoute:
+    AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesLisboaRoute,
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRoute:
+    AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesPortugalRoute,
+  AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRoute:
+    AdvogadoInventarioInternacionalExtrajudicialNoBrasilParaResidentesValeDoSilicioCaliforniaEuaRoute,
   AdvogadoInventarioNovaLimaRoute: AdvogadoInventarioNovaLimaRoute,
   AdvogadoMudancaRegimeBensCasamentoBetimRoute:
     AdvogadoMudancaRegimeBensCasamentoBetimRoute,
