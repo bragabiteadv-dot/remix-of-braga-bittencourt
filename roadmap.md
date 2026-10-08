@@ -1,7 +1,8 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Trocar e conferir as fotos de Pensão Alimentícia (Segurança e equilíbrio) e Tipo de Regime de Bens de Casamento no Brasil, com os alts exatos e sem legenda.
+- [x] Trocar e conferir a foto de Inventário Judicial com o alt exato, sem legenda visível.
+- [x] Trocar e conferir as fotos de Pensão Alimentícia (Segurança e equilíbrio) e Tipo de Regime de Bens de Casamento no Brasil, com os alts exatos e sem legenda.
 - [x] Executar verificação HTTP integral da expansão em lotes: 2.814 destinos, 121 redirecionamentos, seções, metadados e sitemap; navegação e formulário validados em amostras
 - [ ] Concluir certificação TypeScript automática; bloqueio: verificação excede 240 segundos pela escala de rotas, sem diagnóstico concluído (não equivale a falha HTTP)
 - [x] Entregar inventário atualizado e plano de otimização sem alterações visuais, preservando o vídeo
