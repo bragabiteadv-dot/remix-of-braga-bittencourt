@@ -14,7 +14,14 @@ def generate(pilot=False):
         path, target = entry["path"], entry["target"]
         group = "_resident-" + entry["serviceId"]
         route = ROOT / "src/routes" / (group + "." + path[1:] + ".tsx")
-        if route.exists():
+        original = ROOT / "src/routes" / (path[1:] + ".tsx")
+        layout = ROOT / "src/routes" / (group + ".tsx")
+        if not layout.exists():
+            layout.write_text(f'''import {{ createFileRoute, Outlet }} from "@tanstack/react-router";
+
+export const Route = createFileRoute("/{group}")({{ component: Outlet }});
+''')
+        if route.exists() or original.exists():
             continue
         if path == target:
             content = f'''import {{ createFileRoute }} from "@tanstack/react-router";
