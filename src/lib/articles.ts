@@ -27,7 +27,7 @@ import artigoImg23 from "@/assets/artigos/23.jpg";
 import artigoImg19 from "@/assets/artigos/19.jpg";
 import artigoImg15 from "@/assets/artigos/transcricao-casamento-estrangeiro-braga-bitencourt.jpg";
 import artigoImg32 from "@/assets/artigos/32.jpg";
-import artigoImg22 from "@/assets/artigos/22.jpg";
+import artigoImg22 from "@/assets/artigos/tipos-regime-bens-casamento-braga-bitencourt.jpg";
 import artigoImg5 from "@/assets/artigos/alienacao-parental-braga-bitencourt.jpg";
 import artigoImg29 from "@/assets/artigos/29.jpg";
 import artigoImg6 from "@/assets/artigos/homologacao-sentencas-estrangeiras-brasil-braga-bitencourt.jpg";
@@ -308,6 +308,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg22,
+    imageAlt: "Tipos de regime de bens de casamento no Brasil Braga Bitencourt Advogados.",
     excerpt: "No Brasil, a escolha do regime de bens define como o patrimônio do casal será administrado e partilhado. Existem quatro modelos principais previstos no Código Civil, e a escolha errada pode gerar surp...",
     body: ["No Brasil, a escolha do regime de bens define como o patrimônio do casal será administrado e partilhado. Existem quatro modelos principais previstos no Código Civil, e a escolha errada pode gerar surpresas desagradáveis no futuro.", "O regime padrão é a Comunhão Parcial de Bens . Nele, tudo o que for adquirido onerosamente após o casamento pertence a ambos. Bens anteriores, heranças e doações permanecem particulares. Este é o único regime que não precisa de pacto antenupcial ; se o casal não manifestar vontade contrária, ele é aplicado automaticamente.", "Já os demais regimes exigem obrigatoriamente o pacto antenupcial (escritura pública feita em cartório de notas):", "Comunhão Universal: Todos os bens, presentes e futuros (inclusive heranças e dívidas passadas), tornam-se comuns ao casal.", "Separação Total: Cada cônjuge mantém a propriedade exclusiva de seus bens e dívidas, tanto os anteriores quanto os adquiridos durante a união.", "Participação Final nos Aquestos: Durante o casamento, funciona como uma separação total, mas, em caso de divórcio, cada um tem direito à metade dos bens adquiridos pelo outro a título oneroso.", "A grande vantagem do pacto antenupcial é a liberdade. O casal pode criar um regime de bens personalizado (misto) , combinando regras de diferentes modelos. É possível, por exemplo, estabelecer que os imóveis serão comuns, mas as participações societárias em empresas permanecerão particulares.", "Antes do casamento imprescindível procurar um advogado especializado para fazer a", "melhor opção e o planejamento patrimonial para a vida a dois. Estamos à sua disposição na Braga Bitencourt Advogados ! FALE COM UM ESPECIALISTA"],
   },
