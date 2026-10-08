@@ -16,4 +16,5 @@
 - Register international act-origin and resident-service URLs with lightweight individual route files and the full original averbação template; keep resident scopes separate and aliases as permanent redirects, because preview discovery requires explicit routes without conflating residence and document origin.
 - Keep per-page resident overrides in individual route files and route catalogue data separate from shared service copy, because manual edits must affect only the selected page while legal scope corrections remain centralized.
 - Keep the complete runtime route tree while widening global navigation types, because individual preview routes must remain discoverable without expanding thousands of literal paths into every navigation prop.
+- Group resident file routes under URL-transparent service layouts rendering Outlet, because a flat root with thousands of typed children makes automatic verification exceed its limits.
 - Render contextual document and related-service blocks through a shared support section for every content landing, because coverage must include legacy, act-origin and resident pages without replacing their existing layouts.
