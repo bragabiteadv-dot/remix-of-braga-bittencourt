@@ -1,9 +1,0 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { residentLandingRouteOptions, type ResidentPageOverrides } from "@/lib/resident-landing-route";
-
-// Edite aqui somente esta página: title, seoTitle, description, service ou residentContent.
-const pageOverrides: ResidentPageOverrides = {};
-
-export const Route = createFileRoute("/advogado-suprimento-consentimento-passaporte-menor-no-brasil-para-residentes-nova-gales-do-sul-australia")(
-  residentLandingRouteOptions("/advogado-suprimento-consentimento-passaporte-menor-no-brasil-para-residentes-nova-gales-do-sul-australia", pageOverrides),
-);
