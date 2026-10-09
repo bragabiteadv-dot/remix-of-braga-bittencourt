@@ -1,15 +1,15 @@
 # Roadmap
 
 ## Em andamento
-- [ ] Corriger o custo recursivo dos tipos com registro independente de IDs exatos e reconferir as três fotos solicitadas.
+- [x] Corrigir o custo recursivo dos tipos com registro independente de IDs exatos; verificação automática OK às 20:56 e 20:57 UTC e seis exibições das fotos conferidas.
 - [x] Trocar e conferir a foto de Curatela com alt exato, sem legenda visível; validada na lista e no artigo aberto.
 - [x] Substituir a foto de Mudança de domicílio de menor pela nova Artigo_28.jpg e conferir o alt exato sem legenda; validada na lista e no artigo aberto.
 - [x] Trocar e conferir as fotos de As duas consequências para quem não paga pensão e Mudança de domicílio de menor, com alts exatos e sem legenda; ambas verificadas na lista e no artigo aberto.
-- [ ] Concluir verificação automática geral: nova execução excedeu 240 segundos sem diagnóstico; a árvore em src/routeTree.gen.ts continua sob investigação. Fotos verificadas na navegação e 10 testes aprovados não comprovam a conferência de tipos.
+- [x] Concluir verificação automática geral: geração leve em src/routeTree.gen.mts, registro independente e verificação automática OK; 10 testes aprovados.
 - [x] Trocar e conferir a foto de Inventário Judicial com o alt exato, sem legenda visível.
 - [x] Trocar e conferir as fotos de Pensão Alimentícia (Segurança e equilíbrio) e Tipo de Regime de Bens de Casamento no Brasil, com os alts exatos e sem legenda.
 - [x] Executar verificação HTTP integral da expansão em lotes: 2.814 destinos, 121 redirecionamentos, seções, metadados e sitemap; navegação e formulário validados em amostras
-- [ ] Corrigir a falha da verificação automática preservando todos os endereços; a tentativa anterior não resolveu o limite de tempo.
+- [x] Corrigir a falha da verificação automática preservando todos os endereços; árvore de execução completa mantida e tipos desacoplados da inferência recursiva.
 - [x] Entregar inventário atualizado e plano de otimização sem alterações visuais, preservando o vídeo
 - [x] Conferir Documentos e informações para a análise e Serviços relacionados nos 2.814 destinos; cobertura integral confirmada por HTTP
 - [x] Preparar plano profissional da nova expansão internacional, com títulos e URLs individuais, análise jurídica e prevenção de canibalização
