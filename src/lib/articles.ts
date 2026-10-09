@@ -1,9 +1,9 @@
 import artigoImg18 from "@/assets/artigos/18.jpg";
 import medidaProtetivaImg from "@/assets/artigos/medida-protetiva-braga-bitencourt.jpg";
-import artigoImg27 from "@/assets/artigos/mudanca-domicilio-menor-braga-bitencourt-v2.jpg";
+import artigoImg27 from "@/assets/artigos/mudanca-domicilio-menor-braga-bitencourt-atualizada.jpg";
 import artigoImg21 from "@/assets/artigos/pensao-alimenticia-seguranca-equilibrio-braga-bitencourt.jpg";
 import artigoImg3 from "@/assets/artigos/guarda-compartilhada-braga-bitencourt.jpg";
-import artigoImg24 from "@/assets/artigos/curatela-braga-bitencourt.jpg";
+import artigoImg24 from "@/assets/artigos/curatela-braga-bitencourt-atualizada.jpg";
 import artigoImg1 from "@/assets/artigos/divorcio-uniao-estavel-braga-bitencourt.jpg";
 import artigoImg2 from "@/assets/artigos/inventario-braga-bitencourt.jpg";
 import artigoImg26 from "@/assets/artigos/direito-convivencia-braga-bitencourt.jpg";
@@ -29,7 +29,7 @@ import artigoImg15 from "@/assets/artigos/transcricao-casamento-estrangeiro-brag
 import artigoImg32 from "@/assets/artigos/32.jpg";
 import artigoImg22 from "@/assets/artigos/tipos-regime-bens-casamento-braga-bitencourt.jpg";
 import artigoImg5 from "@/assets/artigos/alienacao-parental-braga-bitencourt.jpg";
-import artigoImg29 from "@/assets/artigos/duas-consequencias-nao-paga-pensao-braga-bitencourt.jpg";
+import artigoImg29 from "@/assets/artigos/duas-consequencias-nao-paga-pensao-braga-bitencourt-atualizada.jpg";
 import artigoImg6 from "@/assets/artigos/homologacao-sentencas-estrangeiras-brasil-braga-bitencourt.jpg";
 import artigoImg20 from "@/assets/artigos/20.jpg";
 export type Category = "Família" | "Sucessões" | "Internacional";
