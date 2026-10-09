@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Corriger o custo recursivo dos tipos com registro independente de IDs exatos e reconferir as três fotos solicitadas.
 - [x] Trocar e conferir a foto de Curatela com alt exato, sem legenda visível; validada na lista e no artigo aberto.
 - [x] Substituir a foto de Mudança de domicílio de menor pela nova Artigo_28.jpg e conferir o alt exato sem legenda; validada na lista e no artigo aberto.
 - [x] Trocar e conferir as fotos de As duas consequências para quem não paga pensão e Mudança de domicílio de menor, com alts exatos e sem legenda; ambas verificadas na lista e no artigo aberto.
