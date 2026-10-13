@@ -10,9 +10,9 @@ import artigoImg26 from "@/assets/artigos/direito-convivencia-braga-bitencourt.j
 import artigoImg7 from "@/assets/artigos/homologacao-divorcio-estrangeiro-brasil-braga-bitencourt.jpg";
 import artigoImg9 from "@/assets/artigos/dissolucao-uniao-estavel-braga-bitencourt.jpg";
 import artigoImg8 from "@/assets/artigos/divorcio-extrajudicial-braga-bitencourt.jpg";
-import artigoImg25 from "@/assets/artigos/25.jpg";
+import artigoImg25 from "@/assets/artigos/personalizacao-regime-bens-braga-bitencourt.jpg";
 import artigoImg33 from "@/assets/artigos/33.jpg";
-import artigoImg28 from "@/assets/artigos/28.jpg";
+import artigoImg28 from "@/assets/artigos/pacto-antenupcial-braga-bitencourt.jpg";
 import artigoImg16 from "@/assets/artigos/investigacao-paternidade-braga-bitencourt.jpg";
 import artigoImg14 from "@/assets/artigos/aquisicao-imoveis-residentes-exterior-braga-bitencourt.jpg";
 import artigoImg12 from "@/assets/artigos/testamento-braga-bitencourt.jpg";
@@ -344,6 +344,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg25,
+    imageAlt: "Personalização de Regime de Bens de Casamento Braga Bitencourt Advogados.",
     excerpt: "Muitos casais acreditam que ao escolher o regime de bens estão limitados às opções padrão do Código Civil. No entanto, o Direito de Família moderno permite a personalização do regime de casamento, um ...",
     body: ["Muitos casais acreditam que ao escolher o regime de bens estão limitados às opções padrão do Código Civil. No entanto, o Direito de Família moderno permite a personalização do regime de casamento, um mecanismo jurídico que adapta as regras patrimoniais à realidade específica de cada união denominado Pactos Antenupciais. Esta escolha é, talvez, a decisão financeira mais importante que um casal tomará em conjunto, pois define o destino de ativos, empresas e heranças por décadas.", "Contudo, a liberdade de personalizar não é absoluta e possui contornos técnicos rigorosos. Não se trata apenas de preencher formulários, mas de redigir cláusulas que suportem questionamentos futuros. Um erro na interpretação das normas ou na redação do pacto pode levar à nulidade de acordos inteiros, gerando uma insegurança jurídica que só aparecerá nos momentos mais críticos. Por isso, este planejamento exige um olhar preventivo que vá além da teoria dos livros.", "Na Braga Bitencourt Advogados, atuamos com especialização em Direito de Família há quase 20 anos. Essa trajetória nos conferiu a vasta experiência e a expertise necessárias para transitar pelas complexas burocracias de cartórios e tribunais, garantindo que o planejamento dos bens de seu casamento seja, de fato, exequível.", "Não arrisque o seu patrimônio com soluções genéricas. Entre em contato com a Braga Bitencourt Advogados e assegure o seu futuro com quem tem décadas de prática."],
   },
@@ -379,6 +380,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg28,
+    imageAlt: "Pacto Antinupcial Braga Bitencourt Advogados.",
     excerpt: "Muitos casais acreditam que o planejamento de um casamento se resume aos preparativos da festa e da cerimônia. No entanto, a base mais sólida e consciente de uma união reside na clareza das decisões p...",
     body: ["Muitos casais acreditam que o planejamento de um casamento se resume aos preparativos da festa e da cerimônia. No entanto, a base mais sólida e consciente de uma união reside na clareza das decisões patrimoniais tomadas antes do \"sim\".", "Nesse contexto o Pacto Antenupcial é o instrumento jurídico essencial que permite personalizar as regras que regerão a vida econômica do casal, indo muito além das opções padrão oferecidas pelo Código Civil.", "Optar por um pacto não deve ser visto como um sinal de desconfiança, mas sim como um ato de extrema maturidade e respeito mútuo . É a oportunidade real de proteger heranças, empresas familiares, imóveis e investimentos prévios, garantindo que a vontade de ambos seja preservada, independentemente do destino da relação.", "Contudo, elaborar um pacto antenupcial está longe de ser uma tarefa meramente administrativa ou um formulário de cartório. Trata-se de um documento de alta complexidade que exige uma visão estratégica de longo prazo. Um erro técnico na redação ou a falta de observância a detalhes específicos pode tornar o documento nulo no futuro, gerando inseguranças jurídicas e prejuízos irreparáveis.", "Na Braga Bitencourt Advogados , acumulamos quase 20 anos de atuação especializada em Direito de Família . Essa trajetória consolidada nos ensinou que cada configuração familiar é única e que a burocracia envolvida nesses processos exige muito mais do que conhecimento teórico; exige a vasta experiência e o costume prático de resolver as minúcias que envolvem cartórios e tribunais.", "Não coloque o seu patrimônio e a sua tranquilidade em risco com soluções genéricas ou profissionais sem o devido tempo de estrada. Um planejamento eficiente e seguro demanda o olhar clínico de quem já resolveu centenas de casos complexos ao longo de duas décadas.", "Entre em contato com a Braga Bitencourt Advogados e agende uma consulta especializada agora mesmo."],
   },
