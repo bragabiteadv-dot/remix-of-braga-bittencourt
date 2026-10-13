@@ -12,7 +12,7 @@ import artigoImg9 from "@/assets/artigos/dissolucao-uniao-estavel-braga-bitencou
 import artigoImg8 from "@/assets/artigos/divorcio-extrajudicial-braga-bitencourt.jpg";
 import artigoImg25 from "@/assets/artigos/personalizacao-regime-bens-braga-bitencourt.jpg";
 import artigoImg33 from "@/assets/artigos/33.jpg";
-import artigoImg28 from "@/assets/artigos/28.jpg";
+import artigoImg28 from "@/assets/artigos/pacto-antenupcial-braga-bitencourt.jpg";
 import artigoImg16 from "@/assets/artigos/investigacao-paternidade-braga-bitencourt.jpg";
 import artigoImg14 from "@/assets/artigos/aquisicao-imoveis-residentes-exterior-braga-bitencourt.jpg";
 import artigoImg12 from "@/assets/artigos/testamento-braga-bitencourt.jpg";
@@ -380,6 +380,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg28,
+    imageAlt: "Pacto Antinupcial Braga Bitencourt Advogados.",
     excerpt: "Muitos casais acreditam que o planejamento de um casamento se resume aos preparativos da festa e da cerimônia. No entanto, a base mais sólida e consciente de uma união reside na clareza das decisões p...",
     body: ["Muitos casais acreditam que o planejamento de um casamento se resume aos preparativos da festa e da cerimônia. No entanto, a base mais sólida e consciente de uma união reside na clareza das decisões patrimoniais tomadas antes do \"sim\".", "Nesse contexto o Pacto Antenupcial é o instrumento jurídico essencial que permite personalizar as regras que regerão a vida econômica do casal, indo muito além das opções padrão oferecidas pelo Código Civil.", "Optar por um pacto não deve ser visto como um sinal de desconfiança, mas sim como um ato de extrema maturidade e respeito mútuo . É a oportunidade real de proteger heranças, empresas familiares, imóveis e investimentos prévios, garantindo que a vontade de ambos seja preservada, independentemente do destino da relação.", "Contudo, elaborar um pacto antenupcial está longe de ser uma tarefa meramente administrativa ou um formulário de cartório. Trata-se de um documento de alta complexidade que exige uma visão estratégica de longo prazo. Um erro técnico na redação ou a falta de observância a detalhes específicos pode tornar o documento nulo no futuro, gerando inseguranças jurídicas e prejuízos irreparáveis.", "Na Braga Bitencourt Advogados , acumulamos quase 20 anos de atuação especializada em Direito de Família . Essa trajetória consolidada nos ensinou que cada configuração familiar é única e que a burocracia envolvida nesses processos exige muito mais do que conhecimento teórico; exige a vasta experiência e o costume prático de resolver as minúcias que envolvem cartórios e tribunais.", "Não coloque o seu patrimônio e a sua tranquilidade em risco com soluções genéricas ou profissionais sem o devido tempo de estrada. Um planejamento eficiente e seguro demanda o olhar clínico de quem já resolveu centenas de casos complexos ao longo de duas décadas.", "Entre em contato com a Braga Bitencourt Advogados e agende uma consulta especializada agora mesmo."],
   },
