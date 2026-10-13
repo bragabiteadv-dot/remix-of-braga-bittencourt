@@ -10,7 +10,7 @@ import artigoImg26 from "@/assets/artigos/direito-convivencia-braga-bitencourt.j
 import artigoImg7 from "@/assets/artigos/homologacao-divorcio-estrangeiro-brasil-braga-bitencourt.jpg";
 import artigoImg9 from "@/assets/artigos/dissolucao-uniao-estavel-braga-bitencourt.jpg";
 import artigoImg8 from "@/assets/artigos/divorcio-extrajudicial-braga-bitencourt.jpg";
-import artigoImg25 from "@/assets/artigos/25.jpg";
+import artigoImg25 from "@/assets/artigos/personalizacao-regime-bens-braga-bitencourt.jpg";
 import artigoImg33 from "@/assets/artigos/33.jpg";
 import artigoImg28 from "@/assets/artigos/28.jpg";
 import artigoImg16 from "@/assets/artigos/investigacao-paternidade-braga-bitencourt.jpg";
@@ -344,6 +344,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg25,
+    imageAlt: "Personalização de Regime de Bens de Casamento Braga Bitencourt Advogados.",
     excerpt: "Muitos casais acreditam que ao escolher o regime de bens estão limitados às opções padrão do Código Civil. No entanto, o Direito de Família moderno permite a personalização do regime de casamento, um ...",
     body: ["Muitos casais acreditam que ao escolher o regime de bens estão limitados às opções padrão do Código Civil. No entanto, o Direito de Família moderno permite a personalização do regime de casamento, um mecanismo jurídico que adapta as regras patrimoniais à realidade específica de cada união denominado Pactos Antenupciais. Esta escolha é, talvez, a decisão financeira mais importante que um casal tomará em conjunto, pois define o destino de ativos, empresas e heranças por décadas.", "Contudo, a liberdade de personalizar não é absoluta e possui contornos técnicos rigorosos. Não se trata apenas de preencher formulários, mas de redigir cláusulas que suportem questionamentos futuros. Um erro na interpretação das normas ou na redação do pacto pode levar à nulidade de acordos inteiros, gerando uma insegurança jurídica que só aparecerá nos momentos mais críticos. Por isso, este planejamento exige um olhar preventivo que vá além da teoria dos livros.", "Na Braga Bitencourt Advogados, atuamos com especialização em Direito de Família há quase 20 anos. Essa trajetória nos conferiu a vasta experiência e a expertise necessárias para transitar pelas complexas burocracias de cartórios e tribunais, garantindo que o planejamento dos bens de seu casamento seja, de fato, exequível.", "Não arrisque o seu patrimônio com soluções genéricas. Entre em contato com a Braga Bitencourt Advogados e assegure o seu futuro com quem tem décadas de prática."],
   },
