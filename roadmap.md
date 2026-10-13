@@ -67,6 +67,8 @@
 - [x] Padronizar em 1:1 as imagens dos artigos e posicionar o título acima da imagem principal
 - [x] Duplicar páginas de Divórcio para Reconhecimento, Investigação e Negatória de Paternidade (5 cidades)
 - [x] Duplicar páginas de Divórcio para Guarda Compartilhada (5 cidades)
+- [x] Substituir a foto do artigo de Personalização do Regime de Bens de Casamento e definir seu texto alternativo
+- [x] Substituir a foto do artigo de Pacto Antenupcial e definir seu texto alternativo
 
 ## Concluído
 - [x] Criar componente/utilitário global de SEO local (`SeoHead` / `buildSeoHead`) para buscas locais no TanStack Router, descartando `react-helmet-async`.
