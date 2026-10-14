@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [ ] Otimizar exclusivamente `/advogado-divorcio-betim`: metadados, headings, semântica, FAQ visual, links internos e nome do LegalService, sem alterar URL, canonical, layout ou outras páginas.
 - [x] Corrigir o custo recursivo dos tipos com registro independente de IDs exatos; verificação automática OK às 20:56 e 20:57 UTC e seis exibições das fotos conferidas.
 - [x] Trocar e conferir a foto de Curatela com alt exato, sem legenda visível; validada na lista e no artigo aberto.
 - [x] Substituir a foto de Mudança de domicílio de menor pela nova Artigo_28.jpg e conferir o alt exato sem legenda; validada na lista e no artigo aberto.
