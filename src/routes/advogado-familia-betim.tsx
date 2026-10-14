@@ -1,4 +1,5 @@
 import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
@@ -40,14 +41,31 @@ import sedeBetim4 from "@/assets/sede-betim-4.webp";
 import sedeBetim5 from "@/assets/sede-betim-5.webp";
 
 const PATH = "/advogado-familia-betim";
-const TITLE = "Advogado de Família em Betim | Braga Bitencourt";
+const TITLE = "Advogado de Família em Betim | Braga Bitencourt Advogados";
 const SERVICE = "Direito de Família";
 const CITY = "Betim";
 const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Família em Betim com mais de 20 anos de experiência. Guarda, pensão alimentícia, inventário e litígios familiares.";
+  "Advogado de Família em Betim para orientação em guarda, pensão alimentícia e divórcio, com atendimento presencial e análise individual do caso.";
+
+const FAQ = [
+  { question: "Quando procurar um advogado de Família em Betim?", answer: "A orientação pode ser útil diante de divórcio, guarda, convivência, pensão alimentícia, união estável ou questões patrimoniais familiares. A análise individual ajuda a identificar as medidas adequadas para cada situação." },
+  { question: "Questões de família podem ser resolvidas por acordo?", answer: "Muitas questões admitem solução consensual, desde que os direitos envolvidos sejam preservados. Quando o acordo não é possível, o caso pode exigir atuação judicial." },
+  { question: "Como funciona a definição de guarda e convivência?", answer: "A definição considera as circunstâncias familiares e o melhor interesse da criança ou do adolescente. Guarda e convivência são analisadas conforme as particularidades e provas de cada caso." },
+  { question: "É possível revisar o valor da pensão alimentícia?", answer: "A revisão pode ser avaliada quando houver mudança relevante nas necessidades de quem recebe ou nas possibilidades de quem paga. A alteração depende de análise jurídica e, em regra, de decisão judicial." },
+  { question: "O escritório atende presencialmente em Betim?", answer: "Sim. A unidade de Betim fica na Avenida Amazonas, 1446, 7º andar, salas 706/707, no bairro Brasiléia. Também há atendimento online." },
+  { question: "Quais documentos levar para uma consulta de Direito de Família?", answer: "Os documentos variam conforme a questão, mas podem incluir identificação, certidões, comprovantes financeiros, contratos e comunicações relevantes. A equipe informa o conjunto necessário após compreender o caso." },
+];
+
+const RELATED_LINKS = [
+  { title: "Divórcio em Betim", path: "/advogado-divorcio-betim" },
+  { title: "Guarda em Betim", path: "/advogado-guarda-betim" },
+  { title: "Pensão alimentícia em Betim", path: "/advogado-pensao-alimenticia-betim" },
+  { title: "Inventário em Betim", path: "/advogado-inventario-betim" },
+  { title: "Artigos jurídicos", path: "/artigos" },
+];
 
 const ABSOLUTE_URL = "https://bragabitencourt.com" + PATH;
 const HOME_URL = "https://bragabitencourt.com/";
@@ -61,6 +79,7 @@ export const Route = createFileRoute("/advogado-familia-betim")({
       canonicalUrl: PATH,
       city: "Betim",
       service: "Direito de Família",
+      schemaName: "Direito de Família",
       image: OG_IMAGE,
       areaServed: "Betim, MG",
       breadcrumbName: "Advogado de Família em Betim",
@@ -91,7 +110,7 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid heading="Equipe especializada em Direito de Família em Betim" semanticMemberNames={false} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -99,6 +118,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Direito de Família em Betim" faq={FAQ} links={RELATED_LINKS} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -213,9 +233,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -279,7 +299,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            Você está passando por uma dessas situações em sua família?
+            Como podemos ajudar em questões de Direito de Família em Betim?
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -405,7 +425,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Betim
+            Serviços de Direito de Família em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -485,7 +505,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Por que escolher o Braga Bitencourt para questões de família
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -507,7 +527,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -530,7 +550,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Escritório de advocacia em Betim para Direito de Família
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">

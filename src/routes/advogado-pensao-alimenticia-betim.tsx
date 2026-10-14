@@ -1,4 +1,5 @@
 import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
@@ -47,7 +48,24 @@ const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Pensão Alimentícia em Betim com mais de 20 anos de experiência. Fixação, revisão, exoneração e execução de pensão alimentícia com sigilo e segurança.";
+  "Advogado de Pensão Alimentícia em Betim para fixação, revisão e execução de alimentos, com análise individual e atendimento presencial ou online.";
+
+const FAQ = [
+  { question: "Como é definido o valor da pensão alimentícia?", answer: "O valor costuma considerar as necessidades de quem recebe e as possibilidades de quem paga, além das circunstâncias do caso. Não existe um percentual único aplicável a todas as famílias." },
+  { question: "É possível pedir revisão da pensão?", answer: "A revisão pode ser analisada quando houver alteração relevante na situação financeira ou nas necessidades envolvidas. O novo valor depende das provas e da avaliação judicial." },
+  { question: "O que fazer quando a pensão está atrasada?", answer: "É possível avaliar a execução dos valores devidos pelos meios previstos em lei. A medida adequada depende das parcelas em atraso, do título existente e das particularidades do caso." },
+  { question: "A pensão termina automaticamente aos 18 anos?", answer: "A maioridade, por si só, não encerra automaticamente a obrigação já fixada. A exoneração normalmente precisa ser analisada judicialmente, com possibilidade de manifestação de quem recebe." },
+  { question: "Os avós podem ser chamados a pagar pensão?", answer: "A obrigação dos avós pode ser discutida em situações específicas e tem caráter complementar e subsidiário. É necessário avaliar se os responsáveis principais conseguem atender às necessidades." },
+  { question: "Há atendimento para pensão alimentícia em Betim?", answer: "Sim. O atendimento pode ser realizado na unidade de Betim, na Avenida Amazonas, 1446, ou de forma online. Os documentos necessários são orientados conforme o tipo de pedido." },
+];
+
+const RELATED_LINKS = [
+  { title: "Direito de Família em Betim", path: "/advogado-familia-betim" },
+  { title: "Guarda em Betim", path: "/advogado-guarda-betim" },
+  { title: "Divórcio em Betim", path: "/advogado-divorcio-betim" },
+  { title: "Pensão alimentícia: artigo", path: "/artigos/pensao-alimenticia" },
+  { title: "Execução de pensão alimentícia", path: "/artigos/execucao-de-pensao-alimenticia-como-garantir-o-recebimento" },
+];
 
 
 export const Route = createFileRoute("/advogado-pensao-alimenticia-betim")({
@@ -58,6 +76,7 @@ export const Route = createFileRoute("/advogado-pensao-alimenticia-betim")({
       canonicalUrl: PATH,
       city: "Betim",
       service: "Pensão Alimentícia",
+      schemaName: "Pensão Alimentícia",
       image: OG_IMAGE,
       areaServed: "Betim, MG",
       breadcrumbName: "Advogado de Pensão Alimentícia em Betim",
@@ -88,7 +107,7 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid heading="Equipe especializada em Pensão Alimentícia" semanticMemberNames={false} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -96,6 +115,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Pensão Alimentícia em Betim" faq={FAQ} links={RELATED_LINKS} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -209,9 +229,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -275,7 +295,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES EM SEU CASO DE PENSÃO ALIMENTÍCIA?
+            Como podemos ajudar em casos de Pensão Alimentícia em Betim?
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -401,7 +421,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Betim
+            Serviços relacionados à Pensão Alimentícia em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -481,7 +501,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Por que escolher o Braga Bitencourt para casos de Pensão Alimentícia
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -503,7 +523,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -526,7 +546,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Escritório de advocacia em Betim para Pensão Alimentícia
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">

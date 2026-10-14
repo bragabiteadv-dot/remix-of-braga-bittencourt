@@ -1,4 +1,5 @@
 import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
@@ -47,7 +48,24 @@ const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Divórcio Extrajudicial em Betim com mais de 20 anos de experiência. Divórcio em cartório, partilha de bens, guarda e pensão com sigilo e agilidade.";
+  "Advogado de Divórcio Extrajudicial em Betim para divórcio em cartório, partilha de bens e alteração de nome, com orientação em todas as etapas.";
+
+const FAQ = [
+  { question: "Quais são os requisitos para o divórcio extrajudicial?", answer: "O procedimento em cartório exige consenso entre as partes e assistência de advogado. A possibilidade concreta também depende da situação familiar, da documentação e das regras vigentes." },
+  { question: "Quanto tempo leva um divórcio em cartório?", answer: "O prazo varia conforme a reunião dos documentos, a definição da partilha e a disponibilidade do cartório. Quando não há pendências, o procedimento tende a ser mais simples que a via judicial." },
+  { question: "É possível fazer a partilha de bens no divórcio extrajudicial?", answer: "Sim, a escritura pode tratar da partilha quando existe acordo. Os efeitos tributários, registrais e patrimoniais precisam ser analisados conforme os bens e o regime do casamento." },
+  { question: "Preciso de advogado para o divórcio extrajudicial?", answer: "Sim. A assistência de advogado é necessária para orientar as partes e acompanhar a escritura. Cada parte pode ter profissional próprio ou, havendo consenso, compartilhar a assistência jurídica." },
+  { question: "Posso voltar a usar o nome de solteiro?", answer: "A alteração pode constar da escritura de divórcio, conforme a decisão da pessoa interessada e a situação documental. Depois, será necessário atualizar os registros pertinentes." },
+  { question: "O divórcio extrajudicial pode ser feito em Betim?", answer: "A viabilidade e a escolha do cartório dependem das circunstâncias e dos documentos do caso. O escritório atende na unidade de Betim e orienta todas as etapas do procedimento." },
+];
+
+const RELATED_LINKS = [
+  { title: "Divórcio em Betim", path: "/advogado-divorcio-betim" },
+  { title: "Direito de Família em Betim", path: "/advogado-familia-betim" },
+  { title: "Guarda em Betim", path: "/advogado-guarda-betim" },
+  { title: "Pensão alimentícia em Betim", path: "/advogado-pensao-alimenticia-betim" },
+  { title: "Divórcio extrajudicial no Brasil", path: "/artigos/o-divorcio-extrajudicial-no-brasil-agilidade-e-seguranca-na-dissolucao-do-vincul" },
+];
 
 
 export const Route = createFileRoute("/advogado-divorcio-extrajudicial-betim")({
@@ -58,6 +76,7 @@ export const Route = createFileRoute("/advogado-divorcio-extrajudicial-betim")({
       canonicalUrl: PATH,
       city: "Betim",
       service: "Divórcio Extrajudicial",
+      schemaName: "Divórcio Extrajudicial",
       image: OG_IMAGE,
       areaServed: "Betim, MG",
       breadcrumbName: "Advogado de Divórcio Extrajudicial em Betim",
@@ -88,7 +107,7 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid heading="Equipe especializada em Divórcio Extrajudicial" semanticMemberNames={false} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -96,6 +115,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Divórcio Extrajudicial em Betim" faq={FAQ} links={RELATED_LINKS} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -210,9 +230,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -276,7 +296,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            Você está passando por uma dessas situações em seu divórcio extrajudicial?
+            Como podemos ajudar no Divórcio Extrajudicial em Betim?
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -402,7 +422,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Betim
+            Serviços relacionados ao Divórcio Extrajudicial em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -482,7 +502,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Por que escolher o Braga Bitencourt para Divórcio Extrajudicial
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -504,7 +524,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -527,7 +547,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Escritório de advocacia em Betim para Divórcio Extrajudicial
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">
