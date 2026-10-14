@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [x] Refinar exclusivamente os três blocos inferiores de `/advogado-divorcio-betim`, preservando textos, links, SEO e as demais páginas.
 - [x] Otimizar exclusivamente `/advogado-divorcio-betim`: metadados, headings, semântica, FAQ visual, links internos e nome do LegalService, sem alterar URL, canonical, layout ou outras páginas.
 - [x] Corrigir o custo recursivo dos tipos com registro independente de IDs exatos; verificação automática OK às 20:56 e 20:57 UTC e seis exibições das fotos conferidas.
 - [x] Trocar e conferir a foto de Curatela com alt exato, sem legenda visível; validada na lista e no artigo aberto.
