@@ -1,3 +1,4 @@
+import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
@@ -39,18 +40,69 @@ import sedeBetim4 from "@/assets/sede-betim-4.webp";
 import sedeBetim5 from "@/assets/sede-betim-5.webp";
 
 const PATH = "/advogado-familia-bh";
-const TITLE = "Advogado de Família em Belo Horizonte | Braga Bitencourt";
+const TITLE = "Advogado de Família em Belo Horizonte | Braga Bitencourt Advogados";
 const SERVICE = "Direito de Família";
 const CITY = "Belo Horizonte";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const OFFICE_ALT = PAGE_ALT;
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Família em Belo Horizonte com mais de 20 anos de experiência. Guarda, pensão alimentícia, inventário e litígios familiares.";
+  "Advogado de Família em Belo Horizonte para divórcio, guarda e pensão alimentícia, com atendimento presencial ou online e análise individual do caso.";
 
 const ABSOLUTE_URL = "https://bragabitencourt.com" + PATH;
 const HOME_URL = "https://bragabitencourt.com/";
 
+
+
+const FAQ = [
+  {
+    "question": "Quais questões um advogado de Família em Belo Horizonte pode analisar?",
+    "answer": "A orientação pode abranger divórcio, guarda, convivência, pensão alimentícia e união estável. Os documentos e as circunstâncias familiares ajudam a definir os procedimentos adequados."
+  },
+  {
+    "question": "É possível buscar acordo em uma questão familiar?",
+    "answer": "O acordo pode ser avaliado quando as partes conseguem definir condições que respeitem os direitos envolvidos. Se não houver consenso, a solução pode depender de processo judicial."
+  },
+  {
+    "question": "Como são avaliadas guarda e convivência dos filhos?",
+    "answer": "A análise considera o melhor interesse da criança ou do adolescente e a realidade de cada família. As responsabilidades parentais e a rotina de convivência devem ser examinadas de forma individual."
+  },
+  {
+    "question": "Quando é possível pedir revisão da pensão alimentícia?",
+    "answer": "A revisão pode ser considerada diante de mudança relevante nas necessidades de quem recebe ou nas possibilidades de quem paga. São necessários elementos que demonstrem essa alteração, e o valor não muda automaticamente."
+  },
+  {
+    "question": "A união estável pode gerar efeitos patrimoniais?",
+    "answer": "A união estável pode produzir direitos e deveres conforme os requisitos legais e o regime de bens aplicável. A existência do vínculo, suas datas e eventuais contratos precisam ser analisados no caso concreto."
+  },
+  {
+    "question": "Onde ocorre o atendimento de Direito de Família em Belo Horizonte?",
+    "answer": "A unidade fica na Avenida Raja Gabáglia, 2000, sala 614, bairro Alpes, em Belo Horizonte. Há também atendimento online, conforme a necessidade do caso."
+  }
+];
+
+const RELATED_LINKS = [
+  {
+    "title": "Divórcio em Belo Horizonte",
+    "path": "/advogado-divorcio-bh"
+  },
+  {
+    "title": "Guarda em Belo Horizonte",
+    "path": "/advogado-guarda-bh"
+  },
+  {
+    "title": "Pensão alimentícia em Belo Horizonte",
+    "path": "/advogado-pensao-alimenticia-bh"
+  },
+  {
+    "title": "Curatela em Belo Horizonte",
+    "path": "/advogado-curatela-bh"
+  },
+  {
+    "title": "Divórcio e União Estável",
+    "path": "/artigos/divorcio-e-uniao-estavel-especialidade-do-escritorio-braga-bittencourt"
+  }
+];
 
 export const Route = createFileRoute("/advogado-familia-bh")({
   head: () =>
@@ -61,6 +113,7 @@ export const Route = createFileRoute("/advogado-familia-bh")({
       city: "Belo Horizonte",
       service: "Direito de Família",
       image: OG_IMAGE,
+      schemaName: "Direito de Família em Belo Horizonte",
       areaServed: "Belo Horizonte, MG",
       breadcrumbName: "Advogado de Família em Belo Horizonte",
       address: {
@@ -90,7 +143,7 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid heading="Equipe especializada em Direito de Família em Belo Horizonte" semanticMemberNames={false} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -98,6 +151,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Direito de Família em Belo Horizonte" faq={FAQ} links={RELATED_LINKS} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -167,7 +221,7 @@ function LpHero() {
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
-              Conte com quem tem mais de 20 anos resolvendo casos como o seu.
+              Direito de Família em Belo Horizonte com mais de 20 anos de experiência
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
@@ -212,9 +266,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -278,7 +332,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            Você está passando por uma dessas situações em sua família?
+            Questões de Direito de Família em Belo Horizonte
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -302,9 +356,9 @@ function LpSituations() {
               <div className="w-14 h-14 rounded-full bg-gold-gradient text-[#283650] flex items-center justify-center mb-6 shrink-0">
                 {item.icon}
               </div>
-              <h3 className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
+              <p className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
                 {item.title}
-              </h3>
+              </p>
               <p className="text-navy/60 font-montserrat text-sm leading-relaxed">{item.text}</p>
             </a>
           ))}
@@ -404,7 +458,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Belo Horizonte
+            Atuação em Direito de Família em Belo Horizonte
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -419,7 +473,7 @@ function LpServices() {
               className="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/10 hover:-translate-y-2 transition-all duration-500"
             >
               <div className="text-gold-light mb-6">{s.icon}</div>
-              <h3 className="text-white font-cinzel text-xl mb-6">{s.title}</h3>
+              <p className="text-white font-cinzel text-xl mb-6">{s.title}</p>
               <ul className="space-y-3">
                 {s.items.map((i) => (
                   <li key={i} className="text-white/60 font-montserrat text-sm leading-relaxed flex gap-3">
@@ -484,7 +538,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Experiência e acolhimento em questões familiares
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -506,7 +560,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -529,7 +583,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Atendimento de Direito de Família em Belo Horizonte
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">
