@@ -52,6 +52,8 @@ export interface SeoHeadProps {
   areaServed?: string;
   /** Nome usado no BreadcrumbList da página. */
   breadcrumbName?: string;
+  /** Nome específico da entidade LegalService. Se omitido, usa o title da página. */
+  schemaName?: string;
   /** Schemas adicionais (JSON-LD) para mesclar no head. */
   extraSchema?: Record<string, unknown>[];
 }
@@ -107,7 +109,7 @@ export function buildSeoHead(props: SeoHeadProps): SeoHead {
     props.description ?? defaultDescription(props.service, props.city);
 
   const legalService = localLegalServiceSchema({
-    title,
+    title: props.schemaName ?? title,
     description,
     canonicalUrl: props.canonicalUrl,
     city: props.city,
