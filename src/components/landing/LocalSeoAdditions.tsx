@@ -17,12 +17,12 @@ export function LocalSeoAdditions({
 }: {
   faqTitle: string;
   faq: LocalSeoFaqItem[];
-  links: LocalSeoLinkItem[];
+  links?: LocalSeoLinkItem[];
 }) {
   return (
     <section className="bg-primary py-20 font-montserrat">
       <div className="container mx-auto max-w-5xl">
-        <nav aria-label="Conteúdos relacionados" className="mb-16 border-b border-primary-foreground/10 pb-12">
+        {links && links.length > 0 && <nav aria-label="Conteúdos relacionados" className="mb-16 border-b border-primary-foreground/10 pb-12">
           <h2 className="mb-6 text-center font-cinzel text-2xl uppercase text-primary-foreground md:text-3xl">
             Conteúdos relacionados
           </h2>
@@ -38,7 +38,7 @@ export function LocalSeoAdditions({
               </li>
             ))}
           </ul>
-        </nav>
+        </nav>}
 
         <h2 className="mb-10 text-center font-cinzel text-3xl uppercase leading-tight text-primary-foreground md:text-4xl">
           {faqTitle}
