@@ -5,7 +5,13 @@ import carlosJavet from "@/assets/team-carlos-javet-800.webp";
 import glaucia from "@/assets/team-glaucia-800.webp";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
-export function TeamGrid() {
+export function TeamGrid({
+  heading = "Nossa Equipe",
+  semanticMemberNames = true,
+}: {
+  heading?: string;
+  semanticMemberNames?: boolean;
+} = {}) {
   const javetAlt = usePageAltFor(
     "team-javet",
     "Carlos Javét Braga Bitencourt Braga Bitencourt Advogados, Família, Sucessões e Internacional Privado",
@@ -60,7 +66,7 @@ export function TeamGrid() {
 
       <div className="container mx-auto relative z-10">
         <h2 className="text-white text-5xl font-cinzel text-center mb-20 tracking-widest uppercase">
-          Nossa Equipe
+          {heading}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
@@ -80,9 +86,11 @@ export function TeamGrid() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               <div className="bg-white p-6 rounded-sm shadow-xl text-center">
-                <h3 className="text-navy text-xl font-bold font-montserrat">
-                  {member.name}
-                </h3>
+                {semanticMemberNames ? (
+                  <h3 className="text-navy text-xl font-bold font-montserrat">{member.name}</h3>
+                ) : (
+                  <p className="text-navy text-xl font-bold font-montserrat">{member.name}</p>
+                )}
               </div>
             </div>
           ))}

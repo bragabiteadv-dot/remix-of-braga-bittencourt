@@ -47,7 +47,7 @@ const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Divórcio em Betim com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
+  "Advogado de Divórcio em Betim com mais de 20 anos de experiência. Atuação em divórcio consensual e litigioso, partilha de bens, guarda e pensão.";
 
 
 export const Route = createFileRoute("/advogado-divorcio-betim")({
@@ -61,6 +61,7 @@ export const Route = createFileRoute("/advogado-divorcio-betim")({
       image: OG_IMAGE,
       areaServed: "Betim, MG",
       breadcrumbName: "Advogado de Divórcio em Betim",
+      schemaName: "Divórcio em Betim",
       address: {
           "@type": "PostalAddress",
           streetAddress: "Av. Amazonas, 1446, 7º andar, salas 706/707 - Brasiléia",
@@ -88,7 +89,10 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid
+        heading="Equipe especializada em Direito de Família e Divórcio"
+        semanticMemberNames={false}
+      />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -96,6 +100,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LpFaq />
       <ContactForm />
       <LpFooter />
     </div>
@@ -165,7 +170,7 @@ function LpHero() {
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
-              Conte com quem tem mais de 20 anos resolvendo casos como o seu.
+              Advogado de Divórcio em Betim com mais de 20 anos de experiência
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
@@ -210,9 +215,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -276,7 +281,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            Você está passando por uma dessas situações em seu divórcio?
+            Como podemos ajudar no seu divórcio em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -326,7 +331,7 @@ function LpOfficeGallery() {
     <section className="py-24 bg-[#08152C] overflow-hidden">
       <div className="container mx-auto mb-12">
         <h2 className="text-white text-3xl md:text-4xl font-cinzel text-center uppercase tracking-wider">
-          Nossa sede de Betim
+          Atendimento jurídico para divórcio em Betim
         </h2>
         <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
       </div>
@@ -402,7 +407,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Betim
+            Serviços relacionados a divórcio e Direito de Família em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -433,6 +438,21 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
+        <nav aria-label="Conteúdos sobre divórcio e Direito de Família" className="mt-10 text-center font-montserrat text-sm leading-relaxed text-white/70">
+          <p>
+            Consulte também orientações sobre{" "}
+            <Link to="/artigos/partilha-de-bens-ou-divisao-de-bens" className="text-gold-light underline underline-offset-4">partilha de bens</Link>,{" "}
+            <Link to="/advogado-guarda-betim" className="text-gold-light underline underline-offset-4">guarda em Betim</Link>,{" "}
+            <Link to="/advogado-pensao-alimenticia-betim" className="text-gold-light underline underline-offset-4">pensão alimentícia em Betim</Link>,{" "}
+            <Link to="/advogado-reconhecimento-dissolucao-uniao-estavel-betim" className="text-gold-light underline underline-offset-4">união estável em Betim</Link> e{" "}
+            <Link to="/advogado-familia-betim" className="text-gold-light underline underline-offset-4">Direito de Família em Betim</Link>.
+          </p>
+          <p className="mt-3">
+            Nos artigos, veja ainda{" "}
+            <Link to="/artigos/divorcio-e-uniao-estavel-especialidade-do-escritorio-braga-bittencourt" className="text-gold-light underline underline-offset-4">Divórcio e União Estável</Link> e{" "}
+            <Link to="/artigos/o-divorcio-extrajudicial-no-brasil-agilidade-e-seguranca-na-dissolucao-do-vincul" className="text-gold-light underline underline-offset-4">Divórcio Extrajudicial no Brasil</Link>.
+          </p>
+        </nav>
         <LandingSupportSections path={PATH} />
       </div>
     </section>
@@ -482,7 +502,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Por que escolher o Braga Bitencourt para seu divórcio em Betim
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -504,7 +524,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -527,7 +547,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Escritório de advocacia em Betim para casos de divórcio
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -585,6 +605,58 @@ function LpPresence() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Perguntas frequentes ---------------- */
+
+const DIVORCE_FAQ = [
+  {
+    question: "Divórcio pode ser feito sem o consentimento do outro cônjuge?",
+    answer: "Sim. Uma pessoa não pode ser obrigada a permanecer casada. Quando não há acordo entre as partes, o divórcio pode ser realizado judicialmente.",
+  },
+  {
+    question: "Quando o divórcio pode ser feito em cartório?",
+    answer: "O divórcio extrajudicial pode ser uma alternativa quando os requisitos legais são atendidos e existe consenso entre as partes. O caso deve ser analisado individualmente.",
+  },
+  {
+    question: "Como funciona a partilha de bens no divórcio?",
+    answer: "A divisão depende principalmente do regime de bens adotado no casamento e das características do patrimônio adquirido pelo casal.",
+  },
+  {
+    question: "Guarda e pensão precisam ser resolvidas junto com o divórcio?",
+    answer: "Questões envolvendo filhos, guarda, convivência e alimentos podem fazer parte da organização jurídica da separação e precisam ser avaliadas conforme cada situação.",
+  },
+  {
+    question: "Quanto tempo demora um divórcio?",
+    answer: "O prazo varia conforme o tipo de procedimento, existência de acordo, patrimônio, filhos e eventual necessidade de discussão judicial.",
+  },
+  {
+    question: "Preciso de advogado para me divorciar?",
+    answer: "Sim. Tanto no divórcio judicial quanto no extrajudicial é necessária assistência jurídica.",
+  },
+] as const;
+
+function LpFaq() {
+  return (
+    <section className="bg-[#F6F3EE] py-24">
+      <div className="container mx-auto max-w-4xl">
+        <h2 className="text-navy text-3xl md:text-4xl font-cinzel text-center uppercase leading-tight mb-6">
+          Dúvidas frequentes sobre divórcio em Betim
+        </h2>
+        <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-12" />
+        <div className="space-y-4">
+          {DIVORCE_FAQ.map((item) => (
+            <details key={item.question} className="group rounded-lg border border-navy/10 bg-white p-6 shadow-sm">
+              <summary className="cursor-pointer list-none font-montserrat font-bold text-navy marker:hidden">
+                {item.question}
+              </summary>
+              <p className="mt-4 font-montserrat text-sm leading-relaxed text-navy/70">{item.answer}</p>
+            </details>
+          ))}
         </div>
       </div>
     </section>
