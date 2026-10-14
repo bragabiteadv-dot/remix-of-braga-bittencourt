@@ -1,4 +1,4 @@
-import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { InstitutionalLandingSupport, RelatedContentNavigation } from "@/components/landing/InstitutionalLandingBlocks";
 import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
@@ -59,6 +59,8 @@ const FAQ = [
   { question: "Quais documentos levar para uma consulta de Direito de Família?", answer: "Os documentos variam conforme a questão, mas podem incluir identificação, certidões, comprovantes financeiros, contratos e comunicações relevantes. A equipe informa o conjunto necessário após compreender o caso." },
 ];
 
+const DOCUMENT_TITLES = ["Identificação e vínculo familiar", "Acordos e fatos relevantes", "Competência e localidade", "Documentos complementares"] as const;
+
 const RELATED_LINKS = [
   { title: "Divórcio em Betim", path: "/advogado-divorcio-betim" },
   { title: "Guarda em Betim", path: "/advogado-guarda-betim" },
@@ -118,7 +120,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
-      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Direito de Família em Betim" faq={FAQ} links={RELATED_LINKS} />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Direito de Família em Betim" faq={FAQ} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -456,7 +458,8 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
-        <LandingSupportSections path={PATH} />
+        <RelatedContentNavigation links={RELATED_LINKS.filter((item) => !item.path.startsWith("/artigos"))} articles={RELATED_LINKS.filter((item) => item.path.startsWith("/artigos"))} headingTag="h2" />
+        <InstitutionalLandingSupport path={PATH} documentTitles={DOCUMENT_TITLES} />
       </div>
     </section>
   );

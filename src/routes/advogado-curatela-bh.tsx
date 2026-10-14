@@ -1,4 +1,4 @@
-import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { InstitutionalLandingSupport, RelatedContentNavigation } from "@/components/landing/InstitutionalLandingBlocks";
 import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
@@ -58,6 +58,8 @@ const FAQ = [
   { question: "Onde fica a unidade de Belo Horizonte?", answer: "O escritório fica na Avenida Raja Gabáglia, 2000, sala 614, bairro Alpes, em Belo Horizonte. O atendimento também pode ocorrer à distância." },
 ];
 
+const DOCUMENT_TITLES = ["Identificação e necessidades de apoio", "Patrimônio e rede de apoio", "Competência e localidade", "Documentos complementares"] as const;
+
 const RELATED_LINKS = [
   { title: "Direito de Família em Belo Horizonte", path: "/advogado-familia-bh" },
   { title: "Inventário em Belo Horizonte", path: "/advogado-inventario-bh" },
@@ -114,7 +116,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
-      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Curatela em Belo Horizonte" faq={FAQ} links={RELATED_LINKS} />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Curatela em Belo Horizonte" faq={FAQ} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -452,7 +454,8 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
-        <LandingSupportSections path={PATH} />
+        <RelatedContentNavigation links={RELATED_LINKS.filter((item) => !item.path.startsWith("/artigos"))} articles={RELATED_LINKS.filter((item) => item.path.startsWith("/artigos"))} headingTag="h2" />
+        <InstitutionalLandingSupport path={PATH} documentTitles={DOCUMENT_TITLES} />
       </div>
     </section>
   );

@@ -19,3 +19,4 @@
 - Generate an independent exact-ID file-route registry with root context and disable the recursive generator type graph, because thousands of explicit routes must remain discoverable without recursively importing their own inferred types.
 - Group resident and international file routes under URL-transparent family layouts rendering Outlet, because a flat root with hundreds of typed children makes automatic verification exceed its limits; preserve individual files, public URLs and page options.
 - Render contextual document and related-service blocks through a shared support section for every content landing, because coverage must include legacy, act-origin and resident pages without replacing their existing layouts.
+- Selected local landings use InstitutionalLandingBlocks with route-owned document titles and related links; the legacy support presentation remains unchanged elsewhere, because visual standardization must preserve each page's legal content and SEO.
