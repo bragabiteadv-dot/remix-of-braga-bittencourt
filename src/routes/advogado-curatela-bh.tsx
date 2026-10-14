@@ -1,4 +1,5 @@
 import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
@@ -46,7 +47,24 @@ const PAGE_ALT = TITLE.split("|")[0].trim();
 const OFFICE_ALT = PAGE_ALT;
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Curatela em Belo Horizonte com mais de 20 anos de experiência. Interdição, curatela voluntária, gestão de bens e proteção jurídica de pessoas vulneráveis com sigilo e segurança.";
+  "Advogado de Curatela em Belo Horizonte para interdição, nomeação de curador e gestão de bens, com orientação jurídica conforme cada situação.";
+
+const FAQ = [
+  { question: "O que é curatela e quando ela pode ser necessária?", answer: "A curatela é uma medida de proteção destinada a pessoas que, nas circunstâncias previstas em lei, precisam de apoio para determinados atos da vida civil. Sua necessidade e extensão dependem da avaliação do caso concreto." },
+  { question: "Curatela e interdição são a mesma coisa?", answer: "Os termos aparecem relacionados, mas o processo deve observar a capacidade e as necessidades específicas da pessoa. A decisão judicial delimita os atos alcançados pela curatela, evitando restrições além do necessário." },
+  { question: "Quem pode ser nomeado curador?", answer: "A escolha considera as regras legais, os vínculos familiares e o melhor interesse da pessoa protegida. O juiz avalia a aptidão e as circunstâncias de quem poderá exercer a função." },
+  { question: "O curador precisa prestar contas?", answer: "Dependendo da extensão da curatela e da decisão judicial, pode haver dever de apresentar informações e contas sobre a administração patrimonial. A forma e a periodicidade variam em cada processo." },
+  { question: "É possível substituir o curador?", answer: "A substituição pode ser solicitada quando houver motivo relevante, impossibilidade de continuidade ou necessidade de maior proteção. O pedido depende de avaliação judicial e das provas apresentadas." },
+  { question: "Onde fica a unidade de Belo Horizonte?", answer: "O escritório fica na Avenida Raja Gabáglia, 2000, sala 614, bairro Alpes, em Belo Horizonte. O atendimento também pode ocorrer à distância." },
+];
+
+const RELATED_LINKS = [
+  { title: "Direito de Família em Belo Horizonte", path: "/advogado-familia-bh" },
+  { title: "Inventário em Belo Horizonte", path: "/advogado-inventario-bh" },
+  { title: "Guarda em Belo Horizonte", path: "/advogado-guarda-bh" },
+  { title: "Artigo sobre curatela", path: "/artigos/curatela" },
+  { title: "Artigos jurídicos", path: "/artigos" },
+];
 
 
 export const Route = createFileRoute("/advogado-curatela-bh")({
@@ -57,6 +75,7 @@ export const Route = createFileRoute("/advogado-curatela-bh")({
       canonicalUrl: PATH,
       city: "Belo Horizonte",
       service: "Curatela",
+      schemaName: "Curatela",
       image: OG_IMAGE,
       areaServed: "Belo Horizonte, MG",
       breadcrumbName: "Advogado de Curatela em Belo Horizonte",
@@ -87,7 +106,7 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid heading="Equipe especializada em Curatela" semanticMemberNames={false} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -95,6 +114,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Curatela em Belo Horizonte" faq={FAQ} links={RELATED_LINKS} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -209,9 +229,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -275,7 +295,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            Você está passando por uma dessas situações em seu processo de curatela?
+            Como podemos ajudar em casos de Curatela em Belo Horizonte?
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -401,7 +421,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Belo Horizonte
+            Serviços relacionados à Curatela em Belo Horizonte
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -481,7 +501,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Por que escolher o Braga Bitencourt para casos de Curatela
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -503,7 +523,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -526,7 +546,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Escritório de advocacia em Belo Horizonte para Curatela
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">

@@ -1,6 +1,7 @@
 # Roadmap
 
 ## Em andamento
+- [x] Aplicar SEO on-page exclusivamente em Família Betim, Curatela BH, Pensão Alimentícia Betim e Divórcio Extrajudicial Betim, preservando estrutura, URLs e conteúdo jurídico.
 - [x] Refinar exclusivamente os três blocos inferiores de `/advogado-divorcio-betim`, preservando textos, links, SEO e as demais páginas.
 - [x] Otimizar exclusivamente `/advogado-divorcio-betim`: metadados, headings, semântica, FAQ visual, links internos e nome do LegalService, sem alterar URL, canonical, layout ou outras páginas.
 - [x] Corrigir o custo recursivo dos tipos com registro independente de IDs exatos; verificação automática OK às 20:56 e 20:57 UTC e seis exibições das fotos conferidas.
