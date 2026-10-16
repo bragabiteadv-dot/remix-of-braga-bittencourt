@@ -100,6 +100,7 @@ export function articleSchemas(article: Article) {
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     articleSection: article.category,
     inLanguage: "pt-BR",
+    author: ORG_REF,
     publisher: ORG_REF,
   };
 
