@@ -60,14 +60,6 @@ export const Route = createFileRoute("/advogado-mudanca-regime-bens-casamento-no
       image: OG_IMAGE,
       areaServed: "Nova Lima, MG",
       breadcrumbName: "Advogado de Mudança de Regime de Bens de Casamento em Nova Lima",
-      address: {
-          "@type": "PostalAddress",
-          streetAddress: "Av. Raja Gabáglia, 2000 - sala 614 - Alpes",
-          addressLocality: "Belo Horizonte",
-          addressRegion: "MG",
-          postalCode: "30494-170",
-          addressCountry: "BR",
-        },
     }),
 
   component: LandingPage,

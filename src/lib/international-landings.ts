@@ -1504,6 +1504,9 @@ const SEO_SERVICE_TITLES: Readonly<Record<string, string>> = {
 
 function seoLocationName(location: InternationalLocation): string {
   if (location.id === 5) return "Brasil";
+  // Nova York: cidade e estado precisam de titles distintos (intenção geográfica explícita).
+  if (location.slug === "nova-york-nyc") return "Nova York (Cidade)";
+  if (location.slug === "nova-york-estado-eua") return "Estado de Nova York";
   return location.name.replace(/ \([^)]*\)/g, "");
 }
 

@@ -61,14 +61,6 @@ export const Route = createFileRoute("/advogado-curatela-igarape")({
       image: OG_IMAGE,
       areaServed: "Igarapé, MG",
       breadcrumbName: "Advogado de Curatela em Igarapé",
-      address: {
-          "@type": "PostalAddress",
-          streetAddress: "Av. Amazonas, 1446, 7º andar, salas 706/707 - Brasiléia",
-          addressLocality: "Betim",
-          addressRegion: "MG",
-          postalCode: "32600-324",
-          addressCountry: "BR",
-        },
     }),
 
   component: LandingPage,
