@@ -1,4 +1,5 @@
-import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { InstitutionalLandingSupport, RelatedContentNavigation } from "@/components/landing/InstitutionalLandingBlocks";
+import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
@@ -45,8 +46,68 @@ const PAGE_ALT = TITLE.split("|")[0].trim();
 const OFFICE_ALT = PAGE_ALT;
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Pensão Alimentícia em Belo Horizonte com mais de 20 anos de experiência. Fixação, revisão, exoneração e execução de pensão alimentícia com sigilo e segurança.";
+  "Advogado de Pensão Alimentícia em Belo Horizonte com atendimento presencial ou online para fixação, revisão e execução de alimentos conforme cada caso.";
 
+
+const DOCUMENT_TITLES = ["Necessidades e capacidade financeira", "Decisão, acordo e pagamentos", "Competência e localidade", "Procuração e documentos complementares"] as const;
+
+const FAQ = [
+  {
+    "question": "Como o valor da pensão alimentícia é definido?",
+    "answer": "O valor é analisado a partir das necessidades de quem recebe e da capacidade financeira de quem paga. Não existe um percentual fixo aplicável a todos os casos, e as circunstâncias da família são consideradas."
+  },
+  {
+    "question": "Quem pode pedir pensão alimentícia?",
+    "answer": "Filhos menores, representados por um dos pais, são os casos mais comuns, mas filhos maiores, ex-cônjuges e outros parentes podem ter direito em situações específicas. A possibilidade depende do vínculo e da necessidade demonstrada."
+  },
+  {
+    "question": "O valor da pensão pode ser revisto?",
+    "answer": "Sim, quando há mudança relevante nas necessidades de quem recebe ou na capacidade de quem paga. A revisão deve ser formalizada por acordo homologado ou decisão judicial; a alteração não ocorre automaticamente."
+  },
+  {
+    "question": "O que fazer quando a pensão está em atraso?",
+    "answer": "É possível pedir a execução dos valores em aberto, com base na decisão ou acordo que fixou os alimentos. As medidas cabíveis variam conforme o período da dívida e a situação de quem deve pagar."
+  },
+  {
+    "question": "Quando a obrigação de pagar pensão pode terminar?",
+    "answer": "A exoneração pode ser discutida, por exemplo, quando o filho atinge a maioridade e passa a se manter, ou quando deixam de existir as condições que justificaram os alimentos. O fim da obrigação depende de decisão judicial ou acordo homologado."
+  },
+  {
+    "question": "Como iniciar a análise de um caso de pensão em Belo Horizonte?",
+    "answer": "O primeiro passo é reunir informações sobre necessidades, renda e eventuais decisões já existentes. O atendimento pode ser presencial na Av. Raja Gabáglia, 2000, sala 614, bairro Alpes, em Belo Horizonte, ou online."
+  }
+];
+
+const RELATED_LINKS = [
+  {
+    "title": "Direito de Família em Belo Horizonte",
+    "path": "/advogado-familia-bh"
+  },
+  {
+    "title": "Revisão de Pensão em Belo Horizonte",
+    "path": "/advogado-revisao-pensao-bh"
+  },
+  {
+    "title": "Execução de Pensão em Belo Horizonte",
+    "path": "/advogado-execucao-pensao-bh"
+  },
+  {
+    "title": "Exoneração de Pensão em Belo Horizonte",
+    "path": "/advogado-exoneracao-pensao-bh"
+  },
+  {
+    "title": "Guarda em Belo Horizonte",
+    "path": "/advogado-guarda-bh"
+  },
+  {
+    "title": "Pensão alimentícia",
+    "path": "/artigos/pensao-alimenticia"
+  },
+  {
+    "title": "Consequências de não pagar pensão",
+    "path": "/artigos/as-duas-consequencias-para-quem-nao-paga-pensao-alimenticia"
+  }
+];
 
 export const Route = createFileRoute("/advogado-pensao-alimenticia-bh")({
   head: () =>
@@ -57,6 +118,7 @@ export const Route = createFileRoute("/advogado-pensao-alimenticia-bh")({
       city: "Belo Horizonte",
       service: "Pensão Alimentícia",
       image: OG_IMAGE,
+      schemaName: "Pensão Alimentícia",
       areaServed: "Belo Horizonte, MG",
       breadcrumbName: "Advogado de Pensão Alimentícia em Belo Horizonte",
       address: {
@@ -86,7 +148,7 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid heading="Equipe especializada em Pensão Alimentícia e Direito de Família" semanticMemberNames={false} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -94,6 +156,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Pensão Alimentícia em Belo Horizonte" faq={FAQ} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -163,7 +226,7 @@ function LpHero() {
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
-              Conte com quem tem mais de 20 anos resolvendo casos como o seu.
+              Pensão alimentícia em Belo Horizonte com mais de 20 anos de experiência
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
@@ -207,9 +270,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -273,7 +336,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES EM SEU CASO DE PENSÃO ALIMENTÍCIA?
+            Situações que envolvem pensão alimentícia em Belo Horizonte
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -297,9 +360,9 @@ function LpSituations() {
               <div className="w-14 h-14 rounded-full bg-gold-gradient text-[#283650] flex items-center justify-center mb-6 shrink-0">
                 {item.icon}
               </div>
-              <h3 className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
+              <p className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
                 {item.title}
-              </h3>
+              </p>
               <p className="text-navy/60 font-montserrat text-sm leading-relaxed">{item.text}</p>
             </a>
           ))}
@@ -399,7 +462,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Belo Horizonte
+            Como podemos ajudar em casos de pensão alimentícia em Belo Horizonte
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -414,7 +477,7 @@ function LpServices() {
               className="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/10 hover:-translate-y-2 transition-all duration-500"
             >
               <div className="text-gold-light mb-6">{s.icon}</div>
-              <h3 className="text-white font-cinzel text-xl mb-6">{s.title}</h3>
+              <p className="text-white font-cinzel text-xl mb-6">{s.title}</p>
               <ul className="space-y-3">
                 {s.items.map((i) => (
                   <li key={i} className="text-white/60 font-montserrat text-sm leading-relaxed flex gap-3">
@@ -430,7 +493,8 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
-        <LandingSupportSections path={PATH} />
+        <RelatedContentNavigation links={RELATED_LINKS.filter((item) => !item.path.startsWith("/artigos"))} articles={RELATED_LINKS.filter((item) => item.path.startsWith("/artigos"))} headingTag="h2" />
+        <InstitutionalLandingSupport path={PATH} documentTitles={DOCUMENT_TITLES} />
       </div>
     </section>
   );
@@ -479,7 +543,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Por que escolher o Braga Bitencourt para casos de pensão
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -501,7 +565,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -524,7 +588,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Atendimento jurídico para pensão alimentícia em Belo Horizonte
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">

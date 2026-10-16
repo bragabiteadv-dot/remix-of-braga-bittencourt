@@ -1,4 +1,5 @@
-import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { InstitutionalLandingSupport, RelatedContentNavigation } from "@/components/landing/InstitutionalLandingBlocks";
+import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
@@ -47,8 +48,60 @@ const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Guarda em Betim com mais de 20 anos de experiência. Regulamentação de guarda, guarda compartilhada, guarda unilateral e medidas protetivas com sigilo e segurança.";
+  "Advogado de Guarda em Betim com atendimento presencial ou online para guarda compartilhada ou unilateral, regime de convivência e rotina dos filhos.";
 
+
+const DOCUMENT_TITLES = ["Filiação e decisões existentes", "Rotina e segurança da criança", "Competência e localidade", "Procuração e documentos complementares"] as const;
+
+const FAQ = [
+  {
+    "question": "Como funciona a guarda compartilhada?",
+    "answer": "Na guarda compartilhada, os pais exercem em conjunto a responsabilidade parental e as decisões relevantes sobre educação, saúde e rotina dos filhos. A forma de organização depende das condições da família e do melhor interesse da criança ou do adolescente."
+  },
+  {
+    "question": "Em que casos a guarda unilateral pode ser definida?",
+    "answer": "A guarda unilateral pode ser fixada quando um dos genitores não pode ou não deseja exercer a guarda, ou quando o compartilhamento não atende ao interesse dos filhos. Mesmo nesse caso, o outro genitor mantém, em regra, o direito de convivência e o dever de acompanhar a criação."
+  },
+  {
+    "question": "O que é o regime de convivência?",
+    "answer": "É a organização dos períodos que os filhos passam com cada genitor, incluindo dias da semana, fins de semana, férias e datas comemorativas. Pode ser definido por acordo homologado ou por decisão judicial."
+  },
+  {
+    "question": "A divisão do tempo precisa ser igual entre os pais?",
+    "answer": "Não necessariamente. A divisão do tempo considera a idade dos filhos, a escola, a distância entre as residências e a rotina da família, sempre com foco no bem-estar da criança."
+  },
+  {
+    "question": "É possível alterar a guarda depois de definida?",
+    "answer": "Sim, quando ocorre mudança relevante nas circunstâncias ou quando o arranjo atual deixa de atender ao interesse dos filhos. A alteração depende de novo acordo homologado ou de decisão judicial."
+  },
+  {
+    "question": "Como iniciar a análise de um caso de guarda em Betim?",
+    "answer": "O primeiro passo é uma conversa sobre a rotina da família, as decisões já existentes e os documentos disponíveis. O atendimento pode ser presencial na Av. Amazonas, 1446, 7º andar, salas 706/707, bairro Brasiléia, em Betim, ou online."
+  }
+];
+
+const RELATED_LINKS = [
+  {
+    "title": "Direito de Família em Betim",
+    "path": "/advogado-familia-betim"
+  },
+  {
+    "title": "Divórcio em Betim",
+    "path": "/advogado-divorcio-betim"
+  },
+  {
+    "title": "Pensão Alimentícia em Betim",
+    "path": "/advogado-pensao-alimenticia-betim"
+  },
+  {
+    "title": "Guarda compartilhada",
+    "path": "/artigos/guarda-compartilhada-o-equilibrio-necessario-para-o-bem-estar-dos-filhos"
+  },
+  {
+    "title": "Direito de convivência",
+    "path": "/artigos/direito-de-convivencia-a-estruturacao-do-convivio-familiar-com-a-braga-bitencour"
+  }
+];
 
 export const Route = createFileRoute("/advogado-guarda-betim")({
   head: () =>
@@ -59,6 +112,7 @@ export const Route = createFileRoute("/advogado-guarda-betim")({
       city: "Betim",
       service: "Guarda",
       image: OG_IMAGE,
+      schemaName: "Guarda",
       areaServed: "Betim, MG",
       breadcrumbName: "Advogado de Guarda em Betim",
       address: {
@@ -88,7 +142,7 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid heading="Equipe especializada em Guarda e Direito de Família" semanticMemberNames={false} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -96,6 +150,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Guarda em Betim" faq={FAQ} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -165,7 +220,7 @@ function LpHero() {
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
-              Conte com quem tem mais de 20 anos resolvendo casos como o seu.
+              Guarda em Betim com mais de 20 anos de experiência
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
@@ -210,9 +265,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -276,7 +331,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-             VOCÊ ESTÁ PASSANDO POR UMA DESSAS SITUAÇÕES DE GUARDA?
+             Situações que envolvem guarda em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -300,9 +355,9 @@ function LpSituations() {
               <div className="w-14 h-14 rounded-full bg-gold-gradient text-[#283650] flex items-center justify-center mb-6 shrink-0">
                 {item.icon}
               </div>
-              <h3 className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
+              <p className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
                 {item.title}
-              </h3>
+              </p>
               <p className="text-navy/60 font-montserrat text-sm leading-relaxed">{item.text}</p>
             </a>
           ))}
@@ -402,7 +457,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Betim
+            Como podemos ajudar em casos de guarda em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -417,7 +472,7 @@ function LpServices() {
               className="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/10 hover:-translate-y-2 transition-all duration-500"
             >
               <div className="text-gold-light mb-6">{s.icon}</div>
-              <h3 className="text-white font-cinzel text-xl mb-6">{s.title}</h3>
+              <p className="text-white font-cinzel text-xl mb-6">{s.title}</p>
               <ul className="space-y-3">
                 {s.items.map((i) => (
                   <li key={i} className="text-white/60 font-montserrat text-sm leading-relaxed flex gap-3">
@@ -433,7 +488,8 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
-        <LandingSupportSections path={PATH} />
+        <RelatedContentNavigation links={RELATED_LINKS.filter((item) => !item.path.startsWith("/artigos"))} articles={RELATED_LINKS.filter((item) => item.path.startsWith("/artigos"))} headingTag="h2" />
+        <InstitutionalLandingSupport path={PATH} documentTitles={DOCUMENT_TITLES} />
       </div>
     </section>
   );
@@ -482,7 +538,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Por que escolher o Braga Bitencourt para casos de guarda
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -504,7 +560,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -527,7 +583,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Atendimento jurídico para guarda em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">
