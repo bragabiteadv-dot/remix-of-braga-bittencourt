@@ -1,4 +1,5 @@
-import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { InstitutionalLandingSupport, RelatedContentNavigation } from "@/components/landing/InstitutionalLandingBlocks";
+import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
@@ -47,8 +48,60 @@ const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Curatela em Betim com mais de 20 anos de experiência. Interdição, curatela voluntária, gestão de bens e proteção jurídica de pessoas vulneráveis com sigilo e segurança.";
+  "Advogado de Curatela em Betim com atendimento presencial ou online para interdição, nomeação de curador e proteção patrimonial de familiares vulneráveis.";
 
+
+const DOCUMENT_TITLES = ["Dados da pessoa e necessidades de apoio", "Patrimônio e rede de apoio", "Competência e localidade", "Procuração e documentos complementares"] as const;
+
+const FAQ = [
+  {
+    "question": "O que é curatela e quando ela pode ser pedida?",
+    "answer": "A curatela é uma medida judicial de proteção destinada a pessoas maiores que não conseguem exprimir sua vontade ou praticar determinados atos da vida civil. O pedido depende de avaliação concreta da situação, inclusive de relatórios médicos e do grau de apoio necessário."
+  },
+  {
+    "question": "Qual a relação entre curatela e interdição?",
+    "answer": "O termo interdição ainda é usado para designar o processo em que se discute a curatela. Atualmente, a medida tende a ser limitada aos atos patrimoniais e negociais necessários, preservando ao máximo a autonomia da pessoa."
+  },
+  {
+    "question": "Quem pode ser nomeado curador?",
+    "answer": "Em regra, familiares próximos, como cônjuge, companheiro, pais ou filhos, podem pedir a nomeação, mas a escolha considera o interesse da pessoa curatelada. O juiz avalia a aptidão, o vínculo e a confiança do candidato a curador."
+  },
+  {
+    "question": "O curador pode administrar os bens da pessoa curatelada?",
+    "answer": "O curador administra os bens nos limites fixados na decisão judicial e deve agir no interesse da pessoa curatelada. Alguns atos, como vendas de imóveis, podem exigir autorização judicial específica e prestação de contas."
+  },
+  {
+    "question": "A curatela retira toda a capacidade civil da pessoa?",
+    "answer": "Não necessariamente. A extensão da curatela é definida caso a caso e costuma alcançar atos patrimoniais e negociais, sem atingir automaticamente direitos pessoais como os relacionados ao corpo, ao casamento ou ao voto."
+  },
+  {
+    "question": "Onde consultar um advogado de Curatela em Betim?",
+    "answer": "O atendimento presencial ocorre na Av. Amazonas, 1446, 7º andar, salas 706/707, bairro Brasiléia, em Betim. Também é possível iniciar a análise do caso e dos documentos de forma online."
+  }
+];
+
+const RELATED_LINKS = [
+  {
+    "title": "Direito de Família em Betim",
+    "path": "/advogado-familia-betim"
+  },
+  {
+    "title": "Inventário em Betim",
+    "path": "/advogado-inventario-betim"
+  },
+  {
+    "title": "Guarda em Betim",
+    "path": "/advogado-guarda-betim"
+  },
+  {
+    "title": "Curatela",
+    "path": "/artigos/curatela"
+  },
+  {
+    "title": "Medida protetiva e a proteção da família",
+    "path": "/artigos/medida-protetiva-e-a-protecao-da-familia"
+  }
+];
 
 export const Route = createFileRoute("/advogado-curatela-betim")({
   head: () =>
@@ -59,6 +112,7 @@ export const Route = createFileRoute("/advogado-curatela-betim")({
       city: "Betim",
       service: "Curatela",
       image: OG_IMAGE,
+      schemaName: "Curatela",
       areaServed: "Betim, MG",
       breadcrumbName: "Advogado de Curatela em Betim",
       address: {
@@ -88,7 +142,7 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid heading="Equipe especializada em Curatela e Direito de Família" semanticMemberNames={false} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -96,6 +150,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Curatela em Betim" faq={FAQ} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -165,7 +220,7 @@ function LpHero() {
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
-              Conte com quem tem mais de 20 anos resolvendo casos como o seu.
+              Curatela em Betim com mais de 20 anos de experiência
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
@@ -210,9 +265,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -276,7 +331,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            Você está passando por uma dessas situações em seu processo de curatela?
+            Situações que envolvem curatela e interdição em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -300,9 +355,9 @@ function LpSituations() {
               <div className="w-14 h-14 rounded-full bg-gold-gradient text-[#283650] flex items-center justify-center mb-6 shrink-0">
                 {item.icon}
               </div>
-              <h3 className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
+              <p className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
                 {item.title}
-              </h3>
+              </p>
               <p className="text-navy/60 font-montserrat text-sm leading-relaxed">{item.text}</p>
             </a>
           ))}
@@ -402,7 +457,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Betim
+            Como podemos ajudar em casos de curatela em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -417,7 +472,7 @@ function LpServices() {
               className="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/10 hover:-translate-y-2 transition-all duration-500"
             >
               <div className="text-gold-light mb-6">{s.icon}</div>
-              <h3 className="text-white font-cinzel text-xl mb-6">{s.title}</h3>
+              <p className="text-white font-cinzel text-xl mb-6">{s.title}</p>
               <ul className="space-y-3">
                 {s.items.map((i) => (
                   <li key={i} className="text-white/60 font-montserrat text-sm leading-relaxed flex gap-3">
@@ -433,7 +488,8 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
-        <LandingSupportSections path={PATH} />
+        <RelatedContentNavigation links={RELATED_LINKS.filter((item) => !item.path.startsWith("/artigos"))} articles={RELATED_LINKS.filter((item) => item.path.startsWith("/artigos"))} headingTag="h2" />
+        <InstitutionalLandingSupport path={PATH} documentTitles={DOCUMENT_TITLES} />
       </div>
     </section>
   );
@@ -482,7 +538,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Por que escolher o Braga Bitencourt para casos de curatela
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -504,7 +560,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -527,7 +583,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Escritório de advocacia para curatela em Betim
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">
