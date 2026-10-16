@@ -1,4 +1,5 @@
-import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { InstitutionalLandingSupport, RelatedContentNavigation } from "@/components/landing/InstitutionalLandingBlocks";
+import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
@@ -39,14 +40,70 @@ import sedeBetim4 from "@/assets/sede-betim-4.webp";
 import sedeBetim5 from "@/assets/sede-betim-5.webp";
 
 const PATH = "/advogado-familia-nova-lima";
-const TITLE = "Advogado de Família em Nova Lima | Braga Bitencourt";
+const TITLE = "Advogado de Família em Nova Lima | Braga Bitencourt Advogados";
 const SERVICE = "Direito de Família";
 const CITY = "Nova Lima";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const OFFICE_ALT = PAGE_ALT;
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Família em Nova Lima com mais de 20 anos de experiência. Guarda, pensão alimentícia, inventário e litígios familiares.";
+  "Advogado de Família em Nova Lima com atendimento online ou na sede de Belo Horizonte para divórcio, guarda, pensão alimentícia e união estável.";
+
+const DOCUMENT_TITLES = ["Identificação e vínculo familiar", "Acordos e fatos relevantes", "Competência e localidade", "Procuração e documentos complementares"] as const;
+
+const FAQ = [
+  {
+    "question": "Quais questões são tratadas pelo Direito de Família?",
+    "answer": "O Direito de Família abrange divórcio, guarda, convivência, pensão alimentícia, união estável, partilha de bens e filiação, entre outros temas. Cada situação exige análise própria dos documentos e do contexto familiar."
+  },
+  {
+    "question": "O escritório atende clientes de Nova Lima?",
+    "answer": "Sim. Nova Lima é atendida pelo escritório de forma online ou presencialmente na sede de Belo Horizonte, na Av. Raja Gabáglia, 2000, sala 614. Não há unidade física do escritório em Nova Lima."
+  },
+  {
+    "question": "Divórcio, guarda e pensão podem ser resolvidos juntos?",
+    "answer": "Muitas vezes esses temas são discutidos em conjunto, por acordo ou em processo judicial. A organização depende da existência de consenso, de filhos menores e da situação patrimonial do casal."
+  },
+  {
+    "question": "Qual a diferença entre união estável e casamento?",
+    "answer": "Ambos são formas de constituição de família, mas têm formalidades distintas de constituição e de comprovação. Os efeitos patrimoniais e sucessórios dependem do regime de bens e das circunstâncias do caso."
+  },
+  {
+    "question": "É possível resolver questões de família sem processo judicial?",
+    "answer": "Em alguns casos, sim, como no divórcio consensual sem filhos menores ou incapazes, que pode ser feito em cartório quando preenchidos os requisitos. Outros temas exigem homologação ou decisão judicial."
+  },
+  {
+    "question": "Como iniciar o atendimento sobre Direito de Família em Nova Lima?",
+    "answer": "O primeiro passo é uma conversa para entender a situação e os documentos disponíveis. A partir dessa análise, são indicados os caminhos possíveis, sem promessa de resultado."
+  }
+];
+
+const RELATED_LINKS = [
+  {
+    "title": "Divórcio em Nova Lima",
+    "path": "/advogado-divorcio-nova-lima"
+  },
+  {
+    "title": "Guarda em Nova Lima",
+    "path": "/advogado-guarda-nova-lima"
+  },
+  {
+    "title": "Pensão Alimentícia em Nova Lima",
+    "path": "/advogado-pensao-alimenticia-nova-lima"
+  },
+  {
+    "title": "União Estável em Nova Lima",
+    "path": "/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima"
+  },
+  {
+    "title": "Divórcio e união estável",
+    "path": "/artigos/divorcio-e-uniao-estavel-especialidade-do-escritorio-braga-bittencourt"
+  },
+  {
+    "title": "Pensão alimentícia",
+    "path": "/artigos/pensao-alimenticia"
+  }
+];
 
 const ABSOLUTE_URL = "https://bragabitencourt.com" + PATH;
 const HOME_URL = "https://bragabitencourt.com/";
@@ -61,6 +118,7 @@ export const Route = createFileRoute("/advogado-familia-nova-lima")({
       city: "Nova Lima",
       service: "Direito de Família",
       image: OG_IMAGE,
+      schemaName: "Direito de Família",
       areaServed: "Nova Lima, MG",
       breadcrumbName: "Advogado de Família em Nova Lima",
       address: {
@@ -90,7 +148,7 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid heading="Equipe especializada em Direito de Família" semanticMemberNames={false} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -98,6 +156,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Direito de Família em Nova Lima" faq={FAQ} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -167,7 +226,7 @@ function LpHero() {
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
-              Conte com quem tem mais de 20 anos resolvendo casos como o seu.
+              Direito de Família em Nova Lima com mais de 20 anos de experiência
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
@@ -212,9 +271,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -278,7 +337,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            Você está passando por uma dessas situações em sua família?
+            Situações familiares atendidas em Nova Lima
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -302,9 +361,9 @@ function LpSituations() {
               <div className="w-14 h-14 rounded-full bg-gold-gradient text-[#283650] flex items-center justify-center mb-6 shrink-0">
                 {item.icon}
               </div>
-              <h3 className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
+              <p className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
                 {item.title}
-              </h3>
+              </p>
               <p className="text-navy/60 font-montserrat text-sm leading-relaxed">{item.text}</p>
             </a>
           ))}
@@ -404,7 +463,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Nova Lima
+            Serviços relacionados a Direito de Família em Nova Lima
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -419,7 +478,7 @@ function LpServices() {
               className="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/10 hover:-translate-y-2 transition-all duration-500"
             >
               <div className="text-gold-light mb-6">{s.icon}</div>
-              <h3 className="text-white font-cinzel text-xl mb-6">{s.title}</h3>
+              <p className="text-white font-cinzel text-xl mb-6">{s.title}</p>
               <ul className="space-y-3">
                 {s.items.map((i) => (
                   <li key={i} className="text-white/60 font-montserrat text-sm leading-relaxed flex gap-3">
@@ -435,7 +494,8 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
-        <LandingSupportSections path={PATH} />
+        <RelatedContentNavigation links={RELATED_LINKS.filter((item) => !item.path.startsWith("/artigos"))} articles={RELATED_LINKS.filter((item) => item.path.startsWith("/artigos"))} headingTag="h2" />
+        <InstitutionalLandingSupport path={PATH} documentTitles={DOCUMENT_TITLES} />
       </div>
     </section>
   );
@@ -484,7 +544,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Por que escolher o Braga Bitencourt para questões de família
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -506,7 +566,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -529,7 +589,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Atendimento jurídico para Direito de Família em Nova Lima
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">
