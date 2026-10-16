@@ -50,6 +50,62 @@ const DESCRIPTION =
   "Advogado de Revisão de Pensão em Belo Horizonte com atendimento presencial ou online para majoração ou redução de alimentos e análise do valor da pensão.";
 
 
+const DOCUMENT_TITLES = ["Necessidades e capacidade financeira", "Decisão vigente e pagamentos", "Competência e localidade", "Procuração e documentos complementares"] as const;
+
+const FAQ = [
+  {
+    "question": "Quando é possível pedir a revisão da pensão alimentícia?",
+    "answer": "A revisão pode ser discutida quando há mudança relevante na situação financeira de quem paga ou nas necessidades de quem recebe. A alteração precisa ser demonstrada com documentos e avaliada no caso concreto."
+  },
+  {
+    "question": "Qual a diferença entre majoração e redução dos alimentos?",
+    "answer": "A majoração busca aumentar o valor quando as necessidades cresceram ou a capacidade de quem paga melhorou. A redução é discutida quando houve queda comprovada da capacidade financeira ou diminuição das necessidades."
+  },
+  {
+    "question": "Perder o emprego permite reduzir a pensão automaticamente?",
+    "answer": "Não. A obrigação fixada continua valendo até que haja novo acordo homologado ou decisão judicial. Por isso, a mudança deve ser levada ao Judiciário ou formalizada o quanto antes."
+  },
+  {
+    "question": "Como o valor da pensão é analisado?",
+    "answer": "São considerados, em conjunto, as necessidades de quem recebe e a possibilidade de quem paga, além das circunstâncias da família. Não existe um percentual fixo aplicável a todos os casos."
+  },
+  {
+    "question": "A revisão pode ser feita por acordo?",
+    "answer": "Sim, quando as partes concordam, o novo valor pode ser formalizado em acordo e submetido à homologação. Quando há interesse de criança ou adolescente, a análise costuma envolver também o Ministério Público."
+  },
+  {
+    "question": "Onde consultar um advogado de Revisão de Pensão em Belo Horizonte?",
+    "answer": "O atendimento presencial ocorre na Av. Raja Gabáglia, 2000, sala 614, bairro Alpes, em Belo Horizonte. Também é possível atendimento online para a análise inicial do valor e dos documentos."
+  }
+];
+
+const RELATED_LINKS = [
+  {
+    "title": "Pensão Alimentícia em Belo Horizonte",
+    "path": "/advogado-pensao-alimenticia-bh"
+  },
+  {
+    "title": "Execução de Pensão em Belo Horizonte",
+    "path": "/advogado-execucao-pensao-bh"
+  },
+  {
+    "title": "Exoneração de Pensão em Belo Horizonte",
+    "path": "/advogado-exoneracao-pensao-bh"
+  },
+  {
+    "title": "Direito de Família em Belo Horizonte",
+    "path": "/advogado-familia-bh"
+  },
+  {
+    "title": "Pensão alimentícia",
+    "path": "/artigos/pensao-alimenticia"
+  },
+  {
+    "title": "Execução de pensão alimentícia",
+    "path": "/artigos/execucao-de-pensao-alimenticia-como-garantir-o-recebimento"
+  }
+];
+
 export const Route = createFileRoute("/advogado-revisao-pensao-bh")({
   head: () =>
     buildSeoHead({

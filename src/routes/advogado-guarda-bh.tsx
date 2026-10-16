@@ -50,6 +50,58 @@ const DESCRIPTION =
   "Advogado de Guarda em Belo Horizonte com atendimento presencial ou online para guarda compartilhada ou unilateral, convivência e rotina dos filhos.";
 
 
+const DOCUMENT_TITLES = ["Filiação e decisões existentes", "Rotina e convivência da criança", "Competência e localidade", "Procuração e documentos complementares"] as const;
+
+const FAQ = [
+  {
+    "question": "Qual a diferença entre guarda compartilhada e unilateral?",
+    "answer": "Na guarda compartilhada, os pais dividem as responsabilidades e decisões importantes sobre a vida dos filhos. Na unilateral, essas atribuições ficam principalmente com um dos genitores, e o outro mantém o direito de convivência e o dever de acompanhar a criação."
+  },
+  {
+    "question": "A guarda compartilhada significa dividir o tempo igualmente?",
+    "answer": "Não necessariamente. A guarda compartilhada trata da responsabilidade parental conjunta, enquanto a divisão do tempo de convivência é definida conforme a rotina e o interesse da criança ou do adolescente."
+  },
+  {
+    "question": "Como é definido o regime de convivência?",
+    "answer": "A convivência é organizada considerando a idade dos filhos, a escola, a distância entre as residências e a disponibilidade dos pais. Pode ser estabelecida por acordo homologado ou por decisão judicial."
+  },
+  {
+    "question": "O que significa o melhor interesse da criança?",
+    "answer": "É o critério central nas decisões sobre guarda e convivência, voltado à proteção, ao desenvolvimento e à estabilidade da criança ou do adolescente. Cada situação familiar é avaliada de forma individual."
+  },
+  {
+    "question": "A guarda pode ser modificada depois de definida?",
+    "answer": "Sim, quando há mudança relevante nas circunstâncias ou quando o arranjo atual deixa de atender ao interesse dos filhos. A alteração depende de novo acordo ou de decisão judicial fundamentada."
+  },
+  {
+    "question": "Onde consultar um advogado de Guarda em Belo Horizonte?",
+    "answer": "O atendimento presencial ocorre na Av. Raja Gabáglia, 2000, sala 614, bairro Alpes, em Belo Horizonte. Também é possível atendimento online para a análise inicial da situação familiar."
+  }
+];
+
+const RELATED_LINKS = [
+  {
+    "title": "Direito de Família em Belo Horizonte",
+    "path": "/advogado-familia-bh"
+  },
+  {
+    "title": "Divórcio em Belo Horizonte",
+    "path": "/advogado-divorcio-bh"
+  },
+  {
+    "title": "Pensão Alimentícia em Belo Horizonte",
+    "path": "/advogado-pensao-alimenticia-bh"
+  },
+  {
+    "title": "Guarda compartilhada",
+    "path": "/artigos/guarda-compartilhada-o-equilibrio-necessario-para-o-bem-estar-dos-filhos"
+  },
+  {
+    "title": "Direito de convivência",
+    "path": "/artigos/direito-de-convivencia-a-estruturacao-do-convivio-familiar-com-a-braga-bitencour"
+  }
+];
+
 export const Route = createFileRoute("/advogado-guarda-bh")({
   head: () =>
     buildSeoHead({

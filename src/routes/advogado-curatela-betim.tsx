@@ -51,6 +51,58 @@ const DESCRIPTION =
   "Advogado de Curatela em Betim com atendimento presencial ou online para interdição, nomeação de curador e proteção patrimonial de familiares vulneráveis.";
 
 
+const DOCUMENT_TITLES = ["Dados da pessoa e necessidades de apoio", "Patrimônio e rede de apoio", "Competência e localidade", "Procuração e documentos complementares"] as const;
+
+const FAQ = [
+  {
+    "question": "O que é curatela e quando ela pode ser pedida?",
+    "answer": "A curatela é uma medida judicial de proteção destinada a pessoas maiores que não conseguem exprimir sua vontade ou praticar determinados atos da vida civil. O pedido depende de avaliação concreta da situação, inclusive de relatórios médicos e do grau de apoio necessário."
+  },
+  {
+    "question": "Qual a relação entre curatela e interdição?",
+    "answer": "O termo interdição ainda é usado para designar o processo em que se discute a curatela. Atualmente, a medida tende a ser limitada aos atos patrimoniais e negociais necessários, preservando ao máximo a autonomia da pessoa."
+  },
+  {
+    "question": "Quem pode ser nomeado curador?",
+    "answer": "Em regra, familiares próximos, como cônjuge, companheiro, pais ou filhos, podem pedir a nomeação, mas a escolha considera o interesse da pessoa curatelada. O juiz avalia a aptidão, o vínculo e a confiança do candidato a curador."
+  },
+  {
+    "question": "O curador pode administrar os bens da pessoa curatelada?",
+    "answer": "O curador administra os bens nos limites fixados na decisão judicial e deve agir no interesse da pessoa curatelada. Alguns atos, como vendas de imóveis, podem exigir autorização judicial específica e prestação de contas."
+  },
+  {
+    "question": "A curatela retira toda a capacidade civil da pessoa?",
+    "answer": "Não necessariamente. A extensão da curatela é definida caso a caso e costuma alcançar atos patrimoniais e negociais, sem atingir automaticamente direitos pessoais como os relacionados ao corpo, ao casamento ou ao voto."
+  },
+  {
+    "question": "Onde consultar um advogado de Curatela em Betim?",
+    "answer": "O atendimento presencial ocorre na Av. Amazonas, 1446, 7º andar, salas 706/707, bairro Brasiléia, em Betim. Também é possível iniciar a análise do caso e dos documentos de forma online."
+  }
+];
+
+const RELATED_LINKS = [
+  {
+    "title": "Direito de Família em Betim",
+    "path": "/advogado-familia-betim"
+  },
+  {
+    "title": "Inventário em Betim",
+    "path": "/advogado-inventario-betim"
+  },
+  {
+    "title": "Guarda em Betim",
+    "path": "/advogado-guarda-betim"
+  },
+  {
+    "title": "Curatela",
+    "path": "/artigos/curatela"
+  },
+  {
+    "title": "Medida protetiva e a proteção da família",
+    "path": "/artigos/medida-protetiva-e-a-protecao-da-familia"
+  }
+];
+
 export const Route = createFileRoute("/advogado-curatela-betim")({
   head: () =>
     buildSeoHead({
