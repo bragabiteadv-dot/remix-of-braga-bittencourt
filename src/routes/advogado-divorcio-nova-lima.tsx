@@ -1,4 +1,5 @@
-import { LandingSupportSections } from "@/components/landing/LandingSupportSections";
+import { InstitutionalLandingSupport, RelatedContentNavigation } from "@/components/landing/InstitutionalLandingBlocks";
+import { LocalSeoAdditions } from "@/components/landing/LocalSeoAdditions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroVideoBackground } from "../components/sections/HeroVideoBackground";
 import {
@@ -46,8 +47,68 @@ const PAGE_ALT = TITLE.split("|")[0].trim();
 const OFFICE_ALT = PAGE_ALT;
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
 const DESCRIPTION =
-  "Advogado de Divórcio em Nova Lima com mais de 20 anos de experiência. Partilha de bens, guarda, pensão alimentícia e divórcio em cartório com sigilo e segurança.";
+  "Advogado de Divórcio em Nova Lima com atendimento online ou na sede de Belo Horizonte para divórcio consensual, litigioso ou em cartório e partilha de bens.";
 
+
+const DOCUMENT_TITLES = ["Casamento e identificação", "Bens, filhos e acordos", "Competência e localidade", "Procuração e documentos complementares"] as const;
+
+const FAQ = [
+  {
+    "question": "Como funciona o divórcio consensual?",
+    "answer": "No divórcio consensual, o casal concorda com o fim do casamento e com temas como partilha, guarda e pensão, quando existentes. O acordo pode ser formalizado judicialmente ou, em alguns casos, em cartório."
+  },
+  {
+    "question": "É preciso que o outro cônjuge concorde com o divórcio?",
+    "answer": "Não. O divórcio pode ser pedido mesmo sem a concordância do outro cônjuge, pela via judicial. Nesse caso, as questões em que não há acordo, como a partilha, são decididas no processo."
+  },
+  {
+    "question": "Quando o divórcio pode ser feito em cartório?",
+    "answer": "O divórcio extrajudicial pode ser feito em cartório quando há consenso entre as partes e os requisitos legais e notariais são atendidos, com assistência de advogado. A existência de filhos menores ou incapazes exige análise específica das regras aplicáveis."
+  },
+  {
+    "question": "Como é feita a partilha de bens no divórcio?",
+    "answer": "A partilha depende do regime de bens do casamento, da data de aquisição dos bens e de eventuais acordos entre as partes. Também é possível discutir a alteração do nome de casado no mesmo procedimento."
+  },
+  {
+    "question": "O que acontece com os filhos no divórcio?",
+    "answer": "Guarda, convivência e pensão alimentícia dos filhos são definidas por acordo homologado ou decisão judicial, com foco no melhor interesse da criança ou do adolescente. Essas questões podem ser tratadas junto com o divórcio."
+  },
+  {
+    "question": "Como é o atendimento para moradores de Nova Lima?",
+    "answer": "O atendimento a moradores de Nova Lima pode ser feito online ou presencialmente na sede de Belo Horizonte, na Av. Raja Gabáglia, 2000, sala 614, bairro Alpes. O escritório não possui unidade física em Nova Lima."
+  }
+];
+
+const RELATED_LINKS = [
+  {
+    "title": "Direito de Família em Nova Lima",
+    "path": "/advogado-familia-nova-lima"
+  },
+  {
+    "title": "Guarda em Nova Lima",
+    "path": "/advogado-guarda-nova-lima"
+  },
+  {
+    "title": "Pensão Alimentícia em Nova Lima",
+    "path": "/advogado-pensao-alimenticia-nova-lima"
+  },
+  {
+    "title": "União Estável em Nova Lima",
+    "path": "/advogado-reconhecimento-dissolucao-uniao-estavel-nova-lima"
+  },
+  {
+    "title": "Divórcio Extrajudicial em Nova Lima",
+    "path": "/advogado-divorcio-extrajudicial-nova-lima"
+  },
+  {
+    "title": "Divórcio e união estável",
+    "path": "/artigos/divorcio-e-uniao-estavel-especialidade-do-escritorio-braga-bittencourt"
+  },
+  {
+    "title": "Divórcio extrajudicial",
+    "path": "/artigos/o-divorcio-extrajudicial-no-brasil-agilidade-e-seguranca-na-dissolucao-do-vincul"
+  }
+];
 
 export const Route = createFileRoute("/advogado-divorcio-nova-lima")({
   head: () =>
@@ -58,6 +119,7 @@ export const Route = createFileRoute("/advogado-divorcio-nova-lima")({
       city: "Nova Lima",
       service: "Divórcio",
       image: OG_IMAGE,
+      schemaName: "Divórcio",
       areaServed: "Nova Lima, MG",
       breadcrumbName: "Advogado de Divórcio em Nova Lima",
       address: {
@@ -87,7 +149,7 @@ function LandingPageContent() {
     <div className="bg-[#08152C]">
       <LpHeader />
       <LpHero />
-      <TeamGrid />
+      <TeamGrid heading="Equipe especializada em Divórcio e Direito de Família" semanticMemberNames={false} />
       <LpSituations />
       <ActionMoment />
       <LpOfficeGallery />
@@ -95,6 +157,7 @@ function LandingPageContent() {
       <LpServices />
       <LpDifferentials />
       <LpPresence />
+      <LocalSeoAdditions faqTitle="Dúvidas frequentes sobre Divórcio em Nova Lima" faq={FAQ} />
       <ContactForm />
       <LpFooter />
     </div>
@@ -164,7 +227,7 @@ function LpHero() {
             </h1>
 
             <h2 className="text-gold-light font-montserrat font-semibold text-lg md:text-2xl leading-snug mb-8 max-w-[600px]">
-              Conte com quem tem mais de 20 anos resolvendo casos como o seu.
+              Divórcio em Nova Lima com mais de 20 anos de experiência
             </h2>
 
             <p className="text-white text-sm md:text-base font-montserrat leading-relaxed mb-10 max-w-[600px]">
@@ -209,9 +272,9 @@ function LpHero() {
                     key={s.title}
                     className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col items-start min-h-[220px] transition-all duration-500 hover:bg-white/10 hover:scale-[1.02]"
                   >
-                    <h3 className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
+                    <p className="text-white text-[26px] md:text-[30px] font-bold font-montserrat mb-3 leading-tight">
                       {s.title}
-                    </h3>
+                    </p>
                     <div className="mb-4">
                       {s.subtitle.map((line) => (
                         <p key={line} className="text-gold-light text-[10px] font-bold tracking-widest uppercase">
@@ -275,7 +338,7 @@ function LpSituations() {
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-navy text-3xl md:text-4xl font-cinzel uppercase leading-tight mb-6">
-            Você está passando por uma dessas situações em seu divórcio?
+            Situações que envolvem divórcio em Nova Lima
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mb-6" />
           <p className="text-navy/70 font-montserrat text-sm md:text-base leading-relaxed">
@@ -299,9 +362,9 @@ function LpSituations() {
               <div className="w-14 h-14 rounded-full bg-gold-gradient text-[#283650] flex items-center justify-center mb-6 shrink-0">
                 {item.icon}
               </div>
-              <h3 className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
+              <p className="text-navy font-montserrat font-bold text-base leading-snug mb-3 group-hover:text-[#cd9575] transition-colors">
                 {item.title}
-              </h3>
+              </p>
               <p className="text-navy/60 font-montserrat text-sm leading-relaxed">{item.text}</p>
             </a>
           ))}
@@ -401,7 +464,7 @@ function LpServices() {
             Áreas de atuação
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider">
-            O que fazemos por você em Nova Lima
+            Como podemos ajudar em casos de divórcio em Nova Lima
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto mt-6" />
         </div>
@@ -416,7 +479,7 @@ function LpServices() {
               className="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/10 hover:-translate-y-2 transition-all duration-500"
             >
               <div className="text-gold-light mb-6">{s.icon}</div>
-              <h3 className="text-white font-cinzel text-xl mb-6">{s.title}</h3>
+              <p className="text-white font-cinzel text-xl mb-6">{s.title}</p>
               <ul className="space-y-3">
                 {s.items.map((i) => (
                   <li key={i} className="text-white/60 font-montserrat text-sm leading-relaxed flex gap-3">
@@ -432,7 +495,8 @@ function LpServices() {
         <div className="flex justify-center">
           <WhatsAppCta className="w-full sm:w-auto" />
         </div>
-        <LandingSupportSections path={PATH} />
+        <RelatedContentNavigation links={RELATED_LINKS.filter((item) => !item.path.startsWith("/artigos"))} articles={RELATED_LINKS.filter((item) => item.path.startsWith("/artigos"))} headingTag="h2" />
+        <InstitutionalLandingSupport path={PATH} documentTitles={DOCUMENT_TITLES} />
       </div>
     </section>
   );
@@ -481,7 +545,7 @@ function LpDifferentials() {
             Diferenciais
           </span>
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider mb-6">
-            Por que o Braga Bitencourt é diferente
+            Por que escolher o Braga Bitencourt para casos de divórcio
           </h2>
           <p className="text-white/60 font-montserrat text-sm md:text-base leading-relaxed">
             Uma atuação pensada para casos familiares sensíveis: técnica, discrição, presença e clareza para que você.
@@ -503,7 +567,7 @@ function LpDifferentials() {
               }`}
             >
               <div className="mb-6 text-navy">{item.icon}</div>
-              <h3 className="font-cinzel text-lg mb-4 leading-snug">{item.title}</h3>
+              <p className="font-cinzel text-lg mb-4 leading-snug">{item.title}</p>
               <p className="font-montserrat text-sm leading-relaxed text-navy/70">{item.text}</p>
             </div>
           ))}
@@ -526,7 +590,7 @@ function LpPresence() {
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-white text-3xl md:text-4xl font-cinzel uppercase tracking-wider leading-tight">
-            Presença física e atendimento jurídico especializado de alto padrão
+            Atendimento jurídico para divórcio em Nova Lima
           </h2>
           <div className="w-24 h-0.5 bg-gold-gradient mx-auto my-6" />
           <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed">
