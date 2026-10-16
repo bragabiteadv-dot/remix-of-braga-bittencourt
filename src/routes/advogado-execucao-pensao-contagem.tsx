@@ -61,14 +61,6 @@ export const Route = createFileRoute("/advogado-execucao-pensao-contagem")({
       image: OG_IMAGE,
       areaServed: "Contagem, MG",
       breadcrumbName: "Advogado de Execução de Pensão em Contagem",
-      address: {
-          "@type": "PostalAddress",
-          streetAddress: "Av. Amazonas, 1446, 7º andar, salas 706/707 - Brasiléia",
-          addressLocality: "Betim",
-          addressRegion: "MG",
-          postalCode: "32600-324",
-          addressCountry: "BR",
-        },
     }),
 
   component: LandingPage,

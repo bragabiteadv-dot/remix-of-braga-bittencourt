@@ -60,14 +60,6 @@ export const Route = createFileRoute("/advogado-contrato-namoro-nova-lima")({
       image: OG_IMAGE,
       areaServed: "Nova Lima, MG",
       breadcrumbName: "Advogado de Contrato de Namoro em Nova Lima",
-      address: {
-          "@type": "PostalAddress",
-          streetAddress: "Av. Raja Gabáglia, 2000 - sala 614 - Alpes",
-          addressLocality: "Belo Horizonte",
-          addressRegion: "MG",
-          postalCode: "30494-170",
-          addressCountry: "BR",
-        },
     }),
 
   component: LandingPage,

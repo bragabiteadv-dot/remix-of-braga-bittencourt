@@ -121,14 +121,6 @@ export const Route = createFileRoute("/advogado-familia-nova-lima")({
       schemaName: "Direito de Família",
       areaServed: "Nova Lima, MG",
       breadcrumbName: "Advogado de Família em Nova Lima",
-      address: {
-          "@type": "PostalAddress",
-          streetAddress: "Av. Raja Gabáglia, 2000 - sala 614 - Alpes",
-          addressLocality: "Belo Horizonte",
-          addressRegion: "MG",
-          postalCode: "30494-170",
-          addressCountry: "BR",
-        },
     }),
 
   component: LandingPage,
