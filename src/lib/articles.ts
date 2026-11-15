@@ -12,7 +12,7 @@ import artigoImg9 from "@/assets/artigos/dissolucao-uniao-estavel-braga-bitencou
 import artigoImg8 from "@/assets/artigos/divorcio-extrajudicial-braga-bitencourt.jpg";
 import artigoImg25 from "@/assets/artigos/personalizacao-regime-bens-braga-bitencourt.jpg";
 import artigoImg33 from "@/assets/artigos/33.jpg";
-import artigoImg28 from "@/assets/artigos/pacto-antenupcial-braga-bitencourt.jpg";
+import artigoImg28 from "@/assets/artigos/pacto-antinupcial-braga-bitencourt.jpg";
 import artigoImg16 from "@/assets/artigos/investigacao-paternidade-braga-bitencourt.jpg";
 import artigoImg14 from "@/assets/artigos/aquisicao-imoveis-residentes-exterior-braga-bitencourt.jpg";
 import artigoImg12 from "@/assets/artigos/testamento-braga-bitencourt.jpg";
@@ -20,13 +20,13 @@ import artigoImg13 from "@/assets/artigos/apostila-haia-apostilamento-documentos
 import artigoImg10 from "@/assets/artigos/inventario-extrajudicial-braga-bitencourt.jpg";
 import artigoImg11 from "@/assets/artigos/mudanca-regime-bens-casamento-braga-bitencourt.jpg";
 import artigoImg17 from "@/assets/artigos/17.jpg";
-import artigoImg31 from "@/assets/artigos/31.jpg";
-import artigoImg30 from "@/assets/artigos/30.jpg";
+import artigoImg31 from "@/assets/artigos/execucao-pensao-braga-bitencourt.jpg";
+import artigoImg30 from "@/assets/artigos/divorcio-judicial-braga-bitencourt.jpg";
 import artigoImg4 from "@/assets/artigos/partilha-divisao-bens-braga-bitencourt.jpg";
 import artigoImg23 from "@/assets/artigos/inventario-judicial-braga-bitencourt.jpg";
 import artigoImg19 from "@/assets/artigos/19.jpg";
 import artigoImg15 from "@/assets/artigos/transcricao-casamento-estrangeiro-braga-bitencourt.jpg";
-import artigoImg32 from "@/assets/artigos/32.jpg";
+import artigoImg32 from "@/assets/artigos/exoneracao-pensao-braga-bitencourt.jpg";
 import artigoImg22 from "@/assets/artigos/tipos-regime-bens-casamento-braga-bitencourt.jpg";
 import artigoImg5 from "@/assets/artigos/alienacao-parental-braga-bitencourt.jpg";
 import artigoImg29 from "@/assets/artigos/duas-consequencias-nao-paga-pensao-braga-bitencourt-atualizada.jpg";
@@ -380,7 +380,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg28,
-    imageAlt: "Pacto Antinupcial Braga Bitencourt Advogados.",
+    imageAlt: "Execução de Pacto Antinupcial Braga Bitencourt Advogados",
     excerpt: "Muitos casais acreditam que o planejamento de um casamento se resume aos preparativos da festa e da cerimônia. No entanto, a base mais sólida e consciente de uma união reside na clareza das decisões p...",
     body: ["Muitos casais acreditam que o planejamento de um casamento se resume aos preparativos da festa e da cerimônia. No entanto, a base mais sólida e consciente de uma união reside na clareza das decisões patrimoniais tomadas antes do \"sim\".", "Nesse contexto o Pacto Antenupcial é o instrumento jurídico essencial que permite personalizar as regras que regerão a vida econômica do casal, indo muito além das opções padrão oferecidas pelo Código Civil.", "Optar por um pacto não deve ser visto como um sinal de desconfiança, mas sim como um ato de extrema maturidade e respeito mútuo . É a oportunidade real de proteger heranças, empresas familiares, imóveis e investimentos prévios, garantindo que a vontade de ambos seja preservada, independentemente do destino da relação.", "Contudo, elaborar um pacto antenupcial está longe de ser uma tarefa meramente administrativa ou um formulário de cartório. Trata-se de um documento de alta complexidade que exige uma visão estratégica de longo prazo. Um erro técnico na redação ou a falta de observância a detalhes específicos pode tornar o documento nulo no futuro, gerando inseguranças jurídicas e prejuízos irreparáveis.", "Na Braga Bitencourt Advogados , acumulamos quase 20 anos de atuação especializada em Direito de Família . Essa trajetória consolidada nos ensinou que cada configuração familiar é única e que a burocracia envolvida nesses processos exige muito mais do que conhecimento teórico; exige a vasta experiência e o costume prático de resolver as minúcias que envolvem cartórios e tribunais.", "Não coloque o seu patrimônio e a sua tranquilidade em risco com soluções genéricas ou profissionais sem o devido tempo de estrada. Um planejamento eficiente e seguro demanda o olhar clínico de quem já resolveu centenas de casos complexos ao longo de duas décadas.", "Entre em contato com a Braga Bitencourt Advogados e agende uma consulta especializada agora mesmo."],
   },
@@ -404,6 +404,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg30,
+    imageAlt: "Divórcio Judicial Braga Bitencourt Advogados",
     excerpt: "Quando o consenso não é possível ou envolve patrimônio e filhos, o divórcio deixa de ser uma formalidade e se torna uma disputa estratégica. Nestes casos é necessário que o processo seja conduzido de ...",
     body: ["Quando o consenso não é possível ou envolve patrimônio e filhos, o divórcio deixa de ser uma formalidade e se torna uma disputa estratégica. Nestes casos é necessário que o processo seja conduzido de forma técnica e precisa, com suporte emocional ao cliente e firmeza jurídica com vista ao alcance do resultado almejado.", "Por que o Divórcio Judicial exige cautela?", "Diferente dos processos simples, o divórcio litigioso é marcado por alta complexidade:", "Prazos e Ritos: O Judiciário impõe regras rígidas e audiências obrigatórias.", "Provas Decisivas: Detalhes na petição ou na produção de provas definem o valor de pensões e o regime de guarda.", "Proteção Patrimonial: Uma visão preventiva evita que direitos sejam suprimidos ou bens sejam ocultados.", "O Risco de uma Condução Sem Experiência", "Erros técnicos ou a falta de estratégia podem resultar em:", "Conflitos Prolongados: Processos que se arrastam por anos.", "Prejuízo Financeiro: Divisões de bens desfavoráveis e desgastes desnecessários.", "Impacto Familiar: Danos psicológicos irreparáveis, especialmente para os filhos.", "A Engenharia Jurídica da Braga Bitencourt Advogados. Com 18 anos de atuação especializada em Direito de Família e Sucessões, nossa atuação é pautada na antecipação de riscos. Entendemos que casos complexos não aceitam soluções genéricas. Proteja o seu Futuro Não deixe o destino da sua família e do seu patrimônio ao acaso. Conte com uma trajetória consolidada."],
   },
@@ -415,6 +416,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg31,
+    imageAlt: "Execução de Pensão Alimentícia Braga Bitencourt Advogados",
     excerpt: "Quando uma decisão judicial ou acordo de alimentos não é cumprido, a lei oferece mecanismos rigorosos para garantir a subsistência de quem precisa. A execução de pensão alimentícia é o caminho para tr...",
     body: ["Quando uma decisão judicial ou acordo de alimentos não é cumprido, a lei oferece mecanismos rigorosos para garantir a subsistência de quem precisa. A execução de pensão alimentícia é o caminho para transformar o papel em dinheiro no bolso de quem tem o direito.", "O Sucesso da Execução: Agilidade e Estratégia", "O sucesso na cobrança não depende apenas da dívida existir, mas de como o processo é conduzido. Atuamos em duas frentes principais:", "Rito de Prisão Civil: Utilizado para cobranças urgentes (últimos 3 meses). É a medida mais rápida para forçar o pagamento imediato sob risco de restrição de liberdade.", "Rito de Penhora de Bens: Focado em dívidas acumuladas. Envolve a busca ativa por contas bancárias, veículos, imóveis e investimentos do devedor.", "Por que a condução técnica é essencial?", "A cobrança de pensão alimentícia enfrenta barreiras burocráticas que podem ser superadas com a estratégia correta:", "Localização de Bens: Estratégias para evitar o ocultamento de patrimônio pelo devedor.", "Cálculos Precisos: Atualização rigorosa do débito para evitar nulidades processuais.", "Agilidade nos Tribunais: Atuação diligente junto às serventias judiciais para acelerar mandados de prisão e bloqueios de valores.", "Especialista em Execução de Alimentos em Minas Gerais", "Na Braga Bitencourt Advogados , temos 18 anos de experiência em Direito de Família. Esse tempo de estrada nos deu o conhecimento prático necessário para destravar processos de execução com a rapidez que o sustento familiar exige.", "Experiência que faz a lei ser cumprida: Aplicamos quase duas décadas de prática para garantir que as obrigações alimentares sejam honradas e a dignidade preservada.", "Agende sua Consulta Especializada", "Precisa de um advogado para execução de pensão ? Não deixe o tempo passar e a dívida acumular."],
   },
@@ -426,6 +428,7 @@ export const ARTICLES: Article[] = [
     date: "Março de 2026",
     readingTime: "3 min de leitura",
     image: artigoImg32,
+    imageAlt: "Exoneração de Pensão Alimentícia Braga Bitencourt Advogados",
     excerpt: "Um erro comum e perigoso é acreditar que o dever de pagar pensão acaba automaticamente...",
     body: ["Um erro comum e perigoso é acreditar que o dever de pagar pensão acaba automaticamente", "quando o filho faz 18 anos ou termina a faculdade. No Direito brasileiro,", "a pensão não cessa sozinha.", "O Risco da Interrupção por Conta Própria", "Parar de pagar a pensão sem uma autorização judicial pode levar a:", "Prisão Civil: O credor pode pedir sua prisão pelo débito acumulado.", "Penhora de Bens: Bloqueio de contas e bens para quitar os valores não pagos.", "Negativação: Inclusão do nome do devedor em órgãos de proteção ao crédito (SPC/Serasa/ protesto).", "A Solução: Ação de Exoneração de Alimentos", "O único caminho seguro é a", "Ação de Exoneração", ". Nela, o juiz avalia a mudança no binômio", "Necessidade x Possibilidade considerando o alcance da maioridade civil de quem recebe os", "alimentos até então", "Independência Financeira: Provar que o filho já possui meios próprios de sustento.", "Conclusão de Estudos: Demonstrar que o ciclo de formação profissional foi encerrado ou o tempo já foi bastante para isto.", "Constituição de Família: Casamento ou união estável de quem recebe a pensão (filho ou ex-cônjuge).", "Estratégia e Prova: O Diferencial Técnico", "O Judiciário é cauteloso ao retirar o sustento de alguém. Por isso, a Braga Bitencourt Advogados utiliza uma estratégia refinada para:", "Investigação Patrimonial: Coleta de evidências sobre a real situação financeira do alimentado.", "Fundamentação Robusta: Evitar que o pedido seja indeferido por falta de provas contundentes.", "Segurança Definitiva: Garantir que a obrigação seja encerrada sem deixar brechas para cobranças futuras.", "18 Anos de Expertise em Direito de Família", "Com quase duas décadas de atuação em Betim e Belo Horizonte , a Braga Bitencourt Advogados domina os ritos necessários para garantir que sua transição financeira ocorra com paz e legalidade.", "Regularize sua Situação Agora Precisa entrar com uma ação para parar de pagar pensão ? Evite surpresas desagradáveis com a justiça."],
   },

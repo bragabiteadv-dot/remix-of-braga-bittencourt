@@ -80,3 +80,6 @@
 
 ## Decisões pendentes / não aplicadas
 - [ ] Manter server routes dinâmicas existentes para `/robots.txt` e `/sitemap.xml` (não criar arquivos estáticos em `public/`).
+- [x] Trocar foto do artigo Execução de Pensão (alt exato)
+- [x] Trocar foto do artigo Pacto Antinupcial (alt exato)
+- [x] Trocar foto do artigo Divórcio Judicial (alt exato)
