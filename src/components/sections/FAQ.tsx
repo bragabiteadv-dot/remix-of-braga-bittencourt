@@ -3,7 +3,8 @@ import { Plus, Phone } from 'lucide-react';
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import escritorioImg from "@/assets/sede-betim-2.webp";
 
-const faqData = [
+/** Exportado também para o JSON-LD FAQPage da página /duvidas (mesmo conteúdo visível). */
+export const faqData = [
   {
     category: "Direito de Família",
     items: [

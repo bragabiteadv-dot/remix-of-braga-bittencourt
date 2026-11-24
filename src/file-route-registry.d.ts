@@ -2972,6 +2972,8 @@ declare module "@tanstack/react-router" {
     "/artigos/$slug": { id: "/artigos/$slug"; path: "/artigos/$slug"; fullPath: "/artigos/$slug"; preLoaderRoute: AnyRoute; parentRoute: typeof RootRoute }
     "/duvidas": { id: "/duvidas"; path: "/duvidas"; fullPath: "/duvidas"; preLoaderRoute: AnyRoute; parentRoute: typeof RootRoute }
     "/fale-conosco": { id: "/fale-conosco"; path: "/fale-conosco"; fullPath: "/fale-conosco"; preLoaderRoute: AnyRoute; parentRoute: typeof RootRoute }
+    "/llms-full.txt": { id: "/llms-full.txt"; path: "/llms-full.txt"; fullPath: "/llms-full.txt"; preLoaderRoute: AnyRoute; parentRoute: typeof RootRoute }
+    "/llms.txt": { id: "/llms.txt"; path: "/llms.txt"; fullPath: "/llms.txt"; preLoaderRoute: AnyRoute; parentRoute: typeof RootRoute }
     "/perfil": { id: "/perfil"; path: "/perfil"; fullPath: "/perfil"; preLoaderRoute: AnyRoute; parentRoute: typeof RootRoute }
     "/robots.txt": { id: "/robots.txt"; path: "/robots.txt"; fullPath: "/robots.txt"; preLoaderRoute: AnyRoute; parentRoute: typeof RootRoute }
     "/servicos-internacionais": { id: "/servicos-internacionais"; path: "/servicos-internacionais"; fullPath: "/servicos-internacionais"; preLoaderRoute: AnyRoute; parentRoute: typeof RootRoute }

@@ -1,11 +1,21 @@
 import catalogue from "@/data/resident-catalogue.json";
 import serviceData from "@/data/resident-services.json";
+import missingRoutes from "@/data/resident-missing-routes.json";
 import { INTERNATIONAL_LOCATIONS, type InternationalLandingPage, type InternationalService } from "@/lib/international-landings";
 
 export const RESIDENT_CATALOGUE = catalogue;
 export const RESIDENT_SERVICES: readonly InternationalService[] = serviceData;
 const services = new Map(serviceData.map((service) => [service.id, service]));
 const entries = new Map(catalogue.map((entry) => [entry.path, entry]));
+
+// Combinações do catálogo sem página publicada (gerado por scripts/file-route-registry.ts).
+// Nunca devem receber link: levariam o visitante e o Google a um erro 404.
+const MISSING_ROUTES: ReadonlySet<string> = new Set(missingRoutes);
+
+/** A página de residentes existe de fato (tem arquivo de rota publicado)? */
+export function hasResidentRoute(path: string): boolean {
+  return !MISSING_ROUTES.has(path);
+}
 
 // Country association is independent of document origin and of the client's nationality.
 const countryByCity: Readonly<Record<number, string>> = {
@@ -81,9 +91,9 @@ export function getResidentLanding(path: string): InternationalLandingPage {
   const group = entry.serviceId.includes("pensao") ? "alimentos" : /inventario|sucess|partilha-bens-inventario/.test(entry.serviceId) ? "sucessoes" : /menor|guarda|criancas/.test(entry.serviceId) ? "menores" : /contratos|negocios|direito-internacional/.test(entry.serviceId) ? "negocios" : "familia";
   const related = (relatedGroups[group] ?? []).filter((id) => id !== entry.serviceId).map((id) => {
     const sibling = catalogue.find((row) => row.serviceId === id && row.locationId === entry.locationId && row.target === row.path);
-    return sibling ? { path: sibling.path, title: services.get(id)?.shortTitle ?? sibling.title } : undefined;
+    return sibling && hasResidentRoute(sibling.path) ? { path: sibling.path, title: services.get(id)?.shortTitle ?? sibling.title } : undefined;
   }).filter((item): item is { path: string; title: string } => item !== undefined);
-  if (entry.locationId !== null) related.push({ path: `/advogado-${entry.serviceId}-no-brasil`, title: `${service.shortTitle} — atendimento geral no Brasil` });
+  if (entry.locationId !== null && hasResidentRoute(`/advogado-${entry.serviceId}-no-brasil`)) related.push({ path: `/advogado-${entry.serviceId}-no-brasil`, title: `${service.shortTitle} — atendimento geral no Brasil` });
   return {
     path, slug: path.slice("/advogado-".length), title: entry.title, seoTitle: entry.seoTitle, service, location,
     description: `${service.shortTitle} no Brasil${entry.locationId === null ? "" : ` para residentes em ${location.name}`}. Análise individual, orientação jurídica e atendimento online Braga Bitencourt.`,

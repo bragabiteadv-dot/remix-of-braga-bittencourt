@@ -27,12 +27,14 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { PageAltProvider } from "@/lib/page-alt";
+import { localLandingImageSeo } from "@/lib/image-seo";
+import { faqPageSchema } from "@/lib/faq-schema";
 import { buildSeoHead } from "@/components/SeoHead";
 import { OG_IMAGE } from "@/lib/site-og";
 import logoTree from "@/assets/history-tree.webp";
 import curatelaBhHeaderLogo from "@/assets/logo-header-optimized.webp";
 
-import officeBetim from "@/assets/office-betim-new.jpg";
+import officeBetim from "@/assets/office-betim-new.webp";
 import officeBH from "@/assets/foto-escritorio-de-bh-25_11zon.webp";
 import sedeBetim1 from "@/assets/sede-betim-1.webp";
 import sedeBetim2 from "@/assets/sede-betim-2.webp";
@@ -47,6 +49,8 @@ const CITY = "Betim";
 const OFFICE_ALT = `Escritório de ${SERVICE}`;
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
+/** Alt, título e descrição de cada imagem (doc 4 de otimização de imagens). */
+const IMG = localLandingImageSeo({ path: PATH, service: SERVICE, city: CITY });
 const DESCRIPTION =
   "Advogado de Divórcio Extrajudicial em Betim para divórcio em cartório, partilha de bens e alteração de nome, com orientação em todas as etapas.";
 
@@ -76,6 +80,8 @@ export const Route = createFileRoute("/advogado-divorcio-extrajudicial-betim")({
       title: TITLE,
       description: DESCRIPTION,
       canonicalUrl: PATH,
+      images: IMG,
+      extraSchema: [faqPageSchema(FAQ, PATH)],
       city: "Betim",
       service: "Divórcio Extrajudicial",
       schemaName: "Divórcio Extrajudicial",
@@ -98,7 +104,7 @@ export const Route = createFileRoute("/advogado-divorcio-extrajudicial-betim")({
 
 function LandingPage() {
   return (
-    <PageAltProvider alt={PAGE_ALT} service={SERVICE} city={CITY}>
+    <PageAltProvider alt={PAGE_ALT} service={SERVICE} city={CITY} images={IMG}>
       <LandingPageContent />
     </PageAltProvider>
   );
@@ -132,7 +138,7 @@ function LpHeader() {
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={curatelaBhHeaderLogo}
-          alt={LOGO_ALT}
+          alt={IMG.alt("logo")}
           width={720}
           height={240}
           className="h-12 w-auto shrink-0"
@@ -204,7 +210,7 @@ function LpHero() {
             <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <img
                 src={officeBetim}
-                alt={OFFICE_ALT}
+                alt={IMG.alt("hero")}
                 className="w-full h-[320px] object-cover"
                 loading="lazy"
               />
@@ -362,7 +368,7 @@ function LpOfficeGallery() {
             >
               <img
                 src={src}
-                alt={PAGE_ALT}
+                alt={IMG.galleryAlt(idx)}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -582,7 +588,7 @@ function LpPresence() {
             <div className="h-56 overflow-hidden shrink-0">
               <img
                 src={officeBetim}
-                alt={OFFICE_ALT}
+                alt={IMG.alt("sede-betim")}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -715,7 +721,7 @@ function LpFooter() {
           <Link to="/" className="shrink-0">
             <img
               src={logoTree}
-              alt={PAGE_ALT}
+              alt={IMG.alt("footer")}
               className="h-16 w-auto object-contain"
               loading="lazy"
               decoding="async"

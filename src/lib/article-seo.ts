@@ -1,7 +1,21 @@
 import type { Article } from "./articles";
 import { ARTICLES } from "./articles";
 import { siteAssetUrl, siteUrl } from "./site";
-import { ORG_REF } from "./org-schema";
+import { FOUNDER_ID, ORG_REF } from "./org-schema";
+
+/**
+ * Autor responsável pelos artigos: o advogado fundador (entidade Person
+ * publicada em todas as páginas). Reforça E-E-A-T para Google e IAs.
+ */
+const ARTICLE_AUTHOR = {
+  "@type": "Person",
+  "@id": FOUNDER_ID,
+  name: "Carlos Javét Braga Bitencourt",
+  honorificPrefix: "Dr.",
+  jobTitle: "Advogado fundador — OAB/MG 107.192",
+  url: siteUrl("/perfil"),
+  worksFor: ORG_REF,
+} as const;
 
 /**
  * SEO TÉCNICO DOS ARTIGOS
@@ -100,7 +114,7 @@ export function articleSchemas(article: Article) {
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     articleSection: article.category,
     inLanguage: "pt-BR",
-    author: ORG_REF,
+    author: ARTICLE_AUTHOR,
     publisher: ORG_REF,
   };
 

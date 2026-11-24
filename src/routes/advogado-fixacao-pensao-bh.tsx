@@ -26,6 +26,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon, WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { PageAltProvider } from "@/lib/page-alt";
+import { localLandingImageSeo } from "@/lib/image-seo";
 import { buildSeoHead } from "@/components/SeoHead";
 import { OG_IMAGE } from "@/lib/site-og";
 import logoTree from "@/assets/history-tree.webp";
@@ -45,6 +46,8 @@ const CITY = "Belo Horizonte";
 const PAGE_ALT = TITLE.split("|")[0].trim();
 const OFFICE_ALT = PAGE_ALT;
 const LOGO_ALT = `Braga Bitencourt ${PAGE_ALT}`;
+/** Alt, título e descrição de cada imagem (doc 4 de otimização de imagens). */
+const IMG = localLandingImageSeo({ path: PATH, service: SERVICE, city: CITY });
 const DESCRIPTION =
   "Advogado de Fixação de Pensão em Belo Horizonte com mais de 20 anos de experiência. Fixação de pensão alimentícia, pensão provisória, guarda e direitos do filho com sigilo e segurança.";
 
@@ -55,6 +58,7 @@ export const Route = createFileRoute("/advogado-fixacao-pensao-bh")({
       title: TITLE,
       description: DESCRIPTION,
       canonicalUrl: PATH,
+      images: IMG,
       city: "Belo Horizonte",
       service: "Fixação de Pensão",
       image: OG_IMAGE,
@@ -76,7 +80,7 @@ export const Route = createFileRoute("/advogado-fixacao-pensao-bh")({
 
 function LandingPage() {
   return (
-    <PageAltProvider alt={PAGE_ALT} service={SERVICE} city={CITY}>
+    <PageAltProvider alt={PAGE_ALT} service={SERVICE} city={CITY} images={IMG}>
       <LandingPageContent />
     </PageAltProvider>
   );
@@ -109,7 +113,7 @@ function LpHeader() {
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={curatelaBhHeaderLogo}
-          alt={LOGO_ALT}
+          alt={IMG.alt("logo")}
           width={720}
           height={240}
           className="h-12 w-auto shrink-0"
@@ -180,7 +184,7 @@ function LpHero() {
             <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <img
                 src={officeBH}
-                alt={OFFICE_ALT}
+                alt={IMG.alt("hero")}
                 className="w-full h-[320px] object-cover"
                 loading="lazy"
               />
@@ -338,7 +342,7 @@ function LpOfficeGallery() {
             >
               <img
                 src={src}
-                alt={PAGE_ALT}
+                alt={IMG.galleryAlt(idx)}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -557,7 +561,7 @@ function LpPresence() {
             <div className="h-56 overflow-hidden shrink-0">
               <img
                 src={officeBH}
-                alt={OFFICE_ALT}
+                alt={IMG.alt("sede-bh")}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -689,7 +693,7 @@ function LpFooter() {
           <Link to="/" className="shrink-0">
             <img
               src={logoTree}
-              alt={PAGE_ALT}
+              alt={IMG.alt("footer")}
               className="h-16 w-auto object-contain"
               loading="lazy"
               decoding="async"

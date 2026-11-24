@@ -1,7 +1,7 @@
 import logoTree from "@/assets/history-tree.webp";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
-export function HistorySection() {
+export function HistorySection({ imageAlt = "A história da Braga Bitencourt Advogados" }: { imageAlt?: string } = {}) {
   return (
     <section className="py-20 bg-[#08152C] text-white overflow-hidden">
       <div className="container mx-auto">
@@ -10,8 +10,8 @@ export function HistorySection() {
           <div className="w-full md:w-1/3 flex justify-center md:justify-end">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               <img 
-                src={logoTree} 
-                alt="A história da Braga Bitencourt Advogados" 
+                src={logoTree}
+                alt={imageAlt}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-contain brightness-110 contrast-125"

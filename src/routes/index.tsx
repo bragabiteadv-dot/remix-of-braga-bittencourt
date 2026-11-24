@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { buildSeo } from "@/lib/seo";
 import { OG_IMAGE } from "@/lib/site-og";
+import { institutionalTeamImageSeo, pageImagesSchema } from "@/lib/image-seo";
 import { Hero } from "../components/sections/Hero";
 import { FeatureGrid } from "../components/sections/FeatureGrid";
 import { TeamGrid } from "../components/sections/TeamGrid";
@@ -29,6 +30,8 @@ export const Route = createFileRoute("/")({
         "Escritório de advocacia em Betim e Belo Horizonte especializado em Direito de Família, Sucessões e Direito Internacional. Fale com nossa equipe.",
       image: OG_IMAGE,
       type: "website",
+      // Alt, título e descrição dos retratos da equipe (doc 6) em JSON-LD.
+      schema: pageImagesSchema(institutionalTeamImageSeo("/")),
     }),
 });
 

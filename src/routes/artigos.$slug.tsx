@@ -8,6 +8,7 @@ import { GlobalReach } from "@/components/sections/GlobalReach";
 import { WhatsAppCta, whatsappArticleLink } from "@/components/ui/whatsapp-cta";
 import { buildSeo } from "@/lib/seo";
 import { articleSchemas, articleSeoDescription, articleSeoTitle } from "@/lib/article-seo";
+import { articleImageSeo, pageImagesSchema } from "@/lib/image-seo";
 import { OG_IMAGE } from "@/lib/site-og";
 import { Button } from "@/components/ui/button";
 
@@ -39,7 +40,10 @@ export const Route = createFileRoute("/artigos/$slug")({
       description: articleSeoDescription(a),
       type: "article",
       image: a.image || OG_IMAGE,
-      schema: articleSchemas(a),
+      schema: [
+        ...articleSchemas(a),
+        pageImagesSchema(articleImageSeo(a), { name: articleSeoTitle(a), description: articleSeoDescription(a) }),
+      ],
     });
   },
 
@@ -138,6 +142,7 @@ function sectionId(title: string, index: number) {
 
 function ArticlePage() {
   const { article } = Route.useLoaderData() as { article: Article };
+  const images = useMemo(() => articleImageSeo(article), [article]);
   const [copied, setCopied] = useState(false);
   const [topicQuery, setTopicQuery] = useState("");
   const [topicsExpanded, setTopicsExpanded] = useState(false);
@@ -191,7 +196,7 @@ function ArticlePage() {
             <header className="lg:col-start-2">
               <div className="relative rounded-2xl overflow-hidden aspect-square mb-8 shadow-[0_20px_50px_-25px_rgba(40,54,80,0.35)]">
                 {article.image ? (
-                  <img src={article.image} alt={article.imageAlt ?? article.title} width={900} height={900} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
+                  <img src={article.image} alt={images.alt("cover") || article.imageAlt || article.title} width={900} height={900} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-[#f5eee0] via-[#faf6ed] to-[#e8dcc4] flex flex-col items-center justify-center gap-3">
                     <div className="w-20 h-20 rounded-full bg-white/60 backdrop-blur flex items-center justify-center">
@@ -366,7 +371,7 @@ function ArticlePage() {
         </div>
       </div>
 
-      <HistorySection />
+      <HistorySection imageAlt={images.alt("history")} />
       <Testimonials />
       <GlobalReach />
     </>

@@ -1,4 +1,5 @@
 import { SITE_NAME, normalizeSitePath, siteAssetUrl, siteUrl } from "./site";
+import { fitDescription, fitTitle } from "./seo-text";
 
 /**
  * ESTRUTURA CENTRALIZADA E REUTILIZÁVEL DE SEO
@@ -40,6 +41,16 @@ export interface SeoHead {
   scripts?: Array<Record<string, string>>;
 }
 
+/**
+ * Diretiva padrão das páginas indexáveis. `max-image-preview:large` autoriza o
+ * Google a exibir as fotos em tamanho grande (Imagens/Discover), evitando
+ * miniaturas pequenas e borradas; snippets e vídeos sem limite de tamanho.
+ */
+export const ROBOTS_INDEX = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+
+/** Página mantida no ar para visitantes, mas fora do índice (links continuam sendo seguidos). */
+export const ROBOTS_NOINDEX_FOLLOW = "noindex, follow";
+
 export function buildSeo(input: SeoInput): SeoHead {
   const { path, title, description, type = "website", image, robots, noindex, schema } = input;
 
@@ -47,9 +58,14 @@ export function buildSeo(input: SeoInput): SeoHead {
   // UTMs, outros parâmetros de busca e hashes nunca entram nos sinais de SEO.
   const url = siteUrl(normalizeSitePath(path));
 
+  // <title> e meta description no tamanho que o Google exibe sem cortar;
+  // og:/twitter: mantêm a versão completa (redes sociais e assistentes de IA).
+  const searchTitle = fitTitle(title, normalizeSitePath(path));
+  const searchDescription = description ? fitDescription(description) : undefined;
+
   const meta: Array<Record<string, string>> = [
-    { title },
-    { name: "robots", content: noindex ? "noindex, nofollow" : (robots ?? "index, follow") },
+    { title: searchTitle },
+    { name: "robots", content: noindex ? "noindex, nofollow" : (robots ?? ROBOTS_INDEX) },
     { property: "og:title", content: title },
     { property: "og:type", content: type },
     { property: "og:url", content: url },
@@ -59,9 +75,9 @@ export function buildSeo(input: SeoInput): SeoHead {
     { name: "twitter:title", content: title },
   ];
 
-  if (description) {
+  if (description && searchDescription) {
     meta.push(
-      { name: "description", content: description },
+      { name: "description", content: searchDescription },
       { property: "og:description", content: description },
       { name: "twitter:description", content: description },
     );

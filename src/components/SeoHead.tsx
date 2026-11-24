@@ -1,6 +1,7 @@
 import { SITE_NAME, siteUrl } from "@/lib/site";
 import { buildSeo, type SeoHead, type SeoInput } from "@/lib/seo";
 import { ORG_ID, ORG_REF } from "@/lib/org-schema";
+import { pageImagesSchema, type PageImageSeo } from "@/lib/image-seo";
 
 /**
  * SEO LOCAL — COMPONENTE GLOBAL DE SEO PARA BUSCAS LOCAIS
@@ -46,6 +47,10 @@ export interface SeoHeadProps {
   ogImage?: string;
   /** Forçar noindex. Padrão: false. */
   noindex?: boolean;
+  /** Diretiva robots explícita (ex.: política de indexação "noindex, follow"). */
+  robots?: string;
+  /** Alt, título e descrição das imagens da página → JSON-LD WebPage/ImageObject. */
+  images?: PageImageSeo;
   /** Endereço físico do escritório que atende a cidade (Local SEO). */
   address?: Record<string, unknown>;
   /** Texto de areaServed (ex.: "Betim, MG"). Padrão: `${city}, MG`. */
@@ -141,7 +146,9 @@ export function buildSeoHead(props: SeoHeadProps): SeoHead {
       ]
     : [];
 
-  const schema = [legalService, ...breadcrumb, ...(props.extraSchema ?? [])];
+  const imagesSchema = props.images ? [pageImagesSchema(props.images, { name: title, description })] : [];
+
+  const schema = [legalService, ...breadcrumb, ...imagesSchema, ...(props.extraSchema ?? [])];
 
   return buildSeo({
     path: props.canonicalUrl,
@@ -150,6 +157,7 @@ export function buildSeoHead(props: SeoHeadProps): SeoHead {
     type: "website",
     image: props.ogImage ?? props.image ?? "/default-og.jpg",
     noindex: props.noindex,
+    robots: props.robots,
     schema,
   });
 }

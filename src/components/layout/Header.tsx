@@ -4,6 +4,7 @@ import { Phone, MapPin, MessageSquare, Facebook, Instagram, Mail, Menu, X } from
 import { WhatsAppCta, useWhatsAppLink, GOOGLE_URL, GoogleIcon } from "@/components/ui/whatsapp-cta";
 import headerLogo from "@/assets/logo-header-optimized.webp";
 import { cn } from "@/lib/utils";
+import { useCurrentArticleImageSeo } from "@/lib/route-image-seo";
 
 
 const navLinks = [
@@ -19,6 +20,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const waLink = useWhatsAppLink();
+  const articleImages = useCurrentArticleImageSeo();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,8 +80,8 @@ export function Header() {
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src={headerLogo} 
-              alt="Braga Bitencourt Advogados especializados em Direito de Família, Sucessões e Internacional Privado." 
+              src={headerLogo}
+              alt={articleImages?.alt("logo") || "Braga Bitencourt Advogados especializados em Direito de Família, Sucessões e Internacional Privado."}
               width={720}
               height={240}
               className="h-10 md:h-12 w-auto object-contain"

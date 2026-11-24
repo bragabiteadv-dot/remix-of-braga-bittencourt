@@ -1,8 +1,14 @@
 import { usePageAltFor } from "@/lib/page-alt";
+import { INSTITUTIONAL_TEAM_ALTS } from "@/lib/image-seo";
 import equipeBg from "@/assets/cidade-equipe-7-nova.jpg";
 import carlosGabriel from "@/assets/team-carlos-gabriel-800.webp";
 import carlosJavet from "@/assets/team-carlos-javet-800.webp";
 import glaucia from "@/assets/team-glaucia-800.webp";
+// Versões em alta resolução: oferecidas via srcSet para telas de alta densidade
+// e para o Google Imagens (que indexa o maior candidato), sem mudar o layout.
+import carlosGabrielHd from "@/assets/team-carlos-gabriel.webp";
+import carlosJavetHd from "@/assets/team-carlos-javet.webp";
+import glauciaHd from "@/assets/team-glaucia.webp";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 
 export function TeamGrid({
@@ -12,23 +18,15 @@ export function TeamGrid({
   heading?: string;
   semanticMemberNames?: boolean;
 } = {}) {
-  const javetAlt = usePageAltFor(
-    "team-javet",
-    "Carlos Javét Braga Bitencourt Braga Bitencourt Advogados, Família, Sucessões e Internacional Privado",
-  );
-  const gabrielAlt = usePageAltFor(
-    "team-gabriel",
-    "Carlos Gabriel F. Braga Bitencourt Braga Bitencourt Advogados, Família, Sucessões e Internacional Privado",
-  );
-  const glauciaAlt = usePageAltFor(
-    "team-glaucia",
-    "Gláucia Patrícia F. Braga Bitencourt Braga Bitencourt Advogados, Família, Sucessões e Internacional Privado",
-  );
+  const javetAlt = usePageAltFor("team-javet", INSTITUTIONAL_TEAM_ALTS.javet);
+  const gabrielAlt = usePageAltFor("team-gabriel", INSTITUTIONAL_TEAM_ALTS.gabriel);
+  const glauciaAlt = usePageAltFor("team-glaucia", INSTITUTIONAL_TEAM_ALTS.glaucia);
   const members = [
     {
       name: "Carlos Javét Braga Bitencourt",
       alt: javetAlt,
       image: carlosJavet,
+      srcSet: `${carlosJavet} 800w, ${carlosJavetHd} 1179w`,
       width: 800,
       height: 1303,
       // primeiro no mobile, centro no desktop
@@ -38,6 +36,7 @@ export function TeamGrid({
       name: "Carlos Gabriel F. Braga Bitencourt",
       alt: gabrielAlt,
       image: carlosGabriel,
+      srcSet: `${carlosGabriel} 800w, ${carlosGabrielHd} 1180w`,
       width: 800,
       height: 1302,
       order: "order-2 md:order-1"
@@ -46,6 +45,7 @@ export function TeamGrid({
       name: "Gláucia Patrícia F. Braga Bitencourt",
       alt: glauciaAlt,
       image: glaucia,
+      srcSet: `${glaucia} 800w, ${glauciaHd} 1177w`,
       width: 800,
       height: 1305,
       order: "order-3 md:order-3"
@@ -74,8 +74,10 @@ export function TeamGrid({
             <div key={idx} className={`flex flex-col group ${member.order}`}>
               <div className="relative overflow-hidden aspect-[1179/1920] rounded-sm shadow-2xl mb-6 bg-navy">
                 <img 
-                  src={member.image} 
-                  alt={member.alt} 
+                  src={member.image}
+                  srcSet={member.srcSet}
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  alt={member.alt}
                   width={member.width}
                   height={member.height}
                   loading="lazy"

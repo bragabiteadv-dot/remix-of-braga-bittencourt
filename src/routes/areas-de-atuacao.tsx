@@ -1,5 +1,6 @@
 import { buildSeo } from "@/lib/seo";
 import { OG_IMAGE } from "@/lib/site-og";
+import { institutionalTeamImageSeo, pageImagesSchema } from "@/lib/image-seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Hero } from "../components/sections/Hero";
 import { TeamGrid } from "../components/sections/TeamGrid";
@@ -19,6 +20,8 @@ export const Route = createFileRoute("/areas-de-atuacao")({
         "Conheça nossas áreas de atuação em Direito de Família, Divórcio, Guarda, Pensão, Partilha, Sucessões, Inventário e Direito Internacional.",
       image: OG_IMAGE,
       type: "website",
+      // Alt, título e descrição dos retratos da equipe (doc 6) em JSON-LD.
+      schema: pageImagesSchema(institutionalTeamImageSeo("/areas-de-atuacao")),
     }),
 });
 

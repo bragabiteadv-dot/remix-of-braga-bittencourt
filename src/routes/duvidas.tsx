@@ -1,7 +1,8 @@
 import { buildSeo } from "@/lib/seo";
 import { OG_IMAGE } from "@/lib/site-og";
 import { createFileRoute } from "@tanstack/react-router";
-import { FAQ } from "../components/sections/FAQ";
+import { FAQ, faqData } from "../components/sections/FAQ";
+import { faqPageSchema } from "@/lib/faq-schema";
 import { ContactForm } from "../components/sections/ContactForm";
 
 export const Route = createFileRoute("/duvidas")({
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/duvidas")({
         "Tire dúvidas sobre divórcio, guarda, pensão, partilha, inventário e outros temas jurídicos. Encontre informações e fale com nossa equipe.",
       image: OG_IMAGE,
       type: "website",
+      schema: faqPageSchema(faqData.flatMap((category) => category.items), "/duvidas"),
     }),
 });
 

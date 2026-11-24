@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useMemo } from "react";
+import { landingImageSeo, type PageImageSeo } from "@/lib/image-seo";
 import { HeroVideoBackground } from "@/components/sections/HeroVideoBackground";
 import {
   Scale,
@@ -33,7 +34,7 @@ import { getInternationalLandingSupport } from "@/lib/landing-support";
 import logoTree from "@/assets/history-tree.webp";
 import curatelaBhHeaderLogo from "@/assets/logo-header-optimized.webp";
 
-import officeBetim from "@/assets/office-betim-new.jpg";
+import officeBetim from "@/assets/office-betim-new.webp";
 import officeBH from "@/assets/foto-escritorio-de-bh-25_11zon.webp";
 import sedeBetim1 from "@/assets/sede-betim-1.webp";
 import sedeBetim2 from "@/assets/sede-betim-2.webp";
@@ -46,6 +47,7 @@ interface Props {
 }
 
 const LandingPageContext = createContext<InternationalLandingPage | undefined>(undefined);
+const LandingImagesContext = createContext<PageImageSeo | undefined>(undefined);
 
 function useLandingPage() {
   const page = useContext(LandingPageContext);
@@ -53,12 +55,22 @@ function useLandingPage() {
   return page;
 }
 
+/** Alt de cada imagem da página (docs de otimização de imagens 2 e 3). */
+function useLandingImages() {
+  const images = useContext(LandingImagesContext);
+  if (!images) throw new Error("InternationalLegalLanding must receive image SEO data");
+  return images;
+}
+
 export function InternationalLegalLanding({ page }: Props) {
+  const images = useMemo(() => landingImageSeo(page), [page]);
   return (
     <LandingPageContext.Provider value={page}>
-      <PageAltProvider alt={page.title} service={page.service.name} city={page.location.name}>
-        <LandingPageContent />
-      </PageAltProvider>
+      <LandingImagesContext.Provider value={images}>
+        <PageAltProvider alt={page.title} service={page.service.name} city={page.location.name} images={images}>
+          <LandingPageContent />
+        </PageAltProvider>
+      </LandingImagesContext.Provider>
     </LandingPageContext.Provider>
   );
 }
@@ -86,13 +98,13 @@ function LandingPageContent() {
 /* ---------------- Header ---------------- */
 
 function LpHeader() {
-  const page = useLandingPage();
+  const images = useLandingImages();
   return (
     <header className="sticky top-0 z-50 w-full bg-[#08152C]/95 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto flex items-center justify-between gap-4 py-4">
         <img
           src={curatelaBhHeaderLogo}
-          alt={`Braga Bitencourt ${page.title}`}
+          alt={images.alt("logo")}
           width={720}
           height={240}
           className="h-12 w-auto shrink-0"
@@ -110,6 +122,7 @@ function LpHeader() {
 
 function LpHero() {
   const page = useLandingPage();
+  const images = useLandingImages();
   const stats = [
     {
       title: "+ 20 anos",
@@ -164,7 +177,7 @@ function LpHero() {
             <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <img
                 src={officeBetim}
-                alt={`Escritório de ${page.service.name}`}
+                alt={images.alt("hero")}
                 className="w-full h-[320px] object-cover"
                 loading="lazy"
               />
@@ -283,7 +296,7 @@ function LpSituations() {
 /* ---------------- Galeria da sede ---------------- */
 
 function LpOfficeGallery() {
-  const page = useLandingPage();
+  const images = useLandingImages();
   const photos = [sedeBetim1, sedeBetim2, sedeBetim3, sedeBetim4, sedeBetim5];
   const loop = [...photos, ...photos];
 
@@ -305,7 +318,7 @@ function LpOfficeGallery() {
             >
               <img
                 src={src}
-                alt={page.title}
+                alt={images.galleryAlt(idx)}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
@@ -515,6 +528,7 @@ const OFFICES = [
 
 function LpPresence() {
   const page = useLandingPage();
+  const images = useLandingImages();
   return (
     <section className="py-24 bg-[#08152C] relative overflow-hidden">
       <div className="container mx-auto relative z-10">
@@ -552,7 +566,7 @@ function LpPresence() {
                 <div className="h-56 overflow-hidden shrink-0">
                   <img
                     src={office.image}
-                    alt={`${page.title} — sede ${office.city}`}
+                    alt={images.alt(office.image === officeBH ? "sede-bh" : "sede-betim")}
                     loading="lazy"
                     className="w-full h-full object-cover"
                   />
@@ -587,7 +601,7 @@ const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bittencourt+ado
 
 
 function LpFooter() {
-  const page = useLandingPage();
+  const images = useLandingImages();
   const waLink = useWhatsAppLink();
   const socialIconClass =
     "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-gold-light hover:text-navy hover:border-gold-light transition-all duration-300";
@@ -692,7 +706,7 @@ function LpFooter() {
           <Link to="/" className="shrink-0">
             <img
               src={logoTree}
-              alt={page.title}
+              alt={images.alt("footer")}
               className="h-16 w-auto object-contain"
               loading="lazy"
               decoding="async"

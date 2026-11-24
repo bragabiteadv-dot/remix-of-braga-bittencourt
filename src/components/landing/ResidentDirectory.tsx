@@ -1,4 +1,4 @@
-import { RESIDENT_CATALOGUE, RESIDENT_SERVICES } from "@/lib/resident-landings";
+import { RESIDENT_CATALOGUE, RESIDENT_SERVICES, hasResidentRoute } from "@/lib/resident-landings";
 
 export function ResidentDirectory() {
   return (
@@ -12,7 +12,7 @@ export function ResidentDirectory() {
               <summary className="cursor-pointer font-montserrat font-semibold py-3 text-gold-light">{service.shortTitle}</summary>
               <p className="text-sm leading-relaxed my-4">{service.summary}</p>
               <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm font-montserrat py-4">
-                {RESIDENT_CATALOGUE.filter((entry) => entry.serviceId === service.id && entry.path === entry.target).map((entry) => (
+                {RESIDENT_CATALOGUE.filter((entry) => entry.serviceId === service.id && entry.path === entry.target && hasResidentRoute(entry.path)).map((entry) => (
                   <li key={entry.path}><a href={entry.path} className="underline underline-offset-4">{entry.locationId === null ? "Atendimento geral no Brasil" : entry.locationName}</a></li>
                 ))}
               </ul>

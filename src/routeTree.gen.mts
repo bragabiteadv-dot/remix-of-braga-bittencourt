@@ -140,6 +140,8 @@ import { Route as AdvogadoValidacaoHomologacaoSentencaPortuguesaBrasilRouteImpor
 import { Route as AreasDeAtuacaoRouteImport } from './routes/areas-de-atuacao'
 import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
+import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as PerfilRouteImport } from './routes/perfil'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as ServicosInternacionaisRouteImport } from './routes/servicos-internacionais'
@@ -3740,6 +3742,16 @@ const DuvidasRoute = DuvidasRouteImport.update({
 const FaleConoscoRoute = FaleConoscoRouteImport.update({
   id: '/fale-conosco',
   path: '/fale-conosco',
+  getParentRoute: () => rootRouteImport,
+})
+const LlmsFullDottxtRoute = LlmsFullDottxtRouteImport.update({
+  id: '/llms-full.txt',
+  path: '/llms-full.txt',
+  getParentRoute: () => rootRouteImport,
+})
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
   getParentRoute: () => rootRouteImport,
 })
 const PerfilRoute = PerfilRouteImport.update({
@@ -32938,6 +32950,8 @@ const rootRouteChildren = {
   AreasDeAtuacaoRoute: AreasDeAtuacaoRoute,
   DuvidasRoute: DuvidasRoute,
   FaleConoscoRoute: FaleConoscoRoute,
+  LlmsFullDottxtRoute: LlmsFullDottxtRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   PerfilRoute: PerfilRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   ServicosInternacionaisRoute: ServicosInternacionaisRoute,

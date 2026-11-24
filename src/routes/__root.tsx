@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-router";
 import { type ReactNode } from "react";
 import { SITE_LOCALE } from "@/lib/site";
-import { organizationSchema, unitSchemas, websiteSchema } from "@/lib/org-schema";
+import { founderSchema, organizationSchema, unitSchemas, websiteSchema } from "@/lib/org-schema";
 
 import appCss from "../styles.css?url";
 import { Header } from "../components/layout/Header";
@@ -54,6 +54,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         type: "application/ld+json",
         children: JSON.stringify(websiteSchema())
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(founderSchema())
       },
       ...unitSchemas().map((schema) => ({
         type: "application/ld+json",

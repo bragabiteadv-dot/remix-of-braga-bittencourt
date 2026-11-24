@@ -2,6 +2,7 @@ import { Facebook, Instagram, Mail, MapPin, ArrowUp } from "lucide-react";
 import { GOOGLE_URL, GoogleIcon, useWhatsAppLink, WhatsAppIcon } from "@/components/ui/whatsapp-cta";
 import { Link } from "@tanstack/react-router";
 import logoTree from "@/assets/history-tree.webp";
+import { useCurrentArticleImageSeo } from "@/lib/route-image-seo";
 
 const GOOGLE_SEARCH_URL = "https://www.google.com/search?q=braga+bitencourt+advogados&sca_esv=2a198a1a37cb003b&sxsrf=APpeQnsR8Tt6QgTAPka-SZLMKbxa20PWYA%3A1787660257813&source=hp&ei=4YeNaon_Luyg5OUP1IfQkQs&iflsig=ABILxe8AAAAAao2V8RXPNXu1Cvrn8IWs6s_aPzPos1iM&oq=braga&gs_lp=Egdnd3Mtd2l6IgVicmFnYSoCCAAyBBAjGCcyBBAjGCcyBBAjGCcyEBAAGIAEGIoFGEMYsQMYgwEyCBAuGLEDGIAEMgoQABiABBiKBRhDMg4QABiABBiKBRixAxiDATINEC4YFBiHAhixAxiABDIKEC4YgAQYigUYQzINEC4YgAQYFBiHAhixA0jDD1AAWI8GcAB4AJABAJgBiQKgAfMIqgEFMC4xLjS4AQHIAQD4AQGYAgWgAqAJwgIIEC4YgAQYsQPCAgsQLhiDARixAxiABMICCxAuGIAEGLEDGIMBwgIKEC4YQxiABBiKBcICBRAAGIAEwgIIEAAYgAQYsQOYAwCSBwUwLjEuNKAHs0-yBwUwLjEuNLgHoAnCBwUyLTQuMcgHIIAIAQ&sclient=gws-wiz";
 const BH_MAP_URL = "https://www.google.com/maps/place/Braga+Bitencourt+Advogados/@-19.954955,-43.9595168,1022m/data=!3m2!1e3!4b1!4m6!3m5!1s0xa6be0a87eba137:0x5b7a5c4dbe44fd0b!8m2!3d-19.954955!4d-43.9595168!16s%2Fg%2F1x6q2_2p?entry=ttu&g_ep=EgoyMDI2MDgyMy4wIKXMDSoASAFQAw%3D%3D";
@@ -11,6 +12,7 @@ const GOOGLE_SEARCH_URL_BETIM = "https://www.google.com/search?q=braga+bitencour
 
 export function Footer() {
   const waLink = useWhatsAppLink();
+  const articleImages = useCurrentArticleImageSeo();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -26,7 +28,7 @@ export function Footer() {
           <Link to="/" className="inline-block">
             <img
               src={logoTree}
-              alt="A história da Braga Bitencourt Advogados"
+              alt={articleImages?.alt("footer") || "A história da Braga Bitencourt Advogados"}
               width={385}
               height={385}
               loading="lazy"

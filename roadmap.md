@@ -1,6 +1,8 @@
 # Roadmap
 
 ## Em andamento
+- [x] Velocidade e snippets: 40 imagens JPG/PNG convertidas para WebP sem diferença visível (23,9 MB → 10,1 MB; foto da sede de Betim 2,2 MB → 218 KB), títulos ≤ 60 e descrições ≤ 160 caracteres nas 985 páginas indexáveis, autoria dos artigos atribuída ao Dr. Carlos Javét e remoção dos 531 links internos que levavam a 105 páginas inexistentes.
+- [x] SEO/GEO técnico sem mudança visual: política central de indexação (2.854 → 985 URLs no sitemap; demais variações de cidade/região/condado com noindex, follow), sitemap sem as 105 URLs 404, robots.txt com robôs de IA liberados, llms.txt e llms-full.txt, alt/título/descrição de todas as imagens conforme os documentos 1–6 e JSON-LD (ImageObject, FAQPage, fundador). HTML das 2.854 rotas comparado com o original: marcação e textos idênticos.
 - [x] Aplicar SEO on-page em Família, Divórcio e Inventário de Belo Horizonte, preservando URLs, canonical, unidade local e conteúdo existente; FAQ e 30 destinos internos verificados, desktop e telefone sem transbordamento.
 - [x] Padronizar os três blocos inferiores das quatro páginas revisadas, mantendo Divórcio Betim visualmente idêntica (comparação de pixels) e preservando SEO, textos e links; grades e FAQ conferidas em desktop e telefone.
 - [x] Aplicar SEO on-page exclusivamente em Família Betim, Curatela BH, Pensão Alimentícia Betim e Divórcio Extrajudicial Betim, preservando estrutura, URLs e conteúdo jurídico.
